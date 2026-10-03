@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 名古屋動物愛護協会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地）の範囲で作成
+  ・「※サンプル」表記の数値・日付・あいさつ文はダミーです。
+    ご契約後に実データへ差し替えます（虚偽の実績記載はありません）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。
+    ご提供写真に差し替え可能です
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- サンプルのため検索エンジンに載せない -->
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 名古屋動物愛護協会｜犬・猫の保護と譲渡（大府市）【ご提案サンプル】</title>
+<meta name="description" content="犬・猫の殺処分・飼育放棄ゼロを目指す動物保護NPO。保護・譲渡活動と、動物とのふれあいを通じた命の教育を愛知県大府市から。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FBF5EC;
+  --c-bg-deep:#F3E9DA;
+  --c-ink:#4A3B32;
+  --c-accent:#D97742;
+  --c-accent-deep:#B85E2E;
+  --c-green:#7C9A6D;
+  --font-head:"Shippori Mincho",serif;
+  --font-body:"Zen Maru Gothic",sans-serif;
+  --ease:cubic-bezier(.43,.05,.17,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.9;font-size:15.5px;overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.6;word-break:auto-phrase}
+.kb{display:inline-block}
+.en{letter-spacing:.22em;text-transform:uppercase;font-family:var(--font-body);font-weight:700}
+.container{max-width:1120px;margin:0 auto;padding:0 26px}
+
+/* ヘッダー */
+.header{position:sticky;top:0;z-index:100;background:rgba(251,245,236,.95);border-bottom:1px solid #E8DCC9}
+.header-in{display:flex;align-items:center;gap:14px;height:74px;max-width:1200px;margin:0 auto;padding:0 26px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--c-ink)}
+.logo .paw{width:34px;height:34px;flex:none}
+.logo .t{font-family:var(--font-head);font-weight:700;font-size:17.5px;line-height:1.3}
+.logo .t small{display:block;font-size:10px;letter-spacing:.12em;color:var(--c-accent-deep);font-family:var(--font-body)}
+.gnav{margin-left:auto}
+.gnav ul{display:flex;gap:2px;list-style:none;align-items:center}
+.gnav a{display:block;padding:9px 13px;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:13.5px;border-radius:999px;transition:background .3s var(--ease)}
+.gnav a:hover{background:var(--c-bg-deep)}
+.btn-donate{background:var(--c-accent);color:#fff!important;font-weight:700;padding:10px 20px!important;border-radius:999px;box-shadow:0 3px 0 var(--c-accent-deep)}
+.btn-donate:hover{background:var(--c-accent)!important;transform:translateY(2px);box-shadow:0 1px 0 var(--c-accent-deep)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:25px;height:2.5px;background:var(--c-ink);border-radius:2px;margin:5.5px 0;transition:.3s}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* 共通 */
+.section{padding:96px 0}
+.sec-head{margin-bottom:46px}
+.sec-head .en-cap{display:block;font-size:12px;color:var(--c-accent);margin-bottom:8px}
+.sec-head h2{font-size:clamp(24px,3.2vw,33px)}
+.sec-head h2 .line{background:linear-gradient(transparent 68%,rgba(217,119,66,.28) 68% 94%,transparent 94%)}
+.sec-head p{margin-top:14px;max-width:640px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#A08B79}
+
+/* ヒーロー */
+.hero{padding:72px 0 88px;position:relative;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1fr 1.02fr;gap:54px;align-items:center;max-width:1120px;margin:0 auto;padding:0 26px}
+.hero .catch{font-size:clamp(29px,4.2vw,44px);font-weight:700;line-height:1.75}
+.hero .lead{margin-top:20px;font-size:15.5px}
+.hero .lead b{color:var(--c-accent-deep)}
+.hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:15px 30px;font-size:15px;white-space:nowrap;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.btn-primary{background:var(--c-accent);color:#fff;box-shadow:0 4px 0 var(--c-accent-deep)}
+.btn-primary:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--c-accent-deep)}
+.btn-outline{border:2px solid var(--c-ink);color:var(--c-ink)}
+.btn-outline:hover{background:var(--c-ink);color:#fff}
+.hero-photo{position:relative}
+/* 差し替えポイント: ヒーロー写真（保護犬・保護猫のお写真がベスト） */
+.hero-photo img{width:100%;aspect-ratio:10/9;object-fit:cover;border-radius:170px 170px 26px 26px;border:7px solid #fff;box-shadow:0 20px 44px rgba(74,59,50,.16)}
+.hero-photo .badge{position:absolute;left:-10px;top:24px;background:#fff;border:2.5px solid var(--c-ink);border-radius:14px;padding:9px 16px;font-weight:700;font-size:13px;white-space:nowrap;transform:rotate(-3deg);box-shadow:3px 3px 0 rgba(74,59,50,.12)}
+.hero-bg-paw{position:absolute;right:-40px;bottom:-50px;width:230px;opacity:.06}
+
+/* 私たちについて */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about-grid .mission{font-size:17px;line-height:2.2}
+.about-grid .mission b{background:linear-gradient(transparent 68%,rgba(124,154,109,.3) 68% 94%,transparent 94%)}
+.about-photo img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:50% 50% 50% 50%/44% 44% 56% 56%;border:6px solid #fff;box-shadow:0 14px 30px rgba(74,59,50,.13)}
+.greeting{margin-top:64px;background:#fff;border-radius:24px;padding:38px 40px;display:flex;gap:30px;align-items:flex-start;border:1px solid #EFE3D0}
+.greeting .face{flex:none;width:96px;height:96px;border-radius:50%;background:var(--c-bg-deep);display:flex;align-items:center;justify-content:center;font-size:12px;color:#A08B79;text-align:center;line-height:1.5}
+.greeting h3{font-size:18px;margin-bottom:8px}
+.greeting .name{font-size:13px;color:#8A7563;margin-top:12px;font-weight:700}
+.greeting p{font-size:14.5px}
+
+/* 活動内容 */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.act{background:#fff;border-radius:22px;overflow:hidden;border:1px solid #EFE3D0;transition:transform .4s var(--ease)}
+.act:hover{transform:translateY(-5px)}
+.act .ph{aspect-ratio:4/3;overflow:hidden}
+.act .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.act:hover .ph img{transform:scale(1.04)}
+.act .body{padding:24px 24px 28px}
+.act h3{font-size:18.5px;display:flex;align-items:center;gap:9px}
+.act h3 svg{flex:none}
+.act p{font-size:14px;margin-top:10px}
+
+/* 活動報告 */
+.news-list{max-width:760px}
+.news-item{display:flex;gap:22px;padding:20px 6px;border-bottom:1px dashed #DCC9AE;align-items:baseline}
+.news-item time{flex:none;font-weight:700;color:var(--c-accent-deep);font-size:13.5px;width:92px}
+.news-item .tag{flex:none;background:var(--c-bg-deep);border-radius:999px;font-size:11.5px;padding:3px 12px;font-weight:700}
+.news-item p{font-size:14.5px}
+
+/* 数字で見る活動 */
+.stats-band{background:var(--c-ink);border-radius:30px;padding:56px 40px;color:#FBF5EC;position:relative;overflow:hidden}
+.stats-band::after{content:"";position:absolute;right:-30px;top:-30px;width:170px;height:170px;border-radius:50%;background:rgba(217,119,66,.25)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;position:relative;z-index:1}
+.stat .num{font-family:var(--font-head);font-size:clamp(40px,5vw,56px);font-weight:700;color:#F0B48A;line-height:1.2}
+.stat .num small{font-size:18px;color:#FBF5EC}
+.stat .label{font-size:13.5px;margin-top:6px;font-weight:500}
+.stats-band .note-sample{color:#C4AE9C;text-align:center;margin-top:22px;position:relative;z-index:1}
+
+/* 支援する */
+.support-intro{background:linear-gradient(135deg,var(--c-accent) 0%,#E39258 100%);border-radius:30px;padding:52px 44px;color:#fff;margin-bottom:44px}
+.support-intro h3{font-size:clamp(21px,2.8vw,28px);color:#fff;line-height:1.9}
+.support-intro p{margin-top:12px;font-size:14.5px}
+.ways{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.way{background:#fff;border-radius:20px;padding:28px 22px;border-top:7px solid var(--c-accent);border-left:1px solid #EFE3D0;border-right:1px solid #EFE3D0;border-bottom:1px solid #EFE3D0}
+.way:nth-child(2){border-top-color:#E8A857}
+.way:nth-child(3){border-top-color:var(--c-green)}
+.way:nth-child(4){border-top-color:#8FB5C9}
+.way h3{font-size:17px}
+.way .sub{font-size:12.5px;color:var(--c-accent-deep);font-weight:700;margin-top:4px}
+.way p{font-size:13.5px;margin-top:10px}
+
+/* アクセス・お問い合わせ */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.access-grid iframe{width:100%;height:380px;border:0;border-radius:22px}
+.info-list{list-style:none;margin-bottom:26px}
+.info-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed #DCC9AE;font-size:14.5px}
+.info-list b{flex:none;width:84px;color:var(--c-accent-deep)}
+.form{background:#fff;border-radius:22px;padding:30px 28px;border:1px solid #EFE3D0}
+.form label{display:block;font-weight:700;font-size:13.5px;margin:14px 0 6px}
+.form input,.form textarea{width:100%;border:2px solid #E8DCC9;border-radius:12px;padding:12px 14px;font-family:var(--font-body);font-size:15px;background:#FDFAF5}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-accent)}
+.form button{width:100%;margin-top:20px;background:var(--c-accent);color:#fff;border:none;cursor:pointer;font-family:var(--font-body);font-weight:700;font-size:15.5px;padding:15px;border-radius:999px;box-shadow:0 4px 0 var(--c-accent-deep)}
+.form .sent{display:none;margin-top:12px;text-align:center;font-size:13px;color:var(--c-accent-deep);font-weight:700}
+
+/* フッター */
+.footer{background:var(--c-ink);color:#EFE3D6;padding:56px 0 28px;margin-top:96px}
+.footer-in{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;max-width:1120px;margin:0 auto;padding:0 26px}
+.footer .f-logo{font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff}
+.footer p{font-size:13px;margin-top:10px;color:#CBB8A6}
+.footer h4{font-size:12.5px;color:#F0B48A;margin-bottom:10px;letter-spacing:.1em}
+.footer ul{list-style:none}
+.footer li{margin-bottom:7px;font-size:13.5px}
+.footer a{color:#EFE3D6;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.sns{display:flex;gap:10px;margin-top:12px}
+.sns span{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:10px;color:#CBB8A6}
+.copy{text-align:center;font-size:11px;color:#A08B79;margin-top:40px}
+.sample-note{text-align:center;font-size:11px;color:#A08B79;margin-top:8px}
+.sample-note a{color:#C4AE9C}
+
+@media (max-width:860px){
+  .section{padding:64px 0}
+  .hero{padding:36px 0 64px}
+  .hero-in{grid-template-columns:1fr;gap:34px}
+  .hero-photo{order:-1}
+  .about-grid{grid-template-columns:1fr;gap:30px}
+  .greeting{flex-direction:column;padding:28px 24px}
+  .acts{grid-template-columns:1fr}
+  .ways{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .stats-band{padding:40px 22px}
+  .access-grid{grid-template-columns:1fr}
+  .access-grid iframe{height:300px}
+  .footer-in{grid-template-columns:1fr;gap:26px}
+  .news-item{flex-wrap:wrap;gap:10px}
+  .gnav{display:none;position:fixed;inset:74px 0 auto 0;background:#FDFAF5;border-bottom:3px solid var(--c-bg-deep);padding:14px 20px 20px;z-index:99}
+  .menu-open .gnav{display:block}
+  .gnav ul{flex-direction:column;align-items:stretch}
+  .gnav a{padding:13px 14px;font-size:15px}
+  .btn-donate{text-align:center;margin-top:8px}
+  .menu-btn{display:block}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="#top">
+      <svg class="paw" viewBox="0 0 40 40" fill="#D97742" aria-hidden="true">
+        <ellipse cx="13" cy="12" rx="4.4" ry="5.6"/><ellipse cx="27" cy="12" rx="4.4" ry="5.6"/>
+        <ellipse cx="5.5" cy="21" rx="3.8" ry="4.8"/><ellipse cx="34.5" cy="21" rx="3.8" ry="4.8"/>
+        <path d="M20 20c6.5 0 11 4.6 11 9.4 0 3.6-2.7 5.6-6 5.6-2 0-3.4-.8-5-.8s-3 .8-5 .8c-3.3 0-6-2-6-5.6C9 24.6 13.5 20 20 20Z"/>
+      </svg>
+      <span class="t">名古屋動物愛護協会<small>NPO法人｜愛知県大府市</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="gnav">
+      <ul>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#activity">活動内容</a></li>
+        <li><a href="#news">活動報告</a></li>
+        <li><a href="#support">支援する</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a class="btn-donate" href="#support">寄付で応援する</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero" id="top">
+  <svg class="hero-bg-paw" viewBox="0 0 40 40" fill="#4A3B32" aria-hidden="true">
+    <ellipse cx="13" cy="12" rx="4.4" ry="5.6"/><ellipse cx="27" cy="12" rx="4.4" ry="5.6"/>
+    <ellipse cx="5.5" cy="21" rx="3.8" ry="4.8"/><ellipse cx="34.5" cy="21" rx="3.8" ry="4.8"/>
+    <path d="M20 20c6.5 0 11 4.6 11 9.4 0 3.6-2.7 5.6-6 5.6-2 0-3.4-.8-5-.8s-3 .8-5 .8c-3.3 0-6-2-6-5.6C9 24.6 13.5 20 20 20Z"/>
+  </svg>
+  <div class="hero-in">
+    <div>
+      <h1 class="catch"><span class="kb">小さな命が、</span><br><span class="kb">家族に出会うまで。</span></h1>
+      <p class="lead">飼うことが難しくなった犬や猫を保護し、新しい家族へつなぐ。<br>わたしたちは<b>殺処分・飼育放棄ゼロ</b>を目指して、愛知県大府市から活動する動物保護NPOです。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#support">寄付で応援する</a>
+        <a class="btn btn-outline" href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <!-- 差し替えポイント: 保護犬・保護猫の実際のお写真に差し替えると効果大（現在はフリー素材のイメージ） -->
+      <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1600&q=80&auto=format&fit=crop" alt="保護犬のイメージ写真">
+      <span class="badge">殺処分ゼロを、あきらめない</span>
+    </div>
+  </div>
+</div>
+
+<!-- 私たちについて -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="en en-cap">About us</span>
+      <h2><span class="line">私たちについて</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="mission reveal">
+        <p><span class="kb">行き場を失った</span><span class="kb">犬や猫を保護し、</span><span class="kb"><b>新しい家族との出会い</b>を</span><span class="kb">つくること。</span><br><span class="kb">そして、</span><span class="kb">動物とふれあう機会を通じて、</span><span class="kb">子どもたちや</span><span class="kb">地域のみなさんに</span><span class="kb"><b>命の大切さ</b>を</span><span class="kb">伝えること。</span></p>
+        <p style="margin-top:18px;font-size:14.5px">名古屋動物愛護協会は、犬・猫など愛玩動物の殺処分・飼育放棄をなくすことを目的に、2018年に設立されたNPO法人です。飼育が難しくなった飼い主さまからの相談を受け、一頭一頭に向き合いながら活動しています。<span class="note-sample">※文章は定款（公開情報）をもとにしたサンプルです</span></p>
+      </div>
+      <div class="about-photo reveal">
+        <!-- 差し替えポイント: 活動風景のお写真 -->
+        <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1600&q=80&auto=format&fit=crop" alt="犬と人がふれあう様子">
+      </div>
+    </div>
+    <div class="greeting reveal">
+      <div class="face">代表の<br>お写真</div>
+      <div>
+        <h3>代表あいさつ</h3>
+        <p>「もう飼えない」の先に、行き場のない命があります。わたしたちは、その一つひとつに新しい出会いをつくるために活動しています。動物たちと、動物を想うみなさまの架け橋になれたら幸いです。<span class="note-sample">※あいさつ文はサンプルです。ご本人のお言葉に差し替えいたします</span></p>
+        <p class="name"><span class="kb">特定非営利活動法人 名古屋動物愛護協会</span>　<span class="kb">代表理事　（お名前は公開時に記載）</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動内容 -->
+<section class="section" id="activity" style="background:#F6EDDF">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="en en-cap">Activity</span>
+      <h2><span class="line">3つの活動</span></h2>
+      <p>保護から譲渡、そして次の世代への啓発まで。命をつなぐ活動を続けています。</p>
+    </div>
+    <div class="acts">
+      <article class="act reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=1600&q=80&auto=format&fit=crop" alt="保護された子犬"></div>
+        <div class="body">
+          <h3><svg width="20" height="20" viewBox="0 0 40 40" fill="#D97742"><ellipse cx="13" cy="12" rx="4.4" ry="5.6"/><ellipse cx="27" cy="12" rx="4.4" ry="5.6"/><ellipse cx="5.5" cy="21" rx="3.8" ry="4.8"/><ellipse cx="34.5" cy="21" rx="3.8" ry="4.8"/><path d="M20 20c6.5 0 11 4.6 11 9.4 0 3.6-2.7 5.6-6 5.6-2 0-3.4-.8-5-.8s-3 .8-5 .8c-3.3 0-6-2-6-5.6C9 24.6 13.5 20 20 20Z"/></svg>保護・譲渡</h3>
+          <p>飼育が困難になった犬や猫を受け入れ、健康管理とケアを行いながら、責任を持って新しい家族を探します。</p>
+        </div>
+      </article>
+      <article class="act reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=1600&q=80&auto=format&fit=crop" alt="子どもと犬のふれあい"></div>
+        <div class="body">
+          <h3><svg width="20" height="20" viewBox="0 0 40 40" fill="#7C9A6D"><ellipse cx="13" cy="12" rx="4.4" ry="5.6"/><ellipse cx="27" cy="12" rx="4.4" ry="5.6"/><ellipse cx="5.5" cy="21" rx="3.8" ry="4.8"/><ellipse cx="34.5" cy="21" rx="3.8" ry="4.8"/><path d="M20 20c6.5 0 11 4.6 11 9.4 0 3.6-2.7 5.6-6 5.6-2 0-3.4-.8-5-.8s-3 .8-5 .8c-3.3 0-6-2-6-5.6C9 24.6 13.5 20 20 20Z"/></svg>ふれあいの機会</h3>
+          <p>動物とふれあうイベントを通じて、市民や子どもたちが命と向き合う時間をつくります。</p>
+        </div>
+      </article>
+      <article class="act reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1600&q=80&auto=format&fit=crop" alt="保護猫"></div>
+        <div class="body">
+          <h3><svg width="20" height="20" viewBox="0 0 40 40" fill="#E8A857"><ellipse cx="13" cy="12" rx="4.4" ry="5.6"/><ellipse cx="27" cy="12" rx="4.4" ry="5.6"/><ellipse cx="5.5" cy="21" rx="3.8" ry="4.8"/><ellipse cx="34.5" cy="21" rx="3.8" ry="4.8"/><path d="M20 20c6.5 0 11 4.6 11 9.4 0 3.6-2.7 5.6-6 5.6-2 0-3.4-.8-5-.8s-3 .8-5 .8c-3.3 0-6-2-6-5.6C9 24.6 13.5 20 20 20Z"/></svg>動物愛護の啓発</h3>
+          <p>殺処分や飼育放棄の現状を伝え、動物愛護と生命尊重の心を地域に広げていきます。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 活動報告 -->
+<section class="section" id="news">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="en en-cap">News</span>
+      <h2><span class="line">活動報告・お知らせ</span></h2>
+      <p class="note-sample">※以下は表示イメージのサンプルです。実際の活動報告に差し替え、ご自身で更新できる形にできます</p>
+    </div>
+    <div class="news-list reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-item"><time>20XX.XX.XX</time><span class="tag">譲渡会</span><p>譲渡会を開催しました。新しい家族との出会いがありました</p></div>
+      <div class="news-item"><time>20XX.XX.XX</time><span class="tag">保護</span><p>飼育困難のご相談を受け、猫を新たに保護しました</p></div>
+      <div class="news-item"><time>20XX.XX.XX</time><span class="tag">イベント</span><p>市内の小学校で「いのちの授業」とふれあい会を行いました</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字で見る活動 -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="stats-band reveal">
+      <div class="stats">
+        <!-- ※サンプル: 数値はすべてダミーです。実績値に差し替えます -->
+        <div class="stat"><p class="num">128<small>頭</small></p><p class="label">保護した犬・猫</p></div>
+        <div class="stat"><p class="num">96<small>頭</small></p><p class="label">新しい家族のもとへ</p></div>
+        <div class="stat"><p class="num">45<small>人</small></p><p class="label">支えるボランティア</p></div>
+      </div>
+      <p class="note-sample">※ 数値は表示イメージのサンプルです（実績データに差し替えます）</p>
+    </div>
+  </div>
+</section>
+
+<!-- 支援する -->
+<section class="section" id="support" style="background:#F6EDDF">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="en en-cap">Support</span>
+      <h2><span class="line">活動を支える</span></h2>
+    </div>
+    <div class="support-intro reveal">
+      <h3><span class="kb">あなたの支援が、</span><br><span class="kb">次の一頭を救います。</span></h3>
+      <p>保護した犬や猫のごはん、医療、あたたかい寝床。活動のすべては、みなさまのご支援に支えられています。</p>
+    </div>
+    <div class="ways">
+      <div class="way reveal">
+        <h3>ご寄付</h3>
+        <p class="sub">いくらからでも</p>
+        <p>いただいたご寄付は、保護動物の飼育費・医療費に大切に使わせていただきます。</p>
+      </div>
+      <div class="way reveal">
+        <h3>物資のご寄贈</h3>
+        <p class="sub">フード・タオルなど</p>
+        <p>ペットフードやペットシーツ、タオルなどの物資も活動の大きな支えになります。</p>
+      </div>
+      <div class="way reveal">
+        <h3>賛助会員</h3>
+        <p class="sub">継続的な応援</p>
+        <p>年会費で継続的に活動を支えていただく制度です。活動報告をお届けします。</p>
+      </div>
+      <div class="way reveal">
+        <h3>ボランティア</h3>
+        <p class="sub">できる時に、できる事を</p>
+        <p>お世話や譲渡会のお手伝い、イベント運営など。無理のない範囲で参加できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- アクセス・お問い合わせ -->
+<section class="section" id="access">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="en en-cap">Access / Contact</span>
+      <h2><span class="line">アクセス・お問い合わせ</span></h2>
+    </div>
+    <div class="access-grid reveal" id="contact">
+      <div>
+        <ul class="info-list">
+          <li><b>正式名称</b><span>特定非営利活動法人 名古屋動物愛護協会</span></li>
+          <li><b>所在地</b><span>愛知県大府市柊山町一丁目98番地</span></li>
+          <li><b>設立</b><span>2018年8月（設立認証）</span></li>
+          <li><b>活動分野</b><span>保健・医療・福祉／環境の保全</span></li>
+        </ul>
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%A4%A7%E5%BA%9C%E5%B8%82%E6%9F%8A%E5%B1%B1%E7%94%BA%E4%B8%80%E4%B8%81%E7%9B%AE98%E7%95%AA%E5%9C%B0&output=embed&z=15" loading="lazy" title="所在地の地図"></iframe>
+      </div>
+      <div class="form">
+        <h3 style="font-size:18px">お問い合わせフォーム</h3>
+        <p style="font-size:13px;margin-top:6px">譲渡のご相談・ご支援・取材のご依頼など、お気軽にどうぞ。</p>
+        <!-- ※サンプル: フォームはデモ表示です。公開時に送信先を設定します -->
+        <form id="demoForm">
+          <label>お名前</label><input type="text" placeholder="例：山田 花子">
+          <label>メールアドレス</label><input type="email" placeholder="例：hanako@example.com">
+          <label>お問い合わせ内容</label><textarea rows="4" placeholder="例：物資の寄贈を考えています。受け取り方法を教えてください。"></textarea>
+          <button type="submit">送信する</button>
+          <p class="sent" id="sentMsg">※ サンプルページのため送信されません（公開時に有効化します）</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-in">
+    <div>
+      <p class="f-logo"><span class="kb">特定非営利活動法人</span> <span class="kb">名古屋動物愛護協会</span></p>
+      <p>愛知県大府市柊山町一丁目98番地<br>設立認証: 2018年8月10日<br><span style="font-size:11.5px">法人番号: （公開時に記載します）</span></p>
+      <div class="sns"><span>X</span><span>Insta</span><span>LINE</span></div><!-- SNS枠: 開設済みアカウントに差し替え -->
+    </div>
+    <div>
+      <h4>MENU</h4>
+      <ul>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#activity">活動内容</a></li>
+        <li><a href="#news">活動報告</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>SUPPORT</h4>
+      <ul>
+        <li><a href="#support">寄付で応援する</a></li>
+        <li><a href="#support">ボランティア</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="copy">&copy; 2026 NPO法人 名古屋動物愛護協会</p>
+  <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の数値・文章はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+</footer>
+
+<script>
+// モバイルメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".gnav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// ふわっと表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// デモフォーム（サンプルのため送信しない）
+document.getElementById("demoForm").addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("sentMsg").style.display = "block";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 東三河ハートネット さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者実名は記載していません／住所は市までの表記です
+  ・電話番号はダミーで、リンクは無効化しています（tel:リンクなし）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザインの方向: 水彩にじみ・アート型（やわらかな水彩グラデと手描き感で、
+    誰にもやさしいバリアフリーの温かさ）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 東三河ハートネット｜豊橋市・東三河のバリアフリーとまちづくり【ご提案サンプル】</title>
+<meta name="description" content="東三河全域の、障害のある人を含むすべての人にやさしいまちへ。公共・民間の建物や公園のバリアフリー化に取り組むNPO法人です。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Klee+One:wght@600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FBFCFD;
+  --c-paper:#FFFFFF;
+  --c-ink:#37424A;
+  --c-ink-soft:#67727A;
+  --c-blue:#6EB7D6;      /* 水色 */
+  --c-blue-deep:#4C96B9;
+  --c-pink:#F2A6B8;      /* 桃 */
+  --c-pink-deep:#E07E97;
+  --c-green:#A6D08A;     /* 若草 */
+  --c-green-deep:#7EB067;
+  --c-wash:#EAF4F8;      /* 淡い水色ウォッシュ */
+  --c-line:#E4EBEF;
+  --font-body:"Zen Maru Gothic",sans-serif;
+  --font-hand:"Klee One","Zen Maru Gothic",cursive;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.7;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 水彩にじみ 背景レイヤー ===== */
+.bleed{position:fixed;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;pointer-events:none;mix-blend-mode:multiply}
+.bleed.b1{width:520px;height:520px;top:-140px;left:-120px;background:radial-gradient(circle at 40% 40%,var(--c-blue),transparent 68%)}
+.bleed.b2{width:460px;height:460px;top:34%;right:-150px;background:radial-gradient(circle at 50% 50%,var(--c-pink),transparent 68%)}
+.bleed.b3{width:500px;height:500px;bottom:6%;left:-160px;background:radial-gradient(circle at 50% 50%,var(--c-green),transparent 68%)}
+@media (prefers-reduced-motion:no-preference){
+  .bleed{animation:drift 22s var(--ease) infinite alternate}
+  .bleed.b2{animation-duration:28s}
+  .bleed.b3{animation-duration:25s}
+}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(26px,-30px) scale(1.08)}}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:60;background:rgba(251,252,253,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--c-line)}
+.head-in{max-width:1080px;margin:0 auto;padding:0 30px;height:70px;display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.logo svg{width:40px;height:40px;flex:none}
+.logo .t{font-weight:900;font-size:18px;letter-spacing:.03em;line-height:1.25}
+.logo .t small{display:block;font-size:10px;font-weight:500;color:var(--c-blue-deep);letter-spacing:.04em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:4px}
+.head nav a{text-decoration:none;color:var(--c-ink-soft);font-size:13.5px;font-weight:500;padding:8px 12px;border-radius:999px;transition:color .3s,background .3s}
+.head nav a:hover{color:var(--c-blue-deep);background:var(--c-wash)}
+.head .cta{margin-left:8px;background:linear-gradient(120deg,var(--c-blue),var(--c-green));color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;padding:10px 20px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(110,183,214,.35)}
+.menu-btn{display:none}
+
+/* ===== レイアウト ===== */
+.wrap{max-width:1080px;margin:0 auto;padding:0 30px;position:relative;z-index:1}
+.block{padding:96px 0}
+.b-head{text-align:center;margin-bottom:46px}
+.b-head .en{font-family:var(--font-num);font-size:12px;letter-spacing:.26em;color:var(--c-pink-deep);text-transform:uppercase;display:block;margin-bottom:8px}
+.b-head h2{font-size:clamp(24px,3.4vw,32px);letter-spacing:.03em}
+.b-head h2 .u{background:linear-gradient(transparent 62%,var(--c-wash) 62%);padding:0 .1em}
+.b-head p{margin-top:14px;color:var(--c-ink-soft);font-size:14.5px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#9AAAB2}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#9AAAB2;margin-top:6px}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;padding:86px 0 78px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero .cap{display:inline-block;font-family:var(--font-hand);font-size:14px;color:var(--c-blue-deep);background:#fff;border:1px solid var(--c-line);padding:6px 16px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:clamp(30px,4.6vw,50px);font-weight:900;line-height:1.55;letter-spacing:.03em}
+.hero h1 .paint{background:linear-gradient(120deg,var(--c-blue-deep),var(--c-pink-deep) 55%,var(--c-green-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .lead{margin-top:24px;max-width:520px;font-size:15.5px;color:var(--c-ink)}
+.hero .chips{display:flex;gap:9px;margin-top:26px;flex-wrap:wrap}
+.chip{font-size:12.5px;font-weight:700;padding:6px 15px;border-radius:999px}
+.chip.c1{color:var(--c-blue-deep);background:var(--c-wash)}
+.chip.c2{color:var(--c-pink-deep);background:#FDEEF2}
+.chip.c3{color:var(--c-green-deep);background:#EEF6E6}
+/* ヒーロー画像を水彩の縁で切り抜く */
+.hero-art{position:relative}
+.hero-art .frame{position:relative;border-radius:32px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(76,150,185,.5)}
+.hero-art .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(110,183,214,.16),transparent 45%,rgba(242,166,184,.16))}
+.hero-art img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.hero-art .badge{position:absolute;left:-18px;bottom:26px;background:#fff;border-radius:20px;padding:14px 20px;box-shadow:0 14px 30px -14px rgba(55,66,74,.35);display:flex;align-items:center;gap:12px}
+.hero-art .badge .dot{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--c-pink),var(--c-green));flex:none}
+.hero-art .badge .txt b{display:block;font-size:14px}
+.hero-art .badge .txt span{font-size:11px;color:var(--c-ink-soft)}
+
+/* ===== 波の区切り ===== */
+.wave{display:block;width:100%;height:70px}
+
+/* ===== 想い（ミッション） ===== */
+.mission{background:linear-gradient(180deg,#fff,var(--c-wash));position:relative}
+.mission .lead-big{max-width:760px;margin:0 auto;text-align:center;font-family:var(--font-hand);font-size:clamp(19px,2.7vw,27px);line-height:2.05;color:var(--c-ink)}
+.mission .lead-big em{font-style:normal;color:var(--c-blue-deep)}
+.mission .src{text-align:center;margin-top:22px}
+
+/* ===== 取り組み（カード） ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--c-paper);border-radius:26px;padding:34px 28px;box-shadow:0 20px 44px -30px rgba(55,66,74,.4);border:1px solid var(--c-line);position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 52px -28px rgba(55,66,74,.45)}
+.card .ico{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin-bottom:18px}
+.card.k1 .ico{background:var(--c-wash)}
+.card.k2 .ico{background:#FDEEF2}
+.card.k3 .ico{background:#EEF6E6}
+.card .ico svg{width:34px;height:34px}
+.card h3{font-size:18.5px;margin-bottom:10px}
+.card p{font-size:13.5px;color:var(--c-ink-soft);line-height:1.95}
+.card .tag{display:inline-block;font-family:var(--font-num);font-size:11px;letter-spacing:.14em;color:var(--c-ink-soft);margin-bottom:10px}
+
+/* ===== 活動の様子（写真ギャラリー） ===== */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px}
+.gallery figure{position:relative;border-radius:22px;overflow:hidden}
+.gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(76,150,185,.22))}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery .big{grid-column:span 2;grid-row:span 2}
+.gallery .tall{grid-row:span 2}
+
+/* ===== 3つの安心（バリアフリーの視点） ===== */
+.points{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.point{display:flex;gap:18px;background:#fff;border:1px solid var(--c-line);border-radius:22px;padding:26px 28px}
+.point .n{font-family:var(--font-num);font-size:30px;font-weight:600;color:var(--c-blue);flex:none;line-height:1}
+.point h3{font-size:16.5px;margin-bottom:6px}
+.point p{font-size:13px;color:var(--c-ink-soft);line-height:1.9}
+
+/* ===== お知らせ ===== */
+.news{max-width:760px;margin:0 auto}
+.news-row{display:flex;gap:18px;padding:16px 6px;border-bottom:1px dashed var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:600;color:var(--c-ink-soft);font-size:12.5px}
+.news-row .badge2{flex:none;font-size:11px;font-weight:700;color:#fff;background:var(--c-green-deep);border-radius:999px;padding:2px 11px}
+.news-row a{color:var(--c-ink);text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== 参加のかたち ===== */
+.join{background:linear-gradient(135deg,var(--c-wash),#FDEEF2);border-radius:32px;padding:52px 40px;text-align:center;position:relative;overflow:hidden}
+.join h2{font-size:clamp(22px,3vw,28px);margin-bottom:12px}
+.join p{max-width:600px;margin:0 auto;color:var(--c-ink);font-size:14.5px}
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.join-grid .j{background:#fff;border-radius:20px;padding:26px 22px}
+.join-grid .j .em{font-size:30px;margin-bottom:8px}
+.join-grid .j h3{font-size:15.5px;margin-bottom:6px}
+.join-grid .j p{font-size:12.5px;color:var(--c-ink-soft)}
+
+/* ===== 概要 ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border-radius:16px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-wash);border-bottom:1px solid var(--c-line);padding:14px 18px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border-bottom:1px solid var(--c-line);padding:14px 18px}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+
+/* ===== お問い合わせ ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.tel-card{border:2px solid var(--c-blue);background:var(--c-paper);border-radius:24px;padding:30px;text-align:center}
+.tel-card .cap{font-size:13px;font-weight:700;color:var(--c-blue-deep)}
+.tel-card .num{font-family:var(--font-num);font-size:32px;font-weight:600;color:var(--c-blue-deep);margin:6px 0}
+.tel-card p{font-size:12px;color:var(--c-ink-soft)}
+.form{background:var(--c-paper);border:1px solid var(--c-line);border-radius:24px;padding:30px}
+.form label{display:block;font-size:13px;font-weight:700;margin:0 0 6px}
+.form input,.form textarea{width:100%;border:1px solid var(--c-line);border-radius:12px;padding:12px 14px;font-family:inherit;font-size:14px;margin-bottom:16px;background:var(--c-bg)}
+.form textarea{min-height:96px;resize:vertical}
+.form button{width:100%;border:none;background:linear-gradient(120deg,var(--c-blue),var(--c-green));color:#fff;font-weight:700;font-size:15px;padding:14px;border-radius:999px;cursor:pointer;font-family:inherit}
+.form .demo{font-size:11.5px;color:#9AAAB2;text-align:center;margin-top:12px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#fff;padding:56px 0 34px;position:relative;z-index:1;margin-top:20px}
+.footer .wrap{text-align:center}
+.footer .f-name{font-weight:900;font-size:17px}
+.footer .f-sub{font-size:12.5px;color:#B7C2C9;margin-top:8px;line-height:2}
+.sample-note{font-size:11px;color:#8B98A0;margin-top:22px;line-height:1.95}
+.sample-note a{color:#B7C2C9}
+.copy{margin-top:16px;font-size:11px;color:#8B98A0}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none}
+  .head .cta{margin-left:auto}
+  .menu-btn{display:block;background:none;border:none;cursor:pointer;padding:6px;margin-left:6px}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--c-ink);margin:5px 0;border-radius:2px;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:70px 0 auto 0;background:#fff;border-bottom:1px solid var(--c-line);padding:8px 24px 22px;z-index:55}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .hero-art .frame{max-width:400px;margin:0 auto}
+  .cards{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:130px}
+  .points{grid-template-columns:1fr}
+  .join-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .block{padding:66px 0}
+  .tbl-hint{display:block}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .head-in{padding:0 20px}
+  .hero{padding:52px 0 46px}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:110px}
+  .gallery .big{grid-column:span 2;grid-row:span 1}
+  .join{padding:40px 22px}
+  /* 概要表を縦積みに */
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border:none;padding:10px 16px 2px;font-size:12px;background:transparent;color:var(--c-blue-deep)}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 16px 12px}
+  .tbl-hint{display:none}
+}
+.sp-nav{display:none}
+</style>
+</head>
+<body id="top">
+
+<!-- 水彩にじみ 背景 -->
+<div class="bleed b1"></div>
+<div class="bleed b2"></div>
+<div class="bleed b3"></div>
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="head-in">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 44 44" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6EB7D6"/>
+            <stop offset="1" stop-color="#A6D08A"/>
+          </linearGradient>
+        </defs>
+        <circle cx="22" cy="22" r="21" fill="#EAF4F8"/>
+        <path d="M22 33c-6-4-11-8-11-14 0-3.6 2.9-6 6-6 2.1 0 4 1.1 5 3 1-1.9 2.9-3 5-3 3.1 0 6 2.4 6 6 0 6-5 10-11 14Z" fill="url(#lg)"/>
+        <circle cx="17" cy="19" r="1.6" fill="#fff"/>
+        <circle cx="27" cy="19" r="1.6" fill="#fff"/>
+      </svg>
+      <span class="t">東三河ハートネット<small>特定非営利活動法人｜愛知県豊橋市</small></span>
+    </a>
+    <nav>
+      <a href="#mission">わたしたち</a>
+      <a href="#work">取り組み</a>
+      <a href="#gallery">活動の様子</a>
+      <a href="#news">お知らせ</a>
+      <a href="#join">参加する</a>
+      <a href="#gaiyo">概要</a>
+    </nav>
+    <a class="cta" href="#contact">お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#mission">わたしたち</a>
+    <a href="#work">取り組み</a>
+    <a href="#gallery">活動の様子</a>
+    <a href="#news">お知らせ</a>
+    <a href="#join">参加する</a>
+    <a href="#gaiyo">概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="cap reveal on">愛知県豊橋市・東三河のまちづくり</span>
+      <h1 class="reveal on"><span class="kb">まちの段差を、</span><span class="kb">やさしさに</span><span class="kb"><span class="paint">変えていく。</span></span></h1>
+      <p class="lead reveal on">東三河ハートネットは、障害のある人を含む「すべての人」が、行きたい場所へ行ける東三河をめざすNPO法人です。公共・民間の建物や公園のバリアフリー化に、地域のみなさんと一緒に取り組んでいます。</p>
+      <div class="chips reveal on">
+        <span class="chip c1">バリアフリー</span>
+        <span class="chip c2">ユニバーサルデザイン</span>
+        <span class="chip c3">まちづくり</span>
+      </div>
+    </div>
+    <div class="hero-art reveal on">
+      <div class="frame">
+        <!-- 差し替えポイント: 活動やまちなみの代表的なお写真 -->
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80&auto=format&fit=crop" alt="手を取り合う人々のイメージ">
+      </div>
+      <div class="badge">
+        <span class="dot"></span>
+        <span class="txt"><b>東三河 全域で</b><span>だれもが出かけられるまちへ</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 波の区切り -->
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,80 480,10 720,34 C960,58 1200,20 1440,44 L1440,70 L0,70 Z" fill="#EAF4F8"/></svg>
+
+<!-- 想い -->
+<section class="block mission" id="mission">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Our Mission</span><h2><span class="u">わたしたちの想い</span></h2></div>
+    <p class="lead-big reveal"><span class="kb">段差やわずかな坂道が、</span><span class="kb">だれかにとっては</span><span class="kb"><em>「行けない場所」</em>になる。</span><br><span class="kb">その小さな「困った」を</span><span class="kb">一つずつ減らして、</span><span class="kb"><em>東三河のどこへでも</em></span><span class="kb">出かけられるまちを、</span><span class="kb">地域みんなでつくります。</span></p>
+    <p class="src reveal"><span class="note-sample">※上記の文章は、公開されている定款の目的（東三河全域の障害者を含む全ての人に対し、公共・民間の建築や公園のバリアフリー化等に取り組む）をもとにしたサンプルです</span></p>
+  </div>
+</section>
+
+<!-- 取り組み -->
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">What We Do</span><h2>3つの取り組み</h2><p>公開されている定款の活動分野をもとに構成したサンプルです</p></div>
+    <div class="cards">
+      <div class="card k1 reveal">
+        <span class="tag">FIELD 01</span>
+        <div class="ico"><svg viewBox="0 0 34 34" fill="none" stroke="#4C96B9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28h26"/><path d="M7 28V14l10-7 10 7v14"/><path d="M13 28v-7h8v7"/></svg></div>
+        <h3>建物のバリアフリー化</h3>
+        <p>公共施設やお店・事業所などの段差解消、スロープや手すりの設置について、当事者の視点からご相談・ご提案を行います。<span class="note-sample">※内容はサンプルです</span></p>
+      </div>
+      <div class="card k2 reveal">
+        <span class="tag">FIELD 02</span>
+        <div class="ico"><svg viewBox="0 0 34 34" fill="none" stroke="#E07E97" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26c4-9 8-13 11-13s7 4 11 13"/><circle cx="17" cy="9" r="3"/><path d="M4 30h26"/></svg></div>
+        <h3>公園・みちのユニバーサル化</h3>
+        <p>公園や歩道を、車いすやベビーカー、お年寄りも安心して使えるように。だれもが遊べる・歩ける空間づくりに取り組みます。<span class="note-sample">※内容はサンプルです</span></p>
+      </div>
+      <div class="card k3 reveal">
+        <span class="tag">FIELD 03</span>
+        <div class="ico"><svg viewBox="0 0 34 34" fill="none" stroke="#7EB067" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="4"/><circle cx="23" cy="13" r="3.4"/><path d="M4 28c0-5 3.6-8 8-8s8 3 8 8"/><path d="M20 28c0-4 2.6-6.5 6-6.5s6 2.5 6 6.5"/></svg></div>
+        <h3>啓発・仲間づくり</h3>
+        <p>まち歩き点検や勉強会を通じて、「やさしいまち」を一緒に考える仲間を増やします。だれでも参加できます。<span class="note-sample">※内容はサンプルです</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動の様子 -->
+<section class="block" id="gallery" style="background:linear-gradient(180deg,#FDEEF2,#fff)">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Gallery</span><h2>活動の様子</h2><p>※写真はイメージ素材です。実際の活動写真に差し替えます</p></div>
+    <div class="gallery reveal">
+      <!-- 差し替えポイント: 実際の活動・まちなみのお写真（顔が特定されにくい構図を推奨） -->
+      <figure class="big"><img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=1100&q=80&auto=format&fit=crop" alt="スロープのある歩道のイメージ"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1454923634634-bd1614719a7b?w=700&q=80&auto=format&fit=crop" alt="車いすと介助のイメージ"></figure>
+      <figure class="tall"><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=700&q=80&auto=format&fit=crop" alt="緑のある公園のイメージ"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=700&q=80&auto=format&fit=crop" alt="まちを歩く人々のイメージ"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=700&q=80&auto=format&fit=crop" alt="ワークショップのイメージ"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=700&q=80&auto=format&fit=crop" alt="手すりのある通路のイメージ"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- バリアフリーの視点（4つの安心） -->
+<section class="block" id="points">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Our Viewpoint</span><h2>大切にしている視点</h2></div>
+    <div class="points">
+      <div class="point reveal"><span class="n">01</span><div><h3>「当事者の目」で見る</h3><p>実際に使う人と一緒にまちを歩き、本当に困っている場所を見つけます。</p></div></div>
+      <div class="point reveal"><span class="n">02</span><div><h3>だれか一人を残さない</h3><p>障害のある人だけでなく、お年寄り・子ども・妊娠中の方まで。すべての人にやさしい設計を。</p></div></div>
+      <div class="point reveal"><span class="n">03</span><div><h3>行政・地域と手をつなぐ</h3><p>公共・民間の垣根をこえて、まちの関係者と協力しながら進めます。</p></div></div>
+      <div class="point reveal"><span class="n">04</span><div><h3>東三河 全域で</h3><p>豊橋を中心に、東三河のどのまちにも「やさしさ」が広がることをめざします。</p></div></div>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-top:22px">※上記は定款の目的をもとにした表現サンプルです</p>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block" id="news" style="background:var(--c-wash)">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">News</span><h2>お知らせ</h2><p>※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p></div>
+    <div class="news reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="badge2">活動</span><a href="#news">まち歩きバリアフリー点検を実施しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="badge2">募集</span><a href="#news">ボランティア・賛助会員を募集しています</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="badge2">お知らせ</span><a href="#news">バリアフリー勉強会の開催予定について</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加のかたち -->
+<section class="block" id="join">
+  <div class="wrap">
+    <div class="join reveal">
+      <h2>あなたにも、できることがあります</h2>
+      <p>「やさしいまち」は、地域みんなの小さな力でつくられます。できることを、できる範囲で。まずはお気軽にお問い合わせください。</p>
+      <div class="join-grid">
+        <div class="j"><div class="em">🤝</div><h3>ボランティア</h3><p>まち歩き点検やイベントのお手伝いなど。初めての方も歓迎します。</p></div>
+        <div class="j"><div class="em">🌱</div><h3>賛助会員</h3><p>会費で活動を応援。だれもが出かけられるまちづくりを支えます。</p></div>
+        <div class="j"><div class="em">💌</div><h3>ご寄付</h3><p>いただいたご支援は、バリアフリー化の活動に活かされます。</p></div>
+      </div>
+      <p class="note-sample" style="margin-top:20px">※参加方法・会費などの詳細は、実データに差し替えます</p>
+    </div>
+  </div>
+</section>
+
+<!-- 概要 -->
+<section class="block" id="gaiyo" style="background:var(--c-wash)">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Profile</span><h2>団体概要</h2></div>
+    <div class="tbl-wrap reveal" style="max-width:760px;margin:0 auto">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 東三河ハートネット</td></tr>
+        <tr><th>所在地</th><td>愛知県豊橋市（詳しい住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉／まちづくりの推進</td></tr>
+        <tr><th>活動の目的</th><td>東三河全域の、障害者を含むすべての人に対し、公共・民間の建築や公園のバリアフリー化等に取り組む<br><span class="note-sample">（公開されている定款の目的より）</span></td></tr>
+        <tr><th>活動エリア</th><td>愛知県 東三河地域（豊橋市を中心に）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint" style="text-align:center">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Contact</span><h2>お問い合わせ</h2><p>見学・取材・ご相談など、どうぞお気軽に</p></div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="tel-card">
+          <p class="cap">お電話でのお問い合わせ</p>
+          <!-- ※サンプル: 電話番号はダミーです。tel:リンクは無効化しています -->
+          <p class="num">0532-00-0000</p>
+          <p>※サンプル用のダミー番号です（発信はできません）</p>
+        </div>
+      </div>
+      <form class="form reveal" onsubmit="return false">
+        <label for="nm">お名前</label>
+        <input id="nm" type="text" placeholder="山田 太郎" autocomplete="name">
+        <label for="ml">メールアドレス</label>
+        <input id="ml" type="email" placeholder="you@example.com" autocomplete="email">
+        <label for="ms">お問い合わせ内容</label>
+        <textarea id="ms" placeholder="ご相談内容をご記入ください"></textarea>
+        <button type="button" onclick="alert('これはデモフォームです。実際には送信されません。')">送信する（デモ）</button>
+        <p class="demo">※これはデモフォームです。実際には送信されません。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 東三河ハートネット</p>
+    <p class="f-sub">愛知県豊橋市｜保健・医療・福祉／まちづくり<br>東三河全域の、すべての人にやさしいまちづくりに取り組んでいます</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号もダミーです）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO法人 東三河ハートネット（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

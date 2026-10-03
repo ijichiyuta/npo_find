@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 子供育成会 さま（コミック／ストーリーボード型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款事業目的・所在地の市・活動分野）の範囲で作成
+  ・登記の事業目的:「スポーツ特に野球等を通じて、社会教育・国際交流・
+    県民のスポーツ意欲向上に寄与」を出典として明記のうえ引用
+  ・「※サンプル」表記の内容（コマ内のセリフ・戦績風の数値・お知らせ・
+    保護者の声など）はすべてダミーです。ご契約後に実データへ差し替えます
+  ・代表者実名・番地フルは記載していません（公開時に差し替え）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（顔特定されにくい構図）
+  ・実在球団のロゴ・名称等は一切使用していません
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 子供育成会｜稲沢市の少年野球・スポーツ育成【ご提案サンプル】</title>
+<meta name="description" content="愛知県稲沢市の子どもスポーツ育成。野球を中心に、社会教育・仲間づくり・スポーツ意欲の向上に取り組むNPO法人。体験・見学はお気軽に。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=RocknRoll+One&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4F5F8;
+  --c-paper:#FFFFFF;
+  --c-navy:#16224A;
+  --c-navy-deep:#0E1734;
+  --c-ink:#1A2032;
+  --c-red:#E23A2E;
+  --c-red-deep:#C22C22;
+  --c-pale:#EDEFF6;
+  --c-line:#16224A;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-disp:"RocknRoll One",sans-serif;
+  --font-num:"Bebas Neue",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.6;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== ハーフトーン背景（コミック感） ===== */
+.dots{background-image:radial-gradient(var(--c-navy) 1.1px,transparent 1.1px);background-size:11px 11px}
+
+/* ===== 左固定サイドバー（PC） ===== */
+.side{position:fixed;left:0;top:0;bottom:0;width:250px;background:var(--c-navy);color:#fff;border-right:4px solid var(--c-red);display:flex;flex-direction:column;padding:32px 24px 24px;z-index:100}
+.side .logo{text-decoration:none;color:#fff;display:flex;align-items:center;gap:11px}
+.side .logo .mark{width:46px;height:46px;flex:none}
+.side .logo .t{font-family:var(--font-disp);font-size:19px;letter-spacing:.02em;line-height:1.25}
+.side .logo .t small{display:block;font-family:var(--font-body);font-size:10px;font-weight:500;color:#B9C2E0;letter-spacing:.04em;margin-top:5px;line-height:1.5}
+.side nav{margin-top:30px;flex:1}
+.side nav a{display:block;text-decoration:none;color:#E8ECFA;font-size:13.5px;font-weight:700;padding:11px 4px;border-bottom:1px solid rgba(255,255,255,.14);transition:color .3s var(--ease),padding-left .3s var(--ease)}
+.side nav a:hover{color:#fff;padding-left:9px;background:rgba(226,58,46,.16)}
+.side .tel{margin-top:18px;border:2px solid rgba(255,255,255,.28);padding:13px;text-align:center;border-radius:6px}
+.side .tel .cap{font-size:11px;font-weight:700;color:#B9C2E0}
+.side .tel a{font-family:var(--font-num);font-size:24px;color:#fff;text-decoration:none;letter-spacing:.04em}
+.side .tel p{font-size:10px;color:#8E9AC4;line-height:1.6}
+.side .visit{margin-top:10px;display:block;background:var(--c-red);color:#fff;text-decoration:none;text-align:center;font-weight:900;font-size:13.5px;padding:13px;border-radius:6px;transition:background .3s;box-shadow:0 4px 0 var(--c-red-deep)}
+.side .visit:hover{background:var(--c-red-deep)}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+.main{margin-left:250px}
+.wrap{max-width:920px;margin:0 auto;padding:0 40px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:78px 0;border-bottom:4px solid var(--c-navy)}
+.b-head{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+.b-head .sq{width:34px;height:34px;background:var(--c-red);flex:none;transform:rotate(45deg);position:relative}
+.b-head .sq::after{content:"";position:absolute;inset:8px;border:2px solid #fff}
+.b-head h2{font-family:var(--font-disp);font-size:clamp(21px,2.6vw,28px);letter-spacing:.02em;color:var(--c-navy)}
+.b-head .en{font-family:var(--font-num);font-size:16px;letter-spacing:.14em;color:var(--c-red);margin-left:auto}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#7A83A0}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#7A83A0;margin-top:6px}
+
+/* ===== コミック共通パーツ ===== */
+.panel{background:var(--c-paper);border:3px solid var(--c-navy);border-radius:4px;box-shadow:6px 6px 0 var(--c-navy);position:relative;overflow:hidden}
+.sfx{font-family:var(--font-disp);color:var(--c-red);font-size:clamp(22px,3.4vw,38px);letter-spacing:.02em;line-height:1;transform:rotate(-4deg);display:inline-block;text-shadow:2px 2px 0 var(--c-navy)}
+.bubble{position:relative;background:#fff;border:3px solid var(--c-navy);border-radius:20px;padding:14px 18px;font-weight:700;font-size:14px;line-height:1.7}
+.bubble::after{content:"";position:absolute;left:34px;bottom:-16px;width:0;height:0;border:9px solid transparent;border-top-color:var(--c-navy)}
+.bubble::before{content:"";position:absolute;left:36px;bottom:-11px;width:0;height:0;border:7px solid transparent;border-top-color:#fff;z-index:1}
+.panel-no{position:absolute;top:0;left:0;background:var(--c-navy);color:#fff;font-family:var(--font-num);font-size:16px;letter-spacing:.08em;padding:3px 12px 3px 10px;z-index:3;clip-path:polygon(0 0,100% 0,86% 100%,0 100%)}
+
+/* ===== 冒頭（表紙コマ） ===== */
+.cover{padding:0;border-bottom:4px solid var(--c-navy);position:relative}
+.cover .inner{max-width:920px;margin:0 auto;padding:56px 40px 60px;position:relative}
+.cover .tag{display:inline-block;background:var(--c-red);color:#fff;font-weight:900;font-size:12.5px;letter-spacing:.1em;padding:6px 16px;border-radius:4px;margin-bottom:20px;box-shadow:3px 3px 0 var(--c-navy)}
+.cover h1{font-family:var(--font-disp);font-size:clamp(30px,5vw,54px);line-height:1.28;letter-spacing:.01em;color:var(--c-navy)}
+.cover h1 .r{color:var(--c-red)}
+.cover .lead{margin-top:22px;max-width:560px;font-size:15px;line-height:2;font-weight:500}
+.cover .chips{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
+.chip{background:var(--c-navy);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:4px;white-space:nowrap}
+.cover-strip{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:130px 130px;gap:10px;margin-top:38px}
+.cover-strip .panel{margin:0}
+.cover-strip .panel:first-child{grid-row:span 2}
+.cover-strip img{width:100%;height:100%;object-fit:cover}
+.cover-strip .sfx-cell{display:flex;align-items:center;justify-content:center;background:var(--c-red);border:3px solid var(--c-navy);border-radius:4px;box-shadow:6px 6px 0 var(--c-navy)}
+.cover-strip .sfx-cell .sfx{color:#fff;text-shadow:2px 2px 0 var(--c-navy)}
+
+/* ===== 成長ストーリー（コマ割り） ===== */
+.story-note{background:var(--c-pale);border-left:5px solid var(--c-red);padding:12px 16px;font-size:12.5px;margin-bottom:30px;font-weight:500}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.frame{padding:0}
+.frame .ph{position:relative;aspect-ratio:16/10;overflow:hidden}
+.frame .ph img{width:100%;height:100%;object-fit:cover}
+.frame .ph .bubble{position:absolute;left:16px;bottom:20px;right:16px;max-width:none}
+.frame .body{padding:20px 22px 24px}
+.frame h3{font-family:var(--font-disp);font-size:19px;color:var(--c-navy);margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.frame h3 .step{font-family:var(--font-num);font-size:15px;color:#fff;background:var(--c-red);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex:none;letter-spacing:.02em}
+.frame p{font-size:13.5px;line-height:1.9;color:#3A425C}
+
+/* ===== 活動のご案内 ===== */
+.act-row{display:grid;grid-template-columns:300px 1fr;gap:30px;padding:34px 0;border-top:3px dashed var(--c-navy)}
+.act-row:first-of-type{border-top:none;padding-top:6px}
+.act-row .ph{position:relative}
+.act-row .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;border:3px solid var(--c-navy);border-radius:4px;box-shadow:5px 5px 0 var(--c-navy)}
+.act-row .ph .sfx{position:absolute;right:-8px;bottom:-14px}
+.act-row h3{font-family:var(--font-disp);font-size:22px;color:var(--c-navy)}
+.act-row h3 .no{font-family:var(--font-num);font-size:14px;color:var(--c-red);letter-spacing:.14em;display:block;margin-bottom:2px}
+.act-row .desc{font-size:14px;margin:8px 0 16px}
+table.spec{width:100%;min-width:460px;border-collapse:collapse;font-size:13.5px;background:var(--c-paper)}
+table.spec th{width:120px;text-align:left;font-weight:700;background:var(--c-navy);color:#fff;border:1px solid var(--c-navy);padding:9px 14px;white-space:nowrap}
+table.spec td{border:1px solid var(--c-navy);padding:9px 14px}
+table.spec td b{color:var(--c-red-deep)}
+
+/* ===== 戦績パネル（サンプル） ===== */
+.stat-note{background:var(--c-pale);border-left:5px solid var(--c-red);padding:12px 16px;font-size:12.5px;margin-bottom:26px;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.stat{background:var(--c-navy);color:#fff;border-radius:6px;padding:26px 18px;text-align:center;box-shadow:5px 5px 0 var(--c-red);position:relative;overflow:hidden}
+.stat .n{font-family:var(--font-num);font-size:clamp(38px,6vw,56px);line-height:1;letter-spacing:.02em;color:#fff}
+.stat .n .s{font-family:var(--font-body);font-size:15px;font-weight:700}
+.stat .l{font-size:12.5px;font-weight:700;color:#C7CFE8;margin-top:8px}
+.stat .tag{position:absolute;top:8px;right:8px;background:var(--c-red);font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px}
+
+/* ===== わたしたちのこと ===== */
+.about-txt{max-width:660px}
+.about-txt .big{font-family:var(--font-disp);font-size:clamp(19px,2.6vw,26px);line-height:1.7;color:var(--c-navy);margin-bottom:16px}
+.about-txt .big em{font-style:normal;color:var(--c-red)}
+.purpose-box{margin-top:34px;background:var(--c-navy);color:#fff;border-radius:8px;padding:28px 30px;max-width:680px;position:relative}
+.purpose-box .q{font-family:var(--font-disp);color:var(--c-red);font-size:34px;line-height:.6;position:absolute;top:18px;left:20px;opacity:.7}
+.purpose-box h3{font-size:13px;color:#B9C2E0;letter-spacing:.08em;margin-bottom:12px;padding-left:34px}
+.purpose-box p.def{font-size:16px;font-weight:700;line-height:1.9;padding-left:34px}
+.purpose-box .src{font-size:11px;color:#8E9AC4;margin-top:14px;padding-left:34px}
+
+/* ===== 保護者の声（吹き出しコマ） ===== */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.voice{background:var(--c-paper);border:3px solid var(--c-navy);border-radius:8px;padding:20px 22px;box-shadow:5px 5px 0 var(--c-navy)}
+.voice .stars{color:var(--c-red);font-size:14px;letter-spacing:2px;margin-bottom:8px}
+.voice p{font-size:13.5px;line-height:1.9}
+.voice .who{margin-top:12px;font-size:12px;font-weight:700;color:var(--c-navy)}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:16px;padding:14px 2px;border-bottom:1px dashed var(--c-navy);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-size:15px;letter-spacing:.06em;color:var(--c-red)}
+.news-row .cat{flex:none;background:var(--c-navy);color:#fff;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:3px}
+.news-row a{color:var(--c-ink);text-decoration:none}
+.news-row a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* ===== 概要表 ===== */
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-navy);color:#fff;border:1px solid var(--c-navy);padding:11px 16px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-navy);padding:11px 16px}
+
+/* ===== 体験・入会の流れ ===== */
+.flow-list{list-style:none;max-width:660px;counter-reset:fs}
+.flow-list li{counter-increment:fs;position:relative;padding:0 0 28px 70px}
+.flow-list li::before{content:counter(fs);position:absolute;left:0;top:-4px;font-family:var(--font-num);font-size:30px;color:#fff;background:var(--c-red);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--c-navy)}
+.flow-list li::after{content:"";position:absolute;left:21px;top:48px;bottom:2px;width:2px;background:var(--c-navy)}
+.flow-list li:last-child::after{display:none}
+.flow-list h3{font-family:var(--font-disp);font-size:17px;color:var(--c-navy)}
+.flow-list p{font-size:13.5px;color:#3A425C}
+.support-line{margin-top:16px;background:var(--c-pale);border:2px dashed var(--c-navy);padding:22px 26px;font-size:14px;max-width:660px;border-radius:6px}
+.support-line b{color:var(--c-red-deep)}
+
+/* ===== アクセス / フォーム ===== */
+.map-full iframe{width:100%;height:360px;border:3px solid var(--c-navy);border-radius:6px}
+.tel-big{margin-top:24px;border:3px solid var(--c-navy);background:var(--c-paper);padding:24px;text-align:center;max-width:540px;border-radius:8px;box-shadow:6px 6px 0 var(--c-red)}
+.tel-big .cap{font-size:13px;font-weight:900;color:var(--c-navy)}
+.tel-big a{font-family:var(--font-num);font-size:40px;color:var(--c-navy);text-decoration:none;letter-spacing:.04em}
+.tel-big p{font-size:12px;color:#7A83A0}
+.demo-form{margin-top:26px;max-width:560px;background:var(--c-paper);border:3px solid var(--c-navy);border-radius:8px;padding:26px}
+.demo-form .fnote{font-size:11.5px;color:#7A83A0;margin-bottom:16px;background:var(--c-pale);padding:9px 12px;border-radius:4px}
+.demo-form label{display:block;font-size:13px;font-weight:700;margin:14px 0 5px}
+.demo-form input,.demo-form textarea{width:100%;border:2px solid var(--c-navy);border-radius:5px;padding:11px 12px;font-family:inherit;font-size:14px;background:#fff}
+.demo-form button{margin-top:18px;width:100%;background:var(--c-red);color:#fff;border:none;font-weight:900;font-size:15px;padding:14px;border-radius:6px;cursor:pointer;box-shadow:0 4px 0 var(--c-red-deep);font-family:inherit}
+.demo-form button:hover{background:var(--c-red-deep);box-shadow:0 2px 0 var(--c-red-deep)}
+
+/* ===== フッター ===== */
+.footer{padding:44px 0 34px;text-align:center;background:var(--c-navy);color:#fff;border-bottom:none}
+.footer .f-name{font-family:var(--font-disp);font-size:18px}
+.footer p{font-size:12.5px;color:#B9C2E0;margin-top:6px}
+.sample-note{font-size:11px;color:#8E9AC4;margin-top:16px;line-height:1.9}
+.sample-note a{color:#fff}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(14,23,52,.94);color:#fff;text-decoration:none;font-family:var(--font-body);font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.28)}
+.pill svg{width:15px;height:15px;flex:none;color:var(--c-red)}
+.pill b{font-weight:700}
+.pill:hover{background:var(--c-red-deep)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .side{display:none}
+  .main{margin-left:0}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:var(--c-navy);color:#fff;border-bottom:3px solid var(--c-red);height:62px;align-items:center;gap:10px;padding:0 16px}
+  .sp-head .t{font-family:var(--font-disp);font-size:16px;color:#fff}
+  .sp-head .t small{font-size:9px;color:#B9C2E0;font-weight:500;display:block;line-height:1;margin-top:3px;font-family:var(--font-body)}
+  .sp-head .tel-ic{margin-left:auto;background:var(--c-red);color:#fff;text-decoration:none;font-weight:700;font-size:12px;padding:9px 13px;border-radius:5px;white-space:nowrap}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2.5px;background:#fff;margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:62px 0 auto 0;background:var(--c-navy);border-bottom:3px solid var(--c-red);padding:8px 20px 18px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:#E8ECFA;font-weight:700;font-size:15px;padding:13px 4px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .wrap{padding:0 20px}
+  .block{padding:52px 0}
+  .cover .inner{padding:38px 20px 44px}
+  .cover-strip{grid-template-rows:110px 110px;gap:7px;margin-top:28px}
+  .story{grid-template-columns:1fr;gap:22px}
+  .act-row{grid-template-columns:1fr;gap:16px;padding:28px 0}
+  .act-row .ph img{aspect-ratio:16/9}
+  .act-row .ph .sfx{right:6px}
+  .voices{grid-template-columns:1fr}
+  .tbl-hint{display:block}
+}
+
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:720px){
+  .stats{grid-template-columns:1fr;gap:14px}
+  table.spec,table.gaiyo{min-width:0;border:2px solid var(--c-navy)}
+  table.spec tr,table.gaiyo tr{display:block}
+  table.spec th,table.gaiyo th{display:block;width:100%;border:none;padding:8px 14px;font-size:12px}
+  table.spec td,table.gaiyo td{display:block;width:100%;border:none;border-bottom:1px solid var(--c-navy);padding:8px 14px 12px}
+  table.gaiyo tr:last-child td,table.spec tr:last-child td{border-bottom:none}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PC: 左固定サイドバー -->
+<aside class="side">
+  <a class="logo" href="#top">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect x="2" y="2" width="44" height="44" rx="6" fill="#E23A2E"/>
+      <circle cx="24" cy="24" r="15" fill="#fff"/>
+      <path d="M13 18c4 2 7 6 8 12M35 18c-4 2-7 6-8 12" stroke="#E23A2E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M24 9v30" stroke="#16224A" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <span class="t">子供育成会<small>特定非営利活動法人<br>愛知県稲沢市｜少年野球・スポーツ育成</small></span>
+  </a>
+  <nav>
+    <a href="#story">成長ストーリー</a>
+    <a href="#activity">活動のご案内</a>
+    <a href="#stats">クラブのようす</a>
+    <a href="#about">わたしたちのこと</a>
+    <a href="#voice">保護者の声</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">団体概要</a>
+    <a href="#join">体験・入会の流れ</a>
+    <a href="#access">アクセス・お問い合わせ</a>
+  </nav>
+  <div class="tel">
+    <p class="cap">体験・見学のお問い合わせ</p>
+    <span>000-0000-0000（※サンプル）</span>
+    <p>「ホームページを見た」と<br>お伝えください</p>
+  </div>
+  <a class="visit" href="#access">体験を申し込む</a>
+</aside>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">子供育成会<small>NPO法人｜稲沢市・少年野球</small></span>
+  <a class="tel-ic" href="#access">アクセス</a>
+</header>
+<nav class="sp-nav">
+  <a href="#story">成長ストーリー</a>
+  <a href="#activity">活動のご案内</a>
+  <a href="#stats">クラブのようす</a>
+  <a href="#about">わたしたちのこと</a>
+  <a href="#voice">保護者の声</a>
+  <a href="#news">お知らせ</a>
+  <a href="#gaiyo">団体概要</a>
+  <a href="#join">体験・入会の流れ</a>
+  <a href="#access">アクセス・お問い合わせ</a>
+</nav>
+
+<div class="main">
+
+  <!-- 冒頭（表紙コマ） -->
+  <section class="cover dots">
+    <div class="inner">
+      <span class="tag reveal on">愛知県稲沢市の子どもスポーツ育成（野球が中心）</span>
+      <h1 class="reveal on"><span class="kb">バットをにぎった</span><span class="kb">その日から、</span><br><span class="kb"><span class="r">キミの物語</span>が</span><span class="kb">はじまる。</span></h1>
+      <p class="lead reveal on">わたしたちは、野球を中心としたスポーツを通じて、子どもたちの「やってみたい」を育てるNPO法人です。勝ち負けだけじゃない、仲間と汗を流した日々が、これからの力になります。</p>
+      <div class="chips reveal on">
+        <span class="chip">野球が中心</span>
+        <span class="chip">社会教育・仲間づくり</span>
+        <span class="chip">体験・見学できます</span>
+      </div>
+      <div class="cover-strip reveal on">
+        <!-- 差し替えポイント: 実際の練習・試合のお写真（顔が特定されにくい構図で） -->
+        <div class="panel"><img src="https://images.unsplash.com/photo-1508344928928-7165b67de128?w=1000&q=80&auto=format&fit=crop" alt="少年野球のイメージ"></div>
+        <div class="panel"><img src="https://images.unsplash.com/photo-1471295253337-3ceaaedca402?w=800&q=80&auto=format&fit=crop" alt="グラウンドのイメージ"></div>
+        <div class="sfx-cell"><span class="sfx">PLAY&nbsp;BALL!</span></div>
+        <div class="panel"><img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?w=800&q=80&auto=format&fit=crop" alt="ボールとグローブのイメージ"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 成長ストーリー（コマ割り） -->
+  <section class="block" id="story">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>成長ストーリー</h2><span class="en">STORY</span></div>
+      <p class="story-note reveal">※このページは「入部から成長までの物語」をコマ割りで表現したサンプルです。写真・セリフ・エピソードはすべてダミーで、実際の団体のお話に差し替えます。<span class="note-sample">（コマ内のセリフはサンプル）</span></p>
+      <div class="story">
+
+        <div class="panel frame reveal">
+          <span class="panel-no">01</span>
+          <div class="ph">
+            <!-- 差し替えポイント: 体験に来た日のお写真 -->
+            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1000&q=80&auto=format&fit=crop" alt="はじめての体験のイメージ">
+            <div class="bubble">「ちょっと、こわいな…」<br>はじめてグラウンドに立った日。</div>
+          </div>
+          <div class="body">
+            <h3><span class="step">1</span>はじめの一歩</h3>
+            <p>キャッチボールもまだうまくできない。でも大丈夫。みんな、ここから始めました。まずは「たのしい」から。</p>
+          </div>
+        </div>
+
+        <div class="panel frame reveal">
+          <span class="panel-no">02</span>
+          <div class="ph">
+            <!-- 差し替えポイント: 練習中のお写真 -->
+            <img src="https://images.unsplash.com/photo-1516731415730-0c607149933a?w=1000&q=80&auto=format&fit=crop" alt="練習のイメージ">
+            <div class="bubble">「もう一回、お願いします！」<br>くやしさが、力に変わる。</div>
+          </div>
+          <div class="body">
+            <h3><span class="step">2</span>なかまと、汗を</h3>
+            <p>うまくいかない日もある。それでも仲間と声をかけあって、何度も挑戦する。気づけば、体が動くようになっていた。</p>
+          </div>
+        </div>
+
+        <div class="panel frame reveal">
+          <span class="panel-no">03</span>
+          <div class="ph">
+            <!-- 差し替えポイント: 試合のワンシーン -->
+            <img src="https://images.unsplash.com/photo-1568624467005-6f96a6f2d9b6?w=1000&q=80&auto=format&fit=crop" alt="試合のイメージ">
+            <div class="bubble">カキーン！<br>はじめてのヒットに、ベンチが沸く。</div>
+          </div>
+          <div class="body">
+            <h3><span class="step">3</span>はじめての手応え</h3>
+            <p>ドキドキの初打席。当たった瞬間、みんなが立ち上がった。勝ち負け以上に大切な「できた！」がここにある。</p>
+          </div>
+        </div>
+
+        <div class="panel frame reveal">
+          <span class="panel-no">04</span>
+          <div class="ph">
+            <!-- 差し替えポイント: 卒団・記念のお写真 -->
+            <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?w=1000&q=80&auto=format&fit=crop" alt="仲間との時間のイメージ">
+            <div class="bubble">「野球、やっててよかった。」<br>また明日も、グラウンドで。</div>
+          </div>
+          <div class="body">
+            <h3><span class="step">4</span>そして、これから</h3>
+            <p>技術だけじゃない。あいさつ、仲間を思う心、あきらめない気持ち。ここで育ったものは、ずっと消えません。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 活動のご案内 -->
+  <section class="block" id="activity">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>活動のご案内</h2><span class="en">ACTIVITY</span></div>
+
+      <div class="act-row reveal">
+        <div class="ph">
+          <img src="https://images.unsplash.com/photo-1471295253337-3ceaaedca402?w=1200&q=80&auto=format&fit=crop" alt="野球の練習イメージ">
+          <span class="sfx">SWING!</span>
+        </div>
+        <div>
+          <h3><span class="no">ACTIVITY 01</span>野球チーム（練習・試合）</h3>
+          <p class="desc">基礎から丁寧に、学年に合わせて指導します。仲間と力を合わせて試合にのぞむ経験が、心とからだを大きく育てます。</p>
+          <div class="tbl-wrap">
+            <table class="spec">
+              <tr><th>対象</th><td>おおむね小学生（未経験も歓迎）<span class="note-sample">※学年区分はサンプル</span></td></tr>
+              <tr><th>活動日</th><td><b>土日・祝日を中心に活動</b>（時間・場所はサンプル。実際の予定に差し替えます）</td></tr>
+              <tr><th>ねらい</th><td>技術の習得だけでなく、あいさつ・協調性・最後までやりきる力を育てます</td></tr>
+              <tr><th>用具</th><td>体験時は手ぶらでOK（貸出あり）<span class="note-sample">※内容はサンプル</span></td></tr>
+            </table>
+          </div>
+          <p class="tbl-hint">→ 表は横にスクロールできます</p>
+        </div>
+      </div>
+
+      <div class="act-row reveal">
+        <div class="ph">
+          <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1200&q=80&auto=format&fit=crop" alt="地域スポーツ交流のイメージ">
+          <span class="sfx">GO!</span>
+        </div>
+        <div>
+          <h3><span class="no">ACTIVITY 02</span>スポーツ交流・地域イベント</h3>
+          <p class="desc">野球を通じたスポーツ交流や、地域の行事への参加を行います。ちがう環境の仲間と出会うことも、大きな学びになります。</p>
+          <div class="tbl-wrap">
+            <table class="spec">
+              <tr><th>内容</th><td>交流試合・スポーツ教室・地域行事への参加 など<span class="note-sample">※内容はサンプル</span></td></tr>
+              <tr><th>ねらい</th><td>スポーツ意欲の向上、社会教育、子どもの健全な育成</td></tr>
+              <tr><th>参加</th><td>クラブ員のほか、地域のお子さんの参加を歓迎する回もあります<span class="note-sample">※サンプル</span></td></tr>
+            </table>
+          </div>
+          <p class="tbl-hint">→ 表は横にスクロールできます</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- クラブのようす（数値パネル） -->
+  <section class="block dots" id="stats">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>クラブのようす</h2><span class="en">NUMBERS</span></div>
+      <!-- ※サンプル: 以下の数値はすべてダミーです（実データに差し替えます） -->
+      <p class="stat-note reveal">※以下の数字は<b>表示イメージのダミー（サンプル）</b>です。実際の人数・活動日数などに差し替えます。戦績・受賞歴は事実に基づく内容のみ掲載します。</p>
+      <div class="stats reveal">
+        <div class="stat"><span class="tag">※サンプル</span><span class="n">00<span class="s">名</span></span><span class="l">いっしょに活動する仲間</span></div>
+        <div class="stat"><span class="tag">※サンプル</span><span class="n">00<span class="s">日</span></span><span class="l">年間のおよその活動日数</span></div>
+        <div class="stat"><span class="tag">※サンプル</span><span class="n">00<span class="s">%</span></span><span class="l">はじめは未経験だった割合</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたちのこと -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>わたしたちのこと</h2><span class="en">ABOUT</span></div>
+      <div class="about-txt reveal">
+        <p class="big"><span class="kb">スポーツには、</span><span class="kb"><em>子どもを大きく育てる力</em></span><span class="kb">があります。</span></p>
+        <p>子供育成会は、愛知県稲沢市を拠点に、野球を中心としたスポーツを通じて、子どもたちの心とからだの成長を支えるNPO法人です。ひとつのプレー、ひとつの声かけの積み重ねが、これからの人生を支える力になると信じています。<span class="note-sample">※紹介文は公開情報（定款の事業目的）をもとにしたサンプルです</span></p>
+      </div>
+      <div class="purpose-box reveal">
+        <span class="q">&ldquo;</span>
+        <h3>定款に定める事業の目的</h3>
+        <p class="def">スポーツ、特に野球等を通じて、社会教育・国際交流・県民のスポーツ意欲の向上に寄与する。</p>
+        <p class="src">出典: 内閣府NPO法人ポータルサイト等で公開されている定款の事業目的（表現は読みやすく整えています）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 保護者の声 -->
+  <section class="block" id="voice">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>保護者の声</h2><span class="en">VOICE</span></div>
+      <p class="note-sample" style="margin-bottom:22px">※以下はすべて表示イメージのサンプル（ダミー）です。実際にいただいたお声に差し替えます。</p>
+      <div class="voices reveal">
+        <!-- ※サンプル: 保護者の声はダミーです -->
+        <div class="voice">
+          <div class="stars">★★★★★</div>
+          <p>「人見知りだった子が、自分からあいさつできるようになって驚きました。仲間と過ごす時間が本当に楽しそうです。」</p>
+          <p class="who">— 小学生の保護者さま（※サンプル）</p>
+        </div>
+        <div class="voice">
+          <div class="stars">★★★★★</div>
+          <p>「勝ち負けだけでなく、あきらめない気持ちを大事にしてくださるのがありがたいです。親子で夢中になれました。」</p>
+          <p class="who">— 体験から入会された方（※サンプル）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>お知らせ</h2><span class="en">NEWS</span></div>
+      <p class="note-sample" style="margin-bottom:12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">体験</span><a href="#news">春の体験会の参加者を募集しています</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">試合</span><a href="#news">交流試合の日程を更新しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">グラウンド整備にご協力ありがとうございました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 団体概要 -->
+  <section class="block dots" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>団体概要</h2><span class="en">PROFILE</span></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 子供育成会</td></tr>
+          <tr><th>所在地</th><td>愛知県稲沢市<span class="note-sample">（詳しい住所は公開時に記載します）</span></td></tr>
+          <tr><th>活動分野</th><td>社会教育／学術・文化・芸術・スポーツの振興／子どもの健全育成</td></tr>
+          <tr><th>事業の目的</th><td>スポーツ、特に野球等を通じて、社会教育・国際交流・県民のスポーツ意欲の向上に寄与する<span class="note-sample">（定款より）</span></td></tr>
+          <tr><th>おもな活動</th><td>野球チームの運営／スポーツ交流・地域行事への参加</td></tr>
+          <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+          <tr><th>電話</th><td>000-0000-0000<span class="note-sample">（サンプル。実際の連絡先に差し替えます）</span></td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- 体験・入会の流れ -->
+  <section class="block" id="join">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>体験・入会の流れ</h2><span class="en">JOIN</span></div>
+      <ol class="flow-list reveal">
+        <li><h3>まずはお問い合わせ</h3><p>「見てみたい」だけで大丈夫です。お子さんの学年やご希望をお聞かせください。</p></li>
+        <li><h3>体験・見学</h3><p>実際の練習に参加して、雰囲気を感じてください。手ぶらでOK、保護者の見学も歓迎です。<span class="note-sample">※内容はサンプル</span></p></li>
+        <li><h3>入会・活動スタート</h3><p>お子さんのペースに合わせて、無理なくスタート。いっしょに物語のつづきを描きましょう。</p></li>
+      </ol>
+      <p class="support-line reveal"><b>活動を支えてくださる方も募集しています。</b>　コーチのお手伝い・運営ボランティア・ご寄付・賛助会員など、できることを、できる範囲で。お気軽にお問い合わせください。<span class="note-sample">※募集内容はサンプルです</span></p>
+    </div>
+  </section>
+
+  <!-- アクセス・お問い合わせ -->
+  <section class="block" id="access">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>アクセス・お問い合わせ</h2><span class="en">CONTACT</span></div>
+      <div class="map-full reveal">
+        <!-- 稲沢市の広域地図（番地は特定していません） -->
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A8%B2%E6%B2%A2%E5%B8%82&output=embed&z=13" loading="lazy" title="愛知県稲沢市の地図"></iframe>
+      </div>
+      <div class="tel-big reveal">
+        <p class="cap">体験・見学のお問い合わせ</p>
+        <span>000-0000-0000（※サンプル）</span>
+        <p>「ホームページを見た」とお伝えください（※電話番号はサンプルです）</p>
+      </div>
+
+      <form class="demo-form reveal" onsubmit="return false">
+        <p class="fnote">こちらはデモ用フォームです。実際には送信されません。ご契約後に、お問い合わせが届く本物のフォームを設置できます。</p>
+        <label for="f-name">お名前</label>
+        <input id="f-name" type="text" placeholder="例）稲沢 太郎" autocomplete="off">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="text" placeholder="例）sample@example.com" autocomplete="off">
+        <label for="f-msg">お問い合わせ内容</label>
+        <textarea id="f-msg" rows="4" placeholder="体験のご希望、お子さんの学年など"></textarea>
+        <button type="button" onclick="alert('デモ用フォームのため送信されません。ご提案用サンプルです。');">送信する（デモ）</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 子供育成会</p>
+      <p>愛知県稲沢市｜野球を中心とした子どものスポーツ育成</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号・住所番地・代表者名は未記載）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p style="margin-top:14px;font-size:11px">&copy; 2026 NPO法人 子供育成会</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .side nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロール表示アニメ
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

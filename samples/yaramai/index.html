@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 やらまい会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（法人名・所在地=愛知県豊川市・活動分野=社会教育／
+    まちづくり／学術文化芸術スポーツ）の範囲で作成
+  ・「※サンプル」表記の内容（特集記事・数値・お知らせ・年表・あいさつ等）は
+    ダミーです。活動を断定するものではなく、ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替え前提）
+  ・"やらまい"＝三河弁「やろう」に由来（公開情報）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>やらまい会｜豊川市のまちづくり・地域活動NPO【ご提案サンプル】</title>
+<meta name="description" content="愛知県豊川市を拠点に、社会教育・まちづくり・文化芸術スポーツの分野で地域を元気にするNPO法人。三河弁「やろう」＝やらまい。まちの活動を「特集」でお届けします。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=RocknRoll+One&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-paper:#FFFFFF;
+  --c-cream:#FFFBF2;
+  --c-ink:#20242E;          /* 藍寄りの濃紺インク */
+  --c-indigo:#1B3A6B;       /* 藍 */
+  --c-indigo-deep:#122A4F;
+  --c-vermil:#F0402C;       /* 朱 */
+  --c-vermil-deep:#C92E1E;
+  --c-yellow:#FFC81F;       /* 黄 */
+  --c-yellow-pale:#FFF3CC;
+  --c-line:#E7E1D4;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-pop:"RocknRoll One",sans-serif;  /* 勢いのある丸め見出し */
+  --font-num:"Archivo",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-cream);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.5;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 上部固定ヘッダー ===== */
+.hd{position:sticky;top:0;z-index:100;background:var(--c-paper);border-bottom:3px solid var(--c-ink)}
+.hd-in{max-width:1120px;margin:0 auto;height:66px;display:flex;align-items:center;gap:16px;padding:0 24px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .t{font-family:var(--font-pop);font-size:22px;letter-spacing:.02em;line-height:1}
+.brand .t small{display:block;font-family:var(--font-body);font-size:9.5px;font-weight:700;color:var(--c-indigo);letter-spacing:.08em;margin-top:4px}
+.hd nav{margin-left:auto;display:flex;gap:22px}
+.hd nav a{text-decoration:none;font-weight:700;font-size:13.5px;position:relative;padding:4px 0}
+.hd nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:3px;background:var(--c-vermil);transition:right .3s var(--ease)}
+.hd nav a:hover::after{right:0}
+.hd .join{margin-left:6px;background:var(--c-vermil);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 18px;border-radius:999px;box-shadow:0 3px 0 var(--c-vermil-deep);white-space:nowrap;transition:transform .15s}
+.hd .join:active{transform:translateY(3px);box-shadow:none}
+.menu-btn{display:none}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;overflow:hidden;background:var(--c-indigo);color:#fff}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 84% 18%,rgba(255,200,31,.30),transparent 40%),
+  radial-gradient(circle at 12% 88%,rgba(240,64,44,.34),transparent 42%)}
+.hero-in{position:relative;max-width:1120px;margin:0 auto;padding:70px 24px 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.hero .tagcol{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.hero .tag{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);font-size:11.5px;font-weight:700;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.hero h1{font-family:var(--font-pop);font-size:clamp(30px,5.4vw,54px);line-height:1.35;letter-spacing:.01em}
+.hero h1 .hl{background:linear-gradient(transparent 62%,var(--c-yellow) 62%,var(--c-yellow) 92%,transparent 92%);color:#fff;padding:0 .08em}
+.hero h1 .vm{color:var(--c-yellow)}
+.hero .lead{margin-top:22px;max-width:480px;font-size:15px;line-height:2;color:rgba(255,255,255,.92)}
+.hero .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .cta a{text-decoration:none;font-weight:700;font-size:14.5px;padding:14px 24px;border-radius:999px;white-space:nowrap}
+.hero .cta .p1{background:var(--c-vermil);color:#fff;box-shadow:0 4px 0 var(--c-vermil-deep)}
+.hero .cta .p2{background:var(--c-yellow);color:var(--c-indigo-deep);box-shadow:0 4px 0 #D9A700}
+.hero-art{position:relative}
+.hero-art .frame{border:5px solid #fff;box-shadow:12px 12px 0 rgba(255,200,31,.9);transform:rotate(-2deg)}
+.hero-art .frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.hero-art .badge{position:absolute;left:-18px;bottom:-18px;width:104px;height:104px;background:var(--c-vermil);color:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--font-pop);font-size:13px;line-height:1.4;transform:rotate(-8deg);box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.hero-art .badge b{font-size:23px;display:block}
+
+/* ===== 共通ブロック ===== */
+.block{max-width:1120px;margin:0 auto;padding:78px 24px}
+.b-head{display:flex;align-items:flex-end;gap:16px;margin-bottom:8px}
+.b-head .en{font-family:var(--font-num);font-weight:800;font-size:clamp(30px,6vw,52px);letter-spacing:-.01em;line-height:.9;color:var(--c-yellow);-webkit-text-stroke:1.5px var(--c-ink);position:relative}
+.b-head h2{font-family:var(--font-pop);font-size:clamp(20px,3vw,27px);margin-bottom:4px}
+.b-lead{color:#525A66;font-size:14.5px;margin-bottom:34px;max-width:640px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}
+  .carousel{scroll-behavior:auto}}
+.note-sample{font-size:11.5px;color:#9AA0AA}
+
+/* ===== 特集カルーセル（主役） ===== */
+.feat-wrap{position:relative}
+.carousel{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:6px 2px 22px;scroll-padding-left:2px;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.fcard{scroll-snap-align:start;flex:0 0 358px;background:var(--c-paper);border:3px solid var(--c-ink);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:6px 6px 0 rgba(32,36,46,.10);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.fcard:hover{transform:translateY(-4px);box-shadow:9px 12px 0 rgba(32,36,46,.14)}
+.fcard .ph{position:relative;aspect-ratio:3/2;overflow:hidden}
+.fcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.fcard:hover .ph img{transform:scale(1.05)}
+.fcard .cat{position:absolute;left:14px;top:14px;font-family:var(--font-pop);font-size:12px;color:#fff;padding:5px 13px;border-radius:999px}
+.cat.c1{background:var(--c-vermil)} .cat.c2{background:var(--c-indigo)} .cat.c3{background:#2FA36B} .cat.c4{background:var(--c-yellow);color:var(--c-indigo-deep)}
+.fcard .body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.fcard .no{font-family:var(--font-num);font-weight:800;font-size:12px;letter-spacing:.14em;color:var(--c-vermil)}
+.fcard h3{font-family:var(--font-pop);font-size:19.5px;margin:6px 0 10px;line-height:1.45}
+.fcard p{font-size:13.5px;color:#525A66;line-height:1.9;flex:1}
+.fcard .more{margin-top:16px;font-weight:700;font-size:13px;color:var(--c-indigo);display:inline-flex;align-items:center;gap:6px}
+.fcard .more::after{content:"→";transition:transform .3s var(--ease)}
+.fcard:hover .more::after{transform:translateX(4px)}
+.carousel-ctrl{display:flex;align-items:center;gap:12px;margin-top:6px}
+.carousel-ctrl button{width:48px;height:48px;border-radius:50%;border:3px solid var(--c-ink);background:#fff;cursor:pointer;font-size:20px;line-height:1;font-weight:700;color:var(--c-ink);transition:background .2s,color .2s}
+.carousel-ctrl button:hover{background:var(--c-ink);color:#fff}
+.carousel-ctrl .hint{font-size:12.5px;color:#8A909A;margin-left:4px}
+
+/* ===== やらまい会って？（帯） ===== */
+.about{background:var(--c-ink);color:#fff}
+.about .block{padding-top:74px;padding-bottom:74px}
+.about .b-head .en{color:var(--c-yellow);-webkit-text-stroke:1.5px #fff}
+.about .b-head h2{color:#fff}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.about-big{font-family:var(--font-pop);font-size:clamp(19px,2.6vw,26px);line-height:1.75;letter-spacing:.01em}
+.about-big em{font-style:normal;color:var(--c-yellow)}
+.about-txt{margin-top:20px;font-size:14.5px;color:rgba(255,255,255,.9);line-height:2}
+.about-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:26px 28px}
+.about-card h3{font-family:var(--font-pop);font-size:16px;color:var(--c-yellow);margin-bottom:12px}
+.about-card ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.about-card li{font-size:14px;padding-left:26px;position:relative;color:rgba(255,255,255,.94)}
+.about-card li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:12px;background:var(--c-vermil);border-radius:2px;transform:rotate(45deg)}
+
+/* ===== 数字（※サンプル） ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.stat{background:var(--c-paper);border:3px solid var(--c-ink);border-radius:16px;padding:26px 18px;text-align:center;box-shadow:5px 5px 0 rgba(32,36,46,.09)}
+.stat .num{font-family:var(--font-num);font-weight:800;font-size:clamp(30px,4.4vw,42px);line-height:1;color:var(--c-vermil)}
+.stat .num small{font-family:var(--font-pop);font-size:16px;color:var(--c-ink);margin-left:2px}
+.stat .lb{font-size:12.5px;font-weight:700;margin-top:10px}
+
+/* ===== 年間の流れ（回遊タイムライン） ===== */
+.year-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:8px}
+.year-scroll::-webkit-scrollbar{display:none}
+.year{display:flex;gap:0;min-width:720px}
+.season{flex:1;text-align:center;padding:0 10px;position:relative}
+.season::before{content:"";position:absolute;left:0;right:0;top:20px;height:4px;background:var(--c-line);z-index:0}
+.season:first-child::before{left:50%} .season:last-child::before{right:50%}
+.season .dot{position:relative;z-index:1;width:44px;height:44px;margin:0 auto 14px;border-radius:50%;background:var(--c-paper);border:4px solid var(--c-vermil);display:flex;align-items:center;justify-content:center;font-family:var(--font-pop);font-size:15px;color:var(--c-vermil)}
+.season h4{font-family:var(--font-pop);font-size:15px;margin-bottom:6px}
+.season p{font-size:12.5px;color:#525A66;line-height:1.8}
+
+/* ===== お知らせ ===== */
+.news-list{max-width:760px}
+.news-row{display:flex;gap:18px;padding:15px 4px;border-bottom:2px dotted var(--c-line);align-items:center;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:700;color:#8A909A;font-size:12.5px;width:88px}
+.news-row .tag2{flex:none;font-size:10.5px;font-weight:700;color:#fff;background:var(--c-indigo);padding:3px 10px;border-radius:999px;white-space:nowrap}
+.news-row a{text-decoration:none;font-weight:500}
+.news-row a:hover{color:var(--c-vermil)}
+
+/* ===== 参加・お問い合わせ ===== */
+.join-sec{background:var(--c-yellow-pale)}
+.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.join-cards{display:flex;flex-direction:column;gap:16px}
+.jc{background:var(--c-paper);border:3px solid var(--c-ink);border-radius:16px;padding:22px 24px}
+.jc h3{font-family:var(--font-pop);font-size:17px;margin-bottom:6px}
+.jc h3 span{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--c-vermil);padding:2px 9px;border-radius:999px;margin-right:8px;vertical-align:2px}
+.jc p{font-size:13.5px;color:#525A66}
+.form{background:var(--c-paper);border:3px solid var(--c-ink);border-radius:18px;padding:28px 28px 30px;box-shadow:6px 6px 0 rgba(32,36,46,.1)}
+.form h3{font-family:var(--font-pop);font-size:19px}
+.form .cap{font-size:13px;color:#525A66;margin-top:4px}
+.form label{display:block;font-weight:700;font-size:13px;margin:16px 0 6px}
+.form input,.form textarea{width:100%;border:2px solid var(--c-line);border-radius:12px;padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--c-cream)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-vermil)}
+.form button{width:100%;margin-top:22px;background:var(--c-vermil);color:#fff;border:none;cursor:pointer;font-family:var(--font-pop);font-size:16px;padding:15px;border-radius:999px;box-shadow:0 4px 0 var(--c-vermil-deep);transition:transform .15s}
+.form button:active{transform:translateY(4px);box-shadow:none}
+.form .sent{display:none;margin-top:14px;text-align:center;font-size:13px;color:var(--c-vermil-deep);font-weight:700}
+
+/* ===== 概要 ===== */
+.gaiyo-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-yellow-pale);border:2px solid var(--c-line);padding:12px 16px;white-space:nowrap}
+table.gaiyo td{border:2px solid var(--c-line);padding:12px 16px}
+.tbl-hint{display:none;font-size:11px;color:#9AA0AA;margin-top:6px}
+.map-full iframe{width:100%;height:360px;border:3px solid var(--c-ink);border-radius:14px;margin-top:22px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#fff;padding:52px 24px 36px;text-align:center}
+.footer .f-name{font-family:var(--font-pop);font-size:20px}
+.footer .f-sub{font-size:12.5px;color:rgba(255,255,255,.72);margin-top:8px}
+.sample-note{font-size:11px;color:rgba(255,255,255,.6);margin-top:22px;line-height:1.9;max-width:680px;margin-left:auto;margin-right:auto}
+.sample-note a{color:var(--c-yellow)}
+.footer .cp{margin-top:16px;font-size:11px;color:rgba(255,255,255,.5)}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:9px;background:rgba(32,36,46,.95);color:#fff;text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.02em;padding:9px 15px 9px 12px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.3);backdrop-filter:blur(4px);transition:transform .3s var(--ease)}
+.pill:hover{transform:translateY(-2px)}
+.pill .dot{width:9px;height:9px;border-radius:50%;background:var(--c-yellow);flex:none}
+.pill b{font-weight:700}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .hd nav,.hd .join{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:24px;height:3px;background:var(--c-ink);border-radius:2px;margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:#fff;border-bottom:3px solid var(--c-ink);padding:8px 24px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;font-weight:700;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .join{display:block;text-align:center;margin-top:14px;background:var(--c-vermil);color:#fff;border-radius:999px;border:none;box-shadow:0 3px 0 var(--c-vermil-deep)}
+  .hero-in{grid-template-columns:1fr;gap:36px}
+  .hero-art{max-width:340px}
+  .about-grid,.join-grid{grid-template-columns:1fr;gap:28px}
+  .stats{grid-template-columns:1fr 1fr;gap:14px}
+}
+@media (max-width:720px){
+  .sp-nav{display:none}
+  .block{padding:56px 22px}
+  .hero-in{padding:48px 22px 44px}
+  .fcard{flex-basis:82vw}
+  .tbl-hint{display:block}
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border:2px solid var(--c-line);border-radius:10px;margin-bottom:10px;overflow:hidden}
+  table.gaiyo th{display:block;width:100%;border:none;border-bottom:1px solid var(--c-line);padding:9px 14px;font-size:12px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:10px 14px}
+  .tbl-hint{display:none}
+  .news-row{flex-wrap:wrap;gap:8px 12px}
+  .news-row a{width:100%}
+  .pill{left:12px;bottom:12px;font-size:11px;padding:8px 13px 8px 11px}
+  .footer .sample-note{padding:0 6px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="9" fill="#1B3A6B"/>
+        <path d="M12 12l5 8-5 8" fill="none" stroke="#FFC81F" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="26" cy="14" r="3.4" fill="#F0402C"/>
+        <path d="M22 28c3.2 0 6-2.6 6-6" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+      </svg>
+      <span class="t">やらまい会<small>NPO法人｜愛知県豊川市</small></span>
+    </a>
+    <nav>
+      <a href="#feature">特集</a>
+      <a href="#about">やらまい会って？</a>
+      <a href="#year">1年の活動</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">団体概要</a>
+    </nav>
+    <a class="join" href="#join">参加する</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#feature">特集</a>
+    <a href="#about">やらまい会って？</a>
+    <a href="#year">1年の活動</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">団体概要</a>
+    <a class="join" href="#join">参加する</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="tagcol">
+        <span class="tag">社会教育</span>
+        <span class="tag">まちづくり</span>
+        <span class="tag">文化・芸術・スポーツ</span>
+      </div>
+      <h1><span class="kb">まちを、</span><span class="kb"><span class="hl">おもしろく</span>。</span><br><span class="kb">三河の合言葉は</span><span class="kb"><span class="vm">「やらまい」</span>。</span></h1>
+      <p class="lead">やらまい会は、愛知県豊川市を拠点に地域を元気にするNPO法人です。学びも、まちづくりも、文化もスポーツも。この町の「おもしろい」を、みんなで"やらまい（やろう）"。まちの活動を特集でお届けします。</p>
+      <div class="cta">
+        <a class="p1" href="#feature">活動の特集を見る</a>
+        <a class="p2" href="#join">仲間になる</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="frame">
+        <!-- 差し替えポイント: 御団体の代表的な活動風景（お祭り・イベント等） -->
+        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=900&q=80&auto=format&fit=crop" alt="地域のお祭りのイメージ">
+      </div>
+      <div class="badge">三河<b>やらまい</b>精神</div>
+    </div>
+  </div>
+</section>
+
+<!-- 特集カルーセル（主役） -->
+<section class="block" id="feature">
+  <div class="b-head reveal">
+    <span class="en">FEATURE</span>
+    <div><h2>まちの特集</h2></div>
+  </div>
+  <p class="b-lead reveal">やらまい会が関わる地域活動を、雑誌の特集のようにご紹介します。<br>横にスワイプ、または矢印で回遊してご覧ください。<span class="note-sample">※以下の特集記事・写真・数値はすべて表示イメージのサンプルです（実際の活動を断定するものではありません）。</span></p>
+
+  <div class="feat-wrap reveal">
+    <div class="carousel" id="carousel">
+      <!-- ※サンプル: 特集記事はダミーです。実際の活動に差し替えます -->
+      <article class="fcard">
+        <div class="ph"><span class="cat c1">まちづくり</span>
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=900&q=80&auto=format&fit=crop" alt="まちのイベントのイメージ"></div>
+        <div class="body">
+          <span class="no">FEATURE 01</span>
+          <h3>まちなかを、みんなの広場に</h3>
+          <p>使われていない場所に、人の笑い声を。地域の商店や学生と一緒に、まちなかでマルシェや交流イベントを開く——そんな取り組みを特集します。<span class="note-sample">※サンプル本文</span></p>
+          <span class="more">この特集を読む</span>
+        </div>
+      </article>
+
+      <article class="fcard">
+        <div class="ph"><span class="cat c3">社会教育</span>
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80&auto=format&fit=crop" alt="学びの場のイメージ"></div>
+        <div class="body">
+          <span class="no">FEATURE 02</span>
+          <h3>子どもも大人も、学びなおし</h3>
+          <p>郷土の歴史、防災、暮らしの知恵。世代をこえて学び合う場づくりを、地域の先生たちと。まちの学校のような時間を特集します。<span class="note-sample">※サンプル本文</span></p>
+          <span class="more">この特集を読む</span>
+        </div>
+      </article>
+
+      <article class="fcard">
+        <div class="ph"><span class="cat c4">文化・芸術</span>
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=900&q=80&auto=format&fit=crop" alt="お祭り・文化のイメージ"></div>
+        <div class="body">
+          <span class="no">FEATURE 03</span>
+          <h3>まつりの熱を、次の世代へ</h3>
+          <p>地域に根づく祭りや芸能を、次の担い手へ。若い世代が主役になれる文化の場を、地域とともに。三河の"熱"を特集します。<span class="note-sample">※サンプル本文</span></p>
+          <span class="more">この特集を読む</span>
+        </div>
+      </article>
+
+      <article class="fcard">
+        <div class="ph"><span class="cat c2">スポーツ</span>
+          <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?w=900&q=80&auto=format&fit=crop" alt="スポーツイベントのイメージ"></div>
+        <div class="body">
+          <span class="no">FEATURE 04</span>
+          <h3>体を動かして、つながる</h3>
+          <p>ウォーキングや軽スポーツの集いで、健康と交流を一度に。だれでも気軽に参加できる、まちのスポーツの日を特集します。<span class="note-sample">※サンプル本文</span></p>
+          <span class="more">この特集を読む</span>
+        </div>
+      </article>
+
+      <article class="fcard">
+        <div class="ph"><span class="cat c1">地域活動</span>
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=900&q=80&auto=format&fit=crop" alt="ボランティア活動のイメージ"></div>
+        <div class="body">
+          <span class="no">FEATURE 05</span>
+          <h3>「やらまい」からはじまる</h3>
+          <p>やってみたいを、まず一歩。地域の困りごとに、できる人ができることを持ち寄って。小さな行動が集まる現場を特集します。<span class="note-sample">※サンプル本文</span></p>
+          <span class="more">この特集を読む</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="carousel-ctrl reveal">
+      <button type="button" id="prev" aria-label="前の特集へ">‹</button>
+      <button type="button" id="next" aria-label="次の特集へ">›</button>
+      <span class="hint">← スワイプ／矢印で回遊できます</span>
+    </div>
+  </div>
+</section>
+
+<!-- やらまい会って？ -->
+<section class="about" id="about">
+  <div class="block">
+    <div class="b-head reveal">
+      <span class="en">ABOUT</span>
+      <div><h2>やらまい会って？</h2></div>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="about-big"><span class="kb">"やらまい"は、</span><span class="kb">三河のことばで</span><br><span class="kb"><em>「やろう」</em>という</span><span class="kb">誘いかけ。</span></p>
+        <p class="about-txt">やらまい会は、愛知県豊川市を拠点に、<b>社会教育</b>・<b>まちづくり</b>・<b>学術／文化／芸術／スポーツ</b>の分野で、地域を元気にする活動に取り組むNPO法人です。<br><span class="note-sample">※活動分野は公開情報。以下の紹介文はサンプルで、実際の事業内容に差し替えます。</span></p>
+      </div>
+      <div class="about-card reveal">
+        <h3>大切にしていること（※サンプル）</h3>
+        <ul>
+          <!-- ※サンプル: 下記の項目はダミーです -->
+          <li>まず「やってみよう」からはじめる</li>
+          <li>世代や立場をこえて、まぜこぜに</li>
+          <li>まちの「おもしろい」を一緒につくる</li>
+          <li>参加のきっかけは、いつでも大歓迎</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats reveal" style="margin-top:44px">
+      <!-- ※サンプル: 数値はすべてダミーです。実績に差し替えます -->
+      <div class="stat"><div class="num">20<small>＋</small></div><div class="lb">年間の活動・催し</div></div>
+      <div class="stat"><div class="num">4<small>分野</small></div><div class="lb">社会教育・まちづくり等</div></div>
+      <div class="stat"><div class="num">100<small>＋</small></div><div class="lb">関わる仲間・参加者</div></div>
+      <div class="stat"><div class="num">1<small>つ</small></div><div class="lb">合言葉「やらまい」</div></div>
+    </div>
+    <p class="note-sample" style="margin-top:14px">※上記の数字は表示イメージのサンプルです。</p>
+  </div>
+</section>
+
+<!-- 1年の活動 -->
+<section class="block" id="year">
+  <div class="b-head reveal">
+    <span class="en">YEAR</span>
+    <div><h2>1年の活動（イメージ）</h2></div>
+  </div>
+  <p class="b-lead reveal">季節ごとに、まちのあちこちで。<span class="note-sample">※以下は表示イメージのサンプルです。実際の年間スケジュールに差し替えます。</span></p>
+  <div class="year-scroll reveal">
+    <!-- ※サンプル: 内容はダミーです -->
+    <div class="year">
+      <div class="season"><div class="dot">春</div><h4>はじまりの季節</h4><p>まちあるき・新年度の交流会で、今年の仲間と出会う</p></div>
+      <div class="season"><div class="dot">夏</div><h4>まつりの季節</h4><p>地域のお祭りやイベントに参加・運営で関わる</p></div>
+      <div class="season"><div class="dot">秋</div><h4>学びの季節</h4><p>講座やワークショップ、まちなかマルシェを開催</p></div>
+      <div class="season"><div class="dot">冬</div><h4>ふりかえりの季節</h4><p>1年を語り合い、次のまちづくりを"やらまい"と相談</p></div>
+    </div>
+  </div>
+  <p class="tbl-hint">→ 横にスクロールできます</p>
+</section>
+
+<!-- お知らせ -->
+<section class="block" id="news" style="padding-top:0">
+  <div class="b-head reveal">
+    <span class="en">NEWS</span>
+    <div><h2>お知らせ</h2></div>
+  </div>
+  <p class="b-lead reveal"><span class="note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</span></p>
+  <div class="news-list reveal">
+    <!-- ※サンプル: 日付・内容はダミーです -->
+    <div class="news-row"><time>20XX.XX.XX</time><span class="tag2">イベント</span><a href="#news">まちなかマルシェの参加団体を募集します</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="tag2">募集</span><a href="#news">夏のイベント運営ボランティアを募集中です</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="tag2">特集更新</span><a href="#feature">新しい活動の特集記事を公開しました</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="tag2">お知らせ</span><a href="#news">ホームページを公開しました</a></div>
+  </div>
+</section>
+
+<!-- 参加・お問い合わせ -->
+<section class="join-sec" id="join">
+  <div class="block">
+    <div class="b-head reveal">
+      <span class="en">JOIN</span>
+      <div><h2>いっしょに、やらまい</h2></div>
+    </div>
+    <p class="b-lead reveal">「ちょっと気になる」で大丈夫。関わり方はいろいろあります。</p>
+    <div class="join-grid">
+      <div class="join-cards reveal">
+        <div class="jc"><h3><span>1</span>イベントに参加する</h3><p>まずは催しに遊びに来てください。見るだけ・話すだけでも大歓迎です。</p></div>
+        <div class="jc"><h3><span>2</span>ボランティアで関わる</h3><p>当日のお手伝いから企画まで。できることを、できる範囲で。</p></div>
+        <div class="jc"><h3><span>3</span>会員・寄付で応援する</h3><p>活動を続ける力になります。応援の方法はお気軽にお問い合わせください。<span class="note-sample">※詳細はサンプル</span></p></div>
+      </div>
+      <div class="form reveal">
+        <h3>お問い合わせ</h3>
+        <p class="cap">参加・見学・取材・ご支援など、お気軽にどうぞ。</p>
+        <!-- ※サンプル: フォームはデモ表示です。公開時に送信先を設定します -->
+        <form id="demoForm">
+          <label>お名前</label><input type="text" placeholder="例：山田 花子">
+          <label>メールアドレス</label><input type="email" placeholder="例：hanako@example.com">
+          <label>お問い合わせ内容</label><textarea rows="4" placeholder="例：夏のイベントにボランティアで参加したいです。"></textarea>
+          <button type="submit">送信する</button>
+          <p class="sent" id="sentMsg">※ サンプルページのため送信されません（公開時に有効化します）</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 団体概要 -->
+<section class="block" id="gaiyo">
+  <div class="b-head reveal">
+    <span class="en">PROFILE</span>
+    <div><h2>団体概要</h2></div>
+  </div>
+  <div class="gaiyo-wrap reveal">
+    <table class="gaiyo">
+      <tr><th>正式名称</th><td>特定非営利活動法人 やらまい会</td></tr>
+      <tr><th>所在地</th><td>愛知県豊川市<span class="note-sample">（詳細住所は公開時に記載します）</span></td></tr>
+      <tr><th>活動分野</th><td>社会教育の推進／まちづくりの推進／学術・文化・芸術・スポーツの振興　に関する活動<span class="note-sample">（公開情報）</span></td></tr>
+      <tr><th>活動地域</th><td>愛知県豊川市および東三河エリア</td></tr>
+      <tr><th>名前の由来</th><td>三河弁「やらまい（＝やろう）」に由来<span class="note-sample">（公開情報）</span></td></tr>
+      <tr><th>お問い合わせ</th><td>本ページのお問い合わせフォームより<span class="note-sample">（サンプルではデモ動作です）</span></td></tr>
+      <tr><th>法人番号</th><td><span class="note-sample">（公開時に記載します）</span></td></tr>
+    </table>
+  </div>
+  <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  <div class="map-full reveal">
+    <!-- 差し替えポイント: 正確な所在地に差し替えます（現状は豊川市中心の広域表示） -->
+    <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E5%B7%9D%E5%B8%82&output=embed&z=13" loading="lazy" title="豊川市の地図"></iframe>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <p class="f-name">特定非営利活動法人 やらまい会</p>
+  <p class="f-sub">愛知県豊川市｜社会教育・まちづくり・学術文化芸術スポーツ</p>
+  <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容・特集記事・数値・年間予定はサンプルで、実際の活動を断定するものではありません）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  <p class="cp">&copy; 2026 NPO法人 やらまい会</p>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <span class="dot"></span>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+if (menuBtn) {
+  menuBtn.addEventListener("click", () => {
+    const open = document.body.classList.toggle("menu-open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.querySelectorAll(".sp-nav a").forEach(a =>
+    a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+}
+
+// 特集カルーセル（矢印で回遊）
+const carousel = document.getElementById("carousel");
+if (carousel) {
+  const step = () => {
+    const card = carousel.querySelector(".fcard");
+    const gap = 22;
+    return card ? card.getBoundingClientRect().width + gap : 360;
+  };
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
+  if (next) next.addEventListener("click", () => carousel.scrollBy({ left: step(), behavior: "smooth" }));
+  if (prev) prev.addEventListener("click", () => carousel.scrollBy({ left: -step(), behavior: "smooth" }));
+}
+
+// デモフォーム（サンプルのため送信しない）
+const df = document.getElementById("demoForm");
+if (df) df.addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("sentMsg").style.display = "block";
+});
+
+// スクロール表示アニメーション
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

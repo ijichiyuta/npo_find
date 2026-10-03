@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 1980（いちきゅうはちまる）さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替え前提）
+  ・電話番号はダミー（tel:リンク無効）。format-detectionで自動リンク化も抑止
+  ・代表者実名なし／住所は区まで（番地・建物名なし）／他団体ロゴなし
+  ・※注意: 社会福祉法人1980（swc1980.net）とは別法人。混同しないこと
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 1980（いちきゅうはちまる）｜名古屋市守山区・重度障害の地域生活支援【ご提案サンプル】</title>
+<meta name="description" content="名古屋市守山区で、重症心身障害をはじめ重度の障害のある方々の地域生活を支えるNPO法人です。ご本人とご家族が、住み慣れた町で安心して暮らしつづけられるように。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Kaku+Gothic+Antique:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-kinari:#F4F1E8;     /* 生成り（背景） */
+  --c-kinari-2:#EDE9DC;   /* 生成り・濃 */
+  --c-paper:#FBFAF4;      /* 障子紙 */
+  --c-sumi:#26251F;       /* 墨 */
+  --c-sumi-soft:#4A473C;  /* 墨・やわ */
+  --c-gray:#6E6A5C;
+  --c-wakaba:#7A8C52;     /* 若草 */
+  --c-wakaba-deep:#5E7040;/* 若草・深 */
+  --c-wakaba-pale:#E4E9D5;/* 若草・淡 */
+  --c-line:#D8D2C0;       /* 格子の線 */
+  --c-line-soft:#E6E1D2;
+  --font-min:"Shippori Mincho",serif;
+  --font-body:"Zen Kaku Gothic Antique","Noto Sans JP",sans-serif;
+  --font-gothic:"Noto Sans JP",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--c-sumi);
+  line-height:2.05;
+  font-size:15px;
+  font-weight:400;
+  font-feature-settings:"palt";
+  overflow-wrap:break-word;
+  background:var(--c-kinari);
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-min);font-weight:600;line-height:1.85;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 格子・障子のテクスチャ（全体を薄い格子越しに見せる） ===== */
+.shoji-grid{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(0deg, rgba(216,210,192,.30) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216,210,192,.30) 1px, transparent 1px);
+  background-size:96px 96px;
+  opacity:.7;
+}
+.shoji-light{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 78% -10%, rgba(255,253,244,.9), transparent 55%),
+    radial-gradient(90% 60% at 8% 110%, rgba(228,233,213,.5), transparent 60%);
+}
+.page{position:relative;z-index:1}
+
+/* ===== ヘッダー（横：障子の桟をイメージした細い横バー） ===== */
+.site-head{
+  position:sticky;top:0;z-index:80;
+  background:rgba(244,241,232,.82);
+  backdrop-filter:saturate(120%) blur(8px);
+  border-bottom:1px solid var(--c-line);
+}
+.head-inner{max-width:1120px;margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--c-sumi)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .txt .name{font-family:var(--font-min);font-weight:700;font-size:20px;letter-spacing:.1em;line-height:1.2}
+.brand .txt .yomi{font-family:var(--font-gothic);font-size:10px;font-weight:400;color:var(--c-wakaba-deep);letter-spacing:.16em;margin-top:3px}
+.head-nav{margin-left:auto;display:flex;align-items:center;gap:22px}
+.head-nav a{font-family:var(--font-gothic);text-decoration:none;color:var(--c-sumi-soft);font-size:13px;font-weight:500;letter-spacing:.04em;position:relative;padding:6px 0;transition:color .3s var(--ease)}
+.head-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--c-wakaba);transition:right .3s var(--ease)}
+.head-nav a:hover{color:var(--c-wakaba-deep)}
+.head-nav a:hover::after{right:0}
+.head-cta{font-family:var(--font-gothic);background:var(--c-sumi);color:var(--c-paper)!important;text-decoration:none;font-size:13px;font-weight:500;padding:11px 20px;border-radius:2px;letter-spacing:.04em;transition:background .3s var(--ease)}
+.head-cta:hover{background:var(--c-wakaba-deep)}
+
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;margin-left:auto}
+.menu-btn span{display:block;width:24px;height:1.5px;background:var(--c-sumi);margin:6px 0;transition:.3s}
+.sp-nav{display:none}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* ===== ヒーロー（障子越しの光・レイヤー） ===== */
+.hero{position:relative;padding:96px 0 88px;overflow:hidden}
+.hero .lattice{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(0deg, rgba(94,112,64,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94,112,64,.10) 1px, transparent 1px);
+  background-size:150px 150px;
+  -webkit-mask-image:linear-gradient(105deg, transparent 40%, #000 100%);
+  mask-image:linear-gradient(105deg, transparent 40%, #000 100%);
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero .eyebrow{font-family:var(--font-gothic);font-size:12.5px;font-weight:500;color:var(--c-wakaba-deep);letter-spacing:.2em;margin-bottom:22px}
+.hero .eyebrow::before{content:"";display:inline-block;width:26px;height:1px;background:var(--c-wakaba);vertical-align:middle;margin-right:12px}
+.hero h1{font-size:clamp(28px,3.8vw,44px);font-weight:700;line-height:1.9;letter-spacing:.06em;color:var(--c-sumi)}
+.hero h1 .g{color:var(--c-wakaba-deep)}
+.hero .lead{font-family:var(--font-gothic);margin-top:28px;font-size:15px;color:var(--c-sumi-soft);max-width:520px;line-height:2.1}
+.hero .actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{font-family:var(--font-gothic);text-decoration:none;font-size:14px;font-weight:500;padding:14px 26px;border-radius:2px;letter-spacing:.04em;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--c-sumi);color:var(--c-paper)}
+.btn-primary:hover{background:var(--c-wakaba-deep)}
+.btn-ghost{border:1px solid var(--c-line);color:var(--c-sumi);background:var(--c-paper)}
+.btn-ghost:hover{border-color:var(--c-wakaba);color:var(--c-wakaba-deep)}
+
+/* ヒーロー右：障子枠に写真を落とす（格子で分割） */
+.hero-visual{position:relative}
+.hero-frame{
+  position:relative;
+  border:10px solid var(--c-paper);
+  box-shadow:0 24px 60px -30px rgba(38,37,31,.5);
+  background:var(--c-paper);
+}
+.hero-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.94)}
+.hero-frame::after{ /* 障子の桟（格子） */
+  content:"";position:absolute;inset:10px;pointer-events:none;
+  background-image:
+    linear-gradient(0deg, rgba(251,250,244,.85) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(251,250,244,.85) 2px, transparent 2px);
+  background-size:33.33% 25%;
+}
+.hero-tag{
+  position:absolute;left:-14px;bottom:26px;z-index:3;
+  background:var(--c-wakaba-deep);color:var(--c-paper);
+  font-family:var(--font-min);font-weight:600;font-size:14px;
+  padding:11px 20px;letter-spacing:.06em;
+  box-shadow:0 10px 26px -12px rgba(38,37,31,.6);
+}
+
+/* ===== セクション共通 ===== */
+.section{padding:96px 0;position:relative}
+.section.alt{background:var(--c-paper)}
+.section.alt::before{ /* 障子紙の面には薄い格子を重ねる */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(0deg, rgba(216,210,192,.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216,210,192,.28) 1px, transparent 1px);
+  background-size:110px 110px;opacity:.8;
+}
+.section > .wrap{position:relative;z-index:1}
+.sec-head{margin-bottom:52px}
+.sec-head .en{font-family:var(--font-gothic);display:block;font-size:11px;font-weight:500;letter-spacing:.28em;color:var(--c-wakaba);text-transform:uppercase;margin-bottom:12px}
+.sec-head h2{font-size:clamp(23px,3vw,32px);font-weight:700;letter-spacing:.06em;line-height:1.7}
+.sec-head .sub{font-family:var(--font-gothic);margin-top:16px;color:var(--c-sumi-soft);font-size:14.5px;max-width:640px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-family:var(--font-gothic);font-size:11.5px;color:#9A9683;letter-spacing:.02em}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-family:var(--font-gothic);font-size:11px;color:#9A9683;margin-top:8px}
+
+/* ===== おもい（リード文・障子越しの静けさ） ===== */
+.omoi{position:relative;text-align:center;padding:110px 0}
+.omoi .wrap{max-width:760px}
+.omoi .lead-min{font-family:var(--font-min);font-weight:500;font-size:clamp(19px,2.7vw,27px);line-height:2.4;letter-spacing:.08em;color:var(--c-sumi)}
+.omoi .lead-min em{font-style:normal;color:var(--c-wakaba-deep);border-bottom:2px solid var(--c-wakaba-pale)}
+.omoi .lead-body{font-family:var(--font-gothic);margin-top:34px;color:var(--c-sumi-soft);font-size:15px;line-height:2.2}
+
+/* ===== 支援のかたち（カード：格子で仕切る） ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--c-line);border:1px solid var(--c-line)}
+.card{background:var(--c-paper);padding:40px 34px;position:relative;transition:background .4s var(--ease)}
+.card:hover{background:#fff}
+.card .no{font-family:var(--font-gothic);font-size:11px;font-weight:500;letter-spacing:.24em;color:var(--c-wakaba);display:block;margin-bottom:16px}
+.card .ico{width:46px;height:46px;margin-bottom:18px}
+.card h3{font-size:19px;letter-spacing:.04em;margin-bottom:12px}
+.card p{font-family:var(--font-gothic);font-size:13.5px;color:var(--c-sumi-soft);line-height:2.05}
+
+/* ===== わたしたちのこと（写真＋文：レイヤー交互） ===== */
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:center}
+.about-photo{position:relative}
+.about-photo .frame{border:8px solid var(--c-kinari);box-shadow:0 20px 50px -30px rgba(38,37,31,.45)}
+.about-photo .frame img{width:100%;aspect-ratio:5/6;object-fit:cover;filter:saturate(.95)}
+.about-photo .frame::after{ /* 障子の桟 */
+  content:"";position:absolute;inset:8px;pointer-events:none;
+  background-image:
+    linear-gradient(90deg, rgba(244,241,232,.8) 2px, transparent 2px);
+  background-size:50% 100%;
+}
+.about-body .big{font-family:var(--font-min);font-weight:600;font-size:clamp(19px,2.4vw,25px);line-height:2.2;letter-spacing:.05em;margin-bottom:22px}
+.about-body .big em{font-style:normal;color:var(--c-wakaba-deep)}
+.about-body p{font-family:var(--font-gothic);font-size:14.5px;color:var(--c-sumi-soft);line-height:2.2;margin-bottom:16px}
+.mokuteki-box{margin-top:26px;background:var(--c-wakaba-pale);border-left:3px solid var(--c-wakaba);padding:22px 26px}
+.mokuteki-box .cap{font-family:var(--font-gothic);font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--c-wakaba-deep);margin-bottom:8px}
+.mokuteki-box p{font-family:var(--font-min);font-size:15px;color:var(--c-sumi);line-height:2;margin:0}
+
+/* ===== ごあいさつ ===== */
+.sign-box{background:var(--c-paper);border:1px solid var(--c-line);padding:44px 48px;max-width:760px;margin:0 auto;position:relative}
+.sign-box::before{content:"";position:absolute;top:0;left:0;width:44px;height:44px;border-top:2px solid var(--c-wakaba);border-left:2px solid var(--c-wakaba)}
+.sign-box::after{content:"";position:absolute;bottom:0;right:0;width:44px;height:44px;border-bottom:2px solid var(--c-wakaba);border-right:2px solid var(--c-wakaba)}
+.sign-box h3{font-size:17px;color:var(--c-wakaba-deep);letter-spacing:.08em;margin-bottom:18px}
+.sign-box p{font-family:var(--font-gothic);font-size:14.5px;color:var(--c-sumi-soft);line-height:2.2}
+.sign-box .name{font-family:var(--font-min);text-align:right;margin-top:22px;font-weight:600;font-size:15px;color:var(--c-sumi)}
+.sign-box .name small{font-family:var(--font-gothic);display:block;font-weight:400;font-size:11.5px;color:var(--c-gray);margin-bottom:4px}
+
+/* ===== お知らせ ===== */
+.news-list{max-width:820px}
+.news-row{display:flex;gap:22px;padding:18px 4px;border-bottom:1px solid var(--c-line-soft);align-items:baseline;font-family:var(--font-gothic);font-size:14.5px}
+.news-row time{flex:none;font-size:12.5px;color:var(--c-gray);letter-spacing:.06em;min-width:92px}
+.news-row .cat{flex:none;font-size:10.5px;font-weight:500;letter-spacing:.08em;color:var(--c-wakaba-deep);border:1px solid var(--c-wakaba-pale);background:var(--c-wakaba-pale);padding:2px 10px}
+.news-row .ttl{color:var(--c-sumi)}
+
+/* ===== 法人概要（表） ===== */
+table.gaiyo{width:100%;min-width:520px;border-collapse:collapse;font-family:var(--font-gothic);font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:170px;text-align:left;font-weight:500;background:var(--c-kinari-2);border:1px solid var(--c-line);padding:14px 20px;white-space:nowrap;color:var(--c-sumi)}
+table.gaiyo td{border:1px solid var(--c-line);padding:14px 20px;color:var(--c-sumi-soft)}
+
+/* ===== ご相談・アクセス ===== */
+.contact{position:relative;background:var(--c-sumi);color:var(--c-paper);overflow:hidden}
+.contact .lattice{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(0deg, rgba(244,241,232,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,241,232,.06) 1px, transparent 1px);
+  background-size:100px 100px;
+}
+.contact .wrap{position:relative;z-index:1}
+.contact .sec-head h2{color:var(--c-paper)}
+.contact .sec-head .en{color:#9FB07A}
+.contact .sec-head .sub{color:#C9C6B8}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info dl{display:grid;grid-template-columns:96px 1fr;row-gap:16px;font-family:var(--font-gothic);font-size:14px}
+.contact-info dt{color:#9FB07A;font-weight:500;letter-spacing:.06em}
+.contact-info dd{color:#EDEAE0;line-height:1.9}
+.tel-block{margin-top:32px;border:1px solid rgba(244,241,232,.22);padding:24px 26px}
+.tel-block .cap{font-family:var(--font-gothic);font-size:12px;color:#9FB07A;letter-spacing:.1em;margin-bottom:8px}
+.tel-block .num{font-family:var(--font-min);font-weight:600;font-size:30px;letter-spacing:.04em;color:var(--c-paper);text-decoration:none;display:inline-block}
+.tel-block .memo{font-family:var(--font-gothic);font-size:11.5px;color:#B7B4A6;margin-top:8px}
+.map-frame{border:1px solid rgba(244,241,232,.18)}
+.map-frame iframe{width:100%;height:340px;border:none;display:block;filter:grayscale(.2) contrast(.95)}
+
+/* ===== デモフォーム ===== */
+.form-card{background:var(--c-paper);border:1px solid var(--c-line);padding:40px 44px;max-width:720px;margin:44px auto 0}
+.form-card .demo-note{font-family:var(--font-gothic);background:var(--c-wakaba-pale);color:var(--c-wakaba-deep);font-size:12px;padding:10px 16px;margin-bottom:26px;letter-spacing:.02em}
+.form-row{margin-bottom:20px}
+.form-row label{font-family:var(--font-gothic);display:block;font-size:13px;font-weight:500;margin-bottom:8px;color:var(--c-sumi)}
+.form-row input,.form-row textarea{font-family:var(--font-gothic);width:100%;border:1px solid var(--c-line);background:#fff;padding:12px 14px;font-size:14px;color:var(--c-sumi);border-radius:2px}
+.form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--c-wakaba)}
+.form-card button{font-family:var(--font-gothic);width:100%;background:var(--c-sumi);color:var(--c-paper);border:none;padding:15px;font-size:14.5px;font-weight:500;letter-spacing:.06em;cursor:pointer;border-radius:2px;transition:background .3s var(--ease)}
+.form-card button:hover{background:var(--c-wakaba-deep)}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-kinari-2);padding:56px 0 40px;text-align:center;position:relative;z-index:1}
+.footer .f-name{font-family:var(--font-min);font-weight:700;font-size:18px;letter-spacing:.08em}
+.footer .f-yomi{font-family:var(--font-gothic);font-size:11px;color:var(--c-wakaba-deep);letter-spacing:.16em;margin-top:5px}
+.footer .f-addr{font-family:var(--font-gothic);font-size:12.5px;color:var(--c-gray);margin-top:14px;line-height:1.9}
+.sample-note{font-family:var(--font-gothic);font-size:11px;color:#9A9683;margin-top:22px;line-height:1.95;max-width:640px;margin-left:auto;margin-right:auto}
+.sample-note a{color:var(--c-sumi-soft)}
+.footer .copy{font-family:var(--font-gothic);margin-top:16px;font-size:11px;color:#A7A392}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head-nav{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:block;position:fixed;inset:74px 0 auto 0;background:var(--c-paper);border-bottom:1px solid var(--c-line);padding:8px 24px 22px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:.3s var(--ease);z-index:79}
+  .menu-open .sp-nav{transform:none;opacity:1;pointer-events:auto}
+  .sp-nav a{font-family:var(--font-gothic);display:block;text-decoration:none;color:var(--c-sumi);font-size:15px;font-weight:500;padding:15px 4px;border-bottom:1px solid var(--c-line-soft)}
+  .sp-nav .sp-cta{color:var(--c-wakaba-deep);font-weight:700}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-visual{max-width:420px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .contact-grid{grid-template-columns:1fr;gap:34px}
+}
+@media (max-width:760px){
+  .wrap,.head-inner{padding-left:22px;padding-right:22px}
+  .section{padding:64px 0}
+  .hero{padding:56px 0}
+  .omoi{padding:70px 0}
+  .cards{grid-template-columns:1fr}
+  .sec-head{margin-bottom:38px}
+  .sign-box{padding:32px 26px}
+  .form-card{padding:30px 22px}
+  .contact-info dl{grid-template-columns:80px 1fr}
+  .tbl-hint{display:block}
+  /* スマホの表: 横スクロールをやめて積み上げ表示に */
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border:none;padding:12px 16px 4px;font-size:12px;background:transparent;color:var(--c-wakaba-deep)}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 16px 14px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="shoji-grid" aria-hidden="true"></div>
+<div class="shoji-light" aria-hidden="true"></div>
+
+<div class="page">
+
+<!-- ヘッダー -->
+<header class="site-head" id="top">
+  <div class="head-inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="2" y="2" width="40" height="40" rx="3" fill="#FBFAF4" stroke="#D8D2C0"/>
+        <!-- 障子の格子 -->
+        <path d="M2 15.3h40M2 28.7h40M15.3 2v40M28.7 2v40" stroke="#D8D2C0" stroke-width="1"/>
+        <!-- 若草の葉（守山・地域の芽） -->
+        <path d="M22 33c0-7 3.6-11.5 9.6-13-.6 7-4.2 11.5-9.6 13Z" fill="#7A8C52"/>
+        <path d="M22 33c0-5.2-2.6-8.6-7.4-9.9C15.5 28.6 18 32 22 33Z" fill="#A9B884"/>
+        <circle cx="22" cy="11" r="2.4" fill="#5E7040"/>
+      </svg>
+      <span class="txt"><span class="name">１９８０</span><span class="yomi">いちきゅうはちまる｜名古屋市守山区</span></span>
+    </a>
+    <nav class="head-nav">
+      <a href="#omoi">わたしたちの願い</a>
+      <a href="#support">支援のかたち</a>
+      <a href="#about">1980のこと</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">法人概要</a>
+      <a class="head-cta" href="#contact">ご相談・見学</a>
+    </nav>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#omoi">わたしたちの願い</a>
+    <a href="#support">支援のかたち</a>
+    <a href="#about">1980のこと</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">法人概要</a>
+    <a class="sp-cta" href="#contact">ご相談・見学</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="lattice" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow reveal on">名古屋市守山区・重度の障害のある方の地域生活支援</p>
+      <h1 class="reveal on"><span class="kb">その人らしい暮らしを、</span><br><span class="kb"><span class="g">この町で</span>ずっと。</span></h1>
+      <p class="lead reveal on">特定非営利活動法人 1980（いちきゅうはちまる）は、重症心身障害をはじめ、重度の障害のある方々の地域での暮らしを支えるNPO法人です。ご本人とご家族が、住み慣れた守山のまちで、安心して過ごしつづけられるように寄り添います。</p>
+      <div class="actions reveal on">
+        <a class="btn btn-primary" href="#contact">ご相談・見学のお申し込み</a>
+        <a class="btn btn-ghost" href="#support">支援のかたちを見る</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal on">
+      <div class="hero-frame">
+        <!-- 差し替えポイント: 事業所の外観／活動風景など、御法人のお写真に差し替えます -->
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&q=80&auto=format&fit=crop" alt="やわらかな光のイメージ">
+      </div>
+      <span class="hero-tag">障子越しの、やわらかな光の中で</span>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたちの願い -->
+<section class="omoi section alt" id="omoi">
+  <div class="wrap">
+    <p class="lead-min reveal">
+      <span class="kb">どんなに重い障害があっても、</span><br>
+      <span class="kb">住み慣れた地域で、</span><span class="kb"><em>その人らしく</em>。</span><br>
+      <span class="kb">その願いに、そっと寄り添いたい。</span>
+    </p>
+    <p class="lead-body reveal">
+      重症心身障害をはじめ重度の障害のある方々にとって、「地域で暮らしつづける」ことは、決して当たり前ではありません。1980は、ご本人の意思と、ご家族の毎日を大切にしながら、地域生活のための支援を行っています。
+      <br><span class="note-sample">※文章は定款の目的（公開情報）をもとにしたサンプルです。ご契約後に御法人のお言葉へ差し替えます</span>
+    </p>
+  </div>
+</section>
+
+<!-- 支援のかたち -->
+<section class="section" id="support">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Our Support</span>
+      <h2>支援のかたち</h2>
+      <p class="sub">重度の障害のある方の「地域での暮らし」を、さまざまな面から支えます。※以下は活動分野（保健・医療・福祉）と定款目的をもとにした表示イメージのサンプルです。実際の事業内容に差し替えます。</p>
+    </div>
+    <div class="cards reveal">
+      <!-- ※サンプル: 支援内容の見出し・説明はダミーです（定款目的の範囲でのイメージ） -->
+      <div class="card">
+        <span class="no">SUPPORT 01</span>
+        <svg class="ico" viewBox="0 0 46 46" aria-hidden="true"><rect x="4" y="4" width="38" height="38" rx="4" fill="none" stroke="#7A8C52" stroke-width="1.4"/><path d="M23 14v18M14 23h18" stroke="#5E7040" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h3>日中の活動を支える</h3>
+        <p>一人ひとりの体調とペースに合わせ、日中を安心して過ごせる場をつくります。医療的なケアが必要な方にも寄り添います。<span class="note-sample">※サンプル</span></p>
+      </div>
+      <div class="card">
+        <span class="no">SUPPORT 02</span>
+        <svg class="ico" viewBox="0 0 46 46" aria-hidden="true"><path d="M23 8l14 6v10c0 9-6 13-14 16-8-3-14-7-14-16V14l14-6Z" fill="none" stroke="#7A8C52" stroke-width="1.4"/><path d="M17 23l4 4 8-8" stroke="#5E7040" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>ご家族の暮らしを支える</h3>
+        <p>介護を続けるご家族が、少しほっと一息つけるように。ご相談や休息（レスパイト）の場を通じて、ご家庭の毎日を支えます。<span class="note-sample">※サンプル</span></p>
+      </div>
+      <div class="card">
+        <span class="no">SUPPORT 03</span>
+        <svg class="ico" viewBox="0 0 46 46" aria-hidden="true"><circle cx="16" cy="18" r="5" fill="none" stroke="#7A8C52" stroke-width="1.4"/><circle cx="30" cy="18" r="5" fill="none" stroke="#7A8C52" stroke-width="1.4"/><path d="M8 36c0-5 3.6-8 8-8s8 3 8 8M22 36c0-5 3.6-8 8-8s8 3 8 8" fill="none" stroke="#5E7040" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <h3>地域とつながる</h3>
+        <p>障害のある方が地域の一員として暮らせるまちへ。関係機関や地域の方々と連携しながら、つながりを育てていきます。<span class="note-sample">※サンプル</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1980のこと -->
+<section class="section alt" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">About Us</span>
+      <h2>1980（いちきゅうはちまる）のこと</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="frame">
+          <!-- 差し替えポイント: 活動の様子・スタッフのお写真などに差し替えます -->
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=900&q=80&auto=format&fit=crop" alt="寄り添うケアのイメージ">
+        </div>
+      </div>
+      <div class="about-body reveal">
+        <p class="big"><span class="kb">重い障害があっても、</span><span class="kb"><em>地域で暮らしつづける</em>。</span><br><span class="kb">その当たり前を、</span><span class="kb">この守山で。</span></p>
+        <p>特定非営利活動法人 1980（いちきゅうはちまる）は、名古屋市守山区を拠点に、保健・医療・福祉の分野で活動するNPO法人です。重症心身障害をはじめとする重度の障害のある方々が、住み慣れた地域で安心して暮らせるよう、生活のための支援を行っています。</p>
+        <div class="mokuteki-box">
+          <p class="cap">定款に掲げる目的（公開情報）</p>
+          <p>「重症心身障害者をはじめ重度の障害を持つ方々に対して、地域生活の支援を行う」</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ごあいさつ -->
+    <div class="sign-box reveal" style="margin-top:64px">
+      <h3>ごあいさつ</h3>
+      <p>どんなに重い障害があっても、その人には、その人だけの暮らしと、大切にしたい毎日があります。わたしたちは、ご本人の思いとご家族の願いを真ん中に置いて、この地域で安心して暮らしつづけられる場を、一つひとつ育ててまいります。どうぞお気軽にご相談ください。<br><span class="note-sample">※あいさつ文はサンプルです。ご契約後、御法人の代表の方のお言葉に差し替えます（代表者名は公開時に記載）</span></p>
+      <p class="name"><small>特定非営利活動法人 1980（いちきゅうはちまる）</small>代表　（お名前は公開時に記載）</p>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+      <p class="sub">※以下は表示イメージのサンプルです。ご自身で更新できる形（お知らせ投稿機能）にできます。</p>
+    </div>
+    <div class="news-list reveal">
+      <!-- ※サンプル: 日付・内容はすべてダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><span class="ttl">ホームページを公開しました（サンプル）</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">見学</span><span class="ttl">見学・ご相談の受付についてのご案内（サンプル）</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">募集</span><span class="ttl">活動を支えてくださる方を募集しています（サンプル）</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="section alt" id="gaiyo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 1980（いちきゅうはちまる）</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市守山区<span class="note-sample">（番地・建物名は公開時に記載します）</span></td></tr>
+        <tr><th>活動分野</th><td>保健・医療または福祉の増進を図る活動</td></tr>
+        <tr><th>目的</th><td>重症心身障害者をはじめ重度の障害を持つ方々に対して、地域生活の支援を行う（定款目的・公開情報）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>お電話</th><td><span style="color:var(--c-wakaba-deep);font-weight:500">052-XXX-XXXX</span>　<span class="note-sample">※サンプルの番号です（実番号に差し替えます）</span></td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample" style="margin-top:18px">※本表は公開情報（定款目的・所在地・活動分野）の範囲で記載しています。社会福祉法人1980（swc1980.net）とは別の法人です。</p>
+  </div>
+</section>
+
+<!-- ご相談・アクセス -->
+<section class="section contact" id="contact">
+  <div class="lattice" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Contact</span>
+      <h2>ご相談・見学のお申し込み</h2>
+      <p class="sub">「まずは話を聞いてみたい」だけでも大丈夫です。ご本人・ご家族のご様子をお聞かせください。</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <dl>
+          <dt>法人名</dt><dd>特定非営利活動法人 1980（いちきゅうはちまる）</dd>
+          <dt>所在地</dt><dd>愛知県名古屋市守山区<br><span class="note-sample" style="color:#B7B4A6">（番地・建物名は公開時に記載）</span></dd>
+          <dt>活動分野</dt><dd>保健・医療・福祉／重度障害のある方の地域生活支援</dd>
+        </dl>
+        <div class="tel-block">
+          <p class="cap">お電話でのご相談</p>
+          <!-- ダミー番号: tel:リンクは無効化（href="#"）。実番号でtel:0520000000 等に差し替え -->
+          <span class="num">052-XXX-XXXX</span>
+          <p class="memo">※サンプルの番号です。実際の番号に差し替えます（受付時間もあわせて記載できます）</p>
+        </div>
+      </div>
+      <div class="map-frame">
+        <!-- 守山区の広域地図（番地を含まない） -->
+        <iframe src="https://maps.google.com/maps?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%AE%88%E5%B1%B1%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市守山区のエリア地図"></iframe>
+      </div>
+    </div>
+
+    <!-- デモフォーム -->
+    <div class="form-card reveal">
+      <p class="demo-note">※こちらはデモ用のフォームです。実際には送信されません（ご契約後、送信先メール・自動返信つきの本番フォームに差し替えます）。</p>
+      <form onsubmit="return false" novalidate>
+        <div class="form-row">
+          <label for="f-name">お名前</label>
+          <input id="f-name" type="text" placeholder="例）山田 太郎" autocomplete="off">
+        </div>
+        <div class="form-row">
+          <label for="f-tel">お電話番号 または メールアドレス</label>
+          <input id="f-tel" type="text" placeholder="ご連絡のつきやすい方をご記入ください" autocomplete="off">
+        </div>
+        <div class="form-row">
+          <label for="f-msg">ご相談内容</label>
+          <textarea id="f-msg" rows="4" placeholder="ご本人のご様子や、ご相談・見学のご希望などをお書きください"></textarea>
+        </div>
+        <button type="submit">この内容で送信する（デモ）</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 1980</p>
+    <p class="f-yomi">いちきゅうはちまる｜名古屋市守山区</p>
+    <p class="f-addr">愛知県名古屋市守山区（番地・建物名は公開時に記載）</p>
+    <p class="sample-note">
+      本ページはホームページ制作のご提案用サンプルです。本文は公開情報（定款目的・所在地・活動分野）の範囲で作成し、写真はイメージ素材、※印の内容・電話番号はダミーです。<br>
+      ※社会福祉法人1980（swc1980.net）とは別の法人です。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+    </p>
+    <p class="copy">&copy; 2026 NPO法人 1980（サンプル）</p>
+  </div>
+</footer>
+
+</div><!-- /.page -->
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 まちづくり支援協会リング さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（法人名・所在地・活動分野「まちづくり」・設立年・
+    登記された事業目的）の範囲で作成しています
+  ・代表者名など未公開の情報は記載していません
+  ・「※サンプル」表記の内容（引用の"声"・活動例・数値・お知らせ等）は
+    すべてダミーです。ご契約後に、実際のお言葉・活動内容へ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>まちづくり支援協会リング｜名古屋市緑区・まちづくりの企画・調査・助言【ご提案サンプル】</title>
+<meta name="description" content="名古屋市緑区鳴海町を拠点に、いかなる特定の立場・利権にも属さず、市民参加と公開の原則にもとづき、まちづくりに関する企画・調査・助言を行う中間支援団体、まちづくり支援協会リング。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F7F1E7;        /* 生成り */
+  --c-paper:#FCF8F0;
+  --c-ink:#3A3229;
+  --c-ink-soft:#6B5F51;
+  --c-terra:#C9603F;     /* テラコッタ */
+  --c-terra-deep:#A64A2C;
+  --c-terra-pale:#F3E1D6;
+  --c-green:#5E7A50;     /* まちの緑 */
+  --c-green-deep:#455E39;
+  --c-line:#E4D8C6;
+  --font-serif:"Noto Serif JP",serif;
+  --font-round:"Zen Maru Gothic",sans-serif;   /* 人間味のある丸み */
+  --font-body:"Zen Kaku Gothic New",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.6;word-break:auto-phrase;font-weight:700}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 上部バー ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:18px;height:72px;padding:0 34px;background:rgba(247,241,231,.86);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .5s var(--ease),background .5s var(--ease)}
+.topbar.scrolled{border-color:var(--c-line)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .t{font-family:var(--font-round);font-weight:700;font-size:19px;letter-spacing:.04em;line-height:1.2}
+.brand .t small{display:block;font-family:var(--font-body);font-size:10px;font-weight:500;color:var(--c-terra-deep);letter-spacing:.05em;margin-top:2px}
+.topbar nav{margin-left:auto;display:flex;gap:26px}
+.topbar nav a{position:relative;text-decoration:none;font-size:14px;font-weight:500;padding:4px 0;color:var(--c-ink)}
+.topbar nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;border-radius:2px;background:var(--c-terra);transition:right .35s var(--ease)}
+.topbar nav a:hover::after{right:0}
+.topbar .cta{margin-left:6px;background:var(--c-terra);color:#fff;text-decoration:none;font-family:var(--font-round);font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:999px;transition:background .3s}
+.topbar .cta:hover{background:var(--c-terra-deep)}
+
+/* SP head */
+.menu-btn{display:none}
+.sp-nav{display:none}
+
+.main{padding-top:72px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 40px}
+.narrow{max-width:760px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:96px 0}
+.b-head{text-align:center;margin-bottom:52px}
+.b-head .en{font-family:var(--font-round);display:inline-block;font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--c-terra);text-transform:uppercase}
+.b-head .en::before{content:"";display:inline-block;width:22px;height:2px;background:var(--c-terra);border-radius:2px;vertical-align:middle;margin-right:10px}
+.b-head .en::after{content:"";display:inline-block;width:22px;height:2px;background:var(--c-terra);border-radius:2px;vertical-align:middle;margin-left:10px}
+.b-head h2{font-family:var(--font-serif);font-size:clamp(23px,3vw,31px);letter-spacing:.04em;margin-top:14px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#A99A85;font-family:var(--font-body)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#A99A85;margin-top:6px}
+
+/* ===== ヒーロー（大きな声を主役に） ===== */
+.hero{position:relative;padding:70px 0 88px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-120px;right:-120px;width:420px;height:420px;background:var(--c-terra-pale);border-radius:50%;opacity:.6;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero .eyebrow{font-family:var(--font-round);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--c-terra-deep);margin-bottom:26px}
+.hero .eyebrow span{display:inline-block;background:var(--c-paper);border:1px solid var(--c-line);border-radius:999px;padding:6px 16px}
+.bigquote{font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,6.4vw,58px);line-height:1.5;letter-spacing:.02em;color:var(--c-ink);position:relative}
+.bigquote .qm{color:var(--c-terra);font-size:1.1em}
+.bigquote em{font-style:normal;background:linear-gradient(transparent 62%,var(--c-terra-pale) 62%)}
+.hero .voice-by{margin-top:24px;font-family:var(--font-round);font-size:14px;color:var(--c-ink-soft)}
+.hero .voice-by b{color:var(--c-terra-deep)}
+.hero .lead{margin-top:30px;max-width:600px;font-size:15.5px;color:var(--c-ink-soft)}
+.hero-photos{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;margin-top:50px}
+.hero-photos img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.hero-photos .a{aspect-ratio:16/10}
+.hero-photos .col{display:grid;gap:14px}
+.hero-photos .col img{aspect-ratio:16/9}
+
+/* ===== 声のギャラリー ===== */
+.voices{background:var(--c-terra);color:#fff;padding:96px 0}
+.voices .b-head h2{color:#fff}
+.voices .b-head .en{color:#F6D9CC}
+.voices .b-head .en::before,.voices .b-head .en::after{background:#F6D9CC}
+.voices .lead-note{text-align:center;max-width:600px;margin:-32px auto 44px;font-size:14px;color:#F6E4DA}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vcard{background:var(--c-paper);color:var(--c-ink);border-radius:16px;padding:30px 26px 26px;position:relative}
+.vcard .mk{font-family:var(--font-serif);font-size:44px;line-height:.7;color:var(--c-terra);opacity:.5}
+.vcard blockquote{font-family:var(--font-serif);font-weight:500;font-size:17px;line-height:1.85;margin:8px 0 18px}
+.vcard blockquote em{font-style:normal;color:var(--c-terra-deep);font-weight:600}
+.vcard .who{display:flex;align-items:center;gap:11px;border-top:1px dashed var(--c-line);padding-top:16px}
+.vcard .who .ava{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none}
+.vcard .who .nm{font-family:var(--font-round);font-weight:700;font-size:13.5px;line-height:1.4}
+.vcard .who .nm small{display:block;font-family:var(--font-body);font-weight:400;font-size:11.5px;color:var(--c-ink-soft);margin-top:1px}
+
+/* ===== 活動（声のあとに） ===== */
+.act-row{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;padding:44px 0}
+.act-row+.act-row{border-top:1px solid var(--c-line)}
+.act-row.rev .ph{order:2}
+.act-row .ph img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:16px}
+.act-row .no{font-family:var(--font-round);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--c-terra);display:block;margin-bottom:8px}
+.act-row h3{font-family:var(--font-serif);font-size:22px;margin-bottom:12px}
+.act-row p{font-size:14.5px;color:var(--c-ink-soft)}
+.act-row .tag{display:inline-block;margin-top:16px;background:var(--c-terra-pale);color:var(--c-terra-deep);font-family:var(--font-round);font-weight:700;font-size:12px;padding:5px 14px;border-radius:999px}
+
+/* ===== わたしたち ===== */
+.about{background:var(--c-paper);border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)}
+.about-lead{font-family:var(--font-serif);font-size:clamp(19px,2.6vw,25px);font-weight:600;line-height:2;text-align:center;max-width:720px;margin:0 auto}
+.about-lead em{font-style:normal;color:var(--c-terra-deep)}
+.about-body{max-width:640px;margin:30px auto 0;text-align:center;font-size:15px;color:var(--c-ink-soft)}
+
+/* ===== 立場（3原則カード） ===== */
+.stance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+.stance-card{background:var(--c-bg);border:1px solid var(--c-line);border-radius:16px;padding:30px 26px;text-align:center}
+.stance-card .sn{font-family:var(--font-serif);font-weight:600;font-size:15px;letter-spacing:.2em;color:var(--c-terra);border:1px solid var(--c-terra-pale);border-radius:999px;width:48px;height:48px;line-height:46px;margin:0 auto 16px}
+.stance-card h3{font-family:var(--font-round);font-size:17px;margin-bottom:10px}
+.stance-card p{font-size:13.5px;color:var(--c-ink-soft);text-align:left}
+
+/* ===== 登記された事業目的 ===== */
+.purpose-box{max-width:680px;margin:38px auto 0;background:var(--c-bg);border:1px solid var(--c-line);border-left:4px solid var(--c-terra);border-radius:12px;padding:26px 30px;text-align:left}
+.purpose-box .pl{font-family:var(--font-round);font-weight:700;font-size:12px;letter-spacing:.06em;color:var(--c-terra-deep);margin-bottom:12px}
+.purpose-box .pt{font-family:var(--font-serif);font-size:15.5px;line-height:2;color:var(--c-ink)}
+.purpose-box .pt em{font-style:normal;background:linear-gradient(transparent 62%,var(--c-terra-pale) 62%);font-weight:600}
+
+/* ===== 参加（3つの入り口） ===== */
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.join-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:18px;padding:34px 28px;text-align:center;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.join-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(166,74,44,.12)}
+.join-card .ic{width:58px;height:58px;margin:0 auto 18px;border-radius:50%;background:var(--c-terra-pale);display:flex;align-items:center;justify-content:center}
+.join-card .ic svg{width:28px;height:28px;stroke:var(--c-terra-deep)}
+.join-card h3{font-family:var(--font-round);font-size:18px;margin-bottom:10px}
+.join-card p{font-size:13.5px;color:var(--c-ink-soft)}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:20px;padding:16px 4px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-round);font-weight:700;color:var(--c-terra-deep);font-size:12.5px}
+.news-row .cat{flex:none;font-family:var(--font-round);font-size:11px;background:var(--c-terra-pale);color:var(--c-terra-deep);padding:2px 10px;border-radius:999px}
+.news-row a{text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== 概要 ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border-radius:12px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-family:var(--font-round);font-weight:700;background:var(--c-terra-pale);border:1px solid var(--c-line);padding:13px 18px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-line);padding:13px 18px}
+
+/* ===== お問い合わせ ===== */
+.contact{background:var(--c-green);color:#fff;text-align:center}
+.contact h2{font-family:var(--font-serif);color:#fff}
+.contact .b-head .en{color:#D6E1CE}
+.contact .b-head .en::before,.contact .b-head .en::after{background:#D6E1CE}
+.contact .c-lead{max-width:560px;margin:-30px auto 34px;font-size:15px;color:#E6EEE0}
+.form{max-width:560px;margin:0 auto;text-align:left;background:var(--c-paper);color:var(--c-ink);border-radius:18px;padding:34px 32px}
+.form label{display:block;font-family:var(--font-round);font-weight:700;font-size:13px;margin:16px 0 6px}
+.form label:first-child{margin-top:0}
+.form input,.form textarea{width:100%;font-family:var(--font-body);font-size:14px;padding:12px 14px;border:1px solid var(--c-line);border-radius:10px;background:var(--c-bg);color:var(--c-ink)}
+.form textarea{resize:vertical;min-height:110px}
+.form button{margin-top:22px;width:100%;background:var(--c-terra);color:#fff;font-family:var(--font-round);font-weight:700;font-size:15px;border:none;border-radius:999px;padding:15px;cursor:pointer;transition:background .3s}
+.form button:hover{background:var(--c-terra-deep)}
+.form .demo-note{margin-top:14px;text-align:center;font-size:11.5px;color:#A99A85}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#EDE3D4;padding:52px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-round);font-weight:700;font-size:16px}
+.footer p{font-size:12.5px;color:#B9AC9A;margin-top:8px;line-height:1.9}
+.sample-note{font-size:11px;color:#9C8E7C;margin-top:20px;line-height:2}
+.sample-note a{color:#D8CBBA}
+.footer .cc{margin-top:16px;font-size:11px;color:#8A7D6C}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(58,50,41,.92);color:#F7F1E7;text-decoration:none;font-family:var(--font-body);font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.22)}
+.pill svg{width:15px;height:15px;flex:none;color:#E9A88E}
+.pill b{font-weight:700}
+.pill:hover{background:rgba(166,74,44,.95)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar{padding:0 18px;height:62px}
+  .topbar nav{display:none}
+  .topbar .cta{display:none}
+  .brand .t{font-size:17px}
+  .menu-btn{display:flex;margin-left:auto;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);border-radius:2px;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:block;position:fixed;inset:62px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line);padding:8px 22px 22px;z-index:110;transform:translateY(-14px);opacity:0;visibility:hidden;transition:.3s var(--ease)}
+  .menu-open .sp-nav{transform:none;opacity:1;visibility:visible}
+  .sp-nav a{display:block;text-decoration:none;font-family:var(--font-round);font-weight:500;font-size:15px;padding:14px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .cta{color:var(--c-terra-deep);font-weight:700}
+  .main{padding-top:62px}
+  .wrap{padding:0 22px}
+  .block{padding:64px 0}
+  .hero{padding:44px 0 60px}
+  .hero-photos{grid-template-columns:1fr;margin-top:36px}
+  .hero-photos .a{aspect-ratio:16/10}
+  .vgrid{grid-template-columns:1fr;gap:16px}
+  .stance-grid{grid-template-columns:1fr;gap:16px}
+  .act-row{grid-template-columns:1fr;gap:22px;padding:34px 0}
+  .act-row.rev .ph{order:0}
+  .join-grid{grid-template-columns:1fr;gap:16px}
+  .tbl-hint{display:block}
+}
+/* スマホの表: 横スクロールをやめて積み上げ */
+@media (max-width:640px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 16px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:9px 16px 13px}
+  .tbl-hint{display:none}
+  .pill span{display:none}
+  .pill{padding:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- 上部バー -->
+<header class="topbar" id="top">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" fill="#F3E1D6"/>
+      <circle cx="20" cy="20" r="11.5" fill="none" stroke="#C9603F" stroke-width="3"/>
+      <circle cx="20" cy="8.5" r="3.4" fill="#C9603F"/>
+      <circle cx="29.5" cy="25" r="3.4" fill="#5E7A50"/>
+      <circle cx="10.5" cy="25" r="3.4" fill="#5E7A50"/>
+    </svg>
+    <span class="t">まちづくり支援協会リング<small>特定非営利活動法人｜名古屋市緑区</small></span>
+  </a>
+  <nav>
+    <a href="#stance">立場</a>
+    <a href="#voices">まちの声</a>
+    <a href="#act">企画・調査・助言</a>
+    <a href="#about">わたしたち</a>
+    <a href="#join">かかわる</a>
+    <a href="#gaiyo">概要</a>
+  </nav>
+  <a class="cta" href="#contact">お問い合わせ</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#stance">立場</a>
+  <a href="#voices">まちの声</a>
+  <a href="#act">企画・調査・助言</a>
+  <a href="#about">わたしたち</a>
+  <a href="#join">かかわる</a>
+  <a href="#gaiyo">概要</a>
+  <a class="cta" href="#contact">お問い合わせ</a>
+</nav>
+
+<div class="main">
+
+  <!-- ヒーロー: 大きな声を主役に（市民参加・公開の理念を表す引用） -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal on"><span>名古屋市緑区鳴海町｜まちづくりの企画・調査・助言</span></p>
+      <!-- ※サンプル: 冒頭の"声"は理念を表すダミーのイメージ文です。実際の地域の方のお言葉に差し替えます -->
+      <h1 class="bigquote reveal on">
+        <span class="qm">“</span><span class="kb">まちの決めごとは、</span><span class="kb"><em>市民が参加</em>して、</span><br><span class="kb"><em>開かれた場</em>で</span><span class="kb">決めたい。</span><span class="qm">”</span>
+      </h1>
+      <p class="voice-by reveal on">— 市民参加と公開をめぐる、まちの声　<b>※サンプル</b></p>
+      <p class="lead reveal on">まちづくり支援協会リングは、名古屋市緑区・鳴海を拠点とするNPO法人です。<em>いかなる特定の立場・利権にも属さず</em>、市民参加と公開の原則にもとづいて、まちづくりに関する<b>企画・調査・助言</b>を行う中間支援団体として、地域社会の活性化に取り組んでいます。</p>
+      <div class="hero-photos reveal on">
+        <!-- 差し替えポイント: まちなみ・地図/調査・対話の様子のお写真（顔がはっきり特定されにくい構図が安心です） -->
+        <img class="a" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80&auto=format&fit=crop" alt="まちなみ・地図を広げて話し合うイメージ">
+        <div class="col">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&q=80&auto=format&fit=crop" alt="調査・打ち合わせのイメージ">
+          <img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=900&q=80&auto=format&fit=crop" alt="鳴海のまちなみのイメージ">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたちの立場（中立・市民参加・公開） -->
+  <section class="block" id="stance" style="background:var(--c-paper);border-bottom:1px solid var(--c-line)">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="en">Our Stance</span><h2>立っている場所</h2></div>
+      <p class="about-lead reveal"><span class="kb">わたしたちは、</span><span class="kb"><em>どの立場・利権にも</em></span><span class="kb">属しません。</span></p>
+      <p class="about-body reveal">特定の団体・政治・事業者のためではなく、あくまで<b>市民が主体のまちづくり</b>を進めるために活動します。だからこそ、進め方の原則も決まっています。<span class="note-sample">※本文は登記された事業目的（公開情報）にもとづきます</span></p>
+      <div class="stance-grid reveal">
+        <div class="stance-card">
+          <div class="sn">01</div>
+          <h3>中立の立場</h3>
+          <p>いかなる特定の立場・利権にも属さず、まちの利害から一歩引いた第三者として関わります。</p>
+        </div>
+        <div class="stance-card">
+          <div class="sn">02</div>
+          <h3>市民の参加</h3>
+          <p>まちのことは、そこで暮らす人が主役。だれもが加われる形で、企画と対話を組み立てます。</p>
+        </div>
+        <div class="stance-card">
+          <div class="sn">03</div>
+          <h3>情報の公開</h3>
+          <p>調べたこと・話し合ったことは、できるかぎり開かれた形で共有します。過程を見えるようにします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 声のギャラリー -->
+  <section class="voices" id="voices">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Voices</span><h2>まちの、声。</h2></div>
+      <p class="lead-note reveal">まちづくりの企画や調査は、こうした一人ひとりの声を聞くことからはじまります。<br><b>※以下はすべて表示イメージのサンプル（ダミー）です。</b>実際に集まった地域の方のお言葉へ差し替えます。</p>
+      <div class="vgrid">
+        <!-- ※サンプル: 声・お名前・属性はすべてダミーです -->
+        <div class="vcard reveal">
+          <div class="mk">“</div>
+          <blockquote>計画が決まってから知らされるのではなく、<em>途中の話し合いから参加したかった</em>。そう思っていました。</blockquote>
+          <div class="who">
+            <img class="ava" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&auto=format&fit=crop" alt="">
+            <span class="nm">Aさん<small>30代・鳴海在住　※サンプル</small></span>
+          </div>
+        </div>
+        <div class="vcard reveal">
+          <div class="mk">“</div>
+          <blockquote>どこかの立場に偏らずに、<em>中立の目でまちを調べてくれる人</em>がいると、安心して話せます。</blockquote>
+          <div class="who">
+            <img class="ava" src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=200&q=80&auto=format&fit=crop" alt="">
+            <span class="nm">Bさん<small>60代・緑区在住　※サンプル</small></span>
+          </div>
+        </div>
+        <div class="vcard reveal">
+          <div class="mk">“</div>
+          <blockquote>集めた声や資料を<em>だれでも見られる形で公開</em>してくれたので、話し合いの土台ができました。</blockquote>
+          <div class="who">
+            <img class="ava" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80&auto=format&fit=crop" alt="">
+            <span class="nm">Cさん<small>地域団体の方　※サンプル</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 活動（声のあとに） -->
+  <section class="block" id="act">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">What We Do</span><h2>まちづくりの企画・調査・助言</h2></div>
+      <p class="note-sample" style="text-align:center;margin:-36px auto 8px;max-width:560px">※活動内容・名称は登記された事業目的にそった方向性のサンプルです。実際の事業に差し替えます</p>
+
+      <div class="act-row reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&q=80&auto=format&fit=crop" alt="まちの調査・資料を広げるイメージ"></div>
+        <div>
+          <span class="no">01 ─ 調査</span>
+          <h3>まちを調べる</h3>
+          <p>地域の課題やニーズを、住民の声や現地の様子から丁寧に調べます。特定の立場に偏らず、事実にもとづいて「まちのいま」を明らかにします。</p>
+          <span class="tag"># 現状調査・ニーズ把握</span>
+        </div>
+      </div>
+
+      <div class="act-row rev reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1000&q=80&auto=format&fit=crop" alt="企画・話し合いのイメージ"></div>
+        <div>
+          <span class="no">02 ─ 企画</span>
+          <h3>市民参加の場を企画する</h3>
+          <p>調べたことをもとに、だれもが加われるワークショップや話し合いの場を企画します。まちの決めごとを、開かれた場で組み立てるお手伝いをします。</p>
+          <span class="tag"># 市民参加・ワークショップ</span>
+        </div>
+      </div>
+
+      <div class="act-row reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000&q=80&auto=format&fit=crop" alt="助言・打ち合わせのイメージ"></div>
+        <div>
+          <span class="no">03 ─ 助言</span>
+          <h3>地域の取り組みに助言する</h3>
+          <p>まちづくりに取り組む団体や住民グループに、中立の立場から助言します。集めた情報は公開の原則にもとづいて共有し、地域社会の活性化につなげます。</p>
+          <span class="tag"># 中間支援・助言</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたち -->
+  <section class="block about" id="about">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">About</span><h2>わたしたちのこと</h2></div>
+      <p class="about-lead reveal"><span class="kb">まちづくりは、</span><span class="kb"><em>調べ、企て、助言する</em>こと</span><span class="kb">からはじまる。</span></p>
+      <p class="about-body reveal">まちづくり支援協会リングは、名古屋市緑区鳴海町を拠点に、まちづくりの分野で活動するNPO法人です。地域の人と活動を「輪（リング）」のようにつなぎながら、中立の立場でまちの企画・調査・助言を担う中間支援団体として活動しています。</p>
+      <!-- 登記された事業目的（公開情報） -->
+      <div class="purpose-box reveal">
+        <p class="pl">登記されている事業の目的（公開情報）</p>
+        <p class="pt">いかなる特定の立場・利権にも属さず、市民主体のまちづくりを推進するため、<em>市民参加と公開の原則</em>に基づき、まちづくりに関する<em>企画・調査及び助言</em>を行い、地域社会の活性化に寄与する。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 参加する -->
+  <section class="block" id="join">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Get Involved</span><h2>まちづくりに、かかわる</h2></div>
+      <div class="join-grid">
+        <div class="join-card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>調査・企画に参加</h3>
+          <p>まちの声を聞く調査や、市民参加のワークショップに加わっていただけます。まちのことを一緒に考える仲間を歓迎します。</p>
+        </div>
+        <div class="join-card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></div>
+          <h3>賛助会員・寄付</h3>
+          <p>中立の立場で活動を続けるための応援です。会費・ご寄付で、まちの調査・企画をささえてください。</p>
+        </div>
+        <div class="join-card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></div>
+          <h3>企画・調査のご相談</h3>
+          <p>地域団体・住民グループのまちづくりに、企画・調査・助言でご協力します。まずはご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news" style="background:var(--c-paper);border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="en">News</span><h2>お知らせ</h2></div>
+      <p class="note-sample" style="text-align:center;margin:-36px auto 20px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はすべてダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">調査</span><a href="#news">まちづくりに関する地域アンケートの結果を公開しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">企画</span><a href="#news">市民参加ワークショップの参加者を募集しています</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">賛助会員のご案内を更新しました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="en">Profile</span><h2>法人概要</h2></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>名称</th><td>まちづくり支援協会リング（特定非営利活動法人）</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市緑区鳴海町</td></tr>
+          <tr><th>活動分野</th><td>まちづくりの推進</td></tr>
+          <tr><th>事業の目的</th><td>いかなる特定の立場・利権にも属さず、市民主体のまちづくりを推進するため、市民参加と公開の原則に基づき、まちづくりに関する企画・調査及び助言を行い、地域社会の活性化に寄与する（公開情報）</td></tr>
+          <tr><th>設立</th><td>2001年（公開情報）</td></tr>
+          <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+          <tr><th>連絡先</th><td>お問い合わせフォームよりご連絡ください</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+      <p class="note-sample" style="margin-top:14px">※名称・所在地・活動分野・事業の目的・設立年は公開情報にもとづきます。その他の項目は公開時に記載します。</p>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Contact</span><h2>まちのこと、話しませんか</h2></div>
+      <p class="c-lead reveal">企画・調査・助言のご相談、市民参加の場づくり、取材やご寄付のことまで。中立の立場でお受けします。まずはお気軽にメッセージをお寄せください。</p>
+      <form class="form reveal" onsubmit="return false" aria-label="お問い合わせフォーム（デモ）">
+        <label for="f-name">お名前</label>
+        <input id="f-name" type="text" placeholder="山田 太郎" autocomplete="name">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="email" placeholder="you@example.com" autocomplete="email">
+        <label for="f-msg">ご用件・メッセージ</label>
+        <textarea id="f-msg" placeholder="「まちの活動に参加してみたい」など、お気軽にどうぞ"></textarea>
+        <button type="submit">送信する</button>
+        <p class="demo-note">※これは表示サンプルのため、実際には送信されません。ご契約後、実際に届くフォームに設定します。</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">まちづくり支援協会リング（特定非営利活動法人）</p>
+      <p>愛知県名古屋市緑区鳴海町｜まちづくりの企画・調査・助言（2001年設立）</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、引用の「声」や※印の内容はすべてダミー、代表者名など未公開情報は不掲載。事業の目的・所在地・活動分野・設立年は公開情報）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p class="cc">&copy; 2026 NPO法人 まちづくり支援協会リング（ご提案用サンプル）</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .topbar nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// スクロールで上部バーに罫線
+const topbar = document.querySelector(".topbar");
+const onScroll = () => topbar.classList.toggle("scrolled", window.scrollY > 12);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+// リビール
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

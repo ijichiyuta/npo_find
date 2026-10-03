@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ニコラボ さま（マガジン/エディトリアル型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報の範囲で作成:
+      正式名称・所在地（瀬戸市西長根町83番地）・活動分野（保健・医療・福祉）・
+      設立認証（2019年8月1日）＝内閣府NPOポータル 023002360
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・電話番号は非掲載（公開情報に確認できないため）。フォームはデモ動作
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替えポイント明記）
+  ・ロゴは使用していません（テキストのみのマストヘッド）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 ニコラボ｜瀬戸市の保健・医療・福祉【ご提案サンプル】</title>
+<meta name="description" content="愛知県瀬戸市で保健・医療・福祉の分野で活動するNPO法人ニコラボ。地域のなかで、誰もが「にこ」と笑える毎日を。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-paper:#F7F5EF;      /* 生成りの紙 */
+  --c-card:#FFFFFF;
+  --c-ink:#1B1A17;        /* インク（黒に近い茶墨） */
+  --c-sub:#6B665C;
+  --c-accent:#E4572E;     /* 明るい朱（雑誌の差し色） */
+  --c-accent-2:#2E5E8C;   /* 知的な藍 */
+  --c-line:#1B1A17;
+  --c-line-soft:#D8D3C6;
+  --font-serif:"Noto Serif JP",serif;
+  --font-sans:"Noto Sans JP",sans-serif;
+  --font-en:"Archivo",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--c-paper);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-serif);font-weight:700;line-height:1.5;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.en{font-family:var(--font-en);letter-spacing:.02em}
+
+/* ===== 全体グリッド ===== */
+.wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-sub);font-family:var(--font-sans)}
+
+/* ===== マストヘッド（雑誌の題字） ===== */
+.masthead{border-bottom:2px solid var(--c-line)}
+.mast-top{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--c-line-soft);font-size:11.5px;letter-spacing:.14em;color:var(--c-sub)}
+.mast-top .issue{font-family:var(--font-en);font-weight:600;text-transform:uppercase}
+.mast-top .place{font-weight:700;color:var(--c-ink);letter-spacing:.1em}
+.mast-main{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:22px 0 20px}
+.mast-main .title{font-family:var(--font-serif);font-weight:900;font-size:clamp(34px,7vw,74px);line-height:.95;letter-spacing:.02em}
+.mast-main .title small{display:block;font-family:var(--font-sans);font-weight:700;font-size:clamp(11px,1.4vw,14px);letter-spacing:.34em;color:var(--c-accent);margin-top:14px;padding-left:2px}
+.mast-main .tag{text-align:right;font-size:12px;line-height:1.9;color:var(--c-sub);max-width:220px;flex:none}
+.mast-main .tag b{color:var(--c-ink);font-weight:700}
+/* デスクトップのナビ */
+nav.mast-nav{display:flex;gap:2px;border-top:1px solid var(--c-line-soft);flex-wrap:wrap}
+nav.mast-nav a{flex:1;min-width:110px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:13px 6px;border-left:1px solid var(--c-line-soft);transition:background .25s var(--ease),color .25s var(--ease)}
+nav.mast-nav a:first-child{border-left:none}
+nav.mast-nav a .n{display:block;font-family:var(--font-en);font-size:9.5px;letter-spacing:.18em;color:var(--c-sub);margin-bottom:2px;text-transform:uppercase}
+nav.mast-nav a:hover{background:var(--c-ink);color:var(--c-paper)}
+nav.mast-nav a:hover .n{color:var(--c-paper)}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+/* ===== 特集ヒーロー（表紙） ===== */
+.cover{padding:0 0 6px;border-bottom:2px solid var(--c-line)}
+.cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0}
+.cover-lead{padding:64px 56px 64px 0;display:flex;flex-direction:column;justify-content:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--c-accent);margin-bottom:22px}
+.kicker::before{content:"";width:30px;height:2px;background:var(--c-accent)}
+.cover h1{font-size:clamp(30px,4.6vw,52px);font-weight:900;line-height:1.34;letter-spacing:.03em}
+.cover h1 .mk{background:linear-gradient(transparent 62%, #F6D3C6 62%)}
+.cover .dek{margin-top:26px;font-size:15px;line-height:2.05;color:#3A3730;max-width:460px}
+.cover .byline{margin-top:30px;font-size:12px;letter-spacing:.06em;color:var(--c-sub);border-top:1px solid var(--c-line-soft);padding-top:16px}
+.cover .byline b{color:var(--c-ink)}
+.cover-photo{position:relative;border-left:2px solid var(--c-line)}
+.cover-photo img{width:100%;height:100%;min-height:440px;object-fit:cover}
+.cover-photo figcaption{position:absolute;left:0;bottom:0;background:var(--c-ink);color:var(--c-paper);font-size:11px;letter-spacing:.06em;padding:8px 14px}
+
+/* ===== 区切りの罫＋章番号 ===== */
+.sec{padding:78px 0;border-bottom:1px solid var(--c-line-soft)}
+.sec-head{display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start;margin-bottom:40px}
+.sec-head .idx{font-family:var(--font-en);font-weight:800;font-size:13px;letter-spacing:.14em;color:var(--c-accent);border-top:2px solid var(--c-line);padding-top:10px}
+.sec-head .idx .en{display:block;font-size:10px;color:var(--c-sub);letter-spacing:.2em;margin-top:4px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(23px,3vw,34px);font-weight:900;letter-spacing:.03em;line-height:1.4}
+.sec-head .sub{margin-top:12px;font-size:14px;color:var(--c-sub);max-width:560px}
+
+/* ===== リード記事（大きな引用） ===== */
+.mission{grid-column:1/-1}
+.mission .pull{font-family:var(--font-serif);font-weight:700;font-size:clamp(21px,3vw,30px);line-height:1.85;letter-spacing:.02em;max-width:900px}
+.mission .pull em{font-style:normal;color:var(--c-accent);border-bottom:2px solid #F6D3C6}
+.mission .body{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px 48px;max-width:900px}
+.mission .body p{font-size:14.5px;line-height:2.05}
+
+/* ===== 活動（記事カード・雑誌の見開き） ===== */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--c-line-soft);border:1px solid var(--c-line-soft)}
+.feat{background:var(--c-card);padding:0 0 26px}
+.feat .ph{position:relative}
+.feat .ph img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.feat .ph .no{position:absolute;top:0;left:0;background:var(--c-ink);color:var(--c-paper);font-family:var(--font-en);font-weight:700;font-size:12px;letter-spacing:.1em;padding:7px 12px}
+.feat .txt{padding:22px 24px 0}
+.feat h3{font-size:19px;font-weight:700;line-height:1.5}
+.feat h3 .en{display:block;font-family:var(--font-en);font-size:10px;letter-spacing:.16em;color:var(--c-accent);margin-bottom:6px;text-transform:uppercase}
+.feat p{margin-top:12px;font-size:13.5px;line-height:1.95;color:#3A3730}
+
+/* ===== インタビュー（ごあいさつ） ===== */
+.interview{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start}
+.interview .portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--c-line-soft)}
+.interview .portrait .cap{font-size:11.5px;color:var(--c-sub);margin-top:10px;line-height:1.7}
+.interview .q{font-family:var(--font-serif);font-weight:700;font-size:clamp(19px,2.4vw,26px);line-height:1.7;letter-spacing:.02em;position:relative;padding-left:2px}
+.interview .q::before{content:"“";font-family:var(--font-serif);font-size:64px;color:#F0C7B8;position:absolute;left:-6px;top:-30px}
+.interview .a{margin-top:22px;font-size:14.5px;line-height:2.1}
+.interview .a + .a{margin-top:16px}
+.interview .sig{margin-top:26px;border-top:1px solid var(--c-line);padding-top:16px;font-size:13px;color:var(--c-sub)}
+.interview .sig b{display:inline-block;font-size:16px;color:var(--c-ink);font-weight:700;margin-left:4px}
+
+/* ===== 数字（雑誌のインフォグラフィック） ===== */
+.figs{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--c-line-soft);border:1px solid var(--c-line-soft)}
+.fig{background:var(--c-card);padding:34px 26px;text-align:center}
+.fig .num{font-family:var(--font-en);font-weight:800;font-size:clamp(38px,5vw,56px);line-height:1;color:var(--c-accent-2);letter-spacing:.01em}
+.fig .num .u{font-size:.4em;color:var(--c-ink);margin-left:4px}
+.fig .lb{margin-top:12px;font-size:13px;font-weight:700}
+.fig .lb small{display:block;font-weight:400;font-size:11px;color:var(--c-sub);margin-top:4px}
+
+/* ===== お知らせ（更新欄・雑誌の目次風） ===== */
+.news-list{border-top:1px solid var(--c-line)}
+.news-row{display:grid;grid-template-columns:120px 90px 1fr;gap:20px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--c-line-soft);font-size:14px}
+.news-row time{font-family:var(--font-en);font-weight:600;color:var(--c-sub);font-size:12.5px}
+.news-row .cat{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--c-accent);border:1px solid var(--c-accent);text-align:center;padding:2px 0}
+.news-row a{text-decoration:none;color:var(--c-ink)}
+.news-row a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ===== 参加のご案内 ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.join-card{border:1px solid var(--c-line);background:var(--c-card);padding:28px 26px}
+.join-card h3{font-size:17px;font-weight:700}
+.join-card h3 .en{display:block;font-family:var(--font-en);font-size:10px;letter-spacing:.16em;color:var(--c-sub);margin-bottom:6px;text-transform:uppercase}
+.join-card p{margin-top:12px;font-size:13.5px;line-height:1.95;color:#3A3730}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info dl{border-top:1px solid var(--c-line)}
+.contact-info div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:14px 2px;border-bottom:1px solid var(--c-line-soft);font-size:14px}
+.contact-info dt{font-weight:700;font-size:13px}
+.contact-info dd{color:#3A3730}
+.map{margin-top:22px}
+.map iframe{width:100%;height:280px;border:1px solid var(--c-line)}
+form.demo{background:var(--c-card);border:1px solid var(--c-line);padding:30px 30px 32px}
+form.demo .demo-note{background:#FBEAE3;border:1px solid #F0C7B8;color:#8A3A1E;font-size:12px;font-weight:700;padding:10px 14px;margin-bottom:20px;line-height:1.7}
+form.demo label{display:block;font-size:12.5px;font-weight:700;margin:14px 0 6px}
+form.demo input,form.demo textarea{width:100%;font-family:inherit;font-size:14px;color:var(--c-ink);background:var(--c-paper);border:1px solid var(--c-line-soft);padding:11px 13px;border-radius:0}
+form.demo input:focus,form.demo textarea:focus{outline:2px solid var(--c-accent-2);border-color:transparent}
+form.demo textarea{resize:vertical;min-height:110px}
+form.demo button{margin-top:20px;width:100%;background:var(--c-ink);color:var(--c-paper);font-family:var(--font-sans);font-weight:700;font-size:14.5px;letter-spacing:.06em;border:none;padding:15px;cursor:pointer;transition:background .25s var(--ease)}
+form.demo button:hover{background:var(--c-accent)}
+.form-msg{display:none;margin-top:16px;background:#EAF1E9;border:1px solid #BBD3B7;color:#2F5E2A;font-size:13px;padding:12px 14px;line-height:1.8}
+.form-msg.on{display:block}
+
+/* ===== 事業所概要（奥付） ===== */
+.colophon{background:var(--c-ink);color:var(--c-paper)}
+.colophon .wrap{padding:66px 40px 60px}
+.colophon .ch{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+.colophon .ch h2{color:var(--c-paper);font-size:clamp(21px,2.6vw,28px);font-weight:900;letter-spacing:.04em}
+.colophon .ch .en{font-family:var(--font-en);font-size:11px;letter-spacing:.2em;color:#B9B3A6;text-transform:uppercase}
+table.gaiyo{width:100%;min-width:0;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;color:#E9E5DA;border-bottom:1px solid #3A382F;padding:13px 0;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border-bottom:1px solid #3A382F;padding:13px 0;color:#CFC9BC}
+table.gaiyo td a{color:#F0B6A2}
+.source-note{margin-top:22px;font-size:11.5px;color:#8F897C;line-height:1.9}
+.source-note a{color:#B9B3A6}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:var(--c-paper);border-top:1px solid #3A382F}
+.footer .wrap{padding:40px 40px 34px;text-align:center}
+.footer .f-name{font-family:var(--font-serif);font-weight:900;font-size:18px;letter-spacing:.06em}
+.footer .f-sub{font-size:12.5px;color:#B9B3A6;margin-top:8px}
+.footer .sample-note{font-size:11px;color:#8F897C;margin-top:20px;line-height:1.95;max-width:760px;margin-left:auto;margin-right:auto}
+.footer .sample-note b{color:#E9E5DA}
+.footer .sample-note a{color:#B9B3A6}
+.footer .copy{margin-top:16px;font-size:11px;color:#6E6A5F;font-family:var(--font-en);letter-spacing:.08em}
+
+/* ===== 左下・制作クレジットのピル ===== */
+.credit-pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:9px;background:rgba(27,26,23,.94);color:#fff;text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.02em;padding:9px 15px 9px 12px;border-radius:999px;box-shadow:0 6px 22px rgba(27,26,23,.32);backdrop-filter:blur(4px);transition:transform .3s var(--ease)}
+.credit-pill:hover{transform:translateY(-2px)}
+.credit-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--c-accent);flex:none}
+.credit-pill b{font-weight:700}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .wrap{padding:0 22px}
+  .colophon .wrap,.footer .wrap{padding-left:22px;padding-right:22px}
+  nav.mast-nav{display:none}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:var(--c-paper);border-bottom:2px solid var(--c-line);height:60px;align-items:center;gap:10px;padding:0 22px}
+  .sp-head .t{font-family:var(--font-serif);font-weight:900;font-size:20px;letter-spacing:.04em}
+  .sp-head .t small{display:block;font-family:var(--font-sans);font-size:9px;font-weight:700;letter-spacing:.2em;color:var(--c-accent);margin-top:2px}
+  .menu-btn{margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:60px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line);padding:8px 22px 18px;z-index:99;box-shadow:0 14px 24px rgba(27,26,23,.12)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:700;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line-soft)}
+
+  .mast-main{padding:20px 0 16px}
+  .mast-main .tag{display:none}
+  .cover-grid{grid-template-columns:1fr}
+  .cover-lead{padding:44px 0 40px}
+  .cover-photo{border-left:none;border-top:2px solid var(--c-line);order:-1}
+  .cover-photo img{min-height:0;aspect-ratio:16/10}
+  .sec{padding:54px 0}
+  .sec-head{grid-template-columns:1fr;gap:14px;margin-bottom:28px}
+  .sec-head .idx{border-top:none;padding-top:0}
+  .mission .body{grid-template-columns:1fr;gap:12px}
+  .features{grid-template-columns:1fr}
+  .interview{grid-template-columns:1fr;gap:26px}
+  .interview .portrait img{aspect-ratio:4/3}
+  .figs{grid-template-columns:1fr}
+  .join{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:30px}
+  .credit-pill{left:12px;bottom:12px;font-size:11px;padding:8px 13px 8px 11px}
+}
+@media (max-width:560px){
+  .news-row{grid-template-columns:1fr;gap:6px}
+  .news-row .cat{justify-self:start;padding:2px 10px}
+  .contact-info div{grid-template-columns:1fr;gap:2px}
+  table.gaiyo tr{display:block;padding:6px 0}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:4px 0}
+  table.gaiyo th{padding-top:12px}
+  table.gaiyo td{border-bottom:1px solid #3A382F;padding-bottom:12px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- SP: 上部バー -->
+<header class="sp-head">
+  <span class="t">ニコラボ<small>SETO · WELFARE</small></span>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#mission">わたしたちの願い</a>
+  <a href="#activity">活動のこと</a>
+  <a href="#voice">代表のことば</a>
+  <a href="#news">お知らせ</a>
+  <a href="#join">参加のご案内</a>
+  <a href="#contact">お問い合わせ</a>
+  <a href="#profile">法人概要</a>
+</nav>
+
+<!-- ===== マストヘッド（題字） ===== -->
+<div class="masthead">
+  <div class="wrap">
+    <div class="mast-top">
+      <span class="issue">NICOLABO · NPO JOURNAL</span>
+      <span class="place">愛知県瀬戸市</span>
+    </div>
+    <div class="mast-main">
+      <div class="title">ニコラボ<small>特定非営利活動法人 ／ 保健・医療・福祉</small></div>
+      <p class="tag">地域のなかで、<br>誰もが<b>「にこ」</b>と<br>笑える毎日を。</p>
+    </div>
+    <nav class="mast-nav">
+      <a href="#mission"><span class="n">Mission</span>わたしたちの願い</a>
+      <a href="#activity"><span class="n">Activity</span>活動のこと</a>
+      <a href="#voice"><span class="n">Voice</span>代表のことば</a>
+      <a href="#news"><span class="n">News</span>お知らせ</a>
+      <a href="#join"><span class="n">Join</span>参加のご案内</a>
+      <a href="#contact"><span class="n">Contact</span>お問い合わせ</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== 表紙（特集ヒーロー） ===== -->
+<section class="cover">
+  <div class="wrap">
+    <div class="cover-grid">
+      <div class="cover-lead reveal on">
+        <span class="kicker">SETO CITY / SINCE 2019</span>
+        <h1><span class="kb">小さな<span class="mk">「できた」</span>を、</span><span class="kb">まちの<span class="mk">力</span>に。</span></h1>
+        <p class="dek">ニコラボは、愛知県瀬戸市を拠点に「保健・医療・福祉」の分野で活動するNPO法人です。一人ひとりに寄り添いながら、地域のなかで安心して暮らせる場を育てています。<span class="note-sample">※キャッチコピーはサンプルです</span></p>
+        <p class="byline">特集 ─ <b>わたしたちが、この町でしていること</b></p>
+      </div>
+      <figure class="cover-photo reveal on">
+        <!-- 差し替えポイント: 活動の様子や地域の風景のお写真（表紙になる1枚） -->
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80&auto=format&fit=crop" alt="地域で寄り添う活動のイメージ">
+        <figcaption>PHOTO ─ イメージ写真（差し替え可）</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== わたしたちの願い（リード記事） ===== -->
+<section class="sec" id="mission">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="idx">CH.01<span class="en">Mission</span></div>
+      <div>
+        <h2>わたしたちの願い</h2>
+        <p class="sub">保健・医療・福祉の分野で、地域とともに。</p>
+      </div>
+    </div>
+    <div class="mission reveal">
+      <p class="pull"><span class="kb">歳を重ねても、</span><span class="kb">障がいがあっても、</span><br><span class="kb"><em>住み慣れたこの町で、</em></span><span class="kb"><em>自分らしく暮らしつづける。</em></span><span class="kb">そのための小さな支えに、</span><span class="kb">わたしたちはなりたい。</span></p>
+      <div class="body">
+        <p>ニコラボは、瀬戸市を拠点に保健・医療・福祉の分野で活動する特定非営利活動法人です。一人ひとりの毎日に寄り添いながら、必要な支えが、必要な人にきちんと届くまちを目指しています。</p>
+        <p>年齢や状況にかかわらず、誰もが「にこ」と笑える瞬間を、地域のなかで少しずつ増やしていく。それが、わたしたちの願いです。<span class="note-sample">※本文は活動分野（公開情報）をもとにしたサンプルです。実際の理念・活動内容に差し替えます</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 活動のこと（記事カード） ===== -->
+<section class="sec" id="activity">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="idx">CH.02<span class="en">Activity</span></div>
+      <div>
+        <h2>活動のこと</h2>
+        <p class="sub">※下記3つは表示イメージのサンプルです。実際の活動に合わせて構成します。</p>
+      </div>
+    </div>
+    <!-- ※サンプル: 活動内容はダミーです。ヒアリングのうえ実際の活動へ差し替えます -->
+    <div class="features reveal">
+      <article class="feat">
+        <div class="ph">
+          <!-- 差し替えポイント: 活動風景のお写真 -->
+          <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=900&q=80&auto=format&fit=crop" alt="集いの場のイメージ">
+          <span class="no">01</span>
+        </div>
+        <div class="txt">
+          <h3><span class="en">Gathering</span>集いの場づくり</h3>
+          <p>気軽に立ち寄れる居場所づくり。おしゃべりや趣味の時間を通じて、ゆるやかなつながりを育みます。<span class="note-sample">※サンプル</span></p>
+        </div>
+      </article>
+      <article class="feat">
+        <div class="ph">
+          <!-- 差し替えポイント: 相談・支援の様子のお写真 -->
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80&auto=format&fit=crop" alt="相談・支援のイメージ">
+          <span class="no">02</span>
+        </div>
+        <div class="txt">
+          <h3><span class="en">Support</span>くらしの支え</h3>
+          <p>日々の困りごとに寄り添う支援。ご本人とご家族が安心して過ごせるよう、そばで支えます。<span class="note-sample">※サンプル</span></p>
+        </div>
+      </article>
+      <article class="feat">
+        <div class="ph">
+          <!-- 差し替えポイント: 地域連携・イベントのお写真 -->
+          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=900&q=80&auto=format&fit=crop" alt="地域連携のイメージ">
+          <span class="no">03</span>
+        </div>
+        <div class="txt">
+          <h3><span class="en">Community</span>地域とのつながり</h3>
+          <p>地域の方や関係機関と手を取り合い、まちぐるみで支え合うしくみづくりに取り組みます。<span class="note-sample">※サンプル</span></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 数字で見る（インフォグラフィック） ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="idx">CH.03<span class="en">Numbers</span></div>
+      <div>
+        <h2>数字で見るニコラボ</h2>
+        <p class="sub">※設立年以外の数値は表示イメージのサンプルです。実績に差し替えます。</p>
+      </div>
+    </div>
+    <!-- ※サンプル: 設立年（2019年）以外の数値はダミーです -->
+    <div class="figs reveal">
+      <div class="fig">
+        <div class="num">2019</div>
+        <div class="lb">法人設立の認証<small>内閣府NPOポータルの公開情報</small></div>
+      </div>
+      <div class="fig">
+        <div class="num">00<span class="u">名</span></div>
+        <div class="lb">年間の参加者<small>※サンプル（実績に差し替え）</small></div>
+      </div>
+      <div class="fig">
+        <div class="num">00<span class="u">回</span></div>
+        <div class="lb">年間の活動日数<small>※サンプル（実績に差し替え）</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 代表のことば（インタビュー） ===== -->
+<section class="sec" id="voice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="idx">CH.04<span class="en">Voice</span></div>
+      <div>
+        <h2>代表のことば</h2>
+      </div>
+    </div>
+    <div class="interview reveal">
+      <figure class="portrait">
+        <!-- 差し替えポイント: 代表者や活動メンバーのお写真 -->
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&auto=format&fit=crop" alt="活動する人のイメージ">
+        <figcaption class="cap">イメージ写真（差し替え可）</figcaption>
+      </figure>
+      <div>
+        <p class="q"><span class="kb">「ちょっと困ったとき、</span><span class="kb">気軽に頼れる場所が、</span><span class="kb">近くにあってほしい」</span></p>
+        <p class="a">活動を続けるなかで、多くの方からそんな声をいただいてきました。特別なことでなくても、「そばにいてくれる」というだけで、毎日は少し軽くなる。わたしたちは、その距離の近さを大切にしています。</p>
+        <p class="a">これからも瀬戸のまちで、一人ひとりの「にこ」を増やしていけたら。どうぞお気軽に、声をかけてください。</p>
+        <p class="sig">特定非営利活動法人 ニコラボ　代表<b>─ ※サンプル</b>
+          <span class="note-sample" style="display:block;margin-top:6px">※あいさつ文・お名前はサンプルです。ご本人のお言葉に差し替えます</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お知らせ（目次風） ===== -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="idx">CH.05<span class="en">News</span></div>
+      <div>
+        <h2>お知らせ</h2>
+        <p class="sub">※下記は表示イメージのサンプルです。ご自身で更新できる形にできます。</p>
+      </div>
+    </div>
+    <!-- ※サンプル: 日付・内容はダミーです -->
+    <div class="news-list reveal">
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">活動報告</span><a href="#news">季節のつどいを開催しました（※サンプル）</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">ボランティア募集のご案内（※サンプル）</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">見学・ご相談を受け付けています（※サンプル）</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 参加のご案内 ===== -->
+<section class="sec" id="join">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="idx">CH.06<span class="en">Join</span></div>
+      <div>
+        <h2>参加のご案内</h2>
+        <p class="sub">できることを、できる範囲で。あなたの関わりが、まちの支えになります。</p>
+      </div>
+    </div>
+    <div class="join reveal">
+      <div class="join-card">
+        <h3><span class="en">Volunteer</span>ボランティア</h3>
+        <p>「少しだけ手伝いたい」その気持ちが力になります。無理のない範囲で、一緒に活動しませんか。<span class="note-sample">※サンプル</span></p>
+      </div>
+      <div class="join-card">
+        <h3><span class="en">Membership</span>賛助会員</h3>
+        <p>会費で活動を支えていただく仲間を募集しています。遠くからでも応援いただけます。<span class="note-sample">※サンプル</span></p>
+      </div>
+      <div class="join-card">
+        <h3><span class="en">Donation</span>ご寄付</h3>
+        <p>いただいたご支援は、地域での活動に大切に使わせていただきます。<span class="note-sample">※サンプル</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ（デモフォーム） ===== -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="idx">CH.07<span class="en">Contact</span></div>
+      <div>
+        <h2>お問い合わせ</h2>
+        <p class="sub">見学・ご相談・ご参加のお問い合わせは、こちらのフォームから。</p>
+      </div>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <dl>
+          <div><dt>団体名</dt><dd>特定非営利活動法人 ニコラボ</dd></div>
+          <div><dt>所在地</dt><dd>愛知県瀬戸市西長根町83番地</dd></div>
+          <div><dt>活動分野</dt><dd>保健・医療・福祉</dd></div>
+          <div><dt>お問い合わせ</dt><dd>右のフォームよりお願いいたします<span class="note-sample" style="display:block;margin-top:4px">※お電話でのご連絡先は公開時に記載します</span></dd></div>
+        </dl>
+        <div class="map">
+          <!-- 差し替えポイント: 正確な所在地でピンを調整できます -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%80%AC%E6%88%B8%E5%B8%82%E8%A5%BF%E9%95%B7%E6%A0%B9%E7%94%BA83%E7%95%AA%E5%9C%B0&output=embed&z=15" loading="lazy" title="所在地の地図"></iframe>
+        </div>
+      </div>
+      <form class="demo" id="demoForm" novalidate>
+        <p class="demo-note">※これはサンプルのデモフォームです。入力しても送信されません。ご契約後、実際に受信できる形に設定します。</p>
+        <label for="f-name">お名前</label>
+        <input type="text" id="f-name" name="name" placeholder="例）山田 太郎" autocomplete="name">
+        <label for="f-email">メールアドレス</label>
+        <input type="email" id="f-email" name="email" placeholder="例）example@mail.com" autocomplete="email">
+        <label for="f-body">お問い合わせ内容</label>
+        <textarea id="f-body" name="body" placeholder="見学のご希望・ご相談など、お気軽にご記入ください"></textarea>
+        <button type="submit">送信する（デモ）</button>
+        <p class="form-msg" id="formMsg">これはデモ表示です。実際には送信されていません。公開版では入力内容がご担当者さまへ届きます。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 法人概要（奥付） ===== -->
+<section class="colophon" id="profile">
+  <div class="wrap">
+    <div class="ch reveal"><h2>法人概要</h2><span class="en">Colophon</span></div>
+    <table class="gaiyo reveal">
+      <tr><th>正式名称</th><td>特定非営利活動法人 ニコラボ</td></tr>
+      <tr><th>所在地</th><td>愛知県瀬戸市西長根町83番地</td></tr>
+      <tr><th>活動分野</th><td>保健・医療・福祉</td></tr>
+      <tr><th>設立認証</th><td>2019年8月1日</td></tr>
+      <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      <tr><th>情報公開</th><td><a href="https://www.npo-homepage.go.jp/npoportal/detail/023002360" target="_blank" rel="noopener">内閣府NPO法人ポータルサイト（外部リンク）</a></td></tr>
+    </table>
+    <p class="source-note">本ページの「正式名称・所在地・活動分野・設立認証」は、<a href="https://www.npo-homepage.go.jp/npoportal/detail/023002360" target="_blank" rel="noopener">内閣府NPO法人ポータルサイト</a>の公開情報にもとづきます。「※サンプル」と記した内容はダミーです。</p>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 ニコラボ</p>
+    <p class="f-sub">愛知県瀬戸市西長根町83番地｜保健・医療・福祉</p>
+    <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です。写真はイメージ素材（Unsplash・商用可）、「※サンプル」の内容はダミー、お知らせや数値は表示イメージです。団体名・所在地・活動分野・設立年は公開情報（<a href="https://www.npo-homepage.go.jp/npoportal/detail/023002360" target="_blank" rel="noopener">内閣府NPOポータル</a>）にもとづきます。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO NICOLABO — SAMPLE</p>
+  </div>
+</footer>
+
+<!-- 左下・制作クレジットのピル -->
+<a class="credit-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">
+  <span class="dot" aria-hidden="true"></span>
+  <span>ご提案用サンプル / <b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("demoForm");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.getElementById("formMsg").classList.add("on");
+});
+
+// スクロールで浮かび上がる
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

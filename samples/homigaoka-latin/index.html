@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 保見ヶ丘ラテンアメリカセンター さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（内閣府NPOポータルの定款目的・所在地、公開されている活動紹介・連絡先）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者の実名・実績数値・あいさつ文などは記載していません（公開時に反映）
+  ・写真はフリー素材（Unsplash・商用利用可）の多文化交流イメージです。差し替え前提
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>保見ヶ丘ラテンアメリカセンター｜豊田市の多文化共生・在住外国人支援【ご提案サンプル】</title>
+<meta name="description" content="愛知県豊田市・保見団地で、ラテンアメリカにルーツを持つ住民と地域をつなぐNPO法人。日本語学習・子どもの教育支援・生活相談・多文化交流・災害対策。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-ink:#2A1E33;
+  --c-ink-soft:#5E4E66;
+  --c-paper:#FFFFFF;
+  --c-cream:#FFF8F0;
+  --c-line:#F0DFD0;
+  /* ラテンのサンセット多色（品よく） */
+  --c-orange:#FF7A3D;
+  --c-magenta:#E64592;
+  --c-yellow:#FFC93C;
+  --c-turq:#1FB6B0;
+  --c-deep:#B5297A;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-disp:"Baloo 2","Noto Sans JP",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --aurora:linear-gradient(115deg,#FF7A3D 0%,#E64592 34%,#B5297A 55%,#7A2A8C 74%,#1FB6B0 100%);
+  --aurora-soft:linear-gradient(120deg,#FFB27A 0%,#F07AA8 45%,#8FC9C6 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-cream);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.6;word-break:auto-phrase;font-weight:900}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 26px}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(255,248,240,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--c-line)}
+.head .inner{max-width:1040px;margin:0 auto;padding:0 26px;height:66px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .t{font-family:var(--font-disp);font-weight:800;font-size:16px;letter-spacing:.01em;line-height:1.15}
+.brand .t small{display:block;font-family:var(--font-body);font-size:10px;font-weight:700;color:var(--c-deep);letter-spacing:.02em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:22px}
+.head nav a{text-decoration:none;font-size:13.5px;font-weight:700;color:var(--c-ink-soft);transition:color .25s}
+.head nav a:hover{color:var(--c-deep)}
+.head .cta{margin-left:8px;background:var(--aurora);color:#fff;text-decoration:none;font-weight:800;font-size:13px;padding:10px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 18px rgba(230,69,146,.28)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:24px;height:2.5px;background:var(--c-ink);border-radius:2px;margin:5px 0;transition:.3s}
+
+/* ===== ヒーロー（オーロラ主役） ===== */
+.hero{position:relative;overflow:hidden;background:var(--aurora);color:#fff;padding:96px 0 108px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none}
+.hero::before{width:520px;height:520px;background:radial-gradient(circle,#FFC93C,transparent 68%);top:-160px;right:-120px}
+.hero::after{width:460px;height:460px;background:radial-gradient(circle,#1FB6B0,transparent 70%);bottom:-180px;left:-100px}
+.hero .wrap{position:relative;z-index:2}
+.hero .multi{font-family:var(--font-disp);font-weight:700;font-size:14px;letter-spacing:.04em;opacity:.95;margin-bottom:18px}
+.hero .multi span{opacity:.7}
+.hero h1{font-size:clamp(30px,5.4vw,58px);line-height:1.32;letter-spacing:.01em;text-shadow:0 4px 30px rgba(60,10,50,.22)}
+.hero .lead{margin-top:24px;max-width:640px;font-size:clamp(15px,1.7vw,17px);line-height:2.05;opacity:.97}
+.hero .btns{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .btns a{text-decoration:none;font-weight:800;font-size:14.5px;padding:15px 30px;border-radius:999px;transition:transform .2s var(--ease),box-shadow .2s}
+.hero .btns a:hover{transform:translateY(-2px)}
+.hero .b1{background:#fff;color:var(--c-deep);box-shadow:0 10px 30px rgba(50,5,40,.25)}
+.hero .b2{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+.hero .langchips{margin-top:30px;display:flex;gap:8px;flex-wrap:wrap}
+.hero .langchips b{font-family:var(--font-disp);font-weight:700;font-size:12.5px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)}
+.wave{position:absolute;left:0;right:0;bottom:-1px;z-index:1;line-height:0}
+.wave svg{width:100%;height:64px;display:block}
+
+/* ===== セクション共通 ===== */
+.sec{padding:88px 0}
+.sec.alt{background:var(--c-paper)}
+.eyebrow{font-family:var(--font-disp);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--aurora);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.sec h2{font-size:clamp(23px,3.2vw,33px);line-height:1.45;letter-spacing:.01em;margin-bottom:14px}
+.sec .sub{color:var(--c-ink-soft);max-width:640px;font-size:15px;margin-bottom:44px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#B58FA5;display:inline-block}
+
+/* ===== ミッション帯 ===== */
+.mission{background:var(--aurora-soft);border-radius:26px;padding:52px 46px;color:#3a1030;position:relative;overflow:hidden}
+.mission p{font-size:clamp(18px,2.5vw,25px);font-weight:900;line-height:1.85;position:relative;z-index:1}
+.mission p em{font-style:normal;background:linear-gradient(transparent 62%,rgba(255,255,255,.7) 62%)}
+.mission .small{margin-top:18px;font-size:13px;font-weight:500;line-height:1.9;opacity:.85}
+
+/* ===== 活動カード ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:20px;padding:30px 26px;transition:transform .25s var(--ease),box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(181,41,122,.12)}
+.card .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;margin-bottom:16px;color:#fff}
+.card .ic svg{width:26px;height:26px}
+.i-orange{background:linear-gradient(135deg,#FF9A3D,#FF6B3D)}
+.i-magenta{background:linear-gradient(135deg,#F26FA6,#E1408A)}
+.i-turq{background:linear-gradient(135deg,#3FC7C1,#149C97)}
+.i-yellow{background:linear-gradient(135deg,#FFD75E,#F5A623)}
+.i-deep{background:linear-gradient(135deg,#C24AA0,#8C2A8C)}
+.i-warm{background:linear-gradient(135deg,#FF8A5C,#E64592)}
+.card h3{font-size:17.5px;margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--c-ink-soft);line-height:1.95}
+
+/* ===== 交流の風景（写真） ===== */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery figure{position:relative;border-radius:16px;overflow:hidden;margin:0}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .5s var(--ease)}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(60,10,50,.35));pointer-events:none}
+.gallery figcaption{position:absolute;left:14px;bottom:12px;z-index:1;color:#fff;font-weight:700;font-size:12.5px;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+
+/* ===== 数字（ダミー明示） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.stat{text-align:center;background:var(--c-paper);border:1px solid var(--c-line);border-radius:18px;padding:30px 18px}
+.stat .n{font-family:var(--font-disp);font-weight:800;font-size:clamp(30px,5vw,44px);line-height:1;background:var(--aurora);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:13px;color:var(--c-ink-soft);margin-top:10px;font-weight:700}
+
+/* ===== 参加・支援 ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.join .box{border:1.5px solid var(--c-line);border-radius:20px;padding:28px 24px;background:var(--c-cream)}
+.join .box h3{font-size:17px;margin-bottom:8px;color:var(--c-deep)}
+.join .box p{font-size:13.5px;color:var(--c-ink-soft)}
+
+/* ===== 概要テーブル ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border-radius:14px;overflow:hidden}
+table.gaiyo th{width:160px;text-align:left;font-weight:700;background:var(--c-cream);border:1px solid var(--c-line);padding:13px 18px;white-space:nowrap;color:var(--c-deep)}
+table.gaiyo td{border:1px solid var(--c-line);padding:13px 18px;line-height:1.9}
+.tbl-hint{display:none;font-size:11px;color:#B58FA5;margin-top:8px}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.contact{background:var(--aurora);color:#fff;border-radius:26px;padding:48px 44px;position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#FFC93C,transparent 70%);filter:blur(70px);opacity:.5;top:-140px;right:-120px}
+.contact .in{position:relative;z-index:1}
+.contact h2{color:#fff;font-size:clamp(22px,3vw,30px);margin-bottom:10px}
+.contact .cx{opacity:.95;font-size:14.5px;margin-bottom:28px;max-width:560px}
+.form{display:grid;gap:16px;max-width:600px}
+.form label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
+.form input,.form textarea{width:100%;border:none;border-radius:12px;padding:13px 15px;font-family:inherit;font-size:15px;background:rgba(255,255,255,.95);color:var(--c-ink)}
+.form textarea{min-height:120px;resize:vertical}
+.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form button{justify-self:start;background:#fff;color:var(--c-deep);border:none;border-radius:999px;font-weight:800;font-size:15px;padding:15px 40px;cursor:pointer;transition:transform .2s}
+.form button:hover{transform:translateY(-2px)}
+.form-note{font-size:12px;opacity:.9;margin-top:2px}
+.tel-line{margin-top:26px;font-size:14px;opacity:.97}
+.tel-line b{font-family:var(--font-disp);font-weight:800;font-size:20px;letter-spacing:.02em}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#EAD9E6;padding:52px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-disp);font-weight:800;font-size:17px;color:#fff}
+.footer .f-name small{display:block;font-family:var(--font-body);font-size:11.5px;font-weight:500;opacity:.7;margin-top:4px}
+.footer p{font-size:12.5px;opacity:.75;margin-top:8px}
+.sample-note{font-size:11px;opacity:.6;margin-top:22px;line-height:1.95}
+.sample-note a{color:#F2B7DA}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;background:rgba(42,30,51,.92);color:#fff;font-size:11.5px;font-weight:700;padding:9px 15px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25);backdrop-filter:blur(6px);line-height:1.4}
+.pill b{color:#FFC93C}
+
+/* ===== レスポンシブ ===== */
+.sp-nav{display:none}
+@media (max-width:860px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:#fff;border-bottom:1px solid var(--c-line);padding:12px 22px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:700;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav a.cta{color:var(--c-deep)}
+  .cards,.join{grid-template-columns:1fr;gap:16px}
+  .gallery{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr;gap:12px}
+  .sec{padding:60px 0}
+  .hero{padding:70px 0 84px}
+  .mission{padding:36px 26px}
+  .contact{padding:36px 24px}
+  .form .row2{grid-template-columns:1fr}
+  .tbl-hint{display:block}
+}
+@media (max-width:640px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border:none;padding:11px 16px 4px;font-size:12.5px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 16px 13px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="head">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FF7A3D"/><stop offset=".45" stop-color="#E64592"/><stop offset="1" stop-color="#1FB6B0"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="19" fill="url(#g)"/>
+        <path d="M13 26c3-8 10-12 15-12-1 9-7 13-15 12Z" fill="#fff" opacity=".92"/>
+        <circle cx="27" cy="14" r="2.6" fill="#FFC93C"/>
+      </svg>
+      <span class="t">保見ヶ丘ラテンアメリカセンター<small>特定非営利活動法人｜愛知県豊田市</small></span>
+    </a>
+    <nav>
+      <a href="#mission">わたしたち</a>
+      <a href="#activity">活動</a>
+      <a href="#gallery">交流の風景</a>
+      <a href="#join">参加・支援</a>
+      <a href="#gaiyo">団体概要</a>
+    </nav>
+    <a class="cta" href="#contact">お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#mission">わたしたち</a>
+    <a href="#activity">活動</a>
+    <a href="#gallery">交流の風景</a>
+    <a href="#join">参加・支援</a>
+    <a href="#gaiyo">団体概要</a>
+    <a href="#contact" class="cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー（オーロラ主役） -->
+<section class="hero">
+  <div class="wrap">
+    <p class="multi reveal on">Bienvenidos <span>/</span> Bem-vindos <span>/</span> ようこそ</p>
+    <h1 class="reveal on"><span class="kb">ちがう言葉、</span><span class="kb">おなじまち。</span><br><span class="kb">この団地から、</span><span class="kb">多文化共生を。</span></h1>
+    <p class="lead reveal on">保見ヶ丘ラテンアメリカセンターは、愛知県豊田市の保見団地とその周辺で、ラテンアメリカにルーツを持つ住民と地域をつなぐNPO法人です。日本語学習、子どもの教育、生活の相談、そして日本人住民との交流を通じて、誰もが安心して暮らせるまちをめざしています。</p>
+    <div class="btns reveal on">
+      <a class="b1" href="#activity">活動を見る</a>
+      <a class="b2" href="#join">参加・支援する</a>
+    </div>
+    <div class="langchips reveal on">
+      <b>日本語</b><b>Español</b><b>Português</b>
+    </div>
+  </div>
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,32 C240,64 480,0 720,24 C960,48 1200,64 1440,28 L1440,64 L0,64 Z" fill="#FFF8F0"/></svg>
+  </div>
+</section>
+
+<!-- ミッション -->
+<section class="sec" id="mission">
+  <div class="wrap">
+    <p class="eyebrow reveal">Our Mission</p>
+    <h2 class="reveal">言葉や文化のちがいを、<br>「こまりごと」で終わらせない。</h2>
+    <div class="mission reveal">
+      <p><span class="kb">ラテンアメリカから来た人も、</span><span class="kb">ここで生まれ育った人も、</span><br><span class="kb"><em>同じ地域の住民として</em></span><span class="kb">支え合える場所を。</span></p>
+      <p class="small">わたしたちは、保見団地および周辺地域に暮らすラテンアメリカ地域からの外国籍住民に対して、交流・協力・支援に関する事業を行っています。外国人住民と日本人住民の相互理解を深め、共に安心して暮らせる地域づくりをめざします。<br><span class="note-sample">※この文章は内閣府NPOポータル掲載の定款目的（公開情報）をもとにしたサンプルです。実際の理念文に差し替えます</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 活動 -->
+<section class="sec alt" id="activity">
+  <div class="wrap">
+    <p class="eyebrow reveal">Activities</p>
+    <h2 class="reveal">わたしたちの活動</h2>
+    <p class="sub reveal">定款に掲げる事業をもとに、地域の「今」に合わせて活動しています。<span class="note-sample">※内容説明の文面はサンプルです。実際の活動に合わせて調整します</span></p>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ic i-magenta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>日本語学習・学習研修</h3>
+        <p>外国人住民・日本人住民が学び合う学習研修の場づくり。暮らしに必要な日本語を、やさしく一緒に学びます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic i-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>子ども・生徒の教育支援</h3>
+        <p>外国にルーツを持つ児童・生徒の教育活動を支援。学校生活や学びに、地域の大人として寄り添います。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic i-turq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>生活相談・翻訳/通訳</h3>
+        <p>役所の手続き、医療、教育などの場面で、翻訳・通訳をはじめとする生活支援を行い、言葉の壁をやわらげます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic i-warm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+        <h3>多文化交流事業</h3>
+        <p>外国人住民と日本人住民が出会い、互いの文化を知る交流の機会づくり。祭りや催しを通じて「顔の見える関係」を育てます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic i-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+        <h3>災害対策・地域情報提供</h3>
+        <p>災害時に言葉の壁で情報から取り残されないよう、多言語での情報提供や備えの取り組みを進めます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic i-deep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg></div>
+        <h3>地域活動支援・日本語教育研究</h3>
+        <p>地域の活動を後押しし、地域における日本語教育のあり方を研究。持続可能な多文化共生の仕組みづくりに取り組みます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 交流の風景 -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <p class="eyebrow reveal">Scenes</p>
+    <h2 class="reveal">交流の風景</h2>
+    <p class="sub reveal">言葉がちがっても、一緒に過ごす時間が「まち」をつくります。<span class="note-sample">※写真はイメージ素材（Unsplash）です。実際の活動写真に差し替えます</span></p>
+    <div class="gallery reveal">
+      <!-- 差し替えポイント: 実際の活動・交流のお写真（顔が特定されにくい構図で） -->
+      <figure><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80&auto=format&fit=crop" alt="多世代・多文化の交流のイメージ"><figcaption>みんなで集う</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80&auto=format&fit=crop" alt="学びの場のイメージ"><figcaption>ともに学ぶ</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=700&q=80&auto=format&fit=crop" alt="食を通じた交流のイメージ"><figcaption>食で出会う</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1571210862729-78a52d3779a2?w=700&q=80&auto=format&fit=crop" alt="地域の催しのイメージ"><figcaption>まちのお祭り</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 数字（ダミー明示） -->
+<section class="sec alt">
+  <div class="wrap">
+    <p class="eyebrow reveal">Community</p>
+    <h2 class="reveal">保見団地と、多文化のまち</h2>
+    <p class="sub reveal">保見団地は、多くの外国籍住民が暮らす地域として知られています。<span class="note-sample">※下の数値は表示イメージのサンプルです。実際の数字・実績に差し替えます</span></p>
+    <!-- ※サンプル: 数値はすべてダミーです -->
+    <div class="stats reveal">
+      <div class="stat"><div class="n">3</div><div class="l">おもな対応言語<br>（日本語・スペイン語・ポルトガル語）</div></div>
+      <div class="stat"><div class="n">00+</div><div class="l">年間の交流・学習の機会<br>（※サンプル）</div></div>
+      <div class="stat"><div class="n">00</div><div class="l">活動を支えるボランティア<br>（※サンプル）</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加・支援 -->
+<section class="sec" id="join">
+  <div class="wrap">
+    <p class="eyebrow reveal">Get Involved</p>
+    <h2 class="reveal">一緒に、まちをつくる</h2>
+    <p class="sub reveal">活動を支えてくださる方、参加したい方を歓迎しています。できることを、できる範囲で。</p>
+    <div class="join">
+      <div class="box reveal">
+        <h3>ボランティア</h3>
+        <p>日本語学習のサポート、子どもの学習支援、交流イベントの運営など。言葉が得意でなくても参加できます。</p>
+      </div>
+      <div class="box reveal">
+        <h3>ご寄付・賛助会員</h3>
+        <p>活動を継続していくための力になります。継続的な支援も、一度きりの応援も歓迎しています。<span class="note-sample">※募集要項はサンプルです</span></p>
+      </div>
+      <div class="box reveal">
+        <h3>連携・協力</h3>
+        <p>学校・行政・企業・地域団体のみなさまと、多文化共生の取り組みをご一緒します。お気軽にご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 団体概要 -->
+<section class="sec alt" id="gaiyo">
+  <div class="wrap">
+    <p class="eyebrow reveal">Profile</p>
+    <h2 class="reveal">団体概要</h2>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 保見ヶ丘ラテンアメリカセンター</td></tr>
+        <tr><th>所在地</th><td>愛知県豊田市保見ヶ丘（詳細は公開時に記載）</td></tr>
+        <tr><th>活動分野</th><td>社会教育／まちづくり／災害救援／国際協力</td></tr>
+        <tr><th>おもな事業</th><td>外国人住民と日本人住民の交流事業／外国人児童生徒の教育活動支援／地域情報提供／学習研修／翻訳・通訳等の生活支援／災害対策／地域活動支援／地域日本語教育研究</td></tr>
+        <tr><th>対象地域</th><td>豊田市 保見団地および周辺地域</td></tr>
+        <tr><th>電話</th><td>0565-00-0000<span class="note-sample" style="margin-left:8px">（※サンプル。公開時に記載します）</span></td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p style="margin-top:16px"><span class="note-sample">※本表は内閣府NPOポータルサイト等の公開情報にもとづくサンプルです。設立年月日・法人番号・代表者名などは公開時に正確な内容へ差し替えます。</span></p>
+  </div>
+</section>
+
+<!-- お問い合わせ（デモフォーム） -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="in">
+        <h2>お問い合わせ</h2>
+        <p class="cx">活動への参加、ご寄付、連携のご相談、取材など、お気軽にご連絡ください。日本語のほか、スペイン語・ポルトガル語でのご相談も承ります。</p>
+        <form class="form" onsubmit="return false" aria-label="お問い合わせフォーム（デモ）">
+          <div class="row2">
+            <div><label for="f-name">お名前 / Nombre</label><input id="f-name" type="text" placeholder="山田 花子" autocomplete="name"></div>
+            <div><label for="f-mail">メール / Email</label><input id="f-mail" type="email" placeholder="example@mail.com" autocomplete="email"></div>
+          </div>
+          <div><label for="f-msg">ご用件 / Mensaje</label><textarea id="f-msg" placeholder="お問い合わせ内容をご記入ください"></textarea></div>
+          <p class="form-note">※このフォームはデモです。送信は行われません（ご契約後に実際の送信機能を設定します）。</p>
+          <button type="submit" onclick="alert('これはサンプルのデモフォームです。実際には送信されません。');return false;">送信する / Enviar</button>
+        </form>
+        <p class="tel-line">お電話でのお問い合わせ　<b>0565-00-0000</b><br><span style="font-size:12.5px;opacity:.85">※サンプルの番号です（このサンプルでは発信リンクを無効にしています）</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 保見ヶ丘ラテンアメリカセンター<small>愛知県豊田市保見ヶ丘（詳細は公開時に記載）</small></p>
+    <p>多文化共生・在住外国人支援｜社会教育・まちづくり・災害救援・国際協力</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、フォームはデモ動作）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px;opacity:.55">&copy; 2026 NPO法人 保見ヶ丘ラテンアメリカセンター（サンプル）</p>
+  </div>
+</footer>
+
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">この形の<b>ご提案用サンプル</b>です</a>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

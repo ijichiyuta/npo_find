@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 学園福祉会 さま（レシピカード型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・研修カリキュラムの「学ぶこと・手順・所要時間」など「※サンプル」表記の
+    内容はすべてダミーです。ご契約後に実データへ差し替えます
+  ・代表者氏名は記載していません／住所は区までの表示にしています
+  ・電話番号はダミー（tel:リンク無効化・format-detection off）です
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 学園福祉会｜名古屋市北区の介護員養成研修【ご提案サンプル】</title>
+<meta name="description" content="名古屋市北区で介護員養成研修を行うNPO法人。学びの手順を『レシピ』のようにやさしくご紹介します。福祉の仕事に、はじめの一歩を。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Yuji+Syuku&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FBF4E7;          /* クリーム（レシピ本の紙） */
+  --c-paper:#FFFDF8;       /* カード面 */
+  --c-card-warm:#FBEFDD;   /* 材料枠の淡い焼き色 */
+  --c-ink:#4A3226;         /* 赤茶インク */
+  --c-ink-soft:#8A6E5B;
+  --c-brown:#B5623A;       /* 赤茶アクセント（テラコッタ寄り・enjiと差別化） */
+  --c-brown-deep:#984B28;
+  --c-green:#6E8A4E;       /* ハーブグリーン */
+  --c-green-deep:#556E3B;
+  --c-green-pale:#EDF1E2;
+  --c-line:#E5D6BE;        /* クラフト罫 */
+  --c-dash:#CDB894;
+  --font-body:"Zen Maru Gothic",sans-serif;
+  --font-hand:"Yuji Syuku",serif;   /* 手書き風・見出しの一部に */
+  --font-num:"Jost",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+a{color:inherit}
+/* 文節改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* 紙のドット地紋（ほんのり） */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(var(--c-line) .7px,transparent .7px);
+  background-size:22px 22px;opacity:.28}
+.main,.topbar{position:relative;z-index:1}
+
+/* ===== 上部バー（横並び・レシピ本の帯） ===== */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(251,244,231,.94);backdrop-filter:blur(6px);border-bottom:2px dashed var(--c-dash)}
+.topbar .inner{max-width:1040px;margin:0 auto;padding:12px 26px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .t{font-weight:900;font-size:18px;letter-spacing:.04em;line-height:1.25}
+.brand .t small{display:block;font-size:10px;font-weight:500;color:var(--c-brown-deep);letter-spacing:.04em;margin-top:2px}
+.topbar nav{margin-left:auto;display:flex;gap:4px}
+.topbar nav a{text-decoration:none;font-size:13px;font-weight:500;color:var(--c-ink);padding:8px 12px;border-radius:20px;transition:background .25s var(--ease),color .25s var(--ease)}
+.topbar nav a:hover{background:var(--c-green-pale);color:var(--c-green-deep)}
+.topbar .cta{background:var(--c-brown);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 16px;border-radius:22px;white-space:nowrap;transition:background .25s}
+.topbar .cta:hover{background:var(--c-brown-deep)}
+.menu-btn{display:none}
+
+.main{max-width:1040px;margin:0 auto;padding:0 26px}
+.section{padding:78px 0;border-bottom:2px dashed var(--c-dash)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-num);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--c-green-deep);font-weight:500;margin-bottom:14px}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--c-green)}
+.sec-title{font-size:clamp(22px,3vw,30px);letter-spacing:.03em;margin-bottom:10px}
+.sec-title .hand{font-family:var(--font-hand);color:var(--c-brown);font-weight:400}
+.sec-lead{color:var(--c-ink-soft);font-size:14.5px;max-width:640px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-ink-soft);background:var(--c-card-warm);border-radius:6px;padding:2px 8px;display:inline-block}
+
+/* ===== ヒーロー（レシピ本の表紙） ===== */
+.hero{padding:64px 0 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;border-bottom:2px dashed var(--c-dash)}
+.hero .tag{display:inline-block;font-family:var(--font-hand);font-size:15px;color:var(--c-green-deep);border:1.5px solid var(--c-green);border-radius:24px;padding:4px 18px;margin-bottom:22px}
+.hero h1{font-size:clamp(29px,4.4vw,46px);font-weight:900;line-height:1.5;letter-spacing:.03em}
+.hero h1 .mk{position:relative;white-space:nowrap}
+.hero h1 .mk::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.34em;background:var(--c-card-warm);z-index:-1;border-radius:3px}
+.hero .lead{margin-top:24px;font-size:15.5px;color:var(--c-ink-soft);max-width:520px}
+.hero .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn-main{background:var(--c-brown);color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;padding:14px 26px;border-radius:28px;transition:transform .2s var(--ease),background .2s}
+.btn-main:hover{background:var(--c-brown-deep);transform:translateY(-2px)}
+.btn-sub{background:none;border:1.5px solid var(--c-line);color:var(--c-ink);text-decoration:none;font-weight:700;font-size:14.5px;padding:12.5px 24px;border-radius:28px;transition:border-color .2s,color .2s}
+.btn-sub:hover{border-color:var(--c-green);color:var(--c-green-deep)}
+/* 表紙の写真＝レシピ本のような角丸カード＋テープ */
+.hero-visual{position:relative}
+.hero-visual .frame{border-radius:20px;overflow:hidden;box-shadow:0 18px 46px rgba(74,50,38,.15);border:6px solid var(--c-paper)}
+.hero-visual .frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.hero-visual .tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-3deg);background:rgba(110,138,78,.28);border:1px dashed var(--c-green);width:120px;height:26px;border-radius:3px}
+.hero-visual .badge{position:absolute;bottom:-18px;right:-14px;background:var(--c-paper);border:2px dashed var(--c-brown);border-radius:50%;width:104px;height:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 20px rgba(74,50,38,.12);transform:rotate(6deg)}
+.hero-visual .badge b{font-family:var(--font-hand);font-size:15px;color:var(--c-brown-deep);line-height:1.3}
+.hero-visual .badge span{font-size:10px;color:var(--c-ink-soft)}
+
+/* ===== メニュー導入（作り方の考え方） ===== */
+.recipe-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.ri-card{background:var(--c-paper);border:1.5px solid var(--c-line);border-radius:16px;padding:26px 22px}
+.ri-card .ic{width:46px;height:46px;border-radius:12px;background:var(--c-green-pale);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.ri-card .ic svg{width:26px;height:26px;stroke:var(--c-green-deep);fill:none;stroke-width:1.7}
+.ri-card h3{font-size:16.5px;margin-bottom:6px}
+.ri-card p{font-size:13.5px;color:var(--c-ink-soft);line-height:1.85}
+
+/* ===== レシピカード（研修カリキュラム＝本サイトの主役） ===== */
+.recipe-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px}
+.rcard{background:var(--c-paper);border:1.5px solid var(--c-line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(74,50,38,.05)}
+.rcard .ph{position:relative}
+.rcard .ph img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.rcard .ph .no{position:absolute;top:14px;left:14px;background:var(--c-brown);color:#fff;font-family:var(--font-num);font-weight:500;letter-spacing:.12em;font-size:12px;padding:5px 13px;border-radius:20px}
+.rcard .ph .time{position:absolute;top:14px;right:14px;background:rgba(255,253,248,.94);color:var(--c-brown-deep);font-weight:700;font-size:12px;padding:5px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
+.rcard .ph .time svg{width:13px;height:13px;stroke:var(--c-brown);fill:none;stroke-width:1.8}
+.rcard .body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:16px;flex:1}
+.rcard h3{font-size:19px;letter-spacing:.02em}
+.rcard h3 .cat{display:block;font-family:var(--font-hand);font-size:12.5px;color:var(--c-green-deep);font-weight:400;margin-bottom:2px;letter-spacing:.04em}
+.rcard .lead{font-size:13.5px;color:var(--c-ink-soft);line-height:1.85}
+/* 材料（学ぶこと）＝レシピの材料欄 */
+.ingredients{background:var(--c-card-warm);border-radius:12px;padding:16px 18px}
+.ing-title{font-family:var(--font-hand);font-size:14px;color:var(--c-brown-deep);margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.ing-title svg{width:16px;height:16px;stroke:var(--c-brown);fill:none;stroke-width:1.7}
+.ingredients ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.ingredients li{font-size:13px;display:flex;align-items:baseline;gap:9px;line-height:1.7;border-bottom:1px dotted var(--c-dash);padding-bottom:6px}
+.ingredients li:last-child{border-bottom:none;padding-bottom:0}
+.ingredients li b{color:var(--c-ink);font-weight:500;flex:1}
+.ingredients li .amt{font-family:var(--font-num);font-size:12px;color:var(--c-brown-deep);white-space:nowrap;font-weight:500}
+/* 手順（ステップ）＝作り方 */
+.steps-title{font-family:var(--font-hand);font-size:14px;color:var(--c-green-deep);display:flex;align-items:center;gap:7px;margin-bottom:2px}
+.steps-title svg{width:16px;height:16px;stroke:var(--c-green-deep);fill:none;stroke-width:1.7}
+.steps{list-style:none;counter-reset:st}
+.steps li{counter-increment:st;position:relative;padding:0 0 12px 40px;font-size:13.5px;line-height:1.8}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--c-green-pale);color:var(--c-green-deep);font-family:var(--font-num);font-weight:500;font-size:13px;display:flex;align-items:center;justify-content:center}
+.steps li::after{content:"";position:absolute;left:12.5px;top:28px;bottom:2px;width:1.5px;background:var(--c-line)}
+.steps li:last-child::after{display:none}
+.rcard .foot{margin-top:auto;padding-top:4px;font-size:12px;color:var(--c-ink-soft);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.rcard .foot .lv{background:var(--c-green-pale);color:var(--c-green-deep);border-radius:16px;padding:3px 11px;font-weight:700}
+
+/* ===== 学びの流れ（受講ステップ） ===== */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;counter-reset:fl}
+.flow-item{counter-increment:fl;background:var(--c-paper);border:1.5px solid var(--c-line);border-radius:16px;padding:26px 20px 22px;position:relative}
+.flow-item .n{font-family:var(--font-num);font-weight:500;font-size:13px;color:#fff;background:var(--c-brown);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.flow-item .n::before{content:"STEP " counter(fl)}
+.flow-item .n{font-size:9px;letter-spacing:.06em}
+.flow-item h3{font-size:15.5px;margin-bottom:6px}
+.flow-item p{font-size:12.5px;color:var(--c-ink-soft);line-height:1.8}
+.flow-item::after{content:"→";position:absolute;right:-13px;top:44px;color:var(--c-dash);font-size:18px;z-index:2}
+.flow-item:last-child::after{display:none}
+
+/* ===== わたしたちのこと ===== */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+.about-visual{border-radius:20px;overflow:hidden;border:6px solid var(--c-paper);box-shadow:0 14px 34px rgba(74,50,38,.12)}
+.about-visual img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.about-txt .big{font-size:clamp(18px,2.3vw,23px);font-weight:700;line-height:1.9;margin-bottom:16px}
+.about-txt .big em{font-style:normal;color:var(--c-brown-deep)}
+.about-txt p{font-size:14.5px;color:var(--c-ink-soft);line-height:1.95}
+.about-txt p+p{margin-top:14px}
+.purpose-quote{margin-top:22px;background:var(--c-green-pale);border-left:4px solid var(--c-green);border-radius:0 12px 12px 0;padding:18px 22px;font-size:14px;line-height:1.9}
+.purpose-quote small{display:block;margin-top:8px;font-size:11.5px;color:var(--c-ink-soft)}
+
+/* ===== 声（受講者の声）ダミー ===== */
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.voice{background:var(--c-paper);border:1.5px solid var(--c-line);border-radius:16px;padding:24px 22px;position:relative}
+.voice .q{font-family:var(--font-hand);font-size:34px;color:var(--c-card-warm);position:absolute;top:8px;right:16px;line-height:1}
+.voice p{font-size:13.5px;line-height:1.9;position:relative}
+.voice .who{margin-top:14px;font-size:12px;color:var(--c-ink-soft);display:flex;align-items:center;gap:9px}
+.voice .who .dot{width:30px;height:30px;border-radius:50%;background:var(--c-green-pale);color:var(--c-green-deep);display:flex;align-items:center;justify-content:center;font-family:var(--font-hand);font-size:14px}
+
+/* ===== よくある質問 ===== */
+.faq{max-width:760px}
+.faq details{background:var(--c-paper);border:1.5px solid var(--c-line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:700;font-size:14.5px;display:flex;align-items:flex-start;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{font-family:var(--font-hand);color:var(--c-brown);flex:none}
+.faq summary .ar{margin-left:auto;transition:transform .25s var(--ease);color:var(--c-green-deep);flex:none}
+.faq details[open] summary .ar{transform:rotate(45deg)}
+.faq .a{padding:0 22px 20px 50px;font-size:13.5px;color:var(--c-ink-soft);line-height:1.9}
+
+/* ===== 概要表 ===== */
+.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border-radius:14px;overflow:hidden}
+.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-card-warm);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap;color:var(--c-brown-deep)}
+.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-ink-soft);margin-top:6px}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-info .tel-card{background:var(--c-paper);border:2px dashed var(--c-brown);border-radius:18px;padding:26px;text-align:center;margin-bottom:18px}
+.contact-info .tel-card .cap{font-family:var(--font-hand);font-size:14px;color:var(--c-brown-deep);margin-bottom:4px}
+.contact-info .tel-card .num{font-family:var(--font-num);font-size:30px;font-weight:500;color:var(--c-brown-deep);letter-spacing:.02em}
+.contact-info .tel-card small{display:block;font-size:11.5px;color:var(--c-ink-soft);margin-top:4px}
+.contact-info .map iframe{width:100%;height:230px;border:1.5px solid var(--c-line);border-radius:14px}
+form.demo{background:var(--c-paper);border:1.5px solid var(--c-line);border-radius:18px;padding:28px}
+form.demo label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+form.demo input,form.demo textarea{width:100%;font-family:inherit;font-size:14px;border:1.5px solid var(--c-line);border-radius:10px;padding:11px 13px;margin-bottom:16px;background:var(--c-bg);color:var(--c-ink)}
+form.demo input:focus,form.demo textarea:focus{outline:none;border-color:var(--c-green)}
+form.demo textarea{min-height:100px;resize:vertical}
+form.demo button{width:100%;background:var(--c-brown);color:#fff;border:none;border-radius:26px;font-family:inherit;font-weight:700;font-size:15px;padding:14px;cursor:pointer;transition:background .2s}
+form.demo button:hover{background:var(--c-brown-deep)}
+.form-note{font-size:11.5px;color:var(--c-ink-soft);text-align:center;margin-top:12px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#F0E4D6;padding:52px 0 34px}
+.footer .inner{max-width:1040px;margin:0 auto;padding:0 26px;text-align:center}
+.footer .f-name{font-weight:900;font-size:17px;letter-spacing:.04em}
+.footer .f-name small{display:block;font-size:11px;color:#C4A88F;font-weight:500;margin-top:4px}
+.footer .f-meta{font-size:12.5px;color:#C4A88F;margin-top:12px;line-height:1.9}
+.footer .sample-note{font-size:11px;color:#B79A80;margin-top:22px;line-height:1.95;border-top:1px solid #6A4E3C;padding-top:20px;max-width:680px;margin-left:auto;margin-right:auto}
+.footer .sample-note a{color:#E9D3BE}
+.footer .copy{font-size:11px;color:#9C8069;margin-top:16px}
+
+/* 左下ピル（制作クレジット） */
+.credit-pill{position:fixed;left:16px;bottom:16px;z-index:200;background:var(--c-ink);color:#F5E9DB;text-decoration:none;font-size:11.5px;font-weight:700;padding:9px 15px;border-radius:24px;box-shadow:0 6px 18px rgba(74,50,38,.28);display:inline-flex;align-items:center;gap:7px;transition:transform .2s var(--ease)}
+.credit-pill:hover{transform:translateY(-2px)}
+.credit-pill .d{width:7px;height:7px;border-radius:50%;background:var(--c-brown)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar nav{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5px 0;border-radius:2px;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .topbar .cta{display:none}
+  .sp-nav{display:none;border-top:2px dashed var(--c-dash);background:var(--c-bg);padding:8px 26px 18px}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:12px 4px;border-bottom:1px dotted var(--c-dash)}
+  .hero{grid-template-columns:1fr;gap:36px;padding:40px 0 52px}
+  .hero-visual{max-width:360px;margin:0 auto}
+  .recipe-intro{grid-template-columns:1fr;gap:14px}
+  .recipe-grid{grid-template-columns:1fr;gap:22px}
+  .flow{grid-template-columns:1fr 1fr;gap:14px}
+  .flow-item::after{display:none}
+  .about{grid-template-columns:1fr;gap:28px}
+  .voices{grid-template-columns:1fr;gap:16px}
+  .contact{grid-template-columns:1fr;gap:26px}
+  .section{padding:56px 0}
+}
+@media (max-width:560px){
+  .main{padding:0 18px}
+  .flow{grid-template-columns:1fr}
+  .recipe-grid{gap:18px}
+  .tbl-hint{display:block}
+  /* 概要表を積み上げに */
+  .gaiyo{min-width:0}
+  .gaiyo tr{display:block}
+  .gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:8px 14px 4px}
+  .gaiyo tr:first-child th{border-top:none}
+  .gaiyo td{display:block;width:100%;border:none;padding:2px 14px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部バー -->
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="4" y="4" width="40" height="40" rx="11" fill="#FBEFDD" stroke="#B5623A" stroke-width="1.6"/>
+        <path d="M16 30c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#6E8A4E" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M24 20V13" stroke="#B5623A" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="24" cy="11" r="2.4" fill="#B5623A"/>
+        <path d="M15 34h18" stroke="#B5623A" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="t">学園福祉会<small>NPO法人｜名古屋市北区・介護員養成研修</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="#courses">研修メニュー</a>
+      <a href="#flow">学びの流れ</a>
+      <a href="#about">わたしたち</a>
+      <a href="#voices">受講者の声</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#contact">受講の相談をする</a>
+  </div>
+  <nav class="sp-nav">
+    <a href="#courses">研修メニュー</a>
+    <a href="#flow">学びの流れ</a>
+    <a href="#about">わたしたち</a>
+    <a href="#voices">受講者の声</a>
+    <a href="#faq">よくある質問</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<div class="main">
+
+  <!-- ヒーロー（レシピ本の表紙） -->
+  <section class="hero">
+    <div class="reveal on">
+      <span class="tag">福祉の学びを、レシピのように。</span>
+      <h1><span class="kb">はじめての介護、</span><br><span class="kb"><span class="mk">「作り方」</span>から</span><span class="kb">やさしく。</span></h1>
+      <p class="lead">学園福祉会は、名古屋市北区で介護員養成研修を行うNPO法人です。学ぶこと・手順・かかる時間を一枚の「レシピカード」にまとめ、はじめての方でも迷わないように。福祉の仕事への、はじめの一歩を応援します。</p>
+      <div class="btns">
+        <a class="btn-main" href="#courses">研修メニューを見る</a>
+        <a class="btn-sub" href="#contact">受講の相談をする</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal on">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="frame">
+        <!-- 差し替えポイント: 研修・学びの風景のお写真 -->
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80&auto=format&fit=crop" alt="学びの風景のイメージ">
+      </div>
+      <div class="badge" aria-hidden="true"><b>やさしい<br>手順</b><span>で学べる</span></div>
+    </div>
+  </section>
+
+  <!-- レシピの考え方（3枚） -->
+  <section class="section" id="concept">
+    <span class="eyebrow reveal">Our recipe</span>
+    <h2 class="sec-title reveal">学びを、<span class="hand">おいしい</span>ひと皿に。</h2>
+    <p class="sec-lead reveal" style="margin-bottom:34px">むずかしく思える福祉の学びも、料理のレシピのように「材料・手順・時間」に分ければ、ぐっと身近になります。学園福祉会の研修は、この3つを大切にしています。</p>
+    <div class="recipe-intro">
+      <div class="ri-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h10"/><circle cx="19" cy="16" r="1.5"/></svg></div>
+        <h3>材料 ＝ 学ぶこと</h3>
+        <p>その研修で身につく知識や技術を「材料」として一覧に。何が学べるか、はじめに分かります。</p>
+      </div>
+      <div class="ri-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 5l4 4M5 12l4 4M5 19l4-4"/><path d="M12 6h8M12 12h8M12 18h8"/></svg></div>
+        <h3>手順 ＝ ステップ</h3>
+        <p>基礎から実技まで、学ぶ順番を番号でご案内。一段ずつ進めば、自然と身につきます。</p>
+      </div>
+      <div class="ri-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M12 3h0M9 3h6"/></svg></div>
+        <h3>所要時間 ＝ めやす</h3>
+        <p>受講にかかる時間の目安を明記。お仕事や家事とのバランスも、計画しやすくなります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- レシピカード（研修メニュー＝主役） -->
+  <section class="section" id="courses">
+    <span class="eyebrow reveal">Course menu</span>
+    <h2 class="sec-title reveal">研修メニュー<span class="hand"> / おしながき</span></h2>
+    <p class="sec-lead reveal">それぞれの研修を、一枚のレシピカードにまとめました。<span class="note-sample">※以下のカリキュラム内容・時間・レベルはすべて表示イメージのサンプルです。実際の内容に差し替えます</span></p>
+
+    <div class="recipe-grid">
+
+      <!-- ※サンプル: カード内容はダミーです -->
+      <article class="rcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 介護の基本を学ぶ様子 -->
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&q=80&auto=format&fit=crop" alt="基礎研修のイメージ">
+          <span class="no">RECIPE 01</span>
+          <span class="time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>約130時間</span>
+        </div>
+        <div class="body">
+          <h3><span class="cat">— はじめの一皿 —</span>介護職員初任者研修</h3>
+          <p class="lead">介護のいちばん基礎を、ていねいに。資格や経験がなくても、ここからはじめられます。</p>
+          <div class="ingredients">
+            <div class="ing-title"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h10"/></svg>材料（学ぶこと）</div>
+            <ul>
+              <li><b>介護の基本・こころ構え</b><span class="amt">6h</span></li>
+              <li><b>からだのしくみと生活支援</b><span class="amt">30h</span></li>
+              <li><b>移動・食事・入浴の介助（実技）</b><span class="amt">50h</span></li>
+              <li><b>認知症の理解</b><span class="amt">24h</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="steps-title"><svg viewBox="0 0 24 24"><path d="M5 6l3 3 4-5M5 13l3 3 4-5"/></svg>手順（ステップ）</div>
+            <ol class="steps">
+              <li>座学で「介護とは何か」を知る</li>
+              <li>実技演習で介助の基本動作を身につける</li>
+              <li>修了評価をうけて研修修了へ</li>
+            </ol>
+          </div>
+          <div class="foot"><span class="lv">はじめての方</span><span>通学・少人数（サンプル表記）</span></div>
+        </div>
+      </article>
+
+      <!-- ※サンプル: カード内容はダミーです -->
+      <article class="rcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 実務者向け研修の様子 -->
+          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1000&q=80&auto=format&fit=crop" alt="実務者研修のイメージ">
+          <span class="no">RECIPE 02</span>
+          <span class="time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>約450時間</span>
+        </div>
+        <div class="body">
+          <h3><span class="cat">— つぎのひと皿 —</span>介護福祉士実務者研修</h3>
+          <p class="lead">初任者からステップアップ。医療的ケアの基礎まで学び、国家資格をめざす方の土台に。</p>
+          <div class="ingredients">
+            <div class="ing-title"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h10"/></svg>材料（学ぶこと）</div>
+            <ul>
+              <li><b>介護過程の展開</b><span class="amt">45h</span></li>
+              <li><b>医療的ケアの基礎（座学）</b><span class="amt">50h</span></li>
+              <li><b>こころとからだのしくみ</b><span class="amt">120h</span></li>
+              <li><b>認知症・障害の理解</b><span class="amt">40h</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="steps-title"><svg viewBox="0 0 24 24"><path d="M5 6l3 3 4-5M5 13l3 3 4-5"/></svg>手順（ステップ）</div>
+            <ol class="steps">
+              <li>通信課題で基礎を予習する</li>
+              <li>スクーリングで実技・演習を行う</li>
+              <li>医療的ケア演習を修了する</li>
+            </ol>
+          </div>
+          <div class="foot"><span class="lv">経験のある方</span><span>通信＋通学（サンプル表記）</span></div>
+        </div>
+      </article>
+
+      <!-- ※サンプル: カード内容はダミーです -->
+      <article class="rcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 認知症ケアの研修の様子 -->
+          <img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=1000&q=80&auto=format&fit=crop" alt="認知症ケア研修のイメージ">
+          <span class="no">RECIPE 03</span>
+          <span class="time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>約6時間</span>
+        </div>
+        <div class="body">
+          <h3><span class="cat">— 季節の一品 —</span>認知症介護 基礎研修</h3>
+          <p class="lead">認知症のある方への向き合い方を、短い時間でぎゅっと。現場ですぐに活かせる内容です。</p>
+          <div class="ingredients">
+            <div class="ing-title"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h10"/></svg>材料（学ぶこと）</div>
+            <ul>
+              <li><b>認知症の人の理解</b><span class="amt">2h</span></li>
+              <li><b>その人らしさを支える関わり</b><span class="amt">2h</span></li>
+              <li><b>チームでの支え方</b><span class="amt">2h</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="steps-title"><svg viewBox="0 0 24 24"><path d="M5 6l3 3 4-5M5 13l3 3 4-5"/></svg>手順（ステップ）</div>
+            <ol class="steps">
+              <li>事例をもとに理解を深める</li>
+              <li>グループで関わり方を考える</li>
+            </ol>
+          </div>
+          <div class="foot"><span class="lv">現任の方</span><span>1日完結（サンプル表記）</span></div>
+        </div>
+      </article>
+
+      <!-- ※サンプル: カード内容はダミーです -->
+      <article class="rcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 就労・復職支援の研修の様子 -->
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1000&q=80&auto=format&fit=crop" alt="復職・就労支援研修のイメージ">
+          <span class="no">RECIPE 04</span>
+          <span class="time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>約3時間</span>
+        </div>
+        <div class="body">
+          <h3><span class="cat">— まかない仕込み —</span>復職・お仕事さがし相談</h3>
+          <p class="lead">「久しぶりの現場が不安」「どんな職場が合う?」。学びのあとの一歩まで、いっしょに考えます。</p>
+          <div class="ingredients">
+            <div class="ing-title"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 12h16M4 16h10"/></svg>材料（相談できること）</div>
+            <ul>
+              <li><b>働き方・勤務時間のこと</b><span class="amt">—</span></li>
+              <li><b>ブランクからの復職</b><span class="amt">—</span></li>
+              <li><b>研修修了後の進み方</b><span class="amt">—</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="steps-title"><svg viewBox="0 0 24 24"><path d="M5 6l3 3 4-5M5 13l3 3 4-5"/></svg>手順（ステップ）</div>
+            <ol class="steps">
+              <li>ご希望や不安をお聞きする</li>
+              <li>あなたに合う学び方・働き方を整理する</li>
+            </ol>
+          </div>
+          <div class="foot"><span class="lv">どなたでも</span><span>予約制・無料相談（サンプル表記）</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 学びの流れ -->
+  <section class="section" id="flow">
+    <span class="eyebrow reveal">How to start</span>
+    <h2 class="sec-title reveal">受講までの<span class="hand">4ステップ</span></h2>
+    <p class="sec-lead reveal">はじめての方も、迷わずスタートできるように。</p>
+    <div class="flow">
+      <div class="flow-item reveal"><span class="n"></span><h3>相談・お問い合わせ</h3><p>「まず話を聞きたい」だけで大丈夫です。ご希望をお聞かせください。</p></div>
+      <div class="flow-item reveal"><span class="n"></span><h3>研修を選ぶ</h3><p>レシピカードから、いまのあなたに合う研修を一緒に選びます。</p></div>
+      <div class="flow-item reveal"><span class="n"></span><h3>お申し込み</h3><p>日程を決めてお申し込み。持ち物などもご案内します。</p></div>
+      <div class="flow-item reveal"><span class="n"></span><h3>受講・修了</h3><p>手順にそって学び、修了へ。次の一歩もサポートします。</p></div>
+    </div>
+  </section>
+
+  <!-- わたしたちのこと -->
+  <section class="section" id="about">
+    <span class="eyebrow reveal">About us</span>
+    <h2 class="sec-title reveal" style="margin-bottom:28px">わたしたちのこと</h2>
+    <div class="about">
+      <div class="about-visual reveal">
+        <!-- 差し替えポイント: 事務所・研修室・スタッフのお写真 -->
+        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1000&q=80&auto=format&fit=crop" alt="学びの場のイメージ">
+      </div>
+      <div class="about-txt reveal">
+        <p class="big"><span class="kb">介護の学びを、</span><span class="kb"><em>もっと身近に。</em></span><br><span class="kb">福祉の担い手を、</span><span class="kb">この町から。</span></p>
+        <p>学園福祉会は、名古屋市とその周辺の地域で介護員養成研修事業を行い、福祉社会に寄与することを目的とするNPO法人です。はじめて福祉を学ぶ方にも寄り添い、一人ひとりのペースを大切にしています。</p>
+        <p><span class="note-sample">※上記の紹介文は、法人の登記目的（公開情報）をもとにしたサンプルです。実際のごあいさつ・活動内容に差し替えます</span></p>
+        <div class="purpose-quote">
+          「名古屋市と周辺市町村において、介護員養成研修事業を行い、福祉社会に寄与する」
+          <small>— 法人の目的（NPO法人ポータルの公開情報より）</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 受講者の声（ダミー） -->
+  <section class="section" id="voices">
+    <span class="eyebrow reveal">Voices</span>
+    <h2 class="sec-title reveal">受講された方の<span class="hand">こえ</span></h2>
+    <p class="sec-lead reveal"><span class="note-sample">※以下の声はすべて表示イメージのサンプルです。実際にいただいたお声に差し替えます</span></p>
+    <div class="voices">
+      <!-- ※サンプル: 受講者の声はダミーです -->
+      <div class="voice reveal">
+        <span class="q" aria-hidden="true">”</span>
+        <p>資格も経験もゼロからでしたが、手順どおりに進めたら自然と身につきました。実技の時間が多くて安心。</p>
+        <div class="who"><span class="dot">A</span>初任者研修を受講／30代</div>
+      </div>
+      <div class="voice reveal">
+        <span class="q" aria-hidden="true">”</span>
+        <p>働きながらでも、時間の目安が分かるので計画が立てやすかったです。少人数で質問しやすい雰囲気でした。</p>
+        <div class="who"><span class="dot">B</span>実務者研修を受講／40代</div>
+      </div>
+      <div class="voice reveal">
+        <span class="q" aria-hidden="true">”</span>
+        <p>ブランクからの復職で不安でしたが、相談から丁寧に付き合ってくれました。もう一度がんばれそうです。</p>
+        <div class="who"><span class="dot">C</span>復職相談を利用／50代</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- よくある質問 -->
+  <section class="section" id="faq">
+    <span class="eyebrow reveal">Q &amp; A</span>
+    <h2 class="sec-title reveal" style="margin-bottom:26px">よくあるご質問</h2>
+    <p class="sec-lead reveal" style="margin-bottom:24px"><span class="note-sample">※回答内容は表示イメージのサンプルです。実際の運用に合わせて差し替えます</span></p>
+    <div class="faq">
+      <!-- ※サンプル: 質問・回答はダミーです -->
+      <details class="reveal" open>
+        <summary><span class="q">Q.</span><span>まったくの初心者ですが、受講できますか？</span><span class="ar">＋</span></summary>
+        <div class="a">はい。資格や経験がない方を歓迎しています。「はじめの一皿」からやさしく学べる研修をご用意しています（サンプル）。</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="q">Q.</span><span>働きながらでも通えますか？</span><span class="ar">＋</span></summary>
+        <div class="a">お仕事や家事と両立しやすいよう、研修ごとに所要時間の目安をお示ししています。日程のご相談も承ります（サンプル）。</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="q">Q.</span><span>受講後の就職相談もできますか？</span><span class="ar">＋</span></summary>
+        <div class="a">修了後の進み方や職場さがしのご相談にも対応しています。学びのあとの一歩まで、いっしょに考えます（サンプル）。</div>
+      </details>
+      <details class="reveal">
+        <summary><span class="q">Q.</span><span>見学や説明を受けることはできますか？</span><span class="ar">＋</span></summary>
+        <div class="a">お問い合わせいただければ、研修内容のご説明をいたします。まずはお気軽にご相談ください（サンプル）。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 概要 -->
+  <section class="section" id="gaiyo">
+    <span class="eyebrow reveal">Profile</span>
+    <h2 class="sec-title reveal" style="margin-bottom:24px">法人概要</h2>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 学園福祉会</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市北区 ※詳細な住所は公開時に記載します</td></tr>
+        <tr><th>分野</th><td>保健・医療・福祉の増進</td></tr>
+        <tr><th>目的</th><td>名古屋市と周辺市町村において、介護員養成研修事業を行い、福祉社会に寄与する（登記目的・公開情報より）</td></tr>
+        <tr><th>主な事業</th><td>介護員養成研修 ほか<span class="note-sample">※具体的な研修名・内容はサンプルです</span></td></tr>
+        <tr><th>電話</th><td><span style="color:var(--c-brown-deep);font-weight:700">052-XXX-XXXX</span>（表示サンプル・番号は公開時に記載）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="section" id="contact" style="border-bottom:none">
+    <span class="eyebrow reveal">Contact</span>
+    <h2 class="sec-title reveal" style="margin-bottom:8px">受講のご相談・お問い合わせ</h2>
+    <p class="sec-lead reveal" style="margin-bottom:30px">「話を聞いてみたい」だけでも大丈夫です。お気軽にどうぞ。</p>
+    <div class="contact">
+      <div class="contact-info reveal">
+        <div class="tel-card">
+          <div class="cap">お電話でのご相談</div>
+          <!-- ※サンプル: 電話番号はダミー。tel:リンクは無効化しています -->
+          <div class="num">052-XXX-XXXX</div>
+          <small>※こちらは表示サンプルの番号です（発信できません）</small>
+        </div>
+        <div class="map">
+          <!-- 区までの範囲を表示（番地は出していません） -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%8C%97%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市北区の地図"></iframe>
+        </div>
+      </div>
+      <form class="demo reveal" onsubmit="return false">
+        <label for="f-name">お名前</label>
+        <input id="f-name" type="text" placeholder="山田 花子" autocomplete="name">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="email" placeholder="you@example.com" autocomplete="email">
+        <label for="f-msg">ご相談内容</label>
+        <textarea id="f-msg" placeholder="気になっている研修や、ご不安なことをお書きください"></textarea>
+        <button type="submit">送信する（デモ）</button>
+        <p class="form-note">※これはデモフォームです。実際には送信されません。<br>本番では、いただいた内容がご担当者へメールで届くようにします。</p>
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="inner">
+    <p class="f-name">特定非営利活動法人 学園福祉会<small>NPO法人（保健・医療・福祉）</small></p>
+    <p class="f-meta">愛知県名古屋市北区｜介護員養成研修事業</p>
+    <p class="sample-note">
+      本ページはホームページ制作の<b>ご提案用サンプル</b>です。写真はイメージ素材（Unsplash・商用可）、「※サンプル」と記した内容（研修カリキュラム・時間・受講者の声・電話番号など）はすべてダミーで、ご契約後に実データへ差し替えます。本文は公開情報（登記目的・所在地・分野）の範囲で作成し、住所は区までの表示、代表者氏名は記載していません。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のホームページ制作・公式LINE構築）</a>
+    </p>
+    <p class="copy">&copy; 2026 NPO法人 学園福祉会（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="credit-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener"><span class="d"></span>ご提案サンプル｜スマートコネクト</a>
+
+<script>
+// SPメニュー開閉
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロール表示アニメ
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ロードセンス・ジャパン さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の
+    範囲で作成。代表者実名・番地・建物名・実電話番号は記載していません
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・電話番号はダミーで、tel:リンクは無効化（発信されません）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。差し替え可
+  デザイン方向: リソグラフ2色刷り風（版ずれ・粗い網点・生成り×朱×藍の
+  レトロ2色印刷／安全啓発ポスター調）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 ロードセンス・ジャパン｜名古屋市中区の安全・安心のまちづくり【ご提案サンプル】</title>
+<meta name="description" content="安全・安心をキーワードに、分野・領域・地域にとらわれない横断的な活動を。安全・安心のまちづくりのまちづくりに取り組むNPO法人（名古屋市中区）。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Zen+Kaku+Gothic+Antique:wght@500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* リソグラフ2色刷りの版色：生成り(紙)／朱(1版)／藍(2版) */
+  --paper:#F3EBD9;      /* 生成りの紙 */
+  --paper-d:#E8DCC2;
+  --ink:#1B2A4A;        /* 藍インク */
+  --ink-2:#26386A;
+  --vermil:#E24A2B;     /* 朱インク */
+  --vermil-d:#C43A1F;
+  --line:#C9BC9E;
+  --font-disp:"RocknRoll One",sans-serif;   /* 力強いレトロ書体（見出し） */
+  --font-body:"Zen Kaku Gothic Antique",sans-serif;
+  --font-num:"Bebas Neue",sans-serif;
+  --ease:cubic-bezier(.2,.7,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);color:var(--ink);background:var(--paper);
+  line-height:1.95;font-size:15.5px;font-feature-settings:"palt";overflow-wrap:break-word;
+}
+/* リソグラフの紙質：粗い網点テクスチャを全面に薄く重ねる */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(rgba(27,42,74,.16) 1px,transparent 1.4px);
+  background-size:5px 5px;mix-blend-mode:multiply;opacity:.5;
+}
+/* 紙のムラ（インクの乗りムラ風） */
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 15% 0%,rgba(226,74,43,.05),transparent 55%),
+    radial-gradient(120% 90% at 100% 100%,rgba(27,42,74,.06),transparent 55%);
+}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.55;word-break:auto-phrase}
+.kb{display:inline-block}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 30px;position:relative;z-index:1}
+
+/* 版ずれ（misregistration）：見出しに朱の影をわずかにずらして重ねる */
+.riso{position:relative;display:inline-block}
+.riso::after{
+  content:attr(data-t);position:absolute;left:2.5px;top:2.5px;z-index:-1;
+  color:var(--vermil);mix-blend-mode:multiply;opacity:.85;
+}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:2.5px solid var(--ink)}
+.head .in{max-width:1000px;margin:0 auto;padding:12px 30px;display:flex;align-items:center;gap:16px}
+.brand{text-decoration:none;display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand .mk{width:46px;height:46px;flex:none}
+.brand .t{font-family:var(--font-disp);font-size:19px;letter-spacing:.02em;line-height:1.15}
+.brand .t small{display:block;font-family:var(--font-body);font-weight:700;font-size:10px;letter-spacing:.14em;color:var(--vermil-d);margin-top:3px}
+.head nav{margin-left:auto;display:flex;gap:4px}
+.head nav a{text-decoration:none;font-weight:700;font-size:13px;color:var(--ink);padding:9px 12px;letter-spacing:.03em;border-bottom:2.5px solid transparent;transition:border-color .25s var(--ease),color .25s}
+.head nav a:hover{color:var(--vermil-d);border-color:var(--vermil)}
+.head .cta{margin-left:8px;background:var(--vermil);color:var(--paper);text-decoration:none;font-family:var(--font-disp);font-size:13px;padding:10px 16px;letter-spacing:.04em;box-shadow:3px 3px 0 var(--ink);transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+.head .cta:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー（安全啓発ポスター調） ===== */
+.hero{position:relative;overflow:hidden;border-bottom:2.5px solid var(--ink)}
+.hero .in{max-width:1000px;margin:0 auto;padding:66px 30px 60px;position:relative;z-index:2}
+.hero .poster-tag{display:inline-block;font-family:var(--font-disp);font-size:12.5px;letter-spacing:.16em;color:var(--paper);background:var(--ink);padding:5px 14px;transform:rotate(-1.5deg);margin-bottom:24px}
+.hero h1{font-family:var(--font-disp);font-size:clamp(34px,7vw,72px);line-height:1.28;letter-spacing:.01em}
+.hero h1 .row{display:block}
+.hero h1 .em{color:var(--vermil-d)}
+.hero .lead{margin-top:26px;max-width:560px;font-weight:500;font-size:16px;line-height:2.05}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hero .chips span{font-weight:700;font-size:12.5px;letter-spacing:.03em;border:2px solid var(--ink);padding:5px 13px;background:var(--paper)}
+/* 巨大な網点の丸（版）を背景に配置 */
+.hero .dot{position:absolute;z-index:1;border-radius:50%;mix-blend-mode:multiply;opacity:.9}
+.hero .dot.v{width:min(46vw,440px);height:min(46vw,440px);right:-8%;top:-14%;
+  background:radial-gradient(circle,var(--vermil) 0,var(--vermil) 60%,transparent 61%);
+  -webkit-mask:radial-gradient(#000 1.5px,transparent 2px) 0 0/9px 9px;mask:radial-gradient(#000 1.5px,transparent 2px) 0 0/9px 9px;}
+.hero .dot.i{width:min(30vw,280px);height:min(30vw,280px);right:16%;bottom:-24%;
+  background:radial-gradient(circle,var(--ink) 0,var(--ink) 60%,transparent 61%);
+  -webkit-mask:radial-gradient(#000 1.5px,transparent 2px) 0 0/9px 9px;mask:radial-gradient(#000 1.5px,transparent 2px) 0 0/9px 9px;}
+
+/* ===== 帯（マーキー的スローガン） ===== */
+.band{background:var(--ink);color:var(--paper);border-bottom:2.5px solid var(--ink);overflow:hidden}
+.band .in{display:flex;gap:34px;padding:12px 0;white-space:nowrap;font-family:var(--font-disp);font-size:16px;letter-spacing:.1em;animation:slide 26s linear infinite}
+.band .in span{display:inline-flex;align-items:center;gap:34px}
+.band .in b{color:var(--vermil);font-weight:400}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.band .in{animation:none;justify-content:center}}
+
+/* ===== セクション共通 ===== */
+.sec{padding:78px 0;border-bottom:2.5px solid var(--ink);position:relative}
+.sec-head{margin-bottom:40px}
+.sec-head .en{font-family:var(--font-num);font-size:15px;letter-spacing:.3em;color:var(--vermil-d);display:block}
+.sec-head h2{font-family:var(--font-disp);font-size:clamp(26px,4.2vw,40px);line-height:1.35;margin-top:4px}
+.sec-head .u{border-bottom:5px solid var(--vermil);padding-bottom:2px}
+.note-sample{font-size:12px;color:var(--ink-2);opacity:.75}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== 私たちについて ===== */
+.about{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:center}
+.about .txt .big{font-family:var(--font-disp);font-size:clamp(19px,2.8vw,26px);line-height:1.8;margin-bottom:20px}
+.about .txt .big em{font-style:normal;color:var(--vermil-d)}
+.about .txt p{font-weight:500}
+.about .figure{position:relative}
+/* 写真をリソ2色に寄せる：藍で焼いて朱を重ねる */
+.riso-photo{position:relative;border:2.5px solid var(--ink)}
+.riso-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(1.05);mix-blend-mode:multiply}
+.riso-photo::before{content:"";position:absolute;inset:0;background:var(--paper);z-index:-1}
+.riso-photo::after{content:"";position:absolute;inset:0;background:var(--vermil);mix-blend-mode:screen;opacity:.14;pointer-events:none}
+.about .figure .stamp{position:absolute;right:-14px;bottom:-14px;width:104px;height:104px;background:var(--vermil);color:var(--paper);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--font-disp);line-height:1.2;text-align:center;transform:rotate(-8deg);box-shadow:3px 3px 0 var(--ink)}
+.about .figure .stamp b{font-size:22px}
+.about .figure .stamp small{font-size:9.5px;letter-spacing:.08em;font-family:var(--font-body);font-weight:700}
+
+/* ===== 活動（ポスター3枚組） ===== */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.act{border:2.5px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.act:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.act .ph{position:relative;border-bottom:2.5px solid var(--ink);overflow:hidden}
+.act .ph img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:grayscale(1) contrast(1.12) brightness(1.06);mix-blend-mode:multiply}
+.act .ph::after{content:"";position:absolute;inset:0;background:var(--vermil);mix-blend-mode:screen;opacity:.13}
+.act .no{position:absolute;top:8px;left:10px;font-family:var(--font-num);font-size:34px;color:var(--paper);line-height:.8;z-index:2;text-shadow:2px 2px 0 var(--vermil-d)}
+.act .bd{padding:20px 20px 24px}
+.act h3{font-family:var(--font-disp);font-size:19px;margin-bottom:10px}
+.act p{font-size:13.5px;font-weight:500;line-height:1.85}
+
+/* ===== 数字（活動の広がり） ===== */
+.stats{background:var(--ink);color:var(--paper);border-bottom:2.5px solid var(--ink)}
+.stats .in{max-width:1000px;margin:0 auto;padding:56px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;text-align:center;position:relative;z-index:1}
+.stat .n{font-family:var(--font-num);font-size:clamp(44px,8vw,72px);line-height:.9;color:var(--vermil)}
+.stat .n small{font-family:var(--font-disp);font-size:20px}
+.stat .l{font-weight:700;font-size:13.5px;letter-spacing:.06em;margin-top:8px}
+.stats .cap{max-width:1000px;margin:0 auto;padding:0 30px 40px;text-align:center;position:relative;z-index:1}
+.stats .cap .note-sample{color:#B9C4DE}
+
+/* ===== 支える（参加の方法） ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.join .c{border:2.5px solid var(--ink);padding:26px 24px 28px;background:var(--paper);position:relative}
+.join .c .tag{font-family:var(--font-num);font-size:14px;letter-spacing:.2em;color:var(--vermil-d)}
+.join .c h3{font-family:var(--font-disp);font-size:20px;margin:6px 0 12px}
+.join .c p{font-size:13.5px;font-weight:500;line-height:1.85}
+.join .c .go{display:inline-block;margin-top:16px;font-weight:700;font-size:13px;color:var(--vermil-d);text-decoration:none;border-bottom:2px solid var(--vermil)}
+
+/* ===== お知らせ ===== */
+.news .row{display:flex;gap:20px;align-items:baseline;padding:15px 4px;border-bottom:1.5px dashed var(--line);font-weight:500}
+.news .row time{flex:none;font-family:var(--font-num);font-size:16px;letter-spacing:.06em;color:var(--vermil-d)}
+.news .row .cat{flex:none;font-size:10.5px;font-weight:700;border:1.5px solid var(--ink);padding:2px 9px;letter-spacing:.04em}
+.news .row a{text-decoration:none;text-decoration-line:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+
+/* ===== 概要表 ===== */
+.gaiyo{width:100%;border-collapse:collapse;font-size:14.5px;border:2.5px solid var(--ink)}
+.gaiyo th{width:170px;text-align:left;font-weight:700;background:var(--paper-d);border-bottom:1.5px solid var(--line);border-right:2.5px solid var(--ink);padding:14px 18px;white-space:nowrap;vertical-align:top}
+.gaiyo td{border-bottom:1.5px solid var(--line);padding:14px 18px;font-weight:500}
+.gaiyo tr:last-child th,.gaiyo tr:last-child td{border-bottom:none}
+
+/* ===== お問い合わせ ===== */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.tel-card{border:2.5px solid var(--ink);background:var(--ink);color:var(--paper);padding:30px;box-shadow:6px 6px 0 var(--vermil)}
+.tel-card .cap{font-weight:700;font-size:13.5px;letter-spacing:.04em}
+.tel-card a.no{font-family:var(--font-num);font-size:42px;letter-spacing:.03em;color:var(--paper);text-decoration:none;display:block;margin:6px 0 2px;pointer-events:none}
+.tel-card .sub{font-size:12px;color:#B9C4DE}
+.tel-card .hours{margin-top:18px;border-top:1.5px dashed #45537A;padding-top:14px;font-size:13px}
+.form label{display:block;font-weight:700;font-size:13px;margin:0 0 6px}
+.form .fld{margin-bottom:16px}
+.form input,.form textarea{width:100%;font-family:inherit;font-size:15px;padding:12px 14px;border:2.5px solid var(--ink);background:var(--paper);color:var(--ink)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--vermil);box-shadow:3px 3px 0 var(--vermil)}
+.form button{width:100%;font-family:var(--font-disp);font-size:17px;letter-spacing:.05em;color:var(--paper);background:var(--vermil);border:2.5px solid var(--ink);padding:15px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+.form button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.form .demo{font-size:11.5px;color:var(--ink-2);opacity:.8;margin-top:8px;text-align:center}
+#formMsg{display:none;margin-top:14px;background:var(--paper-d);border:2px solid var(--ink);padding:12px 14px;font-weight:700;font-size:13.5px}
+
+/* ===== フッター ===== */
+.foot{background:var(--ink);color:var(--paper);padding:52px 0 34px;position:relative;z-index:1}
+.foot .top{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.foot .fn{font-family:var(--font-disp);font-size:22px}
+.foot .fn small{display:block;font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:.12em;color:#B9C4DE;margin-top:6px}
+.foot .meta{font-size:12.5px;color:#B9C4DE;line-height:1.9;text-align:right}
+.foot hr{border:none;border-top:1.5px dashed #45537A;margin:26px 0 20px}
+.sample-note{font-size:11.5px;color:#9FAECB;line-height:1.95}
+.sample-note a{color:#D9E1F0}
+.copy{font-family:var(--font-num);font-size:13px;letter-spacing:.1em;color:#8090B4;margin-top:18px}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:2.5px solid var(--ink);padding:8px 10px;cursor:pointer}
+  .menu-btn span{display:block;width:22px;height:2.5px;background:var(--ink);margin:4.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:none;background:var(--paper);border-bottom:2.5px solid var(--ink)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;font-weight:700;color:var(--ink);padding:15px 30px;border-top:1.5px dashed var(--line)}
+  .sp-nav .cta{color:var(--vermil-d)}
+  .about{grid-template-columns:1fr;gap:34px}
+  .about .figure{max-width:360px;margin:0 auto}
+  .acts{grid-template-columns:1fr;gap:20px}
+  .act .ph img{aspect-ratio:16/9}
+  .join{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr;gap:28px}
+  .foot .top{flex-direction:column;align-items:flex-start}
+  .foot .meta{text-align:left}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .sec{padding:56px 0}
+  .stats .in{grid-template-columns:1fr;gap:30px}
+  .gaiyo,.gaiyo tbody,.gaiyo tr,.gaiyo th,.gaiyo td{display:block;width:100%}
+  .gaiyo{border:2.5px solid var(--ink)}
+  .gaiyo th{border-right:none;border-bottom:none;padding-bottom:2px;background:none}
+  .gaiyo td{padding-top:2px;padding-bottom:16px;border-bottom:1.5px dashed var(--line)}
+  .gaiyo tr:last-child td{border-bottom:none}
+  .news .row{flex-wrap:wrap;gap:8px 12px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="in">
+    <a class="brand" href="#top">
+      <svg class="mk" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="45" height="45" rx="8" fill="none" stroke="#1B2A4A" stroke-width="3"/>
+        <path d="M24 8 L40 36 H8 Z" fill="#E24A2B"/>
+        <path d="M24 12 L36.5 34 H11.5 Z" fill="none" stroke="#F3EBD9" stroke-width="2"/>
+        <rect x="22" y="20" width="4" height="8" fill="#F3EBD9"/>
+        <circle cx="24" cy="31" r="2.2" fill="#F3EBD9"/>
+      </svg>
+      <span class="t">ロードセンス・ジャパン<small>NPO法人｜安全・安心のまちづくり</small></span>
+    </a>
+    <nav>
+      <a href="#about">私たちについて</a>
+      <a href="#acts">活動</a>
+      <a href="#join">参加する</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">団体概要</a>
+    </nav>
+    <a class="cta" href="#contact">お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#about">私たちについて</a>
+    <a href="#acts">活動</a>
+    <a href="#join">参加する</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">団体概要</a>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <span class="dot v" aria-hidden="true"></span>
+  <span class="dot i" aria-hidden="true"></span>
+  <div class="in">
+    <span class="poster-tag reveal on">SAFETY FIRST ── 安全・安心のまちづくり</span>
+    <h1 class="reveal on">
+      <span class="row"><span class="riso" data-t="その一歩を、">その一歩を、</span></span>
+      <span class="row"><span class="em">まもる</span>まちへ。</span>
+    </h1>
+    <p class="lead reveal on">わたしたちロードセンス・ジャパンは、<em>「安全・安心」</em>をキーワードに、分野・領域・地域にとらわれず、横断的で柔軟な活動を行うNPO法人です。安全・安心のまちづくりを、まちのみんなの手で。</p>
+    <div class="chips reveal on">
+      <span>安全・安心の啓発</span>
+      <span>地域の見守り</span>
+      <span>こどもの安全</span>
+      <span>分野横断の連携</span>
+    </div>
+  </div>
+</section>
+
+<!-- スローガン帯 -->
+<div class="band" aria-hidden="true">
+  <div class="in">
+    <span>安全は、まちのみんなでつくる。<b>◆</b>とまる・みる・まつ。<b>◆</b>その一歩を、まもるまちへ。<b>◆</b>分野・領域・地域をこえて。<b>◆</b></span>
+    <span>安全は、まちのみんなでつくる。<b>◆</b>とまる・みる・まつ。<b>◆</b>その一歩を、まもるまちへ。<b>◆</b>分野・領域・地域をこえて。<b>◆</b></span>
+  </div>
+</div>
+
+<!-- 私たちについて -->
+<section class="sec" id="about">
+  <div class="wrap about">
+    <div class="txt reveal">
+      <div class="sec-head" style="margin-bottom:24px">
+        <span class="en">ABOUT US</span>
+        <h2><span class="u">安全・安心を、</span><br>まちの真ん中に。</h2>
+      </div>
+      <p class="big"><em>分野・領域・地域に</em>とらわれない、<br>柔軟で横断的な活動を。</p>
+      <p>交通事故のない道、こどもが安心して歩けるまち、災害にそなえる地域。「安全・安心」という一つのキーワードのもとに、行政・学校・企業・地域の垣根をこえて手をつなぎ、まちの困りごとに横断的に取り組みます。小さな見守りから啓発活動まで、できることから一緒に。<span class="note-sample">※文章は定款（公開情報）の目的をもとにしたサンプルです。実際の活動内容に差し替えます</span></p>
+    </div>
+    <div class="figure reveal">
+      <div class="riso-photo">
+        <!-- 差し替えポイント: 活動風景（安全・安心教室・見守りなど）のお写真 -->
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=900&q=80&auto=format&fit=crop" alt="まちと道路のイメージ">
+      </div>
+      <div class="stamp"><b>SINCE</b><small>安全・安心のまちづくり</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動 -->
+<section class="sec" id="acts">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">OUR ACTIVITIES</span>
+      <h2>わたしたちの<span class="u">活動</span></h2>
+    </div>
+    <p class="note-sample reveal" style="margin:-24px 0 28px">※以下の活動内容・写真は表示イメージのサンプルです。実際の取り組みに差し替えます</p>
+    <div class="acts">
+      <article class="act reveal">
+        <div class="ph"><span class="no">01</span>
+          <!-- 差し替えポイント: 安全・安心の啓発活動のお写真 -->
+          <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=900&q=80&auto=format&fit=crop" alt="横断歩道のイメージ">
+        </div>
+        <div class="bd">
+          <h3>安全・安心の啓発</h3>
+          <p>横断歩道での「とまる・みる・まつ」。ポスターや街頭での声かけを通じて、ドライバーと歩行者の双方に、日々の安全を呼びかけます。</p>
+        </div>
+      </article>
+      <article class="act reveal">
+        <div class="ph"><span class="no">02</span>
+          <!-- 差し替えポイント: 地域の見守り・パトロールのお写真 -->
+          <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=900&q=80&auto=format&fit=crop" alt="まちなみのイメージ">
+        </div>
+        <div class="bd">
+          <h3>地域の見守り</h3>
+          <p>登下校の時間帯の見守りや、まちの危険箇所のチェック。地域のみなさんと一緒に、日常の中の「あぶない」を減らしていきます。</p>
+        </div>
+      </article>
+      <article class="act reveal">
+        <div class="ph"><span class="no">03</span>
+          <!-- 差し替えポイント: こども向け安全教室のお写真 -->
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80&auto=format&fit=crop" alt="学びの場のイメージ">
+        </div>
+        <div class="bd">
+          <h3>こどもの安全教室</h3>
+          <p>学校や地域と連携した、こども向けの安全・安心・防犯の学びの場。楽しみながら「自分を守る力」を身につける機会をつくります。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 数字 -->
+<section class="stats">
+  <div class="in">
+    <div class="stat reveal">
+      <div class="n">3<small>分野</small></div>
+      <div class="l">交通・地域・こどもの安全</div>
+    </div>
+    <div class="stat reveal">
+      <div class="n">0<small>を目指す</small></div>
+      <div class="l">まちの交通事故</div>
+    </div>
+    <div class="stat reveal">
+      <div class="n">∞</div>
+      <div class="l">分野・領域・地域をこえた連携</div>
+    </div>
+  </div>
+  <p class="cap"><span class="note-sample">※上記の数字は方向性を示す表示イメージのサンプルです。実績値に差し替えます</span></p>
+</section>
+
+<!-- 参加する -->
+<section class="sec" id="join">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">GET INVOLVED</span>
+      <h2>安全を、<span class="u">一緒に</span>つくる</h2>
+    </div>
+    <div class="join">
+      <div class="c reveal">
+        <span class="tag">01</span>
+        <h3>ボランティア</h3>
+        <p>見守りや啓発活動に、できる範囲で参加いただける仲間を募集しています。はじめての方も大歓迎です。</p>
+        <a class="go" href="#contact">くわしく →</a>
+      </div>
+      <div class="c reveal">
+        <span class="tag">02</span>
+        <h3>賛助会員・寄付</h3>
+        <p>活動を続けるための、ご支援をお願いしています。いただいた支援は、まちの安全活動に大切に使わせていただきます。</p>
+        <a class="go" href="#contact">くわしく →</a>
+      </div>
+      <div class="c reveal">
+        <span class="tag">03</span>
+        <h3>連携・協働</h3>
+        <p>学校・企業・行政・地域団体のみなさまと、分野をこえて手を組みます。啓発の共同企画などもご相談ください。</p>
+        <a class="go" href="#contact">くわしく →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="sec news" id="news">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">NEWS</span>
+      <h2>お知らせ</h2>
+    </div>
+    <p class="note-sample reveal" style="margin:-24px 0 20px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    <div class="reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="row"><time>20XX.XX</time><span class="cat">活動報告</span><a href="#news">春の安全・安心キャンペーンを実施しました</a></div>
+      <div class="row"><time>20XX.XX</time><span class="cat">募集</span><a href="#news">見守りボランティア説明会のご案内</a></div>
+      <div class="row"><time>20XX.XX</time><span class="cat">お知らせ</span><a href="#news">こども安全教室の開催レポートを公開しました</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 団体概要 -->
+<section class="sec" id="gaiyo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">PROFILE</span>
+      <h2>団体概要</h2>
+    </div>
+    <div class="reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 ロードセンス・ジャパン</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市中区<span class="note-sample">（詳細な番地は公開時に記載します）</span></td></tr>
+        <tr><th>活動分野</th><td>社会教育／まちづくり／こどもの健全育成</td></tr>
+        <tr><th>目的</th><td>安全・安心をキーワードに、分野・領域・地域にとらわれない柔軟で横断的な活動を行う（安全・安心のまちづくり）<br><span class="note-sample">※定款目的（公開情報）より</span></td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）<span class="note-sample">※本サンプルでは実名を記載していません</span></td></tr>
+        <tr><th>電話</th><td><a href="#" style="color:var(--vermil-d);font-weight:700;text-decoration:none;pointer-events:none">052-000-0000</a>　<span class="note-sample">※サンプル（ダミー番号／発信されません）</span></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="sec" id="contact" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">CONTACT</span>
+      <h2>お問い合わせ・<span class="u">ご参加</span></h2>
+    </div>
+    <div class="contact">
+      <div class="tel-card reveal">
+        <p class="cap">お電話でのお問い合わせ</p>
+        <a class="no" href="#" aria-disabled="true">052-000-0000</a>
+        <p class="sub">※サンプル（ダミー番号／タップしても発信されません）</p>
+        <div class="hours">
+          受付時間：平日 10:00〜17:00<span class="note-sample" style="color:#9FAECB">（表示イメージ）</span><br>
+          「ホームページを見た」とお伝えください。
+        </div>
+      </div>
+      <form class="form reveal" id="demoForm" novalidate>
+        <div class="fld">
+          <label for="nm">お名前</label>
+          <input type="text" id="nm" name="nm" placeholder="山田 太郎" autocomplete="name">
+        </div>
+        <div class="fld">
+          <label for="em">メールアドレス</label>
+          <input type="email" id="em" name="em" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="fld">
+          <label for="ms">お問い合わせ内容</label>
+          <textarea id="ms" name="ms" rows="4" placeholder="ボランティア／寄付／連携のご相談など"></textarea>
+        </div>
+        <button type="submit">送信する</button>
+        <p class="demo">※これはデモフォームです。実際には送信されません。</p>
+        <div id="formMsg" role="status">デモフォームのため送信は行われません。本番では入力内容がご担当者へ届く形にできます。</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="fn">ロードセンス・ジャパン<small>特定非営利活動法人｜安全・安心のまちづくり</small></div>
+      </div>
+      <div class="meta">
+        愛知県名古屋市中区<br>
+        社会教育／まちづくり／こどもの健全育成<br>
+        安全・安心のまちづくり
+      </div>
+    </div>
+    <hr>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです。本文は公開情報（定款目的・所在地・分野）の範囲で作成し、写真はイメージ素材、※印の内容および電話番号はダミーです（発信されません）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 ROADSENSE JAPAN — SAMPLE</p>
+  </div>
+</footer>
+
+<script>
+// SPメニュー
+const mb = document.querySelector(".menu-btn");
+mb.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  mb.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム
+const f = document.getElementById("demoForm");
+f.addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("formMsg").style.display = "block";
+});
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+</body>
+</html>

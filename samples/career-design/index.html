@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 日本キャリアデザイン研究所 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・分野・所在地）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・住所は区まで（番地・建物名は非掲載）／電話はダミー・tel:リンク無効
+  ・代表者実名なし／写真はフリー素材（Unsplash・商用利用可）のイメージ
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 日本キャリアデザイン研究所｜名古屋市瑞穂区・キャリアコンサルタント育成【ご提案サンプル】</title>
+<meta name="description" content="名古屋市瑞穂区のNPO法人。キャリア・コンサルタントの育成、キャリア・コンサルティング、起業支援を通じて、一人ひとりの「はたらく」に伴走します。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#0B1026;        /* 深い紺の夜空 */
+  --c-bg2:#0F1631;
+  --c-panel:#131B3A;
+  --c-ink:#EAEDF7;       /* 白 */
+  --c-sub:#A7B0CE;
+  --c-gold:#D9B45A;      /* 金 */
+  --c-gold-soft:#E9CE8A;
+  --c-line:rgba(217,180,90,.22);
+  --c-line-soft:rgba(255,255,255,.09);
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-disp:"Cormorant Garamond",serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-weight:700;line-height:1.7;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 夜空の背景（星） ===== */
+.sky{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(1200px 700px at 80% -10%,#1a2350 0%,rgba(26,35,80,0) 60%),
+  radial-gradient(900px 600px at 5% 110%,#141c40 0%,rgba(20,28,64,0) 55%),
+  linear-gradient(180deg,#0B1026 0%,#0C1130 55%,#0A0E24 100%)}
+#stars{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.9}
+
+/* ===== 左固定サイドバー（PC） ===== */
+.side{position:fixed;left:0;top:0;bottom:0;width:262px;background:rgba(12,17,42,.72);backdrop-filter:blur(6px);border-right:1px solid var(--c-line-soft);display:flex;flex-direction:column;padding:36px 28px 26px;z-index:100}
+.side .logo{text-decoration:none;color:var(--c-ink);display:block}
+.side .logo .mark{width:46px;height:46px;margin-bottom:14px}
+.side .logo .t{font-weight:900;font-size:19px;letter-spacing:.06em;line-height:1.5}
+.side .logo .t small{display:block;font-size:10px;font-weight:500;color:var(--c-gold);letter-spacing:.14em;margin-top:6px;font-family:var(--font-disp);text-transform:uppercase}
+.side nav{margin-top:36px;flex:1}
+.side nav a{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--c-sub);font-size:13.5px;font-weight:500;padding:11px 2px;border-bottom:1px solid var(--c-line-soft);transition:color .3s var(--ease),padding-left .3s var(--ease)}
+.side nav a .n{font-family:var(--font-disp);font-size:12px;color:var(--c-gold);letter-spacing:.1em;flex:none}
+.side nav a:hover{color:var(--c-ink);padding-left:8px}
+.side .tel{margin-top:22px;border:1px solid var(--c-line);padding:15px;text-align:center;border-radius:2px}
+.side .tel .cap{font-size:11px;font-weight:700;color:var(--c-gold)}
+.side .tel a{font-family:var(--font-disp);font-size:23px;font-weight:600;color:var(--c-ink);text-decoration:none;letter-spacing:.04em;pointer-events:none;display:block}
+.side .tel p{font-size:10px;color:var(--c-sub);line-height:1.6}
+.side .cta{margin-top:10px;display:block;background:linear-gradient(180deg,var(--c-gold-soft),var(--c-gold));color:#231a04;text-decoration:none;text-align:center;font-weight:700;font-size:13.5px;padding:13px;border-radius:2px;transition:filter .3s}
+.side .cta:hover{filter:brightness(1.08)}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+.main{margin-left:262px;position:relative}
+.wrap{max-width:900px;margin:0 auto;padding:0 44px}
+
+/* ===== 共通 ===== */
+.block{padding:92px 0;border-bottom:1px solid var(--c-line-soft)}
+.b-head{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+.b-head .en{font-family:var(--font-disp);font-size:14px;letter-spacing:.24em;color:var(--c-gold);text-transform:uppercase}
+.b-head .en::before{content:"✦";margin-right:12px;font-size:11px;opacity:.8}
+.b-head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.05em}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-gold);opacity:.85}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-sub);margin-top:6px}
+
+/* ===== 冒頭ヒーロー ===== */
+.opening{padding:120px 0 92px;position:relative;overflow:hidden;border-bottom:1px solid var(--c-line-soft)}
+.opening .cap{font-size:12.5px;font-weight:700;color:var(--c-gold);letter-spacing:.18em;margin-bottom:22px}
+.opening h1{font-size:clamp(29px,4.2vw,48px);font-weight:900;line-height:1.7;letter-spacing:.04em}
+.opening h1 em{font-style:normal;color:var(--c-gold-soft);position:relative}
+.opening .lead{margin-top:26px;max-width:600px;font-size:15px;color:var(--c-sub)}
+.opening .chips{display:flex;gap:9px;margin-top:26px;flex-wrap:wrap}
+.chip{border:1px solid var(--c-line);color:var(--c-gold-soft);font-size:12px;font-weight:700;padding:5px 14px;white-space:nowrap;border-radius:20px}
+.hero-photo{margin-top:52px;position:relative;border:1px solid var(--c-line-soft);border-radius:3px;overflow:hidden}
+.hero-photo img{width:100%;aspect-ratio:21/8;object-fit:cover;opacity:.7}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,38,.15),rgba(11,16,38,.85))}
+
+/* ===== ミッション（大きな一文） ===== */
+.mission .big{font-size:clamp(19px,2.6vw,26px);font-weight:700;line-height:2.1;max-width:760px}
+.mission .big em{font-style:normal;color:var(--c-gold-soft)}
+.mission p{max-width:680px;font-size:15px;color:var(--c-sub);margin-top:24px}
+
+/* ===== 事業（星のカード） ===== */
+.stars-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.star-card{position:relative;background:var(--c-panel);border:1px solid var(--c-line-soft);border-radius:3px;padding:32px 30px 30px;transition:border-color .4s var(--ease),transform .4s var(--ease)}
+.star-card:hover{border-color:var(--c-line);transform:translateY(-3px)}
+.star-card .no{font-family:var(--font-disp);font-size:14px;letter-spacing:.2em;color:var(--c-gold);display:block;margin-bottom:10px}
+.star-card h3{font-size:18.5px;letter-spacing:.03em;margin-bottom:12px}
+.star-card p{font-size:13.5px;color:var(--c-sub);line-height:1.95}
+.star-card .dot{position:absolute;top:26px;right:28px;width:7px;height:7px;border-radius:50%;background:var(--c-gold);box-shadow:0 0 12px 2px rgba(217,180,90,.55)}
+
+/* ===== 道のり（点つなぎのフロー） ===== */
+.path{list-style:none;max-width:720px;counter-reset:st;position:relative}
+.path li{counter-increment:st;position:relative;padding:0 0 34px 70px}
+.path li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:-2px;width:38px;height:38px;border:1px solid var(--c-line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-weight:600;font-size:16px;color:var(--c-gold);background:var(--c-bg2);z-index:2}
+.path li::after{content:"";position:absolute;left:19px;top:40px;bottom:2px;width:1px;background:linear-gradient(var(--c-line),rgba(217,180,90,.05));z-index:1}
+.path li:last-child::after{display:none}
+.path h3{font-size:16.5px;letter-spacing:.02em}
+.path p{font-size:13.5px;color:var(--c-sub);margin-top:2px}
+
+/* ===== 数字（※サンプル） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.stat{border:1px solid var(--c-line-soft);border-radius:3px;padding:26px 20px;text-align:center;background:var(--c-panel)}
+.stat .num{font-family:var(--font-disp);font-size:clamp(34px,5vw,46px);font-weight:600;color:var(--c-gold-soft);line-height:1.1}
+.stat .lbl{font-size:12.5px;color:var(--c-sub);margin-top:8px}
+
+/* ===== ごあいさつ ===== */
+.voice{border:1px solid var(--c-line);background:linear-gradient(180deg,var(--c-panel),rgba(19,27,58,.4));padding:38px 40px;max-width:720px;border-radius:3px;position:relative}
+.voice::before{content:"❝";position:absolute;top:14px;left:24px;font-family:var(--font-disp);font-size:52px;color:var(--c-gold);opacity:.35;line-height:1}
+.voice p{font-size:15px;line-height:2.1;padding-left:6px}
+.voice .name{text-align:right;margin-top:20px;font-weight:700;font-size:14px;color:var(--c-gold-soft)}
+.voice .name small{display:block;font-weight:500;font-size:11.5px;color:var(--c-sub)}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:20px;padding:15px 2px;border-bottom:1px solid var(--c-line-soft);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-disp);font-weight:600;color:var(--c-gold);font-size:13.5px;letter-spacing:.08em}
+.news-row .tag{flex:none;font-size:11px;border:1px solid var(--c-line-soft);color:var(--c-sub);padding:1px 9px;border-radius:20px}
+.news-row a{color:var(--c-ink);text-decoration:none}
+.news-row a:hover{color:var(--c-gold-soft)}
+
+/* ===== 概要表 ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:160px;text-align:left;font-weight:700;color:var(--c-gold-soft);border:1px solid var(--c-line-soft);padding:12px 18px;white-space:nowrap;background:rgba(217,180,90,.05)}
+table.gaiyo td{border:1px solid var(--c-line-soft);padding:12px 18px;color:var(--c-ink)}
+
+/* ===== 問い合わせ ===== */
+.contact-box{border:1px solid var(--c-line);border-radius:3px;padding:36px 34px;max-width:640px;background:var(--c-panel)}
+.contact-box .tel-big{font-family:var(--font-disp);font-size:36px;font-weight:600;color:var(--c-gold-soft);letter-spacing:.04em;pointer-events:none;display:inline-block}
+.contact-box .cap{font-size:13px;font-weight:700;color:var(--c-gold)}
+.contact-box .sub{font-size:12px;color:var(--c-sub)}
+.form{margin-top:26px;display:grid;gap:14px}
+.form label{font-size:12.5px;color:var(--c-sub);display:block;margin-bottom:5px}
+.form input,.form textarea{width:100%;background:var(--c-bg2);border:1px solid var(--c-line-soft);color:var(--c-ink);padding:12px 14px;font-family:inherit;font-size:14px;border-radius:2px}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-gold)}
+.form button{justify-self:start;background:linear-gradient(180deg,var(--c-gold-soft),var(--c-gold));color:#231a04;border:none;font-weight:700;font-size:14px;padding:13px 34px;border-radius:2px;cursor:pointer;font-family:inherit}
+.form .demo{font-size:11.5px;color:var(--c-gold);opacity:.85}
+
+/* ===== フッター ===== */
+.footer{padding:52px 0 34px;text-align:center}
+.footer .f-name{font-weight:900;font-size:15px;letter-spacing:.04em}
+.footer p{font-size:12.5px;color:var(--c-sub);margin-top:8px}
+.sample-note{font-size:11px;color:var(--c-gold);opacity:.85;margin-top:18px;line-height:1.9}
+.sample-note a{color:var(--c-gold-soft)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .side{display:none}
+  .main{margin-left:0}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:rgba(11,16,38,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--c-line-soft);height:62px;align-items:center;gap:10px;padding:0 18px}
+  .sp-head .t{font-weight:900;font-size:14.5px;line-height:1.35}
+  .sp-head .t small{font-size:9px;color:var(--c-gold);font-weight:600;display:block;letter-spacing:.1em}
+  .sp-head .tel-ic{margin-left:auto;background:linear-gradient(180deg,var(--c-gold-soft),var(--c-gold));color:#231a04;text-decoration:none;font-weight:700;font-size:12px;padding:9px 14px;white-space:nowrap;border-radius:2px}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:62px 0 auto 0;background:var(--c-bg2);border-bottom:1px solid var(--c-line);padding:10px 20px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line-soft)}
+  .wrap{padding:0 22px}
+  .block{padding:60px 0}
+  .opening{padding:60px 0 52px}
+  .stars-grid{grid-template-columns:1fr;gap:14px}
+  .hero-photo{margin-top:36px}
+  .hero-photo img{aspect-ratio:16/10}
+  .tbl-hint{display:block}
+  .footer{padding-bottom:28px}
+}
+
+@media (max-width:560px){
+  .stats{grid-template-columns:1fr;gap:12px}
+  /* スマホの表: 横スクロールをやめて積み上げ表示に */
+  table.gaiyo{min-width:0;border:1px solid var(--c-line-soft)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line-soft);padding:9px 16px 3px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 16px 12px}
+  .tbl-hint{display:none}
+  .voice{padding:30px 24px}
+  .contact-box{padding:28px 22px}
+  .contact-box .tel-big{font-size:29px}
+}
+</style>
+</head>
+<body>
+
+<div class="sky"></div>
+<canvas id="stars"></canvas>
+
+<!-- PC: 左固定サイドバー -->
+<aside class="side">
+  <a class="logo" href="#top">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <g fill="none" stroke="#D9B45A" stroke-width="1.1">
+        <path d="M10 34 L20 22 L27 27 L38 12" opacity=".9"/>
+      </g>
+      <g fill="#E9CE8A">
+        <circle cx="10" cy="34" r="2.6"/>
+        <circle cx="20" cy="22" r="2.2"/>
+        <circle cx="27" cy="27" r="2.2"/>
+      </g>
+      <circle cx="38" cy="12" r="3.4" fill="#D9B45A"/>
+      <circle cx="38" cy="12" r="6.5" fill="none" stroke="#D9B45A" stroke-width=".7" opacity=".5"/>
+    </svg>
+    <span class="t">日本キャリアデザイン<br>研究所<small>Japan Career Design</small></span>
+  </a>
+  <nav>
+    <a href="#mission"><span class="n">01</span>わたしたちの想い</a>
+    <a href="#service"><span class="n">02</span>3つの事業</a>
+    <a href="#path"><span class="n">03</span>ご相談の流れ</a>
+    <a href="#stats"><span class="n">04</span>数字で見る</a>
+    <a href="#voice"><span class="n">05</span>ごあいさつ</a>
+    <a href="#news"><span class="n">06</span>お知らせ</a>
+    <a href="#gaiyo"><span class="n">07</span>法人概要</a>
+    <a href="#contact"><span class="n">08</span>お問い合わせ</a>
+  </nav>
+  <div class="tel">
+    <p class="cap">お問い合わせ</p>
+    <a>052-XXX-XXXX</a>
+    <p>受付イメージ（サンプル）</p>
+  </div>
+  <a class="cta" href="#contact">相談を申し込む</a>
+</aside>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">日本キャリアデザイン研究所<small>NAGOYA MIZUHO</small></span>
+  <a class="tel-ic" href="#contact">相談する</a>
+</header>
+<nav class="sp-nav">
+  <a href="#mission">わたしたちの想い</a>
+  <a href="#service">3つの事業</a>
+  <a href="#path">ご相談の流れ</a>
+  <a href="#stats">数字で見る</a>
+  <a href="#voice">ごあいさつ</a>
+  <a href="#news">お知らせ</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<div class="main">
+
+  <!-- 冒頭ヒーロー -->
+  <section class="opening">
+    <div class="wrap">
+      <p class="cap reveal on">名古屋市瑞穂区｜キャリア・コンサルタント育成／キャリア・コンサルティング／起業支援</p>
+      <h1 class="reveal on"><span class="kb">その人の</span><span class="kb"><em>「はたらく」に、</em></span><br><span class="kb">道すじを描く。</span></h1>
+      <p class="lead reveal on">夜空の星を線でつなぐと、はじめて「かたち」が見えるように。一人ひとりの経験と願いを結び直し、これからのキャリアを描くお手伝いをするNPO法人です。</p>
+      <div class="chips reveal on">
+        <span class="chip">キャリアコンサルタント育成</span>
+        <span class="chip">キャリア相談</span>
+        <span class="chip">起業・独立支援</span>
+      </div>
+      <div class="hero-photo reveal on">
+        <!-- 差し替えポイント: 学び・対話・仕事のイメージ写真 -->
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80&auto=format&fit=crop" alt="対話・学びのイメージ">
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたちの想い -->
+  <section class="block mission" id="mission">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Mission</span><h2>わたしたちの想い</h2></div>
+      <p class="big reveal"><span class="kb">点は、</span><span class="kb">つないで</span><span class="kb">はじめて</span><span class="kb"><em>道になる。</em></span><br><span class="kb">これまでの経験も、</span><span class="kb">これからの願いも、</span><span class="kb">ひとつの<em>キャリア</em>として</span><span class="kb">描き直す。</span></p>
+      <p class="reveal">日本キャリアデザイン研究所は、キャリア・コンサルタントの育成、キャリア・コンサルティング、そして起業支援を通じて、人と地域の「はたらく」を活性化することを目的とするNPO法人です。<span class="note-sample">※文章は定款の目的（公開情報）をもとにしたサンプルです。ご契約後に貴団体のお言葉へ差し替えます</span></p>
+    </div>
+  </section>
+
+  <!-- 3つの事業 -->
+  <section class="block" id="service">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Service</span><h2>3つの事業</h2></div>
+      <div class="stars-grid">
+        <div class="star-card reveal">
+          <span class="dot"></span>
+          <span class="no">✦ 01</span>
+          <h3>キャリアコンサルタントの育成</h3>
+          <p>「はたらく」を支える専門人材を育てます。学びの場や実践の機会づくりを通じて、相談に応えられる担い手を地域に増やしていきます。</p>
+        </div>
+        <div class="star-card reveal">
+          <span class="dot"></span>
+          <span class="no">✦ 02</span>
+          <h3>キャリア・コンサルティング</h3>
+          <p>進路、転職、学び直し、これからの働き方。一人ひとりのお話をていねいに伺い、次の一歩を一緒に描きます。</p>
+        </div>
+        <div class="star-card reveal">
+          <span class="dot"></span>
+          <span class="no">✦ 03</span>
+          <h3>起業・独立の支援</h3>
+          <p>「自分の仕事をつくりたい」という想いに伴走します。構想の整理から一歩を踏み出すところまで、経験ある視点でお手伝いします。</p>
+        </div>
+        <div class="star-card reveal">
+          <span class="dot"></span>
+          <span class="no">✦ +</span>
+          <h3>研修・セミナー（例）</h3>
+          <p>企業・団体・学校向けのキャリア研修やワークショップにも対応します。<span class="note-sample">※実施内容は表示イメージのサンプルです</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご相談の流れ（点つなぎ） -->
+  <section class="block" id="path">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Journey</span><h2>ご相談の流れ</h2></div>
+      <ol class="path reveal">
+        <li><h3>お問い合わせ</h3><p>「話を聞いてみたい」だけで大丈夫です。フォームまたはお電話でお気軽にご連絡ください。</p></li>
+        <li><h3>ヒアリング（初回相談）</h3><p>これまでの経験や、これからの願いを、ゆっくりお聞かせください。ここが道すじを描く出発点です。</p></li>
+        <li><h3>プランを一緒に描く</h3><p>点と点をつなぐように、次の一歩を具体的なかたちに整えていきます。</p></li>
+        <li><h3>実践と伴走</h3><p>学び・相談・起業準備など、目標に合わせて継続的にサポートします。<span class="note-sample">※流れは一般的な例です</span></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 数字で見る（※サンプル） -->
+  <section class="block" id="stats">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Figures</span><h2>数字で見る</h2></div>
+      <p class="note-sample reveal" style="margin-bottom:18px">※以下の数値はすべて表示イメージのサンプル（ダミー）です。ご契約後に実績値へ差し替えます</p>
+      <!-- ※サンプル: 数値はダミーです（実績・受賞等の虚偽記載なし） -->
+      <div class="stats reveal">
+        <div class="stat"><div class="num">XXX</div><div class="lbl">これまでのご相談件数 ※サンプル</div></div>
+        <div class="stat"><div class="num">XX</div><div class="lbl">育成した有資格者 ※サンプル</div></div>
+        <div class="stat"><div class="num">XX</div><div class="lbl">起業・独立の伴走 ※サンプル</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ごあいさつ -->
+  <section class="block" id="voice">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Message</span><h2>ごあいさつ</h2></div>
+      <div class="voice reveal">
+        <p>キャリアは、あらかじめ一本の線が引かれているものではありません。過ごしてきた日々や、出会い、選んできたこと。その一つひとつの「点」を、少し離れて眺め、線でつないだとき、はじめてその人だけの「かたち」が見えてきます。わたしたちは、その線を一緒に描く伴走者でありたいと考えています。</p>
+        <p class="name">特定非営利活動法人 日本キャリアデザイン研究所<small>代表（お名前は公開時に記載します）</small></p>
+        <p class="note-sample" style="text-align:right;margin-top:6px">※あいさつ文はサンプルです。代表者様のお言葉に差し替えます</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">News</span><h2>お知らせ</h2></div>
+      <p class="note-sample reveal" style="margin-bottom:12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="tag">セミナー</span><a href="#news">キャリアデザイン入門セミナーを開催します</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="tag">相談</span><a href="#news">個別キャリア相談の受付を開始しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="tag">育成</span><a href="#news">養成講座の次期日程を掲載しました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 法人概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Profile</span><h2>法人概要</h2></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 日本キャリアデザイン研究所</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市瑞穂区（詳細は公開時に記載します）</td></tr>
+          <tr><th>活動分野</th><td>社会教育の推進／経済活動の活性化／職業能力の開発・雇用機会の拡充</td></tr>
+          <tr><th>事業目的</th><td>キャリア・コンサルタントの育成、キャリア・コンサルティング、起業支援等を行う（定款目的より）</td></tr>
+          <tr><th>電話</th><td>052-XXX-XXXX（サンプル・受付イメージ）</td></tr>
+          <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="block" id="contact" style="border-bottom:none">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Contact</span><h2>お問い合わせ</h2></div>
+      <div class="contact-box reveal">
+        <p class="cap">お電話でのご相談</p>
+        <span class="tel-big">052-XXX-XXXX</span>
+        <p class="sub">※電話番号は表示イメージのサンプルです（発信できません）</p>
+        <form class="form" onsubmit="return false;">
+          <div>
+            <label for="nm">お名前</label>
+            <input id="nm" type="text" placeholder="山田 太郎" autocomplete="off">
+          </div>
+          <div>
+            <label for="ml">メールアドレス</label>
+            <input id="ml" type="email" placeholder="you@example.com" autocomplete="off">
+          </div>
+          <div>
+            <label for="ms">ご相談内容</label>
+            <textarea id="ms" rows="4" placeholder="キャリアのご相談、養成講座、起業のご相談など"></textarea>
+          </div>
+          <button type="submit">送信する（デモ）</button>
+          <p class="demo">※このフォームはデモです。実際には送信されません。ご契約後に本番のお問い合わせ機能を設置します。</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 日本キャリアデザイン研究所</p>
+      <p>愛知県名古屋市瑞穂区（区まで表示）</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、住所は区まで・電話はサンプル）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p style="margin-top:14px;font-size:11px;opacity:.7">&copy; 2026 特定非営利活動法人 日本キャリアデザイン研究所</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+// メニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .side nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロールで浮かび上がる
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// 星空（点つなぎ）— 控えめに、reduced-motion では静止
+(function(){
+  const c = document.getElementById("stars");
+  if(!c) return;
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const ctx = c.getContext("2d");
+  let w, h, dpr, pts = [], raf = null;
+  function init(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.width = innerWidth * dpr;
+    h = c.height = innerHeight * dpr;
+    c.style.width = innerWidth + "px";
+    c.style.height = innerHeight + "px";
+    const count = Math.min(90, Math.round(innerWidth * innerHeight / 16000));
+    pts = [];
+    for(let i=0;i<count;i++){
+      pts.push({
+        x: Math.random()*w, y: Math.random()*h,
+        r: (Math.random()*1.3+0.4)*dpr,
+        vx: (Math.random()-0.5)*0.12*dpr,
+        vy: (Math.random()-0.5)*0.12*dpr,
+        tw: Math.random()*Math.PI*2
+      });
+    }
+  }
+  function frame(){
+    ctx.clearRect(0,0,w,h);
+    const linkDist = 130*dpr;
+    for(let i=0;i<pts.length;i++){
+      const p = pts[i];
+      if(!reduce){ p.x+=p.vx; p.y+=p.vy; p.tw+=0.02;
+        if(p.x<0||p.x>w) p.vx*=-1;
+        if(p.y<0||p.y>h) p.vy*=-1; }
+      // 近い点を線でつなぐ（星座）
+      for(let j=i+1;j<pts.length;j++){
+        const q = pts[j];
+        const dx=p.x-q.x, dy=p.y-q.y, d=Math.hypot(dx,dy);
+        if(d<linkDist){
+          ctx.strokeStyle = "rgba(217,180,90," + (0.10*(1-d/linkDist)).toFixed(3) + ")";
+          ctx.lineWidth = 0.6*dpr;
+          ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
+        }
+      }
+      const a = reduce ? 0.7 : (0.5 + 0.4*Math.sin(p.tw));
+      ctx.fillStyle = "rgba(233,206,138," + a.toFixed(2) + ")";
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+    }
+    if(!reduce) raf = requestAnimationFrame(frame);
+  }
+  function start(){ if(raf) cancelAnimationFrame(raf); init(); frame(); }
+  let t=null;
+  addEventListener("resize", ()=>{ clearTimeout(t); t=setTimeout(start,200); });
+  start();
+})();
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px/1.4 -apple-system,sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)">制作サンプル｜スマートコネクト</a></body>
+</html>

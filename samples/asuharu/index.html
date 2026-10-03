@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 あすはる さま（v2 書類型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・連絡先、
+    定員は事業情報の公開値）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 あすはる｜豊川市の生活介護・短期入所【ご提案サンプル】</title>
+<meta name="description" content="豊川市の障がい福祉サービス。生活介護（定員20名）と短期入所（定員2名）で、その人らしい毎日を支えます。見学・ご相談はお気軽に。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FAFAF6;
+  --c-paper:#FFFFFF;
+  --c-ink:#2F3A33;
+  --c-green:#4F8A46;
+  --c-green-deep:#3C6E35;
+  --c-green-pale:#EAF2E6;
+  --c-line:#DDE2D6;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.7;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 左固定サイドバー（PC） ===== */
+.side{position:fixed;left:0;top:0;bottom:0;width:248px;background:var(--c-paper);border-right:1px solid var(--c-line);display:flex;flex-direction:column;padding:34px 26px 26px;z-index:100}
+.side .logo{text-decoration:none;color:var(--c-ink)}
+.side .logo .mark{width:44px;height:44px;margin-bottom:12px}
+.side .logo .t{font-weight:900;font-size:23px;letter-spacing:.08em;line-height:1.3}
+.side .logo .t small{display:block;font-size:10.5px;font-weight:500;color:var(--c-green-deep);letter-spacing:.06em;margin-top:4px}
+.side nav{margin-top:34px;flex:1}
+.side nav a{display:block;text-decoration:none;color:var(--c-ink);font-size:13.5px;font-weight:500;padding:10px 2px;border-bottom:1px solid var(--c-line);transition:color .3s var(--ease),padding-left .3s var(--ease)}
+.side nav a:hover{color:var(--c-green-deep);padding-left:8px}
+.side .tel{margin-top:20px;border:1px solid var(--c-line);padding:14px;text-align:center}
+.side .tel .cap{font-size:11px;font-weight:700}
+.side .tel a{font-family:var(--font-num);font-size:20px;font-weight:600;color:var(--c-green-deep);text-decoration:none;letter-spacing:.02em}
+.side .tel p{font-size:10px;color:#7E897F;line-height:1.6}
+.side .visit{margin-top:10px;display:block;background:var(--c-green);color:#fff;text-decoration:none;text-align:center;font-weight:700;font-size:13.5px;padding:13px;transition:opacity .3s}
+.side .visit:hover{opacity:.85}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+.main{margin-left:248px}
+.wrap{max-width:860px;margin:0 auto;padding:0 40px}
+
+/* ===== 共通 ===== */
+.block{padding:84px 0;border-bottom:1px solid var(--c-line)}
+.b-head{display:flex;align-items:baseline;gap:14px;margin-bottom:36px}
+.b-head .sq{width:12px;height:12px;background:var(--c-green);flex:none;align-self:center}
+.b-head h2{font-size:clamp(20px,2.4vw,25px);letter-spacing:.04em}
+.b-head .en{font-family:var(--font-num);font-size:11px;letter-spacing:.22em;color:#9AA598;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#93A093}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#93A093;margin-top:6px}
+
+/* ===== 冒頭（書類型ヒーロー） ===== */
+.opening{padding:96px 0 72px;border-bottom:1px solid var(--c-line)}
+.opening .cap{font-size:12.5px;font-weight:700;color:var(--c-green-deep);letter-spacing:.14em;margin-bottom:18px}
+.opening h1{font-size:clamp(27px,3.6vw,40px);font-weight:900;line-height:1.8;letter-spacing:.05em}
+.opening h1 .u{border-bottom:4px solid var(--c-green-pale)}
+.opening .lead{margin-top:22px;max-width:600px;font-size:15px}
+.photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:44px}
+.photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.opening .chips{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.chip{border:1px solid var(--c-green);color:var(--c-green-deep);font-size:12px;font-weight:700;padding:4px 12px;white-space:nowrap}
+
+/* ===== 事業のご案内（スペック表型） ===== */
+.service-row{display:grid;grid-template-columns:280px 1fr;gap:34px;padding:38px 0;border-top:1px solid var(--c-line)}
+.service-row:first-of-type{border-top:none;padding-top:0}
+.service-row .ph img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.service-row h3{font-size:20px}
+.service-row h3 .no{font-family:var(--font-num);font-size:12px;color:var(--c-green-deep);letter-spacing:.2em;display:block;margin-bottom:2px}
+.service-row .desc{font-size:14px;margin:8px 0 16px}
+table.spec{width:100%;min-width:480px;border-collapse:collapse;font-size:13.5px;background:var(--c-paper)}
+table.spec th{width:110px;text-align:left;font-weight:700;background:var(--c-green-pale);border:1px solid var(--c-line);padding:9px 14px;white-space:nowrap}
+table.spec td{border:1px solid var(--c-line);padding:9px 14px}
+table.spec td b{color:var(--c-green-deep)}
+
+/* ===== 1日の流れ（時刻表型） ===== */
+table.sched{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.sched th{background:var(--c-ink);color:#fff;font-weight:700;padding:10px 16px;text-align:left;font-size:13px}
+table.sched td{border:1px solid var(--c-line);padding:12px 16px}
+table.sched td.time{width:110px;font-family:var(--font-num);font-weight:600;color:var(--c-green-deep);white-space:nowrap}
+table.sched td .sub{display:block;font-size:12px;color:#7E897F;line-height:1.7}
+
+/* ===== わたしたちのこと ===== */
+.about-txt{max-width:640px;font-size:15px}
+.about-txt .big{font-size:clamp(17px,2.2vw,20px);font-weight:700;line-height:2.1;margin-bottom:16px}
+.about-txt .big em{font-style:normal;color:var(--c-green-deep)}
+.sign-box{margin-top:44px;border:1px solid var(--c-line);background:var(--c-paper);padding:30px 34px;max-width:640px}
+.sign-box h3{font-size:15px;color:var(--c-green-deep);margin-bottom:10px}
+.sign-box p{font-size:14px}
+.sign-box .name{text-align:right;margin-top:16px;font-weight:700;font-size:14px}
+.sign-box .name small{display:block;font-weight:500;font-size:11.5px;color:#7E897F}
+
+/* ===== お知らせ（更新欄型） ===== */
+.news-row{display:flex;gap:18px;padding:14px 2px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:600;color:#7E897F;font-size:12.5px}
+.news-row a{color:var(--c-ink);text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== 事業所概要（表） ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-green-pale);border:1px solid var(--c-line);padding:11px 16px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-line);padding:11px 16px}
+
+/* ===== ご利用の流れ（番号リスト型） ===== */
+.flow-list{list-style:none;max-width:640px;counter-reset:fs}
+.flow-list li{counter-increment:fs;position:relative;padding:0 0 30px 66px}
+.flow-list li::before{content:counter(fs,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--font-num);font-weight:600;font-size:24px;color:var(--c-green)}
+.flow-list li::after{content:"";position:absolute;left:18px;top:44px;bottom:8px;width:1px;background:var(--c-line)}
+.flow-list li:last-child::after{display:none}
+.flow-list h3{font-size:16.5px}
+.flow-list p{font-size:13.5px;color:#5A665C}
+.support-line{margin-top:14px;background:var(--c-green-pale);padding:22px 26px;font-size:14px;max-width:640px}
+.support-line b{color:var(--c-green-deep)}
+
+/* ===== アクセス ===== */
+.map-full{margin-top:8px}
+.map-full iframe{width:100%;height:380px;border:1px solid var(--c-line)}
+.tel-big{margin-top:26px;border:2px solid var(--c-green);background:var(--c-paper);padding:26px;text-align:center;max-width:520px}
+.tel-big .cap{font-size:13px;font-weight:700}
+.tel-big a{font-family:var(--font-num);font-size:34px;font-weight:600;color:var(--c-green-deep);text-decoration:none}
+.tel-big p{font-size:12px;color:#7E897F}
+
+/* ===== フッター ===== */
+.footer{padding:44px 0 30px;text-align:center}
+.footer .f-name{font-weight:900;font-size:15px}
+.footer p{font-size:12.5px;color:#7E897F;margin-top:6px}
+.sample-note{font-size:11px;color:#93A093;margin-top:16px;line-height:1.9}
+.sample-note a{color:#7E897F}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .side{display:none}
+  .main{margin-left:0}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--c-line);height:62px;align-items:center;gap:10px;padding:0 18px}
+  .sp-head .t{font-weight:900;font-size:17px}
+  .sp-head .t small{font-size:9.5px;color:var(--c-green-deep);font-weight:700;display:block;line-height:1;margin-top:2px}
+  .sp-head .tel-ic{margin-left:auto;background:var(--c-green);color:#fff;text-decoration:none;font-weight:700;font-size:12px;padding:9px 14px;white-space:nowrap}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:62px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line);padding:10px 20px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .wrap{padding:0 22px}
+  .block{padding:56px 0}
+  .opening{padding:52px 0 48px}
+  .photo-strip{gap:6px;margin-top:30px}
+  .service-row{grid-template-columns:1fr;gap:18px;padding:30px 0}
+  .service-row .ph img{aspect-ratio:16/9}
+  .tbl-hint{display:block}
+  .footer{padding-bottom:26px}
+}
+
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:720px){
+  table.spec,table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.spec tr,table.gaiyo tr{display:block}
+  table.spec th,table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:7px 14px;font-size:12px}
+  table.spec tr:first-child th,table.gaiyo tr:first-child th{border-top:none}
+  table.spec td,table.gaiyo td{display:block;width:100%;border:none;padding:8px 14px 12px}
+  table.sched{min-width:0}
+  table.sched td{padding:10px 12px}
+  table.sched td.time{width:70px;font-size:13px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PC: 左固定サイドバー -->
+<aside class="side">
+  <a class="logo" href="#top">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="17" fill="#EAF2E6"/>
+      <path d="M20 30c0-8 4-13 11-15-1 8-5 13-11 15Z" fill="#4F8A46"/>
+      <path d="M20 30c0-6-3-10-8.5-11.5C12.5 24.5 15.5 28.5 20 30Z" fill="#8FBF85"/>
+      <circle cx="20" cy="9.5" r="3" fill="#F5B93F"/>
+    </svg>
+    <span class="t">あすはる<small>特定非営利活動法人｜愛知県豊川市</small></span>
+  </a>
+  <nav>
+    <a href="#service">事業のご案内</a>
+    <a href="#day">1日の流れ</a>
+    <a href="#about">わたしたちのこと</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">事業所概要</a>
+    <a href="#use">ご利用の流れ</a>
+    <a href="#access">アクセス</a>
+  </nav>
+  <div class="tel">
+    <p class="cap">見学・ご相談</p>
+    <a href="tel:0533657288">0533-65-7288</a>
+    <p>「ホームページを見た」と<br>お伝えください</p>
+  </div>
+  <a class="visit" href="#access">見学を申し込む</a>
+</aside>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">あすはる<small>NPO法人｜愛知県豊川市</small></span>
+  <a class="tel-ic" href="tel:0533657288">電話で相談</a>
+</header>
+<nav class="sp-nav">
+  <a href="#service">事業のご案内</a>
+  <a href="#day">1日の流れ</a>
+  <a href="#about">わたしたちのこと</a>
+  <a href="#news">お知らせ</a>
+  <a href="#gaiyo">事業所概要</a>
+  <a href="#use">ご利用の流れ</a>
+  <a href="#access">アクセス</a>
+</nav>
+
+<div class="main">
+
+  <!-- 冒頭（書類型） -->
+  <section class="opening">
+    <div class="wrap">
+      <p class="cap reveal on">豊川市の障がい福祉サービス（生活介護・短期入所）</p>
+      <h1 class="reveal on"><span class="kb">「できた」が</span><span class="kb">増える場所。</span><br><span class="kb"><span class="u">その人らしい毎日</span>を、</span><span class="kb">この町で。</span></h1>
+      <p class="lead reveal on">あすはるは、障がいのある方の毎日を支えるNPO法人です。日中の活動の場「生活介護」と、ご家族の急な用事にも応える「短期入所」で、一人ひとりのペースに寄り添います。</p>
+      <div class="chips reveal on">
+        <span class="chip">生活介護 定員20名</span>
+        <span class="chip">短期入所 定員2名</span>
+        <span class="chip">見学・体験できます</span>
+      </div>
+      <div class="photo-strip reveal on">
+        <!-- 差し替えポイント: 事業所の活動風景のお写真 -->
+        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80&auto=format&fit=crop" alt="創作活動のイメージ">
+        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=900&q=80&auto=format&fit=crop" alt="調理活動のイメージ">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=900&q=80&auto=format&fit=crop" alt="季節の花のイメージ">
+      </div>
+    </div>
+  </section>
+
+  <!-- 事業のご案内 -->
+  <section class="block" id="service">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>事業のご案内</h2><span class="en">Service</span></div>
+
+      <div class="service-row reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=80&auto=format&fit=crop" alt="日中活動のイメージ"></div>
+        <div>
+          <h3><span class="no">SERVICE 01</span>生活介護</h3>
+          <p class="desc">日中にお越しいただき、一人ひとりに合わせた活動を行います。創作や軽作業、からだを動かす時間を通じて、毎日の「できた」を増やしていきます。</p>
+          <div class="tbl-wrap">
+            <table class="spec">
+              <tr><th>定員</th><td><b>20名</b>（公開されている事業情報より）</td></tr>
+              <tr><th>対象</th><td>障がいのある方（受給者証をお持ちの方）</td></tr>
+              <tr><th>主な活動</th><td>創作活動・生産活動／日常生活の支援（入浴・食事）／機能訓練</td></tr>
+              <tr><th>ご利用日</th><td>平日 ※詳細はお問い合わせください（サンプル表記）</td></tr>
+            </table>
+          </div>
+          <p class="tbl-hint">→ 表は横にスクロールできます</p>
+        </div>
+      </div>
+
+      <div class="service-row reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80&auto=format&fit=crop" alt="明るい室内のイメージ"></div>
+        <div>
+          <h3><span class="no">SERVICE 02</span>短期入所（ショートステイ）</h3>
+          <p class="desc">ご家族の急な用事や休息（レスパイト）のときに、安心して泊まれる場所をご用意しています。夜間も職員が見守ります。</p>
+          <div class="tbl-wrap">
+            <table class="spec">
+              <tr><th>定員</th><td><b>2名</b>（公開されている事業情報より）</td></tr>
+              <tr><th>対象</th><td>障がいのある方（受給者証をお持ちの方）</td></tr>
+              <tr><th>ご利用例</th><td>ご家族の入院・冠婚葬祭・ご休息など、1泊からご利用いただけます</td></tr>
+            </table>
+          </div>
+          <p class="tbl-hint">→ 表は横にスクロールできます</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1日の流れ -->
+  <section class="block" id="day">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>1日の流れ（生活介護）</h2><span class="en">Schedule</span></div>
+      <p class="note-sample" style="margin-bottom:18px">※時間・内容は表示イメージのサンプルです。実際のスケジュールに差し替えます</p>
+      <div class="tbl-wrap reveal">
+        <table class="sched">
+          <tr><th>時間</th><th>すごし方</th></tr>
+          <tr><td class="time">9:30</td><td>お迎え・健康チェック<span class="sub">「おはようございます」から1日がはじまります</span></td></tr>
+          <tr><td class="time">10:00</td><td>午前の活動<span class="sub">創作活動や軽作業など、その日の活動へ</span></td></tr>
+          <tr><td class="time">12:00</td><td>昼食・休憩<span class="sub">ゆっくり食事をして、午後にそなえます</span></td></tr>
+          <tr><td class="time">13:30</td><td>午後の活動<span class="sub">からだを動かしたり、好きな活動の時間</span></td></tr>
+          <tr><td class="time">15:30</td><td>帰りの会・お見送り<span class="sub">今日の「できた」をふりかえって、また明日</span></td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- わたしたちのこと -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>わたしたちのこと</h2><span class="en">About</span></div>
+      <div class="about-txt reveal">
+        <p class="big"><span class="kb">障がいのある方と</span><span class="kb">そのご家族が、</span><br><span class="kb"><em>住み慣れたこの町で、</em></span><span class="kb"><em>自分らしく</em></span><span class="kb"><em>暮らしつづけられる</em>ように。</span></p>
+        <p>あすはるは、豊川市とその周辺地域で、日常生活の支援や、日常生活能力の維持・向上のための支援を行うNPO法人です。ご本人の「やってみたい」を大切に、ご家族とともに歩んでいきます。<span class="note-sample">※文章は定款（公開情報）をもとにしたサンプルです</span></p>
+      </div>
+      <div class="sign-box reveal">
+        <h3>ごあいさつ</h3>
+        <p>一人ひとりに、その人だけのペースと、その人だけの「できること」があります。わたしたちは毎日の小さな「できた」を一緒に喜びながら、ご本人とご家族の暮らしを支えていきます。どうぞお気軽に見学にいらしてください。<span class="note-sample">※あいさつ文はサンプルです。ご本人のお言葉に差し替えいたします</span></p>
+        <p class="name"><small>特定非営利活動法人 あすはる</small>代表　（お名前は公開時に記載）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>お知らせ</h2><span class="en">News</span></div>
+      <p class="note-sample" style="margin-bottom:12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">みんなで育てた野菜を収穫しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">短期入所の空き状況を更新しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">季節の壁面かざりが完成しました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事業所概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>事業所概要</h2><span class="en">Profile</span></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 あすはる</td></tr>
+          <tr><th>所在地</th><td>愛知県豊川市谷川町天王131番地</td></tr>
+          <tr><th>設立認証</th><td>2018年3月23日</td></tr>
+          <tr><th>事業内容</th><td>生活介護（定員20名）／短期入所（定員2名）</td></tr>
+          <tr><th>電話</th><td><a href="tel:0533657288" style="color:var(--c-green-deep);font-weight:700;text-decoration:none">0533-65-7288</a>（タップで発信）</td></tr>
+          <tr><th>メール</th><td>npoasuharu@gaea.ocn.ne.jp</td></tr>
+          <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- ご利用の流れ -->
+  <section class="block" id="use">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>ご利用までの流れ</h2><span class="en">Flow</span></div>
+      <ol class="flow-list reveal">
+        <li><h3>まずはお電話ください</h3><p>「話を聞いてみたい」だけで大丈夫です。ご本人のご様子をお聞かせください。</p></li>
+        <li><h3>見学・体験</h3><p>実際の活動の様子を見て、雰囲気を感じてください。ご本人との相性がいちばん大切です。</p></li>
+        <li><h3>ご利用開始</h3><p>受給者証のお手続きもご案内します。無理のないペースで始めましょう。</p></li>
+      </ol>
+      <p class="support-line reveal"><b>活動を支えてくださる方も募集しています。</b>　ご寄付・賛助会員・ボランティアなど、できることを、できる範囲で。お気軽にお問い合わせください。</p>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section class="block" id="access" style="border-bottom:none">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="sq"></span><h2>アクセス・お問い合わせ</h2><span class="en">Access</span></div>
+      <div class="map-full reveal">
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E5%B7%9D%E5%B8%82%E8%B0%B7%E5%B7%9D%E7%94%BA%E5%A4%A9%E7%8E%8B131%E7%95%AA%E5%9C%B0&output=embed&z=15" loading="lazy" title="所在地の地図"></iframe>
+      </div>
+      <div class="tel-big reveal">
+        <p class="cap">見学・ご相談のお電話</p>
+        <a href="tel:0533657288">0533-65-7288</a>
+        <p>「ホームページを見た」とお伝えください</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 あすはる</p>
+      <p>愛知県豊川市谷川町天王131番地｜TEL 0533-65-7288</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p style="margin-top:14px;font-size:11px">&copy; 2026 NPO法人 あすはる</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .side nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

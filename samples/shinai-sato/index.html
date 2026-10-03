@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 親愛の郷サポート愛知 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・実在団体名を含むため noindex（検索エンジン非表示）／確認用
+  ・本文は公開情報（内閣府NPOポータルの定款目的・活動分野・所在地・
+    法人形態）の範囲で作成。活動継続は事業報告の提出状況を根拠にしています
+  ・代表あいさつ／活動内容の具体／お知らせ／利用者の声などは
+    「※サンプル」表記の仮テキスト（ダミー）です。虚偽・実名記載なし
+  ・公開されている電話番号が確認できないため、電話CTAは掲載せず
+    お問い合わせはデモフォームのみ。format-detection で tel 発信は無効化
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージ。ロゴは不使用
+  ・デザイン: 非対称エディトリアル型（既存3サンプルとは別骨格）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 親愛の郷サポート愛知｜東海市の福祉・地域支援【ご提案サンプル】</title>
+<meta name="description" content="愛知県東海市で福祉・地域支援に取り組む特定非営利活動法人 親愛の郷サポート愛知。高齢の方も、支えを必要とする方も、住み慣れたまちで安心して暮らしつづけられるように。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Old+Mincho:wght@500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F0E8;          /* 温かいアイボリー */
+  --paper:#FBF9F4;
+  --ink:#1E2A3A;         /* 信頼のディープネイビー */
+  --ink-soft:#4A5568;
+  --accent:#2E6E63;      /* 落ち着いたディープティール */
+  --accent-deep:#204F47;
+  --accent-pale:#E4EDE9;
+  --sand:#C9A46A;        /* 差し色（罫・番号）*/
+  --line:#DAD3C4;
+  --line-strong:#1E2A3A;
+  --f-body:"Noto Sans JP",sans-serif;
+  --f-min:"Zen Old Mincho",serif;
+  --f-num:"Space Grotesk",sans-serif;
+  --ease:cubic-bezier(.2,.6,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--bg);color:var(--ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 上部バー（左右非対称・細い罫） ===== */
+.topbar{position:sticky;top:0;z-index:90;background:rgba(244,240,232,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;height:66px;padding:0 clamp(18px,4vw,54px)}
+.topbar .brand{text-decoration:none;line-height:1.25}
+.topbar .brand .jp{font-family:var(--f-min);font-weight:900;font-size:18px;letter-spacing:.04em}
+.topbar .brand .en{display:block;font-family:var(--f-num);font-size:9.5px;letter-spacing:.28em;color:var(--accent-deep);text-transform:uppercase;margin-top:2px}
+.topbar nav{margin-left:auto;display:flex;gap:26px}
+.topbar nav a{text-decoration:none;font-size:13px;font-weight:500;color:var(--ink-soft);position:relative;padding:4px 0;transition:color .3s}
+.topbar nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .3s var(--ease)}
+.topbar nav a:hover{color:var(--ink)}
+.topbar nav a:hover::after{right:0}
+.topbar .cta{margin-left:26px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:12.5px;font-weight:700;padding:11px 20px}
+.topbar .cta:hover{background:var(--accent-deep)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+
+.sp-nav{display:none}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(18px,4vw,54px)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#9C9585;font-weight:400}
+
+/* セクション見出し（大番号＋縦罫の非対称ヘッダー） */
+.sec{padding:clamp(64px,9vw,120px) 0;position:relative}
+.sec + .sec{border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,3vw,40px);align-items:start;margin-bottom:clamp(38px,5vw,64px)}
+.sec-head .idx{font-family:var(--f-num);font-weight:600;font-size:clamp(30px,5vw,58px);color:transparent;-webkit-text-stroke:1.2px var(--sand);line-height:1;padding-top:4px}
+.sec-head .ttl .en{font-family:var(--f-num);font-size:11px;letter-spacing:.26em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:10px}
+.sec-head .ttl h2{font-family:var(--f-min);font-size:clamp(24px,3.6vw,40px);font-weight:900;letter-spacing:.02em;line-height:1.4}
+.sec-head .ttl h2 .thin{font-family:var(--f-body);font-weight:500;font-size:.6em;color:var(--ink-soft);display:block;margin-top:8px;letter-spacing:.04em}
+
+/* ===== ヒーロー（左右非対称・見出しが左に大きく張り出す） ===== */
+.hero{position:relative;padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,80px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:end}
+.hero .eyebrow{font-family:var(--f-num);font-size:11.5px;letter-spacing:.22em;color:var(--accent-deep);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.hero .eyebrow::before{content:"";width:44px;height:1px;background:var(--sand)}
+.hero h1{font-family:var(--f-min);font-weight:900;font-size:clamp(30px,5.6vw,66px);line-height:1.32;letter-spacing:.03em}
+.hero h1 .mk{background:linear-gradient(transparent 68%,var(--accent-pale) 0);padding:0 .05em}
+.hero h1 .sm{display:block;font-size:.42em;font-weight:700;color:var(--accent-deep);letter-spacing:.06em;margin-top:22px;line-height:1.9}
+.hero .lead{margin-top:30px;max-width:460px;font-size:15px;color:var(--ink-soft)}
+.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hero .tags span{font-size:12px;font-weight:700;color:var(--accent-deep);border:1px solid var(--accent);padding:5px 13px;white-space:nowrap}
+.hero-figure{position:relative}
+.hero-figure .main-ph{aspect-ratio:3/4;object-fit:cover;width:100%;filter:saturate(.92)}
+.hero-figure .sub-ph{position:absolute;left:-42px;bottom:-38px;width:52%;aspect-ratio:4/3;object-fit:cover;border:6px solid var(--bg);box-shadow:0 18px 40px rgba(30,42,58,.16)}
+.hero-figure .cap{position:absolute;top:16px;right:16px;background:rgba(30,42,58,.9);color:var(--paper);font-size:10.5px;letter-spacing:.06em;padding:6px 12px;font-family:var(--f-num)}
+
+/* ===== 理念（大きな明朝の一文＋右揃え本文の非対称） ===== */
+.creed{background:var(--ink);color:var(--paper)}
+.creed .sec-head .idx{-webkit-text-stroke:1.2px rgba(201,164,106,.7)}
+.creed .sec-head .ttl .en{color:var(--sand)}
+.creed-body{display:grid;grid-template-columns:1fr .8fr;gap:clamp(24px,4vw,60px);align-items:end}
+.creed-body .big{font-family:var(--f-min);font-weight:700;font-size:clamp(22px,3.2vw,38px);line-height:2}
+.creed-body .big em{font-style:normal;color:var(--sand)}
+.creed-body .txt{font-size:14.5px;color:#C7CEDA;border-left:1px solid rgba(201,164,106,.5);padding-left:26px}
+.creed-body .txt .note-sample{color:#8A93A3}
+
+/* ===== 取り組み（番号付き・交互の非対称行） ===== */
+.works{counter-reset:w}
+.work-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,58px);align-items:center;padding:clamp(30px,4vw,52px) 0;border-top:1px solid var(--line);counter-increment:w}
+.work-row:first-of-type{border-top:none}
+.work-row .ph{position:relative}
+.work-row .ph img{aspect-ratio:5/4;object-fit:cover;width:100%}
+.work-row .ph::before{content:"0" counter(w);position:absolute;top:-18px;left:-8px;font-family:var(--f-num);font-weight:700;font-size:clamp(40px,6vw,80px);color:transparent;-webkit-text-stroke:1.4px var(--sand);z-index:2;line-height:1}
+.work-row:nth-child(even) .txt{order:-1}
+.work-row .txt .k{font-family:var(--f-num);font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
+.work-row .txt h3{font-family:var(--f-min);font-size:clamp(19px,2.4vw,26px);font-weight:700;margin:8px 0 14px;line-height:1.5}
+.work-row .txt p{font-size:14px;color:var(--ink-soft)}
+
+/* ===== 分野（罫で仕切った表組み風リスト） ===== */
+.fields .lede{max-width:620px;font-size:14.5px;color:var(--ink-soft);margin-bottom:36px}
+.field-list{border-top:1px solid var(--line-strong)}
+.field-row{display:grid;grid-template-columns:64px 1fr;gap:clamp(14px,3vw,40px);padding:24px 4px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s}
+.field-row:hover{background:var(--accent-pale)}
+.field-row .no{font-family:var(--f-num);font-weight:600;font-size:15px;color:var(--sand)}
+.field-row .fn{font-family:var(--f-min);font-weight:700;font-size:clamp(16px,2vw,20px)}
+.field-row .fd{font-size:13px;color:var(--ink-soft);margin-top:4px}
+
+/* ===== 法人概要（左見出し・右表の非対称） ===== */
+.gaiyo-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(24px,4vw,56px)}
+.gaiyo-grid .side p{font-size:13px;color:var(--ink-soft);max-width:280px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:440px;border-collapse:collapse;font-size:14px;background:var(--paper)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--accent-pale);border:1px solid var(--line);padding:13px 18px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border:1px solid var(--line);padding:13px 18px}
+.tbl-hint{display:none;font-size:11px;color:#9C9585;margin-top:8px}
+
+/* ===== お問い合わせ（左メッセージ＋右フォームの非対称） ===== */
+.contact{background:var(--paper);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,64px);align-items:start}
+.contact .side .big{font-family:var(--f-min);font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.7;margin-bottom:18px}
+.contact .side p{font-size:14px;color:var(--ink-soft);max-width:340px}
+.contact .side .infobox{margin-top:26px;border:1px solid var(--line);padding:20px 22px;font-size:13px}
+.contact .side .infobox dt{font-weight:700;color:var(--accent-deep);font-size:12px;letter-spacing:.04em}
+.contact .side .infobox dd{margin:2px 0 14px;color:var(--ink-soft)}
+.contact .side .infobox dd:last-child{margin-bottom:0}
+.form-card{background:var(--bg);border:1px solid var(--line);padding:clamp(24px,3vw,38px)}
+.field-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{margin-bottom:18px}
+.fld label{display:block;font-size:12.5px;font-weight:700;margin-bottom:7px}
+.fld label .req{color:var(--sand);font-weight:700;margin-left:4px}
+.fld input,.fld select,.fld textarea{width:100%;font-family:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:12px 14px;border-radius:0}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--accent)}
+.fld textarea{min-height:120px;resize:vertical;line-height:1.9}
+.form-card button{width:100%;background:var(--ink);color:var(--paper);border:none;font-family:inherit;font-weight:700;font-size:15px;letter-spacing:.06em;padding:16px;cursor:pointer;transition:background .3s}
+.form-card button:hover{background:var(--accent-deep)}
+.form-msg{display:none;margin-top:16px;background:var(--accent-pale);border-left:3px solid var(--accent);padding:14px 16px;font-size:13px;color:var(--accent-deep);line-height:1.9}
+.form-msg.show{display:block}
+.form-note{font-size:11.5px;color:#9C9585;margin-top:14px;line-height:1.8}
+.map{margin-top:36px}
+.map iframe{width:100%;height:320px;border:1px solid var(--line);filter:grayscale(.2)}
+
+/* ===== フッター ===== */
+.footer{background:var(--ink);color:#C7CEDA;padding:clamp(48px,6vw,72px) 0 34px}
+.footer .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start}
+.footer .f-name{font-family:var(--f-min);color:var(--paper);font-weight:900;font-size:17px;line-height:1.5}
+.footer .f-name small{display:block;font-family:var(--f-body);font-weight:500;font-size:11px;color:var(--sand);letter-spacing:.06em;margin-top:6px}
+.footer .f-addr{font-size:12.5px;margin-top:12px}
+.footer .f-nav{display:flex;flex-wrap:wrap;gap:14px 22px;justify-content:flex-end}
+.footer .f-nav a{text-decoration:none;font-size:12.5px;color:#C7CEDA;border-bottom:1px solid transparent;transition:border-color .3s}
+.footer .f-nav a:hover{border-color:var(--sand)}
+.sample-block{margin-top:38px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);font-size:11.5px;color:#96A0AE;line-height:1.95}
+.sample-block b{color:var(--sand)}
+.sample-block a{color:#C7CEDA}
+.copy{margin-top:18px;font-family:var(--f-num);font-size:11px;color:#7A8492;letter-spacing:.04em}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(30,42,58,.92);color:#F4F0E8;text-decoration:none;font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.24)}
+.pill svg{width:15px;height:15px;flex:none;color:var(--sand)}
+.pill b{font-weight:700;color:#fff}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar nav,.topbar .cta{display:none}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:var(--paper);border-bottom:1px solid var(--line);padding:14px clamp(18px,4vw,54px) 22px;z-index:89;box-shadow:0 14px 26px rgba(30,42,58,.12)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--ink);font-weight:500;font-size:15px;padding:13px 2px;border-bottom:1px solid var(--line)}
+  .sp-nav a:last-child{border-bottom:none}
+
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .hero-figure{margin-top:56px;max-width:440px}
+  .hero-figure .sub-ph{left:auto;right:-14px;width:46%}
+  .creed-body{grid-template-columns:1fr;gap:28px}
+  .creed-body .txt{border-left:none;border-top:1px solid rgba(201,164,106,.5);padding-left:0;padding-top:22px}
+  .work-row{grid-template-columns:1fr;gap:20px}
+  .work-row:nth-child(even) .txt{order:0}
+  .work-row .ph{max-width:520px}
+  .gaiyo-grid,.contact-grid{grid-template-columns:1fr;gap:26px}
+  .footer .cols{grid-template-columns:1fr;gap:24px}
+  .footer .f-nav{justify-content:flex-start}
+  .tbl-hint{display:block}
+}
+@media (max-width:560px){
+  body{font-size:14.5px}
+  .sec-head{grid-template-columns:1fr;gap:8px}
+  .sec-head .idx{font-size:34px}
+  .field-pair{grid-template-columns:1fr;gap:0}
+  /* 表: 横スクロールをやめて縦積みに */
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border:none;padding:9px 14px 4px;font-size:12px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 14px 12px}
+  .tbl-hint{display:none}
+  .hero-figure .sub-ph{position:static;width:70%;margin-top:14px;border-width:4px}
+  .pill{font-size:10px;padding:8px 12px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ===== 上部バー ===== -->
+<header class="topbar">
+  <a class="brand" href="#top">
+    <span class="jp">親愛の郷サポート愛知</span>
+    <span class="en">Shin-ai no Sato Support Aichi</span>
+  </a>
+  <nav>
+    <a href="#creed">理念</a>
+    <a href="#works">取り組み</a>
+    <a href="#fields">活動分野</a>
+    <a href="#gaiyo">法人概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <a class="cta" href="#contact">ご相談・お問い合わせ</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#creed">理念</a>
+  <a href="#works">取り組み</a>
+  <a href="#fields">活動分野</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<!-- ===== ヒーロー（非対称） ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal on">
+        <p class="eyebrow">Welfare &amp; Community｜愛知県東海市</p>
+        <h1>
+          <span class="kb">支えあいで、</span><span class="kb"><span class="mk">まちに</span></span><br>
+          <span class="kb"><span class="mk">やさしい灯</span>を。</span>
+          <span class="sm"><span class="kb">住み慣れたこの地域で、</span><span class="kb">だれもが自分らしく</span><span class="kb">暮らしつづけられるように。</span></span>
+        </h1>
+        <p class="lead">特定非営利活動法人 親愛の郷サポート愛知は、東海市を拠点に、福祉と地域支援に取り組むNPO法人です。人と人、人と地域のつながりを大切に、暮らしのそばで支えあう活動を続けています。</p>
+        <div class="tags">
+          <span>福祉</span>
+          <span>地域支援</span>
+          <span>東海市</span>
+          <span>NPO法人</span>
+        </div>
+      </div>
+      <figure class="hero-figure reveal on">
+        <!-- 差し替えポイント: 地域の風景や活動のようす（顔が特定されにくい構図で） -->
+        <img class="main-ph" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80&auto=format&fit=crop" alt="手を取りあう支えあいのイメージ">
+        <img class="sub-ph" src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=700&q=80&auto=format&fit=crop" alt="穏やかな地域の風景のイメージ">
+        <figcaption class="cap">Image</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 理念 ===== -->
+<section class="sec creed" id="creed">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">01</span>
+      <div class="ttl"><span class="en">Our Belief</span><h2>わたしたちの想い<span class="thin">支えを必要とする方の、いちばん近くで。</span></h2></div>
+    </div>
+    <div class="creed-body reveal">
+      <p class="big">
+        <span class="kb">年齢を重ねても、</span><span class="kb">支えが要るときも、</span><br>
+        <em><span class="kb">「このまちで暮らしてよかった」</span></em><br>
+        <span class="kb">とおもえる毎日を、</span><span class="kb">地域のみなさまと一緒に。</span>
+      </p>
+      <div class="txt">
+        <p>親愛の郷サポート愛知は、福祉と地域支援を軸に活動するNPO法人です。ひとりの困りごとを地域みんなで受けとめられるよう、支えあいの輪を少しずつ広げていくことをめざしています。</p>
+        <p style="margin-top:14px"><span class="note-sample">※本文は定款の目的・活動分野（公開情報）をもとにしたサンプルです。ご契約後、実際の活動方針・想いに差し替えます。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 取り組み ===== -->
+<section class="sec works" id="works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">02</span>
+      <div class="ttl"><span class="en">What We Do</span><h2>取り組み<span class="thin">※以下は活動分野に基づく表示イメージ（サンプル）です</span></h2></div>
+    </div>
+
+    <!-- ※サンプル: 各取り組みの具体内容はダミー（定款の活動分野に沿った例示）。ご契約後に実際の活動へ差し替えます -->
+    <div class="work-row reveal">
+      <div class="ph">
+        <!-- 差し替えポイント: 見守り・訪問など日々の支援のようす -->
+        <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=1000&q=80&auto=format&fit=crop" alt="寄り添う支援のイメージ">
+      </div>
+      <div class="txt">
+        <p class="k">Support 01</p>
+        <h3>暮らしに寄り添う福祉の支援</h3>
+        <p>支えを必要とする方お一人おひとりの状況に合わせて、日々の暮らしを支える活動に取り組みます。<span class="note-sample">※具体的な支援内容はサンプルです。</span></p>
+      </div>
+    </div>
+
+    <div class="work-row reveal">
+      <div class="ph">
+        <!-- 差し替えポイント: 地域の集い・交流のようす -->
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1000&q=80&auto=format&fit=crop" alt="地域の交流のイメージ">
+      </div>
+      <div class="txt">
+        <p class="k">Support 02</p>
+        <h3>つながりをつくる地域支援</h3>
+        <p>地域の方々が気軽に集い、支えあえる関係づくりをめざします。孤立を防ぎ、まちの中に居場所を広げていきます。<span class="note-sample">※具体的な取り組みはサンプルです。</span></p>
+      </div>
+    </div>
+
+    <div class="work-row reveal">
+      <div class="ph">
+        <!-- 差し替えポイント: ボランティア・担い手のようす -->
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000&q=80&auto=format&fit=crop" alt="担い手のイメージ">
+      </div>
+      <div class="txt">
+        <p class="k">Support 03</p>
+        <h3>担い手とともに広げる支えあい</h3>
+        <p>地域で活動したい方やボランティアの力とともに、支えあいの輪を大きくしていきます。<span class="note-sample">※募集内容・条件はサンプルです。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 活動分野 ===== -->
+<section class="sec fields" id="fields">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">03</span>
+      <div class="ttl"><span class="en">Fields</span><h2>活動分野</h2></div>
+    </div>
+    <p class="lede reveal">内閣府NPOポータルに登録された定款上の活動分野です。「福祉」と「地域支援」を軸に、暮らしのさまざまな場面を支えます。<span class="note-sample">※分野の枠組みは公開情報。各分野の具体的な事業内容はサンプルです。</span></p>
+    <div class="field-list reveal">
+      <div class="field-row"><span class="no">01</span><div><div class="fn">保健・医療・福祉の増進</div><p class="fd">支えを必要とする方の暮らしを支える福祉の活動。<span class="note-sample">※内容はサンプル。</span></p></div></div>
+      <div class="field-row"><span class="no">02</span><div><div class="fn">まちづくりの推進</div><p class="fd">住み慣れた地域で安心して暮らせるまちづくり。<span class="note-sample">※内容はサンプル。</span></p></div></div>
+      <div class="field-row"><span class="no">03</span><div><div class="fn">地域安全・支えあい</div><p class="fd">孤立を防ぎ、地域で見守りあうつながりづくり。<span class="note-sample">※内容はサンプル。</span></p></div></div>
+      <div class="field-row"><span class="no">04</span><div><div class="fn">これらの活動を行う団体への支援</div><p class="fd">地域で支えあう活動を支援・連携する取り組み。<span class="note-sample">※内容はサンプル。</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 法人概要 ===== -->
+<section class="sec" id="gaiyo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">04</span>
+      <div class="ttl"><span class="en">Profile</span><h2>法人概要</h2></div>
+    </div>
+    <div class="gaiyo-grid">
+      <div class="side reveal">
+        <p>公開情報（内閣府NPOポータル）に基づく法人概要です。空欄・「※サンプル」の項目は、ご契約後に正式な情報へ差し替えます。</p>
+      </div>
+      <div class="reveal">
+        <div class="tbl-wrap">
+          <table class="gaiyo">
+            <tr><th>正式名称</th><td>特定非営利活動法人 親愛の郷サポート愛知</td></tr>
+            <tr><th>所在地</th><td>愛知県東海市加木屋町冬至池4番地の274</td></tr>
+            <tr><th>法人形態</th><td>特定非営利活動法人（NPO法人）</td></tr>
+            <tr><th>活動分野</th><td>保健・医療・福祉の増進／まちづくりの推進 ほか（定款に基づく公開情報）</td></tr>
+            <tr><th>活動状況</th><td>直近年度まで事業報告書を所轄庁へ提出（＝活動を継続）<br><span class="note-sample">※提出状況にもとづく記載です。</span></td></tr>
+            <tr><th>代表者</th><td><span class="note-sample">公開時に記載します（※サンプル）</span></td></tr>
+            <tr><th>電話</th><td><span class="note-sample">公開時に記載します（※サンプル）</span></td></tr>
+            <tr><th>メール</th><td><span class="note-sample">公開時に記載します（※サンプル）</span></td></tr>
+          </table>
+        </div>
+        <p class="tbl-hint">→ 表は横にスクロールできます</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ ===== -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">05</span>
+      <div class="ttl"><span class="en">Contact</span><h2>お問い合わせ</h2></div>
+    </div>
+    <div class="contact-grid">
+      <div class="side reveal">
+        <p class="big">「話を聞いてみたい」<br>だけでも、大丈夫です。</p>
+        <p>ご本人・ご家族からのご相談、支援機関からのお問い合わせ、活動へのご協力のご相談まで、どうぞお気軽にお寄せください。</p>
+        <dl class="infobox">
+          <dt>所在地</dt>
+          <dd>愛知県東海市加木屋町冬至池4番地の274</dd>
+          <dt>お電話</dt>
+          <dd><span class="note-sample">公開時に記載します（※サンプル。ご契約後に実際の番号を掲載します）</span></dd>
+          <dt>受付方法</dt>
+          <dd>下記フォーム（本番ではメール受信などに設定できます）</dd>
+        </dl>
+      </div>
+      <div class="form-card reveal">
+        <!-- ※サンプル: デモフォーム。送信されません。本番では入力内容をメールでお届けする形などにご用意します -->
+        <form id="demoForm" novalidate>
+          <div class="field-pair">
+            <div class="fld">
+              <label for="f-name">お名前<span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" placeholder="山田 太郎" autocomplete="name">
+            </div>
+            <div class="fld">
+              <label for="f-tel">お電話番号</label>
+              <input type="tel" id="f-tel" name="tel" placeholder="000-0000-0000" autocomplete="tel">
+            </div>
+          </div>
+          <div class="fld">
+            <label for="f-kind">ご相談の種類</label>
+            <select id="f-kind" name="kind">
+              <option>暮らし・福祉について相談したい</option>
+              <option>ご家族・ご本人のことで相談したい</option>
+              <option>支援機関からのお問い合わせ</option>
+              <option>ボランティア・会員・連携について</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="fld">
+            <label for="f-msg">ご相談内容<span class="req">*</span></label>
+            <textarea id="f-msg" name="message" placeholder="ご質問やご相談の内容を、ご自由にご記入ください。"></textarea>
+          </div>
+          <button type="submit">送信する（デモ）</button>
+          <p class="form-msg" id="formMsg">こちらはご提案用サンプルのデモフォームです。実際には送信されません。本番では、入力内容をメールでお届けする形などにご用意します。</p>
+          <p class="form-note">※このフォームはデモです。個人情報は送信・保存されません。</p>
+        </form>
+      </div>
+    </div>
+    <div class="map reveal">
+      <!-- 所在地（公開情報）の地図。ピンは番地の概略位置です -->
+      <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%9D%B1%E6%B5%B7%E5%B8%82%E5%8A%A0%E6%9C%A8%E5%B1%8B%E7%94%BA%E5%86%AC%E8%87%B3%E6%B1%A04%E7%95%AA%E5%9C%B0%E3%81%AE274&output=embed&z=15" loading="lazy" title="所在地の地図（愛知県東海市加木屋町）"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="f-name">特定非営利活動法人 親愛の郷サポート愛知<small>愛知県東海市｜福祉・地域支援</small></p>
+        <p class="f-addr">愛知県東海市加木屋町冬至池4番地の274</p>
+      </div>
+      <nav class="f-nav" aria-label="フッターナビ">
+        <a href="#creed">理念</a>
+        <a href="#works">取り組み</a>
+        <a href="#fields">活動分野</a>
+        <a href="#gaiyo">法人概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="sample-block">
+      本ページはホームページ制作の<b>ご提案用サンプル</b>です。実在団体名を含むため、検索エンジンには非表示（noindex）にしています。<br>
+      本文は公開情報（内閣府NPOポータルの定款目的・活動分野・所在地・法人形態、および事業報告書の提出状況）の範囲で作成し、代表あいさつ・取り組みの具体・活動分野の内容などの「※サンプル」表記は仮テキスト（ダミー）です。公開されている電話番号が確認できないため電話番号は掲載していません。写真はイメージ素材（Unsplash・商用可）で、ロゴは使用していません。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+    </div>
+    <p class="copy">&copy; 2026 NPO法人 親愛の郷サポート愛知 ／ Sample by SmartConnect</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("demoForm");
+const msg = document.getElementById("formMsg");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  msg.classList.add("show");
+  msg.scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+// 出現アニメ
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

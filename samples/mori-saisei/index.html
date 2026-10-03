@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 森を再生する会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者氏名は記載していません（公開時にご本人の許可を得て記載）
+  ・住所は市までの表記（番地・建物名は記載していません）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: パララックス多層スクロール（前景〜遠景の森が層になって動く）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 森を再生する会｜安城市の森林再生・間伐・植林【ご提案サンプル】</title>
+<meta name="description" content="矢作川・豊川流域の山林を、間伐と植林で再生する安城市のNPO法人。買い取り・委託された山林を手入れし、森を守り育てます。植林ボランティア・ご寄付を募集中。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --moss:#1E3A24;        /* 深緑（苔・杉） */
+  --moss-deep:#132618;   /* さらに深い森 */
+  --pine:#2F5A38;        /* 常緑 */
+  --leaf:#8FB84E;        /* 木漏れ日の黄緑 */
+  --leaf-soft:#C4D89A;   /* やわらかい若葉 */
+  --sun:#EBD98A;         /* 木漏れ日 */
+  --soil:#6B4E33;        /* 土 */
+  --soil-pale:#B79B7E;   /* 明るい土 */
+  --paper:#F5F3EC;       /* 生成り */
+  --paper-2:#EDEADF;
+  --ink:#20261F;         /* 墨に近い緑 */
+  --ink-soft:#4F5A4A;
+  --line:#D6D2C2;
+  --font-min:"Shippori Mincho",serif;
+  --font-go:"Zen Kaku Gothic New",sans-serif;
+  --font-en:"Cormorant Garamond",serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-go);background:var(--paper);color:var(--ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.55;word-break:auto-phrase}
+.kb{display:inline-block}
+a{color:inherit}
+
+/* ===== 上部ヘッダー ===== */
+.head{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;gap:14px;
+  height:66px;padding:0 clamp(18px,4vw,44px);
+  background:rgba(245,243,236,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);
+  transition:background .4s var(--ease)}
+.head .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.head .brand svg{width:38px;height:38px;flex:none}
+.head .brand .t{font-family:var(--font-min);font-weight:700;font-size:18px;letter-spacing:.06em;line-height:1.25}
+.head .brand .t small{display:block;font-family:var(--font-go);font-size:9.5px;font-weight:500;color:var(--pine);letter-spacing:.1em;margin-top:1px}
+.head nav{margin-left:auto;display:flex;gap:24px}
+.head nav a{text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.04em;position:relative;padding:4px 0;transition:color .3s}
+.head nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--pine);transition:width .3s var(--ease)}
+.head nav a:hover{color:var(--pine)}
+.head nav a:hover::after{width:100%}
+.head .cta{margin-left:6px;background:var(--pine);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:10px 18px;border-radius:999px;white-space:nowrap;transition:background .3s}
+.head .cta:hover{background:var(--moss)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー（パララックス多層） ===== */
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;background:linear-gradient(#cfe0c4 0%,#dfeacb 34%,#eef0da 62%,var(--paper) 100%)}
+/* 各層。--sp で移動速度を変える（JSで translateY を掛ける） */
+.layer{position:absolute;left:0;right:0;bottom:0;will-change:transform;pointer-events:none}
+.layer svg{display:block;width:100%;height:auto}
+.layer-sun{top:0;bottom:auto;right:0;left:auto;width:min(46vw,520px);opacity:.9}
+.hero-copy{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:20;text-align:center;padding:0 22px;will-change:transform}
+.hero-copy .ey{font-family:var(--font-en);font-size:clamp(13px,1.6vw,16px);letter-spacing:.34em;color:var(--pine);text-transform:uppercase;margin-bottom:20px}
+.hero-copy h1{font-family:var(--font-min);font-weight:700;color:var(--moss-deep);
+  font-size:clamp(30px,6vw,66px);letter-spacing:.05em;line-height:1.5;text-shadow:0 2px 18px rgba(245,243,236,.7)}
+.hero-copy h1 .lf{color:var(--pine)}
+.hero-copy .sub{margin-top:24px;font-size:clamp(13.5px,1.7vw,16px);font-weight:500;color:var(--ink-soft);letter-spacing:.04em}
+.scroll-cue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:30;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--pine)}
+.scroll-cue span{font-family:var(--font-en);font-size:10px;letter-spacing:.3em}
+.scroll-cue i{display:block;width:1px;height:44px;background:linear-gradient(var(--pine),transparent);animation:cue 2.2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(.2);transform-origin:top;opacity:0}40%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);transform-origin:bottom;opacity:0}}
+
+/* ===== 共通レイアウト ===== */
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,44px)}
+.section{padding:clamp(64px,9vw,112px) 0;position:relative}
+.s-head{margin-bottom:clamp(34px,5vw,54px)}
+.s-head .en{font-family:var(--font-en);font-size:13px;letter-spacing:.3em;color:var(--leaf);text-transform:uppercase;display:block;margin-bottom:10px}
+.s-head .en::before{content:"";display:inline-block;width:26px;height:1px;background:var(--leaf);vertical-align:middle;margin-right:12px;margin-bottom:4px}
+.s-head h2{font-family:var(--font-min);font-weight:700;font-size:clamp(23px,3.4vw,36px);letter-spacing:.04em;color:var(--moss)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.scroll-cue i{animation:none}.layer,.hero-copy{transform:none!important}}
+.note-sample{font-size:11.5px;color:#95917f}
+
+/* ===== ミッション（帯・濃緑背景に木漏れ日） ===== */
+.mission{background:var(--moss);color:var(--paper);position:relative;overflow:hidden}
+.mission::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 18% 30%,rgba(235,217,138,.16),transparent 40%),
+  radial-gradient(circle at 82% 70%,rgba(143,184,78,.14),transparent 44%);pointer-events:none}
+.mission .en{color:var(--leaf-soft)}
+.mission .en::before{background:var(--leaf-soft)}
+.mission h2{color:#fff}
+.mission .lead{font-family:var(--font-min);font-weight:500;font-size:clamp(18px,2.6vw,27px);line-height:2.05;letter-spacing:.05em;max-width:820px;color:#fff}
+.mission .lead em{font-style:normal;color:var(--sun)}
+.mission p.body{margin-top:26px;max-width:720px;font-size:14.5px;color:var(--leaf-soft);line-height:2.1}
+.mission .quote-src{margin-top:14px;font-size:11.5px;color:rgba(196,216,154,.7)}
+
+/* ===== 活動（間伐→植林→育成）カード ===== */
+.cycle{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.6vw,30px)}
+.cyc-card{background:var(--paper);border:1px solid var(--line);border-radius:3px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.cyc-card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -26px rgba(30,58,36,.5)}
+.cyc-card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.cyc-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.cyc-card:hover .ph img{transform:scale(1.06)}
+.cyc-card .ph .no{position:absolute;left:14px;top:12px;font-family:var(--font-en);font-size:34px;font-weight:600;color:#fff;line-height:1;text-shadow:0 2px 12px rgba(19,38,24,.6)}
+.cyc-card .bd{padding:22px 22px 26px}
+.cyc-card h3{font-family:var(--font-min);font-weight:700;font-size:20px;color:var(--moss);margin-bottom:9px}
+.cyc-card h3 .en{display:block;font-family:var(--font-en);font-size:11px;letter-spacing:.24em;color:var(--leaf);text-transform:uppercase;margin-bottom:3px}
+.cyc-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.95}
+
+/* ===== 山林の再生ステップ（縦の樹） ===== */
+.steps{max-width:760px;list-style:none;counter-reset:st;position:relative}
+.steps::before{content:"";position:absolute;left:22px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--soil),var(--pine),var(--leaf))}
+.steps li{counter-increment:st;position:relative;padding:0 0 34px 66px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(st);position:absolute;left:6px;top:-2px;width:34px;height:34px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--pine);color:var(--pine);
+  font-family:var(--font-en);font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:center}
+.steps h3{font-family:var(--font-min);font-weight:700;font-size:18px;color:var(--moss);margin-bottom:5px}
+.steps p{font-size:13.5px;color:var(--ink-soft)}
+
+/* ===== 数字（※サンプル） ===== */
+.stats{background:var(--paper-2)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.4vw,26px)}
+.stat{text-align:center;padding:26px 12px;background:var(--paper);border:1px solid var(--line);border-radius:3px}
+.stat .num{font-family:var(--font-en);font-weight:600;font-size:clamp(34px,5vw,52px);color:var(--pine);line-height:1}
+.stat .num .u{font-family:var(--font-go);font-size:15px;font-weight:700;margin-left:3px}
+.stat .lb{margin-top:10px;font-size:12.5px;font-weight:500;color:var(--ink-soft)}
+
+/* ===== 参加のご案内 ===== */
+.join{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.6vw,26px)}
+.join-card{border:1px solid var(--line);border-radius:3px;padding:32px 30px;background:var(--paper);position:relative}
+.join-card .ic{width:44px;height:44px;margin-bottom:16px;color:var(--pine)}
+.join-card h3{font-family:var(--font-min);font-weight:700;font-size:20px;color:var(--moss);margin-bottom:10px}
+.join-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.95;margin-bottom:18px}
+.join-card .go{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--pine);text-decoration:none}
+.join-card .go::after{content:"→";transition:transform .3s}
+.join-card .go:hover::after{transform:translateX(5px)}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:18px;padding:16px 2px;border-bottom:1px dotted var(--line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-en);font-weight:600;color:var(--soil-pale);font-size:13px;letter-spacing:.04em}
+.news-row .tag{flex:none;font-size:10.5px;font-weight:700;color:var(--pine);border:1px solid var(--leaf);border-radius:999px;padding:2px 9px}
+.news-row a{color:var(--ink);text-decoration:none}
+.news-row a:hover{color:var(--pine)}
+
+/* ===== 概要表 ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px;background:var(--paper)}
+table.gaiyo th{width:160px;text-align:left;font-weight:700;background:var(--paper-2);border:1px solid var(--line);padding:13px 18px;white-space:nowrap;font-size:13.5px}
+table.gaiyo td{border:1px solid var(--line);padding:13px 18px}
+.tbl-hint{display:none;font-size:11px;color:#95917f;margin-top:6px}
+
+/* ===== お問い合わせ ===== */
+.contact{background:var(--moss-deep);color:var(--paper);text-align:center;overflow:hidden;position:relative}
+.contact::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(143,184,78,.2),transparent 60%);pointer-events:none}
+.contact .en{color:var(--leaf-soft)}.contact .en::before{background:var(--leaf-soft)}
+.contact h2{color:#fff}
+.contact .lead{max-width:600px;margin:0 auto;color:var(--leaf-soft);font-size:14.5px;line-height:2}
+.contact .tel{margin-top:30px;display:inline-block}
+.contact .tel .cap{font-size:12px;letter-spacing:.14em;color:var(--leaf-soft)}
+.contact .tel a{font-family:var(--font-en);font-size:clamp(30px,5vw,44px);font-weight:600;color:#fff;text-decoration:none;letter-spacing:.03em;display:block}
+.contact .tel small{font-size:11.5px;color:rgba(196,216,154,.75)}
+.contact .btns{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact .btns a{text-decoration:none;font-weight:700;font-size:13.5px;padding:14px 26px;border-radius:999px;transition:.3s}
+.contact .btns .primary{background:var(--leaf);color:var(--moss-deep)}
+.contact .btns .primary:hover{background:var(--sun)}
+.contact .btns .ghost{border:1px solid rgba(196,216,154,.5);color:#fff}
+.contact .btns .ghost:hover{background:rgba(255,255,255,.08)}
+
+/* ===== デモフォーム ===== */
+.form-note{margin:22px auto 0;max-width:560px;font-size:11.5px;color:rgba(196,216,154,.8);line-height:1.8}
+.demo-form{max-width:560px;margin:22px auto 0;text-align:left;display:grid;gap:14px}
+.demo-form .fld label{display:block;font-size:12.5px;font-weight:700;color:var(--leaf-soft);margin-bottom:6px}
+.demo-form .fld input,.demo-form .fld textarea{width:100%;font-family:inherit;font-size:14px;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(196,216,154,.3);border-radius:3px;padding:12px 14px}
+.demo-form .fld input:focus,.demo-form .fld textarea:focus{outline:none;border-color:var(--leaf)}
+.demo-form button{background:var(--leaf);color:var(--moss-deep);border:none;border-radius:999px;font-weight:700;font-size:14px;padding:14px;cursor:pointer;transition:.3s}
+.demo-form button:hover{background:var(--sun)}
+
+/* ===== フッター ===== */
+.footer{background:var(--moss);color:var(--leaf-soft);padding:50px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-min);font-weight:700;font-size:17px;color:#fff}
+.footer .f-meta{font-size:12.5px;margin-top:8px;color:var(--leaf-soft)}
+.footer .sample-note{font-size:11px;color:rgba(196,216,154,.7);margin-top:20px;line-height:1.9}
+.footer .sample-note a{color:#fff}
+.footer .copy{margin-top:16px;font-size:11px;color:rgba(196,216,154,.6)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:860px){
+  .head nav,.head .cta{display:none}
+  .head .cta.mob{display:inline-flex;margin-left:auto}
+  .menu-btn{display:block;background:none;border:none;cursor:pointer;padding:6px;margin-left:12px}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mob-nav{display:none;position:fixed;inset:66px 0 auto 0;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 24px 22px;z-index:190}
+  .menu-open .mob-nav{display:block}
+  .mob-nav a{display:block;text-decoration:none;color:var(--ink);font-weight:500;font-size:15px;padding:14px 4px;border-bottom:1px solid var(--line)}
+  .cycle{grid-template-columns:1fr;gap:18px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .join{grid-template-columns:1fr}
+  .tbl-hint{display:block}
+}
+@media (min-width:861px){.head .cta.mob{display:none}.mob-nav{display:none}}
+@media (max-width:640px){
+  .hero{min-height:540px}
+  table.gaiyo{min-width:0;border:1px solid var(--line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--line);padding:9px 16px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:8px 16px 13px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <a class="brand" href="#top">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#1E3A24"/>
+      <path d="M20 32c0-9 4-15 12-17-1 9-6 15-12 17Z" fill="#8FB84E"/>
+      <path d="M20 32c0-7-3-11-9.5-12.5C12 26 15 30.5 20 32Z" fill="#2F5A38"/>
+      <rect x="19" y="30" width="2" height="6" fill="#6B4E33"/>
+      <circle cx="20" cy="10" r="2.6" fill="#EBD98A"/>
+    </svg>
+    <span class="t">森を再生する会<small>特定非営利活動法人｜愛知県安城市</small></span>
+  </a>
+  <nav>
+    <a href="#mission">わたしたちの願い</a>
+    <a href="#cycle">活動</a>
+    <a href="#steps">再生の流れ</a>
+    <a href="#join">参加する</a>
+    <a href="#gaiyo">概要</a>
+  </nav>
+  <a class="cta" href="#contact">お問い合わせ</a>
+  <a class="cta mob" href="#contact">相談</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="mob-nav">
+  <a href="#mission">わたしたちの願い</a>
+  <a href="#cycle">活動</a>
+  <a href="#steps">再生の流れ</a>
+  <a href="#join">参加する</a>
+  <a href="#gaiyo">概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<!-- ===== ヒーロー：パララックス多層スクロール ===== -->
+<!--
+  奥（遠景の山）→中景の森→前景の草 の3層＋木漏れ日を、
+  スクロール量に応じて別々の速度で動かし、奥行きを表現します。
+  差し替えポイント: 実写の森の空撮写真に置き換えることも可能です。
+-->
+<section class="hero" id="hero">
+  <!-- 遠景：山の稜線（いちばんゆっくり動く） -->
+  <div class="layer layer-far" data-sp="0.15">
+    <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path d="M0,420 L0,230 C160,180 300,250 460,210 C640,165 760,240 940,200 C1120,160 1280,235 1440,195 L1440,420 Z" fill="#7FA277"/>
+    </svg>
+  </div>
+  <!-- 中景：森のシルエット -->
+  <div class="layer layer-mid" data-sp="0.35">
+    <svg viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path d="M0,360 L0,210 C120,190 180,120 240,170 C280,110 340,150 380,120 C440,150 500,110 540,160 C620,130 700,180 760,140 C840,175 900,120 960,165 C1040,125 1120,175 1180,140 C1260,170 1340,125 1440,160 L1440,360 Z" fill="#3F6B44"/>
+    </svg>
+  </div>
+  <!-- 前景：草むら（いちばん速く動く） -->
+  <div class="layer layer-near" data-sp="0.6">
+    <svg viewBox="0 0 1440 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <path d="M0,220 L0,120 C90,150 130,60 180,110 C210,60 250,110 290,80 C340,120 400,70 450,110 C520,70 560,130 620,95 C690,130 740,65 800,110 C870,70 930,130 990,95 C1060,130 1120,60 1180,110 C1250,70 1320,130 1440,100 L1440,220 Z" fill="#1E3A24"/>
+    </svg>
+  </div>
+  <!-- 木漏れ日 -->
+  <div class="layer layer-sun" data-sp="-0.12">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="60" fill="#EBD98A" opacity="0.55"/>
+      <circle cx="100" cy="100" r="38" fill="#F3E9B4" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="hero-copy" data-sp="0.28">
+    <p class="ey">Restoring the Forest</p>
+    <h1><span class="kb">切り、植え、育てる。</span><br><span class="kb">百年先の<span class="lf">森</span>を、</span><span class="kb">この手で。</span></h1>
+    <p class="sub">矢作川・豊川流域の山林を、間伐と植林で再生するNPO法人です</p>
+  </div>
+
+  <div class="scroll-cue"><span>SCROLL</span><i></i></div>
+</section>
+
+<!-- ===== ミッション ===== -->
+<section class="section mission" id="mission">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="en">Our Mission</span><h2>荒れた山を、生きた森へ。</h2></div>
+    <p class="lead reveal">わたしたちは、購入・委託を受けた山林を<br class="kb"><em>間伐と植林によって手入れし、</em><br class="kb">矢作川・豊川流域の森を<em>守り育てて</em>いきます。</p>
+    <p class="body reveal">手が入らなくなった人工林は、光が地面まで届かず、土がやせ、雨で流されやすくなります。適切に間伐して光を入れ、そこに若い木を植えて育てる——この地道な繰り返しが、水を蓄え、いのちを育む森を取りもどします。<span class="note-sample">※本文は法人の登記目的（公開情報）をもとにしたサンプルです</span></p>
+    <p class="quote-src reveal">出典：NPO法人ポータルサイト掲載の定款目的（公開情報）</p>
+  </div>
+</section>
+
+<!-- ===== 活動サイクル ===== -->
+<section class="section" id="cycle">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="en">Activities</span><h2>森をめぐる、３つの手しごと</h2></div>
+    <div class="cycle">
+      <div class="cyc-card reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 実際の間伐作業のお写真 -->
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&q=80&auto=format&fit=crop" alt="森の間伐のイメージ" loading="lazy">
+          <span class="no">01</span>
+        </div>
+        <div class="bd">
+          <h3><span class="en">Thinning</span>間伐する</h3>
+          <p>混みあった木を間引いて、地面まで光を届けます。残った木は太く健やかに育ち、下草が生えて土をつかむ森になります。</p>
+        </div>
+      </div>
+      <div class="cyc-card reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 実際の植林・苗木のお写真 -->
+          <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=1000&q=80&auto=format&fit=crop" alt="植林・苗木のイメージ" loading="lazy">
+          <span class="no">02</span>
+        </div>
+        <div class="bd">
+          <h3><span class="en">Planting</span>植える</h3>
+          <p>ひらけた場所に、その土地に合った苗木を一本ずつ植えていきます。数十年先を見すえた、いちばん小さくて大きな一歩です。</p>
+        </div>
+      </div>
+      <div class="cyc-card reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 実際の下草刈り・育林のお写真 -->
+          <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1000&q=80&auto=format&fit=crop" alt="森を育てるイメージ" loading="lazy">
+          <span class="no">03</span>
+        </div>
+        <div class="bd">
+          <h3><span class="en">Nurturing</span>育て、守る</h3>
+          <p>下草を刈り、成長を見守り、災害から森を守ります。何十年もかけて、水をたくわえ生きものを育む森へと育てていきます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 再生の流れ ===== -->
+<section class="section" id="steps" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="en">The Process</span><h2>一つの山が、森にもどるまで</h2></div>
+    <ol class="steps reveal">
+      <li><h3>山林をお預かりする</h3><p>手入れの行き届かない山林を、購入または委託というかたちでお預かりします。まずは現地を歩き、森の状態を確かめます。</p></li>
+      <li><h3>調査・計画</h3><p>木々の混みぐあいや土の状態を見て、どこを間伐し、何を植えるかの計画を立てます。<span class="note-sample">※工程は活動内容をもとにしたサンプル表記です</span></p></li>
+      <li><h3>間伐して光を入れる</h3><p>混みあった木を間引き、地面まで日ざしが届くようにします。切った木は資源としても活かします。</p></li>
+      <li><h3>植林する</h3><p>ひらけた場所に、その土地に合った苗木を植えます。ボランティアのみなさんと一緒に汗を流す日でもあります。</p></li>
+      <li><h3>見守り、育てる</h3><p>下草を刈り、成長を見守り続けます。人の手と時間をかけて、いのちを育む森へと育っていきます。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 数字（※サンプル） ===== -->
+<section class="section stats" id="stats">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="en">By the Numbers</span><h2>これまでの歩み</h2></div>
+    <p class="note-sample reveal" style="margin-bottom:26px">※以下の数値はすべて表示イメージのサンプルです。実際の活動実績に差し替えます</p>
+    <!-- ※サンプル: 数値はダミーです -->
+    <div class="stat-grid reveal">
+      <div class="stat"><div class="num">00<span class="u">ha</span></div><div class="lb">再生に取り組んだ山林</div></div>
+      <div class="stat"><div class="num">0,000<span class="u">本</span></div><div class="lb">植えた木の本数</div></div>
+      <div class="stat"><div class="num">00<span class="u">回</span></div><div class="lb">植林・間伐イベント</div></div>
+      <div class="stat"><div class="num">000<span class="u">人</span></div><div class="lb">参加ボランティア</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 参加のご案内 ===== -->
+<section class="section" id="join">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="en">Get Involved</span><h2>森づくりに、加わってください</h2></div>
+    <div class="join">
+      <div class="join-card reveal">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 34c0-10 4-16 13-18-1 10-6 16-13 18Z" fill="currentColor" opacity=".85"/><path d="M20 34c0-8-3-12-11-14 1 8 5 12 11 14Z" fill="currentColor" opacity=".5"/></svg>
+        <h3>植林ボランティア</h3>
+        <p>苗木を植えたり、下草を刈ったり。土にふれる一日が、そのまま百年先の森につながります。はじめての方も、ご家族でも歓迎です。</p>
+        <a class="go" href="#contact">参加について問い合わせる</a>
+      </div>
+      <div class="join-card reveal">
+        <svg class="ic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 33c-7-5-13-9-13-16 0-4 3-7 7-7 3 0 5 2 6 4 1-2 3-4 6-4 4 0 7 3 7 7 0 7-6 11-13 16Z" fill="currentColor" opacity=".85"/></svg>
+        <h3>ご寄付・賛助会員</h3>
+        <p>一本の苗木、一日の作業を、あなたの応援がささえます。継続的なご寄付・賛助会員として、森の再生に力を貸してください。</p>
+        <a class="go" href="#contact">支援について問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お知らせ ===== -->
+<section class="section" id="news" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="en">News</span><h2>お知らせ</h2></div>
+    <p class="note-sample reveal" style="margin-bottom:14px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    <div class="reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">イベント</span><a href="#news">春の植林会の参加者を募集します</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">活動報告</span><a href="#news">〇〇山の間伐作業が完了しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">お知らせ</span><a href="#news">賛助会員募集のご案内を掲載しました</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 概要 ===== -->
+<section class="section" id="gaiyo">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="en">About Us</span><h2>団体概要</h2></div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 森を再生する会</td></tr>
+        <tr><th>所在地</th><td>愛知県安城市（詳細な住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>環境の保全を図る活動</td></tr>
+        <tr><th>活動の目的</th><td>矢作川・豊川流域の住民に対し、購入・委託した山林を間伐・植林により再生し、森を守り育てる（登記目的より）</td></tr>
+        <tr><th>主な活動</th><td>山林の間伐／植林／育林・下草刈り／植林ボランティアの受け入れ</td></tr>
+        <tr><th>代表者</th><td>（公開時にご本人の許可を得て記載します）</td></tr>
+        <tr><th>お問い合わせ</th><td><a href="#access" style="color:var(--pine);font-weight:700;text-decoration:none;pointer-events:none">00-0000-0000</a>　<span class="note-sample">※サンプル（実際の番号に差し替えます）</span></td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ ===== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="s-head reveal" style="text-align:center"><span class="en" style="display:inline-block">Contact</span><h2>森のこと、お気軽に。</h2></div>
+    <p class="lead reveal">見学・ボランティア参加・ご寄付・山林のご相談など、どうぞお気軽にお問い合わせください。</p>
+    <div class="tel reveal">
+      <!-- ※サンプル: 電話番号はダミーです（tel:リンクは無効化） -->
+      <span class="cap">お電話でのお問い合わせ</span>
+      <a href="#access" style="pointer-events:none">00-0000-0000</a>
+      <small>※サンプル番号です。実際の番号に差し替えます</small>
+    </div>
+
+    <!-- デモフォーム（送信されません） -->
+    <form class="demo-form reveal" onsubmit="return false;" aria-label="お問い合わせ（デモ）">
+      <div class="fld"><label for="nm">お名前</label><input id="nm" type="text" placeholder="山田 太郎" autocomplete="name"></div>
+      <div class="fld"><label for="em">メールアドレス</label><input id="em" type="email" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="fld"><label for="ms">お問い合わせ内容</label><textarea id="ms" rows="4" placeholder="植林ボランティアに参加してみたいです"></textarea></div>
+      <button type="submit" onclick="alert('これはご提案用サンプルのデモフォームです。実際には送信されません。');return false;">送信する（デモ）</button>
+    </form>
+    <p class="form-note reveal">※このフォームはデザイン確認用のデモです。入力内容は送信・保存されません。実際の運用では、いただいたお問い合わせがメール等で届くように設定します。</p>
+
+    <div class="btns reveal">
+      <a class="primary" href="#join">参加・支援について</a>
+      <a class="ghost" href="#top">ページの先頭へ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 森を再生する会</p>
+    <p class="f-meta">愛知県安城市｜環境の保全を図る活動</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号はサンプル）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO法人 森を再生する会</p>
+  </div>
+</footer>
+
+<!-- 左下固定ピル -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// ハンバーガーメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".mob-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロール出現アニメ
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// ===== パララックス多層スクロール =====
+// 各 [data-sp] 要素を、スクロール量 × 係数 だけ縦に動かして奥行きを出す。
+// reduced-motion のときは動かさない。
+const reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+const layers = Array.from(document.querySelectorAll("[data-sp]"));
+const hero = document.getElementById("hero");
+let ticking = false;
+
+function parallax(){
+  const y = window.pageYOffset;
+  // ヒーローが視界にある間だけ計算（軽量化）
+  if (hero && y < hero.offsetHeight + 200) {
+    for (const el of layers){
+      const sp = parseFloat(el.getAttribute("data-sp")) || 0;
+      el.style.transform = "translate3d(0," + (y * sp) + "px,0)";
+    }
+    // ヒーローの見出しは少しフェード
+    const copy = document.querySelector(".hero-copy");
+    if (copy){ copy.style.opacity = Math.max(0, 1 - y / (hero.offsetHeight * 0.75)); }
+  }
+  ticking = false;
+}
+function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(parallax); } }
+
+if (!reduce){
+  window.addEventListener("scroll", onScroll, { passive:true });
+  window.addEventListener("resize", onScroll, { passive:true });
+  parallax();
+}
+
+// ヘッダーの背景を、少しスクロールしたら濃くする
+const head = document.querySelector(".head");
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 40) head.style.background = "rgba(245,243,236,.96)";
+  else head.style.background = "rgba(245,243,236,.86)";
+}, { passive:true });
+</script>
+</body>
+</html>

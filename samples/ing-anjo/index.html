@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ing さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・活動分野・所在地＝安城市）の
+    範囲で作成しています
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・住所は市までの表記にとどめています（番地・建物名は公開時に記載）
+  ・電話番号はダミーのため tel: リンクは無効化しています
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 ing｜安城市の生涯学習・こころの学び【ご提案サンプル】</title>
+<meta name="description" content="安城市を拠点に、あらゆるライフステージの学びを支えるNPO法人。子ども・若者・おとな・シニア、それぞれの世代に合わせた学習機会と心理的援助を届けます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FFFFFF;
+  --c-panel:#F5F7FB;
+  --c-ink:#141A2E;
+  --c-sub:#5A627A;
+  --c-ai:#2942A6;          /* 藍 */
+  --c-ai-deep:#1B2C72;
+  --c-ai-pale:#EAEEFB;
+  --c-lime:#B7E23A;        /* ライム */
+  --c-lime-deep:#8FBE15;
+  --c-line:#E3E7F0;
+  --f-body:"Zen Kaku Gothic New",sans-serif;
+  --f-en:"Space Grotesk",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.6;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== ヘッダー ===== */
+.top{position:sticky;top:0;z-index:120;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--c-line);height:66px;display:flex;align-items:center;padding:0 30px}
+.top .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.top .brand .mark{width:36px;height:36px;flex:none}
+.top .brand .t{font-weight:900;font-size:20px;letter-spacing:.04em;line-height:1.1}
+.top .brand .t small{display:block;font-family:var(--f-en);font-size:9.5px;font-weight:600;letter-spacing:.18em;color:var(--c-ai);margin-top:2px}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:26px}
+.top nav a{text-decoration:none;font-size:13.5px;font-weight:500;color:var(--c-sub);transition:color .25s var(--ease)}
+.top nav a:hover{color:var(--c-ai)}
+.top .cta{background:var(--c-ai);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:11px 20px;border-radius:40px;transition:background .25s var(--ease)}
+.top .cta:hover{background:var(--c-ai-deep)}
+.menu-btn{display:none}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 30px}
+.block{padding:96px 0}
+.b-head{margin-bottom:38px}
+.b-head .en{font-family:var(--f-en);font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--c-ai);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.b-head .en::before{content:"";width:26px;height:3px;background:var(--c-lime)}
+.b-head h2{font-size:clamp(24px,3.2vw,34px);font-weight:900;letter-spacing:.02em;margin-top:14px}
+.b-head p{color:var(--c-sub);font-size:14.5px;margin-top:12px;max-width:640px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#98A0B5}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;padding:76px 0 92px;background:
+  radial-gradient(1100px 460px at 88% -10%,var(--c-ai-pale),transparent 60%),
+  linear-gradient(180deg,#fff, #fff)}
+.hero .wrap{position:relative}
+.hero .eyebrow{display:inline-block;background:var(--c-lime);color:var(--c-ai-deep);font-weight:700;font-size:12.5px;letter-spacing:.02em;padding:6px 15px;border-radius:40px}
+.hero h1{font-size:clamp(30px,5.2vw,54px);font-weight:900;line-height:1.4;letter-spacing:.02em;margin-top:22px}
+.hero h1 .hl{color:var(--c-ai);position:relative}
+.hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:12px;background:var(--c-lime);opacity:.55;z-index:-1;border-radius:2px}
+.hero .lead{margin-top:24px;max-width:560px;color:var(--c-sub);font-size:15.5px}
+.hero .badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
+.hero .badges span{border:1px solid var(--c-line);background:#fff;border-radius:40px;font-size:12.5px;font-weight:500;padding:7px 15px;white-space:nowrap}
+.hero .badges span b{color:var(--c-ai);font-weight:700}
+.hero-photos{position:absolute;right:0;top:8px;width:44%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px}
+.hero-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:20px}
+.hero-photos img:nth-child(1){aspect-ratio:3/4;grid-row:span 2}
+
+/* ===== タブ切替UI（主役） ===== */
+.stage-intro{color:var(--c-sub);font-size:14.5px;max-width:640px;margin-bottom:26px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.tab-btn{border:1.5px solid var(--c-line);background:#fff;color:var(--c-sub);font-family:var(--f-body);font-weight:700;font-size:14px;padding:13px 22px;border-radius:40px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .25s var(--ease)}
+.tab-btn .no{font-family:var(--f-en);font-size:11px;color:var(--c-ai);opacity:.6}
+.tab-btn:hover{border-color:var(--c-ai);color:var(--c-ink)}
+.tab-btn[aria-selected="true"]{background:var(--c-ai);border-color:var(--c-ai);color:#fff}
+.tab-btn[aria-selected="true"] .no{color:var(--c-lime);opacity:1}
+.tab-bar{height:4px;background:var(--c-line);border-radius:4px;margin:20px 0 26px;overflow:hidden;position:relative}
+.tab-bar::after{content:"";position:absolute;left:var(--bar-left,0);top:0;bottom:0;width:var(--bar-w,25%);background:var(--c-lime);border-radius:4px;transition:left .4s var(--ease),width .4s var(--ease)}
+
+.panel{display:none}
+.panel.show{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start;animation:fade .5s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.panel .ph{border-radius:22px;overflow:hidden}
+.panel .ph img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.panel .stage-tag{font-family:var(--f-en);font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--c-ai)}
+.panel h3{font-size:clamp(21px,2.6vw,27px);font-weight:900;margin:8px 0 14px}
+.panel .who{display:inline-block;background:var(--c-ai-pale);color:var(--c-ai-deep);font-size:12px;font-weight:700;padding:4px 12px;border-radius:40px;margin-bottom:16px}
+.panel p{color:var(--c-sub);font-size:14.5px}
+.panel .learn-list{list-style:none;margin-top:18px;display:grid;gap:10px}
+.panel .learn-list li{position:relative;padding-left:26px;font-size:14px;font-weight:500;color:var(--c-ink)}
+.panel .learn-list li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:12px;background:var(--c-lime);border-radius:3px;transform:rotate(45deg)}
+
+/* ===== わたしたちの願い ===== */
+.mission{background:var(--c-ai);color:#fff;border-radius:28px;padding:60px 54px;position:relative;overflow:hidden}
+.mission::before{content:"";position:absolute;right:-70px;bottom:-70px;width:260px;height:260px;background:radial-gradient(circle,var(--c-lime),transparent 70%);opacity:.35}
+.mission .en{font-family:var(--f-en);font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--c-lime)}
+.mission h2{font-size:clamp(22px,3vw,32px);font-weight:900;line-height:1.7;margin:16px 0 20px;position:relative}
+.mission h2 em{font-style:normal;color:var(--c-lime)}
+.mission p{color:#D5DAF2;font-size:14.5px;max-width:640px;position:relative}
+.creed{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;position:relative}
+.creed div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px}
+.creed .n{font-family:var(--f-en);font-size:12px;font-weight:700;color:var(--c-lime);letter-spacing:.12em}
+.creed h4{font-size:16px;font-weight:700;margin:8px 0 6px}
+.creed p{color:#C7CDEC;font-size:13px}
+
+/* ===== 心理的援助 ===== */
+.care{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.care .ph img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:22px}
+.care h3{font-size:clamp(20px,2.5vw,26px);font-weight:900;line-height:1.6}
+.care h3 .hl{background:linear-gradient(transparent 62%,var(--c-lime) 62%)}
+.care p{color:var(--c-sub);font-size:14.5px;margin-top:16px}
+.care .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.care .tags span{background:var(--c-panel);border-radius:40px;font-size:12.5px;font-weight:500;padding:7px 15px}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:20px;padding:16px 4px;border-bottom:1px solid var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--f-en);font-weight:600;color:var(--c-sub);font-size:12.5px}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;color:var(--c-ai);background:var(--c-ai-pale);border-radius:40px;padding:3px 11px}
+.news-row a{text-decoration:none;color:var(--c-ink)}
+.news-row a:hover{color:var(--c-ai)}
+
+/* ===== 参加する ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.join-card{border:1px solid var(--c-line);border-radius:20px;padding:30px 26px;background:#fff;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.join-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(41,66,166,.1)}
+.join-card .ic{width:44px;height:44px;border-radius:12px;background:var(--c-ai-pale);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.join-card .ic svg{width:24px;height:24px}
+.join-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.join-card p{color:var(--c-sub);font-size:13.5px}
+
+/* ===== 概要 ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#98A0B5;margin-top:6px}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;color:var(--c-ai-deep);background:var(--c-ai-pale);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+
+/* ===== お問い合わせ ===== */
+.contact{background:var(--c-panel);border-radius:28px;padding:50px 46px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:8px}
+.contact .tel-box{border:1px solid var(--c-line);background:#fff;border-radius:18px;padding:24px;text-align:center;margin-bottom:18px}
+.contact .tel-box .cap{font-size:12.5px;font-weight:700;color:var(--c-ai)}
+.contact .tel-box .num{font-family:var(--f-en);font-size:30px;font-weight:700;color:var(--c-ai-deep);margin:6px 0 2px;letter-spacing:.01em}
+.contact .tel-box p{font-size:11.5px;color:var(--c-sub)}
+label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+input,textarea{width:100%;border:1px solid var(--c-line);border-radius:12px;padding:12px 14px;font-family:var(--f-body);font-size:14px;background:#fff}
+input:focus,textarea:focus{outline:2px solid var(--c-ai);border-color:transparent}
+.form-btn{margin-top:20px;width:100%;background:var(--c-ai);color:#fff;border:none;border-radius:40px;font-family:var(--f-body);font-weight:700;font-size:15px;padding:15px;cursor:pointer;transition:background .25s var(--ease)}
+.form-btn:hover{background:var(--c-ai-deep)}
+.form-note{font-size:11.5px;color:#98A0B5;margin-top:12px;text-align:center}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#C7CDEC;padding:56px 0 34px;margin-top:96px}
+.footer .f-brand{font-weight:900;font-size:18px;color:#fff}
+.footer .f-brand small{display:block;font-family:var(--f-en);font-size:10px;letter-spacing:.16em;color:var(--c-lime);margin-top:4px}
+.footer .f-addr{font-size:13px;margin-top:14px}
+.sample-note{font-size:11.5px;color:#8A91AE;margin-top:24px;line-height:1.9;border-top:1px solid rgba(255,255,255,.1);padding-top:22px}
+.sample-note a{color:#B7C0E4}
+.footer .copy{font-size:11px;color:#7A82A0;margin-top:16px}
+
+/* 左下ピル */
+.sample-pill{position:fixed;left:16px;bottom:16px;z-index:150;background:var(--c-ink);color:#fff;font-size:11px;font-weight:700;letter-spacing:.03em;padding:9px 15px;border-radius:40px;box-shadow:0 6px 18px rgba(20,26,46,.28);text-decoration:none;font-family:var(--f-body)}
+.sample-pill span{color:var(--c-lime)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .top{padding:0 18px;height:60px}
+  .top nav{position:fixed;inset:60px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:2px solid var(--c-line);padding:8px 18px 18px;display:none}
+  .top nav a{padding:14px 4px;border-bottom:1px solid var(--c-line);font-size:15px}
+  .top nav .cta{margin-top:14px;text-align:center}
+  .menu-open .top nav{display:flex}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s var(--ease)}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .block{padding:64px 0}
+  .hero{padding:44px 0 56px}
+  .hero-photos{position:static;width:100%;margin-top:34px;grid-template-columns:1fr 1fr}
+  .hero-photos img:nth-child(1){aspect-ratio:1/1;grid-row:auto}
+  .panel.show{grid-template-columns:1fr;gap:22px}
+  .panel .ph{order:-1}
+  .mission{padding:44px 26px;border-radius:22px}
+  .creed{grid-template-columns:1fr;gap:12px}
+  .care{grid-template-columns:1fr;gap:24px}
+  .care .ph{order:-1}
+  .join{grid-template-columns:1fr}
+  .contact{padding:36px 22px;border-radius:22px}
+  .contact-grid{grid-template-columns:1fr;gap:26px}
+  .tbl-hint{display:block}
+  .footer{margin-top:64px}
+}
+@media (max-width:720px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 14px 4px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 14px 12px}
+  .tbl-hint{display:none}
+  .tabs{gap:8px}
+  .tab-btn{padding:11px 16px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="top" id="top">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="2" y="2" width="36" height="36" rx="11" fill="#2942A6"/>
+      <path d="M13 27V17" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+      <circle cx="13" cy="12.4" r="2.4" fill="#B7E23A"/>
+      <path d="M21 27v-5.5c0-2.6 1.7-4.5 4.3-4.5s4.2 1.9 4.2 4.5V27" stroke="#B7E23A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <span class="t">ing<small>NPO ANJO・LIFELONG</small></span>
+  </a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="#stage">ライフステージの学び</a>
+    <a href="#mission">わたしたちの願い</a>
+    <a href="#care">こころの援助</a>
+    <a href="#join">参加する</a>
+    <a href="#contact" class="cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow reveal on">安城市｜生涯学習・こころの学び</span>
+    <h1 class="reveal on"><span class="kb">いくつになっても、</span><br><span class="kb"><span class="hl">学びたい</span>その時が</span><span class="kb">はじまり。</span></h1>
+    <p class="lead reveal on">ingは、安城市を拠点に「生涯学習社会」の実現をめざすNPO法人です。子ども・若者・おとな・シニア――それぞれのライフステージに合った学びの機会と、こころの援助を届けています。</p>
+    <div class="badges reveal on">
+      <span>分野：<b>保健医療福祉</b></span>
+      <span>分野：<b>社会教育</b></span>
+      <span>分野：<b>まちづくり</b></span>
+    </div>
+    <div class="hero-photos reveal on">
+      <!-- 差し替えポイント: 実際の講座・ワークショップのお写真へ -->
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80&auto=format&fit=crop" alt="学びあう人々のイメージ">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80&auto=format&fit=crop" alt="ワークショップのイメージ">
+      <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&q=80&auto=format&fit=crop" alt="対話のイメージ">
+    </div>
+  </div>
+</section>
+
+<!-- ライフステージの学び（タブ切替UI・主役） -->
+<section class="block" id="stage">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Learning by life-stage</span>
+      <h2>ライフステージ別の学び</h2>
+      <p>人生のどの段階にも、その時にしかできない学びがあります。世代のタブを切り替えて、ingが届けている学びの場をのぞいてみてください。</p>
+    </div>
+    <p class="note-sample reveal" style="margin-bottom:20px">※各世代のプログラム名・内容は表示イメージのサンプルです。実際の講座内容に差し替えます</p>
+
+    <!-- タブ -->
+    <div class="tabs reveal" role="tablist" aria-label="ライフステージ">
+      <button class="tab-btn" role="tab" id="tab-child" aria-controls="p-child" aria-selected="true"><span class="no">01</span>こども</button>
+      <button class="tab-btn" role="tab" id="tab-youth" aria-controls="p-youth" aria-selected="false"><span class="no">02</span>若者</button>
+      <button class="tab-btn" role="tab" id="tab-adult" aria-controls="p-adult" aria-selected="false"><span class="no">03</span>おとな</button>
+      <button class="tab-btn" role="tab" id="tab-senior" aria-controls="p-senior" aria-selected="false"><span class="no">04</span>シニア</button>
+    </div>
+    <div class="tab-bar reveal" aria-hidden="true"></div>
+
+    <!-- パネル: こども -->
+    <div class="panel show" role="tabpanel" id="p-child" aria-labelledby="tab-child">
+      <div>
+        <span class="stage-tag">STAGE 01 ／ CHILDREN</span>
+        <h3>「なぜ？」を、のびのび育てる。</h3>
+        <span class="who">未就学〜小学生とその保護者</span>
+        <p>遊びと探究のあいだで、子どもの「知りたい」を大切にします。地域のおとなと出会いながら、学ぶことそのものを好きになる時間を届けます。</p>
+        <ul class="learn-list">
+          <li>親子で楽しむ体験ワークショップ<span class="note-sample">（※サンプル）</span></li>
+          <li>放課後の学びと居場所づくり<span class="note-sample">（※サンプル）</span></li>
+          <li>読み聞かせ・自然観察の会<span class="note-sample">（※サンプル）</span></li>
+        </ul>
+      </div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1000&q=80&auto=format&fit=crop" alt="こどもの学びのイメージ"></div>
+    </div>
+
+    <!-- パネル: 若者 -->
+    <div class="panel" role="tabpanel" id="p-youth" aria-labelledby="tab-youth" hidden>
+      <div>
+        <span class="stage-tag">STAGE 02 ／ YOUTH</span>
+        <h3>自分の道を、自分で選ぶために。</h3>
+        <span class="who">中高生〜若者世代</span>
+        <p>進路・仕事・人間関係――迷いの多い時期に、正解を押しつけず、考える力と相談できる相手に出会える場をつくります。</p>
+        <ul class="learn-list">
+          <li>進路・キャリアを考える対話の場<span class="note-sample">（※サンプル）</span></li>
+          <li>若者どうしのピアサポート<span class="note-sample">（※サンプル）</span></li>
+          <li>こころの相談窓口へのつなぎ<span class="note-sample">（※サンプル）</span></li>
+        </ul>
+      </div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&q=80&auto=format&fit=crop" alt="若者の学びのイメージ"></div>
+    </div>
+
+    <!-- パネル: おとな -->
+    <div class="panel" role="tabpanel" id="p-adult" aria-labelledby="tab-adult" hidden>
+      <div>
+        <span class="stage-tag">STAGE 03 ／ ADULT</span>
+        <h3>学びなおしが、毎日を軽くする。</h3>
+        <span class="who">子育て世代・働く世代</span>
+        <p>子育て、仕事、地域との関わり。おとなになっても学びは続きます。暮らしに活きる知識と、同じ立場で語り合える仲間との時間を。</p>
+        <ul class="learn-list">
+          <li>子育て・家族のための講座<span class="note-sample">（※サンプル）</span></li>
+          <li>暮らしと健康の学びの会<span class="note-sample">（※サンプル）</span></li>
+          <li>地域活動・ボランティア入門<span class="note-sample">（※サンプル）</span></li>
+        </ul>
+      </div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1000&q=80&auto=format&fit=crop" alt="おとなの学びのイメージ"></div>
+    </div>
+
+    <!-- パネル: シニア -->
+    <div class="panel" role="tabpanel" id="p-senior" aria-labelledby="tab-senior" hidden>
+      <div>
+        <span class="stage-tag">STAGE 04 ／ SENIOR</span>
+        <h3>これまでを、これからの力に。</h3>
+        <span class="who">シニア世代</span>
+        <p>培ってきた経験は、地域の宝です。新しい学びを楽しみながら、世代をこえてつながり、誰かの役に立てる場をご用意しています。</p>
+        <ul class="learn-list">
+          <li>いきいき健康・介護予防の学び<span class="note-sample">（※サンプル）</span></li>
+          <li>世代間交流の集い<span class="note-sample">（※サンプル）</span></li>
+          <li>経験を活かすボランティア活動<span class="note-sample">（※サンプル）</span></li>
+        </ul>
+      </div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=1000&q=80&auto=format&fit=crop" alt="シニアの学びのイメージ"></div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたちの願い -->
+<section class="block" id="mission">
+  <div class="wrap">
+    <div class="mission reveal">
+      <span class="en">Our Mission</span>
+      <h2>だれもが、いつからでも、<br><em>学びなおせる</em>まちへ。</h2>
+      <p>ingは「生涯学習社会の実現」を目指し、その基盤づくりと、あらゆるライフステージにおける学習機会の提供、そして心理的援助に取り組んでいます。学びは、一人ひとりの人生を支える力になると信じています。<span class="note-sample" style="color:#AEB6DA">※定款の目的（公開情報）をもとにした表現です</span></p>
+      <div class="creed">
+        <div>
+          <span class="n">01</span>
+          <h4>機会を、すべての世代へ</h4>
+          <p>年齢や立場にとらわれず、学びたい人が学べる機会を届けます。</p>
+        </div>
+        <div>
+          <span class="n">02</span>
+          <h4>基盤を、地域とともに</h4>
+          <p>学びが続いていくための場・人・つながりの土台を育てます。</p>
+        </div>
+        <div>
+          <span class="n">03</span>
+          <h4>こころに、寄り添って</h4>
+          <p>学びと暮らしのそばで、心理的な援助にも取り組みます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- こころの援助 -->
+<section class="block" id="care">
+  <div class="wrap">
+    <div class="care">
+      <div class="ph reveal">
+        <!-- 差し替えポイント: 相談・対話の様子のお写真へ -->
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000&q=80&auto=format&fit=crop" alt="対話・相談のイメージ">
+      </div>
+      <div class="reveal">
+        <span class="b-head" style="display:block;margin-bottom:14px"><span class="en">Psychological support</span></span>
+        <h3><span class="hl">学びの、そのとなりに。</span><br>こころの援助を。</h3>
+        <p>新しいことに踏み出すとき、迷いや不安はつきものです。ingは学習機会の提供とあわせて、一人ひとりの気持ちに寄り添う心理的な援助にも取り組んでいます。「話してみる」ことから始められる場所でありたいと考えています。<span class="note-sample">※具体的な相談メニューはご契約後に実データへ差し替えます</span></p>
+        <div class="tags">
+          <span>安心して話せる場</span>
+          <span>専門職との連携<span class="note-sample">（※サンプル）</span></span>
+          <span>ひとりで抱えこまない</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block" id="news" style="padding-top:0">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+    </div>
+    <p class="note-sample reveal" style="margin-bottom:10px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    <div class="reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">講座</span><a href="#news">秋の親子ワークショップ 参加者を募集します</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">相談</span><a href="#news">こころの相談窓口の受付日を更新しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">まちづくり</span><a href="#news">世代間交流イベントを開催しました</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加する -->
+<section class="block" id="join" style="padding-top:0">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Get involved</span>
+      <h2>ingに参加する</h2>
+      <p>学ぶ人としても、支える人としても。あなたのできる形で、生涯学習のまちづくりに加わってください。</p>
+    </div>
+    <div class="join">
+      <div class="join-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2942A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M8 8h8M8 12h6"/></svg></div>
+        <h3>講座に参加する</h3>
+        <p>各世代のプログラムに、どなたでも参加できます。まずは気になる回から。</p>
+      </div>
+      <div class="join-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2942A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+        <h3>ボランティア・会員</h3>
+        <p>運営を支える仲間や、活動を応援する賛助会員を募集しています。</p>
+      </div>
+      <div class="join-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2942A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>寄付で応援する</h3>
+        <p>いただいたご支援は、学びの機会づくりに大切に使わせていただきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="block" id="profile" style="padding-top:0">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 ing</td></tr>
+        <tr><th>所在地</th><td>愛知県安城市<span class="note-sample">（番地・建物名は公開時に記載します）</span></td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉／社会教育／まちづくり</td></tr>
+        <tr><th>目的</th><td>生涯学習社会の実現を目指し、その基盤整備と、様々なライフステージにおける学習機会の提供・心理的援助を行う<span class="note-sample">（定款目的・公開情報）</span></td></tr>
+        <tr><th>電話</th><td>0566-00-0000<span class="note-sample">（※サンプルのダミー番号です）</span></td></tr>
+        <tr><th>設立</th><td>（公開時に記載します）</td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="block" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="b-head">
+        <span class="en">Contact</span>
+        <h2>お問い合わせ・見学</h2>
+        <p>講座への参加、相談、ボランティアのことなど、どうぞお気軽にご連絡ください。</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="tel-box">
+            <p class="cap">お電話でのお問い合わせ</p>
+            <!-- 電話番号はダミーのため tel: リンクは無効化しています -->
+            <p class="num">0566-00-0000</p>
+            <p>※サンプルのダミー番号です（実番号に差し替えます）</p>
+          </div>
+          <p style="font-size:13.5px;color:var(--c-sub)">受付時間や担当窓口は、実際の運用にあわせて記載します。<span class="note-sample">※サンプル</span></p>
+        </div>
+        <form onsubmit="return false">
+          <label for="f-name">お名前</label>
+          <input id="f-name" type="text" placeholder="安城 花子" autocomplete="off">
+          <label for="f-mail">メールアドレス</label>
+          <input id="f-mail" type="email" placeholder="example@example.com" autocomplete="off">
+          <label for="f-msg">お問い合わせ内容</label>
+          <textarea id="f-msg" rows="4" placeholder="ご相談・ご質問など"></textarea>
+          <button type="button" class="form-btn" onclick="alert('これはデモ用のサンプルフォームです。実際には送信されません。');">この内容で送信（デモ）</button>
+          <p class="form-note">※こちらはデモ用のサンプルフォームです。入力内容は送信されません。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-brand">特定非営利活動法人 ing<small>LIFELONG LEARNING ・ ANJO</small></p>
+    <p class="f-addr">愛知県安城市｜生涯学習・こころの学び<br>TEL 0566-00-0000（※サンプルのダミー番号）</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、住所は市までの表記）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO法人 ing（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="sample-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">制作<span>サンプル</span>｜スマートコネクト</a>
+
+<script>
+// ハンバーガーメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".top nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// タブ切替UI
+const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+const bar = document.querySelector('.tab-bar');
+function selectTab(btn){
+  tabs.forEach(t => {
+    const on = t === btn;
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+    const panel = document.getElementById(t.getAttribute('aria-controls'));
+    panel.classList.toggle('show', on);
+    panel.hidden = !on;
+  });
+  // ライムのバーを選択タブの下へ移動
+  const i = tabs.indexOf(btn);
+  bar.style.setProperty('--bar-w', (100 / tabs.length) + '%');
+  bar.style.setProperty('--bar-left', (100 / tabs.length * i) + '%');
+}
+tabs.forEach(btn => btn.addEventListener('click', () => selectTab(btn)));
+// キーボード操作（左右矢印）
+document.querySelector('[role="tablist"]').addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const cur = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+  const next = e.key === 'ArrowRight' ? (cur + 1) % tabs.length : (cur - 1 + tabs.length) % tabs.length;
+  selectTab(tabs[next]); tabs[next].focus();
+});
+// 初期バー位置
+selectTab(tabs[0]);
+
+// スクロール表示アニメーション
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

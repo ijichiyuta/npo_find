@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: NPO法人 子どもの気力・体力・知力向上委員会
+                    Chiki Chiki 隊 さま（ポップ手書き風ランディング）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（活動分野=子どもの健全育成、子ども食堂の運営、
+    所在地）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（顔が特定
+    されない構図を選定）。差し替えポイントをコメントで明記しています
+  ・数値（回数・食数・寄付総額など）はすべてサンプルのダミーです
+  ・クラウドファンディング(congrant)導線は、サンプルではデモリンクに
+    しています。公開時に実URLへ差し替えます
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>Chiki Chiki 隊｜知多市の子ども食堂・こどもの居場所【ご提案サンプル】</title>
+<meta name="description" content="愛知県知多市で子ども食堂を運営するNPO法人。あそび・ごはん・地域のつながりで、こどもの気力・体力・知力を育てます。参加・寄付・ボランティア募集中。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Yomogi&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF7E6;
+  --cream-2:#FFEFC9;
+  --paper:#FFFFFF;
+  --ink:#3A2E23;
+  --yellow:#FFC93C;
+  --yellow-deep:#F2A900;
+  --tomato:#F0563A;
+  --tomato-deep:#D8402A;
+  --green:#4FB477;
+  --green-deep:#37995E;
+  --sky:#6BC7E0;
+  --line:#EBD9AD;
+  --font-round:"Zen Maru Gothic",sans-serif;
+  --font-hand:"Yomogi",cursive;
+  --font-num:"Fredoka",sans-serif;
+  --ease:cubic-bezier(.34,1.3,.5,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-round);background:var(--cream);color:var(--ink);line-height:1.95;font-size:15.5px;font-weight:500;overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:900;line-height:1.55;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* ===== ステッカー/あしらい共通 ===== */
+.sticker{display:inline-block;font-family:var(--font-hand);font-weight:400;background:var(--paper);border:2.5px solid var(--ink);border-radius:40px;padding:5px 16px;font-size:14px;box-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg)}
+.wave{display:block;width:100%;line-height:0}
+.blob{position:absolute;border-radius:50% 50% 48% 52% / 55% 50% 50% 45%;filter:blur(2px);z-index:0;pointer-events:none}
+.reveal{opacity:0;transform:translateY(16px) scale(.98);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-family:var(--font-round);font-size:11.5px;font-weight:500;color:#B79A5E}
+
+/* ===== ヘッダー（追従・丸っこいピル型） ===== */
+.head{position:sticky;top:0;z-index:200;background:rgba(255,247,230,.92);backdrop-filter:blur(6px);border-bottom:2.5px dashed var(--line)}
+.head .in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:12px 24px;height:70px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand .mark{width:44px;height:44px;flex:none}
+.brand .t{font-weight:900;font-size:19px;letter-spacing:.02em;line-height:1.15}
+.brand .t small{display:block;font-family:var(--font-round);font-size:10px;font-weight:700;color:var(--green-deep);letter-spacing:.02em}
+.head nav{margin-left:auto;display:flex;gap:4px}
+.head nav a{text-decoration:none;font-weight:700;font-size:13.5px;padding:8px 13px;border-radius:30px;transition:background .25s,color .25s}
+.head nav a:hover{background:var(--yellow);color:var(--ink)}
+.head .cta{background:var(--tomato);color:#fff;text-decoration:none;font-weight:900;font-size:13.5px;padding:11px 18px;border-radius:30px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);white-space:nowrap;transition:transform .2s var(--ease)}
+.head .cta:hover{transform:translate(1.5px,1.5px);box-shadow:1.5px 1.5px 0 var(--ink)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;padding:70px 0 20px;overflow:hidden}
+.hero .b1{width:340px;height:340px;background:var(--yellow);opacity:.5;top:-60px;right:-70px}
+.hero .b2{width:260px;height:260px;background:var(--green);opacity:.3;bottom:40px;left:-100px}
+.hero .in{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero .badge{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:900;font-size:13px;padding:7px 16px;border-radius:30px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-1.5deg)}
+.hero h1{font-size:clamp(30px,5.4vw,54px);letter-spacing:.01em;margin:22px 0 18px}
+.hero h1 .hl{position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:4px;height:38%;background:var(--yellow);z-index:-1;border-radius:6px;transform:rotate(-1deg)}
+.hero h1 .tomato{color:var(--tomato-deep)}
+.hero .lead{font-size:16.5px;font-weight:700;max-width:460px;margin-bottom:26px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:900;font-size:15px;padding:14px 24px;border-radius:40px;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn-tomato{background:var(--tomato);color:#fff}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-white{background:var(--paper);color:var(--ink)}
+.hero-art{position:relative}
+.hero-art .frame{position:relative;border:4px solid var(--ink);border-radius:26px;overflow:hidden;box-shadow:8px 8px 0 var(--ink);transform:rotate(1.5deg);background:var(--paper)}
+.hero-art .frame img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.hero-art .st-a{position:absolute;top:-18px;left:-14px;z-index:3;transform:rotate(-8deg)}
+.hero-art .st-b{position:absolute;bottom:-16px;right:-10px;z-index:3;background:var(--tomato);color:#fff;border-color:var(--ink);transform:rotate(6deg)}
+
+/* ===== マーキー（流れるひとこと） ===== */
+.marquee{background:var(--tomato);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;padding:12px 0;margin-top:26px}
+.marquee .track{display:inline-flex;white-space:nowrap;gap:34px;font-family:var(--font-hand);color:#fff;font-size:17px;animation:scroll 22s linear infinite}
+.marquee .track span{display:inline-flex;align-items:center;gap:34px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+/* ===== セクション共通 ===== */
+.sec{position:relative;padding:64px 0}
+.sec-cream{background:var(--cream-2)}
+.sec-paper{background:var(--paper)}
+.sec-green{background:var(--green);color:#fff}
+.h-lead{text-align:center;margin-bottom:40px;position:relative;z-index:2}
+.h-lead .en{font-family:var(--font-num);font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--yellow-deep);text-transform:uppercase}
+.sec-green .h-lead .en{color:var(--cream-2)}
+.h-lead h2{font-size:clamp(25px,4vw,38px);margin-top:4px}
+.h-lead p{font-weight:700;margin-top:10px}
+
+/* ===== 子ども食堂って？（吹き出し3つ） ===== */
+.bubbles{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative;z-index:2}
+.bubble{background:var(--paper);border:3px solid var(--ink);border-radius:24px;padding:30px 24px 28px;box-shadow:5px 5px 0 var(--ink);position:relative}
+.bubble::after{content:"";position:absolute;bottom:-16px;left:44px;width:24px;height:24px;background:var(--paper);border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg)}
+.bubble .ic{width:66px;height:66px;margin-bottom:14px}
+.bubble h3{font-size:19px;margin-bottom:8px}
+.bubble p{font-size:14px;font-weight:500}
+.b-note{text-align:center;margin-top:30px}
+
+/* ===== 活動のようす（ポラロイド風ギャラリー） ===== */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.polaroid{background:var(--paper);border:3px solid var(--ink);border-radius:12px;padding:12px 12px 16px;box-shadow:5px 5px 0 var(--ink)}
+.polaroid:nth-child(1){transform:rotate(-1.5deg)}
+.polaroid:nth-child(2){transform:rotate(1.2deg)}
+.polaroid:nth-child(3){transform:rotate(-1deg)}
+.polaroid:nth-child(4){transform:rotate(1.4deg)}
+.polaroid:nth-child(5){transform:rotate(-1.2deg)}
+.polaroid:nth-child(6){transform:rotate(1deg)}
+.polaroid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+.polaroid .cap{font-family:var(--font-hand);font-size:14px;text-align:center;padding-top:10px}
+.polaroid .tag{font-family:var(--font-round);display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--sky);border-radius:20px;padding:2px 10px;margin-bottom:6px}
+.polaroid .tag.t-camp{background:var(--green)}
+.polaroid .tag.t-event{background:var(--tomato)}
+
+/* ===== かず（サンプル数値） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:2}
+.stat{background:rgba(255,255,255,.15);border:3px solid #fff;border-radius:22px;padding:26px 18px;text-align:center}
+.stat .n{font-family:var(--font-num);font-weight:700;font-size:44px;line-height:1}
+.stat .u{font-size:14px;font-weight:700}
+.stat .l{font-size:13px;margin-top:8px;font-weight:500}
+
+/* ===== 参加/寄付/ボランティア（3カード） ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.jcard{background:var(--paper);border:3px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column}
+.jcard .top{padding:16px 22px;color:#fff;font-weight:900;font-size:17px;display:flex;align-items:center;gap:10px}
+.jcard.c1 .top{background:var(--yellow-deep)}
+.jcard.c2 .top{background:var(--tomato)}
+.jcard.c3 .top{background:var(--green)}
+.jcard .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.jcard .body p{font-size:14px;font-weight:500;flex:1}
+.jcard .body .btn{margin-top:16px;justify-content:center;font-size:14px;padding:12px 18px;box-shadow:3px 3px 0 var(--ink)}
+.jcard .body .btn:hover{box-shadow:1.5px 1.5px 0 var(--ink)}
+.jcard .top .ic{width:30px;height:30px;flex:none}
+
+/* ===== 開催案内（開催日カレンダー風） ===== */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.cal-card{background:var(--paper);border:3px solid var(--ink);border-radius:22px;box-shadow:5px 5px 0 var(--ink);overflow:hidden}
+.cal-card .hd{background:var(--tomato);color:#fff;font-weight:900;padding:12px 20px;font-size:16px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.open{width:100%;min-width:340px;border-collapse:collapse;font-size:14px}
+table.open th{width:110px;text-align:left;background:var(--cream-2);border-bottom:2px solid var(--line);padding:12px 18px;font-weight:900;white-space:nowrap}
+table.open td{border-bottom:2px solid var(--line);padding:12px 18px;font-weight:500}
+table.open tr:last-child th,table.open tr:last-child td{border-bottom:none}
+.tbl-hint{display:none;font-size:11px;color:#B79A5E;margin-top:6px;font-weight:700}
+.map-card{border:3px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:5px 5px 0 var(--ink);background:var(--paper)}
+.map-card iframe{width:100%;height:300px;border:none;display:block}
+.map-card .addr{padding:14px 18px;font-weight:700;font-size:14px}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.form-card{max-width:640px;margin:0 auto;background:var(--paper);border:3px solid var(--ink);border-radius:24px;box-shadow:6px 6px 0 var(--ink);padding:30px 30px 34px}
+.demo-tag{display:inline-block;background:var(--yellow);border:2px solid var(--ink);border-radius:20px;font-size:12px;font-weight:900;padding:4px 14px;margin-bottom:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:900;font-size:14px;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:15px;font-weight:500;border:2.5px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--cream);color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--tomato)}
+.field textarea{min-height:110px;resize:vertical}
+.form-card .submit{width:100%;background:var(--tomato);color:#fff;border:3px solid var(--ink);border-radius:40px;font-family:inherit;font-weight:900;font-size:16px;padding:15px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.form-card .submit:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.form-msg{display:none;margin-top:16px;background:var(--green);color:#fff;border-radius:16px;padding:14px 18px;font-weight:700;font-size:14px;text-align:center}
+.form-msg.show{display:block}
+
+/* ===== フッター ===== */
+.footer{background:var(--ink);color:#FFEFD0;padding:50px 0 34px;text-align:center}
+.footer .fmark{width:56px;height:56px;margin:0 auto 12px}
+.footer .fname{font-weight:900;font-size:19px;color:#fff}
+.footer .fmeta{font-size:13px;margin-top:8px;color:#E7D3AC}
+.footer .sample-note{font-size:11.5px;color:#C7AE85;margin-top:22px;line-height:1.9;font-weight:500}
+.footer .sample-note a{color:#FFD873}
+.footer .cr{font-size:11px;margin-top:16px;color:#A88F68}
+
+/* ===== 左下ピル ===== */
+.credit-pill{position:fixed;left:16px;bottom:16px;z-index:300;background:var(--ink);color:#fff;text-decoration:none;font-family:var(--font-round);font-weight:700;font-size:11.5px;padding:9px 15px;border-radius:30px;box-shadow:0 4px 14px rgba(0,0,0,.28);border:2px solid #fff;line-height:1.3;transition:transform .2s var(--ease)}
+.credit-pill b{color:var(--yellow)}
+.credit-pill:hover{transform:translateY(-2px)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .hero .in{grid-template-columns:1fr;gap:34px}
+  .hero-art{max-width:440px;margin:0 auto;width:100%}
+  .bubbles,.gal,.join{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .head nav{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:3px dashed var(--line);padding:8px 20px 18px}
+  .head nav.open{display:flex}
+  .head nav a{padding:13px 6px;border-bottom:1.5px dotted var(--line);border-radius:0;font-size:15px}
+  .menu-btn{display:block;margin-left:auto;background:var(--yellow);border:2.5px solid var(--ink);border-radius:14px;cursor:pointer;padding:9px 10px;box-shadow:2px 2px 0 var(--ink)}
+  .menu-btn span{display:block;width:20px;height:2.5px;background:var(--ink);border-radius:2px;margin:4px 0}
+  .head .cta{display:none}
+  .bubbles,.gal,.join,.stats{grid-template-columns:1fr}
+  .bubble::after{display:none}
+  .sec{padding:48px 0}
+  .hero{padding:44px 0 10px}
+  /* スマホ: 表を積み上げ */
+  table.open{min-width:0}
+  table.open tr{display:block;border-bottom:2px solid var(--line);padding:6px 0}
+  table.open tr:last-child{border-bottom:none}
+  table.open th,table.open td{display:block;width:100%;border:none;padding:4px 18px;background:none}
+  table.open th{color:var(--tomato-deep);padding-bottom:0}
+  .tbl-hint{display:none}
+  .credit-pill{font-size:11px;padding:8px 12px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="#FFC93C" stroke="#3A2E23" stroke-width="3"/>
+        <circle cx="17" cy="21" r="3" fill="#3A2E23"/>
+        <circle cx="31" cy="21" r="3" fill="#3A2E23"/>
+        <path d="M15 29c3 5 15 5 18 0" fill="none" stroke="#3A2E23" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="12" cy="27" r="3" fill="#F0563A" opacity=".85"/>
+        <circle cx="36" cy="27" r="3" fill="#F0563A" opacity=".85"/>
+      </svg>
+      <span class="t">Chiki Chiki 隊<small>知多市の子ども食堂・こどもの居場所</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <a href="#about">子ども食堂って？</a>
+      <a href="#activity">活動のようす</a>
+      <a href="#join">参加・応援</a>
+      <a href="#access">開催案内</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#join">応援する</a>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <div class="wrap in">
+    <div class="reveal on">
+      <span class="badge">🍚 愛知県知多市の子ども食堂</span>
+      <h1><span class="kb">あそんで、</span><span class="kb tomato">たべて、</span><br><span class="kb"><span class="hl">みんなで</span>おおきく</span><span class="kb">なあれ。</span></h1>
+      <p class="lead">こどもの<b>気力・体力・知力</b>を、ごはんとあそびと地域のつながりで育てる。知多市のわいわいスポットです。</p>
+      <div class="btns">
+        <!-- デモ導線: 本番ではクラウドファンディング(congrant)ページ等へ差し替え -->
+        <a class="btn btn-tomato" href="#join">🎈 応援する（寄付）</a>
+        <a class="btn btn-yellow" href="#contact">✋ ボランティア</a>
+        <a class="btn btn-white" href="#access">📅 開催案内</a>
+      </div>
+    </div>
+    <div class="hero-art reveal on">
+      <span class="sticker st-a">わいわい♪</span>
+      <div class="frame">
+        <!-- 差し替えポイント: 子ども食堂やイベントの雰囲気が伝わるお写真（顔が写る場合はご本人・保護者の許可を） -->
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1000&q=80&auto=format&fit=crop" alt="みんなで食卓を囲むイメージ">
+      </div>
+      <span class="sticker st-b">ごはん、できたよ！</span>
+    </div>
+  </div>
+  <!-- 波線ディバイダー -->
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="margin-top:34px"><path d="M0,30 C120,55 240,5 360,30 C480,55 600,5 720,30 C840,55 960,5 1080,30 C1200,55 1320,5 1440,30 L1440,60 L0,60 Z" fill="#FFEFC9"/></svg>
+</section>
+
+<!-- 流れるひとこと -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>ごはん　★　あそび　★　まなび　★　なかま　★　げんき　★　えがお　★　ちいきのつながり　★&nbsp;</span>
+    <span>ごはん　★　あそび　★　まなび　★　なかま　★　げんき　★　えがお　★　ちいきのつながり　★&nbsp;</span>
+  </div>
+</div>
+
+<!-- 子ども食堂って？ -->
+<section class="sec sec-cream" id="about">
+  <div class="wrap">
+    <div class="h-lead reveal">
+      <span class="en">What's Kodomo-Shokudo</span>
+      <h2>「子ども食堂」って、なあに？</h2>
+      <p>だれでも来られる、あったかいごはんと居場所です。</p>
+    </div>
+    <div class="bubbles">
+      <div class="bubble reveal">
+        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#FFC93C"/><path d="M20 30h24M32 22c-6 0-9 4-9 10s3 12 9 12 9-6 9-12-3-10-9-10Z" fill="#fff" stroke="#3A2E23" stroke-width="3" stroke-linejoin="round"/><circle cx="26" cy="34" r="2" fill="#3A2E23"/><circle cx="38" cy="34" r="2" fill="#3A2E23"/></svg>
+        <h3>みんなでごはん</h3>
+        <p>あたたかい手づくりごはんを、みんなでいただきます。「いただきます」の声が、いちばんのごちそう。</p>
+      </div>
+      <div class="bubble reveal">
+        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#4FB477"/><path d="M22 40c4-14 16-14 20 0" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/><circle cx="24" cy="24" r="4" fill="#fff"/><circle cx="40" cy="24" r="4" fill="#fff"/></svg>
+        <h3>あそんで、まなぶ</h3>
+        <p>宿題をしたり、思いっきりあそんだり。学年や学校をこえて、なかまができる時間です。</p>
+      </div>
+      <div class="bubble reveal">
+        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#F0563A"/><path d="M32 46s-14-8-14-18a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 10-14 18-14 18Z" fill="#fff"/></svg>
+        <h3>地域でみまもり</h3>
+        <p>地域の大人がゆるやかに見守ります。おうちや学校とはちがう、もうひとつの「ただいま」の場所。</p>
+      </div>
+    </div>
+    <p class="b-note note-sample">※ここに書いた内容は、活動分野（子どもの健全育成／子ども食堂の運営）をもとにした紹介サンプルです。実際の運営方針・こだわりに差し替えます。</p>
+  </div>
+</section>
+
+<!-- 活動のようす -->
+<section class="sec sec-paper" id="activity">
+  <div class="wrap">
+    <div class="h-lead reveal">
+      <span class="en">Our Activities</span>
+      <h2>活動のようす</h2>
+      <p>ごはんだけじゃない！イベントやキャンプもやっています。</p>
+    </div>
+    <!-- ※写真・キャプションはすべてイメージサンプルです。実際の活動写真に差し替えます -->
+    <div class="gal">
+      <div class="polaroid reveal">
+        <!-- 差し替えポイント: 子ども食堂の配膳・食卓の様子 -->
+        <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80&auto=format&fit=crop" alt="手づくりごはんのイメージ">
+        <span class="tag">子ども食堂</span>
+        <p class="cap">きょうのメニュー、なにかな？</p>
+      </div>
+      <div class="polaroid reveal">
+        <!-- 差し替えポイント: 屋外イベント・地域まつりの様子 -->
+        <img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=800&q=80&auto=format&fit=crop" alt="屋外イベントのイメージ">
+        <span class="tag t-event">イベント</span>
+        <p class="cap">みんなであそぶ日</p>
+      </div>
+      <div class="polaroid reveal">
+        <!-- 差し替えポイント: 野外・キャンプの様子（顔が特定されない構図） -->
+        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80&auto=format&fit=crop" alt="キャンプのイメージ">
+        <span class="tag t-camp">キャンプ</span>
+        <p class="cap">おそとでごはん、さいこう！</p>
+      </div>
+      <div class="polaroid reveal">
+        <!-- 差し替えポイント: 野菜・食材・調理の様子 -->
+        <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80&auto=format&fit=crop" alt="旬の野菜のイメージ">
+        <span class="tag">食材</span>
+        <p class="cap">きせつの野菜をつかうよ</p>
+      </div>
+      <div class="polaroid reveal">
+        <!-- 差し替えポイント: 工作・学習・あそびの様子 -->
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80&auto=format&fit=crop" alt="工作・あそびのイメージ">
+        <span class="tag t-event">あそび</span>
+        <p class="cap">つくって、あそんで</p>
+      </div>
+      <div class="polaroid reveal">
+        <!-- 差し替えポイント: 自然体験・野外活動の様子 -->
+        <img src="https://images.unsplash.com/photo-1476234251651-f353703a034d?w=800&q=80&auto=format&fit=crop" alt="自然の中での活動イメージ">
+        <span class="tag t-camp">野外</span>
+        <p class="cap">しぜんの中でおおきく</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- サンプル数値（活動のかず） -->
+<section class="sec sec-green">
+  <div class="wrap">
+    <div class="h-lead reveal">
+      <span class="en">In Numbers</span>
+      <h2>これまでの活動（イメージ）</h2>
+    </div>
+    <!-- ※以下の数値はすべてサンプルのダミーです。実績値に差し替えます（虚偽記載を避けるため公開前に必ず確認） -->
+    <div class="stats">
+      <div class="stat reveal"><div class="n">00<span class="u">回</span></div><div class="l">子ども食堂の開催<br><span class="note-sample" style="color:#EAF7EE">※サンプル</span></div></div>
+      <div class="stat reveal"><div class="n">000<span class="u">食</span></div><div class="l">これまでのごはん<br><span class="note-sample" style="color:#EAF7EE">※サンプル</span></div></div>
+      <div class="stat reveal"><div class="n">00<span class="u">人</span></div><div class="l">支えるボランティア<br><span class="note-sample" style="color:#EAF7EE">※サンプル</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加・寄付・ボランティア -->
+<section class="sec sec-cream" id="join">
+  <div class="wrap">
+    <div class="h-lead reveal">
+      <span class="en">Join &amp; Support</span>
+      <h2>いっしょに、育てませんか？</h2>
+      <p>3つの「かかわり方」があります。できることから、どうぞ。</p>
+    </div>
+    <div class="join">
+      <div class="jcard c1 reveal">
+        <div class="top"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#fff"/><path d="M16 24s-9-5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 11-9 11Z" fill="#F2A900"/></svg>参加する</div>
+        <div class="body">
+          <p>お子さんはもちろん、どなたでも。まずは開催日にふらっと遊びに来てください。参加費など詳細はお問い合わせください。<span class="note-sample">※参加条件・費用はサンプルです</span></p>
+          <a class="btn btn-yellow" href="#access">開催案内をみる</a>
+        </div>
+      </div>
+      <div class="jcard c2 reveal">
+        <div class="top"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#fff"/><path d="M16 25s-9-5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 11-9 11Z" fill="#F0563A"/></svg>寄付する</div>
+        <div class="body">
+          <p>いただいたご寄付は、食材や活動の費用にたいせつに使わせていただきます。1回のご支援も、続けてのご支援も大歓迎です。</p>
+          <!-- デモ導線: 本番ではクラウドファンディング(congrant)の寄付ページURLに差し替え -->
+          <a class="btn btn-tomato" href="#contact" data-demo="donate">寄付ページへ（デモ）</a>
+        </div>
+      </div>
+      <div class="jcard c3 reveal">
+        <div class="top"><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#fff"/><circle cx="16" cy="12" r="4.5" fill="#37995E"/><path d="M8 25c0-5 3.5-8 8-8s8 3 8 8Z" fill="#37995E"/></svg>手つだう</div>
+        <div class="body">
+          <p>調理・配膳・見守り・イベントのお手伝いなど。「月イチだけ」「得意なことだけ」でも大歓迎。無理なく、楽しく。</p>
+          <a class="btn btn-white" href="#contact">ボランティア登録へ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 開催案内・アクセス -->
+<section class="sec sec-paper" id="access">
+  <div class="wrap">
+    <div class="h-lead reveal">
+      <span class="en">Schedule &amp; Access</span>
+      <h2>開催案内・アクセス</h2>
+      <p>知多市を拠点に活動しています。</p>
+    </div>
+    <div class="info-grid">
+      <div class="reveal">
+        <div class="cal-card">
+          <div class="hd">📅 開催のごあんない</div>
+          <div class="tbl-wrap">
+            <!-- ※開催日時・会場・費用はすべてサンプルのダミーです。実際の開催情報に差し替えます -->
+            <table class="open">
+              <tr><th>開催日</th><td>毎月 第○土曜日 <span class="note-sample">※サンプル</span></td></tr>
+              <tr><th>時間</th><td>11:00 〜 14:00 ごろ <span class="note-sample">※サンプル</span></td></tr>
+              <tr><th>会場</th><td>知多市内（詳細はお申し込み時にご案内）<span class="note-sample">※サンプル</span></td></tr>
+              <tr><th>参加費</th><td>こども 無料／おとな ○○円 <span class="note-sample">※サンプル</span></td></tr>
+              <tr><th>予約</th><td>不要（ご予約優先の回もあります）<span class="note-sample">※サンプル</span></td></tr>
+            </table>
+          </div>
+        </div>
+        <p class="tbl-hint">→ 表は横にスクロールできます</p>
+      </div>
+      <div class="reveal">
+        <div class="map-card">
+          <!-- 所在地: 愛知県知多市八幡字南大平地6番地の15（公開情報） -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E5%A4%9A%E5%B8%82%E5%85%AB%E5%B9%A1%E5%AD%97%E5%8D%97%E5%A4%A7%E5%B9%B3%E5%9C%B06%E7%95%AA%E5%9C%B0%E3%81%AE15&output=embed&z=16" loading="lazy" title="所在地の地図"></iframe>
+          <p class="addr">📍 愛知県知多市八幡字南大平地6番地の15</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ（デモフォーム） -->
+<section class="sec sec-cream" id="contact">
+  <div class="wrap">
+    <div class="h-lead reveal">
+      <span class="en">Contact</span>
+      <h2>お問い合わせ・参加のお申し込み</h2>
+      <p>参加・寄付・ボランティア、なんでもお気軽に！</p>
+    </div>
+    <form class="form-card reveal" id="demoForm" novalidate>
+      <span class="demo-tag">✎ デモフォーム</span>
+      <p class="note-sample" style="margin-bottom:18px">※このフォームはサンプルです。送信ボタンを押しても実際には送信されません。本番では自動返信つきのお問い合わせフォームをご用意します。</p>
+      <div class="field">
+        <label for="f-name">お名前</label>
+        <input type="text" id="f-name" name="name" placeholder="やまだ はなこ" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-kind">ご用件</label>
+        <select id="f-kind" name="kind">
+          <option>子ども食堂に参加したい</option>
+          <option>寄付・ご支援について</option>
+          <option>ボランティアをやってみたい</option>
+          <option>取材・その他</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-mail">メールアドレス</label>
+        <input type="email" id="f-mail" name="email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="f-msg">メッセージ</label>
+        <textarea id="f-msg" name="message" placeholder="どんなことでもどうぞ！"></textarea>
+      </div>
+      <button type="submit" class="submit">🎈 送信する（デモ）</button>
+      <p class="form-msg" id="formMsg">ありがとうございます！これはデモ表示です（実際には送信されていません）。本番では担当者にメールが届き、自動返信メールをお送りします。</p>
+    </form>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <svg class="fmark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#FFC93C" stroke="#fff" stroke-width="2.5"/><circle cx="17" cy="21" r="3" fill="#3A2E23"/><circle cx="31" cy="21" r="3" fill="#3A2E23"/><path d="M15 29c3 5 15 5 18 0" fill="none" stroke="#3A2E23" stroke-width="3" stroke-linecap="round"/></svg>
+    <p class="fname">NPO法人 子どもの気力・体力・知力向上委員会 Chiki Chiki 隊</p>
+    <p class="fmeta">愛知県知多市八幡字南大平地6番地の15</p>
+    <p class="fmeta">活動分野：子どもの健全育成（子ども食堂の運営・イベント・キャンプ 等）</p>
+    <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です（写真はイメージ素材、※印の内容および数値・開催情報はダミー、寄付導線はデモリンクです）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="cr">&copy; 2026 NPO法人 Chiki Chiki 隊</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="credit-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">ご提案用サンプル / <b>スマートコネクト</b></a>
+
+<script>
+// ハンバーガーメニュー
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.getElementById("nav");
+menuBtn.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  nav.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+// デモフォーム（送信させない）
+const form = document.getElementById("demoForm");
+const msg = document.getElementById("formMsg");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  msg.classList.add("show");
+  msg.scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+// デモ寄付リンク（本番でcongrant等のURLに差し替え）
+document.querySelectorAll('[data-demo="donate"]').forEach(a => a.addEventListener("click", e => {
+  e.preventDefault();
+  alert("【デモ】本番では、クラウドファンディング（congrant）などの寄付ページにつながります。");
+}));
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

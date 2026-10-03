@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ローカルズナレッジ さま（プロセス／ステップ横断型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 外部依存はGoogle FontsとGoogle Maps埋め込みのみ。
+    ブラウザで開くだけで表示できます。
+  ・本文は公開情報（NPOポータルの法人名・所在地・活動分野「まちづくり」・
+    設立年月日）の範囲で作成しています。
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます。
+  ・電話番号は公開値が無いため掲載していません（相談はデモフォームに集約）。
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。差し替えポイント
+    コメントを各所に入れています。
+  ・本ページは noindex 設定・電話発信無効（format-detection）・デモフォームです。
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 ローカルズナレッジ｜春日井市の地域の知恵をつなぐまちづくり【ご提案サンプル】</title>
+<meta name="description" content="愛知県春日井市を拠点に、地域の知恵と人をつなぐまちづくりに取り組むNPO法人ローカルズナレッジ。活動の「流れ」でわかるサイト。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F5F1E8;          /* 生成りの紙 */
+  --c-paper:#FCFAF4;
+  --c-ink:#22303A;         /* 深い藍寄りの墨 */
+  --c-teal:#1F6F6B;        /* 知的な深緑〜藍緑 */
+  --c-teal-deep:#164F4C;
+  --c-teal-pale:#E3EEEC;
+  --c-sand:#C8A46A;        /* 地域・土のアクセント */
+  --c-sand-deep:#9E7C41;
+  --c-line:#DED6C4;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-serif:"Noto Serif JP",serif;
+  --font-en:"Space Grotesk",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+.wrap.narrow{max-width:760px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+.reveal.d1{transition-delay:.09s}.reveal.d2{transition-delay:.18s}.reveal.d3{transition-delay:.27s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-sand-deep)}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(245,241,232,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-line)}
+.head .inner{max-width:1080px;margin:0 auto;padding:0 32px;height:70px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand .t{font-weight:900;font-size:18px;letter-spacing:.04em;line-height:1.2}
+.brand .t small{display:block;font-family:var(--font-en);font-size:9.5px;font-weight:500;letter-spacing:.16em;color:var(--c-teal-deep);margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:26px}
+.head nav a{position:relative;text-decoration:none;font-size:13.5px;font-weight:500;padding:4px 0}
+.head nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:2px;background:var(--c-teal);transition:right .35s var(--ease)}
+.head nav a:hover::after{right:0}
+.head .cta{margin-left:8px;background:var(--c-teal);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 18px;border-radius:999px;white-space:nowrap;transition:background .3s}
+.head .cta:hover{background:var(--c-teal-deep)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;overflow:hidden;padding:74px 0 0}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-en);font-size:11.5px;font-weight:600;letter-spacing:.18em;color:var(--c-teal-deep);background:var(--c-teal-pale);padding:7px 15px;border-radius:999px}
+.hero h1{font-family:var(--font-serif);font-size:clamp(30px,5.4vw,58px);font-weight:700;line-height:1.5;letter-spacing:.02em;margin:22px 0 0}
+.hero h1 .em{color:var(--c-teal-deep);border-bottom:5px solid var(--c-sand)}
+.hero .lead{margin-top:24px;max-width:560px;font-size:15.5px;color:#3B4750}
+.hero .chips{display:flex;gap:8px;margin-top:26px;flex-wrap:wrap}
+.chip{border:1px solid var(--c-teal);color:var(--c-teal-deep);font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;white-space:nowrap;background:var(--c-paper)}
+.hero-photos{margin-top:52px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px}
+.hero-photos figure{position:relative;overflow:hidden;border-radius:6px}
+.hero-photos img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;transition:transform 1.2s var(--ease)}
+.hero-photos figure:first-child img{aspect-ratio:4/5}
+.hero-photos figure:hover img{transform:scale(1.05)}
+.hero-photos figcaption{position:absolute;left:0;bottom:0;font-family:var(--font-en);font-size:10.5px;letter-spacing:.1em;color:#fff;background:rgba(22,79,76,.62);padding:4px 10px;border-top-right-radius:5px}
+
+/* ===== プロセス（横断ステップ・主役） ===== */
+.process{padding:96px 0 90px;background:linear-gradient(180deg,var(--c-bg) 0%,#EFE9DA 100%)}
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+.s-head .en{font-family:var(--font-en);font-size:12px;letter-spacing:.22em;color:var(--c-sand-deep);text-transform:uppercase}
+.s-head .bar{width:34px;height:2px;background:var(--c-sand);align-self:center}
+.s-title{font-family:var(--font-serif);font-size:clamp(23px,3.2vw,34px);letter-spacing:.03em;margin-bottom:14px}
+.s-sub{max-width:640px;color:#46525A;font-size:14.5px;margin-bottom:44px}
+
+/* 横スクロールの連番トラック */
+.track-wrap{position:relative}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:20px;overflow-x:auto;padding:8px 4px 22px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{height:8px}
+.track::-webkit-scrollbar-thumb{background:var(--c-line);border-radius:999px}
+.step{scroll-snap-align:start;background:var(--c-paper);border:1px solid var(--c-line);border-radius:12px;padding:26px 24px 28px;position:relative;display:flex;flex-direction:column}
+.step .no{font-family:var(--font-en);font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--c-teal)}
+.step .no b{font-size:40px;display:block;line-height:1;margin-top:4px;color:var(--c-teal-deep)}
+.step .arrow{position:absolute;top:44px;right:-26px;width:24px;color:var(--c-sand);z-index:2}
+.step:last-child .arrow{display:none}
+.step h3{font-size:17px;margin:18px 0 8px;letter-spacing:.02em}
+.step p{font-size:13.5px;color:#4B5860;line-height:1.95}
+.step .ph{margin-top:auto;padding-top:18px}
+.step .ph img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:7px}
+.track-hint{font-size:11.5px;color:var(--c-sand-deep);margin-top:2px}
+
+/* ===== 数字（活動の広がり） ===== */
+.reach{padding:88px 0}
+.reach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.stat{background:var(--c-paper);border:1px solid var(--c-line);border-radius:12px;padding:30px 26px}
+.stat .n{font-family:var(--font-en);font-weight:700;font-size:clamp(34px,4.6vw,50px);color:var(--c-teal-deep);line-height:1}
+.stat .n span{font-size:17px;color:var(--c-sand-deep);margin-left:4px}
+.stat .lb{font-size:13.5px;font-weight:700;margin-top:12px}
+.stat .cap{font-size:12px;color:#6B7680;margin-top:4px}
+
+/* ===== 事例（つながりのある取り組み） ===== */
+.cases{padding:90px 0;background:#EFE9DA}
+.case-row{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;padding:40px 0;border-top:1px dashed var(--c-line)}
+.case-row:first-of-type{border-top:none;padding-top:0}
+.case-row.rev .ph{order:2}
+.case-row .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.case-row .tag{display:inline-block;font-family:var(--font-en);font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--c-sand-deep);border:1px solid var(--c-sand);border-radius:999px;padding:3px 12px;margin-bottom:12px}
+.case-row h3{font-family:var(--font-serif);font-size:22px;letter-spacing:.02em}
+.case-row p{font-size:14px;color:#46525A;margin-top:12px}
+
+/* ===== わたしたち ===== */
+.about{padding:92px 0}
+.about-lead{font-family:var(--font-serif);font-size:clamp(18px,2.6vw,24px);line-height:2;max-width:720px}
+.about-lead em{font-style:normal;color:var(--c-teal-deep)}
+.about-body{max-width:680px;margin-top:22px;font-size:14.5px;color:#41505A}
+.sign-box{margin-top:40px;background:var(--c-paper);border:1px solid var(--c-line);border-left:4px solid var(--c-teal);border-radius:8px;padding:28px 32px;max-width:680px}
+.sign-box h3{font-size:14px;color:var(--c-teal-deep);letter-spacing:.06em;margin-bottom:10px}
+.sign-box p{font-size:14px}
+.sign-box .name{text-align:right;margin-top:16px;font-weight:700;font-size:14px}
+.sign-box .name small{display:block;font-weight:500;font-size:11.5px;color:#6B7680}
+
+/* ===== 参加・相談（デモフォーム） ===== */
+.contact{padding:92px 0;background:linear-gradient(180deg,#EFE9DA 0%,var(--c-bg) 100%)}
+.form-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:16px;padding:34px 34px 40px;margin-top:32px;position:relative;overflow:hidden}
+.form-card::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:linear-gradient(90deg,var(--c-teal),var(--c-sand))}
+.demo-note{background:var(--c-teal-pale);color:var(--c-teal-deep);font-size:12.5px;font-weight:500;line-height:1.9;padding:12px 16px;border-radius:8px;margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-row{margin-bottom:18px;display:flex;flex-direction:column}
+.form-grid .form-row{margin-bottom:0}
+.form-row label{font-size:13px;font-weight:700;margin-bottom:7px}
+.form-row label .req{color:#B25036;font-size:11px;margin-left:6px;font-weight:500}
+.form-row input,.form-row select,.form-row textarea{font-family:inherit;font-size:14.5px;color:var(--c-ink);background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:12px 14px;width:100%}
+.form-row textarea{min-height:120px;resize:vertical;line-height:1.8}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--c-teal)}
+.submit{margin-top:8px;background:var(--c-teal);color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:700;font-size:15px;padding:15px 40px;cursor:pointer;transition:background .3s}
+.submit:hover{background:var(--c-teal-deep)}
+.form-done{display:none;text-align:center;padding:26px 10px}
+.form-done.show{display:block}
+.form-done .ic{width:56px;height:56px;margin:0 auto 14px}
+.form-done h3{font-size:18px;color:var(--c-teal-deep)}
+.form-done p{font-size:13.5px;color:#5A666E;margin-top:8px}
+.contact-alt{margin-top:22px;font-size:13.5px;color:#46525A}
+
+/* ===== アクセス・概要 ===== */
+.access{padding:88px 0}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:12px}
+table.info{width:100%;border-collapse:collapse;font-size:14px}
+table.info th{width:118px;text-align:left;font-weight:700;color:var(--c-teal-deep);border-bottom:1px solid var(--c-line);padding:13px 14px 13px 0;vertical-align:top;white-space:nowrap}
+table.info td{border-bottom:1px solid var(--c-line);padding:13px 0}
+.src{font-size:12px;color:#6B7680;line-height:1.9}
+.map{border-radius:12px;overflow:hidden;border:1px solid var(--c-line)}
+.map iframe{width:100%;height:340px;border:0;display:block}
+
+/* ===== フッター ===== */
+.footer{padding:56px 0 40px;text-align:center;border-top:1px solid var(--c-line)}
+.footer .f-name{font-family:var(--font-serif);font-weight:700;font-size:17px}
+.footer .f-name small{display:block;font-family:var(--font-en);font-size:10px;letter-spacing:.16em;color:var(--c-sand-deep);margin-top:5px}
+.footer > .wrap > p{font-size:12.5px;color:#6B7680;margin-top:8px}
+.sample-note{font-size:11px;color:var(--c-sand-deep);margin-top:22px;line-height:2;max-width:720px;margin-left:auto;margin-right:auto}
+.sample-note a{color:var(--c-sand-deep)}
+.sample-note b{color:var(--c-teal-deep)}
+
+/* ===== 左下・制作クレジットのピル ===== */
+.credit-pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(22,48,58,.93);color:#fff;text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.02em;padding:9px 15px 9px 12px;border-radius:999px;box-shadow:0 6px 20px rgba(22,48,58,.3);backdrop-filter:blur(4px);transition:transform .3s var(--ease)}
+.credit-pill:hover{transform:translateY(-2px)}
+.credit-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--c-sand);flex:none}
+.credit-pill b{font-weight:700}
+
+/* SPナビ */
+.sp-nav{display:none}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:860px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:70px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line);padding:8px 24px 22px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .cta{color:var(--c-teal-deep);font-weight:700}
+  .hero-photos{grid-template-columns:1fr 1fr;grid-auto-rows:1fr}
+  .hero-photos figure:first-child{grid-column:1 / -1}
+  .hero-photos figure:first-child img{aspect-ratio:16/9}
+  .reach-grid{grid-template-columns:1fr}
+  .case-row{grid-template-columns:1fr;gap:20px;padding:30px 0}
+  .case-row.rev .ph{order:0}
+  .access-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr;gap:0}
+  .form-grid .form-row{margin-bottom:18px}
+  .step .arrow{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding:0 20px}
+  .head .inner{padding:0 20px}
+  .process,.reach,.cases,.about,.contact,.access{padding:60px 0}
+  .form-card{padding:26px 20px 32px}
+  /* 概要テーブルは縦積みに（横スクロール回避） */
+  table.info tr{display:block;border-bottom:1px solid var(--c-line);padding:10px 0}
+  table.info th,table.info td{display:block;width:100%;border:none;padding:0}
+  table.info th{padding-bottom:2px}
+  table.info td{padding-top:2px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="9" fill="#E3EEEC"/>
+        <circle cx="13" cy="14" r="3.4" fill="#1F6F6B"/>
+        <circle cx="27" cy="14" r="3.4" fill="#C8A46A"/>
+        <circle cx="20" cy="27" r="3.4" fill="#164F4C"/>
+        <path d="M13 14 L27 14 L20 27 Z" fill="none" stroke="#1F6F6B" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span class="t">ローカルズナレッジ<small>LOCALS KNOWLEDGE · KASUGAI</small></span>
+    </a>
+    <nav>
+      <a href="#process">活動の流れ</a>
+      <a href="#cases">取り組み</a>
+      <a href="#about">わたしたち</a>
+      <a href="#access">概要</a>
+    </nav>
+    <a class="cta" href="#contact">ご相談・参加する</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sp-nav">
+  <a href="#process">活動の流れ</a>
+  <a href="#cases">取り組み</a>
+  <a href="#about">わたしたち</a>
+  <a href="#access">概要</a>
+  <a class="cta" href="#contact">ご相談・参加する</a>
+</nav>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow reveal on">まちづくり ／ 愛知県春日井市</span>
+    <h1 class="reveal on"><span class="kb">まちに眠る</span><span class="kb"><span class="em">「地域の知恵」</span>を、</span><br><span class="kb">次の一歩に</span><span class="kb">つなげていく。</span></h1>
+    <p class="lead reveal on d1">ローカルズナレッジは、春日井市を拠点に活動するまちづくりのNPO法人です。地域に受け継がれてきた知恵や人のつながりを掘りおこし、これからのまちに活かしていく——その「流れ」を、このページでご紹介します。</p>
+    <div class="chips reveal on d2">
+      <span class="chip">まちづくり</span>
+      <span class="chip">地域の学び</span>
+      <span class="chip">人と人をつなぐ</span>
+    </div>
+    <div class="hero-photos reveal on d2">
+      <!-- 差し替えポイント: メインは活動風景（人が集まる場、まち歩き等）のお写真 -->
+      <figure><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1000&q=80&auto=format&fit=crop" alt="人が集まり語り合う場のイメージ"><figcaption>Community</figcaption></figure>
+      <!-- 差し替えポイント: 地域の風景・まちなみ -->
+      <figure><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80&auto=format&fit=crop" alt="地域のまちなみのイメージ"><figcaption>Local</figcaption></figure>
+      <!-- 差し替えポイント: 学び・ワークショップの様子 -->
+      <figure><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop" alt="学び合うワークショップのイメージ"><figcaption>Learn</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- プロセス（横断ステップ・主役） -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="bar"></span><span class="en">Our Process</span></div>
+    <h2 class="s-title reveal">活動は、ひとつの「流れ」でつながっています</h2>
+    <p class="s-sub reveal d1">地域の声を聴くところから、学びの場をつくり、次の担い手へ手渡すまで。わたしたちの活動を、横断するステップとしてご覧いただけます。<br><span class="note-sample">※各ステップの説明は活動分野「まちづくり」をもとにした表示イメージ（サンプル）です。実際の取り組みに差し替えます。</span></p>
+
+    <div class="track-wrap reveal d1">
+      <div class="track" id="track">
+        <!-- 差し替えポイント: 各ステップに合う活動写真へ -->
+        <article class="step">
+          <div class="no">STEP<b>01</b></div>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          <h3>まちの声を聴く</h3>
+          <p>地域の方々の暮らしの中にある困りごとや、受け継がれてきた知恵を、対話を通して丁寧にひろい集めます。<span class="note-sample">※サンプル</span></p>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80&auto=format&fit=crop" alt="話し合いのイメージ"></div>
+        </article>
+        <article class="step">
+          <div class="no">STEP<b>02</b></div>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          <h3>知恵を編みなおす</h3>
+          <p>集めた声や知恵を整理し、いまのまちに合うかたちへ。世代や立場をこえて共有できるよう組み立て直します。<span class="note-sample">※サンプル</span></p>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80&auto=format&fit=crop" alt="資料を整理するイメージ"></div>
+        </article>
+        <article class="step">
+          <div class="no">STEP<b>03</b></div>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          <h3>学びの場をひらく</h3>
+          <p>ワークショップや交流の場を通じて、地域の知恵を「体験できるかたち」で届けます。人と人が出会う起点をつくります。<span class="note-sample">※サンプル</span></p>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80&auto=format&fit=crop" alt="ワークショップのイメージ"></div>
+        </article>
+        <article class="step">
+          <div class="no">STEP<b>04</b></div>
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          <h3>担い手へ手渡す</h3>
+          <p>取り組みが地域に根づくよう、次に動きたい人へバトンを渡します。活動が自走する仕組みづくりを支えます。<span class="note-sample">※サンプル</span></p>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop" alt="次の担い手へつなぐイメージ"></div>
+        </article>
+      </div>
+      <p class="track-hint">→ 横にスクロールすると、活動の流れをたどれます</p>
+    </div>
+  </div>
+</section>
+
+<!-- 数字（活動の広がり） -->
+<section class="reach">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="bar"></span><span class="en">By the Numbers</span></div>
+    <h2 class="s-title reveal">活動の広がり</h2>
+    <p class="s-sub reveal d1"><span class="note-sample">※以下の数値はすべて表示イメージのサンプルです。実績が固まりしだい、正確な数値に差し替えます。</span></p>
+    <div class="reach-grid reveal d1">
+      <!-- ※サンプル: 数値はダミーです -->
+      <div class="stat"><div class="n">00<span>回</span></div><div class="lb">ひらいた学びの場</div><div class="cap">ワークショップ・交流会など（※サンプル）</div></div>
+      <div class="stat"><div class="n">00<span>名</span></div><div class="lb">出会った地域の方</div><div class="cap">対話・ヒアリングを通じて（※サンプル）</div></div>
+      <div class="stat"><div class="n">00<span>件</span></div><div class="lb">つないだ取り組み</div><div class="cap">地域・団体との連携（※サンプル）</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 事例（つながりのある取り組み） -->
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="bar"></span><span class="en">Our Work</span></div>
+    <h2 class="s-title reveal">つながりから生まれる、取り組み</h2>
+    <p class="s-sub reveal d1"><span class="note-sample">※以下の事例はいずれも表示イメージのサンプルです。実際の活動内容・写真に差し替えます。</span></p>
+
+    <div class="case-row reveal">
+      <!-- 差し替えポイント: 事例1の写真 -->
+      <div class="ph"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1000&q=80&auto=format&fit=crop" alt="まち歩きのイメージ"></div>
+      <div>
+        <span class="tag">CASE 01 ／ ※サンプル</span>
+        <h3>まちの知恵をたずねる、地域さんぽ</h3>
+        <p>地域を歩きながら、そこで暮らす方の話に耳をかたむける取り組み。何気ない道すじや暮らしの工夫の中に、まちの知恵が息づいていることに気づく時間です。</p>
+      </div>
+    </div>
+
+    <div class="case-row rev reveal">
+      <!-- 差し替えポイント: 事例2の写真 -->
+      <div class="ph"><img src="https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=1000&q=80&auto=format&fit=crop" alt="世代をこえた交流のイメージ"></div>
+      <div>
+        <span class="tag">CASE 02 ／ ※サンプル</span>
+        <h3>世代をこえて話す、まちの寄りあい</h3>
+        <p>年齢も立場もさまざまな人が、ひとつのテーブルを囲んで話す場づくり。地域の困りごとを持ち寄り、みんなで次の一歩を考えます。</p>
+      </div>
+    </div>
+
+    <div class="case-row reveal">
+      <!-- 差し替えポイント: 事例3の写真 -->
+      <div class="ph"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&q=80&auto=format&fit=crop" alt="学び合いのイメージ"></div>
+      <div>
+        <span class="tag">CASE 03 ／ ※サンプル</span>
+        <h3>地域の知恵を学ぶ、小さな講座</h3>
+        <p>受け継がれてきた暮らしの知恵や技を、次の世代へ手渡す学びの場。教える人も学ぶ人も、まちの仲間として出会っていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたち -->
+<section class="about" id="about">
+  <div class="wrap narrow">
+    <div class="s-head reveal"><span class="bar"></span><span class="en">About Us</span></div>
+    <h2 class="s-title reveal">わたしたちのこと</h2>
+    <p class="about-lead reveal d1"><span class="kb">まちには、そこに暮らす人の数だけ</span><span class="kb"><em>「知恵」</em>があります。</span><br><span class="kb">それを丁寧につなぎ直すことが、</span><span class="kb">これからのまちの力になる。</span></p>
+    <p class="about-body reveal d1">ローカルズナレッジは、愛知県春日井市を拠点に、まちづくりに取り組むNPO法人です。地域に根ざした知恵と人のつながりを大切にしながら、住む人が主役になれるまちを目指して活動しています。<span class="note-sample">※活動分野「まちづくり」は公開情報にもとづきます。上記の説明文はサンプルです。</span></p>
+    <div class="sign-box reveal d1">
+      <h3>ごあいさつ</h3>
+      <p>まちの未来は、遠くの誰かではなく、いまここで暮らす一人ひとりの手の中にあります。わたしたちは、地域の声を聴き、知恵をつなぎ、次の一歩を一緒に踏み出す——そんな伴走者でありたいと考えています。関心を持ってくださった方、どうぞお気軽にお声がけください。<span class="note-sample">※あいさつ文はサンプルです。代表者のお言葉に差し替えいたします。</span></p>
+      <p class="name"><small>特定非営利活動法人 ローカルズナレッジ</small>代表　※お名前は公開時に記載します（サンプル）</p>
+    </div>
+  </div>
+</section>
+
+<!-- 参加・相談（デモフォーム） -->
+<section class="contact" id="contact">
+  <div class="wrap narrow">
+    <div class="s-head reveal"><span class="bar"></span><span class="en">Join / Contact</span></div>
+    <h2 class="s-title reveal">活動へのご相談・参加</h2>
+    <p class="reveal d1" style="color:#46525A;font-size:14.5px;max-width:620px">「話を聞いてみたい」「地域で一緒に動きたい」——どんなきっかけでも大丈夫です。参加・ボランティア・連携のご相談など、フォームからお気軽にどうぞ。</p>
+
+    <div class="form-card reveal d1">
+      <form id="visitForm" novalidate>
+        <p class="demo-note">これはデモ用のフォームです。実際には送信されません（サンプルサイトのため）。本番では、いただいた内容がメール等で届く仕組みにいたします。</p>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="name">お名前 <span class="req">必須</span></label>
+            <input id="name" name="name" type="text" placeholder="山田 花子" autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="email">メールアドレス</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="who">ご相談の種類</label>
+          <select id="who" name="who">
+            <option>活動について聞きたい</option>
+            <option>参加・ボランティアを考えている</option>
+            <option>地域・団体として連携したい</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="msg">ご相談内容 <span class="req">必須</span></label>
+          <textarea id="msg" name="msg" placeholder="地域の活動に関心があります。まずはお話を聞けたらと思います。"></textarea>
+        </div>
+        <button class="submit" type="submit">送信する（デモ）</button>
+      </form>
+      <div class="form-done" id="formDone">
+        <svg class="ic" viewBox="0 0 56 56" aria-hidden="true">
+          <circle cx="28" cy="28" r="26" fill="none" stroke="#1F6F6B" stroke-width="2.5"/>
+          <path d="M17 29l7 7 15-16" fill="none" stroke="#1F6F6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>送信のデモを確認しました</h3>
+        <p>これはサンプルのため、実際には送信されていません。<br>本番では、この操作でお問い合わせが届きます。</p>
+      </div>
+    </div>
+    <p class="contact-alt reveal d1"><span class="note-sample">※お電話でのご相談を受けられる場合は、この下に電話番号を掲載できます。本サンプルでは公開されている電話番号が無いため、掲載していません。</span></p>
+  </div>
+</section>
+
+<!-- アクセス・概要 -->
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="bar"></span><span class="en">Profile</span></div>
+    <h2 class="s-title reveal">法人概要・アクセス</h2>
+    <div class="access-grid">
+      <div class="reveal d1">
+        <table class="info">
+          <tr><th>正式名称</th><td>特定非営利活動法人 ローカルズナレッジ</td></tr>
+          <tr><th>所在地</th><td>愛知県春日井市乙輪町3丁目48番地　プリンスハイツ乙輪502号</td></tr>
+          <tr><th>活動分野</th><td>まちづくりの推進を図る活動</td></tr>
+          <tr><th>設立</th><td>2019年11月20日</td></tr>
+          <tr><th>代表者</th><td>公開時に記載します（サンプル）</td></tr>
+          <tr><th>法人番号</th><td>公開時に記載します（サンプル）</td></tr>
+        </table>
+        <p class="src" style="margin-top:16px">法人名・所在地・活動分野・設立年月日は公開情報（<a href="https://www.npo-homepage.go.jp/npoportal/detail/023002367" target="_blank" rel="noopener">内閣府NPOポータルサイト</a>）にもとづきます。<span class="note-sample">※代表者名・法人番号・連絡先などは公開時に追記します。</span></p>
+      </div>
+      <div class="map reveal d2">
+        <!-- 所在地を示す地図（Google Maps 埋め込み） -->
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%98%A5%E6%97%A5%E4%BA%95%E5%B8%82%E4%B9%99%E8%BC%AA%E7%94%BA3%E4%B8%81%E7%9B%AE48%E7%95%AA%E5%9C%B0&output=embed&z=15" loading="lazy" title="所在地の地図（愛知県春日井市乙輪町3丁目48番地）"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 ローカルズナレッジ<small>LOCALS KNOWLEDGE · KASUGAI, AICHI</small></p>
+    <p>愛知県春日井市乙輪町3丁目48番地 プリンスハイツ乙輪502号｜活動分野: まちづくり</p>
+    <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です。写真はイメージ素材（Unsplash・商用可）、「※サンプル」の内容・数値・事例・あいさつ文はダミーです。法人名・所在地・活動分野（まちづくり）・設立年月日は公開情報（内閣府NPOポータルサイト）にもとづきます。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px;color:#8A7A5C">&copy; 2026 NPO法人 ローカルズナレッジ（ご提案サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下・制作クレジットのピル -->
+<a class="credit-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">
+  <span class="dot" aria-hidden="true"></span>
+  <span>ご提案用サンプル / <b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("visitForm");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  form.style.display = "none";
+  document.getElementById("formDone").classList.add("show");
+});
+
+// reveal
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 福祉サポート滝ノ水 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の
+    範囲で作成しています
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: プレゼンのスライドを1枚ずつ送るUIでサービスを案内
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 福祉サポート滝ノ水｜名古屋市緑区の介護・障害者支援【ご提案サンプル】</title>
+<meta name="description" content="名古屋市緑区で、要介護高齢者と障害のある方（児）の介護・生活支援を行うNPO法人。スライドで分かりやすくご案内します。見学・ご相談はお気軽に。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4F7FB;
+  --c-paper:#FFFFFF;
+  --c-ink:#1B2A3D;
+  --c-sub:#5C6B7F;
+  --c-indigo:#1E4C86;
+  --c-indigo-deep:#143561;
+  --c-indigo-pale:#E7EEF7;
+  --c-orange:#F08A2C;
+  --c-orange-deep:#D9740F;
+  --c-orange-pale:#FCEBD8;
+  --c-line:#D7E0EC;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-num:"Manrope",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.9;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+/* 文節改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+a{color:inherit}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--c-line)}
+.head .in{max-width:1120px;margin:0 auto;height:66px;display:flex;align-items:center;gap:12px;padding:0 22px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .t{font-weight:900;font-size:17.5px;letter-spacing:.03em;line-height:1.25}
+.brand .t small{display:block;font-size:10px;font-weight:600;color:var(--c-indigo);letter-spacing:.05em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:26px}
+.head nav a{text-decoration:none;font-size:13.5px;font-weight:500;color:var(--c-sub);transition:color .25s}
+.head nav a:hover{color:var(--c-indigo)}
+.head .tel-btn{background:var(--c-orange);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 16px;border-radius:999px;white-space:nowrap;transition:background .25s}
+.head .tel-btn:hover{background:var(--c-orange-deep)}
+
+/* ===== ヒーロー ===== */
+.hero{max-width:1120px;margin:0 auto;padding:56px 22px 20px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero .cap{display:inline-block;background:var(--c-indigo-pale);color:var(--c-indigo);font-size:12px;font-weight:700;letter-spacing:.06em;padding:6px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.55;letter-spacing:.03em}
+.hero h1 .hl{background:linear-gradient(transparent 62%,var(--c-orange-pale) 62%)}
+.hero .lead{margin-top:22px;color:var(--c-sub);font-size:15px;max-width:480px}
+.hero .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{text-decoration:none;font-weight:700;font-size:14px;padding:14px 24px;border-radius:999px;transition:transform .2s var(--ease),background .25s,box-shadow .25s}
+.btn.primary{background:var(--c-orange);color:#fff;box-shadow:0 8px 20px rgba(240,138,44,.28)}
+.btn.primary:hover{background:var(--c-orange-deep);transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--c-indigo);border:1.5px solid var(--c-line)}
+.btn.ghost:hover{border-color:var(--c-indigo);transform:translateY(-2px)}
+.hero-visual{position:relative}
+.hero-visual img{width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:22px;box-shadow:0 26px 60px rgba(20,53,97,.18)}
+.hero-visual .badge{position:absolute;left:-16px;bottom:26px;background:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 14px 34px rgba(20,53,97,.16);display:flex;align-items:center;gap:12px}
+.hero-visual .badge .ic{width:42px;height:42px;border-radius:12px;background:var(--c-indigo-pale);display:grid;place-items:center;flex:none}
+.hero-visual .badge b{display:block;font-size:14px;color:var(--c-ink)}
+.hero-visual .badge span{font-size:11.5px;color:var(--c-sub)}
+
+/* ===== セクション共通 ===== */
+.sec{max-width:1120px;margin:0 auto;padding:70px 22px}
+.sec-head{text-align:center;margin-bottom:40px}
+.sec-head .en{font-family:var(--font-num);font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--c-orange-deep);text-transform:uppercase}
+.sec-head h2{font-size:clamp(23px,3vw,30px);letter-spacing:.03em;margin-top:8px}
+.sec-head p{color:var(--c-sub);font-size:14px;margin-top:12px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#8A98A9}
+
+/* ===== ★スライド（プレゼン型・サービス案内の主役） ===== */
+.deck-wrap{background:linear-gradient(180deg,var(--c-indigo-deep),var(--c-indigo));padding:64px 0}
+.deck{max-width:1000px;margin:0 auto;padding:0 22px}
+.deck-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px;color:#fff}
+.deck-top .en{font-family:var(--font-num);font-size:12px;font-weight:700;letter-spacing:.24em;color:#F5B36B}
+.deck-top h2{font-size:clamp(21px,2.6vw,27px);color:#fff}
+.deck-count{font-family:var(--font-num);font-size:13px;font-weight:600;color:rgba(255,255,255,.72);white-space:nowrap}
+.deck-count b{color:#fff;font-size:16px}
+/* スライドの舞台 */
+.stage{position:relative;background:var(--c-paper);border-radius:20px;box-shadow:0 30px 70px rgba(9,25,48,.4);overflow:hidden}
+.slides{position:relative}
+.slide{display:grid;grid-template-columns:1fr 1fr;min-height:432px}
+.slide[hidden]{display:none}
+.slide .ph{position:relative;overflow:hidden}
+.slide .ph img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.slide .ph .tag{position:absolute;top:18px;left:18px;background:rgba(255,255,255,.94);color:var(--c-indigo);font-family:var(--font-num);font-weight:700;font-size:12px;letter-spacing:.16em;padding:6px 13px;border-radius:999px}
+.slide .body{padding:44px 46px;display:flex;flex-direction:column;justify-content:center}
+.slide .body .k{display:inline-block;align-self:flex-start;background:var(--c-orange-pale);color:var(--c-orange-deep);font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;margin-bottom:16px}
+.slide .body h3{font-size:clamp(20px,2.4vw,26px);letter-spacing:.02em}
+.slide .body .txt{margin-top:14px;color:var(--c-sub);font-size:14.5px;line-height:2}
+.slide .body ul{list-style:none;margin-top:20px;display:grid;gap:11px}
+.slide .body ul li{position:relative;padding-left:28px;font-size:14px}
+.slide .body ul li::before{content:"";position:absolute;left:0;top:8px;width:16px;height:16px;border-radius:50%;background:var(--c-indigo-pale)}
+.slide .body ul li::after{content:"";position:absolute;left:5px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--c-orange)}
+/* コントロール */
+.deck-nav{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+.arrow{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .25s,border-color .25s,transform .2s}
+.arrow:hover{background:#fff;color:var(--c-indigo);border-color:#fff}
+.arrow:active{transform:scale(.94)}
+.arrow svg{width:20px;height:20px}
+.dots{display:flex;gap:9px;align-items:center}
+.dots button{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.34);cursor:pointer;padding:0;transition:background .25s,width .25s,border-radius .25s}
+.dots button[aria-current="true"]{background:var(--c-orange);width:26px;border-radius:999px}
+.deck-hint{text-align:center;margin-top:16px;font-size:11.5px;color:rgba(255,255,255,.6)}
+.deck-hint kbd{font-family:var(--font-num);background:rgba(255,255,255,.14);border-radius:5px;padding:1px 7px;font-size:11px}
+
+/* ===== 対象・分野 ===== */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.who .card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:18px;padding:32px 30px;transition:transform .25s var(--ease),box-shadow .25s}
+.who .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(20,53,97,.1)}
+.who .card .ic{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;margin-bottom:16px}
+.who .card:nth-child(1) .ic{background:var(--c-indigo-pale)}
+.who .card:nth-child(2) .ic{background:var(--c-orange-pale)}
+.who .card h3{font-size:18px}
+.who .card p{color:var(--c-sub);font-size:14px;margin-top:10px}
+
+/* ===== わたしたち ===== */
+.about{background:var(--c-paper);border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)}
+.about .in{max-width:1120px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.about .ph img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px}
+.about .big{font-size:clamp(19px,2.4vw,24px);font-weight:700;line-height:1.9}
+.about .big em{font-style:normal;color:var(--c-indigo)}
+.about .lead{margin-top:18px;color:var(--c-sub);font-size:14.5px}
+.mission-tag{display:inline-block;margin-top:22px;background:var(--c-indigo-pale);color:var(--c-indigo-deep);border-radius:12px;padding:16px 20px;font-size:13.5px;line-height:1.9}
+
+/* ===== お知らせ ===== */
+.news-list{max-width:760px;margin:0 auto}
+.news-row{display:flex;gap:18px;padding:16px 4px;border-bottom:1px solid var(--c-line);align-items:center;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:600;color:var(--c-sub);font-size:12.5px;width:96px}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;color:var(--c-indigo);background:var(--c-indigo-pale);border-radius:999px;padding:3px 11px}
+.news-row a{color:var(--c-ink);text-decoration:none}
+.news-row a:hover{color:var(--c-indigo)}
+
+/* ===== 概要 ===== */
+.gaiyo-wrap{max-width:760px;margin:0 auto}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border-radius:14px;overflow:hidden}
+table.gaiyo th{width:160px;text-align:left;font-weight:700;background:var(--c-indigo-pale);border-bottom:1px solid var(--c-line);padding:14px 18px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border-bottom:1px solid var(--c-line);padding:14px 18px}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--c-line);border-radius:14px}
+.tbl-hint{display:none;font-size:11px;color:#8A98A9;margin-top:8px;text-align:center}
+
+/* ===== お問い合わせ CTA ===== */
+.contact{background:linear-gradient(180deg,var(--c-indigo),var(--c-indigo-deep));color:#fff}
+.contact .in{max-width:1120px;margin:0 auto;padding:72px 22px;text-align:center}
+.contact h2{font-size:clamp(24px,3vw,32px);letter-spacing:.03em}
+.contact p{color:rgba(255,255,255,.82);font-size:14.5px;margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto}
+.contact .box{margin-top:34px;display:inline-flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:26px 44px}
+.contact .box .cap{font-size:12.5px;font-weight:700;color:#F5B36B;letter-spacing:.08em}
+.contact .box a.num{font-family:var(--font-num);font-size:clamp(28px,5vw,38px);font-weight:700;color:#fff;text-decoration:none;letter-spacing:.02em}
+.contact .box small{font-size:11.5px;color:rgba(255,255,255,.7)}
+.contact .form-note{margin-top:20px}
+.contact .btn.primary{box-shadow:0 10px 26px rgba(0,0,0,.24)}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:rgba(255,255,255,.8);padding:44px 22px 34px;text-align:center}
+.footer .f-name{font-weight:900;font-size:15px;color:#fff}
+.footer p{font-size:12.5px;margin-top:8px}
+.sample-note{font-size:11px;color:rgba(255,255,255,.55);margin-top:18px;line-height:1.9}
+.sample-note a{color:rgba(255,255,255,.8)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none}
+  .hero{grid-template-columns:1fr;gap:30px;padding-top:38px}
+  .hero-visual{order:-1}
+  .hero-visual img{aspect-ratio:16/10}
+  .slide{grid-template-columns:1fr}
+  .slide .ph img{min-height:210px;aspect-ratio:16/9}
+  .slide .body{padding:30px 26px}
+  .who{grid-template-columns:1fr}
+  .about .in{grid-template-columns:1fr;gap:28px}
+  .about .ph{order:-1}
+  .sec{padding:52px 22px}
+  .deck-wrap{padding:46px 0}
+}
+@media (max-width:560px){
+  .news-row{flex-wrap:wrap;gap:8px 12px}
+  .news-row time{width:auto}
+  .arrow{width:46px;height:46px}
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:9px 16px}
+  table.gaiyo th{padding-bottom:2px;font-size:12px;color:var(--c-indigo-deep)}
+  table.gaiyo td{padding-top:2px;padding-bottom:14px}
+  .tbl-hint{display:none}
+  .contact .box{padding:22px 26px;width:100%}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="11" fill="#E7EEF7"/>
+        <path d="M12 26c3-1 5-4 5-8 0 4 2 7 5 8-3 1-5 4-5 8 0-4-2-7-5-8Z" fill="#1E4C86"/>
+        <circle cx="27.5" cy="14.5" r="4.5" fill="#F08A2C"/>
+      </svg>
+      <span class="t">福祉サポート滝ノ水<small>特定非営利活動法人｜名古屋市緑区</small></span>
+    </a>
+    <nav>
+      <a href="#service">支援のご案内</a>
+      <a href="#who">対象の方</a>
+      <a href="#about">わたしたち</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">法人概要</a>
+    </nav>
+    <a class="tel-btn" href="#contact">電話でご相談</a>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div>
+    <span class="cap reveal on">名古屋市緑区の介護・障害者（児）支援</span>
+    <h1 class="reveal on"><span class="kb">介護が必要になっても、</span><br><span class="kb"><span class="hl">住み慣れたこの町で。</span></span></h1>
+    <p class="lead reveal on">福祉サポート滝ノ水は、要介護の高齢者と障害のある方（お子さんを含む）の毎日を、介護に関する事業で支えるNPO法人です。ご本人とご家族に寄り添い、社会福祉に寄与することを目指しています。</p>
+    <div class="cta reveal on">
+      <a class="btn primary" href="#contact">見学・ご相談はこちら</a>
+      <a class="btn ghost" href="#service">支援内容を見る</a>
+    </div>
+  </div>
+  <div class="hero-visual reveal on">
+    <!-- 差し替えポイント: 活動の様子や事業所のお写真 -->
+    <img src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?w=1000&q=80&auto=format&fit=crop" alt="高齢者に寄り添う支援のイメージ">
+    <div class="badge">
+      <span class="ic" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C1 8.5 3 5 6.5 5 9 5 12 8 12 8s3-3 5.5-3C21 5 23 8.5 21.5 12 19 16.5 12 21 12 21Z" stroke="#1E4C86" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <div>
+        <b>地域に根ざした介護</b>
+        <span>高齢者・障害者（児）を支えます</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ★スライド（プレゼン型・サービス案内） -->
+<div class="deck-wrap" id="service">
+  <div class="deck">
+    <div class="deck-top">
+      <div>
+        <div class="en">Service</div>
+        <h2>スライドでわかる、わたしたちの支援</h2>
+      </div>
+      <div class="deck-count">SLIDE <b><span id="deck-cur">1</span></b> / <span id="deck-total">4</span></div>
+    </div>
+
+    <div class="stage">
+      <div class="slides" id="slides" aria-live="polite">
+
+        <!-- スライド1 -->
+        <div class="slide" data-i="0">
+          <div class="ph">
+            <span class="tag">01</span>
+            <!-- 差し替えポイント: 高齢者への生活支援の様子 -->
+            <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1100&q=80&auto=format&fit=crop" alt="高齢者への生活支援のイメージ">
+          </div>
+          <div class="body">
+            <span class="k">要介護の高齢者へ</span>
+            <h3>高齢者の介護・生活支援</h3>
+            <p class="txt">要介護となった高齢の方が、住み慣れた地域で自分らしく暮らせるよう、日々の介護に関する支援を行います。</p>
+            <ul>
+              <li>日常生活のお手伝い・見守り</li>
+              <li>ご家族の負担軽減（レスパイト）</li>
+              <li>お一人おひとりに合わせた関わり</li>
+            </ul>
+            <p class="note-sample" style="margin-top:16px">※支援メニューの詳細は、実際の事業内容に差し替えます</p>
+          </div>
+        </div>
+
+        <!-- スライド2 -->
+        <div class="slide" data-i="1" hidden>
+          <div class="ph">
+            <span class="tag">02</span>
+            <!-- 差し替えポイント: 障害のある方・お子さんへの支援の様子 -->
+            <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=1100&q=80&auto=format&fit=crop" alt="障害のある方への支援のイメージ">
+          </div>
+          <div class="body">
+            <span class="k">障害のある方・お子さんへ</span>
+            <h3>障害者（児）の介護・支援</h3>
+            <p class="txt">障害のある方、そして障害のあるお子さんが、その人らしい毎日を過ごせるよう、介護に関する事業でサポートします。</p>
+            <ul>
+              <li>日中の活動や生活面のサポート</li>
+              <li>ご本人の「できる」を大切に</li>
+              <li>ご家族と一緒に考える支援</li>
+            </ul>
+            <p class="note-sample" style="margin-top:16px">※支援メニューの詳細は、実際の事業内容に差し替えます</p>
+          </div>
+        </div>
+
+        <!-- スライド3 -->
+        <div class="slide" data-i="2" hidden>
+          <div class="ph">
+            <span class="tag">03</span>
+            <!-- 差し替えポイント: 地域・ご家族との関わりの様子 -->
+            <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=1100&q=80&auto=format&fit=crop" alt="ご家族への相談対応のイメージ">
+          </div>
+          <div class="body">
+            <span class="k">ご家族・地域へ</span>
+            <h3>ご家族の相談・地域との連携</h3>
+            <p class="txt">「どこに相談すればいいか分からない」——そんなときの、はじめの窓口でありたい。ご家族のお話を伺い、地域の関係機関ともつながりながら支えます。</p>
+            <ul>
+              <li>介護・福祉のご相談をお受けします</li>
+              <li>必要に応じて関係機関におつなぎ</li>
+              <li>地域で支え合うネットワークづくり</li>
+            </ul>
+            <p class="note-sample" style="margin-top:16px">※対応範囲は、実際の活動内容に差し替えます</p>
+          </div>
+        </div>
+
+        <!-- スライド4 -->
+        <div class="slide" data-i="3" hidden>
+          <div class="ph">
+            <span class="tag">04</span>
+            <!-- 差し替えポイント: 見学・お問い合わせを促す明るいお写真 -->
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1100&q=80&auto=format&fit=crop" alt="相談・見学を歓迎するイメージ">
+          </div>
+          <div class="body">
+            <span class="k">はじめての方へ</span>
+            <h3>まずは、お気軽にご相談を</h3>
+            <p class="txt">「話を聞いてみたい」だけでも大丈夫です。ご本人やご家族のご状況をお聞かせください。見学・ご相談はいつでも歓迎しています。</p>
+            <ul>
+              <li>お電話・フォームからご連絡ください</li>
+              <li>ご状況を伺い、できることをご提案</li>
+              <li>見学・体験も承ります</li>
+            </ul>
+            <a class="btn primary" href="#contact" style="margin-top:20px;align-self:flex-start">ご相談ページへ</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="deck-nav">
+      <button class="arrow" id="prev" aria-label="前のスライド">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dots" id="dots" role="tablist" aria-label="スライドの選択"></div>
+      <button class="arrow" id="next" aria-label="次のスライド">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <p class="deck-hint">スライドは <kbd>←</kbd> <kbd>→</kbd> キーやスワイプでも動かせます</p>
+  </div>
+</div>
+
+<!-- 対象の方 -->
+<section class="sec" id="who">
+  <div class="sec-head reveal">
+    <div class="en">Who we support</div>
+    <h2>こんな方を支えています</h2>
+    <p>登記上の目的（公開情報）にもとづき、次の方々への介護に関する事業を行っています。</p>
+  </div>
+  <div class="who">
+    <div class="card reveal">
+      <span class="ic" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3.4" stroke="#1E4C86" stroke-width="1.6"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" stroke="#1E4C86" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <h3>要介護の高齢者の方</h3>
+      <p>介護が必要になっても、住み慣れた地域で安心して暮らし続けられるよう、日々の生活を支えます。</p>
+    </div>
+    <div class="card reveal">
+      <span class="ic" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C1 8.5 3 5 6.5 5 9 5 12 8 12 8s3-3 5.5-3C21 5 23 8.5 21.5 12 19 16.5 12 21 12 21Z" stroke="#D9740F" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <h3>障害のある方・お子さん</h3>
+      <p>障害のある方（児）が、その人らしい毎日を過ごせるよう、ご本人とご家族に寄り添って支援します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたち -->
+<section class="about" id="about">
+  <div class="in">
+    <div class="ph reveal">
+      <!-- 差し替えポイント: スタッフや事業所の様子 -->
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000&q=80&auto=format&fit=crop" alt="地域で支え合うイメージ">
+    </div>
+    <div class="reveal">
+      <div class="sec-head" style="text-align:left;margin-bottom:0">
+        <div class="en">About us</div>
+        <h2 style="margin-top:8px">わたしたちのこと</h2>
+      </div>
+      <p class="big" style="margin-top:20px"><span class="kb">介護に関する事業を通じて、</span><br><span class="kb"><em>社会福祉に寄与する。</em></span></p>
+      <p class="lead">福祉サポート滝ノ水は、名古屋市緑区を拠点に、要介護高齢者および障害者（児）に対して介護に関する事業を行うNPO法人です。地域の中で、必要な支援が必要な人に届くよう活動しています。</p>
+      <div class="mission-tag">
+        <b>登記上の目的（公開情報）</b><br>
+        要介護高齢者および障害者（児）に対して介護に関する事業を行い、社会福祉に寄与する。
+      </div>
+      <p class="note-sample" style="margin-top:14px">※上記は登記情報（公開）の記載です。活動の詳細やごあいさつ文は、ご契約後に実際の内容へ差し替えます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="sec" id="news">
+  <div class="sec-head reveal">
+    <div class="en">News</div>
+    <h2>お知らせ</h2>
+    <p class="note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+  </div>
+  <div class="news-list reveal">
+    <!-- ※サンプル: 日付・内容はダミーです -->
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">ホームページを公開しました</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">ご案内</span><a href="#news">見学・ご相談を随時受け付けています</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">募集</span><a href="#news">活動を支えてくださる方を募集しています</a></div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="sec" id="gaiyo" style="padding-top:0">
+  <div class="sec-head reveal">
+    <div class="en">Profile</div>
+    <h2>法人概要</h2>
+  </div>
+  <div class="gaiyo-wrap reveal">
+    <div class="tbl-wrap">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 福祉サポート滝ノ水</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市緑区<span class="note-sample">（詳細な番地・建物名は公開時に記載します）</span></td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉</td></tr>
+        <tr><th>目的</th><td>要介護高齢者および障害者（児）に対して介護に関する事業を行い、社会福祉に寄与する</td></tr>
+        <tr><th>電話</th><td><span style="color:var(--c-indigo);font-weight:700">052-XXX-XXXX</span>（※サンプル・公開時に実番号へ差し替え）</td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- お問い合わせ CTA -->
+<section class="contact" id="contact">
+  <div class="in">
+    <h2>見学・ご相談はお気軽に</h2>
+    <p>「まず話を聞いてみたい」で大丈夫です。ご本人・ご家族のご状況を伺い、できることを一緒に考えます。</p>
+    <div class="box">
+      <span class="cap">お電話でのご相談</span>
+      <span class="num">052-XXX-XXXX</span>
+      <small>※サンプルの番号です。公開時に実際の番号へ差し替えます</small>
+    </div>
+    <div class="form-note">
+      <a class="btn primary" href="#" onclick="alert('これはサンプルです。お問い合わせフォームは実際の公開時にご用意します。');return false;">お問い合わせフォーム（デモ）</a>
+      <p class="note-sample" style="color:rgba(255,255,255,.7);margin-top:12px">※このボタンはデモです。送信は行われません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <p class="f-name">特定非営利活動法人 福祉サポート滝ノ水</p>
+  <p>愛知県名古屋市緑区｜活動分野: 保健・医療・福祉</p>
+  <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  <p style="margin-top:12px;font-size:11px;color:rgba(255,255,255,.5)">&copy; 2026 NPO法人 福祉サポート滝ノ水</p>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+/* ===== プレゼン型スライド ===== */
+(function(){
+  const slides = Array.from(document.querySelectorAll("#slides .slide"));
+  const dotsWrap = document.getElementById("dots");
+  const cur = document.getElementById("deck-cur");
+  const total = slides.length;
+  document.getElementById("deck-total").textContent = total;
+  let i = 0;
+
+  // ドット生成
+  slides.forEach((s, n) => {
+    const b = document.createElement("button");
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", (n + 1) + "枚目のスライド");
+    if (n === 0) b.setAttribute("aria-current", "true");
+    b.addEventListener("click", () => go(n));
+    dotsWrap.appendChild(b);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function go(n){
+    i = (n + total) % total;
+    slides.forEach((s, k) => { s.hidden = (k !== i); });
+    dots.forEach((d, k) => k === i ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current"));
+    cur.textContent = i + 1;
+  }
+  document.getElementById("prev").addEventListener("click", () => go(i - 1));
+  document.getElementById("next").addEventListener("click", () => go(i + 1));
+
+  // キーボード操作（スライドが画面内にあるとき）
+  const deck = document.querySelector(".deck-wrap");
+  window.addEventListener("keydown", (e) => {
+    const r = deck.getBoundingClientRect();
+    const visible = r.top < window.innerHeight && r.bottom > 0;
+    if (!visible) return;
+    if (e.key === "ArrowLeft") { go(i - 1); }
+    else if (e.key === "ArrowRight") { go(i + 1); }
+  });
+
+  // スワイプ操作
+  const stage = document.querySelector(".stage");
+  let sx = 0, sy = 0, tracking = false;
+  stage.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; tracking = true; }, {passive:true});
+  stage.addEventListener("touchend", (e) => {
+    if (!tracking) return;
+    tracking = false;
+    const dx = e.changedTouches[0].clientX - sx;
+    const dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 46 && Math.abs(dx) > Math.abs(dy)) { go(dx < 0 ? i + 1 : i - 1); }
+  }, {passive:true});
+})();
+
+/* ===== スクロール表示アニメ ===== */
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

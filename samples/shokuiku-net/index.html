@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 食育推進ネットワーク さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPO法人ポータルの定款目的・活動分野・所在地の
+    範囲＝名古屋市／保健・医療・福祉・社会教育・まちづくり等）で作成
+  ・設立年・代表者名など未確認の事項は断定していません
+  ・「※サンプル」表記の数値・実績・あいさつはすべてダミーです。
+    ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン方向: ダッシュボード風データ可視化型（食の広がりを
+    指標カード・ドーナツ/バーチャートで可視化。数値は全てダミー）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 食育推進ネットワーク｜名古屋の食育をひろげる【ご提案サンプル】</title>
+<meta name="description" content="名古屋市を拠点に、子どもから大人まで世代をこえた食育を推進するNPO法人。地域・学校・家庭での食育の実践を支え、地産地消と健やかな暮らしをひろげます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4FBF3;
+  --c-panel:#FFFFFF;
+  --c-ink:#1C2B1E;
+  --c-ink-soft:#5B6C5D;
+  --c-green:#3DA35D;
+  --c-green-deep:#2C7D46;
+  --c-green-pale:#E4F5E6;
+  --c-orange:#F4922E;
+  --c-orange-deep:#DB7716;
+  --c-orange-pale:#FDECDA;
+  --c-line:#DCEBDB;
+  --c-grid:#EAF4E9;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-num:"Outfit",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --shadow:0 1px 2px rgba(28,43,30,.04),0 10px 30px -18px rgba(28,43,30,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.9;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;
+  background-image:radial-gradient(var(--c-grid) 1.1px,transparent 1.1px);background-size:24px 24px}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 上部ナビ（ダッシュボードのトップバー風） ===== */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--c-line)}
+.topbar .inner{max-width:1160px;margin:0 auto;padding:0 26px;height:64px;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand .t{font-weight:900;font-size:16px;letter-spacing:.03em;line-height:1.25}
+.brand .t small{display:block;font-size:9.5px;font-weight:700;color:var(--c-green-deep);letter-spacing:.04em;margin-top:1px}
+.topbar nav{margin-left:auto;display:flex;gap:4px}
+.topbar nav a{text-decoration:none;color:var(--c-ink-soft);font-size:13px;font-weight:700;padding:8px 12px;border-radius:9px;transition:background .25s,color .25s}
+.topbar nav a:hover{background:var(--c-green-pale);color:var(--c-green-deep)}
+.topbar .cta{margin-left:6px;background:var(--c-orange);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 16px;border-radius:10px;white-space:nowrap;transition:background .25s}
+.topbar .cta:hover{background:var(--c-orange-deep)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+
+.wrap{max-width:1160px;margin:0 auto;padding:0 26px}
+.section{padding:76px 0}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--c-green-deep);text-transform:uppercase;font-family:var(--font-num)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--c-orange);border-radius:2px}
+.sec-head{margin-bottom:34px}
+.sec-head h2{font-size:clamp(22px,2.7vw,30px);letter-spacing:.02em;margin-top:12px}
+.sec-head p{color:var(--c-ink-soft);font-size:14px;margin-top:8px;max-width:640px}
+.note-sample{font-size:11.5px;color:#9AAE99;font-weight:500}
+.panel{background:var(--c-panel);border:1px solid var(--c-line);border-radius:16px;box-shadow:var(--shadow)}
+
+/* ===== ヒーロー（ダッシュボードのヘッダー） ===== */
+.hero{padding:54px 0 20px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:stretch}
+.hero-copy{display:flex;flex-direction:column;justify-content:center}
+.hero .tag{display:inline-flex;align-items:center;gap:8px;background:var(--c-green-pale);color:var(--c-green-deep);font-size:12px;font-weight:700;padding:6px 13px;border-radius:999px;width:fit-content}
+.hero .tag .dot{width:7px;height:7px;border-radius:50%;background:var(--c-green);box-shadow:0 0 0 4px rgba(61,163,93,.18)}
+.hero h1{font-size:clamp(28px,4.2vw,46px);font-weight:900;line-height:1.4;letter-spacing:.02em;margin:18px 0 0}
+.hero h1 .hl{color:var(--c-green-deep);position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:12px;background:var(--c-orange-pale);z-index:-1;border-radius:3px}
+.hero .lead{margin-top:20px;font-size:15.5px;color:var(--c-ink-soft);max-width:520px}
+.hero .btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:14px;padding:13px 22px;border-radius:12px;transition:transform .2s,box-shadow .2s}
+.btn svg{width:17px;height:17px}
+.btn-primary{background:var(--c-green);color:#fff;box-shadow:0 8px 20px -8px rgba(44,125,70,.7)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--c-green-deep);border:1.5px solid var(--c-line)}
+.btn-ghost:hover{border-color:var(--c-green)}
+.hero-visual{position:relative;border-radius:18px;overflow:hidden;min-height:300px;box-shadow:var(--shadow)}
+.hero-visual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.hero-visual .float{position:absolute;background:rgba(255,255,255,.94);backdrop-filter:blur(4px);border-radius:13px;padding:12px 15px;box-shadow:0 12px 30px -14px rgba(28,43,30,.45);display:flex;align-items:center;gap:11px}
+.hero-visual .float .ring{width:38px;height:38px;flex:none}
+.hero-visual .float .k{font-family:var(--font-num);font-weight:800;font-size:20px;line-height:1;color:var(--c-green-deep)}
+.hero-visual .float .l{font-size:10.5px;color:var(--c-ink-soft);font-weight:700;line-height:1.3}
+.hero-visual .f1{top:16px;left:16px}
+.hero-visual .f2{bottom:16px;right:16px}
+
+/* ===== KPI 指標カード ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.kpi{padding:22px 22px 20px;position:relative;overflow:hidden}
+.kpi .ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;margin-bottom:14px}
+.kpi .ic svg{width:21px;height:21px;stroke-width:2.1}
+.kpi.g .ic{background:var(--c-green-pale);color:var(--c-green-deep)}
+.kpi.o .ic{background:var(--c-orange-pale);color:var(--c-orange-deep)}
+.kpi .num{font-family:var(--font-num);font-weight:800;font-size:34px;line-height:1;letter-spacing:-.01em;color:var(--c-ink)}
+.kpi .num .u{font-size:15px;font-weight:700;color:var(--c-ink-soft);margin-left:3px}
+.kpi .lab{font-size:12.5px;color:var(--c-ink-soft);font-weight:700;margin-top:8px}
+.kpi .trend{position:absolute;top:20px;right:20px;font-family:var(--font-num);font-size:11px;font-weight:700;color:var(--c-green-deep);background:var(--c-green-pale);padding:3px 8px;border-radius:999px;display:flex;align-items:center;gap:3px}
+.kpi .trend svg{width:11px;height:11px}
+.kpi-note{margin-top:16px}
+
+/* ===== チャートエリア（ドーナツ＋縦棒） ===== */
+.chart-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:18px}
+.card-pad{padding:26px 26px 30px}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.card-head h3{font-size:15.5px;letter-spacing:.02em}
+.card-head .badge{font-size:10.5px;font-weight:700;color:var(--c-ink-soft);background:var(--c-grid);padding:4px 10px;border-radius:999px;font-family:var(--font-num)}
+.card-sub{font-size:12px;color:var(--c-ink-soft);margin-bottom:18px}
+
+/* ドーナツ */
+.donut-block{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.donut{position:relative;width:170px;height:170px;flex:none}
+.donut svg{transform:rotate(-90deg)}
+.donut .seg{fill:none;stroke-width:15;stroke-linecap:round;stroke-dasharray:var(--dash) 999;stroke-dashoffset:var(--off);transition:stroke-dasharray 1.3s var(--ease)}
+.donut .track{fill:none;stroke:var(--c-grid);stroke-width:15}
+.donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.donut-center .big{font-family:var(--font-num);font-weight:800;font-size:30px;line-height:1;color:var(--c-green-deep)}
+.donut-center .cap{font-size:10.5px;color:var(--c-ink-soft);font-weight:700;margin-top:4px}
+.legend{display:flex;flex-direction:column;gap:11px;flex:1;min-width:150px}
+.legend .row{display:flex;align-items:center;gap:10px;font-size:13px}
+.legend .row .sw{width:12px;height:12px;border-radius:4px;flex:none}
+.legend .row .nm{font-weight:700}
+.legend .row .pc{margin-left:auto;font-family:var(--font-num);font-weight:700;color:var(--c-ink-soft)}
+
+/* 縦棒（カラム）チャート */
+.col-chart{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:end;height:210px;padding:0 4px;border-bottom:2px solid var(--c-line)}
+.col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:8px;position:relative}
+.col .bar{width:76%;max-width:44px;border-radius:8px 8px 0 0;height:0;transition:height 1.2s var(--ease);position:relative}
+.col .bar.on{height:var(--h)}
+.col .bar .v{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:var(--font-num);font-weight:700;font-size:11.5px;color:var(--c-ink-soft);white-space:nowrap}
+.col .lbl{font-size:11px;color:var(--c-ink-soft);font-weight:700;font-family:var(--font-num)}
+.col-legend{display:flex;gap:18px;margin-top:16px;font-size:12px;color:var(--c-ink-soft);flex-wrap:wrap}
+.col-legend span{display:inline-flex;align-items:center;gap:7px;font-weight:700}
+.col-legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+/* ===== 活動プログラム（3枚カード） ===== */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prog{overflow:hidden;display:flex;flex-direction:column}
+.prog .ph{aspect-ratio:16/10;overflow:hidden}
+.prog .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.prog:hover .ph img{transform:scale(1.05)}
+.prog .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.prog .no{font-family:var(--font-num);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--c-orange-deep)}
+.prog h3{font-size:17px;margin:6px 0 10px}
+.prog p{font-size:13.5px;color:var(--c-ink-soft);flex:1}
+.prog .who{margin-top:14px;display:flex;gap:6px;flex-wrap:wrap}
+.prog .who span{font-size:11px;font-weight:700;color:var(--c-green-deep);background:var(--c-green-pale);padding:4px 10px;border-radius:999px}
+
+/* ===== わたしたちのこと ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.about-txt .big{font-size:clamp(18px,2.4vw,23px);font-weight:900;line-height:1.75;margin-bottom:16px}
+.about-txt .big em{font-style:normal;color:var(--c-green-deep)}
+.about-txt p{font-size:14.5px;color:var(--c-ink-soft)}
+.mission-card{padding:28px 30px}
+.mission-card .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--c-orange-deep);font-family:var(--font-num);text-transform:uppercase}
+.mission-card .body{font-size:14px;line-height:2;margin-top:12px}
+.mission-card .body em{font-style:normal;color:var(--c-green-deep);font-weight:700}
+.field-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.field-tags span{font-size:12px;font-weight:700;color:var(--c-ink-soft);border:1px solid var(--c-line);padding:6px 13px;border-radius:999px}
+
+/* ===== お知らせ ===== */
+.news-list{display:flex;flex-direction:column}
+.news-row{display:flex;gap:16px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--c-line);font-size:14px}
+.news-row:last-child{border-bottom:none}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:700;color:var(--c-ink-soft);font-size:12.5px}
+.news-row .cat{flex:none;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:6px;background:var(--c-green-pale);color:var(--c-green-deep)}
+.news-row .cat.o{background:var(--c-orange-pale);color:var(--c-orange-deep)}
+.news-row .tt{color:var(--c-ink)}
+
+/* ===== 概要表 ===== */
+.gaiyo-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:160px;text-align:left;font-weight:700;background:var(--c-green-pale);color:var(--c-green-deep);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+.tbl-hint{display:none;font-size:11px;color:#9AAE99;margin-top:8px}
+
+/* ===== お問い合わせ / フォーム ===== */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}
+.contact-info{padding:30px 32px;display:flex;flex-direction:column;gap:18px}
+.contact-info h3{font-size:18px}
+.info-line{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--c-ink-soft)}
+.info-line svg{width:19px;height:19px;flex:none;color:var(--c-green);margin-top:2px;stroke-width:2}
+.contact-info .tel-num{font-family:var(--font-num);font-weight:700;color:var(--c-green-deep);font-size:16px}
+.form{padding:30px 32px}
+.form .field{margin-bottom:16px}
+.form label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px}
+.form label .req{color:var(--c-orange-deep);font-size:11px;margin-left:4px}
+.form input,.form textarea{width:100%;border:1.5px solid var(--c-line);border-radius:10px;padding:11px 14px;font-family:inherit;font-size:14px;background:#fff;color:var(--c-ink);transition:border-color .2s}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-green)}
+.form textarea{resize:vertical;min-height:96px}
+.form .submit{width:100%;background:var(--c-green);color:#fff;border:none;border-radius:11px;padding:14px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:background .25s}
+.form .submit:hover{background:var(--c-green-deep)}
+.form .demo-note{font-size:11.5px;color:#9AAE99;text-align:center;margin-top:12px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#D5E3D2;padding:52px 0 30px}
+.footer .top{display:flex;gap:26px;justify-content:space-between;flex-wrap:wrap;align-items:flex-start}
+.footer .f-name{font-weight:900;font-size:17px;color:#fff}
+.footer .f-name small{display:block;font-size:11px;font-weight:500;color:#9DB49A;margin-top:6px}
+.footer .f-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer .f-links a{color:#C6D8C3;text-decoration:none;font-size:13px;font-weight:700}
+.footer .f-links a:hover{color:#fff}
+.footer hr{border:none;border-top:1px solid rgba(255,255,255,.12);margin:28px 0 20px}
+.sample-note{font-size:11px;color:#8FA88C;line-height:1.9}
+.sample-note a{color:#B9D0B6}
+.copy{font-size:11px;color:#7C9579;margin-top:12px}
+
+/* 左下ピル */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;background:var(--c-ink);color:#fff;text-decoration:none;font-size:11.5px;font-weight:700;padding:9px 15px;border-radius:999px;box-shadow:0 10px 24px -8px rgba(0,0,0,.5);display:flex;align-items:center;gap:7px}
+.pill .d{width:7px;height:7px;border-radius:50%;background:var(--c-orange)}
+.pill:hover{background:var(--c-green-deep)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar nav,.topbar .cta{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:none;position:fixed;inset:64px 0 auto 0;background:#fff;border-bottom:1px solid var(--c-line);padding:8px 22px 18px;z-index:99;box-shadow:var(--shadow)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:700;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .cta-m{color:var(--c-orange-deep)}
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-visual{min-height:240px}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .chart-grid{grid-template-columns:1fr}
+  .prog-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:20px}
+  .contact-grid{grid-template-columns:1fr}
+  .section{padding:56px 0}
+  .tbl-hint{display:block}
+}
+@media (max-width:520px){
+  .kpi-grid{grid-template-columns:1fr}
+  .col-chart{gap:8px}
+  .col .lbl{font-size:9.5px}
+  .hero-visual .float{padding:9px 11px}
+  .hero-visual .float .k{font-size:17px}
+  /* 概要表: 横スクロールをやめて縦積みに */
+  .gaiyo-wrap{overflow-x:visible}
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 14px 3px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 14px 11px}
+  .tbl-hint{display:none}
+}
+.sp-nav{display:none}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部ナビ（ダッシュボードのトップバー） -->
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="11" fill="#E4F5E6"/>
+        <path d="M20 30c0-8 4.5-13 12-14.5C31.2 24 26.5 29 20 30Z" fill="#3DA35D"/>
+        <path d="M20 30c0-6-3.5-10-9.5-11.5C11.5 25 15 29 20 30Z" fill="#8FD1A0"/>
+        <circle cx="20" cy="10" r="3.4" fill="#F4922E"/>
+      </svg>
+      <span class="t">食育推進ネットワーク<small>NPO法人｜名古屋市</small></span>
+    </a>
+    <nav>
+      <a href="#data">活動データ</a>
+      <a href="#programs">活動内容</a>
+      <a href="#about">わたしたち</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">法人概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#contact">ご相談・お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#data">活動データ</a>
+    <a href="#programs">活動内容</a>
+    <a href="#about">わたしたち</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">法人概要</a>
+    <a href="#contact" class="cta-m">ご相談・お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal on">
+        <span class="tag"><span class="dot"></span>名古屋市を拠点に活動する食育のNPO</span>
+        <h1><span class="kb">食べることは、</span><span class="kb">生きること。</span><br><span class="kb"><span class="hl">食育の輪</span>を、</span><span class="kb">この地域から。</span></h1>
+        <p class="lead">わたしたちは、子どもから大人まで世代をこえて「食」を学びあう機会をひろげるNPO法人です。地域・学校・家庭での食育の実践を支え、地産地消と健やかな暮らしを応援します。</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="#programs">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            活動を見る
+          </a>
+          <a class="btn btn-ghost" href="#contact">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal on">
+        <!-- 差し替えポイント: 料理教室・野菜・親子で食事などの活動写真 -->
+        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1100&q=80&auto=format&fit=crop" alt="みずみずしい野菜のイメージ">
+        <div class="float f1">
+          <svg class="ring" viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="19" r="15" fill="none" stroke="#E4F5E6" stroke-width="6"/><circle cx="19" cy="19" r="15" fill="none" stroke="#3DA35D" stroke-width="6" stroke-linecap="round" stroke-dasharray="72 94" transform="rotate(-90 19 19)"/></svg>
+          <div><div class="k">地産地消</div><div class="l">地域の食を、地域で。</div></div>
+        </div>
+        <div class="float f2">
+          <svg class="ring" viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="19" r="15" fill="none" stroke="#FDECDA" stroke-width="6"/><circle cx="19" cy="19" r="15" fill="none" stroke="#F4922E" stroke-width="6" stroke-linecap="round" stroke-dasharray="60 94" transform="rotate(-90 19 19)"/></svg>
+          <div><div class="k">全世代</div><div class="l">こどもから大人まで</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動データ（KPI＋チャート） -->
+<section class="section" id="data">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Activity Dashboard</span>
+      <h2>食育の広がりを、数字で見る</h2>
+      <p>活動の広がりをひと目で伝えるダッシュボードです。<span class="note-sample">※以下の数値・グラフはすべて表示イメージのサンプル（ダミー）です。ご契約後、実際の活動データに差し替えます。</span></p>
+    </div>
+
+    <!-- KPI 指標カード -->
+    <!-- ※サンプル: 数値はすべてダミーです -->
+    <div class="kpi-grid">
+      <div class="kpi g panel reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="num" data-count="1200">0<span class="u">名</span></div>
+        <div class="lab">年間の参加のべ人数</div>
+        <div class="trend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6 13.5 15.5 8.5 10.5 1 18"/><path d="M17 6h6v6"/></svg>+12%</div>
+      </div>
+      <div class="kpi o panel reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div>
+        <div class="num" data-count="48">0<span class="u">回</span></div>
+        <div class="lab">年間の料理教室・講座</div>
+        <div class="trend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6 13.5 15.5 8.5 10.5 1 18"/><path d="M17 6h6v6"/></svg>+8回</div>
+      </div>
+      <div class="kpi g panel reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <div class="num" data-count="26">0<span class="u">校</span></div>
+        <div class="lab">連携した学校・園</div>
+        <div class="trend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6 13.5 15.5 8.5 10.5 1 18"/><path d="M17 6h6v6"/></svg>+5校</div>
+      </div>
+      <div class="kpi o panel reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <div class="num" data-count="85">0<span class="u">%</span></div>
+        <div class="lab">「また参加したい」の声</div>
+        <div class="trend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6 13.5 15.5 8.5 10.5 1 18"/><path d="M17 6h6v6"/></svg>高評価</div>
+      </div>
+    </div>
+    <p class="note-sample kpi-note reveal">※ 上記の数字はサンプルです（実データではありません）。</p>
+
+    <!-- チャート（ドーナツ＋縦棒） -->
+    <div class="chart-grid" style="margin-top:22px">
+      <!-- ドーナツ -->
+      <div class="panel card-pad reveal">
+        <div class="card-head"><h3>参加者の世代わりあい</h3><span class="badge">SAMPLE</span></div>
+        <p class="card-sub">こどもから高齢の方まで、幅広い世代が参加しています。</p>
+        <div class="donut-block">
+          <!-- 円周 = 2πr, r=52 → 約326.7。各セグメントを dash/offset で表現 -->
+          <div class="donut">
+            <svg viewBox="0 0 130 130" aria-hidden="true">
+              <circle class="track" cx="65" cy="65" r="52"></circle>
+              <!-- 親子・こども 45% -->
+              <circle class="seg" cx="65" cy="65" r="52" stroke="#3DA35D" style="--dash:147;--off:0"></circle>
+              <!-- おとな・保護者 30% -->
+              <circle class="seg" cx="65" cy="65" r="52" stroke="#F4922E" style="--dash:98;--off:-147"></circle>
+              <!-- シニア世代 25% -->
+              <circle class="seg" cx="65" cy="65" r="52" stroke="#8FD1A0" style="--dash:82;--off:-245"></circle>
+            </svg>
+            <div class="donut-center"><div class="big">全世代</div><div class="cap">が対象</div></div>
+          </div>
+          <div class="legend">
+            <div class="row"><span class="sw" style="background:#3DA35D"></span><span class="nm">親子・こども</span><span class="pc">45%</span></div>
+            <div class="row"><span class="sw" style="background:#F4922E"></span><span class="nm">おとな・保護者</span><span class="pc">30%</span></div>
+            <div class="row"><span class="sw" style="background:#8FD1A0"></span><span class="nm">シニア世代</span><span class="pc">25%</span></div>
+            <p class="note-sample" style="margin-top:2px">※わりあいはサンプルです</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 縦棒（月別） -->
+      <div class="panel card-pad reveal">
+        <div class="card-head"><h3>季節ごとの活動のうごき</h3><span class="badge">SAMPLE</span></div>
+        <p class="card-sub">旬の食材にあわせて、季節ごとに教室やイベントを開いています。</p>
+        <div class="col-chart">
+          <div class="col"><div class="bar" data-h="55%" style="background:linear-gradient(180deg,#5BBE77,#3DA35D)"><span class="v">春</span></div><span class="lbl">3–5月</span></div>
+          <div class="col"><div class="bar" data-h="82%" style="background:linear-gradient(180deg,#F7A64E,#F4922E)"><span class="v">初夏</span></div><span class="lbl">6–7月</span></div>
+          <div class="col"><div class="bar" data-h="40%" style="background:linear-gradient(180deg,#5BBE77,#3DA35D)"><span class="v">夏</span></div><span class="lbl">8月</span></div>
+          <div class="col"><div class="bar" data-h="70%" style="background:linear-gradient(180deg,#5BBE77,#3DA35D)"><span class="v">秋</span></div><span class="lbl">9–11月</span></div>
+          <div class="col"><div class="bar" data-h="95%" style="background:linear-gradient(180deg,#F7A64E,#F4922E)"><span class="v">収穫期</span></div><span class="lbl">10–11月</span></div>
+          <div class="col"><div class="bar" data-h="60%" style="background:linear-gradient(180deg,#5BBE77,#3DA35D)"><span class="v">冬</span></div><span class="lbl">12–2月</span></div>
+        </div>
+        <div class="col-legend">
+          <span><i style="background:#3DA35D"></i>通常の講座・教室</span>
+          <span><i style="background:#F4922E"></i>収穫・季節のイベント</span>
+          <span class="note-sample" style="font-weight:500">※活動量のイメージ（サンプル）です</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動内容 -->
+<section class="section" id="programs" style="background:var(--c-panel)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Programs</span>
+      <h2>わたしたちの活動</h2>
+      <p>地域・学校・家庭の3つの場で、食育の実践を支えています。<span class="note-sample">※活動内容の記述は定款の目的（公開情報）をもとにしたサンプルです。実際の事業に合わせて調整します。</span></p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog panel reveal">
+        <div class="ph"><!-- 差し替えポイント: 料理教室・親子クッキングの写真 -->
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=900&q=80&auto=format&fit=crop" alt="料理教室のイメージ"></div>
+        <div class="body">
+          <span class="no">PROGRAM 01</span>
+          <h3>親子で学ぶ食育教室</h3>
+          <p>旬の食材にふれ、つくって食べる体験を通じて、食べものへの興味と正しい知識をはぐくみます。手を動かしながら、自然と「食」を好きになる時間です。</p>
+          <div class="who"><span>親子</span><span>こども</span></div>
+        </div>
+      </div>
+      <div class="prog panel reveal">
+        <div class="ph"><!-- 差し替えポイント: 学校・給食・出前授業の写真 -->
+          <img src="https://images.unsplash.com/photo-1607532941433-304659e8198a?w=900&q=80&auto=format&fit=crop" alt="学校での学びのイメージ"></div>
+        <div class="body">
+          <span class="no">PROGRAM 02</span>
+          <h3>学校・園での食育支援</h3>
+          <p>地域の学校や園と連携し、食に関する学びの機会づくりをお手伝いします。次世代を担う子どもたちが、食を通じて健やかに育つことを応援します。</p>
+          <div class="who"><span>学校・園</span><span>社会教育</span></div>
+        </div>
+      </div>
+      <div class="prog panel reveal">
+        <div class="ph"><!-- 差し替えポイント: 地元野菜・マルシェ・地産地消の写真 -->
+          <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=900&q=80&auto=format&fit=crop" alt="地元の食材のイメージ"></div>
+        <div class="body">
+          <span class="no">PROGRAM 03</span>
+          <h3>地産地消と地域の食のわ</h3>
+          <p>地元でとれた食材のよさを伝え、地域で食を支えあうつながりをひろげます。まちづくりの視点から、安心して暮らせる食の環境づくりに取り組みます。</p>
+          <div class="who"><span>地域</span><span>まちづくり</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたちのこと -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-txt reveal">
+        <span class="eyebrow">About Us</span>
+        <p class="big" style="margin-top:14px"><span class="kb">食を通じて、</span><span class="kb"><em>だれもが健やかに、</em></span><br><span class="kb"><em>いきいきと</em>暮らせる</span><span class="kb">まちへ。</span></p>
+        <p>わたしたちは、名古屋市を拠点に、国籍や世代をこえて食育をひろげる活動に取り組むNPO法人です。地域・学校・家庭で食育が実践されることを支え、食に関する正しい知識と、地産地消の輪をひろげていきます。</p>
+        <p style="margin-top:14px"><span class="note-sample">※あいさつにあたる文章はサンプルです。ご契約後、代表者さまのお言葉に差し替えます。</span></p>
+      </div>
+      <div class="mission-card panel reveal">
+        <span class="lbl">Our Mission ／ 活動の目的</span>
+        <p class="body">世代をこえたすべての人、とりわけ<em>次世代を担う子どもたち</em>を対象に、地域・学校・家庭での<em>食育の実践を支援</em>し、食に関する正しい知識のもとで、いきいきと健やかに暮らせる社会づくりに寄与すること。あわせて<em>地産地消</em>をすすめ、日本の食のよさを国内外にひろげていくこと。</p>
+        <p class="note-sample" style="margin-top:14px">※NPO法人ポータルに公開された定款の目的をもとに要約した文章です。</p>
+        <div class="field-tags">
+          <span>保健・医療・福祉</span>
+          <span>社会教育</span>
+          <span>まちづくり</span>
+          <span>食育の推進</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="section" id="news" style="background:var(--c-panel)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">News</span>
+      <h2>お知らせ</h2>
+      <p><span class="note-sample">※以下はすべて表示イメージのサンプルです。実際にはご自身で簡単に更新できる形にできます。</span></p>
+    </div>
+    <!-- ※サンプル: 日付・カテゴリ・内容はすべてダミーです -->
+    <div class="news-list panel card-pad reveal" style="padding-top:8px;padding-bottom:8px">
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat o">イベント</span><span class="tt">秋の収穫祭・親子クッキング教室の参加者を募集します</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><span class="tt">地域の学校との連携授業の様子をレポートしました</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><span class="tt">旬の野菜をつかったレシピを更新しました</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat o">募集</span><span class="tt">食育ボランティア・賛助会員を募集しています</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="section" id="gaiyo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Organization</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="gaiyo-wrap panel card-pad reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 食育推進ネットワーク</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市（公開情報より）</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉の増進／社会教育の推進／まちづくりの推進 ほか（NPO法人ポータル公開情報より）</td></tr>
+        <tr><th>活動の目的</th><td>世代をこえた食育の推進、地域・学校・家庭での食育の実践支援、地産地消の推進 など</td></tr>
+        <tr><th>設立</th><td>公開情報の範囲で記載します（本サンプルでは断定していません）</td></tr>
+        <tr><th>代表者</th><td>公開時に記載します</td></tr>
+        <tr><th>連絡先</th><td>公開時に記載します（お問い合わせは下記フォームから）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample" style="margin-top:14px">※未確認の事項（設立年・代表者名・連絡先など）は、公開情報の確認後に正式な内容へ差し替えます。</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="section" id="contact" style="background:var(--c-panel)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>ご相談・お問い合わせ</h2>
+      <p>活動へのご参加、講座・出前授業のご依頼、ボランティア・ご寄付など、お気軽にどうぞ。</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info panel reveal">
+        <h3>お気軽にご連絡ください</h3>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>愛知県名古屋市を拠点に活動しています<br><span class="note-sample">※詳しい所在地は公開時に記載します</span></span>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+          <span>メール・お電話などの連絡先は<br>公開時に記載します</span>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          <span>食育ボランティア・賛助会員も<br>随時募集しています</span>
+        </div>
+      </div>
+      <form class="form panel reveal" onsubmit="return false">
+        <div class="field">
+          <label>お名前<span class="req">必須</span></label>
+          <input type="text" placeholder="山田 花子">
+        </div>
+        <div class="field">
+          <label>メールアドレス<span class="req">必須</span></label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label>お問い合わせ内容</label>
+          <textarea placeholder="講座のご依頼、活動へのご参加など、ご自由にご記入ください"></textarea>
+        </div>
+        <button type="submit" class="submit">送信する（デモ）</button>
+        <p class="demo-note">※これはデモ用のフォームです。実際には送信されません。ご契約後、送信先メールへ届く形に設定します。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="f-name">特定非営利活動法人 食育推進ネットワーク<small>愛知県名古屋市｜世代をこえた食育の推進</small></div>
+      </div>
+      <nav class="f-links">
+        <a href="#data">活動データ</a>
+        <a href="#programs">活動内容</a>
+        <a href="#about">わたしたち</a>
+        <a href="#news">お知らせ</a>
+        <a href="#gaiyo">法人概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <hr>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、「※サンプル」の数値・実績・あいさつはダミーです）。本文は公開情報の範囲で作成し、未確認の事項は断定していません。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO法人 食育推進ネットワーク（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener"><span class="d"></span>ご提案用サンプル｜スマートコネクト</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// reveal（スクロールで出現）
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// KPIカウントアップ
+function countUp(el){
+  const target = +el.dataset.count;
+  const unitSpan = el.querySelector(".u");
+  const unit = unitSpan ? unitSpan.outerHTML : "";
+  const dur = 1400, t0 = performance.now();
+  function step(now){
+    const p = Math.min((now - t0) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = Math.round(target * eased);
+    el.innerHTML = val.toLocaleString("ja-JP") + unit;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+// 縦棒の伸び
+function growBars(root){
+  root.querySelectorAll(".col .bar").forEach(b => { b.style.setProperty("--h", b.dataset.h); b.classList.add("on"); });
+}
+if ("IntersectionObserver" in window) {
+  const dio = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll(".num[data-count]").forEach(countUp);
+      if (e.target.querySelector(".col-chart")) growBars(e.target);
+      dio.unobserve(e.target);
+    }
+  }), { threshold: 0.3 });
+  document.querySelectorAll("#data .kpi-grid, #data .chart-grid").forEach(el => dio.observe(el));
+} else {
+  document.querySelectorAll(".num[data-count]").forEach(countUp);
+  document.querySelectorAll(".col-chart .bar").forEach(b => { b.style.setProperty("--h", b.dataset.h); b.classList.add("on"); });
+}
+</script>
+</body>
+</html>

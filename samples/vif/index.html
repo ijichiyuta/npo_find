@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 VIF さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・代表者実名なし／住所は市まで（番地・建物名なし）／電話はダミーで
+    発信無効／実在競技団体のロゴ・提携表記なし
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 VIF｜一宮市・スポーツで青少年を育てる【ご提案サンプル】</title>
+<meta name="description" content="愛知県一宮市。スポーツを通じた青少年指導者の養成・研修と、青少年育成のあり方の研究を行うNPO法人。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ai:#1D3461;        /* 藍 */
+  --ai-deep:#132444;
+  --ai-soft:#2C4B7E;
+  --daidai:#E8622A;    /* 橙 */
+  --daidai-deep:#C74E1C;
+  --kinari:#F4EEE1;    /* 生成り */
+  --kinari-2:#EBE3D2;
+  --ink:#1B222E;
+  --line:#D8CFBC;
+  --font-body:"Zen Kaku Gothic New",sans-serif;
+  --font-disp:"Anton",sans-serif;
+  --font-num:"Oswald",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--kinari);color:var(--ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.5;word-break:auto-phrase}
+a{color:inherit}
+.kb{display:inline-block}
+
+/* ===== 織り地のパターン（人と人が織りなす） ===== */
+.weave{
+  background-color:var(--kinari);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(29,52,97,.10) 0 6px, transparent 6px 24px),
+    repeating-linear-gradient(0deg, rgba(29,52,97,.10) 0 6px, transparent 6px 24px),
+    repeating-linear-gradient(90deg, rgba(232,98,42,.10) 12px 18px, transparent 18px 24px);
+  background-size:24px 24px;
+}
+.weave-band{
+  height:14px;
+  background-image:
+    repeating-linear-gradient(45deg, var(--ai) 0 10px, var(--daidai) 10px 20px, var(--kinari-2) 20px 30px);
+  background-size:42px 42px;
+}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:200;background:var(--ai);color:var(--kinari)}
+.head .bar{max-width:1120px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--kinari)}
+.brand .mark{width:46px;height:46px;flex:none}
+.brand .t{line-height:1.15}
+.brand .t b{font-family:var(--font-disp);font-size:26px;letter-spacing:.06em;color:var(--kinari)}
+.brand .t small{display:block;font-size:10.5px;font-weight:500;letter-spacing:.12em;color:#B9C6DE}
+.head nav{margin-left:auto;display:flex;gap:22px}
+.head nav a{text-decoration:none;color:var(--kinari);font-size:13.5px;font-weight:700;letter-spacing:.04em;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .25s var(--ease),color .25s}
+.head nav a:hover{border-color:var(--daidai)}
+.head .cta{margin-left:8px;background:var(--daidai);color:#fff;text-decoration:none;font-weight:900;font-size:13px;padding:11px 18px;letter-spacing:.04em;transition:background .25s}
+.head .cta:hover{background:var(--daidai-deep)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;background:var(--ai);color:var(--kinari);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.16;
+  background-image:
+    repeating-linear-gradient(90deg, #fff 0 5px, transparent 5px 28px),
+    repeating-linear-gradient(0deg, #fff 0 5px, transparent 5px 28px);
+  background-size:28px 28px;pointer-events:none}
+.hero .inner{position:relative;max-width:1120px;margin:0 auto;padding:78px 26px 90px;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero .tag{display:inline-block;background:var(--daidai);color:#fff;font-weight:900;font-size:12px;letter-spacing:.1em;padding:6px 14px;margin-bottom:22px}
+.hero h1{font-family:var(--font-disp);font-weight:400;font-size:clamp(38px,6.4vw,74px);line-height:1.08;letter-spacing:.02em;color:var(--kinari)}
+.hero h1 .or{color:var(--daidai)}
+.hero .lead{margin-top:24px;max-width:460px;font-size:15.5px;line-height:2.05;color:#DDE4F0}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.hero .chips span{border:1.5px solid #47618C;color:#CDD8EC;font-size:12px;font-weight:700;padding:5px 13px}
+.hero .actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.hero .actions a{text-decoration:none;font-weight:900;font-size:14px;padding:14px 24px;letter-spacing:.03em}
+.hero .actions .p{background:var(--daidai);color:#fff}
+.hero .actions .p:hover{background:var(--daidai-deep)}
+.hero .actions .s{border:2px solid var(--kinari);color:var(--kinari)}
+.hero .actions .s:hover{background:var(--kinari);color:var(--ai)}
+.hero .art{position:relative}
+.hero .art .frame{border:6px solid var(--daidai);position:relative}
+.hero .art img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.92)}
+.hero .art .stamp{position:absolute;left:-22px;bottom:-22px;width:110px;height:110px;background:var(--kinari);color:var(--ai);border-radius:50%;display:grid;place-content:center;text-align:center;box-shadow:0 8px 0 rgba(0,0,0,.18)}
+.hero .art .stamp b{font-family:var(--font-disp);font-size:34px;line-height:1;color:var(--daidai)}
+.hero .art .stamp small{display:block;font-size:10px;font-weight:700;letter-spacing:.05em;margin-top:3px}
+
+/* ===== セクション共通 ===== */
+.sec{max-width:1120px;margin:0 auto;padding:86px 26px}
+.sec-head{margin-bottom:44px}
+.sec-head .en{font-family:var(--font-num);font-size:13px;letter-spacing:.28em;color:var(--daidai);text-transform:uppercase;font-weight:600}
+.sec-head h2{font-family:var(--font-disp);font-weight:400;font-size:clamp(28px,4vw,44px);letter-spacing:.03em;margin-top:6px;line-height:1.15}
+.sec-head h2 .sub{display:block;font-family:var(--font-body);font-weight:900;font-size:15px;letter-spacing:.02em;color:var(--ai-soft);margin-top:10px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#9A8F79;font-weight:500}
+
+/* ===== ミッション（織りの帯） ===== */
+.mission{background:var(--ai-deep);color:var(--kinari)}
+.mission .sec{padding-top:70px;padding-bottom:70px}
+.mission .en{color:var(--daidai)}
+.mission h2{font-family:var(--font-body);font-weight:900;font-size:clamp(21px,3.4vw,32px);line-height:1.85;letter-spacing:.02em}
+.mission h2 em{font-style:normal;color:var(--daidai)}
+.mission p{margin-top:20px;max-width:720px;color:#CBD5E7;font-size:15px}
+
+/* ===== 事業（織り目カード） ===== */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pcard{background:#fff;border:1px solid var(--line);position:relative}
+.pcard .top{height:10px;background:repeating-linear-gradient(45deg,var(--ai) 0 8px,var(--daidai) 8px 16px)}
+.pcard .body{padding:26px 24px 28px}
+.pcard .no{font-family:var(--font-num);font-weight:600;font-size:13px;letter-spacing:.2em;color:var(--daidai)}
+.pcard h3{font-weight:900;font-size:19px;margin:6px 0 12px;line-height:1.5}
+.pcard p{font-size:13.5px;color:#4A5261;line-height:1.95}
+.pcard ul{list-style:none;margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+.pcard li{font-size:13px;padding:4px 0 4px 20px;position:relative;color:#3A4250}
+.pcard li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:9px;background:var(--ai);transform:rotate(45deg)}
+
+/* ===== 数字 ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--kinari);padding:30px 18px;text-align:center}
+.stat b{display:block;font-family:var(--font-disp);font-size:clamp(34px,5vw,50px);color:var(--ai);line-height:1}
+.stat b span{color:var(--daidai);font-size:.6em}
+.stat p{font-size:12.5px;font-weight:700;color:#4A5261;margin-top:8px}
+
+/* ===== 育成の流れ（織り上げる階段） ===== */
+.flow{counter-reset:fl;max-width:760px;margin:0 auto}
+.flow li{list-style:none;position:relative;display:grid;grid-template-columns:60px 1fr;gap:22px;padding:0 0 30px}
+.flow li::before{counter-increment:fl;content:counter(fl,decimal-leading-zero);font-family:var(--font-num);font-weight:600;font-size:30px;color:#fff;background:var(--ai);width:54px;height:54px;display:grid;place-content:center;flex:none}
+.flow li:nth-child(even)::before{background:var(--daidai)}
+.flow li::after{content:"";position:absolute;left:26px;top:54px;bottom:6px;width:2px;background:repeating-linear-gradient(0deg,var(--line) 0 6px,transparent 6px 12px)}
+.flow li:last-child::after{display:none}
+.flow h3{font-weight:900;font-size:17px;margin-top:4px}
+.flow p{font-size:13.5px;color:#4A5261}
+
+/* ===== メンバーの声（織り込まれた声） ===== */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.voice{background:#fff;border:1px solid var(--line);padding:26px 26px 24px;position:relative}
+.voice::before{content:"\201C";position:absolute;top:8px;right:20px;font-family:var(--font-disp);font-size:70px;color:var(--kinari-2);line-height:1}
+.voice p{font-size:14px;position:relative;z-index:1}
+.voice .who{margin-top:16px;font-weight:900;font-size:13px;color:var(--ai)}
+.voice .who small{display:block;font-weight:500;font-size:11.5px;color:#8A8272;margin-top:2px}
+
+/* ===== 概要表 ===== */
+.gaiyo{width:100%;border-collapse:collapse;font-size:14px;background:#fff;min-width:480px}
+.gaiyo th{width:150px;text-align:left;font-weight:900;background:var(--ai);color:var(--kinari);border:1px solid var(--ai-soft);padding:12px 16px;white-space:nowrap;font-size:13px}
+.gaiyo td{border:1px solid var(--line);padding:12px 16px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#9A8F79;margin-top:6px}
+
+/* ===== 参加・問い合わせ ===== */
+.join{background:var(--ai);color:var(--kinari)}
+.join .sec{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.join .en{color:var(--daidai)}
+.join h2{font-family:var(--font-body);font-weight:900;font-size:clamp(22px,3vw,30px);line-height:1.6}
+.join .lead{margin-top:16px;color:#CBD5E7;font-size:14.5px;max-width:440px}
+.join .tel{margin-top:26px;border:2px solid #47618C;padding:20px 22px}
+.join .tel .cap{font-size:12px;font-weight:700;color:#B9C6DE}
+.join .tel a{display:inline-block;font-family:var(--font-num);font-size:30px;font-weight:600;color:var(--kinari);text-decoration:none;letter-spacing:.02em}
+.join .tel p{font-size:11px;color:#9FB0CC}
+
+/* フォーム */
+.form{background:var(--kinari);color:var(--ink);padding:30px 28px;border-top:6px solid var(--daidai)}
+.form .row{margin-bottom:16px}
+.form label{display:block;font-weight:700;font-size:13px;margin-bottom:6px}
+.form label i{color:var(--daidai);font-style:normal;font-size:11px;margin-left:6px}
+.form input,.form select,.form textarea{width:100%;border:1px solid var(--line);background:#fff;padding:11px 13px;font-family:inherit;font-size:14px;color:var(--ink)}
+.form textarea{resize:vertical;min-height:96px}
+.form .send{width:100%;background:var(--daidai);color:#fff;border:none;font-family:var(--font-body);font-weight:900;font-size:15px;padding:15px;cursor:pointer;letter-spacing:.04em;transition:background .25s}
+.form .send:hover{background:var(--daidai-deep)}
+.form-note{font-size:11px;color:#9A8F79;margin-top:12px;text-align:center}
+
+/* ===== アクセス ===== */
+.map iframe{width:100%;height:340px;border:1px solid var(--line);filter:grayscale(.15)}
+
+/* ===== フッター ===== */
+.foot{background:var(--ai-deep);color:#AFBDD4;font-size:12.5px}
+.foot .in{max-width:1120px;margin:0 auto;padding:40px 26px 30px;text-align:center}
+.foot .fn{font-family:var(--font-disp);font-size:22px;letter-spacing:.05em;color:var(--kinari)}
+.foot p{margin-top:8px}
+.foot .sample-note{margin-top:18px;font-size:11px;color:#8695B2;line-height:1.9}
+.foot .sample-note a{color:#CDD8EC}
+.foot .cr{margin-top:14px;font-size:11px;color:#7382A0}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--ai-deep);padding:8px 0}
+  .head nav a{padding:14px 26px;border-bottom:1px solid #2C4B7E;border-left:none}
+  .head nav a:hover{border-color:#2C4B7E}
+  .head .cta{display:none}
+  body.nav-open .head nav{display:flex}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:26px;height:2.5px;background:var(--kinari);margin:5px 0;transition:.3s}
+  body.nav-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.nav-open .menu-btn span:nth-child(2){opacity:0}
+  body.nav-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .hero .inner{grid-template-columns:1fr;gap:40px;padding:52px 26px 64px}
+  .hero .art{max-width:360px}
+  .grid3{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .voices{grid-template-columns:1fr}
+  .join .sec{grid-template-columns:1fr;gap:30px}
+  .sec{padding:60px 22px}
+}
+@media (max-width:560px){
+  .stats{grid-template-columns:1fr 1fr}
+  .tbl-hint{display:block}
+  .flow li{grid-template-columns:44px 1fr;gap:16px}
+  .flow li::before{width:44px;height:44px;font-size:24px}
+  .flow li::after{left:21px}
+  .hero .art .stamp{width:88px;height:88px;left:-10px}
+}
+/* スマホ: 概要表を縦積みに */
+@media (max-width:520px){
+  .gaiyo{min-width:0;border:1px solid var(--line)}
+  .gaiyo tr{display:block;border-bottom:1px solid var(--line)}
+  .gaiyo tr:last-child{border-bottom:none}
+  .gaiyo th{display:block;width:100%;border:none;padding:9px 14px}
+  .gaiyo td{display:block;width:100%;border:none;padding:8px 14px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body class="weave">
+
+<!-- ヘッダー -->
+<header class="head" id="top">
+  <div class="bar">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 46 46" aria-hidden="true">
+        <rect width="46" height="46" fill="#132444"/>
+        <g fill="none" stroke="#F4EEE1" stroke-width="3">
+          <path d="M6 12h34M6 23h34M6 34h34"/>
+        </g>
+        <g fill="none" stroke="#E8622A" stroke-width="3">
+          <path d="M12 6v34M23 6v34M34 6v34"/>
+        </g>
+      </svg>
+      <span class="t"><b>VIF</b><small>特定非営利活動法人｜愛知県一宮市</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="#mission">理念</a>
+      <a href="#work">事業</a>
+      <a href="#flow">育成の流れ</a>
+      <a href="#voice">声</a>
+      <a href="#about">団体概要</a>
+      <a href="#join">参加・お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#join">参加する</a>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="inner">
+    <div>
+      <span class="tag reveal on">一宮市・スポーツ青少年育成</span>
+      <h1 class="reveal on"><span class="kb">人と人が、</span><br><span class="kb">スポーツで</span><br><span class="kb"><span class="or">織り</span>あがる。</span></h1>
+      <p class="lead reveal on">VIFは、スポーツを通じて青少年を導く「指導者」を育て、これからの青少年育成のあり方を研究するNPO法人です。一本の糸のような一人ひとりが編み合わさり、地域という一枚の布になる——そんなチームづくりを、一宮の地から。</p>
+      <div class="chips reveal on">
+        <span>指導者の養成・研修</span>
+        <span>青少年育成の研究</span>
+        <span>スポーツ×地域</span>
+      </div>
+      <div class="actions reveal on">
+        <a class="p" href="#join">活動に参加する</a>
+        <a class="s" href="#work">事業を見る</a>
+      </div>
+    </div>
+    <div class="art reveal on">
+      <div class="frame">
+        <!-- 差し替えポイント: 指導・練習風景のお写真（顔が特定されにくい構図） -->
+        <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?w=900&q=80&auto=format&fit=crop" alt="スポーツ指導・練習のイメージ">
+        <div class="stamp"><b>青</b><small>育てる<br>つなぐ</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="weave-band" aria-hidden="true"></div>
+
+<!-- ミッション -->
+<section class="mission" id="mission">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="en">Our Mission</span>
+      <h2>わたしたちの理念<span class="sub">— 糸を、力に。</span></h2>
+    </div>
+    <h2 class="reveal"><span class="kb">スポーツは、勝ち負けだけじゃない。</span><br><span class="kb"><em>「教える人」を育てること</em>が、</span><span class="kb">次の世代を育てる。</span></h2>
+    <p class="reveal">VIFは、スポーツに関わる青少年指導者の養成と研修を行い、あわせて青少年育成のあり方そのものを研究・提言していく団体です。よい指導者が一人増えれば、その先の子どもたちがまっすぐ育つ。人が人を織りなすように、育成の輪を地域へ広げていきます。<span class="note-sample">※本文は登記された定款目的（公開情報）をもとにしたサンプルです</span></p>
+  </div>
+</section>
+
+<!-- 事業 -->
+<section class="sec" id="work">
+  <div class="sec-head reveal">
+    <span class="en">What We Do</span>
+    <h2>事業のご案内<span class="sub">— 3つの取り組み</span></h2>
+  </div>
+  <div class="grid3">
+    <div class="pcard reveal">
+      <div class="top"></div>
+      <div class="body">
+        <span class="no">WORK 01</span>
+        <h3>指導者の養成</h3>
+        <p>これからスポーツで青少年に関わる方へ、指導の基礎と心構えを学ぶ講座・実技研修を行います。「教え方」を学び直す場です。</p>
+        <ul>
+          <li>指導者養成講座（基礎・実技）</li>
+          <li>安全・応急対応の学び</li>
+          <li>ボランティア指導者の入口づくり</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pcard reveal">
+      <div class="top"></div>
+      <div class="body">
+        <span class="no">WORK 02</span>
+        <h3>現役指導者の研修</h3>
+        <p>すでに現場に立つ指導者が、経験を持ち寄って学び合う研修会。よい実践を共有し、指導の質を地域全体で底上げします。</p>
+        <ul>
+          <li>テーマ別の研修・勉強会</li>
+          <li>指導者どうしの交流・情報交換</li>
+          <li>年代・競技を越えた学び合い</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pcard reveal">
+      <div class="top"></div>
+      <div class="body">
+        <span class="no">WORK 03</span>
+        <h3>青少年育成の研究</h3>
+        <p>スポーツを通じた青少年育成の「あり方」を調べ、まとめ、地域や指導者へ還元します。現場の声を次の指針にしていく活動です。</p>
+        <ul>
+          <li>育成に関する調査・とりまとめ</li>
+          <li>研究成果の共有・発信</li>
+          <li>地域・関係者への提言</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="weave-band" aria-hidden="true"></div>
+
+<!-- 数字 -->
+<section class="sec" id="stats" style="padding-top:64px;padding-bottom:64px">
+  <div class="sec-head reveal">
+    <span class="en">By the Numbers</span>
+    <h2>数字で見るVIF</h2>
+    <p class="note-sample" style="margin-top:10px">※以下の数値はレイアウト確認用のサンプルです。実績値に差し替えます</p>
+  </div>
+  <div class="stats reveal">
+    <!-- ※サンプル: 数値はダミーです -->
+    <div class="stat"><b>XX<span>名</span></b><p>養成した指導者（累計）</p></div>
+    <div class="stat"><b>XX<span>回</span></b><p>研修・勉強会の開催</p></div>
+    <div class="stat"><b>XX<span>年</span></b><p>青少年育成の歩み</p></div>
+    <div class="stat"><b>XX<span>件</span></b><p>連携した地域の活動</p></div>
+  </div>
+</section>
+
+<!-- 育成の流れ -->
+<section class="mission" id="flow" style="background:var(--kinari-2)">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="en" style="color:var(--daidai)">Step by Step</span>
+      <h2 style="color:var(--ai)">指導者が育つまで<span class="sub" style="color:var(--ai-soft)">— 一本の糸が布になる4段階</span></h2>
+    </div>
+    <ol class="flow">
+      <li class="reveal"><div><h3>知る・体験する</h3><p>まずは説明会や体験で、活動の空気にふれてください。「関わってみたい」だけで大丈夫です。</p></div></li>
+      <li class="reveal"><div><h3>学ぶ（養成講座）</h3><p>指導の基礎・安全・子どもとの向き合い方を、講座と実技で身につけます。</p></div></li>
+      <li class="reveal"><div><h3>現場に立つ</h3><p>先輩指導者とともに現場へ。学んだことを、実際の青少年育成の場で試していきます。</p></div></li>
+      <li class="reveal"><div><h3>学び続ける（研修）</h3><p>研修会で経験を持ち寄り、指導を磨き続ける。あなた自身も、次の誰かを育てる糸になります。</p></div></li>
+    </ol>
+    <p class="reveal" style="text-align:center;margin-top:8px"><span class="note-sample">※各ステップの内容は活動イメージのサンプルです。実際の流れに差し替えます</span></p>
+  </div>
+</section>
+
+<!-- 声 -->
+<section class="sec" id="voice">
+  <div class="sec-head reveal">
+    <span class="en">Voices</span>
+    <h2>関わる人の声</h2>
+    <p class="note-sample" style="margin-top:10px">※以下はイメージのサンプルです。実際の参加者・指導者の声に差し替えます</p>
+  </div>
+  <div class="voices">
+    <!-- ※サンプル: 声・肩書きはダミーです -->
+    <div class="voice reveal"><p>教えるって、じつは自分がいちばん学ぶことだと気づきました。子どもの成長を近くで見られるのが、なによりのやりがいです。</p><div class="who">養成講座を受けた指導者<small>※サンプルコメント</small></div></div>
+    <div class="voice reveal"><p>競技の垣根を越えて指導者どうしで話せる研修が新鮮でした。悩んでいたのは自分だけじゃないと思えました。</p><div class="who">現役の地域スポーツ指導者<small>※サンプルコメント</small></div></div>
+  </div>
+</section>
+
+<div class="weave-band" aria-hidden="true"></div>
+
+<!-- 団体概要 -->
+<section class="sec" id="about">
+  <div class="sec-head reveal">
+    <span class="en">Profile</span>
+    <h2>団体概要</h2>
+  </div>
+  <div class="tbl-wrap reveal">
+    <table class="gaiyo">
+      <tr><th>正式名称</th><td>特定非営利活動法人 VIF</td></tr>
+      <tr><th>所在地</th><td>愛知県一宮市（詳細住所は公開時に記載します）</td></tr>
+      <tr><th>活動分野</th><td>保健・医療・福祉／社会教育／学術・文化・芸術・スポーツ（NPOポータルの公開情報より）</td></tr>
+      <tr><th>目的</th><td>スポーツに関する青少年指導者の養成・研修、および青少年育成のあり方の研究を行う（定款目的・公開情報）</td></tr>
+      <tr><th>代表者</th><td>（お名前は公開時に記載します）</td></tr>
+      <tr><th>お問い合わせ</th><td><a href="#access" style="color:var(--daidai-deep);font-weight:700;text-decoration:none">000-0000-0000</a><span class="note-sample">（※サンプル番号・発信できません。公開時に実番号へ差し替えます）</span></td></tr>
+    </table>
+  </div>
+  <p class="tbl-hint">→ 表は横にスクロールできます</p>
+</section>
+
+<!-- 参加・お問い合わせ -->
+<section class="join" id="join">
+  <div class="sec">
+    <div>
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <span class="en">Join / Contact</span>
+        <h2>いっしょに、育てる側へ。</h2>
+      </div>
+      <p class="lead reveal">指導者として学びたい方、スポーツで地域の青少年に関わりたい方、活動を応援してくださる方——どんな関わり方でも歓迎します。まずはお気軽にお問い合わせください。</p>
+      <div class="tel reveal">
+        <p class="cap">お電話でのお問い合わせ</p>
+        <a href="#access">000-0000-0000</a>
+        <p>※サンプル番号です（発信できません）。「ホームページを見た」とお伝えください</p>
+      </div>
+    </div>
+    <form class="form reveal" onsubmit="onDemo(event)">
+      <div class="row">
+        <label>お名前<i>必須</i></label>
+        <input type="text" name="name" placeholder="山田 太郎" required>
+      </div>
+      <div class="row">
+        <label>メールアドレス<i>必須</i></label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="row">
+        <label>ご関心</label>
+        <select name="topic">
+          <option>指導者として学びたい</option>
+          <option>研修・勉強会に参加したい</option>
+          <option>活動を応援したい</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>メッセージ</label>
+        <textarea name="msg" placeholder="ご質問・ご相談など"></textarea>
+      </div>
+      <button type="submit" class="send">送信する（デモ）</button>
+      <p class="form-note">※このフォームはデモです。送信されません。<br>公開時に実際に届く形へ設定します。</p>
+    </form>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="sec" id="access">
+  <div class="sec-head reveal">
+    <span class="en">Access</span>
+    <h2>所在地</h2>
+    <p class="note-sample" style="margin-top:10px">※地図は市の中心付近を表示しています。正確な所在地は公開時に反映します</p>
+  </div>
+  <div class="map reveal">
+    <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E4%B8%80%E5%AE%AE%E5%B8%82&output=embed&z=13" loading="lazy" title="愛知県一宮市の地図"></iframe>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="foot">
+  <div class="in">
+    <p class="fn">VIF</p>
+    <p>特定非営利活動法人 VIF｜愛知県一宮市</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="cr">&copy; 2026 特定非営利活動法人 VIF（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// SPメニュー
+const mb = document.querySelector(".menu-btn");
+mb.addEventListener("click", () => {
+  const open = document.body.classList.toggle("nav-open");
+  mb.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".head nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("nav-open")));
+
+// フォームはデモ
+function onDemo(e){
+  e.preventDefault();
+  alert("これはデモフォームです。実際には送信されません。\n公開時に、実際に届くフォームへ設定します。");
+}
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

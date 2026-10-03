@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 国際循環型社会システム総合研究所 さま（マインドマップ型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者名・番地・建物名など未公開情報は記載していません
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替えコメント付き）
+  ・電話番号はダミー・tel:リンクは無効（format-detection:telephone=no）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>国際循環型社会システム総合研究所｜名古屋市 循環型社会のパートナーシップ研究【ご提案サンプル】</title>
+<meta name="description" content="持続可能な循環型社会システムを構築するため、地域や分野を超えたあらゆる主体とパートナーシップを組む。名古屋市の環境・保健医療福祉・社会教育を横断するNPO法人。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F5F7F8;
+  --c-paper:#FFFFFF;
+  --c-ink:#16242B;
+  --c-green:#0E5C4A;
+  --c-green-deep:#0A4638;
+  --c-green-pale:#E4EFEA;
+  --c-blue:#1B5E8C;
+  --c-blue-deep:#123F60;
+  --c-blue-pale:#E5EEF5;
+  --c-line:#D3DDE1;
+  --c-mute:#6B7C83;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-en:"Space Grotesk",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.7;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.en{font-family:var(--font-en);letter-spacing:.14em}
+
+/* ===== ヘッダー ===== */
+.head{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,247,248,.9);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--c-line);height:66px;display:flex;align-items:center}
+.head .in{max-width:1140px;margin:0 auto;width:100%;padding:0 30px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--c-ink)}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .t{font-weight:900;font-size:15px;letter-spacing:.02em;line-height:1.25}
+.brand .t small{display:block;font-family:var(--font-en);font-size:9px;letter-spacing:.18em;color:var(--c-blue);font-weight:500;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:26px}
+.head nav a{text-decoration:none;color:var(--c-ink);font-size:13px;font-weight:500;position:relative;padding:4px 0;transition:color .3s var(--ease)}
+.head nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--c-green);transition:right .3s var(--ease)}
+.head nav a:hover{color:var(--c-green-deep)}
+.head nav a:hover::after{right:0}
+.head .cta{margin-left:6px;background:var(--c-green);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:10px 18px;border-radius:2px;transition:background .3s}
+.head .cta:hover{background:var(--c-green-deep)}
+
+/* SPメニュー */
+.menu-btn{display:none}
+.sp-nav{display:none}
+
+.main{padding-top:66px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 30px}
+.wide{max-width:1140px;margin:0 auto;padding:0 30px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:92px 0}
+.b-head{margin-bottom:44px}
+.b-head .en{display:block;font-size:11px;letter-spacing:.28em;color:var(--c-blue);text-transform:uppercase;margin-bottom:12px}
+.b-head h2{font-size:clamp(22px,2.8vw,30px);letter-spacing:.03em}
+.b-head h2 .dot{color:var(--c-green)}
+.b-head .sub{margin-top:14px;font-size:14.5px;color:var(--c-mute);max-width:640px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-mute)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-mute);margin-top:6px}
+
+/* ===== ヒーロー（マインドマップ） ===== */
+.hero{position:relative;padding:70px 0 40px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 78% 22%,rgba(27,94,140,.07),transparent 42%),
+  radial-gradient(circle at 12% 82%,rgba(14,92,74,.07),transparent 44%)}
+.hero .in{position:relative;max-width:1140px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:center}
+.hero .cap{font-family:var(--font-en);font-size:11.5px;letter-spacing:.26em;color:var(--c-blue);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.hero .cap::before{content:"";width:34px;height:1.5px;background:var(--c-blue)}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.6;letter-spacing:.04em}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 66%,var(--c-green-pale) 66%);padding:0 2px}
+.hero .lead{margin-top:24px;max-width:460px;font-size:15px;color:#33454C}
+.hero .stats{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+.hero .stat .n{font-family:var(--font-en);font-size:26px;font-weight:600;color:var(--c-green-deep);line-height:1.1}
+.hero .stat .l{font-size:11.5px;color:var(--c-mute);margin-top:4px}
+
+/* マインドマップSVG */
+.map-fig{position:relative;width:100%}
+.map-fig svg{width:100%;height:auto;display:block;overflow:visible}
+.mm-branch{stroke-linecap:round;fill:none}
+.mm-node-l{fill:var(--c-paper);stroke-width:1.5}
+.mm-core{fill:var(--c-green-deep)}
+.mm-core-ring{fill:none;stroke:var(--c-green);stroke-width:1.4;opacity:.4}
+.mm-lab{font-family:var(--font-body);font-weight:700;font-size:12.5px;fill:var(--c-ink)}
+.mm-lab-core{font-family:var(--font-body);font-weight:900;fill:#fff}
+.mm-lab-core-s{font-family:var(--font-en);font-size:8px;letter-spacing:.16em;fill:#B9E3D5}
+/* 枝の描画アニメーション */
+.mm-branch{stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.hero.on .mm-branch{animation:draw 1.2s var(--ease) forwards}
+.hero.on .mm-branch.d2{animation-delay:.18s}
+.hero.on .mm-branch.d3{animation-delay:.36s}
+.hero.on .mm-branch.d4{animation-delay:.54s}
+.mm-leaf{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.6)}
+.hero.on .mm-leaf{animation:pop .5s var(--ease) forwards}
+.hero.on .mm-leaf.p1{animation-delay:.7s}
+.hero.on .mm-leaf.p2{animation-delay:.86s}
+.hero.on .mm-leaf.p3{animation-delay:1.02s}
+.hero.on .mm-leaf.p4{animation-delay:1.18s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){
+  .hero .mm-branch{stroke-dashoffset:0;animation:none}
+  .hero .mm-leaf{opacity:1;transform:none;animation:none}
+}
+
+/* ===== つながりの構図（3分野カード） ===== */
+.field-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.field-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:4px;padding:30px 26px;position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.field-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--bar)}
+.field-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px -18px rgba(18,63,96,.4)}
+.field-card .ic{width:46px;height:46px;margin-bottom:18px}
+.field-card .no{font-family:var(--font-en);font-size:11px;letter-spacing:.2em;color:var(--c-mute)}
+.field-card h3{font-size:18px;margin:6px 0 12px}
+.field-card p{font-size:13.5px;color:#43555C;line-height:2}
+.field-card .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.field-card .tags span{font-size:11px;color:var(--c-green-deep);background:var(--c-green-pale);padding:3px 10px;border-radius:20px}
+
+/* ===== パートナーシップの考え方（帯） ===== */
+.approach{background:var(--c-green-deep);color:#EAF3EF}
+.approach .lead{font-size:clamp(18px,2.6vw,26px);font-weight:700;line-height:1.9;letter-spacing:.03em;max-width:820px}
+.approach .lead em{font-style:normal;color:#7FD3BB}
+.approach .en{color:#69B8A2}
+.approach .b-head h2{color:#fff}
+.approach .sub{color:#B7CFC7}
+.step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid rgba(255,255,255,.16)}
+.step-row .step{padding:28px 24px 8px;border-right:1px solid rgba(255,255,255,.16);position:relative}
+.step-row .step:last-child{border-right:none}
+.step-row .step .n{font-family:var(--font-en);font-size:12px;letter-spacing:.2em;color:#7FD3BB}
+.step-row .step h4{font-size:16px;margin:10px 0 8px;color:#fff}
+.step-row .step p{font-size:13px;color:#B7CFC7;line-height:1.95}
+
+/* ===== 研究・活動テーマ（リスト） ===== */
+.theme-list{border-top:1px solid var(--c-line)}
+.theme-row{display:grid;grid-template-columns:70px 1fr 150px;gap:24px;padding:26px 6px;border-bottom:1px solid var(--c-line);align-items:baseline;transition:background .3s}
+.theme-row:hover{background:var(--c-paper)}
+.theme-row .no{font-family:var(--font-en);font-size:14px;color:var(--c-blue);font-weight:500}
+.theme-row h3{font-size:17px}
+.theme-row .desc{font-size:13px;color:var(--c-mute);margin-top:6px;line-height:1.9}
+.theme-row .field{font-size:11.5px;color:var(--c-green-deep);font-weight:700;text-align:right;white-space:nowrap}
+
+/* ===== ごあいさつ ===== */
+.msg-box{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.msg-box .txt .big{font-size:clamp(17px,2.2vw,21px);font-weight:700;line-height:2.1;margin-bottom:18px;letter-spacing:.02em}
+.msg-box .txt .big em{font-style:normal;color:var(--c-green-deep)}
+.msg-box .txt p{font-size:14.5px;color:#33454C}
+.msg-box .name{margin-top:22px;font-weight:700;font-size:14px}
+.msg-box .name small{display:block;font-weight:500;font-size:11.5px;color:var(--c-mute);margin-top:2px}
+.msg-box .ph img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
+.msg-box .ph .cap{font-size:11px;color:var(--c-mute);margin-top:8px;text-align:center}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:20px;padding:16px 2px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-en);color:var(--c-mute);font-size:12.5px;width:88px}
+.news-row .cat{flex:none;font-size:11px;color:var(--c-blue-deep);border:1px solid var(--c-blue);border-radius:2px;padding:1px 8px}
+.news-row a{color:var(--c-ink);text-decoration:none}
+.news-row a:hover{color:var(--c-green-deep);text-decoration:underline;text-underline-offset:4px}
+
+/* ===== 法人概要 ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:158px;text-align:left;font-weight:700;background:var(--c-blue-pale);border:1px solid var(--c-line);padding:13px 18px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border:1px solid var(--c-line);padding:13px 18px}
+table.gaiyo td a{color:var(--c-green-deep);font-weight:700;text-decoration:none}
+
+/* ===== お問い合わせ ===== */
+.contact{background:var(--c-blue-deep);color:#E5EEF5}
+.contact .b-head .en{color:#8FBBD8}
+.contact .b-head h2{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:8px}
+.contact .lead{font-size:14.5px;color:#C6D8E5;max-width:420px}
+.contact .tel-big{margin-top:26px;border:1px solid rgba(255,255,255,.24);border-radius:4px;padding:24px}
+.contact .tel-big .cap{font-size:12px;color:#8FBBD8;font-weight:700}
+.contact .tel-big a{font-family:var(--font-en);font-size:30px;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.02em}
+.contact .tel-big p{font-size:11.5px;color:#9EBED2;margin-top:4px}
+/* デモフォーム */
+form.demo{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:28px}
+form.demo label{display:block;font-size:12.5px;font-weight:700;margin:0 0 6px;color:#DCE9F2}
+form.demo label:not(:first-child){margin-top:18px}
+form.demo input,form.demo textarea{width:100%;background:rgba(255,255,255,.9);border:1px solid transparent;border-radius:3px;padding:11px 13px;font-family:inherit;font-size:14px;color:var(--c-ink)}
+form.demo textarea{min-height:104px;resize:vertical}
+form.demo button{margin-top:22px;width:100%;background:var(--c-green);color:#fff;border:none;border-radius:3px;padding:14px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;transition:background .3s}
+form.demo button:hover{background:var(--c-green-deep)}
+form.demo .demo-note{font-size:11px;color:#9EBED2;margin-top:12px;text-align:center}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#AFC0C7;padding:52px 0 34px;text-align:center}
+.footer .f-brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer .f-brand svg{width:30px;height:30px}
+.footer .f-name{font-weight:900;font-size:15px;color:#fff}
+.footer .f-meta{font-size:12.5px;margin-top:6px}
+.sample-note{font-size:11px;color:#7E9199;margin-top:20px;line-height:1.95}
+.sample-note a{color:#AFC0C7}
+.copy{margin-top:16px;font-size:11px;color:#6B7C83}
+
+/* 左下ピル */
+.pill{position:fixed;left:16px;bottom:16px;z-index:130;background:var(--c-ink);color:#fff;font-size:11px;padding:8px 14px;border-radius:20px;text-decoration:none;box-shadow:0 6px 20px -8px rgba(0,0,0,.5);display:flex;align-items:center;gap:7px}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:#4ADEA0}
+.pill b{font-weight:700}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .head nav{display:none}
+  .head .cta{display:none}
+  .head .in{gap:12px}
+  .menu-btn{display:flex;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:block;position:fixed;inset:66px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line);padding:8px 24px 20px;z-index:99;transform:translateY(-8px);opacity:0;visibility:hidden;transition:.3s var(--ease)}
+  .menu-open .sp-nav{transform:none;opacity:1;visibility:visible}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .cta{color:var(--c-green-deep);font-weight:700}
+  .hero .in{grid-template-columns:1fr;gap:30px}
+  .map-fig{max-width:520px;margin:0 auto;order:-1}
+  .block{padding:64px 0}
+  .field-grid{grid-template-columns:1fr;gap:14px}
+  .step-row{grid-template-columns:1fr;border-top:none}
+  .step-row .step{border-right:none;border-top:1px solid rgba(255,255,255,.16);padding:22px 0 6px}
+  .theme-row{grid-template-columns:44px 1fr;gap:14px}
+  .theme-row .field{grid-column:2;text-align:left;margin-top:6px}
+  .msg-box{grid-template-columns:1fr;gap:26px}
+  .msg-box .ph{max-width:280px}
+  .contact-grid{grid-template-columns:1fr;gap:28px}
+  .tbl-hint{display:block}
+}
+@media (max-width:720px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 16px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:9px 16px 13px}
+  .tbl-hint{display:none}
+  .hero .stats{gap:20px}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="head">
+  <div class="in">
+    <a class="brand" href="#top" aria-label="トップへ">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#E4EFEA"/>
+        <circle cx="20" cy="20" r="4.4" fill="#0A4638"/>
+        <g stroke-width="1.6" fill="none">
+          <path d="M20 20 L9 10" stroke="#0E5C4A"/>
+          <path d="M20 20 L32 11" stroke="#1B5E8C"/>
+          <path d="M20 20 L10 31" stroke="#1B5E8C"/>
+          <path d="M20 20 L31 30" stroke="#0E5C4A"/>
+        </g>
+        <circle cx="9" cy="10" r="3" fill="#0E5C4A"/>
+        <circle cx="32" cy="11" r="3" fill="#1B5E8C"/>
+        <circle cx="10" cy="31" r="3" fill="#1B5E8C"/>
+        <circle cx="31" cy="30" r="3" fill="#0E5C4A"/>
+      </svg>
+      <span class="t">国際循環型社会システム<br>総合研究所<small>Circular Society Institute</small></span>
+    </a>
+    <nav>
+      <a href="#fields">活動分野</a>
+      <a href="#approach">連携の考え方</a>
+      <a href="#themes">研究テーマ</a>
+      <a href="#message">ごあいさつ</a>
+      <a href="#gaiyo">法人概要</a>
+    </nav>
+    <a class="cta" href="#contact">お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sp-nav">
+  <a href="#fields">活動分野</a>
+  <a href="#approach">連携の考え方</a>
+  <a href="#themes">研究テーマ</a>
+  <a href="#message">ごあいさつ</a>
+  <a href="#gaiyo">法人概要</a>
+  <a class="cta" href="#contact">お問い合わせ</a>
+</nav>
+
+<div class="main">
+
+  <!-- ヒーロー：マインドマップ -->
+  <section class="hero reveal" id="hero">
+    <div class="in">
+      <div class="hero-txt">
+        <p class="cap">Circular Society Systems</p>
+        <h1><span class="kb">分野を超えて</span><span class="kb">つながることで、</span><br><span class="kb"><em>循環する社会</em>を</span><span class="kb">かたちにする。</span></h1>
+        <p class="lead">環境・保健医療福祉・社会教育——ばらばらに見える課題は、ひとつの循環の中でつながっています。わたしたちは地域や分野を超えたパートナーシップで、持続可能な社会システムを研究し、実装します。</p>
+        <div class="stats">
+          <!-- ※サンプル: 数値はダミーです。実績に差し替えます -->
+          <div class="stat"><div class="n">3<span style="font-size:15px">分野</span></div><div class="l">横断する活動領域 <span class="note-sample">※サンプル</span></div></div>
+          <div class="stat"><div class="n">20XX</div><div class="l">設立年 <span class="note-sample">※サンプル</span></div></div>
+          <div class="stat"><div class="n">名古屋</div><div class="l">活動拠点</div></div>
+        </div>
+      </div>
+
+      <!-- マインドマップSVG（中心＝法人、枝＝3分野＋パートナー） -->
+      <figure class="map-fig" aria-label="活動分野のマインドマップ">
+        <svg viewBox="0 0 560 460" role="img" aria-hidden="true">
+          <!-- 枝（中心→各ノード） -->
+          <path class="mm-branch"    style="--len:200" d="M280 230 C 210 190, 150 150, 108 118" stroke="#0E5C4A" stroke-width="2"/>
+          <path class="mm-branch d2" style="--len:210" d="M280 230 C 360 190, 420 150, 462 116" stroke="#1B5E8C" stroke-width="2"/>
+          <path class="mm-branch d3" style="--len:200" d="M280 230 C 200 280, 150 320, 110 354" stroke="#1B5E8C" stroke-width="2"/>
+          <path class="mm-branch d4" style="--len:210" d="M280 230 C 360 280, 420 320, 460 356" stroke="#0E5C4A" stroke-width="2"/>
+          <path class="mm-branch d2" style="--len:120" d="M280 230 C 280 300, 282 340, 282 392" stroke="#0E5C4A" stroke-width="1.6" opacity=".55"/>
+
+          <!-- 中心ノード -->
+          <circle class="mm-core-ring mm-leaf p1" cx="280" cy="230" r="60"/>
+          <circle class="mm-core mm-leaf p1" cx="280" cy="230" r="47"/>
+          <text class="mm-lab-core mm-leaf p1" x="280" y="222" text-anchor="middle" style="font-size:14px">循環型</text>
+          <text class="mm-lab-core mm-leaf p1" x="280" y="240" text-anchor="middle" style="font-size:14px">社会</text>
+          <text class="mm-lab-core-s mm-leaf p1" x="280" y="256" text-anchor="middle">CIRCULAR</text>
+
+          <!-- 分野ノード -->
+          <g class="mm-leaf p2">
+            <rect class="mm-node-l" x="26" y="90" width="164" height="52" rx="8" stroke="#0E5C4A"/>
+            <circle cx="52" cy="116" r="9" fill="#E4EFEA"/><circle cx="52" cy="116" r="4" fill="#0E5C4A"/>
+            <text class="mm-lab" x="70" y="112">環境保全</text>
+            <text x="70" y="130" style="font-family:var(--font-en);font-size:8.5px;letter-spacing:.14em;fill:#6B7C83">ENVIRONMENT</text>
+          </g>
+          <g class="mm-leaf p2">
+            <rect class="mm-node-l" x="372" y="88" width="176" height="52" rx="8" stroke="#1B5E8C"/>
+            <circle cx="398" cy="114" r="9" fill="#E5EEF5"/><circle cx="398" cy="114" r="4" fill="#1B5E8C"/>
+            <text class="mm-lab" x="416" y="110">保健医療福祉</text>
+            <text x="416" y="128" style="font-family:var(--font-en);font-size:8.5px;letter-spacing:.14em;fill:#6B7C83">WELFARE</text>
+          </g>
+          <g class="mm-leaf p3">
+            <rect class="mm-node-l" x="20" y="330" width="168" height="52" rx="8" stroke="#1B5E8C"/>
+            <circle cx="46" cy="356" r="9" fill="#E5EEF5"/><circle cx="46" cy="356" r="4" fill="#1B5E8C"/>
+            <text class="mm-lab" x="64" y="352">社会教育</text>
+            <text x="64" y="370" style="font-family:var(--font-en);font-size:8.5px;letter-spacing:.14em;fill:#6B7C83">EDUCATION</text>
+          </g>
+          <g class="mm-leaf p3">
+            <rect class="mm-node-l" x="378" y="332" width="170" height="52" rx="8" stroke="#0E5C4A"/>
+            <circle cx="404" cy="358" r="9" fill="#E4EFEA"/><circle cx="404" cy="358" r="4" fill="#0E5C4A"/>
+            <text class="mm-lab" x="422" y="354">地域連携</text>
+            <text x="422" y="372" style="font-family:var(--font-en);font-size:8.5px;letter-spacing:.14em;fill:#6B7C83">PARTNERSHIP</text>
+          </g>
+          <g class="mm-leaf p4">
+            <rect class="mm-node-l" x="212" y="404" width="136" height="42" rx="8" stroke="#9EB4A8" stroke-dasharray="4 4"/>
+            <text class="mm-lab" x="280" y="430" text-anchor="middle" style="font-size:11.5px;fill:#6B7C83">あらゆる主体</text>
+          </g>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 活動分野 -->
+  <section class="block" id="fields">
+    <div class="wide">
+      <div class="b-head reveal">
+        <span class="en">Fields</span>
+        <h2>横断する、3つの活動分野<span class="dot">.</span></h2>
+        <p class="sub">環境・福祉・教育は、それぞれ独立した課題ではなく、ひとつの「循環」の中でつながっています。分野の境界を越えて取り組むことが、わたしたちの出発点です。</p>
+      </div>
+      <div class="field-grid">
+        <div class="field-card reveal" style="--bar:#0E5C4A">
+          <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#E4EFEA"/><path d="M22 33c0-9 5-15 12-16.5-1 9-6 15-12 16.5Z" fill="#0E5C4A"/><path d="M22 33c0-7-3.5-11.5-9.5-13 1.2 7 4.7 11.5 9.5 13Z" fill="#5AA98F"/></svg>
+          <span class="no">FIELD 01</span>
+          <h3>環境保全</h3>
+          <p>資源やエネルギーの循環に着目し、持続可能な社会システムのあり方を研究します。地域の環境課題を、暮らしと産業の両面から捉え直します。</p>
+          <div class="tags"><span>循環型社会</span><span>資源・エネルギー</span><span>環境教育</span></div>
+        </div>
+        <div class="field-card reveal" style="--bar:#1B5E8C">
+          <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#E5EEF5"/><path d="M22 31c-4.5-3-8-6.2-8-10.2a4.6 4.6 0 0 1 8-3.1 4.6 4.6 0 0 1 8 3.1c0 4-3.5 7.2-8 10.2Z" fill="#1B5E8C"/></svg>
+          <span class="no">FIELD 02</span>
+          <h3>保健医療福祉</h3>
+          <p>誰もが安心して暮らせる地域をめざし、健康・福祉の課題に取り組みます。人と人、人と地域のつながりを支えるしくみを考えます。</p>
+          <div class="tags"><span>地域包括</span><span>健康づくり</span><span>共生社会</span></div>
+        </div>
+        <div class="field-card reveal" style="--bar:#0A4638">
+          <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#E4EFEA"/><path d="M22 13l11 5-11 5-11-5 11-5Z" fill="#0A4638"/><path d="M15 21v6c0 2 3.2 3.6 7 3.6s7-1.6 7-3.6v-6l-7 3.2-7-3.2Z" fill="#5AA98F"/></svg>
+          <span class="no">FIELD 03</span>
+          <h3>社会教育</h3>
+          <p>循環型社会を担う人づくりのため、学びの機会をひらきます。世代や立場を超えて、知識と経験を分かち合う場をつくります。</p>
+          <div class="tags"><span>学びの場</span><span>人材育成</span><span>市民協働</span></div>
+        </div>
+      </div>
+      <p class="note-sample" style="margin-top:20px">※各分野の説明文は定款の活動分野（公開情報）をもとにしたサンプルです。具体的な事業内容に差し替えます。</p>
+    </div>
+  </section>
+
+  <!-- 連携の考え方 -->
+  <section class="block approach" id="approach">
+    <div class="wide">
+      <div class="b-head reveal">
+        <span class="en">Our Approach</span>
+        <h2>ひとりでは、循環はつくれない。</h2>
+        <p class="sub">「地域や分野を超えたあらゆる主体とパートナーシップを組む」——これは定款に掲げた、わたしたちの約束です。</p>
+      </div>
+      <p class="lead reveal"><span class="kb">行政も、企業も、</span><span class="kb">研究者も、住民も。</span><span class="kb">立場のちがう人たちが</span><span class="kb"><em>ひとつのテーブル</em>に</span><span class="kb">つくことから、</span><span class="kb">社会は変わりはじめます。</span></p>
+      <div class="step-row reveal">
+        <div class="step">
+          <span class="n en">STEP 01</span>
+          <h4>つなぐ</h4>
+          <p>分野の異なる主体を結び、課題を共有する場をつくります。まずは対話から。</p>
+        </div>
+        <div class="step">
+          <span class="n en">STEP 02</span>
+          <h4>試す</h4>
+          <p>研究と実践を往復しながら、地域に合った循環のしくみを小さく試します。</p>
+        </div>
+        <div class="step">
+          <span class="n en">STEP 03</span>
+          <h4>ひろげる</h4>
+          <p>うまくいったしくみを、他の地域や分野へ。学びを共有し、循環を広げます。</p>
+        </div>
+      </div>
+      <p class="note-sample" style="margin-top:22px;color:#8FB3A8">※進め方の3ステップは表現イメージのサンプルです。実際の取り組み方に差し替えます。</p>
+    </div>
+  </section>
+
+  <!-- 研究・活動テーマ -->
+  <section class="block" id="themes">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Themes</span>
+        <h2>研究・活動テーマ<span class="dot">.</span></h2>
+        <p class="sub">分野を横断する具体的なテーマの例です。<span class="note-sample">※以下はすべて表示イメージのサンプルです。実際のテーマに差し替えます。</span></p>
+      </div>
+      <!-- ※サンプル: テーマ・内容はダミーです -->
+      <div class="theme-list reveal">
+        <div class="theme-row">
+          <span class="no">01</span>
+          <div><h3>地域資源の循環モデルづくり</h3><p class="desc">地域で生まれる資源やエネルギーを、地域の中でめぐらせるしくみを研究します。</p></div>
+          <span class="field">環境保全</span>
+        </div>
+        <div class="theme-row">
+          <span class="no">02</span>
+          <div><h3>福祉と環境をつなぐ居場所づくり</h3><p class="desc">誰もが役割をもって参加できる、地域の居場所と支え合いのしくみを考えます。</p></div>
+          <span class="field">保健医療福祉</span>
+        </div>
+        <div class="theme-row">
+          <span class="no">03</span>
+          <div><h3>循環型社会をひらく学びの場</h3><p class="desc">世代を超えて学び合う、環境と暮らしについての学習プログラムを開発します。</p></div>
+          <span class="field">社会教育</span>
+        </div>
+        <div class="theme-row">
+          <span class="no">04</span>
+          <div><h3>多主体パートナーシップの実証</h3><p class="desc">行政・企業・住民が協働する体制づくりを、実際の地域で試み、検証します。</p></div>
+          <span class="field">地域連携</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ごあいさつ -->
+  <section class="block" id="message" style="background:var(--c-paper);border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Message</span>
+        <h2>ごあいさつ<span class="dot">.</span></h2>
+      </div>
+      <div class="msg-box reveal">
+        <div class="txt">
+          <p class="big"><span class="kb">課題を分けて</span><span class="kb">解こうとするほど、</span><br><span class="kb"><em>本当の答え</em>から</span><span class="kb">遠ざかることがあります。</span></p>
+          <p>環境も、福祉も、教育も、わたしたちの暮らしの中ではひとつにつながっています。だからこそ、分野や立場の垣根を越えて手を取り合うことが必要だと、わたしたちは考えています。持続可能な循環型社会を、名古屋のこの地から、みなさまとともにかたちにしていきたい。研究の成果を机の上で終わらせず、地域の実践へとつなげてまいります。どうぞお気軽にお声がけください。</p>
+          <p class="name">特定非営利活動法人 国際循環型社会システム総合研究所<small>代表（お名前は公開時に記載します）</small></p>
+          <p class="note-sample" style="margin-top:14px">※あいさつ文はサンプルです。ご本人のお言葉に差し替えます。代表者名は公開情報に基づき、ご確認のうえ掲載します。</p>
+        </div>
+        <div class="ph">
+          <!-- 差し替えポイント: 活動の様子・拠点のお写真など（顔が特定されにくい構図） -->
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80&auto=format&fit=crop" alt="森と自然のイメージ">
+          <p class="cap">※写真はイメージです</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">News</span>
+        <h2>お知らせ<span class="dot">.</span></h2>
+        <p class="sub note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</p>
+      </div>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">循環型社会に関する研究会を開催しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">連携</span><a href="#news">地域の環境活動団体との協働を開始しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">報告</span><a href="#news">社会教育プログラムの実施報告を公開しました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 法人概要 -->
+  <section class="block" id="gaiyo" style="background:var(--c-paper);border-top:1px solid var(--c-line)">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Profile</span>
+        <h2>法人概要<span class="dot">.</span></h2>
+      </div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 国際循環型社会システム総合研究所</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市 <span class="note-sample">※詳細な住所は公開時に記載します</span></td></tr>
+          <tr><th>活動分野</th><td>保健・医療・福祉／社会教育／環境保全（NPOポータル公開情報より）</td></tr>
+          <tr><th>設立の目的</th><td>持続可能な循環型社会システムを構築するため、地域や分野を超えたあらゆる主体とパートナーシップを組む（定款目的より）</td></tr>
+          <tr><th>設立年</th><td>20XX年 <span class="note-sample">※サンプル。実データに差し替えます</span></td></tr>
+          <tr><th>電話</th><td><a href="#contact" onclick="return false" style="cursor:default">052-XXX-XXXX</a> <span class="note-sample">※サンプル番号（発信できません）</span></td></tr>
+          <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="block contact" id="contact">
+    <div class="wide">
+      <div class="b-head reveal">
+        <span class="en">Contact</span>
+        <h2>お問い合わせ・連携のご相談</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div>
+          <p class="lead">分野や立場を問わず、循環型社会づくりに関心のある方からのご連絡をお待ちしています。研究者・行政・企業・地域の団体の方も、どうぞお気軽に。</p>
+          <div class="tel-big">
+            <p class="cap">お電話でのご相談</p>
+            <a href="#contact" onclick="return false" style="cursor:default">052-XXX-XXXX</a>
+            <p>※サンプル番号です（このデモでは発信できません）</p>
+          </div>
+        </div>
+        <form class="demo" onsubmit="return false" novalidate>
+          <label for="f-name">お名前・団体名</label>
+          <input id="f-name" type="text" placeholder="例）〇〇株式会社 山田" autocomplete="off">
+          <label for="f-mail">メールアドレス</label>
+          <input id="f-mail" type="email" placeholder="例）info@example.com" autocomplete="off">
+          <label for="f-msg">ご相談内容</label>
+          <textarea id="f-msg" placeholder="連携のご相談・お問い合わせ内容をご記入ください"></textarea>
+          <button type="submit">送信する（デモ）</button>
+          <p class="demo-note">※こちらはデモフォームです。実際には送信されません。</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-brand">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="#1E3038"/>
+          <circle cx="20" cy="20" r="4.4" fill="#fff"/>
+          <g stroke-width="1.6" fill="none">
+            <path d="M20 20 L9 10" stroke="#5AA98F"/><path d="M20 20 L32 11" stroke="#6FA8CC"/>
+            <path d="M20 20 L10 31" stroke="#6FA8CC"/><path d="M20 20 L31 30" stroke="#5AA98F"/>
+          </g>
+          <circle cx="9" cy="10" r="3" fill="#5AA98F"/><circle cx="32" cy="11" r="3" fill="#6FA8CC"/>
+          <circle cx="10" cy="31" r="3" fill="#6FA8CC"/><circle cx="31" cy="30" r="3" fill="#5AA98F"/>
+        </svg>
+        <span class="f-name">国際循環型社会システム総合研究所</span>
+      </div>
+      <p class="f-meta">愛知県名古屋市｜保健医療福祉・社会教育・環境保全</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p class="copy">&copy; 2026 特定非営利活動法人 国際循環型社会システム総合研究所（サンプル）</p>
+    </div>
+  </footer>
+
+</div>
+
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener"><span class="dot"></span><b>ご提案用サンプル</b>／スマートコネクト</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロールで出現
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

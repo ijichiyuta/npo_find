@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 三河ジュニアスキー研究会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の
+    範囲で作成。代表者の実名は記載していません
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・住所は市までの表記（番地・建物名なし）。電話番号はダミーで
+    発信できないようにしています（format-detection / tel無効化）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザインの主役: 天気図 / 気象記号型
+    （天気図・雪や気温の気象記号のモチーフで、雪山・スキーの季節感を表現）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 三河ジュニアスキー研究会｜西尾市・子どものスキー教室【ご提案サンプル】</title>
+<meta name="description" content="愛知県西尾市の特定非営利活動法人。多くの人にスキーを教えることを通じて、社会教育の推進と青少年の健全育成に取り組みます。ジュニアスキー教室・体験会のご案内。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;800;900&family=Barlow+Condensed:wght@600;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-sky:#EAF4FB;        /* 雪原の水色（背景） */
+  --c-sky-2:#DCEEF9;
+  --c-paper:#FFFFFF;
+  --c-ink:#12212E;        /* 力強い墨 */
+  --c-blue:#1E7FC2;       /* 気象の青（低気圧・寒気） */
+  --c-blue-deep:#155E93;
+  --c-blue-pale:#D6EAF7;
+  --c-red:#E23A34;        /* 気象の赤（高気圧・注意） */
+  --c-red-deep:#C22B26;
+  --c-line:#C9DEEC;
+  --c-line-strong:#12212E;
+  --c-muted:#5C7488;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-cond:"Barlow Condensed",sans-serif;
+  --font-mono:"Roboto Mono",monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--c-ink);
+  line-height:1.95;font-size:15px;
+  font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%;
+  background:
+    radial-gradient(circle at 12% 8%, #fff 0 40%, transparent 60%),
+    linear-gradient(180deg,#F4FAFE 0%, var(--c-sky) 100%);
+  background-attachment:fixed;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:900;line-height:1.45;word-break:auto-phrase;letter-spacing:.02em}
+a{color:inherit}
+/* 文節単位の改行（iOS対策） */
+.kb{display:inline-block}
+.note-sample{font-size:11.5px;color:var(--c-muted);font-weight:500}
+.tbl-hint{display:none;font-size:11.5px;color:var(--c-muted);margin-top:8px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ===== 上部：等圧線バー ===== */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--c-line-strong)}
+.topbar .inner{max-width:1080px;margin:0 auto;height:66px;display:flex;align-items:center;gap:14px;padding:0 24px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .nm{font-weight:900;font-size:18px;letter-spacing:.03em;line-height:1.15}
+.brand .nm small{display:block;font-size:9.5px;font-weight:700;color:var(--c-blue-deep);letter-spacing:.12em;margin-top:3px}
+.topnav{margin-left:auto;display:flex;align-items:center;gap:2px}
+.topnav a{text-decoration:none;color:var(--c-ink);font-weight:700;font-size:13.5px;padding:8px 12px;border-radius:4px;transition:background .25s var(--ease),color .25s}
+.topnav a:hover{background:var(--c-blue-pale);color:var(--c-blue-deep)}
+.top-tel{margin-left:6px;background:var(--c-red);color:#fff;text-decoration:none;font-weight:800;font-size:13.5px;padding:9px 15px;border-radius:4px;white-space:nowrap;box-shadow:0 2px 0 var(--c-red-deep)}
+.menu-btn{display:none}
+
+/* ===== レイアウト ===== */
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.block{padding:82px 0}
+.b-head{display:flex;align-items:baseline;gap:14px;margin-bottom:34px;border-bottom:2px solid var(--c-line-strong);padding-bottom:12px}
+.b-head .en{font-family:var(--font-cond);font-size:14px;letter-spacing:.18em;color:var(--c-blue);text-transform:uppercase;font-weight:700}
+.b-head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.04em}
+.b-head .code{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--c-muted);letter-spacing:.08em;white-space:nowrap}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== ヒーロー（天気図） ===== */
+.hero{position:relative;overflow:hidden;border-bottom:2px solid var(--c-line-strong)}
+/* 等圧線の背景 */
+.hero .iso{position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none}
+.hero .inner{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:78px 24px 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .fcast{display:inline-flex;align-items:center;gap:8px;background:var(--c-ink);color:#fff;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;padding:6px 13px;border-radius:3px;margin-bottom:22px}
+.hero .fcast .dot{width:8px;height:8px;border-radius:50%;background:var(--c-red);box-shadow:0 0 0 3px rgba(226,58,52,.25);animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.28;letter-spacing:.02em}
+.hero h1 .mk{color:var(--c-blue-deep)}
+.hero h1 .hl{position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:2px;height:.42em;background:var(--c-red);opacity:.18;z-index:-1}
+.hero .lead{margin-top:24px;max-width:520px;font-size:15.5px;line-height:2.05;color:#26404F}
+.hero .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:15px;padding:14px 24px;border-radius:5px;transition:transform .2s var(--ease),box-shadow .2s}
+.btn-red{background:var(--c-red);color:#fff;box-shadow:0 3px 0 var(--c-red-deep)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--c-red-deep)}
+.btn-out{background:#fff;color:var(--c-ink);border:2px solid var(--c-line-strong);box-shadow:0 3px 0 var(--c-line-strong)}
+.btn-out:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--c-line-strong)}
+
+/* ヒーロー右：気象カード（天気図の観測地点風） */
+.wcard{background:var(--c-paper);border:2px solid var(--c-line-strong);border-radius:8px;box-shadow:8px 8px 0 rgba(18,33,46,.09);overflow:hidden}
+.wcard .top{background:var(--c-ink);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.wcard .top .ttl{font-weight:800;font-size:14px;letter-spacing:.04em}
+.wcard .top .st{font-family:var(--font-mono);font-size:10.5px;color:#9FC7E4;letter-spacing:.06em}
+.wcard .ph{position:relative;aspect-ratio:4/3;background:var(--c-sky-2)}
+.wcard .ph img{width:100%;height:100%;object-fit:cover}
+.wcard .ph .sym{position:absolute;top:12px;right:12px;width:52px;height:52px}
+.wcard .grid{display:grid;grid-template-columns:1fr 1fr}
+.wcard .cell{padding:13px 16px;border-top:1px solid var(--c-line);border-right:1px solid var(--c-line)}
+.wcard .cell:nth-child(2n){border-right:none}
+.wcard .cell .k{font-size:10.5px;font-weight:700;color:var(--c-muted);letter-spacing:.06em}
+.wcard .cell .v{font-family:var(--font-cond);font-weight:700;font-size:23px;line-height:1.1;margin-top:2px;color:var(--c-ink)}
+.wcard .cell .v span{font-size:13px;color:var(--c-muted);font-weight:600}
+.wcard .cell .v.blue{color:var(--c-blue-deep)}
+.wcard .cell .v.red{color:var(--c-red-deep)}
+
+/* ===== 気象記号の凡例（＝私たちの活動指針） ===== */
+.legend{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.leg{background:var(--c-paper);border:2px solid var(--c-line-strong);border-radius:8px;padding:22px 20px;box-shadow:5px 5px 0 rgba(18,33,46,.07);transition:transform .25s var(--ease)}
+.leg:hover{transform:translateY(-4px)}
+.leg .sym{width:56px;height:56px;margin-bottom:14px}
+.leg h3{font-size:16px;letter-spacing:.02em}
+.leg p{font-size:13px;line-height:1.85;color:#33505F;margin-top:7px}
+
+/* ===== プログラム（週間予報の帯） ===== */
+.forecast{border:2px solid var(--c-line-strong);border-radius:10px;overflow:hidden;background:var(--c-paper);box-shadow:6px 6px 0 rgba(18,33,46,.08)}
+.fc-row{display:grid;grid-template-columns:150px 76px 1fr;align-items:center;border-top:1px solid var(--c-line)}
+.fc-row:first-child{border-top:none}
+.fc-row .day{padding:20px 20px;font-weight:900;font-size:16px;letter-spacing:.02em;background:var(--c-blue-pale);align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.fc-row .day small{font-family:var(--font-mono);display:block;font-size:10px;font-weight:600;color:var(--c-blue-deep);letter-spacing:.06em;margin-top:3px}
+.fc-row .sym{padding:14px;display:flex;justify-content:center;background:var(--c-sky)}
+.fc-row .sym svg{width:44px;height:44px}
+.fc-row .info{padding:18px 22px}
+.fc-row .info h3{font-size:16px}
+.fc-row .info p{font-size:13.5px;color:#33505F;margin-top:4px}
+.fc-row .info .tag{display:inline-block;font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--c-red-deep);border:1px solid var(--c-red);border-radius:3px;padding:1px 7px;margin-right:6px;letter-spacing:.04em}
+
+/* ===== 数字（観測データ風） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.stat{background:var(--c-ink);color:#fff;border-radius:10px;padding:28px 26px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border:1px solid rgba(255,255,255,.12);border-radius:50%}
+.stat::after{content:"";position:absolute;right:-8px;top:-8px;width:80px;height:80px;border:1px solid rgba(255,255,255,.1);border-radius:50%}
+.stat .k{font-size:12.5px;font-weight:700;color:#9FC7E4;letter-spacing:.04em}
+.stat .v{font-family:var(--font-cond);font-weight:700;font-size:52px;line-height:1;margin:6px 0 2px;position:relative;z-index:1}
+.stat .v span{font-size:20px;font-weight:600}
+.stat .n{font-size:11.5px;color:#7FA8C4}
+
+/* ===== わたしたち（観測所ノート） ===== */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about .txt .big{font-size:clamp(18px,2.4vw,23px);font-weight:900;line-height:1.75;margin-bottom:18px}
+.about .txt .big em{font-style:normal;color:var(--c-blue-deep);border-bottom:3px solid var(--c-red);padding-bottom:1px}
+.about .txt p{font-size:14.5px;line-height:2.05;color:#2C4757}
+.about .figu{position:relative}
+.about .figu img{width:100%;aspect-ratio:4/5;object-fit:cover;border:2px solid var(--c-line-strong);border-radius:10px;box-shadow:8px 8px 0 rgba(18,33,46,.09)}
+.about .figu .cap{position:absolute;left:-8px;bottom:-14px;background:var(--c-red);color:#fff;font-weight:800;font-size:12.5px;padding:8px 16px;border-radius:4px;box-shadow:0 3px 0 var(--c-red-deep)}
+.sign-box{margin-top:34px;grid-column:1/-1;border:2px solid var(--c-line-strong);border-radius:10px;background:var(--c-paper);padding:28px 32px;box-shadow:5px 5px 0 rgba(18,33,46,.07)}
+.sign-box h3{font-size:15px;color:var(--c-blue-deep);margin-bottom:10px}
+.sign-box p{font-size:14px;line-height:2}
+.sign-box .name{text-align:right;margin-top:14px;font-weight:800;font-size:14px}
+.sign-box .name small{display:block;font-weight:500;font-size:11.5px;color:var(--c-muted)}
+
+/* ===== 参加の流れ ===== */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:fs}
+.fl{background:var(--c-paper);border:2px solid var(--c-line-strong);border-radius:10px;padding:26px 24px;counter-increment:fs;position:relative;box-shadow:4px 4px 0 rgba(18,33,46,.07)}
+.fl::before{content:counter(fs);position:absolute;top:-16px;left:22px;width:36px;height:36px;background:var(--c-red);color:#fff;font-family:var(--font-cond);font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:0 3px 0 var(--c-red-deep)}
+.fl h3{font-size:16px;margin-top:6px}
+.fl p{font-size:13.5px;color:#33505F;margin-top:8px;line-height:1.9}
+
+/* ===== 概要表 ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border:2px solid var(--c-line-strong)}
+table.gaiyo th{width:150px;text-align:left;font-weight:800;background:var(--c-blue-pale);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+table.gaiyo td a{color:var(--c-blue-deep);font-weight:700;text-decoration:none}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.contact{background:var(--c-ink);border-radius:14px;padding:44px 40px;color:#fff;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%, rgba(30,127,194,.35) 0 30%, transparent 55%),radial-gradient(circle at 10% 90%, rgba(226,58,52,.22) 0 26%, transparent 50%);pointer-events:none}
+.contact .in{position:relative;z-index:1;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.contact h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.03em}
+.contact .lead{font-size:14px;color:#C6DDEE;margin-top:14px;line-height:1.95}
+.contact .tel{margin-top:24px;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:18px 20px}
+.contact .tel .cap{font-size:11.5px;color:#9FC7E4;font-weight:700}
+.contact .tel a{font-family:var(--font-cond);font-weight:700;font-size:30px;color:#fff;text-decoration:none;letter-spacing:.02em;display:block;line-height:1.2}
+.contact .tel p{font-size:11px;color:#7FA8C4}
+form.demo{background:var(--c-paper);border-radius:10px;padding:26px 24px;color:var(--c-ink)}
+form.demo label{display:block;font-size:12.5px;font-weight:700;margin:14px 0 6px}
+form.demo label:first-child{margin-top:0}
+form.demo input,form.demo textarea{width:100%;border:1.5px solid var(--c-line);border-radius:6px;padding:11px 13px;font-family:inherit;font-size:14px;background:#fff}
+form.demo input:focus,form.demo textarea:focus{outline:none;border-color:var(--c-blue)}
+form.demo .sub{margin-top:18px;width:100%;background:var(--c-red);color:#fff;border:none;border-radius:6px;padding:14px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 3px 0 var(--c-red-deep)}
+form.demo .demo-note{font-size:11px;color:var(--c-muted);margin-top:12px;text-align:center}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#cfe1ef;padding:52px 0 34px;text-align:center}
+.footer .f-name{font-weight:900;font-size:16px;color:#fff}
+.footer p{font-size:12.5px;color:#8FB2CC;margin-top:8px}
+.sample-note{font-size:11px;color:#7FA0B8;margin-top:20px;line-height:1.95}
+.sample-note a{color:#B9D3E6}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:920px){
+  .topnav{display:none}
+  .menu-btn{display:inline-flex;margin-left:auto;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .menu-btn span{display:block;width:24px;height:2.5px;background:var(--c-ink);border-radius:2px;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line-strong);padding:8px 22px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:700;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav a.tel{color:var(--c-red-deep)}
+  .hero .inner{grid-template-columns:1fr;gap:34px;padding:56px 24px 52px}
+  .legend{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:28px}
+  .about .figu img{aspect-ratio:16/10}
+  .contact .in{grid-template-columns:1fr;gap:26px}
+  .block{padding:58px 0}
+  .fc-row .info h3{font-size:15px}
+  .tbl-hint{display:block}
+}
+.sp-nav{display:none}
+@media (max-width:560px){
+  .legend{grid-template-columns:1fr}
+  .fc-row{grid-template-columns:110px 60px 1fr}
+  .fc-row .day{padding:16px 14px;font-size:14px}
+  .fc-row .info{padding:16px 16px}
+  .wcard .cell .v{font-size:20px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部バー -->
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <!-- 天気図モチーフのロゴ: 雪の結晶＋等圧線 -->
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="21" fill="#EAF4FB" stroke="#12212E" stroke-width="2"/>
+        <g stroke="#1E7FC2" stroke-width="2" stroke-linecap="round">
+          <path d="M22 8v28M9.9 15l24.2 14M9.9 29l24.2-14"/>
+          <path d="M22 12l-3 3M22 12l3 3M22 32l-3-3M22 32l3-3"/>
+        </g>
+        <circle cx="22" cy="22" r="3.4" fill="#E23A34"/>
+      </svg>
+      <span class="nm">三河ジュニアスキー研究会<small>特定非営利活動法人｜愛知県西尾市</small></span>
+    </a>
+    <nav class="topnav">
+      <a href="#activity">活動指針</a>
+      <a href="#program">教室・体験</a>
+      <a href="#about">わたしたち</a>
+      <a href="#join">参加の流れ</a>
+      <a href="#gaiyo">団体概要</a>
+      <a class="top-tel" href="#contact">お問い合わせ</a>
+    </nav>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sp-nav">
+  <a href="#activity">活動指針</a>
+  <a href="#program">教室・体験</a>
+  <a href="#about">わたしたち</a>
+  <a href="#join">参加の流れ</a>
+  <a href="#gaiyo">団体概要</a>
+  <a class="tel" href="#contact">お問い合わせ</a>
+</nav>
+
+<!-- ===== ヒーロー（天気図） ===== -->
+<section class="hero">
+  <!-- 背景の等圧線 -->
+  <svg class="iso" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#1E7FC2" stroke-width="1.4" opacity=".55">
+      <path d="M-40 120C220 40 520 60 760 150s360 130 520 80"/>
+      <path d="M-40 200C220 130 520 150 760 240s360 120 520 70"/>
+      <path d="M-40 290C240 220 540 250 780 340s340 110 500 60"/>
+      <path d="M-40 380C240 320 540 340 780 430s340 100 500 55"/>
+      <path d="M-40 470C260 410 560 440 800 520s320 90 480 45"/>
+    </g>
+    <g font-family="'Roboto Mono',monospace" font-weight="700" font-size="34" fill="#155E93" opacity=".5">
+      <text x="150" y="180">H</text>
+      <text x="1000" y="330" fill="#C22B26">L</text>
+    </g>
+  </svg>
+  <div class="inner">
+    <div>
+      <span class="fcast reveal on"><span class="dot"></span>WINTER SPORTS FORECAST ／ 西尾発・雪山へ</span>
+      <h1 class="reveal on"><span class="kb">はじめての<span class="mk">ゲレンデ</span>に、</span><br><span class="kb"><span class="hl">最高の一日</span>を。</span></h1>
+      <p class="lead reveal on">三河ジュニアスキー研究会は、<span class="kb">多くの人にスキーを教えること</span>を通じて、<span class="kb">社会教育の推進と青少年の健全育成</span>に取り組むNPO法人です。転んでも大丈夫。雪の上に立つよろこびから、一緒にはじめましょう。</p>
+      <div class="cta reveal on">
+        <a class="btn btn-red" href="#program">教室・体験を見る</a>
+        <a class="btn btn-out" href="#contact">見学・お問い合わせ</a>
+      </div>
+    </div>
+    <!-- 気象カード -->
+    <div class="wcard reveal on">
+      <div class="top">
+        <span class="ttl">本日のゲレンデ</span>
+        <span class="st">OBS. NISHIO-JR</span>
+      </div>
+      <div class="ph">
+        <!-- 差し替えポイント: 教室で使うゲレンデ／雪山の写真（顔が特定されにくいもの） -->
+        <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=900&q=80&auto=format&fit=crop" alt="雪山とゲレンデのイメージ">
+        <!-- 雪の気象記号（アスタリスク） -->
+        <svg class="sym" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="#fff" stroke="#12212E" stroke-width="1.6"/>
+          <g stroke="#1E7FC2" stroke-width="2.4" stroke-linecap="round">
+            <path d="M20 8v24M9.6 14l20.8 12M9.6 26l20.8-12"/>
+          </g>
+        </svg>
+      </div>
+      <div class="grid">
+        <div class="cell"><div class="k">天気 / WEATHER</div><div class="v blue">雪 <span>ゆき</span></div></div>
+        <div class="cell"><div class="k">気温 / TEMP</div><div class="v red">-3<span>℃</span></div></div>
+        <div class="cell"><div class="k">積雪 / SNOW</div><div class="v">80<span>cm</span></div></div>
+        <div class="cell"><div class="k">コンディション</div><div class="v blue" style="font-size:18px">良好</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 活動指針（気象記号の凡例） ===== -->
+<section class="block" id="activity">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Legend</span><h2>わたしたちの活動指針</h2><span class="code">// FORECAST GUIDE</span></div>
+    <p class="note-sample reveal" style="margin-bottom:24px">※各項目は定款の目的（社会教育の推進・青少年の健全育成）をもとにしたサンプル文です。実際の言葉に差し替えます</p>
+    <div class="legend">
+      <div class="leg reveal">
+        <!-- 快晴記号（○） -->
+        <svg class="sym" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25" fill="#fff" stroke="#12212E" stroke-width="2.4"/><circle cx="28" cy="28" r="9" fill="#E23A34"/></svg>
+        <h3>まず、楽しく</h3>
+        <p>スキーは「できた！」の連続。転ぶことも成長のうち。子どもが自分から挑戦したくなる時間をつくります。</p>
+      </div>
+      <div class="leg reveal">
+        <!-- 雪記号（アスタリスク） -->
+        <svg class="sym" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25" fill="#fff" stroke="#12212E" stroke-width="2.4"/><g stroke="#1E7FC2" stroke-width="3" stroke-linecap="round"><path d="M28 12v32M13.4 20l29.2 16M13.4 36l29.2-16"/></g></svg>
+        <h3>安全を第一に</h3>
+        <p>準備運動・装備の確認・レベル別のグループ分け。指導経験のあるスタッフが、無理のない範囲で見守ります。</p>
+      </div>
+      <div class="leg reveal">
+        <!-- 高気圧（H） -->
+        <svg class="sym" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25" fill="#fff" stroke="#12212E" stroke-width="2.4"/><text x="28" y="39" text-anchor="middle" font-family="'Barlow Condensed',sans-serif" font-weight="700" font-size="34" fill="#C22B26">H</text></svg>
+        <h3>社会教育として</h3>
+        <p>あいさつ、道具を大切にする心、仲間と助け合う気持ち。スキーを通じて、ゲレンデの外でも生きる力を育てます。</p>
+      </div>
+      <div class="leg reveal">
+        <!-- 風向（矢羽根） -->
+        <svg class="sym" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="25" fill="#fff" stroke="#12212E" stroke-width="2.4"/><g stroke="#12212E" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M18 40 38 16"/><path d="M38 16l-9 1M38 16l-1 9M31 25l-6 1M32 24l-1 6"/></g></svg>
+        <h3>地域とともに</h3>
+        <p>雪の少ない三河から、家族で雪山へ。ジュニア世代のスキー人口を、地域ぐるみで次の世代へつないでいきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 教室・体験（週間予報の帯） ===== -->
+<section class="block" id="program" style="background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(220,238,249,.5))">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Program</span><h2>教室・体験のご案内</h2><span class="code">// WEEKLY FORECAST</span></div>
+    <p class="note-sample reveal" style="margin-bottom:24px">※日程・名称・対象はすべて表示イメージのサンプルです。実際の開催予定に差し替えます（開催地・料金なども実データを反映します）</p>
+    <div class="forecast reveal">
+
+      <div class="fc-row">
+        <div class="day">はじめて<small>BEGINNER</small></div>
+        <div class="sym">
+          <!-- 快晴 -->
+          <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#fff" stroke="#12212E" stroke-width="2"/><circle cx="22" cy="22" r="7" fill="#E23A34"/></svg>
+        </div>
+        <div class="info">
+          <h3>ジュニアスキー体験教室</h3>
+          <p><span class="tag">対象/小学生</span><span class="tag">半日</span>板の履き方から、止まる・曲がるの基本まで。スキーが初めてのお子さんも安心して参加できます。</p>
+        </div>
+      </div>
+
+      <div class="fc-row">
+        <div class="day">ステップ<small>STEP UP</small></div>
+        <div class="sym">
+          <!-- 晴れ時々雪 -->
+          <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#fff" stroke="#12212E" stroke-width="2"/><path d="M4 22a18 18 0 0136 0z" fill="#D6EAF7"/><g stroke="#1E7FC2" stroke-width="2.4" stroke-linecap="round"><path d="M22 26v10M15 30l14 8M15 38l14-8"/></g></svg>
+        </div>
+        <div class="info">
+          <h3>レベルアップ教室（全〇回）</h3>
+          <p><span class="tag">対象/経験者</span><span class="tag">連続講座</span>基本ができたお子さん向け。斜度のあるコースにチャレンジしながら、滑る楽しさを広げます。</p>
+        </div>
+      </div>
+
+      <div class="fc-row">
+        <div class="day">親子で<small>FAMILY</small></div>
+        <div class="sym">
+          <!-- 雪 -->
+          <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#fff" stroke="#12212E" stroke-width="2"/><g stroke="#1E7FC2" stroke-width="2.6" stroke-linecap="round"><path d="M22 9v26M10.5 15.5l23 13M10.5 28.5l23-13"/></g></svg>
+        </div>
+        <div class="info">
+          <h3>親子スキーデー</h3>
+          <p><span class="tag">対象/親子</span><span class="tag">日帰り</span>おうちの方も一緒に雪山へ。家族の思い出づくりと、これからスキーを続けるきっかけに。</p>
+        </div>
+      </div>
+
+    </div>
+    <p class="tbl-hint reveal">※詳しい日程・持ち物・費用はお問い合わせください</p>
+  </div>
+</section>
+
+<!-- ===== 観測データ（数字） ===== -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal">
+        <div class="k">これまでの参加のべ人数</div>
+        <div class="v">1,200<span>名</span></div>
+        <div class="n">※サンプル数値です（実績に差し替えます）</div>
+      </div>
+      <div class="stat reveal">
+        <div class="k">年間の教室・体験開催</div>
+        <div class="v">12<span>回</span></div>
+        <div class="n">※サンプル数値です（実績に差し替えます）</div>
+      </div>
+      <div class="stat reveal">
+        <div class="k">スキーがはじめての参加者</div>
+        <div class="v">70<span>%</span></div>
+        <div class="n">※サンプル数値です（実績に差し替えます）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== わたしたち ===== -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">About</span><h2>わたしたちについて</h2><span class="code">// OBSERVATORY NOTE</span></div>
+    <div class="about">
+      <div class="txt reveal">
+        <p class="big"><span class="kb">雪の少ないこの<em>三河</em>から、</span><span class="kb">雪山のよろこびを、</span><span class="kb">次の世代へ。</span></p>
+        <p>三河ジュニアスキー研究会は、愛知県西尾市を拠点に活動する特定非営利活動法人です。多くの人にスキーを教えることを通じて、社会教育の推進と青少年の健全な育成に寄与することを目的としています。雪に触れる機会が少ない地域だからこそ、子どもたちが雪山で挑戦し、成長できる場をつくりたい——そんな想いで活動を続けています。<span class="note-sample">※文章は定款（公開情報）の目的をもとにしたサンプルです</span></p>
+      </div>
+      <div class="figu reveal">
+        <!-- 差し替えポイント: 教室の様子／指導風景のお写真（お顔が特定されにくいもの） -->
+        <img src="https://images.unsplash.com/photo-1522056615691-da7b8106c665?w=900&q=80&auto=format&fit=crop" alt="スキー教室のイメージ">
+        <span class="cap">西尾市｜活動拠点</span>
+      </div>
+      <div class="sign-box reveal">
+        <h3>ごあいさつ</h3>
+        <p>はじめてゲレンデに立った日のドキドキを、私たちは今でも覚えています。転んで、立ち上がって、少しずつ滑れるようになる——その一つひとつが、子どもたちの自信になります。スキーを「教える」ことを通じて、雪の上でも、その先の毎日でも役立つ力を、地域の仲間とともに育てていきたいと思います。どうぞお気軽に見学にいらしてください。<span class="note-sample">※あいさつ文はサンプルです。代表の言葉に差し替えます</span></p>
+        <p class="name"><small>特定非営利活動法人 三河ジュニアスキー研究会</small>代表　（お名前は公開時に記載）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 参加の流れ ===== -->
+<section class="block" id="join" style="background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(220,238,249,.5))">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Flow</span><h2>参加までの流れ</h2><span class="code">// 3 STEPS</span></div>
+    <div class="flow">
+      <div class="fl reveal">
+        <h3>お問い合わせ</h3>
+        <p>「話を聞いてみたい」だけで大丈夫です。フォームまたはお電話で、お子さんの年齢やスキー経験をお聞かせください。</p>
+      </div>
+      <div class="fl reveal">
+        <h3>教室・体験に参加</h3>
+        <p>レベルに合わせたグループで、雪山デビュー。持ち物や集合場所は事前にご案内します。道具のレンタルについてもご相談ください。</p>
+      </div>
+      <div class="fl reveal">
+        <h3>続けてステップアップ</h3>
+        <p>「もっと滑りたい」の気持ちを大切に。継続教室や親子デーなど、次の一歩へつなげます。会員・ボランティアも募集中です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 団体概要 ===== -->
+<section class="block" id="gaiyo">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Profile</span><h2>団体概要</h2><span class="code">// PROFILE</span></div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 三河ジュニアスキー研究会</td></tr>
+        <tr><th>所在地</th><td>愛知県西尾市<span class="note-sample">（詳しい住所は公開時に記載します）</span></td></tr>
+        <tr><th>活動分野</th><td>社会教育の推進／文化・芸術・スポーツの振興</td></tr>
+        <tr><th>目的</th><td>多くの人にスキーを教えることを通じて、社会教育の推進と青少年の健全な育成に寄与すること（定款より）</td></tr>
+        <tr><th>主な活動</th><td>ジュニアスキー教室・体験会の開催／親子向けスキーイベント　<span class="note-sample">※内容はサンプルです</span></td></tr>
+        <!-- ※サンプル: 電話番号はダミーです（tel:リンクは無効化しています） -->
+        <tr><th>電話</th><td><a href="#" onclick="return false;" aria-disabled="true">0563-XX-XXXX</a>　<span class="note-sample">※サンプル（発信できません／実番号に差し替えます）</span></td></tr>
+        <tr><th>法人番号</th><td><span class="note-sample">（公開時に記載します）</span></td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint reveal">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ（デモフォーム） ===== -->
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="in">
+        <div>
+          <h2>見学・体験の<br>お問い合わせ</h2>
+          <p class="lead">「うちの子でも大丈夫かな？」——そんなご相談も大歓迎です。まずはお気軽にお声がけください。内容を確認のうえ、担当よりご連絡します。</p>
+          <div class="tel">
+            <div class="cap">お電話でのお問い合わせ</div>
+            <!-- ※サンプル: 電話番号はダミー。tel:リンクは無効化 -->
+            <a href="#" onclick="return false;" aria-disabled="true">0563-XX-XXXX</a>
+            <p>※サンプル番号です（発信できません）。実番号に差し替えます</p>
+          </div>
+        </div>
+        <form class="demo" onsubmit="return false;" aria-label="お問い合わせ（デモ）">
+          <label for="f-name">お名前</label>
+          <input id="f-name" type="text" placeholder="例）三河 太郎" autocomplete="name">
+          <label for="f-mail">メールアドレス</label>
+          <input id="f-mail" type="email" placeholder="例）sample@example.com" autocomplete="email">
+          <label for="f-msg">お問い合わせ内容</label>
+          <textarea id="f-msg" rows="4" placeholder="お子さんの年齢・スキー経験など、お気軽にどうぞ"></textarea>
+          <button class="sub" type="button" onclick="alert('これはサンプルのデモフォームです。実際には送信されません。');">送信する（デモ）</button>
+          <p class="demo-note">※これはデモ用フォームです。実際には送信されません。<br>本番では自動返信やスパム対策を設定します。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 三河ジュニアスキー研究会</p>
+    <p>愛知県西尾市｜社会教育の推進・青少年の健全育成</p>
+    <p class="sample-note">
+      本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容・数値・電話番号はダミー）。<br>
+      本文は公開情報（定款の目的・所在地・活動分野）の範囲で作成しています。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+    </p>
+    <p style="margin-top:16px;font-size:11px;color:#6f92aa">&copy; 2026 NPO法人 三河ジュニアスキー研究会（ご提案サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .topnav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// スクロール・リビール
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

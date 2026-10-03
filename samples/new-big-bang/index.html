@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 New Big Bang さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの法人名称・所在地・活動分野・設立年）
+    の範囲で作成。代表者名は記載していません
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・実在団体名を含むため noindex。先方了承前にネット公開しないこと
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 New Big Bang｜名古屋・名東区の学びと国際交流【ご提案サンプル】</title>
+<meta name="description" content="名古屋市名東区のNPO法人 New Big Bang。社会教育・文化芸術・スポーツ・人権平和・国際協力の活動で、若い世代の学びと挑戦を応援します。2009年設立。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4F4F0;
+  --c-paper:#FFFFFF;
+  --c-ink:#0B0B0B;
+  --c-yellow:#E9FF12;
+  --c-yellow-deep:#C9DE00;
+  --c-line:#0B0B0B;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-disp:"Anton",sans-serif;
+  --font-mono:"Space Mono",monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --bd:3px solid var(--c-ink);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.15;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+.disp{font-family:var(--font-disp);font-weight:400;letter-spacing:.01em;line-height:.98}
+.mono{font-family:var(--font-mono)}
+
+/* ===== 上部固定バー ===== */
+.head{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:20px;height:66px;padding:0 22px;background:var(--c-yellow);border-bottom:var(--bd)}
+.head .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.head .brand .nm{font-family:var(--font-disp);font-size:24px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.head .brand .jp{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.02em}
+.head nav{margin-left:auto;display:flex;gap:2px}
+.head nav a{font-family:var(--font-mono);font-weight:700;font-size:12px;text-decoration:none;padding:8px 12px;letter-spacing:.02em;transition:background .18s var(--ease),color .18s var(--ease)}
+.head nav a:hover{background:var(--c-ink);color:var(--c-yellow)}
+.head .cta{font-weight:700;font-size:13px;text-decoration:none;background:var(--c-ink);color:var(--c-yellow);padding:10px 16px;border:var(--bd);border-color:var(--c-ink);white-space:nowrap;transition:transform .18s var(--ease)}
+.head .cta:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--c-ink)}
+
+/* SPメニュー */
+.menu-btn{display:none}
+.sp-nav{display:none}
+
+.main{margin-top:66px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:82px 0;border-bottom:var(--bd)}
+.b-head{display:flex;align-items:center;gap:14px;margin-bottom:34px;flex-wrap:wrap}
+.b-head .no{font-family:var(--font-mono);font-weight:700;font-size:12px;background:var(--c-ink);color:var(--c-yellow);padding:4px 9px}
+.b-head h2{font-family:var(--font-disp);font-size:clamp(28px,5vw,46px);text-transform:uppercase;letter-spacing:.01em}
+.b-head .jp{font-family:var(--font-mono);font-weight:700;font-size:12px}
+.lead{max-width:640px;font-size:15px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-family:var(--font-mono);font-size:11px;color:#5a5a5a}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-family:var(--font-mono);font-size:11px;color:#5a5a5a;margin-top:8px}
+
+/* ===== ヒーロー ===== */
+.hero{border-bottom:var(--bd);background:var(--c-bg);position:relative;overflow:hidden}
+.hero .inner{max-width:1080px;margin:0 auto;padding:64px 26px 58px}
+.hero .tag{display:inline-block;font-family:var(--font-mono);font-weight:700;font-size:12px;background:var(--c-yellow);border:var(--bd);padding:6px 12px;margin-bottom:26px}
+.hero h1{font-family:var(--font-disp);font-size:clamp(52px,12vw,132px);text-transform:uppercase;letter-spacing:0;line-height:.9}
+.hero h1 .l2{color:var(--c-yellow-deep);-webkit-text-stroke:2px var(--c-ink)}
+.hero .jp-title{font-size:clamp(17px,2.6vw,24px);font-weight:900;margin-top:20px;line-height:1.5}
+.hero .jp-title .mk{background:var(--c-yellow);padding:0 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p.sub{margin-top:20px;max-width:560px;font-size:15px}
+.hero .fields{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.fld{font-family:var(--font-mono);font-weight:700;font-size:12px;border:var(--bd);padding:6px 12px;background:var(--c-paper)}
+.hero .hero-ph{margin-top:38px;border:var(--bd);position:relative}
+.hero .hero-ph img{width:100%;aspect-ratio:21/8;object-fit:cover}
+.hero .hero-ph .estd{position:absolute;left:0;bottom:0;font-family:var(--font-mono);font-weight:700;font-size:12px;background:var(--c-ink);color:var(--c-yellow);padding:6px 12px}
+/* 走るテロップ */
+.ticker{background:var(--c-ink);color:var(--c-yellow);overflow:hidden;border-bottom:var(--bd)}
+.ticker .track{display:flex;gap:0;white-space:nowrap;animation:tick 26s linear infinite;font-family:var(--font-disp);font-size:22px;text-transform:uppercase;letter-spacing:.04em;padding:12px 0}
+.ticker .track span{padding:0 26px;position:relative}
+.ticker .track span::after{content:"✦";position:absolute;right:-6px;top:50%;transform:translateY(-50%);font-size:12px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+/* ===== 活動分野（グリッド） ===== */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:var(--bd);border-bottom:none}
+.gcell{padding:30px 28px;border-bottom:var(--bd);border-right:var(--bd)}
+.gcell:nth-child(2n){border-right:none}
+.gcell .gnum{font-family:var(--font-mono);font-weight:700;font-size:13px}
+.gcell h3{font-family:var(--font-disp);font-size:26px;text-transform:uppercase;margin:8px 0 4px;letter-spacing:.01em}
+.gcell .gjp{font-weight:900;font-size:16px;margin-bottom:8px}
+.gcell p{font-size:13.5px;line-height:1.9}
+.gcell:hover{background:var(--c-yellow)}
+.gcell{transition:background .18s var(--ease)}
+
+/* ===== 取り組み（ジグザグ） ===== */
+.zz{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--bd);margin-top:8px}
+.zz+.zz{border-top:none}
+.zz .ph{border-right:var(--bd)}
+.zz .ph img{width:100%;height:100%;min-height:260px;object-fit:cover}
+.zz .tx{padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
+.zz:nth-child(even) .ph{order:2;border-right:none;border-left:var(--bd)}
+.zz:nth-child(even) .tx{order:1}
+.zz .tx .k{font-family:var(--font-mono);font-weight:700;font-size:12px;background:var(--c-ink);color:var(--c-yellow);align-self:flex-start;padding:4px 9px;margin-bottom:12px}
+.zz .tx h3{font-size:22px;font-weight:900;margin-bottom:10px;line-height:1.4}
+.zz .tx p{font-size:14px}
+
+/* ===== 数字（サンプル） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--bd)}
+.stat{padding:34px 24px;border-right:var(--bd);text-align:center}
+.stat:last-child{border-right:none}
+.stat .n{font-family:var(--font-disp);font-size:clamp(44px,7vw,64px);line-height:.9}
+.stat .n .u{font-size:.4em;margin-left:4px}
+.stat .lab{font-family:var(--font-mono);font-weight:700;font-size:12px;margin-top:8px}
+
+/* ===== 参加する（カード） ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.jcard{border:var(--bd);background:var(--c-paper);padding:26px 24px;display:flex;flex-direction:column}
+.jcard .jn{font-family:var(--font-mono);font-weight:700;font-size:12px;background:var(--c-yellow);border:var(--bd);align-self:flex-start;padding:4px 9px;margin-bottom:14px}
+.jcard h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.jcard p{font-size:13.5px;flex:1}
+.jcard .go{margin-top:16px;font-family:var(--font-mono);font-weight:700;font-size:12px;text-decoration:none;background:var(--c-ink);color:var(--c-yellow);text-align:center;padding:11px;transition:transform .18s var(--ease)}
+.jcard .go:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--c-ink)}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:16px;padding:16px 4px;border-bottom:2px solid var(--c-ink);align-items:baseline;font-size:14px;flex-wrap:wrap}
+.news-row time{font-family:var(--font-mono);font-weight:700;font-size:12.5px;flex:none}
+.news-row .cat{font-family:var(--font-mono);font-weight:700;font-size:10.5px;background:var(--c-yellow);border:2px solid var(--c-ink);padding:2px 8px;flex:none}
+.news-row a{text-decoration:none;font-weight:700}
+.news-row a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+
+/* ===== 概要（表） ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border:var(--bd)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-yellow);border:2px solid var(--c-ink);padding:12px 16px;white-space:nowrap}
+table.gaiyo td{border:2px solid var(--c-ink);padding:12px 16px}
+table.gaiyo td .mono{font-family:var(--font-mono);font-weight:700}
+
+/* ===== お問い合わせ ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--bd)}
+.contact-grid .map iframe{width:100%;height:100%;min-height:340px;border:none;display:block}
+.contact-grid .cbox{padding:34px 32px;border-left:var(--bd)}
+.contact-grid .cbox h3{font-family:var(--font-disp);font-size:30px;text-transform:uppercase;margin-bottom:16px}
+.form label{display:block;font-family:var(--font-mono);font-weight:700;font-size:12px;margin:14px 0 6px}
+.form input,.form textarea{width:100%;font-family:var(--font-body);font-size:14px;padding:11px 12px;border:var(--bd);background:var(--c-bg)}
+.form input:focus,.form textarea:focus{outline:none;background:var(--c-yellow)}
+.form .send{margin-top:20px;width:100%;font-family:var(--font-mono);font-weight:700;font-size:14px;background:var(--c-ink);color:var(--c-yellow);border:var(--bd);border-color:var(--c-ink);padding:14px;cursor:pointer;transition:transform .18s var(--ease)}
+.form .send:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--c-yellow-deep)}
+.form-note{font-family:var(--font-mono);font-size:11px;color:#5a5a5a;margin-top:12px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#fff;padding:52px 0 34px}
+.footer .fbrand{font-family:var(--font-disp);font-size:clamp(40px,9vw,96px);color:var(--c-yellow);text-transform:uppercase;line-height:.9}
+.footer .fjp{font-weight:900;font-size:17px;margin:12px 0 4px}
+.footer .fadr{font-family:var(--font-mono);font-size:12px;color:#cfcfcf}
+.footer .sample-note{font-size:11.5px;color:#b7b7b7;margin-top:24px;line-height:1.9;max-width:760px}
+.footer .sample-note b{color:var(--c-yellow)}
+.footer .sample-note a{color:#e6e6e6}
+.footer .cr{font-family:var(--font-mono);font-size:11px;color:#9a9a9a;margin-top:16px}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:var(--c-ink);color:#fff;text-decoration:none;font-family:var(--font-mono);font-weight:700;font-size:11px;letter-spacing:.01em;padding:9px 14px;border:2px solid var(--c-yellow);box-shadow:4px 4px 0 var(--c-yellow-deep);transition:transform .2s var(--ease)}
+.pill:hover{transform:translateY(-2px)}
+.pill .dot{width:9px;height:9px;background:var(--c-yellow);flex:none}
+.pill b{color:var(--c-yellow)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:920px){
+  .head nav{display:none}
+  .head .cta{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:24px;height:3px;background:var(--c-ink);margin:5px 0;transition:.25s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .sp-nav{display:block;position:fixed;inset:66px 0 auto 0;z-index:110;background:var(--c-yellow);border-bottom:var(--bd);padding:10px 22px 20px;transform:translateY(-14px);opacity:0;visibility:hidden;transition:.25s var(--ease)}
+  .menu-open .sp-nav{transform:none;opacity:1;visibility:visible}
+  .sp-nav a{display:block;font-family:var(--font-mono);font-weight:700;font-size:15px;text-decoration:none;padding:13px 4px;border-bottom:2px solid var(--c-ink)}
+  .sp-nav .cta{margin-top:12px;background:var(--c-ink);color:var(--c-yellow);border:none;text-align:center}
+  .zz{grid-template-columns:1fr}
+  .zz .ph{border-right:none;border-bottom:var(--bd)}
+  .zz:nth-child(even) .ph{order:1;border-left:none;border-bottom:var(--bd)}
+  .zz:nth-child(even) .tx{order:2}
+  .zz .ph img{min-height:220px}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-grid .cbox{border-left:none;border-top:var(--bd)}
+}
+@media (max-width:640px){
+  .block{padding:56px 0}
+  .grid{grid-template-columns:1fr}
+  .gcell{border-right:none}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:var(--bd)}
+  .stat:last-child{border-bottom:none}
+  .join{grid-template-columns:1fr}
+  .tbl-hint{display:block}
+  .ticker .track{font-size:18px}
+  .hero .hero-ph img{aspect-ratio:16/10}
+}
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:560px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:var(--bd)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border:none;border-bottom:2px solid var(--c-ink);padding:9px 14px;font-size:12px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:10px 14px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部固定バー -->
+<header class="head">
+  <a class="brand" href="#top">
+    <span class="nm disp">New Big Bang</span>
+    <span class="jp">NPO法人</span>
+  </a>
+  <nav>
+    <a href="#fields">FIELDS</a>
+    <a href="#work">WORK</a>
+    <a href="#stats">DATA</a>
+    <a href="#join">JOIN</a>
+    <a href="#news">NEWS</a>
+    <a href="#about">ABOUT</a>
+  </nav>
+  <a class="cta" href="#contact">お問い合わせ →</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#fields">FIELDS｜活動分野</a>
+  <a href="#work">WORK｜取り組み</a>
+  <a href="#stats">DATA｜数字で見る</a>
+  <a href="#join">JOIN｜参加する</a>
+  <a href="#news">NEWS｜お知らせ</a>
+  <a href="#about">ABOUT｜団体概要</a>
+  <a class="cta" href="#contact">お問い合わせ →</a>
+</nav>
+
+<div class="main">
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="inner">
+      <span class="tag reveal on">名古屋市名東区 / EST. 2009 / NPO</span>
+      <h1 class="reveal on">NEW<br>BIG<br><span class="l2">BANG</span></h1>
+      <p class="jp-title reveal on"><span class="kb"><span class="mk">学びも、表現も、</span></span><span class="kb"><span class="mk">世界も。</span></span><br><span class="kb">若い世代の「やってみたい」を</span><span class="kb">爆発させる場所。</span></p>
+      <p class="sub reveal on">New Big Bang は、名古屋市名東区を拠点に活動するNPO法人です。社会教育、文化・芸術・スポーツ、人権・平和、そして国際協力。ジャンルを越えて、学びと挑戦のきっかけをつくります。</p>
+      <div class="fields reveal on">
+        <span class="fld">社会教育</span>
+        <span class="fld">学術・文化・芸術・スポーツ</span>
+        <span class="fld">人権・平和</span>
+        <span class="fld">国際協力</span>
+      </div>
+      <div class="hero-ph reveal on">
+        <!-- 差し替えポイント: 活動風景（ワークショップ・国際交流など）のお写真 -->
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600&q=80&auto=format&fit=crop" alt="若い世代が集まり学び合う様子のイメージ">
+        <span class="estd mono">EST. 2009</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 走るテロップ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>LEARN</span><span>CREATE</span><span>CONNECT</span><span>PEACE</span><span>SPORTS</span><span>WORLD</span>
+      <span>LEARN</span><span>CREATE</span><span>CONNECT</span><span>PEACE</span><span>SPORTS</span><span>WORLD</span>
+    </div>
+  </div>
+
+  <!-- 活動分野 -->
+  <section class="block" id="fields">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="no">01</span><h2>Fields</h2><span class="jp">わたしたちの活動分野</span></div>
+      <p class="lead reveal" style="margin-bottom:30px">定款に掲げる4つの分野で活動しています。分野をまたいで、若い世代の学びと出会いを広げていきます。<span class="note-sample">（分野はNPOポータル等の公開情報より）</span></p>
+      <div class="grid reveal">
+        <div class="gcell">
+          <span class="gnum mono">FIELD_01</span>
+          <h3 class="disp">Education</h3>
+          <p class="gjp">社会教育の推進</p>
+          <p>世代を問わず学び合える場づくり。ワークショップや講座を通じて「知りたい」に応えます。<span class="note-sample">※活動内容の記述はサンプルです</span></p>
+        </div>
+        <div class="gcell">
+          <span class="gnum mono">FIELD_02</span>
+          <h3 class="disp">Culture</h3>
+          <p class="gjp">学術・文化・芸術・スポーツ</p>
+          <p>表現すること、からだを動かすこと。文化・芸術・スポーツで、自分を発見するきっかけを。<span class="note-sample">※活動内容の記述はサンプルです</span></p>
+        </div>
+        <div class="gcell">
+          <span class="gnum mono">FIELD_03</span>
+          <h3 class="disp">Human Rights</h3>
+          <p class="gjp">人権・平和の推進</p>
+          <p>ひとりひとりが尊重される社会へ。人権と平和について、身近なところから考えます。<span class="note-sample">※活動内容の記述はサンプルです</span></p>
+        </div>
+        <div class="gcell">
+          <span class="gnum mono">FIELD_04</span>
+          <h3 class="disp">Global</h3>
+          <p class="gjp">国際協力の活動</p>
+          <p>国境を越えたつながりを。異文化に触れ、世界と関わる経験を若い世代に届けます。<span class="note-sample">※活動内容の記述はサンプルです</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 取り組み -->
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="no">02</span><h2>Work</h2><span class="jp">具体的な取り組み</span></div>
+      <p class="note-sample reveal" style="margin-bottom:22px">※以下の取り組み内容は表示イメージのサンプルです。実際の活動に差し替えます</p>
+      <!-- ※サンプル: 取り組みの見出し・本文はダミーです -->
+      <div class="zz reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80&auto=format&fit=crop" alt="ワークショップで学ぶ様子のイメージ"></div>
+        <div class="tx">
+          <span class="k mono">LEARN</span>
+          <h3>学びのワークショップ</h3>
+          <p>身近なテーマから世界の課題まで、参加者どうしが対話しながら学ぶプログラム。答えを教わるのではなく、自分で問いを立てる時間を大切にしています。</p>
+        </div>
+      </div>
+      <div class="zz reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=1200&q=80&auto=format&fit=crop" alt="国際交流のイメージ"></div>
+        <div class="tx">
+          <span class="k mono">CONNECT</span>
+          <h3>国際交流プログラム</h3>
+          <p>海外の若者や在住外国人との交流を通じて、言葉や文化の違いを楽しむ企画。「世界は思ったより近い」を体感できる場をつくります。</p>
+        </div>
+      </div>
+      <div class="zz reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1200&q=80&auto=format&fit=crop" alt="スポーツ・表現活動のイメージ"></div>
+        <div class="tx">
+          <span class="k mono">CREATE</span>
+          <h3>表現・スポーツの場づくり</h3>
+          <p>アートやスポーツを通じて、うまい・へたを越えて夢中になれる時間を。「やってみたい」の一歩を、みんなで後押しします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 数字 -->
+  <section class="block" id="stats">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="no">03</span><h2>By Numbers</h2><span class="jp">数字で見る</span></div>
+      <p class="note-sample reveal" style="margin-bottom:22px">※以下の数値はすべて表示イメージのサンプルです。実績値に差し替えます</p>
+      <!-- ※サンプル: 数値はダミーです -->
+      <div class="stats reveal">
+        <div class="stat"><div class="n disp">2009<span class="u"></span></div><div class="lab mono">設立年（公開情報）</div></div>
+        <div class="stat"><div class="n disp">00<span class="u">＋</span></div><div class="lab mono">年間プログラム数 ※サンプル</div></div>
+        <div class="stat"><div class="n disp">00<span class="u">名</span></div><div class="lab mono">年間参加者 ※サンプル</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 参加する -->
+  <section class="block" id="join">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="no">04</span><h2>Get Involved</h2><span class="jp">参加する・応援する</span></div>
+      <p class="lead reveal" style="margin-bottom:30px">活動は、関わってくださる方々に支えられています。できることを、できる範囲で。お気軽にご参加ください。</p>
+      <div class="join reveal">
+        <div class="jcard">
+          <span class="jn mono">JOIN_01</span>
+          <h3>イベントに参加</h3>
+          <p>ワークショップや交流会に、まずは一度遊びに来てください。予備知識はいりません。</p>
+          <a class="go mono" href="#contact">参加を相談する</a>
+        </div>
+        <div class="jcard">
+          <span class="jn mono">JOIN_02</span>
+          <h3>ボランティア</h3>
+          <p>運営を手伝ってくれる仲間を募集中。学生も社会人も、得意を活かして関われます。</p>
+          <a class="go mono" href="#contact">話を聞いてみる</a>
+        </div>
+        <div class="jcard">
+          <span class="jn mono">JOIN_03</span>
+          <h3>寄付・賛助会員</h3>
+          <p>活動を継続的に支えてくださる方を募集しています。金額の多寡は問いません。</p>
+          <a class="go mono" href="#contact">応援について聞く</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="no">05</span><h2>News</h2><span class="jp">お知らせ</span></div>
+      <p class="note-sample reveal" style="margin-bottom:14px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・区分・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">EVENT</span><a href="#news">春の国際交流ワークショップ 参加者を募集します</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">REPORT</span><a href="#news">地域の学び合いイベントを開催しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">INFO</span><a href="#news">ボランティア・スタッフを募集しています</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 団体概要 -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="no">06</span><h2>About</h2><span class="jp">団体概要</span></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 New Big Bang</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市名東区</td></tr>
+          <tr><th>設立</th><td><span class="mono">2009年</span>（公開情報より）</td></tr>
+          <tr><th>活動分野</th><td>社会教育／学術・文化・芸術・スポーツ／人権・平和／国際協力</td></tr>
+          <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+          <tr><th>電話・メール</th><td>（公開時に記載します）</td></tr>
+          <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+      <p class="note-sample" style="margin-top:16px">※事実として記載しているのは公開情報（法人名称・所在地・活動分野・設立年）のみです。連絡先・代表者名などは公開時に御団体の実データへ差し替えます。</p>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="block" id="contact" style="border-bottom:none">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="no">07</span><h2>Contact</h2><span class="jp">お問い合わせ</span></div>
+      <div class="contact-grid reveal">
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%90%8D%E6%9D%B1%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市名東区の地図"></iframe>
+        </div>
+        <div class="cbox">
+          <h3 class="disp">Join Us</h3>
+          <!-- デモフォーム: 送信は行われません -->
+          <form class="form" onsubmit="return false;">
+            <label for="nm">お名前</label>
+            <input id="nm" type="text" placeholder="山田 太郎" autocomplete="name">
+            <label for="em">メールアドレス</label>
+            <input id="em" type="email" placeholder="you@example.com" autocomplete="email">
+            <label for="ms">メッセージ</label>
+            <textarea id="ms" rows="4" placeholder="参加・見学・応援などお気軽に"></textarea>
+            <button class="send mono" type="submit">送信する（デモ）</button>
+            <p class="form-note">※これは表示サンプルのため、実際には送信されません。<br>本番ではメール通知やお問い合わせ管理に対応できます。</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="fbrand disp">New Big Bang</p>
+      <p class="fjp">特定非営利活動法人 New Big Bang</p>
+      <p class="fadr">愛知県名古屋市名東区 ／ 設立 2009年</p>
+      <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です。写真はイメージ素材（Unsplash・商用可）、「※サンプル」印の数値・文章・お知らせ・フォームはダミーです。事実として記載しているのは公開情報（法人名称・所在地・活動分野・設立年）のみで、代表者名・連絡先・実績などは公開時に御団体の実データへ差し替えます。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p class="cr">&copy; 2026 NPO法人 New Big Bang（ご提案サンプル）</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <span class="dot"></span><span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a, .head .cta").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

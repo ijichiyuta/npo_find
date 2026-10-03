@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 R-INE塾 さま（ご提案サンプル）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOの登記上の目的・活動分野・所在地の市名）の
+    範囲で作成しています
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者氏名／番地・建物名／実電話番号は記載していません
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン方向: 木版／切り絵シルエット型（昆虫・自然のシルエットと
+    版画的テクスチャ。配色=生成り×深緑×赤茶）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 R-INE塾｜名古屋・昆虫と自然でそだつ子どもたち【ご提案サンプル】</title>
+<meta name="description" content="名古屋市の特定非営利活動法人 R-INE塾。人と自然のふれあいの中で、身近な生き物である昆虫に視点をおき、青少年の育成に取り組みます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kinari:#EFE7D3;          /* 生成り（背景） */
+  --kinari-deep:#E6DBC2;     /* 生成りの一段濃い面 */
+  --paper:#F6F0E0;           /* 紙 */
+  --midori:#2E4A34;          /* 深緑 */
+  --midori-2:#3E6247;        /* 深緑ライト */
+  --midori-pale:#DCE2CE;     /* 淡い緑 */
+  --akacha:#8A3B24;          /* 赤茶 */
+  --akacha-2:#A9502F;        /* 赤茶ライト */
+  --sumi:#26241D;            /* 墨（本文） */
+  --sumi-soft:#5B5647;
+  --line:#C9BC9C;
+  --f-min:"Shippori Mincho",serif;
+  --f-go:"Zen Kaku Gothic New",sans-serif;
+  --f-en:"Cormorant Garamond",serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--f-go);
+  color:var(--sumi);
+  background:var(--kinari);
+  line-height:2;
+  font-size:15px;
+  font-feature-settings:"palt";
+  overflow-wrap:break-word;
+  overflow-x:hidden;
+  /* 版画的な紙のざらつき（データURIの微細ノイズ） */
+  background-image:
+    radial-gradient(circle at 20% 12%, rgba(46,74,52,.05), transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(138,59,36,.05), transparent 46%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-min);font-weight:700;line-height:1.6;word-break:auto-phrase}
+/* 文節改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+.en{font-family:var(--f-en);font-style:italic;letter-spacing:.04em}
+
+/* ===== ヘッダー ===== */
+.head{
+  position:sticky;top:0;z-index:100;
+  background:rgba(239,231,211,.9);
+  backdrop-filter:blur(6px);
+  border-bottom:1.5px solid var(--midori);
+}
+.head .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 26px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--midori)}
+.brand .seal{width:44px;height:44px;flex:none}
+.brand .t{font-family:var(--f-min);font-weight:800;font-size:21px;letter-spacing:.06em;line-height:1.2}
+.brand .t small{display:block;font-family:var(--f-go);font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--akacha);margin-top:3px}
+.head nav{margin-left:auto;display:flex;gap:4px}
+.head nav a{font-family:var(--f-min);font-weight:600;font-size:14px;text-decoration:none;color:var(--sumi);padding:8px 12px;position:relative}
+.head nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;background:var(--akacha);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.head nav a:hover::after{transform:scaleX(1)}
+.head .cta{font-family:var(--f-go);font-weight:700;font-size:13px;color:#fff;background:var(--midori);text-decoration:none;padding:11px 18px;border-radius:2px;white-space:nowrap;transition:background .3s}
+.head .cta:hover{background:var(--midori-2)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー（切り絵の版） ===== */
+.hero{position:relative;overflow:hidden;border-bottom:1.5px solid var(--midori)}
+.hero .in{max-width:1120px;margin:0 auto;padding:74px 26px 84px;position:relative;z-index:2}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-go);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--akacha);margin-bottom:22px}
+.hero .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--akacha)}
+.hero h1{font-size:clamp(31px,5.4vw,58px);font-weight:800;line-height:1.5;letter-spacing:.04em;color:var(--midori)}
+.hero h1 .em{color:var(--akacha);position:relative}
+.hero h1 .em::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.16em;background:rgba(138,59,36,.18);z-index:-1}
+.hero .lead{margin-top:26px;max-width:520px;font-size:16px;line-height:2.1;color:var(--sumi-soft)}
+.hero .btns{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.btn-p{font-family:var(--f-go);font-weight:700;font-size:14px;color:#fff;background:var(--akacha);text-decoration:none;padding:14px 26px;border-radius:2px;transition:background .3s}
+.btn-p:hover{background:var(--akacha-2)}
+.btn-s{font-family:var(--f-go);font-weight:700;font-size:14px;color:var(--midori);background:transparent;border:1.5px solid var(--midori);text-decoration:none;padding:12.5px 24px;border-radius:2px;transition:background .3s,color .3s}
+.btn-s:hover{background:var(--midori);color:#fff}
+/* 切り絵シルエットの版（右側の大きな昆虫） */
+.hero .cut{position:absolute;right:-40px;top:0;bottom:0;width:46%;z-index:1;opacity:.92;pointer-events:none}
+.hero .cut svg{height:100%;width:100%}
+.hero .frame{position:absolute;inset:14px;border:1.5px solid var(--midori);opacity:.35;pointer-events:none;z-index:0}
+.hero .corner{position:absolute;width:16px;height:16px;border:2px solid var(--akacha);z-index:1}
+.hero .corner.tl{left:14px;top:14px;border-right:none;border-bottom:none}
+.hero .corner.tr{right:14px;top:14px;border-left:none;border-bottom:none}
+.hero .corner.bl{left:14px;bottom:14px;border-right:none;border-top:none}
+.hero .corner.br{right:14px;bottom:14px;border-left:none;border-top:none}
+
+/* ===== セクション共通 ===== */
+.sec{max-width:1120px;margin:0 auto;padding:92px 26px}
+.sec.line{border-bottom:1.5px solid var(--line)}
+.s-head{display:flex;flex-direction:column;gap:6px;margin-bottom:44px}
+.s-head .en{font-size:22px;color:var(--akacha)}
+.s-head h2{font-size:clamp(25px,3.4vw,34px);font-weight:800;letter-spacing:.05em;color:var(--midori);display:flex;align-items:center;gap:14px}
+.s-head h2 .stamp{width:30px;height:30px;flex:none}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note{font-family:var(--f-go);font-size:11.5px;color:#9C8F6E;line-height:1.9}
+
+/* ===== わたしたちのねがい（志） ===== */
+.about{background:var(--midori);color:var(--paper);position:relative;overflow:hidden;border-top:1.5px solid var(--midori);border-bottom:1.5px solid var(--midori)}
+.about .sec{position:relative;z-index:2}
+.about .s-head h2{color:var(--paper)}
+.about .s-head .en{color:#C7B48A}
+.about .lead-big{font-family:var(--f-min);font-size:clamp(20px,3vw,29px);font-weight:600;line-height:2;letter-spacing:.05em;max-width:840px}
+.about .lead-big em{font-style:normal;color:#E4B23F}
+.about p.body{margin-top:26px;max-width:720px;font-size:15px;line-height:2.2;color:#D8D0BC}
+.about .quote{margin-top:38px;border-left:3px solid var(--akacha-2);padding:6px 0 6px 24px;font-family:var(--f-min);font-size:15.5px;line-height:2.1;color:#EFE7D3;max-width:720px}
+.about .quote small{display:block;font-family:var(--f-go);font-size:12px;color:#B7AB90;margin-top:8px}
+/* 背景の切り絵（草・葉のシルエット） */
+.about .grass{position:absolute;left:0;right:0;bottom:0;height:130px;z-index:1;opacity:.22;pointer-events:none}
+
+/* ===== 活動（プログラム）カード ===== */
+.prog{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--paper);border:1.5px solid var(--line);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 30px -20px rgba(46,74,52,.5)}
+.card .ph{position:relative;aspect-ratio:5/4;overflow:hidden;border-bottom:1.5px solid var(--line)}
+.card .ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.92)}
+.card .ph .badge{position:absolute;left:0;top:12px;background:var(--akacha);color:#fff;font-family:var(--f-en);font-style:italic;font-size:14px;font-weight:600;padding:3px 12px 3px 10px}
+.card .bd{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:19px;font-weight:800;color:var(--midori);letter-spacing:.03em}
+.card .sub{font-family:var(--f-go);font-size:11.5px;font-weight:700;color:var(--akacha);letter-spacing:.08em;margin:2px 0 12px}
+.card p{font-family:var(--f-go);font-size:13.5px;line-height:2;color:var(--sumi-soft)}
+.card .tag{margin-top:auto;padding-top:14px;display:flex;gap:6px;flex-wrap:wrap}
+.card .tag span{font-family:var(--f-go);font-size:11px;font-weight:700;color:var(--midori-2);border:1px solid var(--midori-pale);background:var(--midori-pale);padding:2px 9px;border-radius:2px}
+
+/* ===== 一年のながれ（版画コマ） ===== */
+.season{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--midori);background:var(--paper)}
+.season .cell{padding:26px 20px;border-right:1.5px solid var(--line);position:relative}
+.season .cell:last-child{border-right:none}
+.season .cell .ic{width:40px;height:40px;margin-bottom:14px}
+.season .cell .k{font-family:var(--f-en);font-style:italic;font-size:15px;color:var(--akacha);font-weight:600}
+.season .cell h4{font-family:var(--f-min);font-size:18px;font-weight:800;color:var(--midori);margin:2px 0 8px}
+.season .cell p{font-family:var(--f-go);font-size:13px;line-height:1.95;color:var(--sumi-soft)}
+
+/* ===== 数字（活動のかたち） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.stat{background:var(--paper);border:1.5px solid var(--line);border-radius:3px;padding:30px 26px;text-align:center}
+.stat .n{font-family:var(--f-en);font-style:italic;font-size:52px;font-weight:600;color:var(--akacha);line-height:1}
+.stat .n small{font-family:var(--f-min);font-style:normal;font-size:19px;color:var(--midori);margin-left:4px}
+.stat .l{font-family:var(--f-go);font-size:13px;font-weight:700;color:var(--midori);margin-top:10px;letter-spacing:.04em}
+.stat .note{margin-top:6px}
+
+/* ===== ギャラリー帯 ===== */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:440px}
+.gallery figure{overflow:hidden;border:1.5px solid var(--line);border-radius:3px;position:relative}
+.gallery figure:first-child{grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;filter:saturate(.92);transition:transform .6s var(--ease)}
+.gallery figure:hover img{transform:scale(1.06)}
+
+/* ===== お知らせ ===== */
+.news{max-width:820px}
+.news .row{display:flex;gap:20px;align-items:baseline;padding:16px 4px;border-bottom:1px dashed var(--line)}
+.news time{flex:none;font-family:var(--f-en);font-style:italic;font-size:15px;color:var(--akacha);width:118px}
+.news .cat{flex:none;font-family:var(--f-go);font-size:11px;font-weight:700;color:var(--midori-2);border:1px solid var(--midori-pale);padding:1px 8px;border-radius:2px}
+.news .tt{font-family:var(--f-go);font-size:14px;color:var(--sumi)}
+
+/* ===== 参加・支援 ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.join .box{background:var(--paper);border:1.5px solid var(--midori);border-radius:3px;padding:30px 26px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.join .box .ic{width:52px;height:52px;margin-bottom:16px}
+.join .box h3{font-size:19px;font-weight:800;color:var(--midori)}
+.join .box p{font-family:var(--f-go);font-size:13.5px;line-height:2;color:var(--sumi-soft);margin:10px 0 18px;flex:1}
+.join .box a{font-family:var(--f-go);font-weight:700;font-size:13px;color:var(--akacha);text-decoration:none;border-bottom:2px solid var(--akacha);padding-bottom:2px}
+
+/* ===== お問い合わせ（帯 + 概要 + フォーム） ===== */
+.contact{background:var(--kinari-deep);border-top:1.5px solid var(--midori)}
+.contact .sec{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.gaiyo{width:100%;border-collapse:collapse;font-family:var(--f-go);font-size:14px;background:var(--paper);border:1.5px solid var(--line)}
+.gaiyo th{width:110px;text-align:left;font-weight:700;color:var(--midori);background:var(--midori-pale);border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:12px 16px;white-space:nowrap;vertical-align:top}
+.gaiyo td{border-bottom:1px solid var(--line);padding:12px 16px;vertical-align:top}
+.gaiyo tr:last-child th,.gaiyo tr:last-child td{border-bottom:none}
+.tel-card{margin-top:22px;border:1.5px solid var(--akacha);background:var(--paper);padding:22px 24px;border-radius:3px}
+.tel-card .cap{font-family:var(--f-go);font-size:12px;font-weight:700;color:var(--midori)}
+.tel-card .no{font-family:var(--f-en);font-style:italic;font-size:31px;font-weight:600;color:var(--akacha);letter-spacing:.02em}
+.tel-card p{font-family:var(--f-go);font-size:11.5px;color:var(--sumi-soft)}
+/* フォーム */
+form .fld{margin-bottom:18px}
+form label{display:block;font-family:var(--f-go);font-size:13px;font-weight:700;color:var(--midori);margin-bottom:6px}
+form label .req{color:var(--akacha);font-size:11px;margin-left:6px}
+form input,form select,form textarea{width:100%;font-family:var(--f-go);font-size:14px;padding:12px 14px;border:1.5px solid var(--line);border-radius:3px;background:var(--paper);color:var(--sumi)}
+form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--midori)}
+form textarea{min-height:112px;resize:vertical}
+form .submit{width:100%;font-family:var(--f-go);font-weight:700;font-size:15px;color:#fff;background:var(--midori);border:none;border-radius:3px;padding:15px;cursor:pointer;transition:background .3s}
+form .submit:hover{background:var(--midori-2)}
+.form-note{margin-top:12px;text-align:center}
+.form-msg{margin-top:14px;padding:14px;background:var(--midori-pale);border:1px solid var(--midori);border-radius:3px;font-family:var(--f-go);font-size:13px;color:var(--midori);text-align:center;display:none}
+.form-msg.show{display:block}
+
+/* ===== フッター ===== */
+.footer{background:var(--midori);color:#D8D0BC;padding:52px 26px 40px}
+.footer .in{max-width:1120px;margin:0 auto}
+.footer .top{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.16)}
+.footer .brand2{display:flex;align-items:center;gap:12px}
+.footer .brand2 .t{font-family:var(--f-min);font-weight:800;font-size:20px;color:var(--paper)}
+.footer .brand2 .t small{display:block;font-family:var(--f-go);font-size:11px;font-weight:500;color:#B7AB90;margin-top:4px}
+.footer nav{display:flex;gap:8px 20px;flex-wrap:wrap}
+.footer nav a{font-family:var(--f-go);font-size:13px;color:#D8D0BC;text-decoration:none;transition:color .3s}
+.footer nav a:hover{color:#fff}
+.footer .copy{margin-top:22px;font-family:var(--f-go);font-size:11.5px;color:#9C9179;line-height:1.9}
+.sample-note{margin-top:16px;font-family:var(--f-go);font-size:11px;color:#B7AB90;line-height:1.95;background:rgba(0,0,0,.14);padding:14px 16px;border-radius:3px}
+.sample-note a{color:#E4B23F}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .head .in{padding:10px 18px}
+  .head nav{display:none}
+  .head nav.open{display:flex;flex-direction:column;position:fixed;inset:63px 0 auto 0;background:var(--kinari);border-bottom:1.5px solid var(--midori);padding:8px 18px 18px;gap:0;z-index:99}
+  .head nav.open a{border-bottom:1px solid var(--line);padding:13px 4px}
+  .head nav.open a::after{display:none}
+  .menu-btn{display:inline-flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+  .menu-btn span{width:24px;height:2px;background:var(--midori);transition:.3s}
+  body.mopen .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  body.mopen .menu-btn span:nth-child(2){opacity:0}
+  body.mopen .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .head .cta{display:none}
+  .hero .cut{opacity:.16;width:70%;right:-90px}
+  .hero .in{padding:56px 22px 64px}
+  .sec{padding:64px 22px}
+  .prog{grid-template-columns:1fr 1fr}
+  .season{grid-template-columns:1fr 1fr}
+  .season .cell:nth-child(2){border-right:none}
+  .season .cell:nth-child(1),.season .cell:nth-child(2){border-bottom:1.5px solid var(--line)}
+  .stats{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .gallery figure:first-child{grid-row:auto;aspect-ratio:16/10}
+  .gallery figure{aspect-ratio:4/3}
+  .join{grid-template-columns:1fr}
+  .contact .sec{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:560px){
+  .brand .t{font-size:18px}
+  .prog{grid-template-columns:1fr}
+  .season{grid-template-columns:1fr}
+  .season .cell{border-right:none;border-bottom:1.5px solid var(--line)}
+  .season .cell:last-child{border-bottom:none}
+  .news .row{flex-wrap:wrap;gap:6px 12px}
+  .news time{width:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="head" id="top">
+  <div class="in">
+    <a class="brand" href="#top">
+      <svg class="seal" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="41" height="41" rx="4" fill="none" stroke="#8A3B24" stroke-width="2"/>
+        <!-- 切り絵の甲虫（角つき） -->
+        <path d="M22 8c-1.4 0-2.4 1-2.4 2.3 0 .5.2 1 .5 1.4-2 .5-3.6 2.1-4 4.2-1.7.6-2.9 2.2-2.9 4.1 0 1.3.6 2.5 1.5 3.3-.5.9-.8 2-.8 3.1 0 3.8 3.6 6.8 8.1 6.8s8.1-3 8.1-6.8c0-1.1-.3-2.2-.8-3.1.9-.8 1.5-2 1.5-3.3 0-1.9-1.2-3.5-2.9-4.1-.4-2.1-2-3.7-4-4.2.3-.4.5-.9.5-1.4C24.4 9 23.4 8 22 8Z" fill="#2E4A34"/>
+        <path d="M17.5 9.5c-1.6-1-3.4-1.4-5-1M26.5 9.5c1.6-1 3.4-1.4 5-1" stroke="#2E4A34" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <line x1="22" y1="15" x2="22" y2="29" stroke="#EFE7D3" stroke-width="1.4"/>
+      </svg>
+      <span class="t">R-INE塾<small>特定非営利活動法人｜名古屋市</small></span>
+    </a>
+    <nav id="nav">
+      <a href="#about">わたしたちのねがい</a>
+      <a href="#program">活動</a>
+      <a href="#season">一年のながれ</a>
+      <a href="#gallery">記録</a>
+      <a href="#join">参加・応援</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#contact">体験・見学のお申し込み</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== ヒーロー ===== -->
+<section class="hero">
+  <div class="frame"></div>
+  <span class="corner tl"></span><span class="corner tr"></span>
+  <span class="corner bl"></span><span class="corner br"></span>
+  <!-- 差し替え不要: 切り絵シルエットの版（装飾） -->
+  <div class="cut" aria-hidden="true">
+    <svg viewBox="0 0 400 620" preserveAspectRatio="xMidYMid meet">
+      <g fill="#2E4A34">
+        <!-- 大きな蝶の切り絵 -->
+        <path d="M200 150c-6 0-11 5-11 12 0 3 1 5 3 7-1 5-2 11-2 18v210c0 8 5 14 10 14s10-6 10-14V187c0-7-1-13-2-18 2-2 3-4 3-7 0-7-5-12-11-12Z"/>
+        <path d="M188 190c-30-52-92-70-132-42-16 11-20 33-9 55 14 28 52 46 96 46 20 0 38-4 51-11-3-16-4-33-6-48Z"/>
+        <path d="M212 190c30-52 92-70 132-42 16 11 20 33 9 55-14 28-52 46-96 46-20 0-38-4-51-11 3-16 4-33 6-48Z"/>
+        <path d="M186 300c-22-16-58-18-84-4-14 8-19 25-11 40 11 20 40 30 74 26 12-1 22-4 30-9-4-18-6-36-9-53Z"/>
+        <path d="M214 300c22-16 58-18 84-4 14 8 19 25 11 40-11 20-40 30-74 26-12-1-22-4-30-9 4-18 6-36 9-53Z"/>
+      </g>
+      <g fill="#8A3B24">
+        <circle cx="120" cy="165" r="16"/><circle cx="280" cy="165" r="16"/>
+        <circle cx="140" cy="315" r="11"/><circle cx="260" cy="315" r="11"/>
+      </g>
+      <!-- 触角 -->
+      <path d="M200 150c-4-16-16-26-32-30M200 150c4-16 16-26 32-30" stroke="#2E4A34" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="167" cy="119" r="5" fill="#2E4A34"/><circle cx="233" cy="119" r="5" fill="#2E4A34"/>
+    </svg>
+  </div>
+  <div class="in">
+    <span class="eyebrow">名古屋市｜社会教育・環境保全・子どもの健全育成</span>
+    <h1>
+      <span class="kb">むしを見つける目が、</span><br>
+      <span class="kb">世界を見る目に</span><span class="kb">なる。</span><br>
+      <span class="kb"><span class="em">自然のなか</span>で、</span><span class="kb">子どもは育つ。</span>
+    </h1>
+    <p class="lead">
+      R-INE塾は、人と自然のふれあいの中で、いちばん身近な生き物である「昆虫」に視点をおき、名古屋のまちで青少年の育成に取り組むNPO法人です。
+    </p>
+    <div class="btns">
+      <a class="btn-p" href="#program">活動を見る</a>
+      <a class="btn-s" href="#contact">体験・見学のお申し込み</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== わたしたちのねがい ===== -->
+<section class="about" id="about">
+  <div class="sec reveal">
+    <div class="s-head">
+      <span class="en">Our Wish</span>
+      <h2>
+        <svg class="stamp" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="3" fill="none" stroke="#E4B23F" stroke-width="1.6"/><path d="M15 6c-3 4-8 6-8 12a8 8 0 0 0 16 0c0-6-5-8-8-12Z" fill="#E4B23F"/></svg>
+        わたしたちのねがい
+      </h2>
+    </div>
+    <p class="lead-big">
+      <span class="kb">草むらにしゃがみこみ、</span><span class="kb">一匹のむしを追いかける。</span><br>
+      <span class="kb">その<em>まなざしの先</em>にこそ、</span><span class="kb">自然を知り、</span><span class="kb">いのちを想い、</span><span class="kb">自分で考える力が育ちます。</span>
+    </p>
+    <p class="body">
+      R-INE塾は「人と自然のふれあいの中で、最も身近な生き物である昆虫に視点をおき、青少年の育成に取り組む」ことを目的に活動しています。むしとりや観察という子どもにとって一番はじめやすい入口から、自然環境を守る心と、社会に関わっていく力を育てていきます。
+    </p>
+    <blockquote class="quote">
+      「なぜここにこのむしがいるんだろう」——その小さな問いが、まちの緑や川、生き物のつながりへと広がっていきます。答えを教えるのではなく、一緒に見つけにいく。それがわたしたちの育て方です。
+      <small>※あいさつ文は登記上の目的をもとにしたサンプルです。ご契約後、実際のお言葉に差し替えます</small>
+    </blockquote>
+  </div>
+  <!-- 背景の草の切り絵 -->
+  <svg class="grass" viewBox="0 0 1200 130" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="#EFE7D3">
+      <path d="M60 130c-6-40-2-70 8-96 4 30 6 62 4 96Zm40 0c-2-52 8-86 26-110-8 36-10 74-10 110Zm70 0c6-46 22-74 46-92-16 26-24 56-26 92Zm120 0c-8-56 4-96 30-124-12 42-14 84-14 124Zm90 0c10-40 30-64 58-78-20 22-32 48-38 78Zm150 0c-6-50 6-88 30-114-12 38-14 76-14 114Zm110 0c8-44 26-72 52-90-18 26-28 56-32 90Zm140 0c-8-52 4-90 28-118-12 40-14 80-14 118Zm100 0c10-42 30-66 58-80-20 22-32 50-38 80Zm150 0c-6-48 6-84 28-110-10 36-12 74-12 110Z"/>
+    </g>
+  </svg>
+</section>
+
+<!-- ===== 活動（プログラム） ===== -->
+<section class="sec line" id="program">
+  <div class="s-head reveal">
+    <span class="en">What We Do</span>
+    <h2>
+      <svg class="stamp" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="3" fill="none" stroke="#8A3B24" stroke-width="1.6"/><ellipse cx="15" cy="15" rx="4" ry="8" fill="#8A3B24"/><path d="M11 12c-5-2-9 0-9 0m18 0c5-2 9 0 9 0M11 18c-5 2-9 0-9 0m18 0c5 2 9 0 9 0" stroke="#8A3B24" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      おもな活動
+    </h2>
+  </div>
+  <p class="note reveal" style="margin:-28px 0 28px">※以下の活動内容・写真は表示イメージのサンプルです。実際の活動に合わせて構成・差し替えいたします</p>
+  <div class="prog">
+
+    <div class="card reveal">
+      <div class="ph">
+        <span class="badge">01</span>
+        <!-- 差し替えポイント: 子どもが虫とりをする様子 -->
+        <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=900&q=80&auto=format&fit=crop" alt="草原で虫とりをする子どものイメージ">
+      </div>
+      <div class="bd">
+        <h3>むしとり・野外観察</h3>
+        <p class="sub">FIELD WORK</p>
+        <p>公園や河川敷、里山へ出かけ、みんなでむしを探します。捕まえて終わりではなく、どこに・なぜいるのかを一緒に考える、自然への入口の時間です。</p>
+        <div class="tag"><span>親子参加OK</span><span>初心者歓迎</span></div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="ph">
+        <span class="badge">02</span>
+        <!-- 差し替えポイント: 標本づくり・観察の様子 -->
+        <img src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=900&q=80&auto=format&fit=crop" alt="昆虫標本・観察のイメージ">
+      </div>
+      <div class="bd">
+        <h3>観察・標本づくり教室</h3>
+        <p class="sub">WORKSHOP</p>
+        <p>スケッチや標本づくりを通して、むしのからだのしくみや、いのちの重さを学びます。「見る」を「わかる」に変えていく、じっくり手を動かす時間です。</p>
+        <div class="tag"><span>小学生〜</span><span>室内活動</span></div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="ph">
+        <span class="badge">03</span>
+        <!-- 差し替えポイント: 自然環境・里山保全の様子 -->
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80&auto=format&fit=crop" alt="里山・自然環境のイメージ">
+      </div>
+      <div class="bd">
+        <h3>自然環境を守る活動</h3>
+        <p class="sub">CONSERVATION</p>
+        <p>むしのすみかである草地や水辺を守る活動にも取り組みます。身近な環境を自分たちの手で整えることは、地域と生き物のつながりを学ぶ実践の場です。</p>
+        <div class="tag"><span>地域連携</span><span>環境保全</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 一年のながれ ===== -->
+<section class="sec line" id="season">
+  <div class="s-head reveal">
+    <span class="en">Seasons</span>
+    <h2>むしと歩く、一年のながれ</h2>
+  </div>
+  <p class="note reveal" style="margin:-28px 0 28px">※季節ごとの内容は表示イメージのサンプルです</p>
+  <div class="season reveal">
+    <div class="cell">
+      <svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 8c-3 5-9 8-9 15a9 9 0 0 0 18 0c0-7-6-10-9-15Z" fill="#3E6247"/><circle cx="20" cy="24" r="3" fill="#EFE7D3"/></svg>
+      <p class="k">Spring</p>
+      <h4>春</h4>
+      <p>いのちが動きだす季節。はじめての野外観察で、身近な草むらのむしを探します。</p>
+    </div>
+    <div class="cell">
+      <svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="9" fill="#8A3B24"/><g stroke="#8A3B24" stroke-width="2.4" stroke-linecap="round"><line x1="20" y1="4" x2="20" y2="9"/><line x1="20" y1="31" x2="20" y2="36"/><line x1="4" y1="20" x2="9" y2="20"/><line x1="31" y1="20" x2="36" y2="20"/><line x1="9" y1="9" x2="12" y2="12"/><line x1="28" y1="28" x2="31" y2="31"/><line x1="31" y1="9" x2="28" y2="12"/><line x1="12" y1="28" x2="9" y2="31"/></g></svg>
+      <p class="k">Summer</p>
+      <h4>夏</h4>
+      <p>いちばんの本番。早朝や夜のむしとり、カブトムシやセミの観察でにぎわいます。</p>
+    </div>
+    <div class="cell">
+      <svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6c-4 6-10 8-10 14 0 5 4 8 8 8-3 2-4 5-4 8h12c0-3-1-6-4-8 4 0 8-3 8-8 0-6-6-8-10-14Z" fill="#A9502F"/></svg>
+      <p class="k">Autumn</p>
+      <h4>秋</h4>
+      <p>鳴く虫を聴き、標本づくりやまとめの教室へ。観察したことを自分の言葉にします。</p>
+    </div>
+    <div class="cell">
+      <svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><g stroke="#2E4A34" stroke-width="2.2" stroke-linecap="round"><line x1="20" y1="6" x2="20" y2="34"/><line x1="6" y1="20" x2="34" y2="20"/><line x1="10" y1="10" x2="30" y2="30"/><line x1="30" y1="10" x2="10" y2="30"/></g><circle cx="20" cy="20" r="3" fill="#2E4A34"/></svg>
+      <p class="k">Winter</p>
+      <h4>冬</h4>
+      <p>むしの越冬を調べ、次の春の環境づくりへ。守る活動と学びのふりかえりの季節。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 活動のかたち（数字） ===== -->
+<section class="sec line">
+  <div class="s-head reveal">
+    <span class="en">In Numbers</span>
+    <h2>活動のかたち</h2>
+  </div>
+  <p class="note reveal" style="margin:-28px 0 28px">※以下の数値はすべて表示イメージのサンプルです。実績が確定しましたら差し替えます</p>
+  <div class="stats">
+    <div class="stat reveal">
+      <div class="n">4<small>季</small></div>
+      <div class="l">季節に寄り添う活動</div>
+      <p class="note">春夏秋冬、自然の移ろいとともに</p>
+    </div>
+    <div class="stat reveal">
+      <div class="n">0<small>から</small></div>
+      <div class="l">はじめての子も歓迎</div>
+      <p class="note">むしが苦手でも、まずは見るところから</p>
+    </div>
+    <div class="stat reveal">
+      <div class="n">1<small>匹</small></div>
+      <div class="l">出会いから世界がひろがる</div>
+      <p class="note">たった一匹のむしが学びの入口に</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 記録（ギャラリー） ===== -->
+<section class="sec line" id="gallery">
+  <div class="s-head reveal">
+    <span class="en">Records</span>
+    <h2>活動の記録</h2>
+  </div>
+  <p class="note reveal" style="margin:-28px 0 28px">※写真はフリー素材のイメージです。実際の活動写真に差し替えます</p>
+  <div class="gallery reveal">
+    <!-- 差し替えポイント: 活動風景の写真（顔が特定されにくい構図で） -->
+    <figure><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1200&q=80&auto=format&fit=crop" alt="野原での自然観察のイメージ"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1558642891-54be180ea339?w=800&q=80&auto=format&fit=crop" alt="トンボのイメージ"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=800&q=80&auto=format&fit=crop" alt="蝶と花のイメージ"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1444492417251-9c84a5fa18e0?w=800&q=80&auto=format&fit=crop" alt="草はらのイメージ"></figure>
+    <figure><img src="https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&q=80&auto=format&fit=crop" alt="虫めがねと観察のイメージ"></figure>
+  </div>
+</section>
+
+<!-- ===== お知らせ ===== -->
+<section class="sec line">
+  <div class="s-head reveal">
+    <span class="en">News</span>
+    <h2>お知らせ</h2>
+  </div>
+  <p class="note reveal" style="margin:-28px 0 28px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+  <div class="news reveal">
+    <!-- ※サンプル: 日付・内容はダミーです -->
+    <div class="row"><time>20XX.XX.XX</time><span class="cat">募集</span><span class="tt">夏休みむしとり教室の参加者を募集します</span></div>
+    <div class="row"><time>20XX.XX.XX</time><span class="cat">活動報告</span><span class="tt">河川敷での野外観察を行いました</span></div>
+    <div class="row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><span class="tt">標本づくり教室の日程を公開しました</span></div>
+  </div>
+</section>
+
+<!-- ===== 参加・応援 ===== -->
+<section class="sec line" id="join">
+  <div class="s-head reveal">
+    <span class="en">Join Us</span>
+    <h2>参加する・応援する</h2>
+  </div>
+  <div class="join">
+    <div class="box reveal">
+      <svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="18" r="9" fill="#2E4A34"/><path d="M10 44c0-9 7-14 16-14s16 5 16 14Z" fill="#3E6247"/></svg>
+      <h3>教室に参加する</h3>
+      <p>お子さまと一緒に、むしとりや観察の教室にご参加いただけます。まずは体験からどうぞ。</p>
+      <a href="#contact">参加を申し込む →</a>
+    </div>
+    <div class="box reveal">
+      <svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 44C14 36 8 28 8 20a10 10 0 0 1 18-6 10 10 0 0 1 18 6c0 8-6 16-18 24Z" fill="#8A3B24"/></svg>
+      <h3>寄付・賛助会員</h3>
+      <p>活動を支えてくださる方を募集しています。ご寄付や賛助会員という形での応援も歓迎です。</p>
+      <a href="#contact">応援について →</a>
+    </div>
+    <div class="box reveal">
+      <svg class="ic" viewBox="0 0 52 52" aria-hidden="true"><rect x="10" y="14" width="32" height="26" rx="3" fill="#3E6247"/><path d="M10 20h32" stroke="#EFE7D3" stroke-width="2"/><circle cx="26" cy="30" r="5" fill="#E4B23F"/></svg>
+      <h3>ボランティア</h3>
+      <p>野外活動のサポートや運営のお手伝いなど、できることを、できる範囲で。お気軽にご連絡ください。</p>
+      <a href="#contact">お問い合わせ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ ===== -->
+<section class="contact" id="contact">
+  <div class="sec">
+    <div class="reveal">
+      <div class="s-head">
+        <span class="en">Contact</span>
+        <h2>お問い合わせ・団体概要</h2>
+      </div>
+      <table class="gaiyo">
+        <tr><th>名称</th><td>特定非営利活動法人 R-INE塾</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市<span class="note" style="display:block">※市までを掲載しています</span></td></tr>
+        <tr><th>活動分野</th><td>社会教育／環境の保全／子どもの健全育成</td></tr>
+        <tr><th>目的</th><td>人と自然のふれあいの中で、最も身近な生き物である昆虫に視点をおき、青少年の育成に取り組む</td></tr>
+        <tr><th>電話</th><td><span style="font-family:var(--f-en);font-style:italic;font-size:17px;color:var(--akacha)">052-XXX-XXXX</span><span class="note" style="display:block">※サンプル。ご契約後に実際の番号を掲載します</span></td></tr>
+      </table>
+      <div class="tel-card">
+        <p class="cap">お電話でのお問い合わせ</p>
+        <div class="no">052-XXX-XXXX</div>
+        <p>※こちらはサンプル用のダミー番号です。ご契約後、タップで発信できる形にいたします</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <!-- デモフォーム: 実際には送信されません -->
+      <form id="demo-form" novalidate>
+        <div class="fld">
+          <label for="f-name">お名前<span class="req">必須</span></label>
+          <input id="f-name" type="text" placeholder="例）名古屋 太郎" autocomplete="name">
+        </div>
+        <div class="fld">
+          <label for="f-mail">メールアドレス<span class="req">必須</span></label>
+          <input id="f-mail" type="email" placeholder="例）sample@example.com" autocomplete="email">
+        </div>
+        <div class="fld">
+          <label for="f-kind">お問い合わせの種類</label>
+          <select id="f-kind">
+            <option>教室への参加・体験について</option>
+            <option>寄付・賛助会員について</option>
+            <option>ボランティアについて</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="f-msg">メッセージ</label>
+          <textarea id="f-msg" placeholder="お子さまの年齢やご希望など、お気軽にご記入ください"></textarea>
+        </div>
+        <button class="submit" type="submit">送信する（デモ）</button>
+        <p class="form-note note">※これはサンプルのデモフォームです。実際には送信されません</p>
+        <div class="form-msg" id="form-msg">送信内容の確認ができました（デモ表示）。実際のサイトではご担当者さま宛にメールが届く形にできます。</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <div class="in">
+    <div class="top">
+      <div class="brand2">
+        <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="1.5" y="1.5" width="41" height="41" rx="4" fill="none" stroke="#E4B23F" stroke-width="2"/><path d="M22 8c-1.4 0-2.4 1-2.4 2.3 0 .5.2 1 .5 1.4-2 .5-3.6 2.1-4 4.2-1.7.6-2.9 2.2-2.9 4.1 0 1.3.6 2.5 1.5 3.3-.5.9-.8 2-.8 3.1 0 3.8 3.6 6.8 8.1 6.8s8.1-3 8.1-6.8c0-1.1-.3-2.2-.8-3.1.9-.8 1.5-2 1.5-3.3 0-1.9-1.2-3.5-2.9-4.1-.4-2.1-2-3.7-4-4.2.3-.4.5-.9.5-1.4C24.4 9 23.4 8 22 8Z" fill="#EFE7D3"/></svg>
+        <span class="t">R-INE塾<small>特定非営利活動法人｜名古屋市</small></span>
+      </div>
+      <nav>
+        <a href="#about">わたしたちのねがい</a>
+        <a href="#program">活動</a>
+        <a href="#season">一年のながれ</a>
+        <a href="#gallery">記録</a>
+        <a href="#join">参加・応援</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="copy">特定非営利活動法人 R-INE塾｜愛知県名古屋市（社会教育・環境保全・子どもの健全育成）<br>&copy; 2026 R-INE塾</p>
+    <p class="sample-note">
+      本ページはホームページ制作のご提案用サンプルです。写真はイメージ素材（Unsplash・商用可）、「※サンプル」の内容および電話番号はダミーです。本文は公開情報（登記上の目的・活動分野・所在地の市名）の範囲で作成しています。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のホームページ制作・公式LINE構築）</a>
+    </p>
+  </div>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// モバイルメニュー
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.getElementById("nav");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("mopen");
+  nav.classList.toggle("open", open);
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  document.body.classList.remove("mopen");
+  nav.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+// スクロールで表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// デモフォーム（送信しない）
+document.getElementById("demo-form").addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("form-msg").classList.add("show");
+});
+</script>
+</body>
+</html>

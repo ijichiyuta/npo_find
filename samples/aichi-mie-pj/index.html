@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 あいち・みえ・プロジェクトネットワーク さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（分野=まちづくり・観光振興・文化芸術、所在地=名古屋市東区、
+    登記目的「愛知・三重の観光・物産・工芸・地域資源を発信し、地域と企業をつなぐ」）
+    の範囲で作成。代表者の実名は記載していません／住所は区までとしています
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・虚偽の受賞・提携の記載はありません／他団体・自治体のロゴは使用していません
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替え前提）
+  ・デザイン主題: 巻物／絵巻物・横長ナラティブ（旅・地域めぐりを横スクロールで辿る）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- サンプルのため検索エンジンに載せない -->
+<meta name="format-detection" content="telephone=no"><!-- ダミー電話の自動リンク化を無効化 -->
+<title>あいち・みえ・プロジェクトネットワーク｜愛知・三重の観光と物産をつなぐ【ご提案サンプル】</title>
+<meta name="description" content="名古屋市東区を拠点に、愛知・三重の観光・物産・工芸・地域資源を発信し、地域と企業をつなぐNPO法人。旅する絵巻のように、両県の魅力をひとつなぎでお届けします。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kinari:#F3EDDF;       /* 生成り（地） */
+  --kinari-2:#EAE2CE;     /* 生成り（濃） */
+  --washi:#FAF6EC;        /* 和紙 */
+  --sumi:#221E1A;         /* 墨 */
+  --sumi-soft:#3A342C;    /* やわらかい墨 */
+  --ai:#1F3A5F;           /* 藍 */
+  --ai-deep:#152B47;      /* 深藍 */
+  --ai-pale:#DCE3EC;      /* 淡藍 */
+  --shu:#C0442E;          /* 朱 */
+  --shu-deep:#9E3323;     /* 深朱 */
+  --line:#D8CDB4;         /* 罫（生成り系） */
+  --ash:#786F5E;          /* かすみ文字 */
+  --font-min:"Shippori Mincho",serif;
+  --font-go:"Zen Kaku Gothic New",sans-serif;
+  --font-en:"Cormorant Garamond",serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-go);background:var(--kinari);color:var(--sumi);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-min);font-weight:700;line-height:1.55;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（語中で切れないように） */
+.kb{display:inline-block}
+
+/* 和紙のかすかな地紋 */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(31,58,95,.03),transparent 42%),
+    radial-gradient(circle at 82% 78%,rgba(192,68,46,.03),transparent 42%);
+}
+
+/* ===== 上部の帯（横組みメニュー） ===== */
+.topbar{position:sticky;top:0;z-index:120;background:rgba(243,237,223,.92);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
+.topbar .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:13px 30px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .t{font-family:var(--font-min);font-weight:800;font-size:17px;letter-spacing:.1em;line-height:1.25}
+.brand .t small{display:block;font-family:var(--font-go);font-size:9.5px;font-weight:500;letter-spacing:.14em;color:var(--ai-deep);margin-top:3px}
+.topbar nav{margin-left:auto;display:flex;gap:22px}
+.topbar nav a{font-family:var(--font-min);font-size:13.5px;font-weight:600;text-decoration:none;letter-spacing:.06em;position:relative;padding:2px 0;white-space:nowrap}
+.topbar nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1px;background:var(--shu);transition:right .3s var(--ease)}
+.topbar nav a:hover::after{right:0}
+.topbar .cta{flex:none;background:var(--ai);color:#fff;text-decoration:none;font-family:var(--font-go);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:2px;white-space:nowrap;transition:background .3s}
+.topbar .cta:hover{background:var(--ai-deep)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー（巻物の巻き始め） ===== */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .band{max-width:1180px;margin:0 auto;padding:74px 30px 66px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.hero .seal{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-min);font-size:12.5px;font-weight:600;color:var(--shu-deep);letter-spacing:.1em;margin-bottom:20px}
+.hero .seal::before{content:"";width:26px;height:26px;flex:none;background:var(--shu);
+  -webkit-mask:radial-gradient(circle at 50% 50%,#000 40%,transparent 41%) 0 0/100% 100%;
+  border-radius:4px;position:relative}
+.hero h1{font-size:clamp(30px,4.6vw,50px);font-weight:800;line-height:1.6;letter-spacing:.05em}
+.hero h1 .ai{color:var(--ai)}
+.hero h1 .shu{color:var(--shu-deep)}
+.hero .lead{margin-top:24px;max-width:520px;font-size:15px;line-height:2.1}
+.hero .en{font-family:var(--font-en);font-style:italic;font-size:14px;letter-spacing:.14em;color:var(--ash);margin-top:18px}
+.hero .visual{position:relative}
+.hero .visual .fan{position:relative;height:360px}
+.hero .visual .fan img{position:absolute;border:6px solid var(--washi);box-shadow:0 14px 30px rgba(34,30,26,.18);object-fit:cover}
+.hero .visual .fan img:nth-child(1){width:64%;height:66%;left:0;top:0;transform:rotate(-3deg);z-index:2}
+.hero .visual .fan img:nth-child(2){width:56%;height:58%;right:0;top:16%;transform:rotate(3deg);z-index:1}
+.hero .visual .fan img:nth-child(3){width:50%;height:50%;left:14%;bottom:0;transform:rotate(1.5deg);z-index:3}
+
+/* ===== 絵巻セクション（横スクロールが主役） ===== */
+.emaki-sec{padding:70px 0 40px}
+.sec-head{max-width:1180px;margin:0 auto;padding:0 30px 8px}
+.sec-head .ey{font-family:var(--font-en);font-style:italic;font-size:13px;letter-spacing:.2em;color:var(--shu);text-transform:uppercase}
+.sec-head h2{font-size:clamp(22px,2.8vw,30px);letter-spacing:.05em;margin-top:4px}
+.sec-head p{margin-top:10px;font-size:14px;color:var(--sumi-soft);max-width:640px}
+.scroll-hint{max-width:1180px;margin:14px auto 0;padding:0 30px;display:flex;align-items:center;gap:10px;font-family:var(--font-min);font-size:12.5px;color:var(--ash)}
+.scroll-hint .arw{display:inline-block;width:52px;height:1px;background:linear-gradient(90deg,var(--ash),transparent);position:relative}
+.scroll-hint .arw::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--ash);border-right:1px solid var(--ash);transform:rotate(45deg)}
+
+/* 横スクロールのレール（bodyではなくこのコンテナ内でスクロール） */
+.emaki{margin-top:26px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
+  padding:6px 30px 26px;scrollbar-width:thin;scrollbar-color:var(--ai) var(--kinari-2)}
+.emaki::-webkit-scrollbar{height:9px}
+.emaki::-webkit-scrollbar-track{background:var(--kinari-2);border-radius:99px}
+.emaki::-webkit-scrollbar-thumb{background:var(--ai);border-radius:99px}
+.emaki-track{display:flex;gap:0;width:max-content;align-items:stretch}
+
+/* 巻物の１景（絵と詞書のセット） */
+.scene{scroll-snap-align:center;width:min(78vw,540px);flex:none;position:relative;padding:0 30px}
+.scene::after{content:"";position:absolute;right:0;top:14%;bottom:14%;width:1px;
+  background:repeating-linear-gradient(var(--line) 0 6px,transparent 6px 12px)}
+.scene:last-child::after{display:none}
+.scene .no{font-family:var(--font-en);font-style:italic;font-size:15px;letter-spacing:.16em;color:var(--shu);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.scene .no b{font-family:var(--font-min);font-style:normal;font-weight:700;font-size:13px;color:var(--sumi);letter-spacing:.08em}
+.scene .frame{position:relative;border:5px solid var(--washi);box-shadow:0 12px 26px rgba(34,30,26,.16)}
+.scene .frame img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.scene .frame .tag{position:absolute;left:12px;bottom:12px;background:rgba(21,43,71,.9);color:#fff;font-family:var(--font-min);font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:4px 11px;border-radius:2px}
+.scene h3{font-size:19px;margin-top:18px;letter-spacing:.03em}
+.scene .kotoba{margin-top:8px;font-size:13.5px;line-height:1.95;color:var(--sumi-soft)}
+.scene .place{margin-top:10px;font-family:var(--font-min);font-size:12px;color:var(--ai-deep);letter-spacing:.06em}
+.scene .place::before{content:"◈ "}
+
+/* ===== 事業（３本柱） ===== */
+.pillars{max-width:1180px;margin:0 auto;padding:78px 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pillars .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.pcard{background:var(--washi);border:1px solid var(--line);padding:30px 26px 32px;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(34,30,26,.1)}
+.pcard .ic{width:46px;height:46px;color:var(--ai)}
+.pcard h3{font-size:18px;margin:14px 0 10px;letter-spacing:.03em}
+.pcard h3 small{display:block;font-family:var(--font-en);font-style:italic;font-size:12px;color:var(--shu);letter-spacing:.14em;font-weight:400;margin-bottom:4px}
+.pcard p{font-size:13.5px;line-height:1.9;color:var(--sumi-soft)}
+
+/* ===== わたしたち ===== */
+.about{max-width:1180px;margin:0 auto;padding:82px 30px;display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+.about .photo{position:relative}
+.about .photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border:6px solid var(--washi);box-shadow:0 14px 30px rgba(34,30,26,.16)}
+.about .photo .stamp{position:absolute;right:-16px;bottom:24px;width:78px;height:78px;background:var(--shu);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--font-min);font-size:12px;font-weight:700;line-height:1.5;letter-spacing:.04em;box-shadow:0 8px 18px rgba(158,51,35,.35)}
+.about .txt .ey{font-family:var(--font-en);font-style:italic;font-size:13px;letter-spacing:.2em;color:var(--shu);text-transform:uppercase}
+.about .txt h2{font-size:clamp(22px,2.8vw,29px);letter-spacing:.04em;margin:6px 0 20px;line-height:1.7}
+.about .txt h2 em{font-style:normal;color:var(--ai);border-bottom:3px solid var(--ai-pale)}
+.about .txt p{font-size:14.5px;line-height:2.05;margin-bottom:14px}
+.mokuteki{margin-top:22px;background:var(--ai);color:var(--washi);padding:24px 28px;border-radius:2px;position:relative}
+.mokuteki::before{content:"登記された目的";position:absolute;top:-11px;left:22px;background:var(--shu);color:#fff;font-family:var(--font-min);font-size:11px;font-weight:600;padding:3px 11px;letter-spacing:.08em}
+.mokuteki p{font-family:var(--font-min);font-size:14.5px;line-height:1.95;margin:0}
+.mokuteki small{display:block;font-family:var(--font-go);font-size:11px;color:var(--ai-pale);margin-top:10px}
+
+/* ===== 取り組みの流れ（企業と地域をつなぐ） ===== */
+.tie{background:var(--kinari-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tie .in{max-width:1180px;margin:0 auto;padding:78px 30px}
+.tie .head{text-align:center;margin-bottom:44px}
+.tie .head .ey{font-family:var(--font-en);font-style:italic;font-size:13px;letter-spacing:.2em;color:var(--shu);text-transform:uppercase}
+.tie .head h2{font-size:clamp(22px,2.8vw,30px);letter-spacing:.05em;margin-top:6px}
+.tie .head p{margin-top:12px;font-size:14px;color:var(--sumi-soft)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{position:relative;padding:0 20px;text-align:center}
+.step:not(:last-child)::after{content:"";position:absolute;right:-2px;top:26px;width:16px;height:16px;border-top:2px solid var(--shu);border-right:2px solid var(--shu);transform:rotate(45deg);z-index:2}
+.step .n{width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:var(--washi);border:2px solid var(--ai);color:var(--ai);font-family:var(--font-en);font-style:italic;font-size:24px;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:16px;letter-spacing:.03em}
+.step p{font-size:12.5px;line-height:1.85;color:var(--sumi-soft);margin-top:8px}
+
+/* ===== お知らせ ===== */
+.news{max-width:900px;margin:0 auto;padding:74px 30px}
+.news .head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.news .head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.05em}
+.news .head .ey{font-family:var(--font-en);font-style:italic;font-size:12px;letter-spacing:.18em;color:var(--shu)}
+.news .note{font-size:11.5px;color:var(--ash);margin-bottom:16px}
+.news-row{display:flex;gap:20px;padding:16px 4px;border-bottom:1px dotted var(--line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-en);font-style:italic;font-weight:500;color:var(--ai);font-size:13.5px;letter-spacing:.04em}
+.news-row .cat{flex:none;font-family:var(--font-min);font-size:11px;font-weight:600;color:#fff;background:var(--ai);padding:2px 9px;border-radius:2px;letter-spacing:.04em}
+.news-row .cat.b{background:var(--shu)}
+.news-row a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+
+/* ===== 概要 ===== */
+.gaiyo-sec{background:var(--washi);border-top:1px solid var(--line)}
+.gaiyo-sec .in{max-width:900px;margin:0 auto;padding:74px 30px}
+.gaiyo-sec h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.05em;margin-bottom:8px}
+.gaiyo-sec .ey{font-family:var(--font-en);font-style:italic;font-size:12px;letter-spacing:.18em;color:var(--shu);display:block;margin-bottom:20px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:150px;text-align:left;font-family:var(--font-min);font-weight:700;background:var(--ai-pale);border:1px solid var(--line);padding:12px 16px;white-space:nowrap;color:var(--ai-deep)}
+table.gaiyo td{border:1px solid var(--line);padding:12px 16px;background:var(--kinari)}
+table.gaiyo td a{color:var(--ai);font-weight:700;text-decoration:none}
+.tbl-hint{display:none;font-size:11px;color:var(--ash);margin-top:8px}
+
+/* ===== お問い合わせ／CTA ===== */
+.contact{position:relative;color:var(--washi);overflow:hidden;border-top:1px solid var(--line)}
+.contact .bg{position:absolute;inset:0;z-index:0}
+.contact .bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(1.05)}
+.contact .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(21,43,71,.86),rgba(34,30,26,.7))}
+.contact .in{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:88px 30px;text-align:center}
+.contact .ey{font-family:var(--font-en);font-style:italic;font-size:13px;letter-spacing:.2em;color:#F0C6BB}
+.contact h2{font-family:var(--font-min);font-size:clamp(24px,3.4vw,36px);letter-spacing:.05em;margin:10px 0 16px;line-height:1.6}
+.contact p{font-size:14.5px;line-height:2;max-width:560px;margin:0 auto 30px;color:#EDE6D6}
+.contact .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.contact .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15px;padding:15px 30px;border-radius:2px;transition:transform .25s var(--ease),opacity .25s}
+.contact .btn.p{background:var(--shu);color:#fff}
+.contact .btn.p:hover{transform:translateY(-2px);opacity:.94}
+.contact .btn.g{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+.contact .btn.g:hover{background:rgba(255,255,255,.1)}
+.contact .tel-note{margin-top:20px;font-size:12px;color:#D8CDB4}
+.contact .tel-note a{color:#fff;font-family:var(--font-en);font-style:italic;font-size:18px;letter-spacing:.04em;text-decoration:none}
+
+/* ===== 問い合わせフォーム（デモ） ===== */
+.form-sec{max-width:720px;margin:0 auto;padding:74px 30px}
+.form-sec h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.05em;margin-bottom:8px;text-align:center}
+.form-sec .ey{display:block;text-align:center;font-family:var(--font-en);font-style:italic;font-size:12px;letter-spacing:.18em;color:var(--shu);margin-bottom:8px}
+.form-sec .demo-note{text-align:center;font-size:12px;color:var(--ash);background:var(--ai-pale);padding:10px 16px;border-radius:2px;margin-bottom:28px}
+.form-sec form{display:grid;gap:18px}
+.form-sec label{font-family:var(--font-min);font-size:13.5px;font-weight:600;display:block;margin-bottom:6px}
+.form-sec label .req{color:var(--shu);font-size:11px;margin-left:6px}
+.form-sec input,.form-sec textarea{width:100%;font-family:inherit;font-size:14px;background:var(--washi);border:1px solid var(--line);border-radius:2px;padding:12px 14px;color:var(--sumi)}
+.form-sec input:focus,.form-sec textarea:focus{outline:none;border-color:var(--ai);box-shadow:0 0 0 3px var(--ai-pale)}
+.form-sec .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-sec button{justify-self:center;margin-top:6px;background:var(--ai);color:#fff;border:none;font-family:var(--font-go);font-weight:700;font-size:15px;padding:14px 44px;border-radius:2px;cursor:pointer;transition:background .3s}
+.form-sec button:hover{background:var(--ai-deep)}
+.form-msg{display:none;text-align:center;background:var(--kinari-2);border:1px solid var(--line);border-radius:2px;padding:16px;font-size:13.5px;color:var(--sumi-soft);margin-top:6px}
+
+/* ===== フッター ===== */
+.footer{background:var(--sumi);color:#CFC7B6}
+.footer .in{max-width:1180px;margin:0 auto;padding:54px 30px 30px}
+.footer .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.footer .fbrand .t{font-family:var(--font-min);font-weight:800;font-size:18px;color:var(--washi);letter-spacing:.08em}
+.footer .fbrand p{font-size:12.5px;margin-top:10px;line-height:1.9;max-width:360px}
+.footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer nav a{color:#CFC7B6;text-decoration:none;font-size:13px;font-family:var(--font-min);letter-spacing:.04em}
+.footer nav a:hover{color:#fff}
+.footer .rule{height:1px;background:rgba(255,255,255,.12);margin:34px 0 20px}
+.footer .copy{font-size:11.5px;color:#8F8776}
+.sample-note{font-size:11px;color:#9C9482;margin-top:14px;line-height:1.95;max-width:760px}
+.sample-note a{color:#CFC7B6}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:920px){
+  .topbar nav{display:none}
+  .topbar .in{padding:12px 20px}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:24px;height:2px;background:var(--sumi);margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .topbar .cta{display:none}
+  .sp-nav{display:none;position:fixed;inset:60px 0 auto 0;background:var(--washi);border-bottom:2px solid var(--line);padding:12px 22px 20px;z-index:110}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;font-family:var(--font-min);font-weight:600;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--line)}
+  .hero .band{grid-template-columns:1fr;gap:34px;padding:52px 22px 48px}
+  .hero .visual .fan{height:300px;max-width:440px;margin:0 auto}
+  .about{grid-template-columns:1fr;gap:32px;padding:60px 22px}
+  .about .photo img{aspect-ratio:16/10}
+  .about .photo .stamp{right:16px;bottom:-16px}
+  .pillars,.news,.gaiyo-sec .in,.tie .in,.form-sec,.contact .in{padding-left:22px;padding-right:22px}
+  .pillars .grid{grid-template-columns:1fr;gap:16px}
+  .steps{grid-template-columns:1fr 1fr;gap:34px 0}
+  .step:nth-child(2)::after,.step:not(:last-child)::after{display:none}
+  .sec-head,.scroll-hint{padding-left:22px;padding-right:22px}
+  .emaki{padding-left:22px;padding-right:22px}
+  .scene{width:82vw;max-width:420px;padding:0 20px}
+  .form-sec .row2{grid-template-columns:1fr}
+  .tbl-hint{display:block}
+}
+@media (max-width:560px){
+  .hero h1{font-size:29px}
+  .scene{width:86vw}
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--line)}
+  table.gaiyo th{display:block;width:100%;border:none;padding:9px 14px 4px;font-size:12px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 14px 12px}
+  .tbl-hint{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body id="top">
+
+<!-- ===== 上部バー ===== -->
+<header class="topbar">
+  <div class="in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="1" y="1" width="42" height="42" rx="4" fill="#F3EDDF" stroke="#D8CDB4"/>
+        <path d="M8 30c6-3 9-9 9-18 0 9 3 15 9 18-6 2-9 6-9 6s-3-4-9-6Z" fill="#1F3A5F"/>
+        <path d="M22 12c5 2 8 7 8 15-5-1-8-5-8-9Z" fill="#C0442E"/>
+        <circle cx="32" cy="12" r="4" fill="#C0442E"/>
+      </svg>
+      <span class="t">あいち・みえ<small>プロジェクトネットワーク｜名古屋市東区</small></span>
+    </a>
+    <nav>
+      <a href="#emaki">絵巻</a>
+      <a href="#pillars">活動</a>
+      <a href="#about">わたしたち</a>
+      <a href="#tie">つなぐ</a>
+      <a href="#gaiyo">概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#contact">ご相談・お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sp-nav">
+  <a href="#emaki">絵巻でめぐる</a>
+  <a href="#pillars">活動</a>
+  <a href="#about">わたしたち</a>
+  <a href="#tie">地域と企業をつなぐ</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<!-- ===== ヒーロー（巻き始め） ===== -->
+<section class="hero">
+  <div class="band">
+    <div>
+      <span class="seal">愛知 × 三重　ふたつの県をひとつなぎに</span>
+      <h1><span class="kb">旅する絵巻で、</span><br><span class="kb"><span class="ai">地域の宝</span>を</span><span class="kb">未来へ<span class="shu">継ぐ</span>。</span></h1>
+      <p class="lead">わたしたちは、愛知・三重の観光・物産・工芸・地域資源を発信し、地域と企業をつなぐNPO法人です。一巻の絵巻を広げるように、両県のまち・ひと・仕事の物語を、ひとつづきでお届けします。</p>
+      <p class="en">Aichi &amp; Mie — Unrolling the region's stories, scene by scene.</p>
+    </div>
+    <div class="visual">
+      <div class="fan">
+        <!-- 差し替えポイント: 観光地・町並みのお写真（愛知・三重ゆかり／横位置推奨） -->
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=900&q=80&auto=format&fit=crop" alt="城郭と町並みのイメージ">
+        <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80&auto=format&fit=crop" alt="海辺と港のイメージ">
+        <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=900&q=80&auto=format&fit=crop" alt="工芸・手仕事のイメージ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 絵巻（横スクロールで辿る） ===== -->
+<section class="emaki-sec" id="emaki">
+  <div class="sec-head">
+    <span class="ey">The Picture Scroll</span>
+    <h2>絵巻でめぐる、愛知・三重</h2>
+    <p>一景ずつ、横に巻きほどくように。旅の道すがら出会う、まち・海・山・手仕事・食の景色を辿ります。<span class="note-sample" style="color:var(--ash);font-size:12px">※各景の文と地名はイメージのサンプルです。実際の取り組み先に差し替えます</span></p>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span class="arw"></span>横にスクロール、または矢印キーで巻きほどけます</div>
+
+  <!-- 横スクロールはこのコンテナ内でのみ発生（ページ全体の横スクロールはしません） -->
+  <div class="emaki" tabindex="0" role="group" aria-label="愛知・三重の絵巻（横スクロール）">
+    <div class="emaki-track">
+
+      <!-- 第一景 -->
+      <article class="scene">
+        <div class="no">一景<b>まちをあるく</b></div>
+        <div class="frame">
+          <!-- 差し替えポイント: 城下町・門前町の町並み -->
+          <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1000&q=80&auto=format&fit=crop" alt="城下町の町並みのイメージ">
+          <span class="tag">まちなみ</span>
+        </div>
+        <h3>城と門前、旧街道のまち</h3>
+        <p class="kotoba">歴史のかさなる町並みを歩き、そこに息づく暮らしと商いの物語を掘り起こします。訪れる人と、迎える人。両方の視点で魅力を編みなおします。</p>
+        <p class="place">愛知・三重の城下町／門前町（サンプル）</p>
+      </article>
+
+      <!-- 第二景 -->
+      <article class="scene">
+        <div class="no">二景<b>うみへゆく</b></div>
+        <div class="frame">
+          <!-- 差し替えポイント: 海辺・港・漁のようす -->
+          <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1000&q=80&auto=format&fit=crop" alt="海辺と港のイメージ">
+          <span class="tag">うみ・みなと</span>
+        </div>
+        <h3>海の恵みと、港のにぎわい</h3>
+        <p class="kotoba">伊勢湾・三河湾から太平洋へ。港町の食と生業、そこで受け継がれる技を、旅する人の体験としてつなげます。</p>
+        <p class="place">沿岸の港町（サンプル）</p>
+      </article>
+
+      <!-- 第三景 -->
+      <article class="scene">
+        <div class="no">三景<b>てしごとを訪ねる</b></div>
+        <div class="frame">
+          <!-- 差し替えポイント: 焼き物・織物・和紙など工芸の手仕事 -->
+          <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=1000&q=80&auto=format&fit=crop" alt="工芸の手仕事のイメージ">
+          <span class="tag">工芸・手仕事</span>
+        </div>
+        <h3>土と火と、手のしごと</h3>
+        <p class="kotoba">焼き物、織物、和の器。土地に根ざした工芸のつくり手を訪ね、その物語を発信し、次のつくり手や買い手へと橋を架けます。</p>
+        <p class="place">窯元・工房（サンプル）</p>
+      </article>
+
+      <!-- 第四景 -->
+      <article class="scene">
+        <div class="no">四景<b>味わう</b></div>
+        <div class="frame">
+          <!-- 差し替えポイント: 物産・特産品・食の風景 -->
+          <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=1000&q=80&auto=format&fit=crop" alt="物産・特産品のイメージ">
+          <span class="tag">物産・食</span>
+        </div>
+        <h3>季節をのせた、土地の味</h3>
+        <p class="kotoba">両県の物産・特産を、旅の記憶とともに。生産者と企業、売り場と食卓を結び、地域の味が巡りつづける流れをつくります。</p>
+        <p class="place">産地・直売所（サンプル）</p>
+      </article>
+
+      <!-- 第五景 -->
+      <article class="scene">
+        <div class="no">五景<b>山にわけいる</b></div>
+        <div class="frame">
+          <!-- 差し替えポイント: 里山・棚田・山あいの風景 -->
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&q=80&auto=format&fit=crop" alt="里山・山あいの風景のイメージ">
+          <span class="tag">里山・自然</span>
+        </div>
+        <h3>山あいの里と、静かな時間</h3>
+        <p class="kotoba">棚田、峠、清流のほとり。急がない旅の楽しみを掘り起こし、地域に人の流れと関わりを呼び込みます。</p>
+        <p class="place">中山間の里（サンプル）</p>
+      </article>
+
+      <!-- 巻き終わり -->
+      <article class="scene" style="width:min(72vw,420px)">
+        <div class="no">巻末<b>むすび</b></div>
+        <div class="frame" style="background:var(--ai);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3">
+          <div style="text-align:center;color:var(--washi);padding:20px">
+            <div style="font-family:var(--font-en);font-style:italic;font-size:15px;letter-spacing:.16em;color:#F0C6BB">To be continued —</div>
+            <div style="font-family:var(--font-min);font-size:20px;font-weight:700;margin-top:10px;line-height:1.7">この絵巻は、<br>まだ続きます。</div>
+          </div>
+        </div>
+        <h3>あなたの地域も、この絵巻に。</h3>
+        <p class="kotoba">発信したい観光資源・物産・工芸がありましたら、次の一景としてご一緒に。企業の皆さまとの協働もお待ちしています。</p>
+        <p class="place"><a href="#contact" style="color:var(--shu-deep);font-weight:700;text-decoration:none">▶ お問い合わせへ</a></p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 活動（３本柱） ===== -->
+<section class="pillars" id="pillars">
+  <div class="sec-head" style="max-width:none;padding:0">
+    <span class="ey">What We Do</span>
+    <h2>わたしたちの活動</h2>
+    <p>「発信する・つなぐ・のこす」の三つを軸に、両県の地域資源を未来へつなぎます。</p>
+  </div>
+  <div class="grid">
+    <div class="pcard">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M6 20c8-4 20-4 28 0-8 4-20 4-28 0Z" stroke="#1F3A5F" stroke-width="2"/><circle cx="20" cy="20" r="4" fill="#C0442E"/><path d="M20 6v6M20 28v6M6 20h4M30 20h4" stroke="#1F3A5F" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3><small>Broadcast</small>地域資源を発信する</h3>
+      <p>観光地・物産・工芸・地域の物語を、絵巻のように魅力ある形で編み、県内外へ届けます。取材・記事・写真・冊子づくりまで。</p>
+    </div>
+    <div class="pcard">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="12" cy="14" r="5" stroke="#1F3A5F" stroke-width="2"/><circle cx="28" cy="14" r="5" stroke="#C0442E" stroke-width="2"/><path d="M17 14h6M8 32c0-5 3-8 8-8M32 32c0-5-3-8-8-8" stroke="#1F3A5F" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3><small>Connect</small>地域と企業をつなぐ</h3>
+      <p>地域のつくり手と、応援したい企業。両者の間に立ち、協働・販路・スポンサーシップなど、続く関係づくりのお手伝いをします。</p>
+    </div>
+    <div class="pcard">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 6c-6 4-10 9-10 16a10 10 0 0020 0c0-7-4-12-10-16Z" stroke="#1F3A5F" stroke-width="2"/><path d="M20 16v10M15 21l5 5 5-5" stroke="#C0442E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3><small>Inherit</small>次の世代へのこす</h3>
+      <p>受け継がれてきた景色・技・味を、記録し、担い手へつなぎます。学びの場づくりや、若い世代との交流も進めます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== わたしたち ===== -->
+<section class="about" id="about">
+  <div class="photo">
+    <!-- 差し替えポイント: 活動風景・まちあるきのようす（顔が特定されにくい引きの写真推奨） -->
+    <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=900&q=80&auto=format&fit=crop" alt="まちあるきのイメージ">
+    <span class="stamp">愛知<br>×<br>三重</span>
+  </div>
+  <div class="txt">
+    <span class="ey">About Us</span>
+    <h2><span class="kb">県境をこえて、</span><br><span class="kb"><em>ひとつの物語</em>に。</span></h2>
+    <p>愛知と三重は、伊勢湾をはさんで古くから人・もの・文化が行き交ってきた隣どうし。わたしたちは名古屋市東区を拠点に、その豊かな地域資源をひとつなぎの物語として発信し、地域と企業をつなぐ橋渡しを行っています。</p>
+    <p><span class="note-sample" style="color:var(--ash);font-size:12px">※上記の紹介文は、登記された目的をもとにしたサンプルです。ご契約後に実際の活動内容へ差し替えます。</span></p>
+    <div class="mokuteki">
+      <p>愛知・三重の観光・物産・工芸・地域資源を発信し、地域と企業をつなぐ。</p>
+      <small>※登記された定款目的（公開情報）にもとづく要約です</small>
+    </div>
+  </div>
+</section>
+
+<!-- ===== つなぐ（流れ） ===== -->
+<section class="tie" id="tie">
+  <div class="in">
+    <div class="head">
+      <span class="ey">Region × Company</span>
+      <h2>地域と企業を、こうつなぎます</h2>
+      <p>「発信したい地域」と「関わりたい企業」の間に立ち、続く協働の形を組み立てます。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>知る・掘る</h3>
+        <p>地域に足を運び、観光・物産・工芸の魅力と課題をていねいに掘り起こします。</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>編む・伝える</h3>
+        <p>絵巻のような発信物にまとめ、県内外や企業へ届く形で伝えます。</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>つなぐ</h3>
+        <p>関心を持った企業と地域をマッチングし、協働・販路・応援の関係を結びます。</p>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h3>続ける</h3>
+        <p>一度きりで終わらせず、関わりが巡りつづける仕組みづくりまで伴走します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お知らせ ===== -->
+<section class="news">
+  <div class="head"><h2>お知らせ</h2><span class="ey">News</span></div>
+  <p class="note">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+  <!-- ※サンプル: 日付・内容はダミーです -->
+  <div class="news-row"><time>20XX.XX</time><span class="cat">お知らせ</span><a href="#news">絵巻でめぐる企画展「愛知・三重の手しごと」を開催します</a></div>
+  <div class="news-row"><time>20XX.XX</time><span class="cat b">協働</span><a href="#news">物産の販路づくりについて、企業との協働をはじめました</a></div>
+  <div class="news-row"><time>20XX.XX</time><span class="cat">お知らせ</span><a href="#news">地域資源をめぐるまちあるきツアーの参加者を募集します</a></div>
+</section>
+
+<!-- ===== 法人概要 ===== -->
+<section class="gaiyo-sec" id="gaiyo">
+  <div class="in">
+    <span class="ey">Profile</span>
+    <h2>法人概要</h2>
+    <div class="tbl-wrap">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 あいち・みえ・プロジェクトネットワーク</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市東区（番地は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>まちづくりの推進／観光の振興／学術・文化・芸術の振興</td></tr>
+        <tr><th>目的（要約）</th><td>愛知・三重の観光・物産・工芸・地域資源を発信し、地域と企業をつなぐ<span style="color:var(--ash);font-size:11.5px">（登記された定款目的にもとづく）</span></td></tr>
+        <tr><th>電話</th><td><a href="#access">052-XXX-XXXX</a>（タップで発信・<span style="color:var(--ash)">※サンプル番号</span>）</td></tr>
+        <tr><th>メール</th><td>info@example.jp<span style="color:var(--ash);font-size:11.5px">（※サンプル）</span></td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- ===== お問い合わせCTA ===== -->
+<section class="contact" id="contact">
+  <div class="bg">
+    <!-- 差し替えポイント: 地域を象徴する引きの風景写真 -->
+    <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=1600&q=80&auto=format&fit=crop" alt="地域の風景のイメージ">
+  </div>
+  <div class="in">
+    <span class="ey">Contact</span>
+    <h2>次の一景を、ご一緒に。</h2>
+    <p>観光資源や物産・工芸の発信、企業としての地域との協働。どんな段階のご相談でもかまいません。まずはお気軽にお声がけください。</p>
+    <div class="btns">
+      <a class="btn p" href="#form">お問い合わせフォームへ</a>
+      <a class="btn g" href="#access">お電話でのご相談</a>
+    </div>
+    <p class="tel-note">電話：<a href="#access">052-XXX-XXXX</a>　（※サンプル番号です）</p>
+  </div>
+</section>
+
+<!-- ===== 問い合わせフォーム（デモ） ===== -->
+<section class="form-sec" id="form">
+  <span class="ey">Inquiry Form</span>
+  <h2>お問い合わせフォーム</h2>
+  <p class="demo-note">※これはサンプルのデモフォームです。実際には送信されません（ご契約後に送信機能を実装します）</p>
+  <form id="demo-form" novalidate>
+    <div class="row2">
+      <div><label for="f-name">お名前<span class="req">必須</span></label><input id="f-name" type="text" placeholder="山田 太郎" autocomplete="name"></div>
+      <div><label for="f-org">団体・企業名</label><input id="f-org" type="text" placeholder="株式会社〇〇" autocomplete="organization"></div>
+    </div>
+    <div class="row2">
+      <div><label for="f-mail">メールアドレス<span class="req">必須</span></label><input id="f-mail" type="email" placeholder="you@example.jp" autocomplete="email"></div>
+      <div><label for="f-tel">お電話番号</label><input id="f-tel" type="tel" placeholder="052-XXX-XXXX" autocomplete="tel"></div>
+    </div>
+    <div><label for="f-msg">お問い合わせ内容<span class="req">必須</span></label><textarea id="f-msg" rows="5" placeholder="発信したい地域資源、協働のご相談など、ご自由にお書きください"></textarea></div>
+    <button type="submit">この内容で送信する（デモ）</button>
+    <p class="form-msg" id="form-msg">サンプルのため送信は行われません。ご契約後、実際に届くフォームを設置いたします。</p>
+  </form>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <div class="in">
+    <div class="top">
+      <div class="fbrand">
+        <div class="t">あいち・みえ・プロジェクトネットワーク</div>
+        <p>愛知・三重の観光・物産・工芸・地域資源を発信し、地域と企業をつなぐ。名古屋市東区より。</p>
+      </div>
+      <nav>
+        <a href="#emaki">絵巻でめぐる</a>
+        <a href="#pillars">活動</a>
+        <a href="#about">わたしたち</a>
+        <a href="#tie">つなぐ</a>
+        <a href="#gaiyo">法人概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="rule"></div>
+    <p class="copy">&copy; 2026 特定非営利活動法人 あいち・みえ・プロジェクトネットワーク</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号はサンプルのため発信できません）。本文は公開情報の範囲で作成し、代表者の実名は記載していません。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  </div>
+</footer>
+
+<!-- 制作サンプルの左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// SPメニュー開閉
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .topbar nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// 絵巻の横スクロール: 矢印キー操作（フォーカス時のみ・ページ縦スクロールは邪魔しない）
+const emaki = document.querySelector(".emaki");
+if (emaki) {
+  emaki.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") { emaki.scrollBy({ left: 320, behavior: "smooth" }); e.preventDefault(); }
+    if (e.key === "ArrowLeft")  { emaki.scrollBy({ left: -320, behavior: "smooth" }); e.preventDefault(); }
+  });
+}
+
+// デモフォーム: 送信させない
+const form = document.getElementById("demo-form");
+const msg = document.getElementById("form-msg");
+form.addEventListener("submit", e => { e.preventDefault(); msg.style.display = "block"; msg.scrollIntoView({ behavior: "smooth", block: "center" }); });
+</script>
+</body>
+</html>

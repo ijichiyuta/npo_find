@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 楽楽（らくらく）さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容・数値・日付・カレンダーはすべてダミーです。
+    ご契約後に実データへ差し替えます
+  ・代表者の実名・番地・建物名・実電話番号は記載していません
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン骨格: カレンダーヒートマップ型
+    （月間カレンダーのヒートマップで日々の支援の積み重ねを可視化）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 楽楽（らくらく）｜一宮市の訪問介護・居宅介護支援・福祉有償運送【ご提案サンプル】</title>
+<meta name="description" content="愛知県一宮市で、高齢の方・障がいのある方の在宅生活を支えるNPO法人。訪問介護・居宅介護支援・福祉有償運送で、住み慣れた家での毎日に寄り添います。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FCFDF9;
+  --c-paper:#FFFFFF;
+  --c-ink:#2B332A;
+  --c-sub:#71806C;
+  --c-leaf:#79B34A;          /* 若葉 */
+  --c-leaf-deep:#548133;
+  --c-leaf-pale:#EEF6E4;
+  --c-orange:#F39B32;        /* 橙 */
+  --c-orange-deep:#D97C13;
+  --c-orange-pale:#FDEED8;
+  --c-line:#E4E9DC;
+  /* ヒートマップ 5段階（薄→濃） */
+  --h0:#EFF3E9;
+  --h1:#DCEAC6;
+  --h2:#B9D98C;
+  --h3:#8FC456;
+  --h4:#5F9E2F;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.7;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(255,253,249,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-line)}
+.head .in{max-width:1080px;margin:0 auto;padding:0 26px;height:66px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand .t{font-weight:900;font-size:20px;letter-spacing:.06em;line-height:1.2}
+.brand .t small{display:block;font-size:10px;font-weight:600;color:var(--c-leaf-deep);letter-spacing:.05em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+.head nav a{text-decoration:none;font-size:13.5px;font-weight:500;color:var(--c-ink);transition:color .3s}
+.head nav a:hover{color:var(--c-leaf-deep)}
+.head .cta{background:var(--c-orange);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 18px;border-radius:999px;white-space:nowrap;transition:background .3s}
+.head .cta:hover{background:var(--c-orange-deep)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+
+/* ===== ヒーロー（ヒートマップ主役） ===== */
+.hero{background:linear-gradient(180deg,var(--c-leaf-pale) 0%,var(--c-bg) 78%);padding:60px 0 78px;border-bottom:1px solid var(--c-line)}
+.hero .in{max-width:1080px;margin:0 auto;padding:0 26px;display:grid;grid-template-columns:1fr 1.02fr;gap:52px;align-items:center}
+.hero .tag{display:inline-block;background:var(--c-orange-pale);color:var(--c-orange-deep);font-size:12px;font-weight:700;padding:6px 15px;border-radius:999px;letter-spacing:.03em;margin-bottom:20px}
+.hero h1{font-size:clamp(27px,3.7vw,40px);font-weight:900;line-height:1.55;letter-spacing:.03em}
+.hero h1 .u{background:linear-gradient(transparent 64%,var(--c-leaf-pale) 64%)}
+.hero .lead{margin-top:20px;color:var(--c-sub);font-size:15px;max-width:460px}
+.hero .chips{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.chip{border:1px solid var(--c-leaf);color:var(--c-leaf-deep);font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;white-space:nowrap;background:var(--c-paper)}
+
+/* カレンダーヒートマップ本体 */
+.hmap{background:var(--c-paper);border:1px solid var(--c-line);border-radius:20px;box-shadow:0 26px 60px -34px rgba(84,129,51,.55);overflow:hidden}
+.hmap .top{display:flex;align-items:center;gap:12px;padding:18px 22px;background:linear-gradient(90deg,var(--c-leaf) 0%,var(--c-leaf-deep) 100%);color:#fff}
+.hmap .top .ttl{font-weight:700;font-size:15px;letter-spacing:.03em;line-height:1.4}
+.hmap .top .ttl small{display:block;font-size:10.5px;font-weight:500;opacity:.9;margin-top:1px}
+.hmap .top .mo{margin-left:auto;font-family:var(--font-num);font-weight:700;font-size:13px;background:rgba(255,255,255,.22);padding:5px 13px;border-radius:999px;white-space:nowrap}
+.hmap .body{padding:18px 20px 20px}
+.dow-row{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-bottom:7px}
+.dow-row span{text-align:center;font-family:var(--font-num);font-size:10.5px;font-weight:700;color:var(--c-sub);letter-spacing:.04em}
+.dow-row span.sun{color:#C96B6B}
+.dow-row span.sat{color:#5E86C0}
+.hgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}
+.cell{aspect-ratio:1/1;border-radius:7px;position:relative;display:flex;align-items:flex-start;justify-content:flex-end;padding:5px 6px 0 0;background:var(--h0)}
+.cell.empty{background:transparent}
+.cell .d{font-family:var(--font-num);font-size:10px;font-weight:600;color:rgba(43,51,42,.42)}
+.cell.l1{background:var(--h1)}
+.cell.l2{background:var(--h2)}
+.cell.l3{background:var(--h3)}
+.cell.l3 .d,.cell.l4 .d{color:rgba(255,255,255,.9)}
+.cell.l4{background:var(--h4)}
+.cell.today{box-shadow:0 0 0 2px var(--c-orange)}
+.cell .dot{position:absolute;left:5px;bottom:5px;width:5px;height:5px;border-radius:50%;background:var(--c-orange)}
+.hmap .legend{display:flex;align-items:center;gap:7px;margin-top:16px;font-size:10.5px;color:var(--c-sub);flex-wrap:wrap}
+.hmap .legend .sc{display:flex;gap:4px}
+.hmap .legend .sc i{width:13px;height:13px;border-radius:4px;display:block}
+.hmap .legend .note{margin-left:auto;display:flex;align-items:center;gap:5px}
+.hmap .legend .note b{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--c-orange)}
+.hmap .foot{padding:0 20px 18px;font-size:10.5px;color:var(--c-sub)}
+
+/* ===== 共通ブロック ===== */
+.sec{max-width:1080px;margin:0 auto;padding:0 26px}
+.block{padding:80px 0;border-bottom:1px solid var(--c-line)}
+.b-head{margin-bottom:38px}
+.b-head .en{font-family:var(--font-num);font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--c-leaf);text-transform:uppercase;display:block;margin-bottom:8px}
+.b-head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.03em}
+.b-head p{color:var(--c-sub);font-size:14px;margin-top:10px;max-width:640px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-sub)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-sub);margin-top:6px}
+
+/* ===== 事業（カード3列） ===== */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--c-paper);border:1px solid var(--c-line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.svc:hover{transform:translateY(-4px);box-shadow:0 22px 44px -28px rgba(84,129,51,.5)}
+.svc .ph{aspect-ratio:16/10;overflow:hidden}
+.svc .ph img{width:100%;height:100%;object-fit:cover}
+.svc .in2{padding:22px 22px 26px}
+.svc .no{font-family:var(--font-num);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--c-orange-deep)}
+.svc h3{font-size:18px;margin:5px 0 10px}
+.svc p{font-size:13.5px;color:var(--c-sub)}
+.svc ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:7px}
+.svc ul li{font-size:13px;padding-left:20px;position:relative}
+.svc ul li::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--c-leaf-pale);border:2px solid var(--c-leaf)}
+
+/* ===== わたしたちのこと ===== */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.about .txt .big{font-size:clamp(18px,2.3vw,22px);font-weight:700;line-height:2;margin-bottom:16px}
+.about .txt .big em{font-style:normal;color:var(--c-leaf-deep)}
+.about .txt p{color:var(--c-sub);font-size:14.5px}
+.about .ph img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px}
+.sign-box{margin-top:30px;border-left:3px solid var(--c-orange);background:var(--c-paper);border-radius:0 14px 14px 0;padding:22px 26px}
+.sign-box h3{font-size:14px;color:var(--c-orange-deep);margin-bottom:8px}
+.sign-box p{font-size:13.5px;color:var(--c-ink)}
+.sign-box .name{text-align:right;margin-top:12px;font-weight:700;font-size:13.5px}
+.sign-box .name small{display:block;font-weight:500;font-size:11px;color:var(--c-sub)}
+
+/* ===== 支援の積み重ね（統計） ===== */
+.stats{background:var(--c-leaf-pale);border-radius:20px;padding:40px 34px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;text-align:center}
+.stat .num{font-family:var(--font-num);font-weight:700;font-size:clamp(30px,4.4vw,44px);color:var(--c-leaf-deep);line-height:1}
+.stat .num span{font-size:.5em;margin-left:2px}
+.stat .lbl{font-size:13px;color:var(--c-ink);margin-top:8px;font-weight:500}
+
+/* ===== ご利用の流れ ===== */
+.flow{list-style:none;counter-reset:fs;max-width:720px}
+.flow li{counter-increment:fs;position:relative;padding:0 0 28px 62px}
+.flow li::before{content:counter(fs,decimal-leading-zero);position:absolute;left:0;top:-2px;font-family:var(--font-num);font-weight:700;font-size:22px;color:var(--c-orange)}
+.flow li::after{content:"";position:absolute;left:15px;top:34px;bottom:6px;width:1px;background:var(--c-line)}
+.flow li:last-child::after{display:none}
+.flow h3{font-size:16px}
+.flow p{font-size:13.5px;color:var(--c-sub)}
+
+/* ===== 概要表 ===== */
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border-radius:12px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-leaf-pale);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+
+/* ===== お問い合わせ ===== */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.tel-big{border:2px solid var(--c-leaf);background:var(--c-paper);border-radius:16px;padding:26px;text-align:center}
+.tel-big .cap{font-size:13px;font-weight:700}
+.tel-big a{font-family:var(--font-num);font-size:32px;font-weight:700;color:var(--c-leaf-deep);text-decoration:none;letter-spacing:.01em}
+.tel-big p{font-size:12px;color:var(--c-sub)}
+.map-full iframe{width:100%;height:300px;border:1px solid var(--c-line);border-radius:14px}
+form.demo{margin-top:22px}
+form.demo label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+form.demo input,form.demo textarea{width:100%;border:1px solid var(--c-line);border-radius:10px;padding:11px 13px;font-family:inherit;font-size:14px;background:var(--c-paper);color:var(--c-ink)}
+form.demo textarea{min-height:96px;resize:vertical}
+form.demo button{margin-top:16px;background:var(--c-orange);color:#fff;border:none;border-radius:999px;padding:13px 26px;font-weight:700;font-size:14px;cursor:pointer;transition:background .3s}
+form.demo button:hover{background:var(--c-orange-deep)}
+.form-note{font-size:11.5px;color:var(--c-sub);margin-top:10px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#EAF0E4;padding:48px 0 34px}
+.footer .in{max-width:1080px;margin:0 auto;padding:0 26px;text-align:center}
+.footer .f-name{font-weight:900;font-size:16px;letter-spacing:.05em}
+.footer p{font-size:12.5px;color:#AAB6A2;margin-top:8px}
+.footer a{color:#CFE0BF}
+.sample-note{font-size:11px;color:#8C9A83;margin-top:18px;line-height:1.9}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none}
+  .menu-btn{display:block}
+  .head nav.open{display:flex;position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:var(--c-paper);border-bottom:1px solid var(--c-line);padding:8px 26px 18px}
+  .head nav.open a{padding:12px 0;border-bottom:1px solid var(--c-line);width:100%}
+  .head nav.open .cta{margin-top:12px;text-align:center;width:100%}
+  .hero .in{grid-template-columns:1fr;gap:34px}
+  .hero{padding:44px 0 56px}
+  .about{grid-template-columns:1fr;gap:30px}
+  .about .ph{order:-1}
+  .about .ph img{aspect-ratio:16/10}
+  .svc-grid{grid-template-columns:1fr;gap:16px}
+  .contact{grid-template-columns:1fr;gap:26px}
+  .block{padding:56px 0}
+  .stats{grid-template-columns:1fr;gap:20px;padding:30px 24px}
+  .tbl-hint{display:block}
+}
+@media (max-width:560px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:8px 14px}
+  table.gaiyo th{padding-top:12px;font-size:12px;color:var(--c-leaf-deep);background:transparent}
+  table.gaiyo td{padding-bottom:12px}
+  .tbl-hint{display:none}
+  .cell{border-radius:5px;padding:3px 4px 0 0}
+  .hgrid,.dow-row{gap:5px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ===== ヘッダー ===== -->
+<header class="head">
+  <div class="in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="11" fill="#EEF6E4"/>
+        <path d="M20 29c0-7 3.5-11.5 10-13-1 7-4.5 11.5-10 13Z" fill="#79B34A"/>
+        <path d="M20 29c0-5.5-3-9-8-10.5C13 24 15.5 27.5 20 29Z" fill="#B9D98C"/>
+        <circle cx="20" cy="11" r="3" fill="#F39B32"/>
+      </svg>
+      <span class="t">楽楽<small>NPO法人らくらく｜一宮市</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <a href="#service">事業案内</a>
+      <a href="#about">わたしたち</a>
+      <a href="#activity">支援の記録</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#gaiyo">法人概要</a>
+      <a class="cta" href="#contact">ご相談・お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== ヒーロー（カレンダーヒートマップ） ===== -->
+<section class="hero">
+  <div class="in">
+    <div class="reveal on">
+      <span class="tag">愛知県一宮市｜保健・医療・福祉</span>
+      <h1><span class="kb">住み慣れた家での</span><span class="kb">毎日を、</span><br><span class="kb"><span class="u">一日いちにち</span>、</span><span class="kb">支えていく。</span></h1>
+      <p class="lead">NPO法人 楽楽（らくらく）は、高齢の方や障がいのある方が、住み慣れた家・地域で暮らしつづけられるよう、訪問介護・居宅介護支援・福祉有償運送でお手伝いするNPO法人です。</p>
+      <div class="chips">
+        <span class="chip">訪問介護</span>
+        <span class="chip">居宅介護支援</span>
+        <span class="chip">福祉有償運送</span>
+      </div>
+    </div>
+
+    <!-- カレンダーヒートマップ: 日々の支援の積み重ねを可視化 -->
+    <!-- ※サンプル: 濃淡・日付・件数はすべてダミーです。実データに差し替えます -->
+    <div class="hmap reveal on" aria-label="今月の支援の記録（サンプル）">
+      <div class="top">
+        <div class="ttl">今月の支援の記録<small>訪問・送迎の一日いちにち</small></div>
+        <span class="mo">2026 / 07</span>
+      </div>
+      <div class="body">
+        <div class="dow-row">
+          <span class="sun">S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span class="sat">S</span>
+        </div>
+        <div class="hgrid" id="hgrid" aria-hidden="true"><!-- JSで生成（ダミー） --></div>
+        <div class="legend">
+          <span>少ない</span>
+          <span class="sc"><i style="background:var(--h0)"></i><i style="background:var(--h1)"></i><i style="background:var(--h2)"></i><i style="background:var(--h3)"></i><i style="background:var(--h4)"></i></span>
+          <span>多い</span>
+          <span class="note"><b></b>送迎あり</span>
+        </div>
+      </div>
+      <p class="foot">※このカレンダーは表示イメージのサンプルです。実際の活動状況に置き換えられます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 事業案内 ===== -->
+<section class="block" id="service">
+  <div class="sec">
+    <div class="b-head reveal">
+      <span class="en">Service</span>
+      <h2>3つの事業で、在宅の暮らしを支えます</h2>
+      <p>介護が必要になっても、通い慣れた道、住み慣れた家で。ご本人とご家族の「これまで通り」を、専門のスタッフがそばで支えます。</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc reveal">
+        <div class="ph"><!-- 差し替えポイント: 訪問介護の様子のお写真 -->
+          <img src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?w=900&q=80&auto=format&fit=crop" alt="自宅での生活を支えるイメージ" loading="lazy"></div>
+        <div class="in2">
+          <span class="no">SERVICE 01</span>
+          <h3>訪問介護</h3>
+          <p>ヘルパーがご自宅にうかがい、身のまわりのお手伝いをします。「できること」はご一緒に、無理のないペースで。</p>
+          <ul>
+            <li>入浴・食事・排せつなどの身体介護</li>
+            <li>掃除・洗濯・買い物などの生活援助</li>
+            <li>ご家族のご負担もやわらげます</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="ph"><!-- 差し替えポイント: 相談・ケアプランの様子のお写真 -->
+          <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=900&q=80&auto=format&fit=crop" alt="相談・ケアプランのイメージ" loading="lazy"></div>
+        <div class="in2">
+          <span class="no">SERVICE 02</span>
+          <h3>居宅介護支援</h3>
+          <p>ケアマネジャーが、その方に合った介護サービスの計画（ケアプラン）づくりと調整をお手伝いします。</p>
+          <ul>
+            <li>ケアプランの作成・見直し</li>
+            <li>各サービス事業者との連絡・調整</li>
+            <li>介護保険の手続きのご案内</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc reveal">
+        <div class="ph"><!-- 差し替えポイント: 福祉車両・送迎の様子のお写真 -->
+          <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&q=80&auto=format&fit=crop" alt="送迎・移動支援のイメージ" loading="lazy"></div>
+        <div class="in2">
+          <span class="no">SERVICE 03</span>
+          <h3>福祉有償運送</h3>
+          <p>おひとりでの外出が難しい方の通院やお出かけを、福祉車両での送迎でお手伝いします。</p>
+          <ul>
+            <li>通院・リハビリなどの送迎</li>
+            <li>乗り降りのお手伝いも</li>
+            <li>お出かけの選択肢を広げます</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== わたしたちのこと ===== -->
+<section class="block" id="about">
+  <div class="sec">
+    <div class="about">
+      <div class="txt reveal">
+        <span class="en" style="font-family:var(--font-num);font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--c-leaf);display:block;margin-bottom:12px">ABOUT US</span>
+        <p class="big"><span class="kb">高齢の方も、</span><span class="kb">障がいのある方も、</span><br><span class="kb"><em>住み慣れたこの町で、</em></span><span class="kb"><em>自分らしく。</em></span></p>
+        <p>NPO法人 楽楽（らくらく）は、愛知県一宮市を拠点に、高齢の方・精神障がいのある方・身体障がいのある方に対して、訪問介護・居宅介護支援・福祉有償運送などを行っています。介護が必要になっても、これまでの暮らしをできるだけ続けられるように——それが、わたしたちの願いです。<span class="note-sample">※文章は定款（公開情報）の目的をもとにしたサンプルです</span></p>
+        <div class="sign-box">
+          <h3>ごあいさつ</h3>
+          <p>「楽に、楽しく」。名前にこめたこの思いのとおり、支える側も支えられる側も、少しでも心が軽くなる時間をつくりたいと考えています。小さなお困りごとでも、どうぞお気軽にご相談ください。<span class="note-sample">※あいさつ文はサンプルです。ご本人のお言葉に差し替えいたします</span></p>
+          <p class="name"><small>特定非営利活動法人 楽楽（らくらく）</small>代表（お名前は公開時に記載）</p>
+        </div>
+      </div>
+      <div class="ph reveal"><!-- 差し替えポイント: スタッフ・活動の様子のお写真 -->
+        <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=900&q=80&auto=format&fit=crop" alt="手をとりあうイメージ" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 支援の積み重ね（統計 + ミニ解説） ===== -->
+<section class="block" id="activity">
+  <div class="sec">
+    <div class="b-head reveal">
+      <span class="en">Activity</span>
+      <h2>日々の支援は、積み重なっていく</h2>
+      <p>トップのカレンダーは、一日いちにちの訪問や送迎を色の濃さで表したものです。派手なことはできなくても、毎日を途切れさせない——その積み重ねが、在宅の暮らしを支えます。</p>
+    </div>
+    <!-- ※サンプル: 以下の数値はすべてダミーです。実績が出たら差し替えます -->
+    <div class="stats reveal">
+      <div class="stat">
+        <div class="num">1,200<span>件+</span></div>
+        <div class="lbl">昨年度の訪問回数（※サンプル）</div>
+      </div>
+      <div class="stat">
+        <div class="num">98<span>%</span></div>
+        <div class="lbl">ご利用継続率（※サンプル）</div>
+      </div>
+      <div class="stat">
+        <div class="num">12<span>名</span></div>
+        <div class="lbl">在籍スタッフ（※サンプル）</div>
+      </div>
+    </div>
+    <p class="note-sample reveal" style="margin-top:16px;text-align:center">※上記の数値は表示イメージのサンプルです。実際の数字に差し替えてご案内できます。</p>
+  </div>
+</section>
+
+<!-- ===== ご利用の流れ ===== -->
+<section class="block" id="flow">
+  <div class="sec">
+    <div class="b-head reveal">
+      <span class="en">Flow</span>
+      <h2>ご利用までの流れ</h2>
+      <p>「まず話を聞いてみたい」だけでも大丈夫です。どの事業をご利用いただく場合も、ていねいにご案内します。</p>
+    </div>
+    <ol class="flow reveal">
+      <li><h3>お問い合わせ</h3><p>お電話・フォームからご連絡ください。今のお困りごとをお聞かせください。</p></li>
+      <li><h3>ご相談・面談</h3><p>ご本人・ご家族のご希望をうかがい、どんなお手伝いができるかを一緒に考えます。</p></li>
+      <li><h3>プランのご提案</h3><p>介護保険や利用のしくみもあわせてご説明し、無理のないプランをご提案します。</p></li>
+      <li><h3>サービス開始</h3><p>準備がととのったら、支援を始めます。ご様子を見ながら、そのつど見直します。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 法人概要 ===== -->
+<section class="block" id="gaiyo">
+  <div class="sec">
+    <div class="b-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 楽楽（らくらく）</td></tr>
+        <tr><th>所在地</th><td>愛知県一宮市（詳しい住所は公開時に記載します）</td></tr>
+        <tr><th>分野</th><td>保健・医療・福祉の増進</td></tr>
+        <tr><th>事業内容</th><td>訪問介護／居宅介護支援／福祉有償運送 ほか（定款目的より）</td></tr>
+        <tr><th>対象</th><td>高齢の方・精神障がいのある方・身体障がいのある方</td></tr>
+        <tr><th>電話</th><td><a href="#contact" style="color:var(--c-leaf-deep);font-weight:700;text-decoration:none">0586-XX-XXXX（サンプル）</a></td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample" style="margin-top:14px">※所在地の詳細・電話番号・代表者名などは、公開のご了承をいただいてから掲載します。</p>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ ===== -->
+<section class="block" id="contact" style="border-bottom:none">
+  <div class="sec">
+    <div class="b-head reveal">
+      <span class="en">Contact</span>
+      <h2>ご相談・お問い合わせ</h2>
+      <p>ご利用のご相談、見学、ボランティア・賛助のお問い合わせなど、お気軽にご連絡ください。</p>
+    </div>
+    <div class="contact">
+      <div class="reveal">
+        <div class="tel-big">
+          <p class="cap">お電話でのご相談</p>
+          <!-- ※サンプル: 電話番号はダミーです。format-detection で自動リンク無効化済み -->
+          <a href="#contact" onclick="return false;">0586-XX-XXXX</a>
+          <p>（サンプル番号・タップでは発信されません）</p>
+        </div>
+        <div class="map-full" style="margin-top:22px">
+          <!-- 市域までのおおまかな地図（番地は含みません） -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E4%B8%80%E5%AE%AE%E5%B8%82&output=embed&z=12" loading="lazy" title="愛知県一宮市の地図"></iframe>
+        </div>
+      </div>
+      <div class="reveal">
+        <!-- デモフォーム: 送信は行われません -->
+        <form class="demo" onsubmit="event.preventDefault();document.getElementById('done').style.display='block';">
+          <label for="f-name">お名前</label>
+          <input id="f-name" type="text" placeholder="山田 花子" autocomplete="name">
+          <label for="f-tel">お電話番号</label>
+          <input id="f-tel" type="text" inputmode="tel" placeholder="000-0000-0000">
+          <label for="f-msg">ご相談内容</label>
+          <textarea id="f-msg" placeholder="ご相談・お問い合わせの内容をご記入ください"></textarea>
+          <button type="submit">送信する（デモ）</button>
+          <p class="form-note">※このフォームはサンプルのため、実際には送信されません。本番では入力内容がメール等で届くようにできます。</p>
+          <p id="done" style="display:none;margin-top:10px;font-size:13px;font-weight:700;color:var(--c-leaf-deep)">送信の動作イメージです（実際には送信されていません）。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <div class="in">
+    <p class="f-name">特定非営利活動法人 楽楽（らくらく）</p>
+    <p>愛知県一宮市｜保健・医療・福祉の増進を目的とするNPO法人</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容・カレンダー・数値はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px;color:#8C9A83">&copy; 2026 NPO法人 楽楽（らくらく）</p>
+  </div>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// ハンバーガー
+const mb = document.querySelector(".menu-btn"), nv = document.getElementById("nav");
+mb.addEventListener("click", () => {
+  const open = nv.classList.toggle("open");
+  mb.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll("#nav a").forEach(a => a.addEventListener("click", () => nv.classList.remove("open")));
+
+// カレンダーヒートマップ生成（※サンプル: 濃淡はダミーの疑似ランダム）
+(function(){
+  const grid = document.getElementById("hgrid");
+  if(!grid) return;
+  const year = 2026, month = 6; // 0-indexed → 7月
+  const first = new Date(year, month, 1).getDay(); // 曜日オフセット
+  const days = new Date(year, month + 1, 0).getDate();
+  const today = 25;
+  // 決め打ちの濃淡パターン（毎回同じ・"積み重ね"らしく後半ほど濃め）
+  const lv = [1,2,0,3,2,4,1, 2,3,1,4,2,3,0, 3,4,2,3,1,4,2, 3,2,4,3,1,3,4, 2,4,3];
+  const dots = {4:1,9:1,12:1,18:1,23:1,26:1,30:1}; // 送迎あり（ダミー）
+  let html = "";
+  for(let i=0;i<first;i++) html += '<div class="cell empty"></div>';
+  for(let d=1; d<=days; d++){
+    const l = lv[(d-1) % lv.length];
+    const cls = ["cell", l?("l"+l):"", d===today?"today":""].filter(Boolean).join(" ");
+    html += '<div class="'+cls+'"><span class="d">'+d+'</span>'+(dots[d]?'<span class="dot"></span>':'')+'</div>';
+  }
+  grid.innerHTML = html;
+})();
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

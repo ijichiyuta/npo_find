@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 アース・ケア・エナジー さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・デザイン方向: フルスクリーン・縦スクロールスナップの「スライド型」
+    （1画面1メッセージ、scroll-snapで面が切り替わる没入型）
+    ／配色: アースグリーン × スカイ × 白／書体: モダンゴシック
+  ・本文の「事実」は公開情報の範囲のみ:
+      - 法人正式名称
+      - 所在地（名古屋市守山区／区までの公開情報）
+      - 活動分野（まちづくり・環境保全・情報化社会・消費者保護 ほか）
+    …だけを事実として記載しています。
+  ・「※サンプル」表記の数値・文章・お知らせ・連絡先・所在地番地・
+    設立年などはダミーです。ご契約後に御団体の実データへ差し替えます。
+  ・代表者名は記載していません（公開時に御本人のお名前へ）。
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。
+    <img> の直前コメントが「差し替えポイント」です。
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 アース・ケア・エナジー｜名古屋市守山区・環境とエネルギーのまちづくり【ご提案サンプル】</title>
+<meta name="description" content="名古屋市守山区を拠点に、環境の保全と再生可能エネルギーを軸としたまちづくりに取り組むNPO法人。地域・環境・情報化社会・消費者保護の視点で、次の世代につなぐ暮らしを。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-ink:#16241D;        /* 深い森の墨 */
+  --c-green:#2F7D4F;      /* アースグリーン */
+  --c-green-d:#1F5C39;    /* 深緑 */
+  --c-green-l:#5FB07A;    /* 明るい若草 */
+  --c-green-pale:#E7F1EA; /* 極薄グリーン */
+  --c-sky:#4FA3D1;        /* スカイ */
+  --c-sky-d:#2E7BA6;      /* 深いスカイ */
+  --c-sky-pale:#E5F1F7;   /* 極薄スカイ */
+  --c-paper:#FFFFFF;
+  --c-off:#F5F8F5;        /* 白に近いオフ */
+  --c-line:#DCE6DD;
+  --c-sub:#5E6E63;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-en:"Space Grotesk",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-paper);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.5;word-break:auto-phrase}
+a{color:inherit}
+/* 文節改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.en{font-family:var(--font-en);letter-spacing:.14em}
+
+/* ===== 上部バー ===== */
+.top{position:fixed;top:0;left:0;right:0;height:64px;z-index:130;display:flex;align-items:center;gap:16px;padding:0 26px;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease)}
+.top.solid{background:rgba(255,255,255,.94);border-color:var(--c-line)}
+.top.ondark{background:transparent}
+.top.ondark:not(.solid) .brand .nm,.top.ondark:not(.solid) nav a{color:#fff}
+.top.ondark:not(.solid) .brand .nm small{color:#CDE7D6}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:36px;height:36px;flex:none}
+.brand .nm{font-weight:900;font-size:17px;letter-spacing:.05em;line-height:1.2}
+.brand .nm small{display:block;font-family:var(--font-en);font-size:9px;font-weight:500;letter-spacing:.14em;color:var(--c-green-d);margin-top:3px}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.top nav a{position:relative;text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px}
+.top nav a::after{content:"";position:absolute;left:12px;right:100%;bottom:2px;height:2px;background:var(--c-green-l);transition:right .3s var(--ease)}
+.top nav a:hover::after{right:12px}
+.top .cta{margin-left:6px;background:var(--c-green);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 18px;border-radius:999px;white-space:nowrap;transition:background .3s}
+.top .cta:hover{background:var(--c-green-d)}
+.top .cta::after{display:none}
+
+/* SPメニュー */
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+.top.ondark:not(.solid) .menu-btn span{background:#fff}
+.sp-nav{display:none}
+
+/* ===== スライド共通 ===== */
+.deck{scroll-snap-type:y proximity}
+.slide{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;scroll-snap-align:start;scroll-snap-stop:normal;padding:96px 0 72px;overflow:hidden}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 40px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-en);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.eyebrow .no{color:var(--c-green-l)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#8FA394}
+
+/* スクロール進捗ドット */
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:120;display:flex;flex-direction:column;gap:13px}
+.dots a{width:9px;height:9px;border-radius:50%;background:var(--c-line);display:block;transition:transform .3s var(--ease),background .3s}
+.dots a.act{background:var(--c-green);transform:scale(1.35)}
+.dots.ondark a{background:rgba(255,255,255,.4)}
+.dots.ondark a.act{background:#fff}
+
+/* スクロール示唆 */
+.scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:7px;font-family:var(--font-en);font-size:10px;letter-spacing:.24em;color:#fff;opacity:.9}
+.scroll-cue .bar{width:1px;height:34px;background:linear-gradient(#fff,rgba(255,255,255,0));animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (prefers-reduced-motion:reduce){.scroll-cue .bar{animation:none}}
+
+/* ===== S1 ヒーロー（全面グリーン→写真オーバーレイ） ===== */
+#s1{color:#fff;background:#0E2018}
+#s1 .bg{position:absolute;inset:0;z-index:0}
+#s1 .bg img{width:100%;height:100%;object-fit:cover}
+#s1 .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,42,28,.92) 0%,rgba(20,60,40,.72) 42%,rgba(46,123,166,.34) 100%)}
+#s1 .wrap{position:relative;z-index:2}
+#s1 .eyebrow{color:#CFEAD8}
+#s1 h1{font-size:clamp(30px,5.6vw,64px);font-weight:900;line-height:1.42;letter-spacing:.03em;margin:20px 0 0}
+#s1 h1 .em{color:#B9E6C8}
+#s1 .lead{max-width:560px;margin-top:22px;font-size:clamp(14px,1.5vw,16px);line-height:2.1;color:#E8F3EC}
+#s1 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+#s1 .chip{border:1px solid rgba(255,255,255,.5);border-radius:999px;font-size:12px;font-weight:700;padding:6px 15px;white-space:nowrap}
+#s1 .place{margin-top:30px;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#CFEAD8}
+#s1 .place svg{width:15px;height:15px;flex:none}
+
+/* ===== S2 ミッション（白・大きな一文） ===== */
+#s2{background:var(--c-paper)}
+#s2 .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+#s2 .lead-col .eyebrow{color:var(--c-green-d)}
+#s2 h2{font-size:clamp(23px,3.4vw,38px);font-weight:900;line-height:1.7;letter-spacing:.02em;margin:18px 0 0}
+#s2 h2 .em{color:var(--c-green);border-bottom:5px solid var(--c-green-pale)}
+#s2 .lead-col p{margin-top:22px;max-width:480px;color:var(--c-sub)}
+#s2 .figs{position:relative;aspect-ratio:4/5}
+#s2 .figs .m{position:absolute;inset:0 18% 14% 0;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(20,60,40,.5)}
+#s2 .figs .s{position:absolute;right:0;bottom:0;width:52%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:6px solid #fff;box-shadow:0 20px 44px -18px rgba(46,123,166,.5)}
+#s2 .figs img{width:100%;height:100%;object-fit:cover}
+#s2 .figs .badge{position:absolute;left:-10px;top:14%;background:var(--c-sky);color:#fff;border-radius:12px;padding:12px 16px;box-shadow:0 14px 30px -12px rgba(46,123,166,.7)}
+#s2 .figs .badge b{font-family:var(--font-en);font-size:24px;font-weight:700;display:block;line-height:1}
+#s2 .figs .badge span{font-size:10.5px;letter-spacing:.04em}
+
+/* ===== S3 取り組み（アースグリーン面・4カード） ===== */
+#s3{background:linear-gradient(160deg,#1F5C39 0%,#2F7D4F 60%,#2E7BA6 130%);color:#fff}
+#s3 .head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+#s3 h2{font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:.03em;line-height:1.5}
+#s3 .head-row .eyebrow{color:#BEE7CD}
+#s3 .head-row p{max-width:360px;font-size:13px;color:#DFF0E6}
+#s3 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+#s3 .card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:26px 22px 24px;backdrop-filter:blur(4px);transition:transform .35s var(--ease),background .35s}
+#s3 .card:hover{transform:translateY(-6px);background:rgba(255,255,255,.14)}
+#s3 .card .ic{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+#s3 .card .ic svg{width:24px;height:24px;stroke:#DFF6E6}
+#s3 .card .no{font-family:var(--font-en);font-size:11px;letter-spacing:.18em;color:#9FD8B4}
+#s3 .card h3{font-size:16.5px;margin:4px 0 9px;letter-spacing:.02em}
+#s3 .card p{font-size:12.5px;line-height:1.85;color:#E4F2EA}
+
+/* ===== S4 数字（オフ白・帯グラフ風） ===== */
+#s4{background:var(--c-off)}
+#s4 .eyebrow{color:var(--c-green-d)}
+#s4 h2{font-size:clamp(21px,2.8vw,30px);font-weight:900;margin:14px 0 6px;letter-spacing:.03em}
+#s4 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+#s4 .stat{background:var(--c-paper);border:1px solid var(--c-line);border-radius:16px;padding:30px 26px;position:relative;overflow:hidden}
+#s4 .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--c-green),var(--c-sky))}
+#s4 .stat .num{font-family:var(--font-en);font-weight:700;font-size:clamp(34px,5vw,48px);line-height:1;color:var(--c-green-d);letter-spacing:.01em}
+#s4 .stat .num small{font-size:.42em;font-weight:600;color:var(--c-sky-d);margin-left:4px}
+#s4 .stat .lb{margin-top:10px;font-weight:700;font-size:14px}
+#s4 .stat .sub{font-size:12px;color:var(--c-sub);margin-top:3px}
+
+/* ===== S5 これまで（タイムライン・スカイ面） ===== */
+#s5{background:var(--c-sky-pale)}
+#s5 .eyebrow{color:var(--c-sky-d)}
+#s5 h2{font-size:clamp(21px,2.8vw,30px);font-weight:900;margin:14px 0 30px;letter-spacing:.03em}
+#s5 .tl{list-style:none;position:relative;max-width:720px}
+#s5 .tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--c-sky),var(--c-green))}
+#s5 .tl li{position:relative;padding:0 0 26px 40px}
+#s5 .tl li:last-child{padding-bottom:0}
+#s5 .tl li::before{content:"";position:absolute;left:2px;top:5px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--c-green)}
+#s5 .tl time{font-family:var(--font-en);font-size:12.5px;font-weight:600;color:var(--c-sky-d);letter-spacing:.04em}
+#s5 .tl h3{font-size:16px;margin:2px 0 4px}
+#s5 .tl p{font-size:13px;color:var(--c-sub)}
+
+/* ===== S6 参加（白・3導線） ===== */
+#s6{background:var(--c-paper)}
+#s6 .eyebrow{color:var(--c-green-d)}
+#s6 h2{font-size:clamp(21px,2.8vw,30px);font-weight:900;margin:14px 0 6px;letter-spacing:.03em}
+#s6 .lead{max-width:560px;color:var(--c-sub);margin-bottom:30px}
+#s6 .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+#s6 .way{border:1px solid var(--c-line);border-radius:16px;overflow:hidden;background:var(--c-paper);transition:box-shadow .35s var(--ease),transform .35s}
+#s6 .way:hover{transform:translateY(-5px);box-shadow:0 24px 46px -26px rgba(31,92,57,.4)}
+#s6 .way .ph{aspect-ratio:16/10;overflow:hidden}
+#s6 .way .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+#s6 .way:hover .ph img{transform:scale(1.06)}
+#s6 .way .bd{padding:20px 22px 24px}
+#s6 .way .tag{font-family:var(--font-en);font-size:10.5px;letter-spacing:.16em;color:var(--c-sky-d)}
+#s6 .way h3{font-size:17px;margin:5px 0 8px}
+#s6 .way p{font-size:12.5px;color:var(--c-sub);line-height:1.85}
+
+/* ===== S7 お問い合わせ（グリーン面・情報＋デモフォーム） ===== */
+#s7{background:linear-gradient(155deg,#16241D 0%,#1F5C39 78%,#2E7BA6 150%);color:#fff}
+#s7 .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+#s7 .eyebrow{color:#BEE7CD}
+#s7 h2{font-size:clamp(22px,3vw,34px);font-weight:900;margin:14px 0 0;letter-spacing:.03em;line-height:1.5}
+#s7 .info p{margin-top:16px;color:#DFF0E6;font-size:14px;max-width:440px}
+#s7 .gaiyo{list-style:none;margin-top:26px;font-size:13.5px}
+#s7 .gaiyo li{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+#s7 .gaiyo li .k{flex:none;width:88px;color:#A9D9BC;font-weight:700}
+#s7 .gaiyo li a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+#s7 .tel-block{margin-top:22px}
+#s7 .tel-block .cap{font-size:12px;color:#BEE7CD;font-weight:700}
+#s7 .tel-block a{font-family:var(--font-en);font-size:clamp(26px,3.4vw,34px);font-weight:700;color:#fff;text-decoration:none;letter-spacing:.01em}
+#s7 .tel-block small{display:block;font-size:11px;color:#A9D9BC}
+
+.form-card{background:var(--c-paper);color:var(--c-ink);border-radius:18px;padding:26px 26px 28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.demo-flag{display:flex;align-items:center;gap:9px;background:var(--c-sky-pale);color:var(--c-sky-d);border-radius:10px;padding:10px 13px;font-size:12px;font-weight:700;margin-bottom:18px}
+.demo-flag svg{width:18px;height:18px;flex:none;stroke:var(--c-sky-d)}
+.form-card .field{margin-bottom:14px}
+.form-card label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px}
+.form-card input,.form-card select,.form-card textarea{width:100%;border:1px solid var(--c-line);border-radius:10px;padding:11px 13px;font-family:inherit;font-size:14px;background:var(--c-off);color:var(--c-ink);transition:border-color .25s,background .25s}
+.form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--c-green);background:#fff}
+.form-card textarea{min-height:88px;resize:vertical}
+.form-card .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-card button{width:100%;margin-top:6px;background:var(--c-green);color:#fff;border:none;border-radius:999px;padding:14px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .3s}
+.form-card button:hover{background:var(--c-green-d)}
+.form-msg{margin-top:12px;font-size:12px;color:var(--c-sub);line-height:1.8;display:none}
+.form-msg.show{display:block;color:var(--c-green-d);font-weight:700}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#CFE0D5;scroll-snap-align:none}
+.footer .wrap{padding-top:50px;padding-bottom:36px;text-align:center}
+.footer .f-name{color:#fff;font-weight:900;font-size:16px;letter-spacing:.04em}
+.footer .f-meta{font-size:12.5px;color:#9FB6A7;margin-top:8px}
+.footer .sample-note{font-size:11px;color:#8AA095;margin-top:20px;line-height:1.95;max-width:760px;margin-left:auto;margin-right:auto}
+.footer .sample-note a{color:#CFE0D5}
+.footer .cr{font-size:11px;color:#7C948A;margin-top:16px}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .top nav{display:none}
+  .menu-btn{display:block}
+  .dots{display:none}
+  .sp-nav{display:block;position:fixed;inset:64px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line);padding:8px 22px 18px;z-index:125;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s var(--ease)}
+  .menu-open .sp-nav{transform:none;opacity:1;pointer-events:auto}
+  .menu-open .top{background:rgba(255,255,255,.98)!important}
+  .menu-open .top .brand .nm,.menu-open .top nav a{color:var(--c-ink)!important}
+  .menu-open .menu-btn span{background:var(--c-ink)!important}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:12px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .cta{color:var(--c-green-d);font-weight:700}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .wrap{padding:0 22px}
+  .slide{padding:88px 0 64px}
+  #s2 .grid{grid-template-columns:1fr;gap:34px}
+  #s2 .figs{max-width:340px;order:-1}
+  #s3 .cards{grid-template-columns:1fr 1fr;gap:12px}
+  #s4 .stats{grid-template-columns:1fr;gap:14px}
+  #s6 .ways{grid-template-columns:1fr;gap:14px}
+  #s7 .grid{grid-template-columns:1fr;gap:30px}
+}
+@media (max-width:560px){
+  .deck{scroll-snap-type:none}          /* スマホは通常スクロールで読みやすく */
+  .slide{min-height:auto}
+  #s3 .cards{grid-template-columns:1fr}
+  .form-card .row2{grid-template-columns:1fr}
+  #s7 .gaiyo li{flex-direction:column;gap:2px}
+  #s7 .gaiyo li .k{width:auto}
+  .scroll-cue{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- 上部バー -->
+<header class="top ondark" id="top">
+  <a class="brand" href="#s1">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#E7F1EA"/>
+      <path d="M20 33c-1-8 2-14 10-16-1 8-4 14-10 16Z" fill="#2F7D4F"/>
+      <path d="M20 33c1-6-1-11-8-13 1 7 3 11 8 13Z" fill="#5FB07A"/>
+      <path d="M11 20a9 9 0 0 1 18 0" fill="none" stroke="#4FA3D1" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="20" cy="9.5" r="2.6" fill="#F2B43C"/>
+    </svg>
+    <span class="nm">アース・ケア・エナジー<small>EARTH CARE ENERGY / NAGOYA MORIYAMA</small></span>
+  </a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="#s2">ミッション</a>
+    <a href="#s3">取り組み</a>
+    <a href="#s5">これまで</a>
+    <a href="#s6">参加する</a>
+    <a class="cta" href="#s7">お問い合わせ</a>
+  </nav>
+</header>
+<nav class="sp-nav">
+  <a href="#s2">ミッション</a>
+  <a href="#s3">取り組み</a>
+  <a href="#s4">数字で見る</a>
+  <a href="#s5">これまで</a>
+  <a href="#s6">参加する</a>
+  <a class="cta" href="#s7">お問い合わせ</a>
+</nav>
+
+<!-- 右の進捗ドット（PC） -->
+<nav class="dots ondark" aria-label="ページ内ナビ">
+  <a href="#s1" class="act" data-t="dark" aria-label="トップ"></a>
+  <a href="#s2" data-t="light" aria-label="ミッション"></a>
+  <a href="#s3" data-t="dark" aria-label="取り組み"></a>
+  <a href="#s4" data-t="light" aria-label="数字で見る"></a>
+  <a href="#s5" data-t="light" aria-label="これまで"></a>
+  <a href="#s6" data-t="light" aria-label="参加する"></a>
+  <a href="#s7" data-t="dark" aria-label="お問い合わせ"></a>
+</nav>
+
+<main class="deck">
+
+  <!-- ===== S1 ヒーロー ===== -->
+  <section class="slide" id="s1" data-theme="dark">
+    <div class="bg">
+      <!-- 差し替えポイント: 守山区の自然／再生可能エネルギー／空をイメージした横長写真（顔が特定されない構図） -->
+      <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1900&q=80&auto=format&fit=crop" alt="緑の丘と青空、風力発電のイメージ">
+    </div>
+    <div class="wrap">
+      <span class="eyebrow reveal on"><span class="no">01</span>名古屋市守山区・環境とエネルギーのまちづくり</span>
+      <h1 class="reveal on d1"><span class="kb">地球を、</span><span class="kb"><span class="em">この町から</span></span><span class="kb">やさしく。</span><br><span class="kb">エネルギーと暮らしを、</span><span class="kb">次の世代へつなぐ。</span></h1>
+      <p class="lead reveal on d2">アース・ケア・エナジーは、名古屋市守山区を拠点に、環境の保全と再生可能エネルギーを軸としたまちづくりに取り組むNPO法人です。地域・環境・情報化社会・消費者保護の視点で、暮らしと自然が続いていく仕組みを、地域のみなさんと育てます。</p>
+      <div class="chips reveal on d3">
+        <span class="chip">まちづくりの推進</span>
+        <span class="chip">環境の保全</span>
+        <span class="chip">再生可能エネルギー</span>
+        <span class="chip">情報化社会の発展</span>
+        <span class="chip">消費者の保護</span>
+      </div>
+      <span class="place reveal on d4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#CFEAD8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        愛知県名古屋市守山区
+      </span>
+    </div>
+    <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+  </section>
+
+  <!-- ===== S2 ミッション ===== -->
+  <section class="slide" id="s2" data-theme="light">
+    <div class="wrap">
+      <div class="grid">
+        <div class="lead-col">
+          <span class="eyebrow reveal"><span class="no">02</span>Our Mission</span>
+          <h2 class="reveal d1"><span class="kb">身近な環境を守ることは、</span><br><span class="kb"><span class="em">まちの未来</span>を守ること。</span></h2>
+          <p class="reveal d2">
+            エネルギーの使い方も、ごみや資源のことも、暮らしのすぐそばにあります。わたしたちは、専門家だけの話にせず、地域のみなさんが「自分ごと」として取り組める入り口をつくります。学び・体験・情報発信を通じて、環境にやさしい選択が当たり前になるまちを目指します。
+            <span class="note-sample">※この文章は活動分野（公開情報）をもとにしたサンプルです。御団体の言葉に差し替えます</span>
+          </p>
+        </div>
+        <div class="figs reveal d1">
+          <!-- 差し替えポイント: 森・木もれ日など環境保全の活動イメージ（縦長） -->
+          <div class="m"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1000&q=80&auto=format&fit=crop" alt="森と木もれ日のイメージ"></div>
+          <!-- 差し替えポイント: 太陽光パネルなど再生可能エネルギーのイメージ（正方形） -->
+          <div class="s"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80&auto=format&fit=crop" alt="太陽光パネルと空のイメージ"></div>
+          <div class="badge">
+            <b>CO₂</b><span>減らす暮らしへ<br><em class="note-sample" style="font-style:normal;color:#EAF6FF">※イメージ</em></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S3 取り組み（4本柱＝活動分野） ===== -->
+  <section class="slide" id="s3" data-theme="dark">
+    <div class="wrap">
+      <div class="head-row">
+        <div>
+          <span class="eyebrow reveal"><span class="no">03</span>What We Do</span>
+          <h2 class="reveal d1"><span class="kb">4つの視点で、</span><span class="kb">まちの環境を支える。</span></h2>
+        </div>
+        <p class="reveal d2">定款に掲げる活動分野（公開情報）をもとに、取り組みの柱を整理しています。具体的な事業内容は御団体の実データに差し替えます。<span class="note-sample" style="color:#BEE7CD">※各説明文はサンプル</span></p>
+      </div>
+      <div class="cards">
+        <div class="card reveal d1">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-5h6v5"/></svg></div>
+          <p class="no">FIELD 01</p>
+          <h3>まちづくりの推進</h3>
+          <p>地域の人・団体・行政をつなぎ、住み続けたくなるまちを一緒に考えます。<span class="note-sample" style="color:#9FD8B4">※説明はサンプル</span></p>
+        </div>
+        <div class="card reveal d2">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5-3 8-7 8-12a8 8 0 0 0-16 0c0 5 3 9 8 12Z"/><path d="M12 12c0-3 1.5-5 4-6"/></svg></div>
+          <p class="no">FIELD 02</p>
+          <h3>環境の保全と再エネ</h3>
+          <p>自然環境の保全と、太陽光をはじめとする再生可能エネルギーの活用をすすめます。<span class="note-sample" style="color:#9FD8B4">※説明はサンプル</span></p>
+        </div>
+        <div class="card reveal d3">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <p class="no">FIELD 03</p>
+          <h3>情報化社会の発展</h3>
+          <p>環境の情報をわかりやすく届け、デジタルの力で参加のハードルを下げます。<span class="note-sample" style="color:#9FD8B4">※説明はサンプル</span></p>
+        </div>
+        <div class="card reveal d4">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3Z"/></svg></div>
+          <p class="no">FIELD 04</p>
+          <h3>消費者の保護</h3>
+          <p>かしこく安心して選べるよう、環境と暮らしにまつわる情報提供・啓発を行います。<span class="note-sample" style="color:#9FD8B4">※説明はサンプル</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S4 数字で見る（すべてサンプル） ===== -->
+  <section class="slide" id="s4" data-theme="light">
+    <div class="wrap">
+      <span class="eyebrow reveal"><span class="no">04</span>By the Numbers</span>
+      <h2 class="reveal d1">数字で見る、わたしたちの活動</h2>
+      <p class="note-sample reveal d1">※以下の数値はすべて表示イメージのサンプルです。実際の活動実績に差し替えます</p>
+      <!-- ※サンプル: 数値はダミーです -->
+      <div class="stats">
+        <div class="stat reveal d1"><div class="num">--<small>回／年</small></div><div class="lb">環境イベント・体験会</div><div class="sub">まちの学びの場づくり ※サンプル</div></div>
+        <div class="stat reveal d2"><div class="num">--<small>人</small></div><div class="lb">活動に参加したのべ人数</div><div class="sub">子どもから大人まで ※サンプル</div></div>
+        <div class="stat reveal d3"><div class="num">--<small>団体</small></div><div class="lb">連携する地域・企業</div><div class="sub">まちぐるみの取り組み ※サンプル</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S5 これまで（タイムライン・すべてサンプル） ===== -->
+  <section class="slide" id="s5" data-theme="light">
+    <div class="wrap">
+      <span class="eyebrow reveal"><span class="no">05</span>Our Story</span>
+      <h2 class="reveal d1">これまでの歩み</h2>
+      <p class="note-sample reveal d1" style="margin-top:-18px;margin-bottom:24px">※年・出来事は表示イメージのサンプルです。設立年や沿革は公開時に御団体の実データへ差し替えます</p>
+      <!-- ※サンプル: 年・内容はダミーです -->
+      <ol class="tl reveal d1">
+        <li><time>20XX</time><h3>アース・ケア・エナジー設立</h3><p>守山区で、環境とエネルギーのまちづくりを目的に活動をスタート。<span class="note-sample">※サンプル</span></p></li>
+        <li><time>20XX</time><h3>地域の環境イベントを開始</h3><p>親子で学べる体験会や勉強会を、地域の会場で定期開催。<span class="note-sample">※サンプル</span></p></li>
+        <li><time>20XX</time><h3>再生可能エネルギーの啓発へ</h3><p>暮らしの中でできるエネルギーの工夫を、情報発信を通じて広げる。<span class="note-sample">※サンプル</span></p></li>
+        <li><time>これから</time><h3>まちぐるみの環（わ）へ</h3><p>地域・企業・行政と手を取り、次の世代につながる仕組みづくりを。<span class="note-sample">※サンプル</span></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== S6 参加する（3導線） ===== -->
+  <section class="slide" id="s6" data-theme="light">
+    <div class="wrap">
+      <span class="eyebrow reveal"><span class="no">06</span>Get Involved</span>
+      <h2 class="reveal d1">できることから、一緒に。</h2>
+      <p class="lead reveal d1">ちょっと気になる、というきっかけからで大丈夫です。あなたの「できる範囲」が、まちの環境を支える力になります。<span class="note-sample">※各内容はサンプルです</span></p>
+      <div class="ways">
+        <div class="way reveal d1">
+          <!-- 差し替えポイント: 参加・ボランティアの活動イメージ（顔が特定されない構図） -->
+          <div class="ph"><img src="https://images.unsplash.com/photo-1552799446-159ba9523315?w=1000&q=80&auto=format&fit=crop" alt="植樹・環境活動のイメージ"></div>
+          <div class="bd"><span class="tag">VOLUNTEER</span><h3>ボランティア</h3><p>イベントのお手伝いや、環境の活動に参加。無理なく、できる日だけでも。<span class="note-sample">※サンプル</span></p></div>
+        </div>
+        <div class="way reveal d2">
+          <!-- 差し替えポイント: 寄付・支援をイメージする自然の写真 -->
+          <div class="ph"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&q=80&auto=format&fit=crop" alt="湖と山の自然のイメージ"></div>
+          <div class="bd"><span class="tag">SUPPORT</span><h3>寄付・賛助会員</h3><p>活動を続ける力になります。ご支援の方法はお問い合わせください。<span class="note-sample">※サンプル</span></p></div>
+        </div>
+        <div class="way reveal d3">
+          <!-- 差し替えポイント: 学び・体験会をイメージする写真 -->
+          <div class="ph"><img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=1000&q=80&auto=format&fit=crop" alt="自然の中での学びのイメージ"></div>
+          <div class="bd"><span class="tag">LEARN</span><h3>イベントに参加</h3><p>親子で学べる体験会や勉強会。まずは知ることから始めましょう。<span class="note-sample">※サンプル</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S7 お問い合わせ＋概要（デモフォーム） ===== -->
+  <section class="slide" id="s7" data-theme="dark">
+    <div class="wrap">
+      <div class="grid">
+        <div class="info">
+          <span class="eyebrow reveal"><span class="no">07</span>Contact</span>
+          <h2 class="reveal d1"><span class="kb">お問い合わせ・</span><span class="kb">団体概要</span></h2>
+          <p class="reveal d2">環境の活動、ご参加やご支援、取材・連携のご相談など、お気軽にお寄せください。「ホームページを見た」とお伝えいただけるとスムーズです。</p>
+          <ul class="gaiyo reveal d2">
+            <li><span class="k">正式名称</span><span>特定非営利活動法人 アース・ケア・エナジー</span></li>
+            <li><span class="k">所在地</span><span>愛知県名古屋市守山区<span class="note-sample" style="color:#A9D9BC">（番地・建物名は公開時に記載します／※サンプル）</span></span></li>
+            <li><span class="k">活動分野</span><span>まちづくりの推進／環境の保全／情報化社会の発展／消費者の保護　ほか</span></li>
+            <li><span class="k">設立</span><span><span class="note-sample" style="color:#A9D9BC">公開時に記載します（※サンプル）</span></span></li>
+            <li><span class="k">メール</span><span><span class="note-sample" style="color:#A9D9BC">公開時に記載します（※サンプル）</span></span></li>
+          </ul>
+          <div class="tel-block reveal d3">
+            <span class="cap">お電話でのご相談（※サンプル番号）</span>
+            <!-- ※サンプル: 電話番号はダミーです。format-detectionでtel無効化のためリンクにしていません -->
+            <a role="text" aria-disabled="true">052-XXX-XXXX</a>
+            <small>実際の番号は公開時に差し替えます</small>
+          </div>
+        </div>
+
+        <div class="form-card reveal d2">
+          <!-- ============================================================
+               デモフォーム: 送信されません（サンプル）。
+               ご契約後にメール送信 or お問い合わせ管理につなぎます。
+               ============================================================ -->
+          <div class="demo-flag">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <span>こちらは表示サンプルのため、送信は行われません。</span>
+          </div>
+          <form id="demoForm" novalidate>
+            <div class="row2">
+              <div class="field">
+                <label for="f-name">お名前</label>
+                <input type="text" id="f-name" name="name" placeholder="山田 太郎" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="f-email">メールアドレス</label>
+                <input type="email" id="f-email" name="email" placeholder="you@example.com" autocomplete="email">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-kind">お問い合わせの種類</label>
+              <select id="f-kind" name="kind">
+                <option>活動・イベントについて</option>
+                <option>ボランティアで参加したい</option>
+                <option>寄付・賛助会員について</option>
+                <option>取材・連携のご相談</option>
+                <option>その他</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-msg">お問い合わせ内容</label>
+              <textarea id="f-msg" name="message" placeholder="ご質問やご希望など、ご自由にご記入ください。"></textarea>
+            </div>
+            <button type="submit">送信する（デモ）</button>
+            <p class="form-msg" id="formMsg">こちらはご提案用サンプルのデモフォームです。実際には送信されません。本番では、入力内容をメールでお届けする形などにご用意します。</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer class="footer" data-theme="dark">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 アース・ケア・エナジー</p>
+      <p class="f-meta">愛知県名古屋市守山区｜まちづくり・環境保全・情報化社会・消費者保護</p>
+      <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です。写真はイメージ素材（Unsplash・商用可）、「※サンプル」印の数値・文章・お知らせ・連絡先・番地・設立年はダミーです。事実として記載しているのは公開情報（NPOポータルの法人名称・所在地〈守山区〉・活動分野）のみで、代表者名・実績などは記載していません。公開時に御団体の実データへ差し替えます。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p class="cr">&copy; 2026 特定非営利活動法人 アース・ケア・エナジー（ご提案用サンプル）</p>
+    </div>
+  </footer>
+
+</main>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル"
+   style="position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(22,36,29,.92);color:#fff;text-decoration:none;font-size:11.5px;letter-spacing:.02em;padding:9px 15px 9px 12px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);backdrop-filter:blur(6px)">
+  <span style="width:9px;height:9px;border-radius:50%;background:#5FB07A;flex:none"></span><span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .top nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("demoForm");
+const msg = document.getElementById("formMsg");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  msg.classList.add("show");
+  msg.scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+// 出現アニメ（スライドが見えたら .on）
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// スライドに応じて 上部バー / 右ドット の明暗を切り替え + アクティブドット
+const top = document.querySelector(".top");
+const dotsWrap = document.querySelector(".dots");
+const dots = Array.from(document.querySelectorAll(".dots a"));
+const slides = Array.from(document.querySelectorAll("[data-theme]"));
+if ("IntersectionObserver" in window) {
+  const sio = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (!e.isIntersecting) return;
+      const dark = e.target.dataset.theme === "dark";
+      top.classList.toggle("ondark", dark);
+      dotsWrap.classList.toggle("ondark", dark);
+      const id = "#" + e.target.id;
+      dots.forEach(d => d.classList.toggle("act", d.getAttribute("href") === id));
+    });
+  }, { threshold: 0.55 });
+  slides.forEach(s => sio.observe(s));
+}
+// 上部バーを少しでもスクロールしたら .solid（読みやすさ確保）
+const deck = document.querySelector(".deck");
+const onScroll = () => top.classList.toggle("solid", (deck.scrollTop || window.scrollY) > 40);
+window.addEventListener("scroll", onScroll, {passive:true});
+deck.addEventListener("scroll", onScroll, {passive:true});
+</script>
+</body>
+</html>

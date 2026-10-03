@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 にじなみCLUB さま
+  （就労継続支援B型「にじなみPLUS」／愛知県一宮市）
+  制作: スマートコネクト (https://smcn-jp.com)
+
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報の範囲で作成しています：
+    - 所在地・電話・法人名は公的ポータル/公開情報
+    - 「2名→15名」の利用者数の推移、作業内容（縫製・尾州生地・
+      ひつじ関連グッズ・羊毛フェルト等）、設立2019年、代表者、
+      勤務10-14時・昼食無料 等は一宮商工会議所の紹介記事より
+      （出典を画面内・下記に明記）
+      出典: https://www.138cc.org/info/?p=18117
+  ・「※サンプル」表記の内容はダミーです（お知らせ日付・1日の流れの
+    時刻イメージ等）。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。
+    「差し替えポイント」コメントの箇所を貴団体のお写真に差し替えます
+  ・ロゴは使用していません。相手先の意匠を模倣していません
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>にじなみCLUB｜就労継続支援B型 にじなみPLUS（一宮市）【ご提案サンプル】</title>
+<meta name="description" content="愛知県一宮市の就労継続支援B型「にじなみPLUS」。縫製・ものづくりを通じて、2名から15名へ。尾州生地やひつじの作品づくりで、一人ひとりの「できた」を育てます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FCFCFE;
+  --c-paper:#FFFFFF;
+  --c-ink:#1A2340;          /* 藍（濃） */
+  --c-indigo:#26346B;       /* 藍 */
+  --c-indigo-soft:#3D4E86;
+  --c-indigo-pale:#EEF1F8;
+  --c-line:#DEE3F0;
+  --c-sub:#6B7391;
+  --font-head:"Shippori Mincho",serif;   /* エディトリアル明朝 */
+  --font-body:"Zen Kaku Gothic New",sans-serif;
+  --font-en:"Cormorant Garamond",serif;  /* 英字 small caps 用 */
+  --font-num:"Inter",sans-serif;         /* 数字 */
+  /* 虹グラデ（線・下線・アクセント限定で使用） */
+  --rainbow:linear-gradient(90deg,#E24B6A 0%,#EFA13C 22%,#F2D14B 42%,#5FB878 62%,#3E8ED0 82%,#7B5BC9 100%);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2.05;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.7;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* 英字 small caps 見出し */
+.en{font-family:var(--font-en);font-variant:small-caps;letter-spacing:.16em;color:var(--c-indigo-soft);font-weight:600}
+
+/* 虹の下線・虹の細線 */
+.u-rainbow{background:var(--rainbow);background-repeat:no-repeat;background-position:0 100%;background-size:100% 3px;padding-bottom:2px}
+.rule-rainbow{height:3px;background:var(--rainbow);border:none;border-radius:2px}
+
+/* ===== 上部ヘッダー（細い・エディトリアル） ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(252,252,254,.92);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--c-line)}
+.head-in{max-width:1080px;margin:0 auto;height:64px;display:flex;align-items:center;gap:14px;padding:0 26px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink);margin-right:auto}
+.brand .mark{width:34px;height:34px;flex:none}
+.brand .t{font-family:var(--font-head);font-weight:700;font-size:18px;letter-spacing:.06em;line-height:1.2}
+.brand .t small{display:block;font-family:var(--font-en);font-variant:small-caps;font-size:10px;letter-spacing:.14em;color:var(--c-indigo-soft);font-weight:600;margin-top:1px}
+.head nav{display:flex;gap:22px}
+.head nav a{text-decoration:none;color:var(--c-indigo);font-size:13px;font-weight:500;letter-spacing:.02em;position:relative;padding:4px 0}
+.head nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--rainbow);transition:right .35s var(--ease)}
+.head nav a:hover::after{right:0}
+.head .cta{background:var(--c-indigo);color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:10px 18px;border-radius:999px;white-space:nowrap;transition:transform .3s var(--ease),box-shadow .3s}
+.head .cta:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(38,52,107,.22)}
+.menu-btn{display:none}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.narrow{max-width:760px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+.note-sample{font-size:11.5px;color:#9AA1BC;line-height:1.8}
+.src{font-size:11px;color:#9AA1BC}
+.src a{color:var(--c-indigo-soft)}
+
+/* section head */
+.s-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.s-head .no{font-family:var(--font-num);font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--c-indigo-soft)}
+.s-head .en{font-size:14px}
+.s-title{font-family:var(--font-head);font-size:clamp(23px,3vw,31px);letter-spacing:.02em;line-height:1.55;margin-bottom:8px}
+
+/* ===== ヒーロー（静か） ===== */
+.hero{padding:78px 0 66px;position:relative;overflow:hidden}
+.hero .eyebrow{font-size:12.5px;font-weight:500;letter-spacing:.08em;color:var(--c-indigo-soft);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero .eyebrow .en{font-size:12.5px}
+.hero .eyebrow i{display:inline-block;width:40px;height:2px;background:var(--rainbow)}
+.hero h1{font-family:var(--font-head);font-weight:600;font-size:clamp(30px,5.2vw,54px);line-height:1.6;letter-spacing:.03em}
+.hero .lead{margin-top:26px;max-width:560px;font-size:15.5px;color:#37406A;font-family:var(--font-body)}
+.hero-photos{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:12px;margin-top:48px}
+.hero-photos figure{margin:0;position:relative;overflow:hidden;border-radius:4px}
+.hero-photos img{width:100%;height:100%;object-fit:cover}
+.hero-photos .big{grid-row:span 2;aspect-ratio:4/5}
+.hero-photos .sm{aspect-ratio:16/10}
+.hero-photos figcaption{position:absolute;left:0;bottom:0;font-family:var(--font-en);font-variant:small-caps;font-size:11px;letter-spacing:.14em;color:#fff;background:rgba(26,35,64,.55);padding:4px 10px;border-top-right-radius:4px}
+
+/* ===== 数字で見る歩み（主役） ===== */
+.story{background:var(--c-indigo);color:#EDF0FA;padding:96px 0}
+.story .s-title{color:#fff}
+.story .en{color:#AEBBE6}
+.story .s-head .no{color:#AEBBE6}
+.story .intro{max-width:640px;color:#C7CEEC;font-family:var(--font-body);font-size:15px;margin-bottom:8px}
+
+/* 大きな 2 → 15 の主題 */
+.grow{display:flex;align-items:center;justify-content:center;gap:clamp(20px,6vw,84px);flex-wrap:wrap;padding:56px 0 34px;text-align:center}
+.grow .node .k{font-family:var(--font-num);font-weight:700;line-height:1;letter-spacing:-.02em}
+.grow .from .k{font-size:clamp(58px,12vw,120px);color:#8E9BCF}
+.grow .to .k{font-size:clamp(84px,20vw,210px);background:var(--rainbow);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grow .unit{font-family:var(--font-head);font-size:clamp(15px,2vw,20px);color:#fff;margin-top:6px;letter-spacing:.06em}
+.grow .cap{font-family:var(--font-en);font-variant:small-caps;font-size:12px;letter-spacing:.18em;color:#AEBBE6;margin-top:8px}
+.grow .arrow{align-self:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.grow .arrow svg{width:clamp(48px,9vw,96px);height:auto}
+.grow .arrow .yr{font-family:var(--font-num);font-size:11.5px;letter-spacing:.1em;color:#AEBBE6}
+.grow-note{text-align:center;font-family:var(--font-head);font-size:clamp(16px,2.4vw,21px);color:#fff;line-height:1.9;margin-top:8px}
+
+/* ミニ指標カード（数字＋ラベル、罫線のみ） */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border-top:1px solid rgba(255,255,255,.18)}
+.stat{padding:30px 24px;border-bottom:1px solid rgba(255,255,255,.18);border-right:1px solid rgba(255,255,255,.18)}
+.stat:nth-child(3n){border-right:none}
+.stat .n{font-family:var(--font-num);font-weight:600;font-size:34px;line-height:1.1;color:#fff}
+.stat .n span{font-size:16px;color:#AEBBE6;margin-left:3px}
+.stat .l{font-family:var(--font-body);font-size:13px;color:#C7CEEC;margin-top:8px;line-height:1.7}
+.story .src{color:#93A0CF;margin-top:26px}
+.story .src a{color:#C7CEEC}
+
+/* ===== 仕事の内容（縦の連なり） ===== */
+.work{padding:96px 0}
+.work-list{margin-top:26px;border-top:1px solid var(--c-line)}
+.work-item{display:grid;grid-template-columns:52px 1fr 300px;gap:30px;align-items:start;padding:38px 0;border-bottom:1px solid var(--c-line)}
+.work-item .idx{font-family:var(--font-num);font-size:14px;font-weight:600;color:var(--c-indigo-soft);padding-top:6px;position:relative}
+.work-item .idx::before{content:"";position:absolute;left:0;top:-38px;width:22px;height:3px;background:var(--rainbow)}
+.work-item h3{font-family:var(--font-head);font-size:21px;letter-spacing:.03em;margin-bottom:10px}
+.work-item p{font-family:var(--font-body);font-size:14px;color:#3B4468}
+.work-item .ph{width:100%;aspect-ratio:5/4;overflow:hidden;border-radius:4px}
+.work-item .ph img{width:100%;height:100%;object-fit:cover}
+.work-item .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.tag{font-family:var(--font-en);font-variant:small-caps;font-size:11.5px;letter-spacing:.08em;color:var(--c-indigo);border:1px solid var(--c-line);border-radius:999px;padding:3px 12px}
+
+/* ===== 1日の流れ（縦タイムライン） ===== */
+.day{padding:96px 0;background:var(--c-indigo-pale)}
+.timeline{max-width:680px;margin-top:26px;list-style:none;position:relative}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#E24B6A,#EFA13C,#F2D14B,#5FB878,#3E8ED0,#7B5BC9)}
+.timeline li{position:relative;padding:0 0 30px 44px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:2px;top:5px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--c-indigo)}
+.timeline .tm{font-family:var(--font-num);font-weight:600;font-size:15px;color:var(--c-indigo);letter-spacing:.02em}
+.timeline h3{font-family:var(--font-head);font-size:17px;margin:2px 0 3px}
+.timeline p{font-family:var(--font-body);font-size:13.5px;color:#4A5378}
+
+/* ===== 見学のご相談（デモフォーム） ===== */
+.contact{padding:96px 0}
+.form-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:8px;padding:40px 40px 34px;max-width:720px;margin-top:26px;position:relative;overflow:hidden}
+.form-card::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--rainbow)}
+.demo-note{background:var(--c-indigo-pale);border-radius:6px;padding:12px 16px;font-size:12.5px;color:var(--c-indigo);margin-bottom:24px;line-height:1.8}
+.form-row{margin-bottom:18px}
+.form-row label{display:block;font-size:13px;font-weight:700;color:var(--c-ink);margin-bottom:7px}
+.form-row label .req{color:#E24B6A;font-size:11px;margin-left:6px;font-weight:500}
+.form-row input,.form-row select,.form-row textarea{width:100%;font-family:var(--font-body);font-size:15px;color:var(--c-ink);background:#fff;border:1px solid var(--c-line);border-radius:6px;padding:12px 14px;transition:border-color .25s}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--c-indigo)}
+.form-row textarea{min-height:110px;resize:vertical;line-height:1.9}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit{width:100%;background:var(--c-indigo);color:#fff;border:none;border-radius:999px;font-family:var(--font-body);font-weight:700;font-size:15px;letter-spacing:.04em;padding:16px;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s;margin-top:6px}
+.submit:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(38,52,107,.24)}
+.form-done{display:none;text-align:center;padding:20px 0}
+.form-done.show{display:block}
+.form-done .ic{width:56px;height:56px;margin:0 auto 14px}
+.form-done h3{font-family:var(--font-head);font-size:20px;margin-bottom:8px}
+.form-done p{font-size:13.5px;color:var(--c-sub)}
+.tel-line{margin-top:22px;font-size:14px;color:#3B4468}
+.tel-line a{font-family:var(--font-num);font-weight:600;color:var(--c-indigo);text-decoration:none;border-bottom:2px solid;border-image:var(--rainbow) 1}
+
+/* ===== アクセス ===== */
+.access{padding:0 0 96px}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:26px;align-items:start}
+table.info{width:100%;border-collapse:collapse;font-size:14px;font-family:var(--font-body)}
+table.info th{width:120px;text-align:left;font-weight:700;color:var(--c-indigo);border-bottom:1px solid var(--c-line);padding:13px 14px 13px 0;vertical-align:top;white-space:nowrap}
+table.info td{border-bottom:1px solid var(--c-line);padding:13px 0;color:#3B4468}
+table.info td a{color:var(--c-indigo);font-family:var(--font-num);font-weight:600;text-decoration:none}
+.map iframe{width:100%;height:340px;border:1px solid var(--c-line);border-radius:6px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#C7CEEC;padding:52px 0 40px;text-align:center}
+.footer .rule-rainbow{max-width:80px;margin:0 auto 26px}
+.footer .f-name{font-family:var(--font-head);font-weight:700;font-size:18px;color:#fff;letter-spacing:.05em}
+.footer .f-name small{display:block;font-family:var(--font-en);font-variant:small-caps;font-size:11px;letter-spacing:.14em;color:#8E9BCF;margin-top:5px}
+.footer p{font-size:12.5px;color:#9AA6D0;margin-top:8px}
+.sample-note{font-size:11px;color:#7C87B4;margin-top:22px;line-height:2;max-width:640px;margin-left:auto;margin-right:auto}
+.sample-note a{color:#AEBBE6}
+
+/* ===== 左下・制作クレジットのピル ===== */
+.credit-pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(26,35,64,.92);color:#fff;text-decoration:none;font-size:11.5px;font-weight:500;letter-spacing:.02em;padding:9px 15px 9px 12px;border-radius:999px;box-shadow:0 6px 20px rgba(26,35,64,.28);backdrop-filter:blur(4px);transition:transform .3s var(--ease)}
+.credit-pill:hover{transform:translateY(-2px)}
+.credit-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--rainbow);flex:none}
+.credit-pill b{font-weight:700}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:860px){
+  .head-in{padding:0 18px;gap:10px}
+  .head nav{display:none;position:fixed;inset:64px 0 auto 0;background:#fff;border-bottom:1px solid var(--c-line);flex-direction:column;gap:0;padding:8px 22px 20px;box-shadow:0 12px 24px rgba(26,35,64,.1)}
+  .menu-open .head nav{display:flex}
+  .head nav a{padding:14px 2px;border-bottom:1px solid var(--c-line);font-size:15px}
+  .head nav a::after{display:none}
+  .menu-btn{display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:0}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--c-ink);transition:.3s;margin:0 auto}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .head .cta{display:none}
+
+  .hero-photos{grid-template-columns:1fr 1fr}
+  .hero-photos .big{grid-row:auto;aspect-ratio:4/5}
+  .work-item{grid-template-columns:1fr;gap:16px}
+  .work-item .idx{padding-top:0}
+  .work-item .idx::before{top:-30px}
+  .work-item .ph{aspect-ratio:16/9;order:-1}
+  .stat-row{grid-template-columns:1fr}
+  .stat{border-right:none}
+  .access-grid{grid-template-columns:1fr;gap:26px}
+  .form-card{padding:28px 22px 26px}
+  .form-grid{grid-template-columns:1fr;gap:0}
+  .story,.work,.day,.contact{padding:64px 0}
+  .hero{padding:52px 0 48px}
+  .credit-pill{left:12px;bottom:12px;font-size:11px;padding:8px 13px 8px 11px}
+}
+@media (max-width:420px){
+  .grow{gap:12px}
+  .grow .arrow svg{width:40px}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="head-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <!-- 虹×藍のアーチ（ロゴではなく汎用の意匠） -->
+        <defs>
+          <linearGradient id="rb" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#E24B6A"/><stop offset=".22" stop-color="#EFA13C"/>
+            <stop offset=".42" stop-color="#F2D14B"/><stop offset=".62" stop-color="#5FB878"/>
+            <stop offset=".82" stop-color="#3E8ED0"/><stop offset="1" stop-color="#7B5BC9"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18.5" fill="#EEF1F8"/>
+        <path d="M8 26a12 12 0 0 1 24 0" fill="none" stroke="url(#rb)" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M12.5 26a7.5 7.5 0 0 1 15 0" fill="none" stroke="#26346B" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="20" cy="26" r="2.4" fill="#26346B"/>
+      </svg>
+      <span class="t">にじなみPLUS<small>Nijinami Club</small></span>
+    </a>
+    <nav>
+      <a href="#story">歩み</a>
+      <a href="#work">仕事の内容</a>
+      <a href="#day">1日の流れ</a>
+      <a href="#contact">見学のご相談</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a class="cta" href="#contact">見学を相談する</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ヒーロー（静か） -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow reveal on"><i></i><span class="en">Ichinomiya, Aichi</span>愛知県一宮市・就労継続支援B型</p>
+    <h1 class="reveal on"><span class="kb">縫って、つくって、</span><span class="kb">売る。</span><br><span class="kb">その一針が、</span><span class="kb"><span class="u-rainbow">明日</span>に</span><span class="kb">つながる。</span></h1>
+    <p class="lead reveal on d1">にじなみPLUSは、一宮市の就労継続支援B型の事業所です。地場の尾州生地やミシンを使ったものづくりを通じて、一人ひとりのペースで「働く」を育てています。<span class="kb">2名からはじまった小さな作業所は、</span><span class="kb">いま15名の仲間の場所になりました。</span></p>
+    <div class="hero-photos reveal on d2">
+      <!-- 差し替えポイント: 作業台・手仕事の風景（にじなみPLUSでの縫製・ものづくりのお写真に差し替え） -->
+      <figure class="big">
+        <img src="https://images.unsplash.com/photo-1528575950036-63c4853d3f6f?w=1000&q=80&auto=format&fit=crop" alt="ミシンで縫製する手のイメージ">
+        <figcaption>Sewing</figcaption>
+      </figure>
+      <figure class="sm">
+        <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=900&q=80&auto=format&fit=crop" alt="羊毛フェルトの手仕事のイメージ">
+        <figcaption>Wool felt</figcaption>
+      </figure>
+      <figure class="sm">
+        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?w=900&q=80&auto=format&fit=crop" alt="作業台に並ぶ道具のイメージ">
+        <figcaption>Handmade</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 数字で見る歩み（主役） -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="no">01</span><span class="en">Our Story</span></div>
+    <h2 class="s-title reveal">数字で見る、にじなみの歩み</h2>
+    <p class="intro reveal d1">大きな目標を掲げるより、目の前の一人と、その日の作業を大切にしてきました。気づけば、通う仲間はこれだけ増えていました。</p>
+
+    <!-- 主題: 2 → 15 -->
+    <div class="grow reveal d1">
+      <div class="node from">
+        <div class="k">2</div>
+        <div class="unit">名</div>
+        <div class="cap">Start · 2019</div>
+      </div>
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 96 34" fill="none">
+          <path d="M2 17h80" stroke="url(#rb)" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M74 7l14 10-14 10" stroke="url(#rb)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="yr">5年で</span>
+      </div>
+      <div class="node to">
+        <div class="k">15</div>
+        <div class="unit">名</div>
+        <div class="cap">Now</div>
+      </div>
+    </div>
+    <p class="grow-note reveal d1"><span class="kb">開所時2名だった利用者は、</span><span class="kb">いま<span class="u-rainbow">15名</span>に。</span><br><span class="kb">5年間ずっと通い続けている</span><span class="kb">仲間もいます。</span></p>
+
+    <!-- ミニ指標（罫線のみ・数字は静かに） -->
+    <div class="stat-row reveal d2">
+      <div class="stat">
+        <!-- 実データ: 就労時間（出典 138cc 記事） -->
+        <div class="n">10<span>–</span>14<span>時</span></div>
+        <div class="l">体調やペースに合わせて、この時間の中で調整して働けます</div>
+      </div>
+      <div class="stat">
+        <!-- 実データ: 昼食無料（出典 138cc 記事） -->
+        <div class="n">¥0</div>
+        <div class="l">バランスのとれた昼食を無料でご用意しています</div>
+      </div>
+      <div class="stat">
+        <!-- 実データ: 設立2019年（出典 138cc 記事） -->
+        <div class="n">2019<span>年</span></div>
+        <div class="l">法人設立。一宮市猿海道でにじなみPLUSを運営しています</div>
+      </div>
+    </div>
+    <p class="src reveal d2">数値（2名→15名／勤務10〜14時／昼食無料／2019年設立）の出典：一宮商工会議所「NPO法人にじなみCLUBの就労継続支援B型作業所『にじなみPLUS』を訪問しました。」（<a href="https://www.138cc.org/info/?p=18117" target="_blank" rel="noopener">138cc.org</a>）</p>
+  </div>
+</section>
+
+<!-- 仕事の内容 -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="no">02</span><span class="en">Our Work</span></div>
+    <h2 class="s-title reveal">仕事の内容</h2>
+    <p class="reveal d1" style="max-width:640px;color:#3B4468;font-size:14.5px">ものづくり・縫製・販売を柱に、一宮の地場産業とつながる仕事をしています。得意なことも、ペースも人それぞれ。だから、いろいろな作業があります。</p>
+
+    <div class="work-list">
+      <div class="work-item reveal">
+        <div class="idx">01</div>
+        <div>
+          <h3>縫製・ミシンの仕事</h3>
+          <p>繊維会社さんからのガウン織りやジッパー付けなど、地元のものづくりを支える縫製の仕事。コロナ禍にはミシン2台でマスクづくりにも取り組みました。一針ずつ、確かな手仕事です。</p>
+          <div class="tags"><span class="tag">Sewing</span><span class="tag">Zipper</span><span class="tag">Gown</span></div>
+        </div>
+        <div class="ph"><!-- 差し替えポイント: 実際の縫製作業のお写真 -->
+          <img src="https://images.unsplash.com/photo-1591030512871-1e70f097e5d5?w=900&q=80&auto=format&fit=crop" alt="ミシンでの縫製作業のイメージ"></div>
+      </div>
+
+      <div class="work-item reveal">
+        <div class="idx">02</div>
+        <div>
+          <h3>尾州生地と、ひつじの作品</h3>
+          <p>一宮の地場産業「尾州（びしゅう）」の生地を活かして、「ひつじ」をモチーフにしたオリジナル作品づくりを行っています。羊毛フェルトのワークショップも。地域の素材と物語を、かたちにしています。</p>
+          <div class="tags"><span class="tag">Bishu Fabric</span><span class="tag">Wool Felt</span><span class="tag">Sheep</span></div>
+        </div>
+        <div class="ph"><!-- 差し替えポイント: 尾州生地／ひつじの作品／羊毛フェルトのお写真 -->
+          <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=900&q=80&auto=format&fit=crop" alt="羊毛フェルトの作品づくりのイメージ"></div>
+      </div>
+
+      <div class="work-item reveal">
+        <div class="idx">03</div>
+        <div>
+          <h3>作って、届けて、販売する</h3>
+          <p>つくった作品は、イベントへの出展などを通じて地域の方に届けています。「自分がつくったものを、誰かが手に取ってくれる」——その手ごたえが、次の一歩につながります。<span class="note-sample">※販売先・出展先の詳細は差し替え項目です</span></p>
+          <div class="tags"><span class="tag">Making</span><span class="tag">Sales</span><span class="tag">Event</span></div>
+        </div>
+        <div class="ph"><!-- 差し替えポイント: 販売・出展・完成品の陳列のお写真 -->
+          <img src="https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?w=900&q=80&auto=format&fit=crop" alt="手づくりの品を並べたイメージ"></div>
+      </div>
+    </div>
+    <p class="src reveal" style="margin-top:22px">仕事内容（縫製・ガウン織り・ジッパー付け・マスク製造・尾州生地・ひつじの作品・羊毛フェルト等）の出典：一宮商工会議所の紹介記事（<a href="https://www.138cc.org/info/?p=18117" target="_blank" rel="noopener">138cc.org</a>）</p>
+  </div>
+</section>
+
+<!-- 1日の流れ -->
+<section class="day" id="day">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="no">03</span><span class="en">A Day</span></div>
+    <h2 class="s-title reveal">にじなみPLUSの1日</h2>
+    <p class="note-sample reveal d1" style="margin-bottom:6px">※就労時間（10時〜14時の間で調整）と昼食無料は公開情報にもとづく実データです。時刻ごとの内容は表示イメージのサンプルで、実際の流れに差し替えます。</p>
+    <ul class="timeline reveal d1">
+      <li>
+        <div class="tm">10:00</div>
+        <h3>出勤・今日の準備</h3>
+        <p>「おはようございます」から。その日の体調を確認して、無理のないペースで作業に入ります。</p>
+      </li>
+      <li>
+        <div class="tm">10:30</div>
+        <h3>午前の作業</h3>
+        <p>縫製やものづくりなど、それぞれの担当の仕事へ。得意な工程を、じっくりと。</p>
+      </li>
+      <li>
+        <div class="tm">12:00</div>
+        <h3>昼食（無料）</h3>
+        <p>バランスのとれた昼食をみんなで。午後にそなえて、ゆっくり休みます。</p>
+      </li>
+      <li>
+        <div class="tm">13:00</div>
+        <h3>午後の作業</h3>
+        <p>作品づくりの続きや、仕上げ・検品など。手を動かしながら、少しずつ前へ。</p>
+      </li>
+      <li>
+        <div class="tm">14:00</div>
+        <h3>片づけ・退勤</h3>
+        <p>今日の「できた」をふりかえって。また明日、ここで会いましょう。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 見学のご相談（デモフォーム） -->
+<section class="contact" id="contact">
+  <div class="wrap narrow">
+    <div class="s-head reveal"><span class="no">04</span><span class="en">Visit Us</span></div>
+    <h2 class="s-title reveal">見学のご相談</h2>
+    <p class="reveal d1" style="color:#3B4468;font-size:14.5px;max-width:600px">「見学だけ」「話を聞くだけ」で大丈夫です。ご本人・ご家族・支援機関の方、どなたからでもお気軽にどうぞ。フォームまたはお電話でご連絡ください。</p>
+
+    <div class="form-card reveal d1">
+      <form id="visitForm" novalidate>
+        <p class="demo-note">これはデモ用のフォームです。実際には送信されません（サンプルサイトのため）。本番では、いただいた内容がメール等で届く仕組みにいたします。</p>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="name">お名前 <span class="req">必須</span></label>
+            <input id="name" name="name" type="text" placeholder="山田 花子" autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="tel">お電話番号</label>
+            <input id="tel" name="tel" type="tel" placeholder="000-0000-0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="who">ご相談の立場</label>
+          <select id="who" name="who">
+            <option>ご本人</option>
+            <option>ご家族・ご親族</option>
+            <option>支援機関・相談員の方</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="msg">ご相談内容 <span class="req">必須</span></label>
+          <textarea id="msg" name="msg" placeholder="見学を希望しています。可能な日程などご相談できればと思います。"></textarea>
+        </div>
+        <button class="submit" type="submit">送信する（デモ）</button>
+      </form>
+      <div class="form-done" id="formDone">
+        <svg class="ic" viewBox="0 0 56 56" aria-hidden="true">
+          <circle cx="28" cy="28" r="26" fill="none" stroke="#26346B" stroke-width="2.5"/>
+          <path d="M17 29l7 7 15-16" fill="none" stroke="#26346B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>送信のデモを確認しました</h3>
+        <p>これはサンプルのため、実際には送信されていません。<br>本番では、この操作でお問い合わせが届きます。</p>
+      </div>
+    </div>
+
+    <p class="tel-line reveal d1">お電話でのご相談は
+      <!-- 電話番号はサンプル扱い（就労施設にじなみPLUS）。tel:リンクはformat-detectionで無効化 -->
+      <a href="#contact" onclick="return false;">0586-82-5507</a>
+      へ（受付時間・担当は差し替え項目です）。<span class="note-sample">※本サンプルでは電話発信は無効にしています。</span></p>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="no">05</span><span class="en">Access</span></div>
+    <h2 class="s-title reveal">アクセス・事業所概要</h2>
+    <div class="access-grid">
+      <div class="reveal d1">
+        <table class="info">
+          <tr><th>事業所名</th><td>就労継続支援B型 にじなみPLUS</td></tr>
+          <tr><th>運営法人</th><td>特定非営利活動法人 にじなみCLUB</td></tr>
+          <tr><th>所在地</th><td>愛知県一宮市猿海道一丁目4番4号</td></tr>
+          <tr><th>電話</th><td><a href="#access" onclick="return false;">0586-82-5507</a>（サンプル表示・発信は無効）</td></tr>
+          <tr><th>設立</th><td>2019年（法人設立）</td></tr>
+          <tr><th>就労時間</th><td>10:00〜14:00 の間で調整（昼食無料）</td></tr>
+          <tr><th>おもな作業</th><td>縫製・ものづくり・販売／尾州生地・ひつじの作品・羊毛フェルト ほか</td></tr>
+        </table>
+        <p class="src" style="margin-top:16px">概要は公開情報（NPOポータル所在地・一宮商工会議所紹介記事）にもとづきます。<span class="note-sample">※法人番号・営業日カレンダー等は公開時に追記します。</span></p>
+      </div>
+      <div class="map reveal d2">
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E4%B8%80%E5%AE%AE%E5%B8%82%E7%8C%BF%E6%B5%B7%E9%81%93%E4%B8%80%E4%B8%81%E7%9B%AE4%E7%95%AA4%E5%8F%B7&output=embed&z=15" loading="lazy" title="所在地の地図（愛知県一宮市猿海道一丁目4番4号）"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <hr class="rule-rainbow">
+    <p class="f-name">特定非営利活動法人 にじなみCLUB<small>Nijinami Plus · Ichinomiya</small></p>
+    <p>就労継続支援B型 にじなみPLUS｜愛知県一宮市猿海道一丁目4番4号｜TEL 0586-82-5507</p>
+    <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です。写真はイメージ素材（Unsplash・商用可）、「※サンプル」の内容はダミー、時刻ごとの流れは表示イメージです。利用者数・作業内容・就労時間・昼食・設立年は公開情報（<a href="https://www.138cc.org/info/?p=18117" target="_blank" rel="noopener">一宮商工会議所の紹介記事</a>ほか）にもとづきます。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px;color:#7C87B4">&copy; 2026 NPO法人 にじなみCLUB（ご提案サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下・制作クレジットのピル -->
+<a class="credit-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">
+  <span class="dot" aria-hidden="true"></span>
+  <span>ご提案用サンプル / <b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("visitForm");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  form.style.display = "none";
+  document.getElementById("formDone").classList.add("show");
+});
+
+// reveal
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

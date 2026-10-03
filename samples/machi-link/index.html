@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ITサポーターまちLINK さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者名は記載していません（公開時にご記載いただきます）
+  ・住所は市までの表記（番地・建物名なし）
+  ・電話番号はダミーで、tel:リンクは無効化しています
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザインの方向：チャットUI／相談ボット風型
+    （IT相談をやさしく受ける体験を、チャットアプリの画面UIで表現）
+    配色＝白×水色×橙／親しみやすい丸ゴシック
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>ITサポーターまちLINK｜瀬戸市のシニア・主婦のためのやさしいIT相談【ご提案サンプル】</title>
+<meta name="description" content="瀬戸市で、スマホ・パソコンの「わからない」をやさしくサポート。シニア・主婦の方の身近なIT相談窓口として、地域の情報化を進めるNPO法人です。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F8FC;
+  --paper:#FFFFFF;
+  --ink:#22333F;
+  --sub:#5E7180;
+  --sky:#38BDF0;
+  --sky-deep:#1592C7;
+  --sky-pale:#DCF1FB;
+  --sky-mist:#EAF6FD;
+  --orange:#FF8A3D;
+  --orange-deep:#EE6E1E;
+  --orange-pale:#FFEBDD;
+  --line:#DCE8EF;
+  --font:"M PLUS Rounded 1c",sans-serif;
+  --font-round:"Zen Maru Gothic",sans-serif;
+  --ease:cubic-bezier(.34,1.2,.44,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.9;font-size:15.5px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-round);font-weight:700;line-height:1.5;word-break:auto-phrase}
+.kb{display:inline-block}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* ===== ヘッダー（チャットアプリ上部バー風） ===== */
+.topbar{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .inner{max-width:960px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand .ava{width:42px;height:42px;flex:none;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--sky-deep));display:grid;place-items:center;box-shadow:0 4px 12px rgba(21,146,199,.28)}
+.brand .ava svg{width:24px;height:24px}
+.brand .txt .n{font-family:var(--font-round);font-weight:900;font-size:17px;letter-spacing:.02em;line-height:1.2}
+.brand .txt .s{font-size:10.5px;color:var(--sky-deep);font-weight:700;display:flex;align-items:center;gap:5px}
+.brand .txt .s::before{content:"";width:7px;height:7px;border-radius:50%;background:#43D07E;box-shadow:0 0 0 3px rgba(67,208,126,.22)}
+.topbar nav{margin-left:auto;display:flex;gap:4px}
+.topbar nav a{text-decoration:none;font-size:13.5px;font-weight:700;color:var(--sub);padding:8px 13px;border-radius:999px;transition:background .2s,color .2s}
+.topbar nav a:hover{background:var(--sky-mist);color:var(--sky-deep)}
+.topbar .cta{margin-left:6px;background:var(--orange);color:#fff!important;padding:9px 17px;border-radius:999px;font-size:13.5px;font-weight:800;text-decoration:none;box-shadow:0 5px 14px rgba(238,110,30,.3);transition:transform .2s}
+.topbar .cta:hover{transform:translateY(-1px)}
+.menu-btn{display:none}
+
+/* ===== 共通セクション ===== */
+.section{padding:78px 0}
+.sec-head{text-align:center;margin-bottom:42px}
+.sec-head .en{font-family:var(--font-round);font-size:11px;letter-spacing:.26em;color:var(--sky-deep);text-transform:uppercase;font-weight:700}
+.sec-head h2{font-size:clamp(23px,3.2vw,30px);margin-top:8px;letter-spacing:.02em}
+.sec-head p{font-size:14px;color:var(--sub);margin-top:12px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#9BB0BC}
+
+/* ===== ヒーロー（チャット画面UI） ===== */
+.hero{background:
+  radial-gradient(circle at 12% 18%,var(--sky-mist),transparent 42%),
+  radial-gradient(circle at 88% 82%,var(--orange-pale),transparent 40%),
+  var(--bg);
+  padding:64px 0 74px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero .copy .tag{display:inline-block;background:var(--paper);border:1px solid var(--sky-pale);color:var(--sky-deep);font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px;box-shadow:0 3px 10px rgba(21,146,199,.1)}
+.hero h1{font-size:clamp(28px,4.4vw,42px);font-weight:900;line-height:1.42;letter-spacing:.02em;margin:20px 0}
+.hero h1 .hl{background:linear-gradient(transparent 62%,var(--orange-pale) 62%)}
+.hero h1 .sky{color:var(--sky-deep)}
+.hero .lead{font-size:15px;color:var(--sub);max-width:440px}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{text-decoration:none;font-weight:800;font-size:15px;padding:14px 26px;border-radius:999px;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.btn-p{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(238,110,30,.32)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(238,110,30,.4)}
+.btn-s{background:var(--paper);color:var(--sky-deep);border:2px solid var(--sky-pale)}
+.btn-s:hover{transform:translateY(-2px);border-color:var(--sky)}
+
+/* チャットウィンドウ */
+.chat{background:var(--paper);border-radius:26px;box-shadow:0 30px 60px -22px rgba(21,90,130,.34);border:1px solid var(--line);overflow:hidden}
+.chat-bar{background:linear-gradient(135deg,var(--sky),var(--sky-deep));padding:14px 18px;display:flex;align-items:center;gap:10px}
+.chat-bar .dot{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.5)}
+.chat-bar .who{margin-left:6px;color:#fff}
+.chat-bar .who .n{font-family:var(--font-round);font-weight:700;font-size:14px;line-height:1.2}
+.chat-bar .who .st{font-size:10.5px;opacity:.9;display:flex;align-items:center;gap:5px}
+.chat-bar .who .st::before{content:"";width:6px;height:6px;border-radius:50%;background:#9BF3BE}
+.chat-body{padding:22px 18px;display:flex;flex-direction:column;gap:14px;background:
+  radial-gradient(circle at 20% 0,var(--sky-mist),transparent 60%) var(--paper)}
+.msg{max-width:82%;font-size:14px;line-height:1.75;padding:12px 16px;position:relative;opacity:0;transform:translateY(8px);animation:pop .5s var(--ease) forwards}
+@keyframes pop{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.msg{opacity:1;transform:none;animation:none}}
+.msg.in{align-self:flex-start;background:var(--sky-pale);color:var(--ink);border-radius:6px 18px 18px 18px}
+.msg.out{align-self:flex-end;background:var(--orange);color:#fff;border-radius:18px 6px 18px 18px}
+.msg.out b{color:#fff;font-weight:800;border-bottom:2px solid rgba(255,255,255,.6)}
+.msg .lbl{display:block;font-size:10.5px;font-weight:700;opacity:.75;margin-bottom:3px}
+.msg.in .lbl{color:var(--sky-deep)}
+.msg .time{font-size:9.5px;opacity:.6;margin-top:4px;display:block;text-align:right}
+.msg.typing{align-self:flex-start;background:var(--sky-pale);border-radius:6px 18px 18px 18px;display:inline-flex;gap:5px;padding:15px 18px;width:auto}
+.msg.typing i{width:8px;height:8px;border-radius:50%;background:var(--sky-deep);opacity:.5;animation:blink 1.2s infinite}
+.msg.typing i:nth-child(2){animation-delay:.2s}.msg.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.chat-input{border-top:1px solid var(--line);padding:12px 14px;display:flex;align-items:center;gap:10px;background:var(--paper)}
+.chat-input .box{flex:1;background:var(--bg);border-radius:999px;padding:10px 16px;font-size:13px;color:#9BB0BC}
+.chat-input .send{width:40px;height:40px;flex:none;border-radius:50%;background:var(--sky);display:grid;place-items:center}
+.chat-input .send svg{width:19px;height:19px}
+
+/* ===== 実績帯 ===== */
+.stats{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:34px 24px}
+.stat{flex:1;min-width:150px;text-align:center}
+.stat .num{font-family:var(--font-round);font-weight:900;font-size:clamp(28px,4vw,38px);color:var(--sky-deep);line-height:1}
+.stat .num small{font-size:15px;margin-left:2px}
+.stat .cap{font-size:12.5px;color:var(--sub);margin-top:8px;font-weight:500}
+
+/* ===== 相談メニュー（吹き出しカード） ===== */
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mcard{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 24px;transition:transform .25s var(--ease),box-shadow .25s}
+.mcard:hover{transform:translateY(-5px);box-shadow:0 18px 34px -18px rgba(21,90,130,.28)}
+.mcard .ic{width:52px;height:52px;border-radius:16px;background:var(--sky-mist);display:grid;place-items:center;margin-bottom:16px}
+.mcard:nth-child(3n-1) .ic{background:var(--orange-pale)}
+.mcard .ic svg{width:28px;height:28px}
+.mcard h3{font-size:17px;margin-bottom:8px}
+.mcard p{font-size:13.5px;color:var(--sub);line-height:1.8}
+.mcard .ex{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--sky-deep);font-weight:700}
+.mcard .ex::before{content:"例：";opacity:.7}
+
+/* ===== ご利用の流れ（チャットステップ） ===== */
+.flow{max-width:720px;margin:0 auto;position:relative}
+.flow::before{content:"";position:absolute;left:27px;top:20px;bottom:20px;width:2px;background:var(--sky-pale)}
+.fstep{position:relative;padding:0 0 30px 74px;min-height:56px}
+.fstep:last-child{padding-bottom:0}
+.fstep .no{position:absolute;left:0;top:0;width:56px;height:56px;border-radius:50%;background:var(--paper);border:2px solid var(--sky);color:var(--sky-deep);display:grid;place-items:center;font-family:var(--font-round);font-weight:900;font-size:20px;z-index:1}
+.fstep:nth-child(even) .no{border-color:var(--orange);color:var(--orange-deep)}
+.fstep h3{font-size:17px;margin-bottom:4px}
+.fstep p{font-size:14px;color:var(--sub)}
+
+/* ===== わたしたち（About） ===== */
+.about{background:var(--paper);border-top:1px solid var(--line)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about .ph{border-radius:24px;overflow:hidden;box-shadow:0 20px 40px -20px rgba(21,90,130,.3)}
+.about .ph img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.about h2{font-size:clamp(22px,3vw,28px);line-height:1.5;margin-bottom:18px}
+.about h2 em{font-style:normal;color:var(--sky-deep)}
+.about p{font-size:14.5px;color:var(--sub);margin-bottom:14px}
+.about .mission{background:var(--sky-mist);border-left:4px solid var(--sky);border-radius:0 14px 14px 0;padding:18px 22px;font-size:13.5px;color:var(--ink);margin-top:20px}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:16px;padding:15px 4px;border-bottom:1px dotted var(--line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-round);font-weight:700;color:var(--sky-deep);font-size:12.5px}
+.news-row .cat{flex:none;font-size:10.5px;font-weight:800;color:#fff;background:var(--orange);padding:2px 10px;border-radius:999px}
+.news-row a{color:var(--ink);text-decoration:none}
+.news-row a:hover{color:var(--sky-deep)}
+
+/* ===== 概要 ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:720px;margin:0 auto}
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px;background:var(--paper);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(21,90,130,.28)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--sky-mist);border-bottom:1px solid var(--line);padding:14px 18px;white-space:nowrap;color:var(--sky-deep)}
+table.gaiyo td{border-bottom:1px solid var(--line);padding:14px 18px}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+.tbl-hint{display:none;font-size:11px;color:#9BB0BC;margin:8px auto 0;max-width:720px}
+
+/* ===== お問い合わせ ===== */
+.contact{background:linear-gradient(135deg,var(--sky) 0%,var(--sky-deep) 100%);color:#fff}
+.contact .sec-head .en{color:rgba(255,255,255,.85)}
+.contact .sec-head h2{color:#fff}
+.contact .sec-head p{color:rgba(255,255,255,.9)}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:840px;margin:0 auto}
+.c-card{background:#fff;color:var(--ink);border-radius:22px;padding:30px 28px;text-align:center}
+.c-card .ic{width:56px;height:56px;border-radius:16px;background:var(--sky-mist);display:grid;place-items:center;margin:0 auto 14px}
+.c-card:nth-child(2) .ic{background:var(--orange-pale)}
+.c-card .ic svg{width:30px;height:30px}
+.c-card h3{font-size:18px;margin-bottom:6px}
+.c-card p{font-size:13px;color:var(--sub);margin-bottom:14px}
+.c-card .tel{font-family:var(--font-round);font-size:27px;font-weight:900;color:var(--sky-deep);text-decoration:none;letter-spacing:.01em}
+.c-card .btn-p{display:inline-block;margin-top:4px}
+
+/* デモフォーム */
+.form{max-width:560px;margin:34px auto 0;background:#fff;border-radius:22px;padding:30px 28px;color:var(--ink)}
+.form .field{margin-bottom:16px}
+.form label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;font-family:inherit;font-size:15px;padding:12px 15px;border:2px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);transition:border-color .2s}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--sky)}
+.form .submit{width:100%;background:var(--orange);color:#fff;font-family:var(--font-round);font-weight:800;font-size:16px;border:none;border-radius:999px;padding:15px;cursor:pointer;box-shadow:0 8px 20px rgba(238,110,30,.32);transition:transform .2s}
+.form .submit:hover{transform:translateY(-2px)}
+.form .demo-note{font-size:11.5px;color:#9BB0BC;text-align:center;margin-top:12px}
+
+/* ===== フッター ===== */
+.footer{background:#0F2530;color:#B9CCD6;text-align:center;padding:50px 24px 34px}
+.footer .fn{font-family:var(--font-round);font-weight:900;font-size:17px;color:#fff}
+.footer .fa{font-size:13px;margin-top:8px}
+.footer .sample-note{font-size:11.5px;color:#7F98A5;margin-top:22px;line-height:1.9}
+.footer .sample-note a{color:#CFE3ED}
+.footer .cp{font-size:11px;color:#5E7986;margin-top:16px}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:880px){
+  .hero .wrap{grid-template-columns:1fr;gap:38px}
+  .hero .copy{text-align:center}
+  .hero .lead{margin:0 auto}
+  .hero .btns{justify-content:center}
+  .menu-grid{grid-template-columns:1fr 1fr}
+  .about .wrap{grid-template-columns:1fr;gap:30px}
+  .about .ph{order:-1}
+}
+@media (max-width:720px){
+  .topbar nav{display:none}
+  .topbar nav.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px 18px;gap:2px;box-shadow:0 16px 30px -18px rgba(21,90,130,.3)}
+  .topbar nav.open a{padding:13px 8px;font-size:15px;border-radius:12px}
+  .topbar nav.open .cta{margin:8px 0 0;text-align:center}
+  .menu-btn{display:grid;place-items:center;margin-left:auto;background:var(--sky-mist);border:none;width:42px;height:42px;border-radius:12px;cursor:pointer}
+  .menu-btn span{display:block;width:20px;height:2px;background:var(--sky-deep);border-radius:2px;margin:4px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .section{padding:56px 0}
+  .menu-grid{grid-template-columns:1fr}
+  .c-grid{grid-template-columns:1fr}
+  .stats .wrap{gap:14px}
+  .stat{min-width:120px}
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:10px 16px}
+  table.gaiyo th{background:var(--sky-mist);padding-bottom:4px}
+  table.gaiyo td{padding-top:4px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー（チャットアプリ上部バー風） -->
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <span class="ava" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8A2.5 2.5 0 0 1 17.5 16H10l-4 3.5V16H6.5A2.5 2.5 0 0 1 4 13.5v-8Z" fill="#fff"/><circle cx="8.5" cy="9.5" r="1.4" fill="#1592C7"/><circle cx="12" cy="9.5" r="1.4" fill="#1592C7"/><circle cx="15.5" cy="9.5" r="1.4" fill="#1592C7"/></svg>
+      </span>
+      <span class="txt">
+        <span class="n">まちLINK</span>
+        <span class="s">IT相談 受付中</span>
+      </span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <a href="#menu">相談メニュー</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#about">まちLINKとは</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">概要</a>
+      <a class="cta" href="#contact">相談してみる</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー：チャット画面UI -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="copy">
+      <span class="tag reveal on">瀬戸市のシニア・主婦のためのIT相談</span>
+      <h1 class="reveal on"><span class="kb">スマホの</span><span class="kb"><span class="hl">「わからない」</span>を、</span><br><span class="kb"><span class="sky">まちの誰か</span>に</span><span class="kb">聞ける場所。</span></h1>
+      <p class="lead reveal on">「文字が小さくて読めない」「アプリの入れ方がわからない」——そんな小さなお困りごとを、地域のサポーターがやさしく一緒に解決します。ITサポーターまちLINKは、瀬戸市で暮らす方の身近な相談窓口です。</p>
+      <div class="btns reveal on">
+        <a class="btn btn-p" href="#contact">相談してみる</a>
+        <a class="btn btn-s" href="#menu">相談メニューを見る</a>
+      </div>
+    </div>
+
+    <!-- チャットウィンドウ -->
+    <div class="chat reveal on" aria-label="相談チャットのイメージ">
+      <div class="chat-bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="who">
+          <span class="n">まちLINK 相談ボット</span>
+          <span class="st">オンライン</span>
+        </span>
+      </div>
+      <!-- ※サンプル: 以下のやり取りは表示イメージです（ダミー） -->
+      <div class="chat-body">
+        <div class="msg in" style="animation-delay:.1s"><span class="lbl">まちLINK</span>こんにちは！ITのお困りごと、なんでも聞いてくださいね😊<span class="time">10:02</span></div>
+        <div class="msg out" style="animation-delay:.3s">スマホの写真を、はなれて住む孫に送りたいのですが…<span class="time">10:03</span></div>
+        <div class="msg in" style="animation-delay:.6s"><span class="lbl">まちLINK</span>いいですね！<b>いっしょに画面を見ながら</b>やってみましょう。ご近所の会場でも、お電話でも大丈夫ですよ。<span class="time">10:03</span></div>
+        <div class="msg typing" style="animation-delay:.9s" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+      <div class="chat-input" aria-hidden="true">
+        <span class="box">メッセージを入力…</span>
+        <span class="send"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l16-8-6 16-2.5-6.5L4 12Z" fill="#fff"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 実績帯（※サンプル） -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><div class="num">年200<small>回超</small></div><div class="cap">相談・サポート対応 ※サンプル</div></div>
+    <div class="stat reveal"><div class="num">1<small>件から</small></div><div class="cap">小さなお困りごともOK</div></div>
+    <div class="stat reveal"><div class="num">0<small>円</small></div><div class="cap">はじめてのご相談は無料 ※サンプル</div></div>
+    <div class="stat reveal"><div class="num">瀬戸<small>市</small></div><div class="cap">地域密着で活動</div></div>
+  </div>
+</div>
+<!-- ※サンプル: 上記の数値はダミーです。実績の数値に差し替えます -->
+
+<!-- 相談メニュー -->
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Menu</span>
+      <h2>こんなこと、相談できます</h2>
+      <p>「こんなこと聞いてもいいのかな？」——大丈夫です。どれも、よくあるご相談です。</p>
+    </div>
+    <div class="menu-grid">
+      <div class="mcard reveal">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><rect x="9" y="4" width="14" height="24" rx="3" stroke="#1592C7" stroke-width="2"/><circle cx="16" cy="24" r="1.4" fill="#1592C7"/></svg></div>
+        <h3>スマホの基本</h3>
+        <p>電話・カメラ・LINE・文字の入力など、スマホの「はじめの一歩」をやさしく。</p>
+        <p class="ex">写真を家族に送る／LINEで連絡</p>
+      </div>
+      <div class="mcard reveal">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="7" width="24" height="16" rx="2" stroke="#EE6E1E" stroke-width="2"/><path d="M11 27h10M16 23v4" stroke="#EE6E1E" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>パソコン・ネット</h3>
+        <p>インターネットの調べもの、メール、文書づくりなど、パソコンのお困りごとに。</p>
+        <p class="ex">ネットで調べもの／メールの使い方</p>
+      </div>
+      <div class="mcard reveal">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6Z" stroke="#1592C7" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>くらしに役立つIT</h3>
+        <p>キャッシュレス決済、マイナンバー、行政手続きのアプリなど、今どきの「便利」も一緒に。</p>
+        <p class="ex">ペイの使い方／地図アプリ</p>
+      </div>
+      <div class="mcard reveal">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><path d="M16 28s-10-6-10-13a5.5 5.5 0 0 1 10-3 5.5 5.5 0 0 1 10 3c0 7-10 13-10 13Z" stroke="#EE6E1E" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>安心・トラブル対策</h3>
+        <p>怪しいメールや詐欺、パスワードの不安など、「こわい」をなくすお手伝いをします。</p>
+        <p class="ex">迷惑メールの見分け方／設定の確認</p>
+      </div>
+      <div class="mcard reveal">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" stroke="#1592C7" stroke-width="2"/><path d="M6 27c0-5.5 4.5-9 10-9s10 3.5 10 9" stroke="#1592C7" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>マンツーマン相談</h3>
+        <p>「みんなの前だと聞きにくい」という方へ。おひとりずつ、ゆっくり対応します。</p>
+        <p class="ex">自分のペースで教わりたい</p>
+      </div>
+      <div class="mcard reveal">
+        <div class="ic"><svg viewBox="0 0 32 32" fill="none"><path d="M7 6h18v14H14l-5 4v-4H7V6Z" stroke="#EE6E1E" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>地域のIT講座</h3>
+        <p>公民館や地域の集まりへ出向く「出張ミニ講座」も承ります。まずはご相談ください。</p>
+        <p class="ex">サークルでスマホ教室を開きたい</p>
+      </div>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-top:22px">※メニュー内容は定款の目的（情報弱者への支援・地域の情報化）をもとにしたサンプルです。実際の活動に合わせて調整します</p>
+  </div>
+</section>
+
+<!-- ご利用の流れ -->
+<section class="section" id="flow" style="background:var(--sky-mist)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Flow</span>
+      <h2>ご相談のながれ</h2>
+      <p>チャットで話しかけるみたいに、気軽な4ステップです。</p>
+    </div>
+    <div class="flow">
+      <div class="fstep reveal"><span class="no">1</span><h3>まずは声をかける</h3><p>お電話・フォーム・地域の窓口から、「こんなことで困っている」とお知らせください。内容は決まっていなくて大丈夫です。</p></div>
+      <div class="fstep reveal"><span class="no">2</span><h3>相談日を決める</h3><p>ご都合のよい日時と、来ていただくか・出向くか・お電話かをご相談します。</p></div>
+      <div class="fstep reveal"><span class="no">3</span><h3>いっしょに操作</h3><p>サポーターが、画面を見ながらゆっくり一緒に進めます。何度聞いても大丈夫です。</p></div>
+      <div class="fstep reveal"><span class="no">4</span><h3>おうちでも安心</h3><p>手順を書いたメモをお渡しするなど、あとで一人でもできるようにお手伝いします。<span class="note-sample">※進め方はサンプルです</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたち -->
+<section class="about" id="about">
+  <div class="wrap section">
+    <div class="ph reveal">
+      <!-- 差し替えポイント: サポーターとシニアの方が一緒にスマホを見る活動風景 -->
+      <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1100&q=80&auto=format&fit=crop" alt="スマホの使い方を一緒に確認するイメージ">
+    </div>
+    <div class="reveal">
+      <span class="en" style="font-family:var(--font-round);font-size:11px;letter-spacing:.26em;color:var(--sky-deep);text-transform:uppercase;font-weight:700">About us</span>
+      <h2 style="margin-top:8px"><span class="kb">「聞ける人が近くにいる」</span><br><span class="kb">それだけで、</span><em>まちは</em><em>やさしくなる。</em></h2>
+      <p>ITサポーターまちLINKは、瀬戸市を拠点に活動するNPO法人です。情報化が進むいまの社会で、情報弱者となりがちなシニアや主婦のみなさんが取り残されないように、ITの使い方をやさしく支援し、地域全体の情報化を進めることを目指しています。</p>
+      <p>むずかしい専門用語は使いません。「わからない」を、誰かに気軽に聞ける——そんな地域のつながりを、ITを入り口につくっていきます。</p>
+      <div class="mission">
+        <b style="color:var(--sky-deep)">わたしたちの目的</b><br>
+        情報弱者となりがちなシニアや主婦層に、ITの使い方を支援し、地域の情報化を進める。<br>
+        <span class="note-sample">（NPOポータルに公開されている定款目的より）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="section" id="news">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+    </div>
+    <p class="note-sample reveal" style="text-align:center;margin-bottom:16px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    <div class="reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">講座</span><a href="#news">公民館でスマホ体験会をひらきました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">今月の相談日をお知らせします</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">注意喚起</span><a href="#news">最近ふえている迷惑メールにご注意ください</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">募集</span><a href="#news">一緒に活動するサポーターを募集しています</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 概要 -->
+<section class="section" id="gaiyo" style="background:var(--sky-mist)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Profile</span>
+      <h2>団体概要</h2>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 ITサポーターまちLINK</td></tr>
+        <tr><th>所在地</th><td>愛知県瀬戸市</td></tr>
+        <tr><th>活動分野</th><td>社会教育／まちづくり／情報化社会（NPOポータル公開情報）</td></tr>
+        <tr><th>活動の目的</th><td>情報弱者となりがちなシニアや主婦層に、ITの使い方を支援し、地域の情報化を進める</td></tr>
+        <tr><th>おもな活動地域</th><td>瀬戸市とその周辺</td></tr>
+        <tr><th>代表者</th><td>（公開時にご記載いただきます）</td></tr>
+        <tr><th>電話</th><td><a href="#" onclick="return false" style="color:var(--sky-deep);font-weight:700;text-decoration:none">0561-XX-XXXX</a>（※サンプル番号）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Contact</span>
+      <h2>お気軽にご相談ください</h2>
+      <p>「こんなこと聞いていいのかな」で大丈夫。まずは声をかけてくださいね。</p>
+    </div>
+    <div class="c-grid reveal">
+      <div class="c-card">
+        <div class="ic"><svg viewBox="0 0 30 30" fill="none"><path d="M6 5h5l2 5-3 2c1 3 3.5 5.5 6.5 6.5l2-3 5 2v5c0 1.1-.9 2-2 2C13 24.5 5.5 17 5.5 7 5.5 5.9 6.4 5 6 5Z" stroke="#1592C7" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>お電話でのご相談</h3>
+        <p>受付時間・平日 ※サンプル</p>
+        <!-- 電話はダミー番号。tel:リンクは無効化しています -->
+        <a class="tel" href="#" onclick="return false">0561-XX-XXXX</a>
+        <p style="margin-top:8px;font-size:11.5px;color:#9BB0BC">※サンプル番号のため発信できません</p>
+      </div>
+      <div class="c-card">
+        <div class="ic"><svg viewBox="0 0 30 30" fill="none"><path d="M5 7.5A2.5 2.5 0 0 1 7.5 5h15A2.5 2.5 0 0 1 25 7.5v9A2.5 2.5 0 0 1 22.5 19H12l-5 4.5V19H7.5A2.5 2.5 0 0 1 5 16.5v-9Z" stroke="#EE6E1E" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>フォームでのご相談</h3>
+        <p>24時間いつでも送信できます</p>
+        <a class="btn btn-p" href="#form">下のフォームへ</a>
+      </div>
+    </div>
+
+    <!-- デモフォーム -->
+    <form class="form reveal" id="form" onsubmit="event.preventDefault();document.getElementById('sent').style.display='block';this.querySelector('.submit').textContent='送信しました（デモ）';">
+      <div class="field"><label>お名前</label><input type="text" placeholder="例）まち 花子"></div>
+      <div class="field"><label>お電話番号</label><input type="tel" placeholder="例）0561-XX-XXXX"></div>
+      <div class="field"><label>相談したいこと</label>
+        <select>
+          <option>スマホの基本</option>
+          <option>パソコン・ネット</option>
+          <option>くらしに役立つIT</option>
+          <option>安心・トラブル対策</option>
+          <option>その他・まだ決まっていない</option>
+        </select>
+      </div>
+      <div class="field"><label>ご相談内容</label><textarea rows="4" placeholder="「文字が小さくて読めない」など、簡単で大丈夫です"></textarea></div>
+      <button type="submit" class="submit">相談内容を送る</button>
+      <p class="demo-note" id="dnote">※これはデモフォームです。実際には送信されません</p>
+      <p class="demo-note" id="sent" style="display:none;color:var(--sky-deep);font-weight:700">ありがとうございます。※本サンプルでは送信されません</p>
+    </form>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <p class="fn">特定非営利活動法人 ITサポーターまちLINK</p>
+  <p class="fa">愛知県瀬戸市｜社会教育・まちづくり・情報化社会</p>
+  <p class="sample-note">
+    本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号はサンプルです）。<br>
+    制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+  </p>
+  <p class="cp">&copy; 2026 NPO法人 ITサポーターまちLINK（ご提案用サンプル）</p>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// モバイルメニュー
+const mb = document.querySelector(".menu-btn");
+const nav = document.getElementById("nav");
+mb.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  nav.classList.toggle("open", open);
+  mb.setAttribute("aria-expanded", open ? "true" : "false");
+});
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  document.body.classList.remove("menu-open");
+  nav.classList.remove("open");
+}));
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

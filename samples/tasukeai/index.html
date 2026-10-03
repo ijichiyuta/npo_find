@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 たすけ愛・手をつなごう会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の
+    範囲で作成しています。代表者名・番地・建物名は記載していません。
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます。
+  ・電話番号はダミーのため tel: リンクは無効化しています（発信されません）。
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。
+    <!-- 差し替えポイント --> コメントの箇所を、御団体のお写真に差し替えます。
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 たすけ愛・手をつなごう会｜豊川市の支えあい【ご提案サンプル】</title>
+<meta name="description" content="愛知県豊川市。高齢者をはじめ、援助を必要とするすべての人が、健康で安心して暮らせるように。地域で支えあう活動を行うNPO法人です。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F7F1E6;          /* 生成り */
+  --c-paper:#FCF8F0;
+  --c-ink:#33291F;         /* 墨に近い茶墨 */
+  --c-akane:#B7413B;       /* 茜 */
+  --c-akane-deep:#8F2E2A;
+  --c-ai:#2E4A6B;          /* 藍 */
+  --c-ai-deep:#1F3350;
+  --c-line:#E1D6C0;
+  --c-pale:#EFE6D3;
+  --font-serif:"Shippori Mincho",serif;
+  --font-round:"Zen Maru Gothic",sans-serif;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-round);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-serif);font-weight:600;line-height:1.7;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 和柄の地紋（麻の葉＋青海波を薄く） ===== */
+.washi-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background:
+   radial-gradient(circle at 100% 50%, transparent 20%, rgba(46,74,107,.05) 21%, rgba(46,74,107,.05) 34%, transparent 35%, transparent) 0 0/44px 44px,
+   radial-gradient(circle at 0 50%, transparent 20%, rgba(46,74,107,.05) 21%, rgba(46,74,107,.05) 34%, transparent 35%, transparent) 22px 22px/44px 44px;
+}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(247,241,230,.92);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--c-line)}
+.head-in{max-width:1080px;margin:0 auto;height:70px;padding:0 26px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .t{line-height:1.25}
+.brand .t b{font-family:var(--font-serif);font-weight:700;font-size:18px;letter-spacing:.04em;display:block}
+.brand .t small{font-size:10px;font-weight:500;color:var(--c-akane-deep);letter-spacing:.08em}
+.head nav{margin-left:auto;display:flex;gap:22px}
+.head nav a{font-family:var(--font-round);text-decoration:none;font-size:13.5px;font-weight:500;color:var(--c-ink);position:relative;padding:4px 0;transition:color .3s}
+.head nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--c-akane);transition:right .3s var(--ease)}
+.head nav a:hover{color:var(--c-akane-deep)}
+.head nav a:hover::after{right:0}
+.head .cta{font-family:var(--font-round);margin-left:6px;background:var(--c-akane);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:11px 18px;border-radius:999px;white-space:nowrap;transition:background .3s}
+.head .cta:hover{background:var(--c-akane-deep)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:6px 0;transition:.3s}
+
+.sp-nav{display:none}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.narrow{max-width:760px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:92px 0}
+.b-head{text-align:center;margin-bottom:48px}
+.b-head .en{font-family:var(--font-num);font-size:11px;letter-spacing:.28em;color:var(--c-akane);text-transform:uppercase;display:block;margin-bottom:10px}
+.b-head h2{font-size:clamp(23px,3vw,30px);letter-spacing:.06em;position:relative;display:inline-block}
+.b-head h2 .fan{display:block;width:56px;height:2px;background:linear-gradient(90deg,var(--c-akane),var(--c-ai));margin:16px auto 0}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#A8967B}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#A8967B;margin-top:6px}
+
+/* ===== ヒーロー（和傘の放射） ===== */
+.hero{position:relative;overflow:hidden;padding:96px 0 104px;text-align:center}
+.wagasa{position:absolute;top:50%;left:50%;width:min(140vw,1400px);height:min(140vw,1400px);transform:translate(-50%,-58%);z-index:0;opacity:.9;pointer-events:none}
+.hero-in{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:0 26px}
+.hero .lead-cap{font-family:var(--font-round);display:inline-block;background:var(--c-paper);border:1px solid var(--c-akane);color:var(--c-akane-deep);font-weight:700;font-size:12.5px;letter-spacing:.1em;padding:6px 16px;border-radius:999px;margin-bottom:26px}
+.hero h1{font-size:clamp(28px,4.6vw,46px);font-weight:700;line-height:1.85;letter-spacing:.06em}
+.hero h1 .ai{color:var(--c-ai-deep)}
+.hero h1 .ak{color:var(--c-akane-deep)}
+.hero .lead{font-family:var(--font-round);margin:26px auto 0;max-width:620px;font-size:15.5px}
+.hero .h-btns{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--font-round);text-decoration:none;font-weight:700;font-size:14px;padding:14px 26px;border-radius:999px;transition:transform .25s var(--ease),background .3s,box-shadow .3s;display:inline-block}
+.btn-fill{background:var(--c-akane);color:#fff;box-shadow:0 6px 18px rgba(183,65,59,.28)}
+.btn-fill:hover{background:var(--c-akane-deep);transform:translateY(-2px)}
+.btn-line{background:var(--c-paper);color:var(--c-ai-deep);border:1.5px solid var(--c-ai)}
+.btn-line:hover{background:var(--c-ai);color:#fff;transform:translateY(-2px)}
+
+/* ===== 思い（帯） ===== */
+.mission{background:var(--c-ai-deep);color:#F7F1E6;text-align:center}
+.mission .wrap{padding:78px 26px}
+.mission .en{font-family:var(--font-num);font-size:11px;letter-spacing:.28em;color:#9FB4CE;text-transform:uppercase;display:block;margin-bottom:16px}
+.mission p{font-family:var(--font-serif);font-size:clamp(19px,2.8vw,27px);line-height:2.1;letter-spacing:.05em}
+.mission p em{font-style:normal;color:#E9B7A8;border-bottom:2px solid rgba(233,183,168,.5);padding-bottom:2px}
+.mission .src{font-family:var(--font-round);font-size:11.5px;color:#9FB4CE;margin-top:22px}
+
+/* ===== 活動（カード） ===== */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.act{background:var(--c-paper);border:1px solid var(--c-line);border-radius:14px;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.act:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(51,41,31,.1)}
+.act .ph{aspect-ratio:4/3;overflow:hidden}
+.act .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.act:hover .ph img{transform:scale(1.05)}
+.act .body{padding:24px 24px 28px}
+.act .no{font-family:var(--font-num);font-size:11px;letter-spacing:.2em;color:var(--c-akane)}
+.act h3{font-size:19px;margin:4px 0 10px}
+.act p{font-family:var(--font-round);font-size:13.5px;color:#5C4E3D}
+
+/* ===== 支えあいの輪（3ステップ・扇型番号） ===== */
+.circle{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.circle .c{text-align:center;padding:0 8px}
+.circle .num{width:66px;height:66px;margin:0 auto 16px;border-radius:50%;background:var(--c-pale);border:2px solid var(--c-akane);color:var(--c-akane-deep);font-family:var(--font-num);font-weight:600;font-size:24px;display:flex;align-items:center;justify-content:center}
+.circle h3{font-size:17px;margin-bottom:8px}
+.circle p{font-family:var(--font-round);font-size:13.5px;color:#5C4E3D}
+
+/* ===== 参加（茜の帯・扇） ===== */
+.join{background:var(--c-akane);color:#fff;text-align:center;position:relative;overflow:hidden}
+.join .wrap{padding:80px 26px;position:relative;z-index:2}
+.join h2{font-family:var(--font-serif);font-size:clamp(22px,3vw,30px);letter-spacing:.06em;color:#fff}
+.join p{font-family:var(--font-round);max-width:600px;margin:18px auto 0;font-size:15px}
+.join .j-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:720px;margin:34px auto 0}
+.join .j{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:22px 16px}
+.join .j b{font-family:var(--font-serif);font-size:17px;display:block;margin-bottom:6px}
+.join .j span{font-family:var(--font-round);font-size:12.5px;opacity:.92}
+.join .btn-wht{font-family:var(--font-round);display:inline-block;margin-top:32px;background:#fff;color:var(--c-akane-deep);text-decoration:none;font-weight:700;font-size:14.5px;padding:14px 34px;border-radius:999px;transition:transform .25s var(--ease)}
+.join .btn-wht:hover{transform:translateY(-2px)}
+.join .fan-deco{position:absolute;right:-80px;bottom:-120px;width:340px;height:340px;opacity:.14;z-index:1;pointer-events:none}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:20px;padding:16px 4px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:600;color:var(--c-ai);font-size:12.5px}
+.news-row .tag{flex:none;font-family:var(--font-round);font-size:11px;font-weight:700;color:#fff;background:var(--c-ai);border-radius:4px;padding:2px 9px}
+.news-row a{font-family:var(--font-round);text-decoration:none;transition:color .3s}
+.news-row a:hover{color:var(--c-akane-deep)}
+
+/* ===== 概要 ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:150px;text-align:left;font-family:var(--font-round);font-weight:700;background:var(--c-pale);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px;font-family:var(--font-round)}
+
+/* ===== アクセス／お問い合わせ ===== */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.access-grid iframe{width:100%;height:360px;border:1px solid var(--c-line);border-radius:12px}
+.contact-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:14px;padding:30px}
+.contact-card h3{font-size:18px;margin-bottom:14px}
+.tel-box{border:2px solid var(--c-akane);border-radius:12px;padding:20px;text-align:center;margin-bottom:20px}
+.tel-box .cap{font-family:var(--font-round);font-size:12.5px;font-weight:700}
+.tel-box a{font-family:var(--font-num);font-size:30px;font-weight:600;color:var(--c-akane-deep);text-decoration:none;letter-spacing:.02em;pointer-events:none}
+.tel-box p{font-family:var(--font-round);font-size:11.5px;color:#A8967B;margin-top:4px}
+
+/* ===== 問い合わせフォーム（デモ） ===== */
+.form label{font-family:var(--font-round);display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+.form input,.form textarea{font-family:var(--font-round);width:100%;border:1px solid var(--c-line);border-radius:8px;padding:11px 13px;font-size:14px;background:#fff;color:var(--c-ink)}
+.form textarea{resize:vertical;min-height:110px}
+.form .demo-note{font-family:var(--font-round);font-size:12px;color:#A8967B;margin:8px 0 14px}
+.form button{font-family:var(--font-round);width:100%;background:var(--c-ai);color:#fff;border:none;border-radius:999px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;transition:background .3s}
+.form button:hover{background:var(--c-ai-deep)}
+.form-msg{display:none;margin-top:14px;background:var(--c-pale);border:1px solid var(--c-akane);border-radius:8px;padding:14px;font-family:var(--font-round);font-size:13px;color:var(--c-akane-deep)}
+.form-msg.show{display:block}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#E6D9C4;padding:52px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-serif);font-weight:700;font-size:17px;color:#F7F1E6}
+.footer p{font-family:var(--font-round);font-size:12.5px;color:#C3B49B;margin-top:8px}
+.sample-note{font-size:11px;color:#A8967B;margin-top:20px;line-height:1.9}
+.sample-note a{color:#D8C6A8}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:none;position:fixed;inset:70px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line);padding:12px 26px 22px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .sp-nav a{font-family:var(--font-round);display:block;text-decoration:none;font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .cta{color:var(--c-akane-deep);font-weight:700}
+  .acts{grid-template-columns:1fr;gap:18px}
+  .circle{grid-template-columns:1fr;gap:28px}
+  .join .j-grid{grid-template-columns:1fr}
+  .access-grid{grid-template-columns:1fr;gap:22px}
+  .block{padding:64px 0}
+  .hero{padding:66px 0 74px}
+}
+@media (max-width:720px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:8px 14px 2px;font-size:12px;background:var(--c-paper);color:var(--c-akane-deep)}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 14px 12px}
+  .tbl-hint{display:none}
+  .news-row{flex-wrap:wrap;gap:8px 14px}
+}
+</style>
+</head>
+<body>
+<div class="washi-bg" aria-hidden="true"></div>
+
+<!-- ヘッダー -->
+<header class="head" id="top">
+  <div class="head-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <!-- 和傘（放射） -->
+        <circle cx="24" cy="24" r="22" fill="#EFE6D3"/>
+        <g stroke="#B7413B" stroke-width="1.4">
+          <path d="M24 24 L24 4"/><path d="M24 24 L40.1 12.5"/><path d="M24 24 L44 24"/>
+          <path d="M24 24 L40.1 35.5"/><path d="M24 24 L24 44"/><path d="M24 24 L7.9 35.5"/>
+          <path d="M24 24 L4 24"/><path d="M24 24 L7.9 12.5"/>
+        </g>
+        <path d="M24 5 A19 19 0 0 1 43 24 L24 24 Z" fill="#B7413B" opacity=".16"/>
+        <path d="M24 5 A19 19 0 0 0 5 24 L24 24 Z" fill="#2E4A6B" opacity=".16"/>
+        <circle cx="24" cy="24" r="3.4" fill="#2E4A6B"/>
+      </svg>
+      <span class="t"><b>たすけ愛・手をつなごう会</b><small>特定非営利活動法人｜愛知県豊川市</small></span>
+    </a>
+    <nav>
+      <a href="#mission">わたしたちの願い</a>
+      <a href="#activity">活動</a>
+      <a href="#circle">支えあいの輪</a>
+      <a href="#join">参加する</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a class="cta" href="#contact">お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#mission">わたしたちの願い</a>
+    <a href="#activity">活動</a>
+    <a href="#circle">支えあいの輪</a>
+    <a href="#join">参加する</a>
+    <a href="#access">アクセス</a>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー（和傘の放射） -->
+<section class="hero">
+  <svg class="wagasa" viewBox="0 0 800 800" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <radialGradient id="pg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#F7F1E6"/><stop offset="100%" stop-color="#F0E5D0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="400" cy="400" r="400" fill="url(#pg)"/>
+    <!-- 交互の茜×藍の傘布 -->
+    <g>
+      <!-- 24分割の扇 -->
+    </g>
+    <g id="segs"></g>
+    <g stroke="#33291F" stroke-opacity=".08" stroke-width="1">
+      <!-- 骨の線はJSで描画 -->
+    </g>
+    <circle cx="400" cy="400" r="26" fill="#33291F" opacity=".9"/>
+    <circle cx="400" cy="400" r="10" fill="#B7413B"/>
+  </svg>
+  <div class="hero-in">
+    <span class="lead-cap reveal on">愛知県豊川市の支えあい活動</span>
+    <h1 class="reveal on">
+      <span class="kb">手を<span class="ak">つなげば</span>、</span><span class="kb">ひとりじゃない。</span><br>
+      <span class="kb"><span class="ai">安心して暮らせる</span>まちを、</span><span class="kb">この地域で。</span>
+    </h1>
+    <p class="lead reveal on">高齢の方をはじめ、援助を必要とするすべての人が、健康で安心して暮らせるように。わたしたち「たすけ愛・手をつなごう会」は、地域のみなさんと支えあう活動を続けています。</p>
+    <div class="h-btns reveal on">
+      <a class="btn btn-fill" href="#join">活動に参加する</a>
+      <a class="btn btn-line" href="#contact">相談・お問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたちの願い（藍の帯） -->
+<section class="mission" id="mission">
+  <div class="wrap narrow reveal">
+    <span class="en">Our Wish</span>
+    <p>高齢者等、<em>援助を必要とするすべての人</em>が、<br><em>健康で安心して暮らせる</em>よう、<br>地域のみんなで支えあう。</p>
+    <p class="src">— 定款に掲げる目的より（公開情報）</p>
+  </div>
+</section>
+
+<!-- 活動 -->
+<section class="block" id="activity">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Activity</span>
+      <h2>わたしたちの活動<span class="fan"></span></h2>
+    </div>
+    <p class="note-sample reveal" style="text-align:center;margin:-30px 0 34px">※活動の内容・名称は表示イメージのサンプルです。実際の活動に差し替えます</p>
+    <div class="acts">
+      <!-- ※サンプル: 以下3つの活動内容はダミーです -->
+      <div class="act reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 見守り・訪問の活動写真 -->
+          <img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=900&q=80&auto=format&fit=crop" alt="手を添えて支えあうイメージ" loading="lazy">
+        </div>
+        <div class="body">
+          <span class="no">ACT 01</span>
+          <h3>見守り・生活のお手伝い</h3>
+          <p>ひとり暮らしの高齢の方などのお宅へ。ちょっとした困りごとや、日々の見守りをお手伝いします。</p>
+        </div>
+      </div>
+      <div class="act reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 交流サロン・お茶会の写真 -->
+          <img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=900&q=80&auto=format&fit=crop" alt="地域で集うイメージ" loading="lazy">
+        </div>
+        <div class="body">
+          <span class="no">ACT 02</span>
+          <h3>ふれあいのサロン</h3>
+          <p>お茶を飲みながら、おしゃべりや軽い体操を。世代をこえて集い、顔の見えるつながりを育てます。</p>
+        </div>
+      </div>
+      <div class="act reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 子ども・多世代交流の写真 -->
+          <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=900&q=80&auto=format&fit=crop" alt="世代をこえた交流のイメージ" loading="lazy">
+        </div>
+        <div class="body">
+          <span class="no">ACT 03</span>
+          <h3>子どもの健やかな育ちを応援</h3>
+          <p>地域の子どもたちが、のびのびと育つ場づくり。多世代がつながる機会をつくっています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 支えあいの輪 -->
+<section class="block" id="circle" style="background:var(--c-paper);border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Circle</span>
+      <h2>支えあいの輪の広げかた<span class="fan"></span></h2>
+    </div>
+    <div class="circle">
+      <div class="c reveal">
+        <div class="num">1</div>
+        <h3>気づく</h3>
+        <p>「最近見かけないな」「困っていそう」。まちの小さな変化に、みんなで気づきます。</p>
+      </div>
+      <div class="c reveal">
+        <div class="num">2</div>
+        <h3>つなぐ</h3>
+        <p>ご本人・ご家族と、地域や専門機関を、そっとつなぎます。ひとりで抱え込ませません。</p>
+      </div>
+      <div class="c reveal">
+        <div class="num">3</div>
+        <h3>支えあう</h3>
+        <p>できる人が、できることを、できる範囲で。手をつなぐ輪を、まちに広げていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加する（茜の帯） -->
+<section class="join" id="join">
+  <svg class="fan-deco" viewBox="0 0 100 100" aria-hidden="true">
+    <g fill="#fff"><path d="M50 90 L10 40 A50 50 0 0 1 90 40 Z"/></g>
+  </svg>
+  <div class="wrap reveal">
+    <h2>あなたの手を、貸してください</h2>
+    <p>支えあいの輪は、地域のみなさんの参加で広がります。まずは「見学だけ」「話を聞くだけ」でも大歓迎です。</p>
+    <div class="j-grid">
+      <div class="j"><b>ボランティア</b><span>できる時間に、できることを。はじめての方も歓迎します。</span></div>
+      <div class="j"><b>賛助会員</b><span>会費で活動を応援。地域の支えあいを、一緒に続けていきます。</span></div>
+      <div class="j"><b>ご寄付</b><span>いただいた寄付は、地域の見守り活動などに活かします。</span></div>
+    </div>
+    <p class="note-sample" style="color:#fff;opacity:.85;margin-top:20px">※会費・寄付の金額や方法は、ご契約後に実際の内容へ差し替えます（サンプル表記）</p>
+    <a class="btn-wht" href="#contact">参加について問い合わせる</a>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block" id="news">
+  <div class="wrap narrow">
+    <div class="b-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ<span class="fan"></span></h2>
+    </div>
+    <p class="note-sample reveal" style="text-align:center;margin:-30px 0 22px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    <div class="reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">サロン</span><a href="#news">ふれあいサロンの日程を更新しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">募集</span><a href="#news">見守りボランティアを募集しています</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">お礼</span><a href="#news">地域交流会にご参加いただきありがとうございました</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 概要 -->
+<section class="block" id="gaiyo" style="background:var(--c-paper);border-top:1px solid var(--c-line);border-bottom:1px solid var(--c-line)">
+  <div class="wrap narrow">
+    <div class="b-head reveal">
+      <span class="en">Profile</span>
+      <h2>団体概要<span class="fan"></span></h2>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 たすけ愛・手をつなごう会</td></tr>
+        <tr><th>所在地</th><td>愛知県豊川市（詳細は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉の増進／子どもの健全育成（NPOポータルの公開情報より）</td></tr>
+        <tr><th>目的</th><td>高齢者等、援助を必要とするすべての人が、健康で安心して暮らせるよう支えあうこと（定款より）</td></tr>
+        <tr><th>電話</th><td>000-XXX-XXXX（※サンプル・発信できません）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- アクセス・お問い合わせ -->
+<section class="block" id="access">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Access &amp; Contact</span>
+      <h2>アクセス・お問い合わせ<span class="fan"></span></h2>
+    </div>
+    <div class="access-grid">
+      <div class="reveal">
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E5%B7%9D%E5%B8%82&output=embed&z=13" loading="lazy" title="豊川市の地図"></iframe>
+        <p class="note-sample" style="margin-top:8px">※地図は豊川市の広域表示です。正確な所在地はご契約後に設定します</p>
+      </div>
+      <div class="contact-card reveal" id="contact">
+        <div class="tel-box">
+          <p class="cap">お電話でのご相談</p>
+          <a href="#access" aria-disabled="true">000-XXX-XXXX</a>
+          <p>※サンプルの番号です（発信されません）</p>
+        </div>
+        <form class="form" onsubmit="return false">
+          <h3 style="font-family:var(--font-serif)">メールでのお問い合わせ</h3>
+          <p class="demo-note">これはデモフォームです。実際には送信されません。</p>
+          <label for="f-name">お名前</label>
+          <input id="f-name" type="text" placeholder="山田 花子" autocomplete="name">
+          <label for="f-mail">メールアドレス</label>
+          <input id="f-mail" type="email" placeholder="example@mail.com" autocomplete="email">
+          <label for="f-msg">お問い合わせ内容</label>
+          <textarea id="f-msg" placeholder="活動への参加、ご相談などお気軽にどうぞ"></textarea>
+          <button type="submit" id="f-btn">送信する（デモ）</button>
+          <p class="form-msg" id="f-done">（デモ）送信ボタンの動作イメージです。実際のフォームでは、ご入力内容が御団体宛てに届きます。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 たすけ愛・手をつなごう会</p>
+    <p>愛知県豊川市｜保健・医療・福祉の増進／子どもの健全育成</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号はサンプルのため発信できません）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px;color:#A8967B">&copy; 2026 NPO法人 たすけ愛・手をつなごう会</p>
+  </div>
+</footer>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// 和傘の傘布を交互色で描画（茜×藍）
+(function(){
+  const segs = document.getElementById("segs");
+  if(!segs) return;
+  const cx=400, cy=400, r=400, n=24;
+  for(let i=0;i<n;i++){
+    const a0=(i/n)*Math.PI*2 - Math.PI/2;
+    const a1=((i+1)/n)*Math.PI*2 - Math.PI/2;
+    const x0=cx+r*Math.cos(a0), y0=cy+r*Math.sin(a0);
+    const x1=cx+r*Math.cos(a1), y1=cy+r*Math.sin(a1);
+    const p=document.createElementNS("http://www.w3.org/2000/svg","path");
+    p.setAttribute("d",`M${cx} ${cy} L${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)} Z`);
+    p.setAttribute("fill", i%2 ? "#2E4A6B" : "#B7413B");
+    p.setAttribute("fill-opacity", i%2 ? "0.07" : "0.09");
+    segs.appendChild(p);
+    // 骨の線
+    const l=document.createElementNS("http://www.w3.org/2000/svg","line");
+    l.setAttribute("x1",cx); l.setAttribute("y1",cy);
+    l.setAttribute("x2",x0.toFixed(1)); l.setAttribute("y2",y0.toFixed(1));
+    l.setAttribute("stroke","#33291F"); l.setAttribute("stroke-opacity","0.08"); l.setAttribute("stroke-width","1");
+    segs.appendChild(l);
+  }
+})();
+
+// デモフォーム
+const fBtn=document.getElementById("f-btn"), fDone=document.getElementById("f-done");
+if(fBtn){ fBtn.addEventListener("click",()=>{ fDone.classList.add("show"); }); }
+
+// reveal
+let io=null;
+if("IntersectionObserver" in window){
+  io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target);} }),{threshold:0.1});
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el=> io ? io.observe(el) : el.classList.add("on"));
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+</body>
+</html>

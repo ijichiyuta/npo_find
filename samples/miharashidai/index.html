@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 みはらしだい さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者名・番地・建物名・電話番号は記載していません（電話はダミー・tel無効）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン方向: スケッチブック／ラフ手描き型（鉛筆線・付箋・方眼紙）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 みはらしだい｜名古屋市南区・思春期青年期の育ちの支援【ご提案サンプル】</title>
+<meta name="description" content="名古屋市南区のNPO法人。学習障害のある子ども・若者が健やかに育ち、豊かな思春期・青年期を過ごせるよう支援します。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EC;      /* 生成り */
+  --paper-2:#FFFDF7;
+  --ink:#3A3730;        /* 鉛筆の芯色 */
+  --ink-soft:#6E685C;
+  --sky:#7FC1E0;        /* 空色 */
+  --sky-deep:#3E8CB6;
+  --sky-pale:#E4F1F8;
+  --yamabuki:#F2B32E;   /* 山吹 */
+  --yamabuki-deep:#D89412;
+  --line:#D8D0BE;
+  --font-hand:"Yomogi",sans-serif;      /* 手描き風本文 */
+  --font-round:"Zen Maru Gothic",sans-serif; /* 読みやすいゴシック */
+  --font-marker:"Caveat",cursive;       /* 落書き英字 */
+  --ease:cubic-bezier(.34,1.2,.44,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-round);color:var(--ink);line-height:1.95;font-size:15.5px;font-weight:500;
+  overflow-wrap:break-word;overflow-x:hidden;
+  background:var(--paper);
+  /* 方眼紙（うっすら） */
+  background-image:
+    linear-gradient(rgba(126,193,224,.10) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(126,193,224,.10) 1px,transparent 1px);
+  background-size:26px 26px;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.55;word-break:auto-phrase}
+.kb{display:inline-block}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* 鉛筆でざっと囲った枠（SVGラフ矩形） */
+.sketch-box{position:relative;background:var(--paper-2);padding:26px 26px 28px}
+.sketch-box::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  border:2px solid var(--ink);border-radius:255px 15px 225px 15px/15px 225px 15px 255px;
+}
+/* 付箋 */
+.fusen{display:inline-block;font-family:var(--font-hand);font-size:14px;line-height:1.5;
+  background:var(--yamabuki);color:var(--ink);padding:9px 16px 11px;position:relative;
+  box-shadow:2px 3px 6px rgba(58,55,48,.18);transform:rotate(-2deg)}
+.fusen.sky{background:var(--sky)}
+.fusen::after{content:"";position:absolute;left:50%;top:-9px;transform:translateX(-50%);
+  width:34px;height:14px;background:rgba(255,255,255,.55);
+  box-shadow:0 1px 2px rgba(0,0,0,.08)} /* マスキングテープ */
+/* 手描き下線マーカー */
+.mk{position:relative;white-space:nowrap}
+.mk::after{content:"";position:absolute;left:-3px;right:-3px;bottom:1px;height:36%;
+  background:var(--yamabuki);opacity:.55;z-index:-1;transform:rotate(-1deg) skewX(-6deg)}
+.mk.sky::after{background:var(--sky)}
+/* 英字ラベル（落書き） */
+.scrawl{font-family:var(--font-marker);font-weight:700;color:var(--sky-deep);
+  font-size:22px;letter-spacing:.02em;line-height:1;transform:rotate(-3deg);display:inline-block}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:200;background:rgba(250,246,236,.9);backdrop-filter:blur(5px);
+  border-bottom:2px dashed var(--line)}
+.head .inner{max-width:1000px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:14px}
+.head .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.head .logo .mk-svg{width:40px;height:40px;flex:none}
+.head .logo b{font-family:var(--font-round);font-weight:900;font-size:18px;letter-spacing:.02em;line-height:1.15}
+.head .logo small{display:block;font-family:var(--font-round);font-weight:500;font-size:9.5px;color:var(--sky-deep);letter-spacing:.02em}
+.head nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.head nav a{text-decoration:none;font-weight:700;font-size:13.5px;padding:8px 12px;border-radius:8px;transition:background .2s,color .2s}
+.head nav a:hover{background:var(--sky-pale);color:var(--sky-deep)}
+.head .cta{background:var(--yamabuki);color:var(--ink);text-decoration:none;font-weight:900;font-size:13.5px;
+  padding:10px 16px;border:2px solid var(--ink);border-radius:210px 12px 190px 12px/12px 190px 12px 210px;
+  white-space:nowrap;transition:transform .2s var(--ease)}
+.head .cta:hover{transform:translateY(-2px) rotate(-1deg)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.menu-btn span{display:block;width:24px;height:2.5px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;padding:60px 0 56px;overflow:hidden}
+.hero .doodle{position:absolute;pointer-events:none;opacity:.5;z-index:0}
+.hero .d1{top:20px;right:6%;width:110px}
+.hero .d2{bottom:30px;left:3%;width:90px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;position:relative;z-index:1}
+.hero .badge{display:inline-block;font-family:var(--font-hand);font-size:13.5px;background:var(--sky);color:var(--ink);
+  padding:6px 15px;transform:rotate(-2deg);box-shadow:2px 2px 5px rgba(58,55,48,.18);margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4.3vw,44px);font-weight:900;line-height:1.5;letter-spacing:.01em}
+.hero .lead{margin-top:22px;font-size:15.5px;color:var(--ink-soft);line-height:2.05;max-width:460px}
+.hero .btns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:900;font-size:15px;
+  padding:14px 24px;border:2px solid var(--ink);
+  border-radius:255px 14px 225px 14px/14px 225px 14px 255px;transition:transform .2s var(--ease)}
+.btn:hover{transform:translateY(-3px) rotate(-.8deg)}
+.btn-y{background:var(--yamabuki);color:var(--ink)}
+.btn-w{background:var(--paper-2);color:var(--ink)}
+.hero-art{position:relative}
+.hero-art .photo{position:relative;background:var(--paper-2);padding:12px 12px 14px;
+  box-shadow:4px 6px 16px rgba(58,55,48,.16);transform:rotate(-1.5deg);border:1px solid var(--line)}
+.hero-art .photo img{aspect-ratio:4/3.4;object-fit:cover;filter:saturate(.96)}
+.hero-art .photo .cap{font-family:var(--font-hand);font-size:12.5px;color:var(--ink-soft);text-align:center;padding-top:9px}
+.hero-art .tape{position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(1deg);
+  width:80px;height:26px;background:rgba(242,179,46,.5);border:1px dashed rgba(58,55,48,.25)}
+.hero-art .fusen{position:absolute;right:-14px;bottom:26px;z-index:3;transform:rotate(5deg)}
+
+/* ===== 帯（手書き一言） ===== */
+.strip{background:var(--sky);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
+  padding:16px 0;text-align:center;font-family:var(--font-hand);font-size:clamp(15px,2.2vw,19px);color:var(--ink)}
+
+/* ===== 共通セクション ===== */
+.sec{padding:78px 0;position:relative}
+.sec-paper{background:var(--paper-2);border-top:2px dashed var(--line);border-bottom:2px dashed var(--line)}
+.sec-head{margin-bottom:40px}
+.sec-head .scrawl{margin-bottom:6px}
+.sec-head h2{font-size:clamp(23px,3vw,31px);font-weight:900;line-height:1.4}
+.reveal{opacity:0;transform:translateY(16px) rotate(-.4deg);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-family:var(--font-round);font-size:11.5px;color:#A79F8C;font-weight:500}
+
+/* ===== おもい（3枚の付箋メモ） ===== */
+.memo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.memo{position:relative;background:var(--paper);padding:30px 24px 28px}
+.memo::before{content:"";position:absolute;inset:0;pointer-events:none;
+  border:2px solid var(--ink);border-radius:15px 225px 15px 255px/225px 15px 255px 15px}
+.memo:nth-child(2){transform:rotate(.6deg)}
+.memo:nth-child(3){transform:rotate(-.6deg)}
+.memo .no{font-family:var(--font-marker);font-weight:700;font-size:30px;color:var(--sky-deep);line-height:1}
+.memo h3{font-size:18px;font-weight:900;margin:8px 0 10px}
+.memo p{font-size:14px;color:var(--ink-soft);line-height:1.95}
+
+/* ===== 支援のかたち（カード） ===== */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.card{position:relative;background:var(--paper-2);overflow:hidden}
+.card .pic{position:relative;background:var(--paper);padding:12px}
+.card .pic img{aspect-ratio:16/10;object-fit:cover;filter:saturate(.96)}
+.card .pic .tape{position:absolute;top:-9px;left:24px;width:60px;height:22px;background:rgba(126,193,224,.55);
+  border:1px dashed rgba(58,55,48,.22);transform:rotate(-3deg)}
+.card .body{padding:8px 26px 30px}
+.card h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.card h3 .tag{font-family:var(--font-marker);font-weight:700;font-size:17px;color:var(--yamabuki-deep);display:block;line-height:1}
+.card p{font-size:14px;color:var(--ink-soft);line-height:1.95}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;
+  border:2px solid var(--ink);border-radius:12px 200px 12px 200px/200px 12px 200px 12px}
+
+/* ===== 1日のスケッチ（時間割ノート） ===== */
+.timeline{max-width:640px;margin:0 auto;position:relative}
+.timeline::before{content:"";position:absolute;left:16px;top:8px;bottom:8px;width:2px;
+  background:repeating-linear-gradient(var(--sky) 0 8px,transparent 8px 15px)}
+.tl-item{position:relative;padding:0 0 26px 54px}
+.tl-item::before{content:"";position:absolute;left:8px;top:4px;width:18px;height:18px;border-radius:50%;
+  background:var(--paper-2);border:2.5px solid var(--sky-deep)}
+.tl-item .t{font-family:var(--font-marker);font-weight:700;font-size:20px;color:var(--sky-deep);line-height:1}
+.tl-item h3{font-size:16px;font-weight:900;margin:2px 0 4px}
+.tl-item p{font-size:13.5px;color:var(--ink-soft);line-height:1.85}
+
+/* ===== 数字（手書き囲み） ===== */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.stat{position:relative;padding:26px 14px 24px}
+.stat::before{content:"";position:absolute;inset:0;pointer-events:none;
+  border:2px solid var(--ink);border-radius:225px 15px 255px 15px/15px 255px 15px 225px}
+.stat .num{font-family:var(--font-marker);font-weight:700;font-size:clamp(38px,7vw,54px);color:var(--yamabuki-deep);line-height:1}
+.stat .lb{font-size:13px;font-weight:700;margin-top:6px}
+.stat .sub{font-size:11px;color:var(--ink-soft)}
+
+/* ===== ごあいさつ ===== */
+.greet{max-width:760px;margin:0 auto}
+.greet .sketch-box{background:var(--paper)}
+.greet .big{font-family:var(--font-hand);font-size:clamp(17px,2.4vw,21px);line-height:1.9;margin-bottom:16px}
+.greet p{font-size:14.5px;color:var(--ink-soft);line-height:2}
+.greet .sign{text-align:right;margin-top:20px;font-weight:900;font-size:14px}
+.greet .sign small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-soft)}
+
+/* ===== お知らせ ===== */
+.news{max-width:720px;margin:0 auto}
+.news-row{display:flex;gap:16px;align-items:baseline;padding:15px 4px;border-bottom:2px dotted var(--line)}
+.news-row time{flex:none;font-family:var(--font-marker);font-weight:700;font-size:15px;color:var(--sky-deep)}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;background:var(--sky-pale);color:var(--sky-deep);padding:2px 9px;border-radius:20px}
+.news-row a{text-decoration:none;font-size:14.5px}
+.news-row a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* ===== 参加（募集） ===== */
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.join{position:relative;background:var(--paper);padding:28px 22px;text-align:center}
+.join::before{content:"";position:absolute;inset:0;pointer-events:none;
+  border:2px dashed var(--ink);border-radius:14px}
+.join .ic{font-size:34px;line-height:1;margin-bottom:8px}
+.join h3{font-size:16px;font-weight:900;margin-bottom:6px}
+.join p{font-size:13px;color:var(--ink-soft);line-height:1.85}
+
+/* ===== 概要 ===== */
+.gaiyo-wrap{max-width:760px;margin:0 auto}
+table.gaiyo{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--paper-2)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--sky-pale);
+  border:2px solid var(--line);padding:12px 16px;white-space:nowrap}
+table.gaiyo td{border:2px solid var(--line);padding:12px 16px}
+.tbl-hint{display:none;font-size:11px;color:#A79F8C;margin-top:6px}
+
+/* ===== お問い合わせ ===== */
+.contact{max-width:760px;margin:0 auto}
+.tel-card{position:relative;background:var(--paper);padding:30px 26px;text-align:center;margin-bottom:26px}
+.tel-card::before{content:"";position:absolute;inset:0;pointer-events:none;
+  border:2px solid var(--ink);border-radius:255px 15px 225px 15px/15px 225px 15px 255px}
+.tel-card .cap{font-family:var(--font-hand);font-size:14px;color:var(--ink-soft)}
+.tel-card .num{font-family:var(--font-marker);font-weight:700;font-size:clamp(30px,6vw,42px);color:var(--sky-deep);
+  line-height:1.2;text-decoration:none}
+.tel-card .sub{font-size:11.5px;color:#A79F8C}
+form{position:relative;background:var(--paper-2);padding:30px 26px}
+form::before{content:"";position:absolute;inset:0;pointer-events:none;border:2px dashed var(--ink);border-radius:14px}
+form label{display:block;font-weight:700;font-size:13.5px;margin:14px 0 6px}
+form label:first-of-type{margin-top:0}
+form input,form textarea{width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+  background:var(--paper);border:2px solid var(--line);border-radius:8px;padding:11px 14px}
+form input:focus,form textarea:focus{outline:none;border-color:var(--sky-deep)}
+form textarea{min-height:110px;resize:vertical}
+form .submit{margin-top:20px;width:100%;cursor:pointer;font-family:var(--font-round);font-weight:900;font-size:16px;
+  background:var(--yamabuki);color:var(--ink);border:2px solid var(--ink);
+  border-radius:255px 14px 225px 14px/14px 225px 14px 255px;padding:15px}
+form .demo{text-align:center;font-size:11.5px;color:#A79F8C;margin-top:12px}
+
+/* ===== フッター ===== */
+.footer{background:var(--ink);color:#EDE7D8;padding:50px 0 34px;text-align:center;margin-top:0}
+.footer .fn{font-family:var(--font-round);font-weight:900;font-size:17px}
+.footer .fa{font-size:12.5px;color:#B7AF9C;margin-top:8px}
+.sample-note{font-size:11px;color:#948C79;margin-top:20px;line-height:1.9}
+.sample-note a{color:#C9C1AE}
+.footer .cp{font-size:11px;color:#7C7566;margin-top:16px}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:860px){
+  .head nav{display:none;position:fixed;inset:60px 0 auto 0;background:var(--paper-2);flex-direction:column;gap:0;
+    padding:8px 20px 18px;border-bottom:2px dashed var(--line);box-shadow:0 8px 20px rgba(58,55,48,.12)}
+  .menu-open .head nav{display:flex}
+  .head nav a{width:100%;padding:13px 6px;border-bottom:1px solid var(--line)}
+  .head nav .cta{margin-top:10px;text-align:center}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-art{max-width:400px}
+  .memo-grid,.stat-grid,.join-grid{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
+  .sec{padding:56px 0}
+  .hero .doodle{display:none}
+}
+@media (max-width:600px){
+  body{font-size:15px}
+  table.gaiyo,table.gaiyo tbody,table.gaiyo tr,table.gaiyo th,table.gaiyo td{display:block;width:100%}
+  table.gaiyo th{border-bottom:none;padding:9px 14px;font-size:12.5px}
+  table.gaiyo td{border-top:none;padding:9px 14px 13px}
+  table.gaiyo tr{margin-bottom:2px}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="head" id="top">
+  <div class="inner">
+    <a class="logo" href="#top">
+      <svg class="mk-svg" viewBox="0 0 44 44" aria-hidden="true">
+        <path d="M6 30c4-3 8-4 16-4s12 1 16 4" fill="none" stroke="#3A3730" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="15" cy="17" r="6" fill="#7FC1E0"/>
+        <circle cx="29" cy="15" r="7.5" fill="#F2B32E"/>
+        <path d="M9 34c3-1 6-1 13-1s10 0 13 1" fill="none" stroke="#3A3730" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <b>みはらしだい<small>NPO法人｜名古屋市南区</small></b>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="#omoi">おもい</a>
+      <a href="#shien">支援のかたち</a>
+      <a href="#day">1日のスケッチ</a>
+      <a href="#about">みはらしだいって</a>
+      <a href="#join">参加する</a>
+      <a class="cta" href="#contact">見学・相談する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <svg class="doodle d1" viewBox="0 0 120 120" aria-hidden="true"><path d="M10 60 Q40 10 70 55 T110 40" fill="none" stroke="#F2B32E" stroke-width="3" stroke-linecap="round"/><circle cx="110" cy="40" r="5" fill="#F2B32E"/></svg>
+  <svg class="doodle d2" viewBox="0 0 100 100" aria-hidden="true"><path d="M20 80 C10 40 60 20 80 55" fill="none" stroke="#7FC1E0" stroke-width="3" stroke-linecap="round"/><path d="M74 44l6 11 11-4" fill="none" stroke="#7FC1E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">名古屋市南区・思春期／青年期の育ちの支援</span>
+        <h1><span class="kb">その子の</span><span class="kb"><span class="mk">「できた」</span>を、</span><br><span class="kb">その子の</span><span class="kb"><span class="mk sky">ペース</span>で。</span></h1>
+        <p class="lead">みはらしだいは、学習に困りごとのある子ども・若者が、自分らしく健やかに育っていけるよう支えるNPO法人です。思春期・青年期を、いっしょに歩んでいきます。</p>
+        <div class="btns">
+          <a class="btn btn-y" href="#contact">見学・相談してみる →</a>
+          <a class="btn btn-w" href="#shien">支援のかたちを見る</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <span class="tape"></span>
+        <div class="photo">
+          <!-- 差し替えポイント: 活動風景／子ども・若者の学びのお写真 -->
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000&q=80&auto=format&fit=crop" alt="学びの時間のイメージ">
+          <p class="cap">＊活動風景のイメージ写真です</p>
+        </div>
+        <span class="fusen">いっしょに<br>やってみよう！</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">＊ ひとりひとり、ちがう。だから、ひとりひとりに、ちがう「いいね」を。 ＊</div>
+
+<!-- おもい -->
+<section class="sec" id="omoi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="scrawl">our thought</span>
+      <h2>わたしたちが、<span class="mk">大切にしていること</span></h2>
+    </div>
+    <div class="memo-grid">
+      <div class="memo reveal">
+        <span class="no">01</span>
+        <h3>できないより、<br>できたを数える</h3>
+        <p>苦手さに目を向けるより、「今日はここまでできた」を一緒に見つけます。小さな達成を積み重ねる場所でありたいと考えています。</p>
+      </div>
+      <div class="memo reveal">
+        <span class="no">02</span>
+        <h3>思春期・青年期を、<br>豊かに過ごす</h3>
+        <p>勉強だけでなく、人との関わりや「好き」を見つける時間も大切に。登記された目的にある「豊かな思春期・青年期」を、日々の活動で形にしていきます。</p>
+      </div>
+      <div class="memo reveal">
+        <span class="no">03</span>
+        <h3>家庭と地域で、<br>まわりごと支える</h3>
+        <p>ご本人だけでなく、ご家族や地域とつながりながら支えます。孤立させない、相談できる関係づくりを心がけています。</p>
+      </div>
+    </div>
+    <p class="note-sample" style="margin-top:20px">※各メモの本文は、登記された活動目的（公開情報）をもとにしたサンプルです。ご契約後に実際のお言葉へ差し替えます。</p>
+  </div>
+</section>
+
+<!-- 支援のかたち -->
+<section class="sec sec-paper" id="shien">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="scrawl">what we do</span>
+      <h2>支援の<span class="mk sky">かたち</span></h2>
+    </div>
+    <div class="card-grid">
+      <div class="card reveal">
+        <div class="pic"><span class="tape"></span>
+          <!-- 差し替えポイント: 学習支援の様子 -->
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=80&auto=format&fit=crop" alt="学習を支える時間のイメージ">
+        </div>
+        <div class="body">
+          <h3><span class="tag">study</span>学びに寄りそう</h3>
+          <p>ひとりひとりの「わかった」に合わせて、学びをそっと支えます。読む・書く・計算するの困りごとに、その子に合う方法を一緒にさがします。<span class="note-sample">※内容はサンプルです</span></p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="pic"><span class="tape"></span>
+          <!-- 差し替えポイント: 居場所・交流の様子 -->
+          <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=1000&q=80&auto=format&fit=crop" alt="居場所づくりのイメージ">
+        </div>
+        <div class="body">
+          <h3><span class="tag">place</span>安心できる居場所</h3>
+          <p>学校でも家でもない、もうひとつの居場所。ほっとできて、自分を出せる場所であることを大切にしています。<span class="note-sample">※内容はサンプルです</span></p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="pic"><span class="tape"></span>
+          <!-- 差し替えポイント: 体験・活動の様子 -->
+          <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=1000&q=80&auto=format&fit=crop" alt="体験活動のイメージ">
+        </div>
+        <div class="body">
+          <h3><span class="tag">try</span>好きを見つける体験</h3>
+          <p>ものづくり、からだを動かすこと、季節の行事。いろいろな体験を通して、「これ好きかも」に出会える時間をつくります。<span class="note-sample">※内容はサンプルです</span></p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="pic"><span class="tape"></span>
+          <!-- 差し替えポイント: 家族相談の様子 -->
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1000&q=80&auto=format&fit=crop" alt="ご家族との相談のイメージ">
+        </div>
+        <div class="body">
+          <h3><span class="tag">family</span>ご家族の相談</h3>
+          <p>「うちの子だけ？」と抱え込まないで。ご家庭のお困りごとも、いっしょに考えます。まずは話を聞かせてください。<span class="note-sample">※内容はサンプルです</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1日のスケッチ -->
+<section class="sec" id="day">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="scrawl">a day</span>
+      <h2>ある日の、<span class="mk">スケッチ</span></h2>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-bottom:30px">※時間・内容は表示イメージのサンプルです。実際の活動に合わせて差し替えます。</p>
+    <div class="timeline">
+      <div class="tl-item reveal"><span class="t">15:30</span><h3>ただいま！</h3><p>学校のあと、みんなが集まってきます。まずはひと息、おやつの時間。</p></div>
+      <div class="tl-item reveal"><span class="t">16:00</span><h3>学びの時間</h3><p>その日の課題に、自分のペースで取り組みます。分からないところは、そっと横で。</p></div>
+      <div class="tl-item reveal"><span class="t">17:00</span><h3>すきなこと</h3><p>ものづくりやゲーム、おしゃべり。好きを深める時間です。</p></div>
+      <div class="tl-item reveal"><span class="t">17:45</span><h3>また明日</h3><p>今日できたことを振り返って、「また明日ね」。おうちの方へお迎えのご連絡も。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字 -->
+<section class="sec sec-paper">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="scrawl">numbers</span>
+      <h2>数字で見る、<span class="mk sky">みはらしだい</span></h2>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-bottom:30px">※以下の数値はすべて表示イメージのサンプルです。実績が入りしだい差し替えます。</p>
+    <div class="stat-grid">
+      <div class="stat reveal"><div class="num">00</div><div class="lb">登録している子ども・若者</div><div class="sub">※サンプル</div></div>
+      <div class="stat reveal"><div class="num">00</div><div class="lb">年間の活動日数</div><div class="sub">※サンプル</div></div>
+      <div class="stat reveal"><div class="num">00</div><div class="lb">支えるスタッフ・ボランティア</div><div class="sub">※サンプル</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ごあいさつ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="scrawl">message</span>
+      <h2>みはらしだい、<span class="mk">って？</span></h2>
+    </div>
+    <div class="greet">
+      <div class="sketch-box reveal">
+        <p class="big"><span class="kb">学習に困りごとのある</span><span class="kb">子どもや若者が、</span><span class="kb">健やかに育ち、</span><span class="kb">豊かな思春期・青年期を</span><span class="kb">過ごせるように。</span></p>
+        <p>みはらしだいは、名古屋市南区で活動するNPO法人です。保健・医療・福祉と社会教育の分野で、学習障害のある子ども・若者とそのご家族に寄りそい、地域とともに育ちを支えています。ひとりひとりの「その子らしさ」を大切に、あせらず、いっしょに歩んでいきます。<span class="note-sample">※本文は登記された活動目的（公開情報）をもとにしたサンプルです。ご契約後に代表者からのメッセージへ差し替えます。</span></p>
+        <p class="sign"><small>特定非営利活動法人 みはらしだい</small>スタッフ一同<br><small>（代表者名は公開時に記載します）</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="sec sec-paper">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="scrawl">news</span>
+      <h2><span class="mk">お知らせ</span></h2>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-bottom:26px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</p>
+    <div class="news reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>XX.XX</time><span class="cat">おしらせ</span><a href="#news">見学・体験の受け付けについてのサンプル記事です</a></div>
+      <div class="news-row"><time>XX.XX</time><span class="cat">イベント</span><a href="#news">季節の体験イベントのサンプル記事です</a></div>
+      <div class="news-row"><time>XX.XX</time><span class="cat">ぼしゅう</span><a href="#news">ボランティア募集のサンプル記事です</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加する -->
+<section class="sec" id="join">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="scrawl">join us</span>
+      <h2>いっしょに、<span class="mk sky">育ちを支える</span></h2>
+    </div>
+    <div class="join-grid">
+      <div class="join reveal"><div class="ic">🤝</div><h3>ボランティア</h3><p>学びの見守りや活動のお手伝いなど、できることから。学生さんも歓迎です。</p></div>
+      <div class="join reveal"><div class="ic">✉️</div><h3>賛助会員</h3><p>会費で活動を応援してくださる仲間を募集しています。<span class="note-sample">※詳細はサンプル</span></p></div>
+      <div class="join reveal"><div class="ic">🎁</div><h3>ご寄付</h3><p>いただいたご支援は、子ども・若者の活動に大切に使わせていただきます。<span class="note-sample">※詳細はサンプル</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 概要 -->
+<section class="sec sec-paper">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="scrawl">profile</span>
+      <h2>法人の<span class="mk">概要</span></h2>
+    </div>
+    <div class="gaiyo-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 みはらしだい</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市南区（詳しい住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉の増進／社会教育の推進</td></tr>
+        <tr><th>活動の目的</th><td>学習障害のある子ども・障害者等が健やかに育ち、豊かな思春期・青年期を過ごせるよう支援すること（登記された目的より）</td></tr>
+        <tr><th>お電話</th><td>000-0000-0000（※サンプル・公開時に記載します）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+      </table>
+      <p class="tbl-hint">→ 表は縦に並びます</p>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="scrawl">contact</span>
+      <h2>見学・ご相談は、<span class="mk">お気軽に</span></h2>
+    </div>
+    <div class="contact">
+      <div class="tel-card reveal">
+        <p class="cap">＊ まずはお電話でも ＊</p>
+        <!-- ※サンプル: 電話番号はダミーです。tel:リンクは無効化しています -->
+        <span class="num">000-0000-0000</span>
+        <p class="sub">※サンプル表示です（実際の番号は公開時に記載します）</p>
+      </div>
+      <form class="reveal" onsubmit="return false" aria-label="お問い合わせフォーム（デモ）">
+        <label for="f-name">お名前</label>
+        <input id="f-name" type="text" placeholder="例）山田 花子" autocomplete="name">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="email" placeholder="例）example@mail.com" autocomplete="email">
+        <label for="f-msg">ご相談・ご質問</label>
+        <textarea id="f-msg" placeholder="見学のご希望日や、お子さまのご様子など、お気軽にどうぞ。"></textarea>
+        <button class="submit" type="button" onclick="alert('これはサンプルのデモフォームです。実際には送信されません。');">送信する（デモ）</button>
+        <p class="demo">※これは表示サンプルです。送信ボタンを押しても実際には送信されません。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="fn">特定非営利活動法人 みはらしだい</p>
+    <p class="fa">愛知県名古屋市南区（保健・医療・福祉／社会教育）</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="cp">&copy; 2026 NPO法人 みはらしだい（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".head nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

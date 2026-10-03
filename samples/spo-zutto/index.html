@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 スポずっと さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者実名・番地・建物名は記載していません（公開時に追記）
+  ・電話番号はダミー表示です（tel:リンクは無効化 / format-detection=off）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザインの主役: テレビ番組表 / タイムテーブル型グリッド
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 スポずっと｜名古屋市西区・青少年スポーツ振興【ご提案サンプル】</title>
+<meta name="description" content="名古屋市西区で青少年のスポーツ振興に取り組むNPO法人。週間の教室・種目を“番組表”のように一覧で。見学・体験のお申し込みはお気軽に。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;800;900&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1F4D;          /* 濃紺ベース */
+  --bg2:#0F2A6B;
+  --blue:#1157F5;        /* ビビッド青 */
+  --blue-line:#3B78FF;
+  --yellow:#FFD400;      /* ビビッド黄 */
+  --ink:#0B1220;
+  --paper:#FFFFFF;
+  --pale:#EAF0FF;
+  --grid-line:#C7D6FF;
+  --muted:#6B7A9E;
+  --f:"Noto Sans JP",sans-serif;
+  --fn:"Archivo",sans-serif;
+  --ease:cubic-bezier(.2,.7,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--paper);color:var(--ink);line-height:1.9;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.4;word-break:auto-phrase;font-weight:800}
+a{color:inherit}
+.kb{display:inline-block}
+
+/* ===== 上部バー（チャンネルロゴ + 電話） ===== */
+.topbar{position:sticky;top:0;z-index:200;background:var(--bg);color:#fff;border-bottom:4px solid var(--yellow)}
+.topbar .inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:12px 22px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand .ch{font-family:var(--fn);font-weight:800;background:var(--yellow);color:var(--ink);font-size:15px;letter-spacing:.02em;padding:4px 9px;border-radius:5px;line-height:1;white-space:nowrap}
+.brand .nm{font-weight:900;font-size:20px;letter-spacing:.04em;line-height:1.15}
+.brand .nm small{display:block;font-size:10px;font-weight:700;color:var(--yellow);letter-spacing:.14em;margin-top:2px}
+.topnav{margin-left:auto;display:flex;gap:4px}
+.topnav a{text-decoration:none;color:#dfe7ff;font-weight:700;font-size:13.5px;padding:8px 12px;border-radius:6px;transition:background .25s var(--ease),color .25s}
+.topnav a:hover{background:var(--blue);color:#fff}
+.top-tel{margin-left:6px;background:var(--yellow);color:var(--ink);text-decoration:none;font-weight:800;font-size:13.5px;padding:9px 15px;border-radius:6px;white-space:nowrap}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:24px;height:2.5px;background:#fff;margin:5px 0;transition:.3s}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.tbl-hint{display:none;font-size:11.5px;color:var(--muted);margin-top:8px}
+.note-sample{font-size:11.5px;color:#9AA9C9}
+
+/* ===== ヒーロー（番組表 “ON AIR” 風） ===== */
+.hero{background:
+    radial-gradient(1200px 400px at 80% -10%,rgba(17,87,245,.55),transparent 60%),
+    linear-gradient(180deg,var(--bg),var(--bg2));
+  color:#fff;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:44px 44px;pointer-events:none}
+.hero .wrap{position:relative}
+.hero .onair{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--ink);font-family:var(--fn);font-weight:800;font-size:12px;letter-spacing:.14em;padding:5px 12px;border-radius:999px}
+.hero .onair .dot{width:8px;height:8px;border-radius:50%;background:#E01919;box-shadow:0 0 0 0 rgba(224,25,25,.6);animation:blink 1.4s infinite}
+@keyframes blink{0%{box-shadow:0 0 0 0 rgba(224,25,25,.6)}70%{box-shadow:0 0 0 8px rgba(224,25,25,0)}100%{box-shadow:0 0 0 0 rgba(224,25,25,0)}}
+@media (prefers-reduced-motion:reduce){.hero .onair .dot{animation:none}}
+.hero h1{font-size:clamp(30px,5.2vw,54px);font-weight:900;line-height:1.28;letter-spacing:.02em;margin:20px 0 16px}
+.hero h1 .hl{color:var(--yellow)}
+.hero .lead{max-width:640px;font-size:clamp(14.5px,1.6vw,16.5px);color:#dbe4ff;line-height:1.95}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.hero .chips span{border:1.5px solid var(--blue-line);color:#fff;font-weight:700;font-size:12.5px;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .cta a{text-decoration:none;font-weight:800;font-size:15px;padding:13px 26px;border-radius:8px;transition:transform .2s var(--ease),opacity .2s}
+.hero .cta a:hover{transform:translateY(-2px)}
+.hero .cta .p{background:var(--yellow);color:var(--ink)}
+.hero .cta .s{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.hero .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:38px}
+.hero .strip img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,.15)}
+
+/* ===== セクション共通 ===== */
+.section{padding:72px 0}
+.section.alt{background:var(--pale)}
+.s-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.s-head .tag{font-family:var(--fn);font-weight:800;font-size:11px;letter-spacing:.2em;color:#fff;background:var(--blue);padding:5px 11px;border-radius:5px;text-transform:uppercase}
+.s-head h2{font-size:clamp(22px,3vw,30px);letter-spacing:.02em}
+.s-sub{color:var(--muted);font-size:14px;margin-bottom:30px;font-weight:500}
+
+/* ===== 番組表グリッド（週間タイムテーブル） ===== */
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin-bottom:16px;font-size:12.5px;font-weight:700}
+.legend .lg{display:inline-flex;align-items:center;gap:7px;color:#3a4666}
+.legend .sw{width:15px;height:15px;border-radius:4px;flex:none}
+.sw-run{background:#1157F5}.sw-ball{background:#12B76A}.sw-mind{background:#F79009}.sw-free{background:#7A5AF8}
+.tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:2px solid var(--ink);border-radius:12px;background:#fff}
+table.tt{border-collapse:collapse;width:100%;min-width:720px;font-size:13px}
+table.tt thead th{background:var(--bg);color:#fff;font-weight:800;padding:12px 8px;text-align:center;position:sticky;top:0;font-size:13px;letter-spacing:.04em}
+table.tt thead th:first-child{background:var(--ink);width:78px}
+table.tt thead th .wd{font-family:var(--fn);font-size:11px;color:var(--yellow);display:block;letter-spacing:.1em}
+table.tt tbody th{background:var(--pale);color:var(--ink);font-family:var(--fn);font-weight:700;font-size:12px;padding:10px 6px;text-align:center;white-space:nowrap;border-top:1px solid var(--grid-line);border-right:2px solid var(--ink);vertical-align:top}
+table.tt td{border-top:1px solid var(--grid-line);border-right:1px solid var(--grid-line);padding:6px;vertical-align:top;height:64px}
+table.tt td:last-child{border-right:none}
+.prog{display:block;height:100%;border-radius:8px;padding:8px 9px;color:#fff;text-decoration:none;transition:transform .18s var(--ease),box-shadow .18s}
+.prog:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(11,31,77,.22)}
+.prog .t{font-weight:800;font-size:13px;line-height:1.35;display:block}
+.prog .m{display:block;font-size:11px;font-weight:700;opacity:.92;margin-top:3px}
+.prog.run{background:#1157F5}.prog.ball{background:#12B76A}.prog.mind{background:#F79009}.prog.free{background:#7A5AF8}
+.prog.empty{background:repeating-linear-gradient(45deg,#EEF2FB,#EEF2FB 8px,#E4EAF7 8px,#E4EAF7 16px);color:#98A4C0;box-shadow:none}
+.prog.empty:hover{transform:none;box-shadow:none}
+
+/* ===== 種目カード ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:2px solid var(--ink);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .ph{position:relative;aspect-ratio:16/10;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .ph .num{position:absolute;left:0;top:0;background:var(--yellow);color:var(--ink);font-family:var(--fn);font-weight:800;font-size:13px;padding:5px 11px;border-bottom-right-radius:10px}
+.card .bd{padding:18px 18px 20px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card .cat{font-family:var(--fn);font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--blue);margin-bottom:6px}
+.card p{font-size:13.5px;color:#43506e;line-height:1.85}
+.card .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.card .meta span{background:var(--pale);color:#2c3a5e;font-weight:700;font-size:11.5px;padding:3px 10px;border-radius:6px}
+
+/* ===== 数字パネル ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{background:var(--bg);color:#fff;border-radius:14px;padding:26px 22px;position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;right:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:rgba(17,87,245,.35)}
+.stat .n{font-family:var(--fn);font-weight:800;font-size:clamp(34px,5vw,46px);line-height:1;color:var(--yellow);position:relative}
+.stat .n small{font-size:16px;color:#fff;margin-left:3px}
+.stat .l{font-weight:700;font-size:14px;margin-top:8px;position:relative}
+.stat .d{font-size:11.5px;color:#b8c4e6;margin-top:4px;position:relative}
+
+/* ===== わたしたち ===== */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.about .big{font-size:clamp(20px,2.6vw,26px);font-weight:900;line-height:1.7;margin-bottom:16px}
+.about .big em{font-style:normal;color:var(--blue);border-bottom:5px solid var(--yellow)}
+.about p{font-size:14.5px;color:#3a4666}
+.about .ph{border-radius:16px;overflow:hidden;border:3px solid var(--ink)}
+.about .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.msg{margin-top:28px;background:#fff;border:2px solid var(--ink);border-left:8px solid var(--yellow);border-radius:12px;padding:22px 24px}
+.msg h3{font-size:15px;color:var(--blue);margin-bottom:8px}
+.msg p{font-size:14px;color:#333}
+.msg .name{text-align:right;margin-top:12px;font-weight:800;font-size:13.5px}
+.msg .name small{display:block;font-weight:600;color:var(--muted);font-size:11.5px}
+
+/* ===== お知らせ（番組改編風） ===== */
+.news .row{display:flex;gap:16px;align-items:baseline;padding:14px 4px;border-bottom:1px dashed var(--grid-line);font-size:14px}
+.news .row time{flex:none;font-family:var(--fn);font-weight:700;color:var(--blue);font-size:12.5px}
+.news .row .badge{flex:none;font-size:11px;font-weight:800;color:#fff;background:var(--ink);border-radius:5px;padding:2px 8px}
+.news .row a{text-decoration:underline;text-decoration-color:var(--grid-line);text-underline-offset:4px;font-weight:500}
+
+/* ===== 概要テーブル ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:#fff;border:2px solid var(--ink);border-radius:12px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:800;background:var(--bg);color:#fff;padding:13px 16px;white-space:nowrap;vertical-align:top;border-bottom:1px solid var(--blue-line)}
+table.gaiyo td{border-bottom:1px solid var(--grid-line);padding:13px 16px}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+.gaiyo-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* ===== 参加の流れ ===== */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:fl}
+.flow .step{counter-increment:fl;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:24px 20px;position:relative}
+.flow .step::before{content:counter(fl,decimal-leading-zero);font-family:var(--fn);font-weight:800;font-size:34px;color:var(--yellow);-webkit-text-stroke:1.5px var(--ink);line-height:1;display:block;margin-bottom:8px}
+.flow .step h3{font-size:16.5px;margin-bottom:6px}
+.flow .step p{font-size:13.5px;color:#43506e}
+.support{margin-top:20px;background:var(--bg);color:#fff;border-radius:14px;padding:24px 26px;font-size:14.5px}
+.support b{color:var(--yellow)}
+
+/* ===== アクセス / CTA ===== */
+.access{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch}
+.access .map{border:3px solid var(--ink);border-radius:14px;overflow:hidden}
+.access .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.contact{background:var(--bg);color:#fff;border-radius:16px;padding:30px 28px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.contact .cap{font-weight:800;font-size:14px;color:var(--yellow);letter-spacing:.06em}
+.contact .tel{font-family:var(--fn);font-weight:800;font-size:clamp(28px,4vw,38px);margin:8px 0 2px;color:#fff}
+.contact .sub{font-size:12px;color:#b8c4e6}
+.contact .btn{margin-top:18px;background:var(--yellow);color:var(--ink);text-decoration:none;font-weight:800;font-size:15px;padding:14px;border-radius:10px;transition:opacity .2s}
+.contact .btn:hover{opacity:.88}
+
+/* ===== フォーム（デモ） ===== */
+.formwrap{max-width:620px;margin:0 auto}
+.form-note{background:var(--pale);border:1.5px dashed var(--blue-line);border-radius:10px;padding:12px 16px;font-size:12.5px;color:#2c3a5e;margin-bottom:20px;font-weight:600}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:13.5px;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:15px;border:2px solid var(--grid-line);border-radius:10px;padding:12px 14px;background:#fff;color:var(--ink);transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue)}
+.field textarea{min-height:110px;resize:vertical}
+.form-submit{width:100%;background:var(--blue);color:#fff;border:none;font-family:inherit;font-weight:800;font-size:16px;padding:15px;border-radius:10px;cursor:pointer;transition:background .2s}
+.form-submit:hover{background:#0B3FC0}
+.form-msg{display:none;margin-top:16px;background:#EAFBF0;border:1.5px solid #12B76A;color:#0A7A45;font-weight:700;font-size:14px;padding:14px 16px;border-radius:10px}
+
+/* ===== フッター ===== */
+.footer{background:var(--ink);color:#cdd6ee;padding:44px 0 30px;text-align:center}
+.footer .fn{font-weight:900;font-size:16px;color:#fff}
+.footer p{font-size:12.5px;margin-top:6px}
+.footer .sample-note{font-size:11px;color:#8b97b8;margin-top:18px;line-height:1.9}
+.footer .sample-note a{color:#b8c4e6}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:920px){
+  .topnav,.top-tel{display:none}
+  .menu-btn{display:block}
+  .drawer{display:none;position:fixed;inset:60px 0 auto 0;background:var(--bg);border-bottom:4px solid var(--yellow);padding:10px 22px 18px;z-index:190}
+  .menu-open .drawer{display:block}
+  .drawer a{display:block;text-decoration:none;color:#fff;font-weight:700;font-size:15px;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.15)}
+  .drawer .d-tel{margin-top:12px;background:var(--yellow);color:var(--ink);text-align:center;border-radius:8px;border:none;font-weight:800}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .cards,.stats,.flow{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:26px}
+  .about .ph{max-width:360px;margin:0 auto}
+  .access{grid-template-columns:1fr}
+  .access .map iframe{min-height:280px}
+  .section{padding:52px 0}
+  .hero{padding:44px 0 50px}
+}
+@media (min-width:921px){.drawer{display:none}}
+
+/* スマホ: 番組表は横スクロール、種目/概要表は縦積み */
+@media (max-width:560px){
+  .brand .nm{font-size:16px}
+  .brand .nm small{font-size:8.5px}
+  .brand .ch{font-size:12px;padding:3px 7px}
+  .tbl-hint{display:block}
+  .hero .strip{grid-template-columns:1fr 1fr;gap:8px}
+  .hero .strip img:nth-child(3){display:none}
+  table.gaiyo{min-width:0;border:2px solid var(--ink)}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--grid-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:10px 14px}
+  table.gaiyo th{background:var(--bg);color:#fff;font-size:12px;padding:8px 14px}
+  .gaiyo-scroll{overflow:visible}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部バー（チャンネル風） -->
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <span class="ch">Ch.スポ</span>
+      <span class="nm">スポずっと<small>NPO法人｜名古屋市西区</small></span>
+    </a>
+    <nav class="topnav">
+      <a href="#timetable">週間表</a>
+      <a href="#programs">種目</a>
+      <a href="#about">わたしたち</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">団体概要</a>
+      <a href="#join">参加の流れ</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a class="top-tel" href="#access">見学・体験のお申し込み</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="drawer">
+    <a href="#timetable">週間タイムテーブル</a>
+    <a href="#programs">種目のご案内</a>
+    <a href="#about">わたしたちのこと</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">団体概要</a>
+    <a href="#join">参加の流れ</a>
+    <a href="#access">アクセス・お問い合わせ</a>
+    <a class="d-tel" href="#access" style="text-decoration:none;padding:12px;display:block">見学・体験のお申し込み</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <span class="onair reveal on"><span class="dot"></span>WEEKLY ON AIR</span>
+    <h1 class="reveal on"><span class="kb">今週も、</span><span class="kb">からだを</span><span class="kb">動かそう。</span><br><span class="kb">スポーツの<span class="hl">“時間割”</span>が、</span><span class="kb">ここにある。</span></h1>
+    <p class="lead reveal on">スポずっとは、名古屋市西区で青少年のスポーツ振興に取り組むNPO法人です。かけっこ、球技、からだづくり——曜日ごとの教室を“番組表”のように一覧にしました。気になる時間に、まずは見学から。</p>
+    <div class="chips reveal on">
+      <span>社会教育・スポーツ</span>
+      <span>青少年の健全育成</span>
+      <span>見学・体験できます</span>
+      <span>名古屋市西区</span>
+    </div>
+    <div class="cta reveal on">
+      <a class="p" href="#timetable">週間タイムテーブルを見る</a>
+      <a class="s" href="#join">はじめての方へ</a>
+    </div>
+    <div class="strip reveal on">
+      <!-- 差し替えポイント: 教室の活動風景（顔が特定されにくい構図で） -->
+      <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?w=900&q=80&auto=format&fit=crop" alt="かけっこ・ランニングのイメージ" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=900&q=80&auto=format&fit=crop" alt="ボール運動のイメージ" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900&q=80&auto=format&fit=crop" alt="体育館での運動のイメージ" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- 週間タイムテーブル（番組表） -->
+<section class="section" id="timetable">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">Timetable</span><h2>週間タイムテーブル</h2></div>
+    <p class="s-sub reveal">テレビの番組表のように、1週間の教室を一覧に。気になるコマは見学・体験できます。<br><span class="note-sample">※曜日・時間・種目はすべて表示イメージのサンプルです。実際の開催スケジュールに差し替えます</span></p>
+
+    <div class="legend reveal">
+      <span class="lg"><span class="sw sw-run"></span>かけっこ・陸上</span>
+      <span class="lg"><span class="sw sw-ball"></span>球技</span>
+      <span class="lg"><span class="sw sw-mind"></span>からだづくり</span>
+      <span class="lg"><span class="sw sw-free"></span>自由参加</span>
+    </div>
+
+    <div class="tt-scroll reveal">
+      <table class="tt">
+        <thead>
+          <tr>
+            <th>時間</th>
+            <th>月<span class="wd">MON</span></th>
+            <th>火<span class="wd">TUE</span></th>
+            <th>水<span class="wd">WED</span></th>
+            <th>木<span class="wd">THU</span></th>
+            <th>金<span class="wd">FRI</span></th>
+            <th>土<span class="wd">SAT</span></th>
+          </tr>
+        </thead>
+        <!-- ※サンプル: 以下の時間割はすべてダミーです -->
+        <tbody>
+          <tr>
+            <th>16:00<br>17:00</th>
+            <td><a class="prog run" href="#programs"><span class="t">かけっこ教室</span><span class="m">低学年 / 校庭</span></a></td>
+            <td><a class="prog ball" href="#programs"><span class="t">ボール遊び</span><span class="m">未就学〜低学年</span></a></td>
+            <td><a class="prog run" href="#programs"><span class="t">かけっこ教室</span><span class="m">低学年 / 校庭</span></a></td>
+            <td><a class="prog mind" href="#programs"><span class="t">からだづくり</span><span class="m">全学年 / 体育館</span></a></td>
+            <td><a class="prog ball" href="#programs"><span class="t">ボール遊び</span><span class="m">未就学〜低学年</span></a></td>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+          </tr>
+          <tr>
+            <th>17:00<br>18:00</th>
+            <td><a class="prog ball" href="#programs"><span class="t">ミニサッカー</span><span class="m">中・高学年</span></a></td>
+            <td><a class="prog run" href="#programs"><span class="t">陸上クラブ</span><span class="m">中・高学年</span></a></td>
+            <td><a class="prog ball" href="#programs"><span class="t">ミニバスケ</span><span class="m">中・高学年</span></a></td>
+            <td><a class="prog run" href="#programs"><span class="t">陸上クラブ</span><span class="m">中・高学年</span></a></td>
+            <td><a class="prog mind" href="#programs"><span class="t">なわとび強化</span><span class="m">全学年</span></a></td>
+            <td><a class="prog ball" href="#programs"><span class="t">ミニサッカー</span><span class="m">中・高学年</span></a></td>
+          </tr>
+          <tr>
+            <th>18:00<br>19:00</th>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td><a class="prog mind" href="#programs"><span class="t">体幹トレ</span><span class="m">高学年 / 体育館</span></a></td>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td><a class="prog mind" href="#programs"><span class="t">体幹トレ</span><span class="m">高学年 / 体育館</span></a></td>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td><a class="prog run" href="#programs"><span class="t">記録会</span><span class="m">全学年 / 月1回</span></a></td>
+          </tr>
+          <tr>
+            <th>09:00<br>11:00</th>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td class="empty-cell"><span class="prog empty"><span class="t">—</span></span></td>
+            <td><a class="prog free" href="#programs"><span class="t">みんなであそぼう</span><span class="m">未就学〜 / 保護者歓迎</span></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- 種目のご案内 -->
+<section class="section alt" id="programs">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">Programs</span><h2>種目のご案内</h2></div>
+    <p class="s-sub reveal">「はじめて」でも大丈夫。少しずつ“できた”を増やしていける種目をそろえています。<br><span class="note-sample">※種目名・対象・内容は表示イメージのサンプルです</span></p>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="ph"><span class="num">01</span><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=900&q=80&auto=format&fit=crop" alt="かけっこ・陸上のイメージ" loading="lazy"></div>
+        <div class="bd">
+          <p class="cat">かけっこ・陸上</p>
+          <h3>走る・跳ぶの基本</h3>
+          <p>まっすぐ走る、リズムよく跳ぶ。運動のいちばんの土台を、遊びながら身につけます。</p>
+          <div class="meta"><span>低〜高学年</span><span>校庭</span><span>週2回</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="ph"><span class="num">02</span><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=900&q=80&auto=format&fit=crop" alt="球技のイメージ" loading="lazy"></div>
+        <div class="bd">
+          <p class="cat">球技</p>
+          <h3>ボールとなかよく</h3>
+          <p>ミニサッカーやミニバスケで、仲間と力を合わせる楽しさを。勝ち負けよりも“やってみる”を大切に。</p>
+          <div class="meta"><span>中・高学年</span><span>体育館</span><span>チーム制</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="ph"><span class="num">03</span><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=80&auto=format&fit=crop" alt="からだづくりのイメージ" loading="lazy"></div>
+        <div class="bd">
+          <p class="cat">からだづくり</p>
+          <h3>ケガに強いからだへ</h3>
+          <p>体幹やなわとびで、バランスと持久力を。すべてのスポーツに効く“土台の力”を育てます。</p>
+          <div class="meta"><span>全学年</span><span>体育館</span><span>少人数</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 数字パネル -->
+<section class="section" id="stats">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">Numbers</span><h2>数字で見るスポずっと</h2></div>
+    <p class="s-sub reveal"><span class="note-sample">※以下の数値はすべて表示イメージのサンプルです。実績値に差し替えます</span></p>
+    <div class="stats">
+      <div class="stat reveal"><div class="n">◯<small>種目</small></div><div class="l">週間で開催</div><div class="d">かけっこ・球技・からだづくり ほか</div></div>
+      <div class="stat reveal"><div class="n">◯◯◯<small>名</small></div><div class="l">年間の参加のべ人数</div><div class="d">未就学から中・高学年まで</div></div>
+      <div class="stat reveal"><div class="n">◯◯<small>年</small></div><div class="l">地域での活動<span style="font-size:10px;color:#b8c4e6">（※サンプル）</span></div><div class="d">名古屋市西区を中心に</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたちのこと -->
+<section class="section alt" id="about">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">About</span><h2>わたしたちのこと</h2></div>
+    <div class="about">
+      <div class="reveal">
+        <p class="big"><span class="kb">スポーツを通して、</span><span class="kb"><em>健やかな心とからだ</em>を。</span></p>
+        <p>スポずっとは、青少年に対してスポーツ振興の事業を行い、スポーツを通して健全な育成に寄与することを目的とするNPO法人です。「うまい・へた」ではなく、「またやりたい」と思える体験を、名古屋市西区の子どもたちに届けています。<span class="note-sample">※文章は定款の目的（公開情報）をもとにしたサンプルです</span></p>
+        <div class="msg">
+          <h3>ごあいさつ</h3>
+          <p>体を動かすことは、それだけで大きな力になります。転んでも、うまくいかなくても、もう一度立ち上がる。その積み重ねが、子どもたちの“ずっと”を支えると信じています。まずは一度、見学にいらしてください。<span class="note-sample">※あいさつ文はサンプルです。ご本人のお言葉に差し替えいたします</span></p>
+          <p class="name">特定非営利活動法人 スポずっと<small>代表（お名前は公開時に記載）</small></p>
+        </div>
+      </div>
+      <div class="ph reveal">
+        <!-- 差し替えポイント: 活動の様子（顔が特定されにくい構図で） -->
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=900&q=80&auto=format&fit=crop" alt="スポーツに取り組む様子のイメージ" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="section" id="news">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">News</span><h2>お知らせ</h2></div>
+    <p class="s-sub reveal"><span class="note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</span></p>
+    <div class="news reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="row"><time>20XX.XX.XX</time><span class="badge">改編</span><a href="#news">春の新しい時間割を公開しました</a></div>
+      <div class="row"><time>20XX.XX.XX</time><span class="badge">募集</span><a href="#news">体験会の参加者を募集します（無料）</a></div>
+      <div class="row"><time>20XX.XX.XX</time><span class="badge">報告</span><a href="#news">月1回の記録会をおこないました</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 団体概要 -->
+<section class="section alt" id="gaiyo">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">Profile</span><h2>団体概要</h2></div>
+    <div class="gaiyo-scroll reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 スポずっと</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市西区（詳細住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>社会教育／学術・文化・芸術・スポーツの振興</td></tr>
+        <tr><th>目的</th><td>青少年に対してスポーツ振興の事業を行い、スポーツを通して健全な育成に寄与する（定款目的より）</td></tr>
+        <tr><th>主な事業</th><td>スポーツ教室の運営／記録会・体験会の開催 <span class="note-sample">※内容はサンプルです</span></td></tr>
+        <tr><th>電話</th><td>052-000-0000（<span class="note-sample">※ダミー番号です。公開時に差し替えます</span>）</td></tr>
+        <tr><th>代表者</th><td>（お名前は公開時に記載します）</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 参加の流れ -->
+<section class="section" id="join">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">How to join</span><h2>参加までの流れ</h2></div>
+    <p class="s-sub reveal">「まずは見てみたい」だけで大丈夫です。無理のないペースではじめましょう。</p>
+    <div class="flow">
+      <div class="step reveal"><h3>お問い合わせ</h3><p>気になる曜日・種目をお知らせください。お子さまのご様子も、あわせてお聞かせください。</p></div>
+      <div class="step reveal"><h3>見学・体験</h3><p>実際の教室の雰囲気を見て、体を動かしてみましょう。合うかどうか、いちばん大切なところです。</p></div>
+      <div class="step reveal"><h3>参加スタート</h3><p>持ち物や参加のしかたをご案内します。少しずつ“できた”を増やしていきましょう。</p></div>
+    </div>
+    <p class="support reveal"><b>活動を支えてくださる方も募集しています。</b>　コーチ・ボランティア・ご寄付・賛助会員など、できることを、できる範囲で。お気軽にお問い合わせください。<span class="note-sample" style="color:#b8c4e6">※募集内容はサンプルです</span></p>
+  </div>
+</section>
+
+<!-- アクセス・お問い合わせ -->
+<section class="section alt" id="access">
+  <div class="wrap">
+    <div class="s-head reveal"><span class="tag">Access</span><h2>アクセス・お問い合わせ</h2></div>
+    <p class="s-sub reveal">見学・体験のお申し込みは、下記フォームまたはお電話で。<br><span class="note-sample">※地図は名古屋市西区の広域表示です。詳細地点は公開時に設定します</span></p>
+    <div class="access reveal" style="margin-bottom:34px">
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E8%A5%BF%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市西区の地図"></iframe>
+      </div>
+      <div class="contact">
+        <p class="cap">見学・体験のお電話</p>
+        <p class="tel">052-000-0000</p>
+        <p class="sub">※ダミー番号です（公開時に差し替え）</p>
+        <a class="btn" href="#form">フォームで申し込む</a>
+      </div>
+    </div>
+
+    <!-- デモフォーム -->
+    <div class="formwrap reveal" id="form">
+      <div class="form-note">これは動作イメージのデモフォームです。実際には送信されません（お問い合わせ内容は保存・送信されません）。本番では、いただいた内容がメール等に届くように設定します。</div>
+      <form id="demoform" novalidate>
+        <div class="field">
+          <label for="f-name">お名前（保護者さま）</label>
+          <input type="text" id="f-name" name="name" placeholder="例）名古屋 花子" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-tel">ご連絡先（電話・メールなど）</label>
+          <input type="text" id="f-tel" name="tel" placeholder="ご都合のよい連絡先">
+        </div>
+        <div class="field">
+          <label for="f-prog">気になる種目・曜日</label>
+          <select id="f-prog" name="prog">
+            <option>選んでください</option>
+            <option>かけっこ・陸上</option>
+            <option>球技（ミニサッカー / ミニバスケ）</option>
+            <option>からだづくり（体幹・なわとび）</option>
+            <option>自由参加（みんなであそぼう）</option>
+            <option>まだ決めていない / 相談したい</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">ご質問・ご要望</label>
+          <textarea id="f-msg" name="message" placeholder="お子さまの学年や、気になることなど"></textarea>
+        </div>
+        <button type="submit" class="form-submit">見学・体験を申し込む（デモ）</button>
+        <p class="form-msg" id="formMsg">送信ありがとうございます。※これはデモ表示です。実際には送信されていません。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="fn">特定非営利活動法人 スポずっと</p>
+    <p>愛知県名古屋市西区｜TEL 052-000-0000（ダミー）</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、電話番号はダミー、※印の内容はサンプル）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px">&copy; 2026 NPO法人 スポずっと（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<script>
+// ドロワー開閉
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".drawer a, .topnav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロールで表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("demoform");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("formMsg").style.display = "block";
+  form.querySelector(".form-submit").textContent = "送信しました（デモ）";
+});
+</script>
+
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+</body>
+</html>

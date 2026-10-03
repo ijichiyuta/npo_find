@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 日本医学歯学情報機構 さま
+  （台帳／データテーブル主役型・医療情報カタログUI）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（登記・NPOポータルの事業目的＝「障害や疾病・
+    貧困に苦しむ人々への医療情報の提供・援助、国内外の人々への
+    教育・治療支援」、所在地＝愛知県日進市、活動分野＝保健医療
+    福祉／環境保全／国際協力）の範囲で作成しています。
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・医療効果を断定・誇大に表現しない方針で記述しています
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替え前提）
+  ・代表者の実名・番地の詳細は本サンプルでは掲載していません
+  ・noindex 設定・電話番号のリンク自動化(format-detection)を無効化済み
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 日本医学歯学情報機構｜日進市の医療情報提供・国際協力【ご提案サンプル】</title>
+<meta name="description" content="愛知県日進市を拠点に、疾病・障害・貧困に向き合う人々へ、整理された医療・歯学の情報を届けるNPO法人。国内外での教育・治療支援に取り組みます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4F7FA;          /* 淡い青みグレー */
+  --c-paper:#FFFFFF;
+  --c-ink:#16202E;
+  --c-ink-soft:#5A6675;
+  --c-navy:#1B3B6F;        /* ネイビー */
+  --c-navy-deep:#122A52;
+  --c-navy-pale:#E7EDF5;
+  --c-mint:#2FA98C;        /* ミント */
+  --c-mint-pale:#E3F4EF;
+  --c-line:#D5DEE8;
+  --c-line-soft:#E5ECF3;
+  --f-body:"Noto Sans JP",sans-serif;
+  --f-mono:"IBM Plex Mono",monospace;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden;font-family:var(--f-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+a{color:inherit}
+
+/* ===== 上部ユーティリティ・バー ===== */
+.utility{background:var(--c-navy-deep);color:#C6D4E6;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em}
+.utility .u-in{max-width:1120px;margin:0 auto;padding:6px 24px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.utility .u-in span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.utility b{color:#fff}
+
+/* ===== ヘッダー（台帳の見出し行） ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(6px);border-bottom:1px solid var(--c-line)}
+.head .h-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .t{font-weight:900;font-size:17px;letter-spacing:.04em;line-height:1.3}
+.brand .t small{display:block;font-family:var(--f-mono);font-size:10px;font-weight:500;color:var(--c-mint);letter-spacing:.1em;margin-top:3px}
+.head nav{margin-left:auto;display:flex;gap:4px}
+.head nav a{text-decoration:none;color:var(--c-ink-soft);font-size:13px;font-weight:500;padding:8px 12px;border-radius:4px;transition:color .3s,background .3s}
+.head nav a:hover{color:var(--c-navy);background:var(--c-navy-pale)}
+.head .cta{margin-left:8px;background:var(--c-navy);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:10px 18px;border-radius:4px;white-space:nowrap;transition:background .3s}
+.head .cta:hover{background:var(--c-navy-deep)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:23px;height:2px;background:var(--c-navy);margin:5px 0;transition:.3s}
+
+/* ===== 幅の共通 ===== */
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#8B98A8}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#8B98A8;margin-top:6px}
+
+/* ===== セクション見出し（データベースの見出し） ===== */
+.sec{padding:76px 0;border-bottom:1px solid var(--c-line)}
+.s-head{margin-bottom:34px}
+.s-head .rec{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;color:var(--c-mint);text-transform:uppercase;margin-bottom:10px}
+.s-head .rec::before{content:"";width:8px;height:8px;background:var(--c-mint);transform:rotate(45deg);flex:none}
+.s-head h2{font-size:clamp(21px,2.6vw,28px);letter-spacing:.03em;color:var(--c-navy-deep)}
+.s-head .sub{margin-top:10px;font-size:14px;color:var(--c-ink-soft);max-width:660px}
+
+/* ===== ヒーロー（台帳の表紙＝検索窓＋インデックス） ===== */
+.hero{background:var(--c-paper);border-bottom:1px solid var(--c-line);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--c-line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--c-line-soft) 1px,transparent 1px);background-size:34px 34px;opacity:.5;pointer-events:none}
+.hero .h-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:72px 0 68px}
+.hero .plate{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.hero .plate span{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--c-navy);border:1px solid var(--c-line);background:var(--c-bg);padding:4px 10px}
+.hero h1{font-size:clamp(27px,3.8vw,42px);font-weight:900;line-height:1.55;letter-spacing:.03em;color:var(--c-navy-deep)}
+.hero h1 em{font-style:normal;color:var(--c-mint)}
+.hero .lead{margin-top:22px;font-size:15.5px;line-height:2.1;max-width:560px;color:var(--c-ink-soft)}
+.hero .acts{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .acts a{text-decoration:none;font-weight:700;font-size:14px;padding:13px 24px;border-radius:5px;transition:.3s}
+.hero .acts .p{background:var(--c-navy);color:#fff}
+.hero .acts .p:hover{background:var(--c-navy-deep)}
+.hero .acts .s{border:1px solid var(--c-navy);color:var(--c-navy)}
+.hero .acts .s:hover{background:var(--c-navy-pale)}
+/* ヒーロー右：ミニ台帳カード */
+.ledger-card{background:var(--c-paper);border:1px solid var(--c-line);box-shadow:0 18px 40px rgba(18,42,82,.10);border-radius:8px;overflow:hidden}
+.ledger-card .lc-head{background:var(--c-navy-deep);color:#fff;padding:12px 18px;display:flex;justify-content:space-between;align-items:center}
+.ledger-card .lc-head b{font-size:13px;letter-spacing:.05em}
+.ledger-card .lc-head .id{font-family:var(--f-mono);font-size:10.5px;color:#9FB4D2;letter-spacing:.08em}
+.ledger-card .lc-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.ledger-card .lc-body{padding:4px 0}
+.ledger-card .lc-row{display:flex;font-size:12.5px;border-bottom:1px solid var(--c-line-soft);padding:9px 18px}
+.ledger-card .lc-row:last-child{border-bottom:none}
+.ledger-card .lc-row .k{width:96px;flex:none;color:var(--c-ink-soft);font-family:var(--f-mono);font-size:10.5px;letter-spacing:.04em;padding-top:2px}
+.ledger-card .lc-row .v{font-weight:500}
+.ledger-card .lc-row .v .mint{color:var(--c-mint);font-weight:700}
+
+/* ===== 指標ストリップ ===== */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--c-line);background:var(--c-paper);border-radius:8px;overflow:hidden}
+.metrics .m{padding:24px 22px;border-right:1px solid var(--c-line)}
+.metrics .m:last-child{border-right:none}
+.metrics .m .n{font-family:var(--f-mono);font-size:30px;font-weight:600;color:var(--c-navy-deep);letter-spacing:.01em;line-height:1.1}
+.metrics .m .n span{font-size:16px;color:var(--c-mint)}
+.metrics .m .l{margin-top:6px;font-size:12.5px;color:var(--c-ink-soft)}
+
+/* ===== 事業台帳テーブル ===== */
+table.reg{width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px;background:var(--c-paper)}
+table.reg thead th{background:var(--c-navy-deep);color:#fff;font-weight:700;padding:12px 16px;text-align:left;font-size:12.5px;letter-spacing:.03em;white-space:nowrap;position:sticky;top:0}
+table.reg tbody th{background:var(--c-navy-pale);color:var(--c-navy-deep);font-weight:700;text-align:left;padding:13px 16px;border:1px solid var(--c-line);white-space:nowrap;font-family:var(--f-mono);font-size:12px;letter-spacing:.02em}
+table.reg td{border:1px solid var(--c-line);padding:13px 16px;vertical-align:top}
+table.reg td .tag{display:inline-block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;color:var(--c-mint);background:var(--c-mint-pale);padding:2px 8px;border-radius:3px;margin-right:6px}
+table.reg tbody tr{transition:background .2s}
+table.reg tbody tr:hover td,table.reg tbody tr:hover th{background:var(--c-mint-pale)}
+table.reg td b{color:var(--c-navy)}
+
+/* ===== 情報カタログ（分野の索引カード） ===== */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat{background:var(--c-paper);border:1px solid var(--c-line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.cat:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(18,42,82,.10)}
+.cat .ph{position:relative}
+.cat .ph img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.cat .ph .no{position:absolute;left:0;top:0;font-family:var(--f-mono);font-size:11px;font-weight:600;color:#fff;background:var(--c-navy-deep);padding:4px 10px;letter-spacing:.06em}
+.cat .body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.cat .field{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;color:var(--c-mint);text-transform:uppercase;margin-bottom:7px}
+.cat h3{font-size:16.5px;color:var(--c-navy-deep);letter-spacing:.02em}
+.cat p{font-size:13px;color:var(--c-ink-soft);line-height:1.85;margin-top:9px}
+.cat .foot{margin-top:auto;padding-top:14px;border-top:1px dotted var(--c-line);font-family:var(--f-mono);font-size:10.5px;color:#8B98A8;letter-spacing:.04em}
+
+/* ===== ミッション（引用ブロック） ===== */
+.mission{background:var(--c-navy-deep);border-radius:10px;padding:52px 48px;color:#fff;position:relative;overflow:hidden}
+.mission::before{content:"“";position:absolute;top:-10px;left:28px;font-size:120px;color:rgba(47,169,140,.35);font-family:Georgia,serif}
+.mission .big{font-size:clamp(19px,2.4vw,25px);font-weight:700;line-height:1.9;letter-spacing:.03em;position:relative}
+.mission .big em{font-style:normal;color:#6FD9C0}
+.mission .src{margin-top:20px;font-family:var(--f-mono);font-size:11.5px;color:#9FB4D2;letter-spacing:.04em}
+
+/* ===== 資料インデックス（更新台帳） ===== */
+table.docs{width:100%;min-width:600px;border-collapse:collapse;font-size:13.5px;background:var(--c-paper)}
+table.docs thead th{background:var(--c-navy-deep);color:#fff;font-weight:700;padding:11px 15px;text-align:left;font-size:12px;letter-spacing:.03em;white-space:nowrap}
+table.docs td{border-bottom:1px solid var(--c-line);padding:12px 15px;vertical-align:middle}
+table.docs td.date{font-family:var(--f-mono);font-size:12px;color:var(--c-ink-soft);white-space:nowrap;width:110px}
+table.docs td.cat3{white-space:nowrap;width:120px}
+table.docs td.cat3 span{font-family:var(--f-mono);font-size:10.5px;color:var(--c-navy);border:1px solid var(--c-line);padding:2px 8px;border-radius:3px}
+table.docs td.ttl a{color:var(--c-ink);text-decoration:none;font-weight:500}
+table.docs td.ttl a:hover{color:var(--c-mint);text-decoration:underline;text-underline-offset:3px}
+table.docs tbody tr:hover td{background:var(--c-navy-pale)}
+
+/* ===== 法人概要（台帳） ===== */
+table.gaiyo{width:100%;min-width:520px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:170px;text-align:left;font-weight:700;background:var(--c-navy-pale);color:var(--c-navy-deep);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap;font-family:var(--f-mono);font-size:12px;letter-spacing:.02em}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+table.gaiyo td a{color:var(--c-navy);font-weight:700;text-decoration:none}
+
+/* ===== 参加・支援 ===== */
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.support{background:var(--c-paper);border:1px solid var(--c-line);border-top:3px solid var(--c-mint);border-radius:6px;padding:26px 24px}
+.support h3{font-size:16px;color:var(--c-navy-deep)}
+.support h3 .en{display:block;font-family:var(--f-mono);font-size:10.5px;color:var(--c-mint);letter-spacing:.14em;margin-bottom:5px}
+.support p{font-size:13px;color:var(--c-ink-soft);margin-top:10px}
+
+/* ===== お問い合わせ ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.form{background:var(--c-paper);border:1px solid var(--c-line);border-radius:8px;padding:30px 30px 34px}
+.form .row{margin-bottom:16px}
+.form label{display:block;font-size:12.5px;font-weight:700;color:var(--c-navy-deep);margin-bottom:6px}
+.form label .req{color:var(--c-mint);font-family:var(--f-mono);font-size:10px;margin-left:6px}
+.form input,.form textarea{width:100%;border:1px solid var(--c-line);border-radius:5px;padding:11px 13px;font-family:inherit;font-size:14px;color:var(--c-ink);background:var(--c-bg)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-mint);box-shadow:0 0 0 3px var(--c-mint-pale)}
+.form textarea{min-height:110px;resize:vertical}
+.form .submit{width:100%;background:var(--c-navy);color:#fff;border:none;border-radius:5px;padding:14px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:background .3s}
+.form .submit:hover{background:var(--c-navy-deep)}
+.form .demo{font-size:11.5px;color:#8B98A8;margin-top:12px;text-align:center}
+.contact-side .tel-box{background:var(--c-navy-deep);color:#fff;border-radius:8px;padding:26px 28px}
+.contact-side .tel-box .cap{font-size:12.5px;color:#9FB4D2;letter-spacing:.04em}
+.contact-side .tel-box .num{font-family:var(--f-mono);font-size:30px;font-weight:600;letter-spacing:.02em;margin:6px 0 4px}
+.contact-side .tel-box .num a{color:#fff;text-decoration:none}
+.contact-side .tel-box p{font-size:12px;color:#9FB4D2}
+.contact-side .map{margin-top:16px;border:1px solid var(--c-line);border-radius:8px;overflow:hidden}
+.contact-side .map iframe{width:100%;height:230px;border:none;display:block}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-navy-deep);color:#C6D4E6;padding:48px 0 34px}
+.footer .f-top{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:flex-start;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer .f-brand .t{color:#fff;font-weight:900;font-size:16px;letter-spacing:.04em}
+.footer .f-brand p{font-size:12px;margin-top:8px;color:#9FB4D2;line-height:1.9}
+.footer .f-nav{display:flex;gap:26px;flex-wrap:wrap}
+.footer .f-nav a{color:#C6D4E6;text-decoration:none;font-size:12.5px}
+.footer .f-nav a:hover{color:#fff}
+.footer .sample-note{font-size:11px;color:#8FA4C2;margin-top:22px;line-height:1.9}
+.footer .sample-note a{color:#C6D4E6}
+.footer .copy{font-family:var(--f-mono);font-size:10.5px;color:#7E93B4;margin-top:14px;letter-spacing:.04em}
+
+/* ===== SPナビ ===== */
+.sp-nav{display:none}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:none;position:fixed;inset:71px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line);padding:10px 24px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav a.cta-sp{color:var(--c-navy);font-weight:700}
+  .hero .h-grid{grid-template-columns:1fr;gap:36px;padding:48px 0 52px}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .support-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .mission{padding:40px 30px}
+  .tbl-hint{display:block}
+}
+@media (max-width:620px){
+  .utility{display:none}
+  .sec{padding:52px 0}
+  .metrics{grid-template-columns:1fr 1fr}
+  .metrics .m:nth-child(2){border-right:none}
+  .metrics .m:nth-child(1),.metrics .m:nth-child(2){border-bottom:1px solid var(--c-line)}
+  .cat-grid{grid-template-columns:1fr}
+  /* 台帳テーブルを縦積みへ */
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 15px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo th{font-size:11px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部ユーティリティ・バー -->
+<div class="utility">
+  <div class="u-in">
+    <span><b>DATABASE</b>&nbsp; 医療・歯学情報の提供と国内外の教育・治療支援</span>
+    <span>愛知県日進市 / EST. 20XX</span>
+  </div>
+</div>
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="h-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="41" height="41" rx="7" fill="#1B3B6F"/>
+        <path d="M22 11v22M11 22h22" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="6.4" fill="none" stroke="#2FA98C" stroke-width="2.4"/>
+      </svg>
+      <span class="t">日本医学歯学情報機構<small>MEDICAL &amp; DENTAL INFO</small></span>
+    </a>
+    <nav>
+      <a href="#activity">事業</a>
+      <a href="#catalog">情報分野</a>
+      <a href="#mission">理念</a>
+      <a href="#docs">資料</a>
+      <a href="#gaiyo">概要</a>
+      <a href="#support">参加・支援</a>
+    </nav>
+    <a class="cta" href="#contact">お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sp-nav">
+  <a href="#activity">事業のご案内</a>
+  <a href="#catalog">情報分野インデックス</a>
+  <a href="#mission">理念・目的</a>
+  <a href="#docs">資料インデックス</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#support">参加・支援</a>
+  <a href="#contact" class="cta-sp">お問い合わせ →</a>
+</nav>
+
+<!-- ヒーロー（台帳の表紙） -->
+<section class="hero">
+  <div class="wrap">
+    <div class="h-grid">
+      <div>
+        <div class="plate reveal on">
+          <span>保健・医療・福祉</span>
+          <span>環境保全</span>
+          <span>国際協力</span>
+        </div>
+        <h1 class="reveal on"><span class="kb">整理された</span><span class="kb"><em>医療・歯学の情報</em>を、</span><br><span class="kb">必要とする人へ</span><span class="kb">正しく届ける。</span></h1>
+        <p class="lead reveal on">日本医学歯学情報機構は、疾病・障害・貧困に向き合う人々へ、信頼できる医療と歯学の情報を整理して提供し、国内外での教育と治療支援に取り組む特定非営利活動法人です。</p>
+        <div class="acts reveal on">
+          <a class="p" href="#catalog">情報分野を見る</a>
+          <a class="s" href="#contact">相談・お問い合わせ</a>
+        </div>
+      </div>
+      <div class="ledger-card reveal on">
+        <div class="lc-head"><b>法人レコード</b><span class="id">REC-000</span></div>
+        <div class="lc-photo">
+          <!-- 差し替えポイント: 活動を象徴するお写真（医療情報・資料など） -->
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000&q=80&auto=format&fit=crop" alt="医療情報のイメージ">
+        </div>
+        <div class="lc-body">
+          <div class="lc-row"><div class="k">分野</div><div class="v">保健医療福祉／環境／国際</div></div>
+          <div class="lc-row"><div class="k">所在地</div><div class="v">愛知県日進市</div></div>
+          <div class="lc-row"><div class="k">活動範囲</div><div class="v"><span class="mint">国内および海外</span></div></div>
+          <div class="lc-row"><div class="k">目的</div><div class="v">医療情報の提供・教育・治療支援</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 指標ストリップ -->
+<section class="sec" style="padding-top:56px">
+  <div class="wrap">
+    <p class="note-sample" style="margin-bottom:16px">※以下の数値は表示イメージのサンプルです。実績に応じた数値に差し替えます</p>
+    <div class="metrics reveal">
+      <!-- ※サンプル: 数値はダミーです -->
+      <div class="m"><div class="n">3<span>分野</span></div><div class="l">保健医療福祉・環境・国際協力</div></div>
+      <div class="m"><div class="n">100<span>＋</span></div><div class="l">整理・公開した情報資料 ※サンプル</div></div>
+      <div class="m"><div class="n">2<span>ヶ国</span></div><div class="l">教育・治療支援の実施地域 ※サンプル</div></div>
+      <div class="m"><div class="n">全<span>年代</span></div><div class="l">情報提供の対象</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 事業のご案内（事業台帳） -->
+<section class="sec" id="activity">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="rec">Activity Register</div>
+      <h2>事業のご案内</h2>
+      <p class="sub">登記された事業目的にもとづき、情報の提供・援助、教育、治療支援を柱に活動しています。内容は台帳形式で整理してお伝えします。</p>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="reg">
+        <thead>
+          <tr><th style="width:170px">事業</th><th>内容</th><th style="width:150px">対象</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>医療・歯学情報<br>の提供</th>
+            <td><span class="tag">INFO</span>疾病や障害に関する医療・歯学の情報を、出典を確かめながら整理し、分かりやすい形で提供します。<b>特定の治療法の効果を断定する表現は行いません。</b></td>
+            <td>患者・ご家族／<br>支援に携わる方</td>
+          </tr>
+          <tr>
+            <th>教育・啓発</th>
+            <td><span class="tag">EDU</span>国内外の人々に向けて、健康や医療・歯学に関する学びの機会づくりに取り組みます。資料の作成や勉強会の開催などを想定しています。<span class="note-sample">※具体内容はサンプルです</span></td>
+            <td>一般の方／<br>支援団体</td>
+          </tr>
+          <tr>
+            <th>治療支援・<br>国際協力</th>
+            <td><span class="tag">SUPPORT</span>貧困や医療資源の不足に苦しむ地域に対し、関係機関と連携しながら治療につながる支援を行います。<span class="note-sample">※連携先・実施地域はサンプルです</span></td>
+            <td>国内外の<br>支援を要する方</td>
+          </tr>
+          <tr>
+            <th>環境保全</th>
+            <td><span class="tag">ENV</span>健康と暮らしの基盤である環境の保全に関する活動・情報発信に取り組みます。<span class="note-sample">※活動内容はサンプルです</span></td>
+            <td>地域・一般の方</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- 情報分野インデックス（カタログ） -->
+<section class="sec" id="catalog">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="rec">Information Index</div>
+      <h2>情報分野インデックス</h2>
+      <p class="sub">扱う情報を分野ごとに索引化しています。実際のサイトでは、各分野に資料や解説ページをぶら下げて「探しやすい医療情報の窓口」にできます。<span class="note-sample">※以下はカテゴリ例のサンプルです</span></p>
+    </div>
+    <div class="cat-grid reveal">
+      <!-- ※サンプル: 分野・説明はダミーです。実際の取り扱い分野に差し替えます -->
+      <div class="cat">
+        <div class="ph"><span class="no">FIELD 01</span><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=900&q=80&auto=format&fit=crop" alt="医療情報のイメージ"></div>
+        <div class="body">
+          <div class="field">Medical</div>
+          <h3>医療の情報</h3>
+          <p>疾病や治療、療養に関する基礎的な情報を、出典とともに整理してお届けします。</p>
+          <div class="foot">CATEGORY / MED</div>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="ph"><span class="no">FIELD 02</span><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&q=80&auto=format&fit=crop" alt="歯学情報のイメージ"></div>
+        <div class="body">
+          <div class="field">Dental</div>
+          <h3>歯学・口腔の情報</h3>
+          <p>歯と口の健康に関する知識を、日々の暮らしに役立つ形でまとめます。</p>
+          <div class="foot">CATEGORY / DEN</div>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="ph"><span class="no">FIELD 03</span><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&q=80&auto=format&fit=crop" alt="国際協力のイメージ"></div>
+        <div class="body">
+          <div class="field">Global</div>
+          <h3>国際協力・支援</h3>
+          <p>医療資源の不足する地域への教育・治療支援に関する取り組みと情報。</p>
+          <div class="foot">CATEGORY / GLB</div>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="ph"><span class="no">FIELD 04</span><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&q=80&auto=format&fit=crop" alt="教育・啓発のイメージ"></div>
+        <div class="body">
+          <div class="field">Education</div>
+          <h3>教育・啓発</h3>
+          <p>健康や医療を学ぶための資料づくり・勉強会など、学びの場に関する情報。</p>
+          <div class="foot">CATEGORY / EDU</div>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="ph"><span class="no">FIELD 05</span><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80&auto=format&fit=crop" alt="環境保全のイメージ"></div>
+        <div class="body">
+          <div class="field">Environment</div>
+          <h3>環境と健康</h3>
+          <p>暮らしと健康の基盤となる環境の保全について、関わり方を整理します。</p>
+          <div class="foot">CATEGORY / ENV</div>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="ph"><span class="no">FIELD 06</span><img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=900&q=80&auto=format&fit=crop" alt="相談・窓口のイメージ"></div>
+        <div class="body">
+          <div class="field">Consultation</div>
+          <h3>相談・窓口</h3>
+          <p>情報にたどり着けないときの、最初の入口となる相談の受け付け。</p>
+          <div class="foot">CATEGORY / CON</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 理念（ミッション） -->
+<section class="sec" id="mission">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="rec">Mission</div>
+      <h2>わたしたちの理念</h2>
+    </div>
+    <div class="mission reveal">
+      <p class="big"><span class="kb">障害や疾病、</span><span class="kb">貧困に苦しむ人々へ。</span><br><span class="kb"><em>医療と歯学の情報を届け、</em></span><span class="kb"><em>教育と治療の支援を、</em></span><span class="kb">国の内と外へ。</span></p>
+      <p class="src">— 定款に定める目的（公開情報）をもとに要約 ／ ※文章表現はサンプルです</p>
+    </div>
+  </div>
+</section>
+
+<!-- 資料インデックス（更新台帳） -->
+<section class="sec" id="docs">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="rec">Document Index</div>
+      <h2>資料・お知らせインデックス</h2>
+      <p class="sub">公開した情報資料やお知らせを、更新台帳として一覧できます。ご自身で追加・更新できる形にできます。</p>
+    </div>
+    <p class="note-sample reveal" style="margin-bottom:14px">※以下は表示イメージのサンプルです。日付・内容はダミーです</p>
+    <div class="tbl-wrap reveal">
+      <table class="docs">
+        <thead>
+          <tr><th>更新日</th><th>分野</th><th>タイトル</th></tr>
+        </thead>
+        <tbody>
+          <!-- ※サンプル: 内容はダミーです -->
+          <tr><td class="date">20XX.XX.XX</td><td class="cat3"><span>MED</span></td><td class="ttl"><a href="#docs">医療情報の探し方に関する解説資料を公開しました</a></td></tr>
+          <tr><td class="date">20XX.XX.XX</td><td class="cat3"><span>EDU</span></td><td class="ttl"><a href="#docs">健康を学ぶ勉強会の開催報告を掲載しました</a></td></tr>
+          <tr><td class="date">20XX.XX.XX</td><td class="cat3"><span>GLB</span></td><td class="ttl"><a href="#docs">国際協力の取り組みについてご案内します</a></td></tr>
+          <tr><td class="date">20XX.XX.XX</td><td class="cat3"><span>DEN</span></td><td class="ttl"><a href="#docs">口腔の健康に関する情報資料を追加しました</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- 法人概要（台帳） -->
+<section class="sec" id="gaiyo">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="rec">Corporate Profile</div>
+      <h2>法人概要</h2>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 日本医学歯学情報機構</td></tr>
+        <tr><th>所在地</th><td>愛知県日進市（詳細住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉／環境保全／国際協力</td></tr>
+        <tr><th>目的</th><td>障害や疾病・貧困に苦しむ人々への医療情報の提供・援助、国内外の人々への教育・治療支援（定款の目的＝公開情報より要約）</td></tr>
+        <tr><th>代表者</th><td>（お名前は公開時に記載します）</td></tr>
+        <tr><th>電話</th><td><a href="#contact" style="color:var(--c-navy);font-weight:700;text-decoration:none">000-0000-0000</a>（※サンプル・タップ発信は無効）</td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample" style="margin-top:12px">※電話番号はサンプル（ダミー）です。実在の連絡先には差し替え、tel:リンクを有効化します。</p>
+  </div>
+</section>
+
+<!-- 参加・支援 -->
+<section class="sec" id="support">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="rec">Get Involved</div>
+      <h2>参加・支援のご案内</h2>
+      <p class="sub">情報を整理し、必要な人へ届ける活動は、多くの方の力で支えられています。できることを、できる範囲で。</p>
+    </div>
+    <div class="support-grid reveal">
+      <div class="support">
+        <h3><span class="en">SUPPORT 01</span>ご寄付・賛助会員</h3>
+        <p>資料の作成や支援活動の継続を支えていただけます。<span class="note-sample">※制度の詳細はサンプルです</span></p>
+      </div>
+      <div class="support">
+        <h3><span class="en">SUPPORT 02</span>専門家として関わる</h3>
+        <p>医療・歯学・国際協力の知見を、情報の監修や整理でお貸しください。<span class="note-sample">※内容はサンプルです</span></p>
+      </div>
+      <div class="support">
+        <h3><span class="en">SUPPORT 03</span>ボランティア</h3>
+        <p>資料づくりや勉強会の運営など、活動の現場を一緒に支えていただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="sec" id="contact" style="border-bottom:none">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="rec">Contact</div>
+      <h2>お問い合わせ</h2>
+      <p class="sub">情報のご相談、活動へのご協力など、お気軽にご連絡ください。</p>
+    </div>
+    <div class="contact-grid reveal">
+      <form class="form" onsubmit="return false" aria-label="お問い合わせ（デモ）">
+        <div class="row">
+          <label>お名前<span class="req">REQUIRED</span></label>
+          <input type="text" name="name" placeholder="山田 太郎" autocomplete="name">
+        </div>
+        <div class="row">
+          <label>メールアドレス<span class="req">REQUIRED</span></label>
+          <input type="email" name="email" placeholder="example@mail.jp" autocomplete="email">
+        </div>
+        <div class="row">
+          <label>お問い合わせ内容</label>
+          <textarea name="message" placeholder="ご相談・ご質問の内容をご記入ください"></textarea>
+        </div>
+        <button type="submit" class="submit" id="demoSubmit">送信する（デモ）</button>
+        <p class="demo">※これはサンプルのデモフォームです。実際には送信されません。<br>ご契約後、送信先メール等に接続します。</p>
+      </form>
+      <div class="contact-side">
+        <div class="tel-box">
+          <p class="cap">お電話でのお問い合わせ</p>
+          <p class="num"><a href="#contact">000-0000-0000</a></p>
+          <p>※サンプルのダミー番号です（タップ発信は無効）</p>
+        </div>
+        <div class="map">
+          <!-- 所在地は市までの表示（番地は伏せています） -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%97%A5%E9%80%B2%E5%B8%82&output=embed&z=13" loading="lazy" title="愛知県日進市の地図"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <div class="t">特定非営利活動法人 日本医学歯学情報機構</div>
+        <p>愛知県日進市｜保健医療福祉・環境保全・国際協力<br>医療・歯学の情報提供と、国内外の教育・治療支援</p>
+      </div>
+      <nav class="f-nav">
+        <a href="#activity">事業</a>
+        <a href="#catalog">情報分野</a>
+        <a href="#mission">理念</a>
+        <a href="#docs">資料</a>
+        <a href="#gaiyo">概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号はサンプル）。本文は公開情報の範囲で作成し、医療効果の断定・誇大表現は行っていません。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 JAPAN MEDICAL &amp; DENTAL INFORMATION ORGANIZATION — SAMPLE</p>
+  </div>
+</footer>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+if (menuBtn) {
+  menuBtn.addEventListener("click", () => {
+    const open = document.body.classList.toggle("menu-open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.querySelectorAll(".sp-nav a").forEach(a =>
+    a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+  );
+}
+
+// デモフォーム
+const demoSubmit = document.getElementById("demoSubmit");
+if (demoSubmit) {
+  demoSubmit.addEventListener("click", () => {
+    alert("サンプルのデモフォームです。実際には送信されません。");
+  });
+}
+
+// スクロール・リビール
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px/1.4 -apple-system,sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)">制作サンプル｜スマートコネクト</a></body>
+</html>

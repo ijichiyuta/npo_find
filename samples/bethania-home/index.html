@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ベタニアホーム さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・分野・所在地の範囲）で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者の実名は記載していません（公開時に差し替え）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージ。CSSでモノクロ表示
+  ・デザイン方向: モノクロ写真ミニマル型（白黒写真＋細い罫・広い余白・
+    静謐で品位のある構成。アクセントは深い臙脂の1色のみ）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 ベタニアホーム｜半田市の福祉・生活支援【ご提案サンプル】</title>
+<meta name="description" content="半田市を拠点に、保健・医療・福祉および生活支援の活動を行うNPO法人ベタニアホーム。地域で安心して暮らしつづけられるよう寄り添います。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F3F1;            /* ごく淡いウォームグレー地 */
+  --paper:#FCFCFB;
+  --ink:#1A1A19;           /* ほぼ黒のインク */
+  --ink-soft:#57565270;
+  --ink-mute:#6E6C67;
+  --accent:#7A2130;        /* 深い臙脂（唯一のアクセント） */
+  --accent-deep:#5E1824;
+  --accent-pale:#F1E8E9;
+  --line:#DAD8D3;          /* 細い罫 */
+  --line-strong:#1A1A19;
+  --f-min:"Shippori Mincho",serif;
+  --f-body:"Noto Sans JP",sans-serif;
+  --f-en:"Cormorant Garamond",serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);font-weight:400;background:var(--bg);color:var(--ink);line-height:2.05;font-size:15px;font-feature-settings:"palt";-webkit-font-smoothing:antialiased;overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-min);font-weight:600;line-height:1.72;word-break:auto-phrase;letter-spacing:.04em}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.wrap{max-width:1060px;margin:0 auto;padding:0 40px}
+.en{font-family:var(--f-en);font-style:italic;letter-spacing:.03em;color:var(--accent)}
+/* 全写真をモノクロ表示（静謐・品位のトーンを主役に） */
+.mono{filter:grayscale(1) contrast(1.02);transition:filter .8s var(--ease)}
+
+/* ===== ヘッダー（細い上罫・広い余白） ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(244,243,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;padding:0 clamp(20px,4vw,40px)}
+.head .brand{text-decoration:none;line-height:1.2}
+.head .brand .jp{font-family:var(--f-min);font-weight:700;font-size:18px;letter-spacing:.12em}
+.head .brand .en{display:block;font-family:var(--f-en);font-style:italic;font-size:11px;letter-spacing:.14em;color:var(--accent);margin-top:1px}
+.head nav{margin-left:auto;display:flex;gap:30px}
+.head nav a{text-decoration:none;font-size:12.5px;letter-spacing:.06em;color:var(--ink);position:relative;padding:4px 0;transition:color .3s var(--ease)}
+.head nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .35s var(--ease)}
+.head nav a:hover{color:var(--accent)}
+.head nav a:hover::after{right:0}
+.head .cta{margin-left:34px;text-decoration:none;font-size:12px;letter-spacing:.08em;border:1px solid var(--line-strong);padding:9px 18px;transition:background .35s var(--ease),color .35s var(--ease)}
+.head .cta:hover{background:var(--ink);color:#fff}
+.menu-btn{display:none}
+
+/* SPドロワー */
+.sp-nav{display:none}
+
+/* ===== ヒーロー（余白主役・モノクロ写真＋細い縦罫） ===== */
+.hero{padding:clamp(64px,10vw,120px) 0 clamp(56px,8vw,96px)}
+.hero .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+.hero .lead-en{font-family:var(--f-en);font-style:italic;font-size:15px;letter-spacing:.1em;color:var(--accent);margin-bottom:22px}
+.hero h1{font-size:clamp(29px,4.4vw,50px);font-weight:600;line-height:1.62;letter-spacing:.06em}
+.hero h1 .thin{font-weight:500;color:var(--ink)}
+.hero .sub{margin-top:26px;max-width:440px;font-size:14.5px;color:var(--ink-mute);line-height:2.1}
+.hero .meta{margin-top:30px;display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line)}
+.hero .meta span{font-size:11.5px;letter-spacing:.05em;color:var(--ink-mute);padding:12px 20px 0 0;white-space:nowrap}
+.hero .meta span b{color:var(--ink);font-weight:500}
+.hero-fig{position:relative}
+.hero-fig img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.hero-fig .cap{position:absolute;left:-1px;bottom:20px;background:var(--paper);border-left:2px solid var(--accent);font-family:var(--f-en);font-style:italic;font-size:12px;color:var(--ink-mute);padding:8px 16px;letter-spacing:.04em}
+
+/* ===== 共通ブロック ===== */
+.block{padding:clamp(60px,8vw,104px) 0;border-top:1px solid var(--line)}
+.b-head{margin-bottom:clamp(34px,4vw,52px)}
+.b-head .en-s{font-family:var(--f-en);font-style:italic;font-size:14px;letter-spacing:.08em;color:var(--accent);display:block;margin-bottom:8px}
+.b-head h2{font-size:clamp(22px,2.8vw,30px);font-weight:600;letter-spacing:.05em}
+.b-head .desc{margin-top:16px;max-width:560px;font-size:14px;color:var(--ink-mute);line-height:2.1}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--ink-mute);letter-spacing:.02em}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--ink-mute);margin-top:8px}
+
+/* ===== 理念（大きな明朝・引用型） ===== */
+.creed{text-align:left}
+.creed .quote{font-family:var(--f-min);font-weight:500;font-size:clamp(19px,2.7vw,29px);line-height:2.05;letter-spacing:.05em}
+.creed .quote em{font-style:normal;color:var(--accent)}
+.creed .rule{width:56px;height:1px;background:var(--accent);margin:34px 0 26px}
+.creed p{max-width:620px;font-size:14.5px;color:var(--ink-mute);line-height:2.15}
+
+/* ===== 事業（罫線グリッド・番号） ===== */
+.svc-list{border-top:1px solid var(--line)}
+.svc-item{display:grid;grid-template-columns:76px 1fr 1.05fr;gap:clamp(20px,3vw,44px);padding:clamp(30px,4vw,46px) 0;border-bottom:1px solid var(--line);align-items:start}
+.svc-item .no{font-family:var(--f-en);font-style:italic;font-size:26px;color:var(--accent);line-height:1}
+.svc-item h3{font-size:19px;font-weight:600;letter-spacing:.04em}
+.svc-item .body{font-size:14px;color:var(--ink-mute);line-height:2.15}
+.svc-item .body p{margin-top:10px}
+.svc-item .fig img{width:100%;aspect-ratio:3/2;object-fit:cover}
+
+/* ===== わたしたち（交互・モノクロ写真） ===== */
+.about-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,66px);align-items:center}
+.about-row .fig img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.about-row .txt h3{font-size:clamp(18px,2.3vw,23px);font-weight:600;line-height:1.9;margin-bottom:16px}
+.about-row .txt p{font-size:14.5px;color:var(--ink-mute);line-height:2.2}
+.about-row .txt p + p{margin-top:16px}
+
+/* ===== 支える（3列・細罫カード） ===== */
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.support-grid .cell{background:var(--paper);padding:34px 28px}
+.support-grid .cell .en-s{font-family:var(--f-en);font-style:italic;font-size:13px;color:var(--accent)}
+.support-grid .cell h3{font-size:17px;font-weight:600;margin:6px 0 12px}
+.support-grid .cell p{font-size:13.5px;color:var(--ink-mute);line-height:2.05}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:22px;padding:16px 2px;border-bottom:1px solid var(--line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--f-en);font-size:13px;color:var(--ink-mute);letter-spacing:.04em;min-width:96px}
+.news-row .tag{flex:none;font-size:10.5px;letter-spacing:.08em;border:1px solid var(--line-strong);padding:2px 9px;color:var(--ink)}
+.news-row a{color:var(--ink);text-decoration:none;transition:color .3s var(--ease)}
+.news-row a:hover{color:var(--accent)}
+
+/* ===== 概要（表・縦罫控えめ） ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--paper)}
+table.gaiyo th{width:150px;text-align:left;font-weight:600;font-family:var(--f-min);color:var(--ink);border-bottom:1px solid var(--line);padding:14px 20px 14px 0;vertical-align:top;white-space:nowrap}
+table.gaiyo td{border-bottom:1px solid var(--line);padding:14px 0 14px 22px;color:var(--ink-mute);vertical-align:top}
+table.gaiyo td a{color:var(--accent);text-decoration:none;font-weight:500}
+
+/* ===== お問い合わせ・フォーム ===== */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(34px,5vw,64px);align-items:start}
+.contact-left .tel-box{border:1px solid var(--line-strong);padding:28px 30px;margin-bottom:24px}
+.contact-left .tel-box .cap{font-size:12px;letter-spacing:.06em;color:var(--ink-mute)}
+.contact-left .tel-box a{display:block;font-family:var(--f-en);font-size:33px;font-weight:500;color:var(--accent);text-decoration:none;letter-spacing:.02em;margin-top:6px}
+.contact-left .tel-box .note{font-size:11.5px;color:var(--ink-mute);margin-top:8px;line-height:1.9}
+.contact-left .map iframe{width:100%;height:230px;border:1px solid var(--line);filter:grayscale(1)}
+.form-note{font-size:11.5px;color:var(--accent);letter-spacing:.02em;margin-bottom:16px;border-left:2px solid var(--accent);padding-left:12px;line-height:1.9}
+.form label{display:block;font-size:12.5px;letter-spacing:.04em;margin:16px 0 7px}
+.form label .req{color:var(--accent);font-size:11px;margin-left:6px}
+.form input,.form textarea{width:100%;font-family:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:12px 14px;transition:border-color .3s var(--ease)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--accent)}
+.form textarea{resize:vertical;min-height:120px;line-height:1.9}
+.form .submit{margin-top:22px;width:100%;font-family:var(--f-body);font-size:14px;font-weight:500;letter-spacing:.1em;color:#fff;background:var(--ink);border:none;padding:15px;cursor:pointer;transition:background .35s var(--ease)}
+.form .submit:hover{background:var(--accent)}
+.form-msg{display:none;margin-top:16px;font-size:13px;color:var(--accent);background:var(--accent-pale);padding:13px 16px;line-height:1.9}
+
+/* ===== フッター ===== */
+.footer{border-top:1px solid var(--line);padding:clamp(44px,6vw,64px) 0 34px;background:var(--paper)}
+.footer .f-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.footer .f-name{font-family:var(--f-min);font-weight:700;font-size:17px;letter-spacing:.08em}
+.footer .f-name .en{display:block;font-size:12px;margin-top:4px}
+.footer .f-addr{font-size:13px;color:var(--ink-mute);line-height:2.05;text-align:right}
+.footer nav{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.footer nav a{text-decoration:none;font-size:12px;color:var(--ink-mute);letter-spacing:.04em;transition:color .3s var(--ease)}
+.footer nav a:hover{color:var(--accent)}
+.sample-note{font-size:11px;color:var(--ink-mute);margin-top:26px;line-height:2;letter-spacing:.01em}
+.sample-note a{color:var(--accent);text-decoration:none}
+.copy{font-size:11px;color:var(--ink-mute);margin-top:14px;letter-spacing:.04em}
+
+/* 左下ピル */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;background:rgba(26,26,25,.9);color:#fff;font-size:11px;letter-spacing:.04em;padding:8px 14px;border-radius:100px;text-decoration:none;backdrop-filter:blur(6px);box-shadow:0 4px 18px rgba(0,0,0,.18);transition:background .3s var(--ease)}
+.pill:hover{background:var(--accent)}
+.pill b{font-weight:600}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:24px;height:1.5px;background:var(--ink);margin:6px 0;transition:.35s var(--ease)}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:block;position:fixed;inset:72px 0 auto 0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 30px 24px;z-index:99;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .menu-open .sp-nav{opacity:1;transform:none;pointer-events:auto}
+  .sp-nav a{display:block;text-decoration:none;font-family:var(--f-min);font-size:16px;color:var(--ink);padding:15px 4px;border-bottom:1px solid var(--line)}
+  .hero .grid{grid-template-columns:1fr;gap:36px}
+  .hero-fig{order:-1;max-width:420px}
+  .svc-item{grid-template-columns:1fr;gap:14px}
+  .svc-item .no{font-size:22px}
+  .svc-item .fig{order:-1}
+  .about-row{grid-template-columns:1fr;gap:20px}
+  .about-row.rev .fig{order:-1}
+  .support-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:34px}
+  .footer .f-addr{text-align:left}
+  .tbl-hint{display:block}
+}
+@media (max-width:600px){
+  .wrap{padding:0 22px}
+  .hero-fig .cap{font-size:11px}
+  .news-row{flex-wrap:wrap;gap:10px}
+  .news-row time{min-width:0}
+}
+/* スマホの表: 横スクロールをやめて縦積み表示に */
+@media (max-width:640px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--line);padding:10px 0}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:2px 0}
+  table.gaiyo th{font-size:12px;color:var(--accent);margin-bottom:2px}
+  table.gaiyo td{padding-left:0;padding-top:0}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="head" id="top">
+  <a class="brand" href="#top">
+    <span class="jp">ベタニアホーム</span>
+    <span class="en">Bethania Home</span>
+  </a>
+  <nav>
+    <a href="#creed">理念</a>
+    <a href="#service">活動</a>
+    <a href="#about">わたしたち</a>
+    <a href="#support">支える</a>
+    <a href="#gaiyo">概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <a class="cta" href="#contact">ご相談・お問い合わせ</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#creed">理念</a>
+  <a href="#service">活動</a>
+  <a href="#about">わたしたち</a>
+  <a href="#support">支える</a>
+  <a href="#gaiyo">概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div class="txt reveal on">
+        <p class="lead-en">Care, quietly beside you.</p>
+        <h1><span class="kb">その人の</span><span class="kb">尊厳に、</span><br><span class="kb thin">静かに</span><span class="kb thin">寄り添う。</span></h1>
+        <p class="sub">特定非営利活動法人ベタニアホームは、半田市を拠点に、保健・医療・福祉と生活支援の活動を行うNPO法人です。地域で安心して暮らしつづけられるよう、一人ひとりのそばで支えます。</p>
+        <div class="meta">
+          <span>拠点 / <b>愛知県半田市</b></span>
+          <span>分野 / <b>保健・医療・福祉</b></span>
+          <span>活動 / <b>福祉・生活支援</b></span>
+        </div>
+      </div>
+      <figure class="hero-fig reveal on">
+        <!-- 差し替えポイント: 施設・活動の実写（モノクロ映えする静かな構図） -->
+        <img class="mono" src="https://images.unsplash.com/photo-1516307365426-bea591f05011?w=1000&q=80&auto=format&fit=crop" alt="窓辺の静かな室内のイメージ">
+        <figcaption class="cap">Beside, day by day.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 理念 -->
+<section class="block" id="creed">
+  <div class="wrap creed">
+    <div class="b-head reveal"><span class="en-s">Our Belief</span><h2>わたしたちの理念</h2></div>
+    <p class="quote reveal">どんなときも、<em>その人がその人らしく</em>あれる場所を。<br>支えることは、<em>そっと隣に居つづける</em>ことだと信じています。<span class="note-sample">※理念文はサンプルです。ご本人のお言葉に差し替えます</span></p>
+    <div class="rule reveal"></div>
+    <p class="reveal">ベタニアホームは、保健・医療・福祉の分野で、地域の暮らしを支える活動に取り組むNPO法人です。年齢や状況にかかわらず、誰もが安心して過ごせるよう、生活支援を通じて一人ひとりの日々に寄り添います。<span class="note-sample">※活動分野・目的はNPO情報公開（定款目的）の範囲で記載しています</span></p>
+  </div>
+</section>
+
+<!-- 活動 -->
+<section class="block" id="service">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en-s">What We Do</span><h2>おもな活動</h2><p class="desc">保健・医療・福祉および生活支援の分野で、地域に根ざした活動を行っています。<span class="note-sample">※内容は活動分野をもとにした表示イメージのサンプルです。実際の事業に差し替えます</span></p></div>
+
+    <div class="svc-list">
+      <!-- ※サンプル: 各活動の内容はダミーです -->
+      <div class="svc-item reveal">
+        <div class="no">01</div>
+        <div>
+          <h3>生活支援</h3>
+          <div class="body">日々の暮らしのなかで生じるさまざまな困りごとに寄り添い、その人らしい生活が続けられるよう支えます。
+          <p>ご本人とご家族のお話をていねいに伺うことから始めます。</p></div>
+        </div>
+        <figure class="fig"><img class="mono" src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=900&q=80&auto=format&fit=crop" alt="穏やかな暮らしのイメージ"></figure>
+      </div>
+
+      <div class="svc-item reveal">
+        <div class="no">02</div>
+        <div>
+          <h3>福祉の相談・つなぎ</h3>
+          <div class="body">「どこに相談すればいいか分からない」を、地域の窓口や制度へとつなぎます。
+          <p>ひとりで抱えこまずにすむよう、間に立って支えます。</p></div>
+        </div>
+        <figure class="fig"><img class="mono" src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=900&q=80&auto=format&fit=crop" alt="相談の場のイメージ"></figure>
+      </div>
+
+      <div class="svc-item reveal">
+        <div class="no">03</div>
+        <div>
+          <h3>地域の居場所づくり</h3>
+          <div class="body">世代や立場をこえて集える、あたたかな居場所づくりに取り組みます。
+          <p>誰かと過ごす時間が、日々の安心につながるように。</p></div>
+        </div>
+        <figure class="fig"><img class="mono" src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=900&q=80&auto=format&fit=crop" alt="陽のあたる室内のイメージ"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたち -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en-s">About Us</span><h2>わたしたちのこと</h2></div>
+
+    <div class="about-row reveal">
+      <figure class="fig">
+        <!-- 差し替えポイント: 手・寄り添いの実写（モノクロ） -->
+        <img class="mono" src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1000&q=80&auto=format&fit=crop" alt="手を添えるイメージ">
+      </figure>
+      <div class="txt">
+        <h3><span class="kb">半田の町で、</span><span class="kb">静かに、</span><span class="kb">たしかに。</span></h3>
+        <p>ベタニアホームは、半田市を拠点に保健・医療・福祉の分野で活動するNPO法人です。派手なことはできなくても、目の前の一人にていねいに向き合うこと。それがわたしたちの変わらない姿勢です。<span class="note-sample">※紹介文はサンプルです</span></p>
+        <p>地域のみなさま、行政、さまざまな支援者とともに、安心して暮らせるまちをめざしています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 支える -->
+<section class="block" id="support">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en-s">Support Us</span><h2>活動を支える</h2><p class="desc">ベタニアホームの活動は、地域のみなさまの支えで成り立っています。できることを、できる範囲で。<span class="note-sample">※支援方法・詳細はサンプルです。実際の受付方法に差し替えます</span></p></div>
+    <div class="support-grid reveal">
+      <div class="cell">
+        <span class="en-s">Donation</span>
+        <h3>ご寄付</h3>
+        <p>活動を続けるための力になります。一度きりでも、継続でも、金額の大小を問わずありがたくお受けします。</p>
+      </div>
+      <div class="cell">
+        <span class="en-s">Membership</span>
+        <h3>賛助会員</h3>
+        <p>会員として活動を見守り、支えてくださる方を募集しています。無理のない形でご参加いただけます。</p>
+      </div>
+      <div class="cell">
+        <span class="en-s">Volunteer</span>
+        <h3>ボランティア</h3>
+        <p>「少しだけ手伝いたい」その気持ちを歓迎します。得意なこと・できる時間を教えてください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block" id="news">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en-s">News</span><h2>お知らせ</h2></div>
+    <p class="note-sample reveal" style="margin-bottom:14px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    <div class="reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">お知らせ</span><a href="#news">ホームページを開設しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">活動</span><a href="#news">地域の居場所づくりのご案内を掲載しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">募集</span><a href="#news">ボランティアを募集しています</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 概要 -->
+<section class="block" id="gaiyo">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en-s">Organization</span><h2>法人概要</h2></div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 ベタニアホーム</td></tr>
+        <tr><th>所在地</th><td>愛知県半田市（詳細住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉／福祉・生活支援</td></tr>
+        <tr><th>活動地域</th><td>半田市およびその周辺地域</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>設立</th><td>（公開時に記載します）　<span class="note-sample">※サンプル</span></td></tr>
+        <tr><th>お問い合わせ</th><td>下記フォーム、またはお電話にて承ります</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample reveal" style="margin-top:16px">※概要はNPO情報公開（法人名・所在自治体・活動分野）の範囲で記載しています。代表者名・住所・設立年など未公開の項目は、ご契約後に正式な内容へ差し替えます。</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en-s">Contact</span><h2>お問い合わせ</h2><p class="desc">ご相談・見学・支援のお申し出など、お気軽にご連絡ください。</p></div>
+    <div class="contact-grid reveal">
+      <div class="contact-left">
+        <div class="tel-box">
+          <p class="cap">お電話でのご相談</p>
+          <!-- ※サンプル: 電話番号はダミーです（format-detectionでtel無効化済み） -->
+          <a href="#contact" onclick="return false;">000-000-0000</a>
+          <p class="note">※サンプル番号です。実際の番号に差し替えます</p>
+        </div>
+        <div class="map">
+          <!-- 差し替えポイント: 実際の所在地に差し替え。現在は半田市中心部を表示 -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%8D%8A%E7%94%B0%E5%B8%82&output=embed&z=13" loading="lazy" title="半田市の地図"></iframe>
+        </div>
+      </div>
+      <div>
+        <p class="form-note">こちらはデモ用のフォームです。入力しても実際には送信されません（ご契約後に本番フォームを設置します）。</p>
+        <form class="form" id="demoForm" novalidate>
+          <label>お名前<span class="req">必須</span></label>
+          <input type="text" name="name" placeholder="山田 太郎" autocomplete="name">
+          <label>メールアドレス<span class="req">必須</span></label>
+          <input type="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <label>お問い合わせ内容</label>
+          <textarea name="message" placeholder="ご相談・ご見学・支援のお申し出など、ご自由にお書きください"></textarea>
+          <button type="submit" class="submit">送信する（デモ）</button>
+          <p class="form-msg" id="formMsg">これはデモフォームです。実際には送信されていません。ご契約後に本番のフォームを設置します。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <p class="f-name">特定非営利活動法人 ベタニアホーム<span class="en">Bethania Home</span></p>
+      </div>
+      <p class="f-addr">愛知県半田市<br>保健・医療・福祉／福祉・生活支援</p>
+    </div>
+    <nav>
+      <a href="#creed">理念</a>
+      <a href="#service">活動</a>
+      <a href="#about">わたしたち</a>
+      <a href="#support">支える</a>
+      <a href="#gaiyo">概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材でモノクロ加工、※印の内容はダミー、電話番号・住所・代表者名などは仮です）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 特定非営利活動法人 ベタニアホーム（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener"><b>ご提案用サンプル</b>｜スマートコネクト</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// デモフォーム（送信しない）
+document.getElementById("demoForm").addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("formMsg").style.display = "block";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 グリーン アース さま
+  （図鑑／カタログ・インデックス型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（登記・NPOポータルの事業目的＝
+    「消費者に多様な選択肢に関する情報提供を行い、持続可能な
+    開発のための教育(ESD)に寄与する」、所在地=名古屋市名東区、
+    活動分野=社会教育／情報化社会／経済活動の活性化／中間支援）
+    の範囲で作成しています。
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替え前提）
+  ・代表者の実名・番地の詳細は本サンプルでは掲載していません
+  ・noindex 設定・電話番号のリンク自動化(format-detection)を無効化済み
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 グリーン アース｜名古屋市名東区の消費者教育・ESD【ご提案サンプル】</title>
+<meta name="description" content="名古屋市名東区を拠点に、消費者に多様な選択肢に関する情報提供を行い、持続可能な開発のための教育(ESD)に寄与するNPO法人。学びの資料を図鑑のように一覧化。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4F1E8;          /* 生成り */
+  --c-paper:#FBFAF4;
+  --c-ink:#2B332B;
+  --c-ink-soft:#5C6459;
+  --c-green:#4A7A4E;
+  --c-green-deep:#33603A;
+  --c-green-pale:#E6EDDF;
+  --c-line:#D8D6C6;
+  --c-line-soft:#E4E1D3;
+  --f-body:"Noto Sans JP",sans-serif;
+  --f-disp:"Zen Kaku Gothic New",sans-serif;
+  --f-mono:"Spline Sans Mono",monospace;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--f-disp);font-weight:700;line-height:1.5;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+a{color:inherit}
+
+/* ===== 左固定インデックス・レール（PC） ===== */
+.rail{position:fixed;left:0;top:0;bottom:0;width:262px;background:var(--c-paper);border-right:1px solid var(--c-line);display:flex;flex-direction:column;padding:32px 26px 24px;z-index:100}
+.rail .brand{text-decoration:none;color:var(--c-ink);display:block}
+.rail .brand .mark{width:46px;height:46px;margin-bottom:12px}
+.rail .brand .t{font-family:var(--f-disp);font-weight:900;font-size:21px;letter-spacing:.06em;line-height:1.35}
+.rail .brand .t small{display:block;font-size:10.5px;font-weight:500;color:var(--c-green-deep);letter-spacing:.05em;margin-top:5px;font-family:var(--f-body)}
+.rail .idx-cap{font-family:var(--f-mono);font-size:10px;letter-spacing:.24em;color:#9AA090;margin:30px 0 8px;text-transform:uppercase}
+.rail nav{flex:1;overflow:auto}
+.rail nav a{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--c-ink);font-size:13.5px;font-weight:500;padding:9px 2px;border-bottom:1px solid var(--c-line-soft);transition:color .3s var(--ease),padding-left .3s var(--ease)}
+.rail nav a .n{font-family:var(--f-mono);font-size:11px;color:#A6AC98;flex:none}
+.rail nav a:hover{color:var(--c-green-deep);padding-left:6px}
+.rail nav a:hover .n{color:var(--c-green)}
+.rail .contact{margin-top:18px;border:1px solid var(--c-line);padding:13px 14px;text-align:center;background:var(--c-bg)}
+.rail .contact .cap{font-size:11px;font-weight:700}
+.rail .contact p{font-size:10.5px;color:var(--c-ink-soft);line-height:1.7}
+.rail .contact a{display:block;margin-top:6px;background:var(--c-green);color:#fff;text-decoration:none;font-weight:700;font-size:12.5px;padding:9px;transition:opacity .3s}
+.rail .contact a:hover{opacity:.85}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+.main{margin-left:262px}
+.wrap{max-width:900px;margin:0 auto;padding:0 44px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:78px 0;border-bottom:1px solid var(--c-line)}
+.b-head{margin-bottom:34px}
+.b-head .kicker{display:flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;color:var(--c-green);text-transform:uppercase;margin-bottom:10px}
+.b-head .kicker::before{content:"";width:26px;height:1px;background:var(--c-green)}
+.b-head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.03em;font-weight:900}
+.b-head .sub{margin-top:10px;font-size:14px;color:var(--c-ink-soft);max-width:640px}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#96A088}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#96A088;margin-top:6px}
+
+/* ===== 冒頭（図鑑の扉ページ） ===== */
+.cover{padding:64px 0 60px;border-bottom:1px solid var(--c-line);position:relative}
+.cover .plate{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;color:var(--c-green);text-transform:uppercase;margin-bottom:20px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.cover .plate span{border:1px solid var(--c-line);padding:3px 9px;color:var(--c-ink-soft);letter-spacing:.14em}
+.cover h1{font-size:clamp(28px,4.2vw,46px);font-weight:900;line-height:1.55;letter-spacing:.04em}
+.cover h1 em{font-style:normal;color:var(--c-green-deep)}
+.cover .lead{margin-top:22px;max-width:620px;font-size:15.5px;line-height:2.1}
+.cover-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:40px}
+.cover-strip figure{position:relative;overflow:hidden}
+.cover-strip img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:saturate(.92)}
+.cover-strip figcaption{position:absolute;left:8px;bottom:8px;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;color:#fff;background:rgba(43,51,43,.7);padding:2px 7px}
+
+/* ===== 図鑑カード（多様な選択肢のカタログ） ===== */
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cat-card{border:1px solid var(--c-line);background:var(--c-paper);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.cat-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(43,51,43,.08)}
+.cat-card .ph{position:relative;overflow:hidden}
+.cat-card .ph img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.92)}
+.cat-card .no{position:absolute;left:0;top:0;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;color:#fff;background:var(--c-green-deep);padding:4px 10px}
+.cat-card .body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.cat-card .tag{font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;color:var(--c-green);text-transform:uppercase;margin-bottom:6px}
+.cat-card h3{font-size:17px;letter-spacing:.02em}
+.cat-card p{font-size:13px;color:var(--c-ink-soft);line-height:1.85;margin-top:8px}
+.cat-card .meta{margin-top:auto;padding-top:14px;border-top:1px dotted var(--c-line);display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;color:#9AA090;letter-spacing:.06em}
+
+/* ===== 資料索引テーブル（カタログ・インデックス） ===== */
+table.index{width:100%;min-width:560px;border-collapse:collapse;font-size:13.5px;background:var(--c-paper)}
+table.index thead th{background:var(--c-ink);color:#F4F1E8;font-family:var(--f-disp);font-weight:700;padding:11px 14px;text-align:left;font-size:12.5px;letter-spacing:.04em;white-space:nowrap}
+table.index tbody td{border:1px solid var(--c-line);padding:11px 14px;vertical-align:top}
+table.index tbody tr:nth-child(even) td{background:#FCFBF6}
+table.index td.code{font-family:var(--f-mono);font-weight:600;color:var(--c-green-deep);white-space:nowrap;font-size:12.5px}
+table.index td.field{white-space:nowrap}
+table.index .pill-mini{display:inline-block;border:1px solid var(--c-line);border-radius:20px;padding:1px 9px;font-size:11px;color:var(--c-ink-soft);white-space:nowrap}
+
+/* ===== 4つの活動分野（インデックス列） ===== */
+.field-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.field-item{display:flex;gap:16px;border:1px solid var(--c-line);background:var(--c-paper);padding:20px 22px}
+.field-item .fno{font-family:var(--f-mono);font-size:22px;font-weight:600;color:var(--c-green);line-height:1;flex:none}
+.field-item h3{font-size:15.5px;letter-spacing:.02em}
+.field-item p{font-size:12.5px;color:var(--c-ink-soft);line-height:1.8;margin-top:6px}
+
+/* ===== 理念（図鑑の解説文） ===== */
+.about-lead{font-size:clamp(17px,2.3vw,21px);font-family:var(--f-disp);font-weight:700;line-height:1.95;letter-spacing:.03em;max-width:680px}
+.about-lead em{font-style:normal;color:var(--c-green-deep)}
+.about-body{margin-top:18px;max-width:660px;font-size:14.5px}
+.quote-def{margin-top:26px;border-left:3px solid var(--c-green);background:var(--c-green-pale);padding:20px 24px;max-width:680px}
+.quote-def .lbl{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;color:var(--c-green-deep);text-transform:uppercase;margin-bottom:8px}
+.quote-def p{font-size:14.5px;line-height:1.95}
+
+/* ===== お知らせ（更新欄） ===== */
+.news-row{display:flex;gap:18px;padding:13px 2px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--f-mono);font-weight:500;color:var(--c-ink-soft);font-size:12px;letter-spacing:.04em}
+.news-row .cat{flex:none;font-size:10.5px;border:1px solid var(--c-line);padding:1px 8px;color:var(--c-green-deep);white-space:nowrap}
+.news-row a{color:var(--c-ink);text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== ご一緒できること（番号リスト） ===== */
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.join-card{border:1px solid var(--c-line);background:var(--c-paper);padding:22px 22px 24px}
+.join-card .jn{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--c-green);margin-bottom:10px}
+.join-card h3{font-size:15.5px}
+.join-card p{font-size:12.5px;color:var(--c-ink-soft);line-height:1.85;margin-top:7px}
+
+/* ===== 法人概要（表） ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-green-pale);border:1px solid var(--c-line);padding:11px 16px;white-space:nowrap;font-family:var(--f-disp)}
+table.gaiyo td{border:1px solid var(--c-line);padding:11px 16px}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.form-box{max-width:640px;border:1px solid var(--c-line);background:var(--c-paper);padding:28px 30px}
+.form-box label{display:block;font-size:12.5px;font-weight:700;margin:14px 0 5px}
+.form-box label:first-child{margin-top:0}
+.form-box input,.form-box textarea{width:100%;border:1px solid var(--c-line);background:var(--c-bg);padding:10px 12px;font-family:inherit;font-size:14px;color:var(--c-ink)}
+.form-box textarea{resize:vertical;min-height:96px}
+.form-box button{margin-top:18px;background:var(--c-green);color:#fff;border:none;font-family:var(--f-disp);font-weight:700;font-size:14px;padding:13px 30px;cursor:pointer;transition:opacity .3s}
+.form-box button:hover{opacity:.85}
+.form-note{font-size:11.5px;color:#96A088;margin-top:12px;line-height:1.8}
+.form-msg{margin-top:14px;font-size:13px;color:var(--c-green-deep);font-weight:700;display:none}
+
+/* ===== フッター ===== */
+.footer{padding:44px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--f-disp);font-weight:900;font-size:15px;letter-spacing:.03em}
+.footer .f-addr{font-size:12.5px;color:var(--c-ink-soft);margin-top:6px}
+.sample-note{font-size:11px;color:#96A088;margin-top:18px;line-height:1.95;max-width:660px;margin-left:auto;margin-right:auto}
+.sample-note b{color:var(--c-green-deep)}
+.sample-note a{color:var(--c-ink-soft)}
+.copy{margin-top:14px;font-size:11px;color:#A6AC98;font-family:var(--f-mono);letter-spacing:.04em}
+
+/* ===== 制作サンプル・ピル（左下固定） ===== */
+.sample-pill{position:fixed;left:16px;bottom:16px;z-index:140;background:var(--c-ink);color:#F4F1E8;font-size:11px;font-weight:700;letter-spacing:.04em;padding:8px 14px;border-radius:40px;box-shadow:0 4px 14px rgba(0,0,0,.22);text-decoration:none;font-family:var(--f-body)}
+.sample-pill span{color:#B7CBA9}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .rail{display:none}
+  .main{margin-left:0}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:rgba(251,250,244,.97);border-bottom:1px solid var(--c-line);height:60px;align-items:center;gap:10px;padding:0 18px}
+  .sp-head .t{font-family:var(--f-disp);font-weight:900;font-size:16px;letter-spacing:.03em}
+  .sp-head .t small{font-size:9px;color:var(--c-green-deep);font-weight:700;display:block;line-height:1;margin-top:2px}
+  .sp-head .cta{margin-left:auto;background:var(--c-green);color:#fff;text-decoration:none;font-weight:700;font-size:12px;padding:9px 14px;white-space:nowrap;font-family:var(--f-disp)}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:60px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line);padding:8px 20px 18px;z-index:99;max-height:80vh;overflow:auto}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:flex;justify-content:space-between;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:12px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav a .n{font-family:var(--f-mono);font-size:11px;color:#A6AC98}
+  .wrap{padding:0 22px}
+  .block{padding:52px 0}
+  .cover{padding:44px 0 44px}
+  .cover-strip{grid-template-columns:1fr 1fr;gap:6px;margin-top:28px}
+  .cat-grid{grid-template-columns:1fr;gap:12px}
+  .field-list{grid-template-columns:1fr}
+  .join-grid{grid-template-columns:1fr}
+  .tbl-hint{display:block}
+}
+
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:720px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:7px 14px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:8px 14px 12px}
+  table.index{min-width:0}
+  table.index thead{display:none}
+  table.index tbody tr{display:block;border:1px solid var(--c-line);margin-bottom:10px;background:var(--c-paper)}
+  table.index tbody tr:nth-child(even) td{background:transparent}
+  table.index tbody td{display:block;border:none;padding:5px 14px}
+  table.index tbody td.code{padding-top:11px}
+  table.index tbody td:last-child{padding-bottom:12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PC: 左固定インデックス・レール -->
+<aside class="rail">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 46 46" aria-hidden="true">
+      <circle cx="23" cy="23" r="21" fill="#E6EDDF"/>
+      <path d="M23 35c0-9 4.5-15 13-17-1 9-6 15-13 17Z" fill="#4A7A4E"/>
+      <path d="M23 35c0-7-3.5-11.5-10-13C15 30 18 34 23 35Z" fill="#8FB585"/>
+      <circle cx="23" cy="12" r="2.6" fill="#C9A227"/>
+    </svg>
+    <span class="t">グリーン アース<small>特定非営利活動法人｜名古屋市名東区</small></span>
+  </a>
+  <p class="idx-cap">Index</p>
+  <nav>
+    <a href="#catalog"><span class="n">01</span>選択肢のカタログ</a>
+    <a href="#index"><span class="n">02</span>学びの資料索引</a>
+    <a href="#fields"><span class="n">03</span>活動分野</a>
+    <a href="#about"><span class="n">04</span>わたしたちについて</a>
+    <a href="#news"><span class="n">05</span>お知らせ</a>
+    <a href="#join"><span class="n">06</span>ご一緒できること</a>
+    <a href="#gaiyo"><span class="n">07</span>法人概要</a>
+    <a href="#contact"><span class="n">08</span>お問い合わせ</a>
+  </nav>
+  <div class="contact">
+    <p class="cap">お問い合わせ</p>
+    <p>まずはお気軽にご連絡ください</p>
+    <a href="#contact">お問い合わせへ</a>
+  </div>
+</aside>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">グリーン アース<small>NPO法人｜名古屋市名東区</small></span>
+  <a class="cta" href="#contact">お問い合わせ</a>
+</header>
+<nav class="sp-nav">
+  <a href="#catalog">選択肢のカタログ<span class="n">01</span></a>
+  <a href="#index">学びの資料索引<span class="n">02</span></a>
+  <a href="#fields">活動分野<span class="n">03</span></a>
+  <a href="#about">わたしたちについて<span class="n">04</span></a>
+  <a href="#news">お知らせ<span class="n">05</span></a>
+  <a href="#join">ご一緒できること<span class="n">06</span></a>
+  <a href="#gaiyo">法人概要<span class="n">07</span></a>
+  <a href="#contact">お問い合わせ<span class="n">08</span></a>
+</nav>
+
+<div class="main">
+
+  <!-- 冒頭（図鑑の扉ページ） -->
+  <section class="cover">
+    <div class="wrap">
+      <div class="plate reveal on">
+        <span>Consumer Education</span>
+        <span>ESD</span>
+        <span>名古屋市名東区</span>
+      </div>
+      <h1 class="reveal on"><span class="kb">えらぶ、を</span><span class="kb">ひらく。</span><br><span class="kb"><em>多様な選択肢</em>を、</span><span class="kb">図鑑のように。</span></h1>
+      <p class="lead reveal on">グリーン アースは、消費者のみなさんに「多様な選択肢に関する情報」をわかりやすく届け、<span class="kb">持続可能な開発のための教育（ESD）</span>に寄与するNPO法人です。暮らしの中の「選ぶ」を、学びの資料として一覧にまとめ、だれもが手にとれるかたちにしています。</p>
+      <div class="cover-strip reveal on">
+        <!-- 差し替えポイント: 学び・環境・情報をテーマにしたお写真（顔が特定されにくい構図を選定） -->
+        <figure><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=700&q=80&auto=format&fit=crop" alt="書架に並ぶ資料のイメージ"><figcaption>GE-001</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=700&q=80&auto=format&fit=crop" alt="学びのワークショップのイメージ"><figcaption>GE-014</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&q=80&auto=format&fit=crop" alt="環境・自然のイメージ"><figcaption>GE-027</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=700&q=80&auto=format&fit=crop" alt="ノートに書き込む手元のイメージ"><figcaption>GE-039</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 選択肢のカタログ -->
+  <section class="block" id="catalog">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">01 &nbsp; Catalog</div>
+        <h2>選択肢のカタログ</h2>
+        <p class="sub">暮らしの中の「選ぶ」を、テーマごとに図鑑のカードとして並べています。ひとつずつ手にとるように、情報を確かめられます。</p>
+      </div>
+      <p class="note-sample" style="margin-bottom:18px">※以下のカードの見出し・説明・番号は、活動分野（消費者教育・ESD）をもとにした表示イメージのサンプルです。ご契約後、実際に扱われているテーマへ差し替えます。</p>
+      <!-- ※以下4枚のカードはサンプル構成です。実データに差し替えます -->
+      <div class="cat-grid reveal">
+        <article class="cat-card">
+          <div class="ph"><span class="no">No.01</span><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&q=80&auto=format&fit=crop" alt="買い物かごと食材のイメージ"></div>
+          <div class="body">
+            <p class="tag">Everyday Choices</p>
+            <h3>かしこく選ぶ、毎日の買い物</h3>
+            <p>価格だけでなく、産地・つくられ方・環境への影響まで。ふだんの買い物を「選ぶ力」で見直すための入門カードです。</p>
+            <div class="meta"><span>CATEGORY / 消費生活</span><span>GE-101</span></div>
+          </div>
+        </article>
+        <article class="cat-card">
+          <div class="ph"><span class="no">No.02</span><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80&auto=format&fit=crop" alt="森林のイメージ"></div>
+          <div class="body">
+            <p class="tag">Sustainability</p>
+            <h3>持続可能な暮らしの選択肢</h3>
+            <p>エネルギー、食、ごみ。未来へつづく暮らしのために、いま選べる選択肢を並べて見比べられるようにまとめています。</p>
+            <div class="meta"><span>CATEGORY / ESD</span><span>GE-118</span></div>
+          </div>
+        </article>
+        <article class="cat-card">
+          <div class="ph"><span class="no">No.03</span><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop" alt="情報・スマートフォンのイメージ"></div>
+          <div class="body">
+            <p class="tag">Information Literacy</p>
+            <h3>情報とのつきあい方</h3>
+            <p>あふれる情報の中から、確かなものを選びとる。情報化社会を生きるためのリテラシーを、身近な例で学べるカードです。</p>
+            <div class="meta"><span>CATEGORY / 情報化社会</span><span>GE-134</span></div>
+          </div>
+        </article>
+        <article class="cat-card">
+          <div class="ph"><span class="no">No.04</span><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=900&q=80&auto=format&fit=crop" alt="地域の商いのイメージ"></div>
+          <div class="body">
+            <p class="tag">Local Economy</p>
+            <h3>地域の経済を、えらぶ</h3>
+            <p>地元で買う、地元でつくる。消費を通じて地域の経済活動を活性化する。そんな「えらび方」の可能性をまとめています。</p>
+            <div class="meta"><span>CATEGORY / 経済活性化</span><span>GE-149</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 学びの資料索引 -->
+  <section class="block" id="index">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">02 &nbsp; Reference Index</div>
+        <h2>学びの資料索引</h2>
+        <p class="sub">講座・教材・ワークショップなどの学びの資料を、図鑑の索引のように一覧化。分野と対象から、目的のものを見つけられます。</p>
+      </div>
+      <p class="note-sample" style="margin-bottom:16px">※この一覧は表示イメージのサンプルです。整理番号・タイトル・対象は活動分野をもとにしたダミーで、ご契約後に実際の資料へ差し替えます。</p>
+      <div class="tbl-wrap reveal">
+        <!-- ※以下の索引行はすべてサンプルです -->
+        <table class="index">
+          <thead>
+            <tr><th>整理番号</th><th>資料タイトル</th><th>分野</th><th>対象</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="code">GE-201</td><td>はじめての消費者教育 ― えらぶって、なんだろう</td><td class="field">消費者教育</td><td><span class="pill-mini">一般</span></td></tr>
+            <tr><td class="code">GE-207</td><td>くらしとSDGs ― 選択肢で考える持続可能性</td><td class="field">ESD</td><td><span class="pill-mini">中高生〜</span></td></tr>
+            <tr><td class="code">GE-215</td><td>情報を見きわめる ― フェイクとどうつきあうか</td><td class="field">情報化社会</td><td><span class="pill-mini">一般</span></td></tr>
+            <tr><td class="code">GE-223</td><td>地域でまわすお金の話 ― 地産地消の入り口</td><td class="field">経済活性化</td><td><span class="pill-mini">一般</span></td></tr>
+            <tr><td class="code">GE-231</td><td>NPO・市民活動をつなぐ ― 中間支援のきほん</td><td class="field">中間支援</td><td><span class="pill-mini">団体向け</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- 03 活動分野 -->
+  <section class="block" id="fields">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">03 &nbsp; Fields</div>
+        <h2>活動分野</h2>
+        <p class="sub">わたしたちが取り組む分野です（公開されている活動分野をもとに記載しています）。</p>
+      </div>
+      <div class="field-list reveal">
+        <div class="field-item">
+          <span class="fno">01</span>
+          <div>
+            <h3>社会教育の推進</h3>
+            <p>消費者教育を軸に、だれもが学びなおせる機会をつくります。</p>
+          </div>
+        </div>
+        <div class="field-item">
+          <span class="fno">02</span>
+          <div>
+            <h3>情報化社会の発展</h3>
+            <p>情報リテラシーを育み、確かな情報にもとづく選択を支えます。</p>
+          </div>
+        </div>
+        <div class="field-item">
+          <span class="fno">03</span>
+          <div>
+            <h3>経済活動の活性化</h3>
+            <p>賢い消費が地域の経済をまわす。その循環づくりを応援します。</p>
+          </div>
+        </div>
+        <div class="field-item">
+          <span class="fno">04</span>
+          <div>
+            <h3>中間支援（連絡・助言・援助）</h3>
+            <p>市民活動どうしをつなぎ、地域の学びのネットワークを広げます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 わたしたちについて -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">04 &nbsp; About</div>
+        <h2>わたしたちについて</h2>
+      </div>
+      <p class="about-lead reveal"><span class="kb">「選べる」ことは、</span><span class="kb"><em>自由であること。</em></span><br><span class="kb">たしかな情報が、</span><span class="kb">その自由をささえます。</span></p>
+      <p class="about-body reveal">グリーン アースは、名古屋市名東区を拠点に、消費者のみなさんへ多様な選択肢に関する情報提供を行い、持続可能な開発のための教育（ESD）に寄与することを目的に活動しています。暮らしの「選ぶ」を学びに変え、一人ひとりが自分で考えて選べる社会をめざします。<span class="note-sample">※この紹介文は、登記・公開情報の事業目的をもとにしたサンプルです。ご契約後、御団体のお言葉へ差し替えます。</span></p>
+      <div class="quote-def reveal">
+        <p class="lbl">事業目的（公開情報より）</p>
+        <p>消費者に多様な選択肢に関する情報提供を行い、持続可能な開発のための教育（ESD）に寄与する。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">05 &nbsp; News</div>
+        <h2>お知らせ</h2>
+        <p class="sub">講座やイベントの情報を、ご自身で更新できるかたちにできます。</p>
+      </div>
+      <p class="note-sample" style="margin-bottom:12px">※以下は表示イメージのサンプルです。日付・内容はダミーです。</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">講座</span><a href="#news">「えらぶって、なんだろう」入門講座を開催します</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">資料</span><a href="#news">学びの資料索引にESD関連の教材を追加しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">中間支援</span><a href="#news">市民活動団体むけの相談会について</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ご一緒できること -->
+  <section class="block" id="join">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">06 &nbsp; Join Us</div>
+        <h2>ご一緒できること</h2>
+        <p class="sub">学びの輪は、参加してくださる方に支えられています。できるかたちで関わってみませんか。</p>
+      </div>
+      <p class="note-sample" style="margin-bottom:16px">※以下3項目は活動分野をもとにしたサンプル構成です。実際の募集内容に差し替えます。</p>
+      <div class="join-grid reveal">
+        <div class="join-card">
+          <p class="jn">JOIN 01</p>
+          <h3>講座に参加する</h3>
+          <p>消費者教育・ESDの学びの場に、どなたでも参加できます。まずは気になるテーマから。</p>
+        </div>
+        <div class="join-card">
+          <p class="jn">JOIN 02</p>
+          <h3>活動を支える</h3>
+          <p>ボランティア・賛助会員など、学びを届ける活動を支えてくださる方を歓迎します。</p>
+        </div>
+        <div class="join-card">
+          <p class="jn">JOIN 03</p>
+          <h3>団体でつながる</h3>
+          <p>中間支援として、市民活動団体との連携・情報交換もお受けしています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 法人概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">07 &nbsp; Profile</div>
+        <h2>法人概要</h2>
+      </div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 グリーン アース</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市名東区<span class="note-sample">（詳細住所は公開時に記載します／本サンプルでは番地は非掲載）</span></td></tr>
+          <tr><th>事業目的</th><td>消費者に多様な選択肢に関する情報提供を行い、持続可能な開発のための教育（ESD）に寄与する<span class="note-sample">（公開情報）</span></td></tr>
+          <tr><th>活動分野</th><td>社会教育の推進／情報化社会の発展／経済活動の活性化／中間支援（連絡・助言・援助）</td></tr>
+          <tr><th>代表者</th><td>公開時に記載<span class="note-sample">（本サンプルでは実名を掲載していません）</span></td></tr>
+          <tr><th>連絡先</th><td>公開時に記載<span class="note-sample">（本サンプルでは非掲載。ご契約後に設置します）</span></td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- 08 お問い合わせ -->
+  <section class="block" id="contact" style="border-bottom:none">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <div class="kicker">08 &nbsp; Contact</div>
+        <h2>お問い合わせ</h2>
+        <p class="sub">講座のご相談、資料についてのお問い合わせなど、お気軽にどうぞ。</p>
+      </div>
+      <div class="form-box reveal">
+        <form id="demo-form" onsubmit="return false">
+          <label for="f-name">お名前</label>
+          <input id="f-name" type="text" placeholder="例：名東 みどり" autocomplete="off">
+          <label for="f-mail">メールアドレス</label>
+          <input id="f-mail" type="email" placeholder="例：example@example.com" autocomplete="off">
+          <label for="f-msg">お問い合わせ内容</label>
+          <textarea id="f-msg" placeholder="ご相談内容をご記入ください"></textarea>
+          <button type="submit">送信する（デモ）</button>
+          <p class="form-msg" id="form-msg">※これは表示サンプルです。実際には送信されていません。ご契約後、実際に届くフォームを設置します。</p>
+        </form>
+        <p class="form-note">※これはデモ用の表示サンプルです。送信ボタンを押しても実際には送信されません。ご契約後、実際に届くお問い合わせフォームを設置します。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 グリーン アース</p>
+      <p class="f-addr">愛知県名古屋市名東区（消費者教育・ESD）</p>
+      <p class="sample-note">
+        <b>本ページはホームページ制作のご提案用サンプルです。</b><br>
+        本文は公開情報（法人名・所在市区・事業目的・活動分野）の範囲で作成し、その他の資料・講座・お知らせ・整理番号などの「※サンプル」表記の内容はダミーです。写真はイメージ素材（Unsplash・商用可）で、代表者の実名・番地の詳細は掲載していません。<br>
+        制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+      </p>
+      <p class="copy">&copy; 2026 NPO法人 グリーン アース（ご提案用サンプル）</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- 左下: 制作サンプル・ピル -->
+<a class="sample-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">制作<span>サンプル</span>｜スマートコネクト</a>
+
+<script>
+// SPメニュー開閉
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .rail nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロール表示アニメーション
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// デモフォーム（送信されない）
+document.getElementById("demo-form").addEventListener("submit", () => {
+  document.getElementById("form-msg").style.display = "block";
+});
+</script>
+</body>
+</html>

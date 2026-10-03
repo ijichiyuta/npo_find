@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 日本メンタルサポート協会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地の市区・活動分野）の
+    範囲で作成。代表者実名・番地フルは記載していません
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・治療・医療効果や「必ず良くなる」等の断定表現はしていません
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: グラスモーフィズム（すりガラスの重なり・淡い青緑×ラベンダー×白）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>日本メンタルサポート協会｜名古屋市南区・こころと人間関係の支援【ご提案サンプル】</title>
+<meta name="description" content="名古屋市南区のNPO法人。企業・家庭・学校・福祉施設など地域社会で、温かく円滑な人間関係の構築を望む方を支援します。こころの相談・傾聴・学びの場。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-ink:#3A4256;          /* やわらかい藍鼠 */
+  --c-sub:#6B7488;
+  --c-teal:#5FB3B0;         /* 淡い青緑 */
+  --c-teal-deep:#3E8F8C;
+  --c-lav:#9E97D6;          /* ラベンダー */
+  --c-lav-deep:#7C74BC;
+  --c-white:#FFFFFF;
+  --glass:rgba(255,255,255,.55);
+  --glass-strong:rgba(255,255,255,.72);
+  --glass-line:rgba(255,255,255,.75);
+  --c-line:rgba(120,130,170,.16);
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-round:"Zen Maru Gothic",sans-serif;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);color:var(--c-ink);line-height:2;font-size:15px;
+  font-feature-settings:"palt";overflow-wrap:break-word;position:relative;
+  background:linear-gradient(150deg,#EAF5F4 0%,#EEF0FA 42%,#F4EEF8 100%);
+  min-height:100vh;
+}
+/* 背景の淡いオーブ（ぼかしレイヤー） */
+body::before,body::after{content:"";position:fixed;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0;pointer-events:none}
+body::before{width:520px;height:520px;background:radial-gradient(circle,#9FE0DC,transparent 70%);top:-140px;right:-120px}
+body::after{width:600px;height:600px;background:radial-gradient(circle,#C7BEEF,transparent 70%);bottom:-180px;left:-160px}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-round);font-weight:700;line-height:1.7;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 上部固定バー（すりガラス） ===== */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:18px;
+  height:70px;padding:0 clamp(18px,4vw,42px);
+  background:rgba(255,255,255,.42);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.5);
+}
+.topbar .logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.topbar .logo .mark{width:38px;height:38px;flex:none}
+.topbar .logo .t{font-family:var(--font-round);font-weight:700;font-size:17px;letter-spacing:.04em;line-height:1.25}
+.topbar .logo .t small{display:block;font-size:10px;font-weight:500;color:var(--c-teal-deep);letter-spacing:.04em;margin-top:1px}
+.topbar nav{margin-left:auto;display:flex;gap:5px;align-items:center}
+.topbar nav a{text-decoration:none;color:var(--c-ink);font-size:13px;font-weight:500;padding:8px 12px;border-radius:999px;transition:background .3s var(--ease),color .3s var(--ease)}
+.topbar nav a:hover{background:rgba(255,255,255,.6);color:var(--c-teal-deep)}
+.topbar .cta{background:linear-gradient(120deg,var(--c-teal),var(--c-lav));color:#fff !important;font-weight:700;padding:9px 18px;box-shadow:0 6px 16px rgba(126,116,188,.28)}
+.topbar .cta:hover{filter:brightness(1.06)}
+
+/* SP メニュー */
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.sp-nav{display:none}
+
+.main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 clamp(18px,4vw,36px)}
+.wrap{max-width:880px;margin:0 auto}
+
+/* すりガラスカードの共通スタイル */
+.glass{
+  background:var(--glass);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);
+  border:1px solid var(--glass-line);border-radius:24px;
+  box-shadow:0 10px 40px rgba(80,95,150,.10),inset 0 1px 0 rgba(255,255,255,.6);
+}
+
+/* ===== 共通ブロック ===== */
+.block{padding:76px 0}
+.b-head{text-align:center;margin-bottom:40px}
+.b-head .en{font-family:var(--font-num);font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--c-lav-deep)}
+.b-head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.03em;margin-top:8px}
+.b-head .lead{font-size:14px;color:var(--c-sub);margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-lav-deep)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-lav-deep);margin-top:6px}
+
+/* ===== ヒーロー ===== */
+.hero{padding:130px 0 80px;text-align:center}
+.hero .eyebrow{display:inline-block;font-family:var(--font-round);font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--c-teal-deep);background:rgba(255,255,255,.6);border:1px solid var(--glass-line);border-radius:999px;padding:7px 18px;margin-bottom:26px;backdrop-filter:blur(8px)}
+.hero h1{font-size:clamp(28px,4.6vw,46px);line-height:1.55;letter-spacing:.03em}
+.hero h1 .accent{background:linear-gradient(120deg,var(--c-teal-deep),var(--c-lav-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{margin:26px auto 0;max-width:600px;font-size:15px;color:var(--c-sub);line-height:2.1}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.btn{text-decoration:none;font-family:var(--font-round);font-weight:700;font-size:14.5px;padding:15px 30px;border-radius:999px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.btn-primary{background:linear-gradient(120deg,var(--c-teal),var(--c-lav));color:#fff;box-shadow:0 10px 26px rgba(126,116,188,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(126,116,188,.4)}
+.btn-ghost{background:rgba(255,255,255,.55);color:var(--c-ink);border:1px solid var(--glass-line);backdrop-filter:blur(8px)}
+.btn-ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.75)}
+.hero-photos{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin-top:56px}
+.hero-photos figure{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 34px rgba(80,95,150,.16)}
+.hero-photos img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.hero-photos figure:first-child img{aspect-ratio:auto;min-height:100%}
+.hero-photos figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(58,66,86,.12))}
+
+/* ===== 支援のかたち（3カード） ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{padding:34px 28px;text-align:center;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 46px rgba(80,95,150,.16)}
+.card .ic{width:66px;height:66px;margin:0 auto 18px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(95,179,176,.22),rgba(158,151,214,.22));border:1px solid var(--glass-line)}
+.card .ic svg{width:32px;height:32px;color:var(--c-teal-deep)}
+.card h3{font-size:18px;margin-bottom:10px}
+.card p{font-size:13.5px;color:var(--c-sub);line-height:2}
+
+/* ===== 対象（企業・家庭・学校…）タグ ===== */
+.scene{margin-top:26px}
+.scene-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.scene-grid .s{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.5);border:1px solid var(--glass-line);border-radius:999px;padding:10px 20px;font-size:14px;font-weight:500;backdrop-filter:blur(8px)}
+.scene-grid .s svg{width:18px;height:18px;color:var(--c-lav-deep);flex:none}
+
+/* ===== わたしたちのこと（大カード） ===== */
+.about-card{padding:clamp(32px,5vw,52px);text-align:center}
+.about-card .big{font-family:var(--font-round);font-size:clamp(18px,2.6vw,23px);font-weight:700;line-height:2;margin-bottom:20px}
+.about-card .big em{font-style:normal;background:linear-gradient(120deg,var(--c-teal-deep),var(--c-lav-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+.about-card p{font-size:14.5px;color:var(--c-sub);max-width:620px;margin:0 auto;line-height:2.1}
+.purpose{margin-top:30px;padding:24px 28px;background:linear-gradient(135deg,rgba(95,179,176,.12),rgba(158,151,214,.12));border:1px solid var(--glass-line);border-radius:18px;max-width:640px;margin-left:auto;margin-right:auto}
+.purpose .pl{font-family:var(--font-round);font-weight:700;font-size:12px;letter-spacing:.04em;color:var(--c-teal-deep);margin-bottom:8px}
+.purpose q{font-size:15px;font-weight:500;color:var(--c-ink);quotes:"「" "」"}
+.purpose .src{display:block;font-size:11px;color:var(--c-lav-deep);margin-top:10px}
+
+/* ===== 相談メニュー（カラム） ===== */
+.menu-list{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.menu-item{padding:28px 30px}
+.menu-item .no{font-family:var(--font-num);font-size:12px;font-weight:600;letter-spacing:.16em;color:var(--c-lav-deep)}
+.menu-item h3{font-size:18px;margin:6px 0 12px}
+.menu-item p{font-size:13.5px;color:var(--c-sub);line-height:2}
+.menu-item .tag{display:inline-block;margin-top:14px;font-size:11.5px;color:var(--c-teal-deep);background:rgba(95,179,176,.12);border-radius:999px;padding:4px 12px}
+
+/* ===== ご相談の流れ ===== */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.flow-step{padding:26px 20px;text-align:center;position:relative}
+.flow-step .n{font-family:var(--font-num);font-weight:600;font-size:13px;color:#fff;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:linear-gradient(135deg,var(--c-teal),var(--c-lav))}
+.flow-step h3{font-size:15px;margin-bottom:8px}
+.flow-step p{font-size:12.5px;color:var(--c-sub);line-height:1.9}
+
+/* ===== お知らせ ===== */
+.news-card{padding:12px 30px}
+.news-row{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--c-line);align-items:baseline;font-size:14px}
+.news-row:last-child{border-bottom:none}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:500;color:var(--c-lav-deep);font-size:12.5px}
+.news-row .cat{flex:none;font-size:11px;background:rgba(158,151,214,.15);color:var(--c-lav-deep);border-radius:999px;padding:2px 11px}
+.news-row a{color:var(--c-ink);text-decoration:none}
+.news-row a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ===== よくあるご質問 ===== */
+.faq details{border-bottom:1px solid var(--c-line)}
+.faq details:last-child{border-bottom:none}
+.faq summary{list-style:none;cursor:pointer;padding:20px 4px;font-family:var(--font-round);font-weight:700;font-size:15px;display:flex;gap:12px;align-items:flex-start}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";font-family:var(--font-num);color:var(--c-teal-deep);font-weight:600;flex:none}
+.faq summary::after{content:"+";margin-left:auto;color:var(--c-lav-deep);font-size:20px;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 4px 22px 26px;font-size:13.5px;color:var(--c-sub);line-height:2}
+
+/* ===== 概要テーブル ===== */
+.gaiyo-card{padding:clamp(24px,3vw,36px)}
+table.gaiyo{width:100%;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:150px;text-align:left;font-family:var(--font-round);font-weight:700;color:var(--c-teal-deep);padding:14px 16px;vertical-align:top;white-space:nowrap}
+table.gaiyo td{padding:14px 16px;border-bottom:1px solid var(--c-line)}
+table.gaiyo tr:last-child td,table.gaiyo tr:last-child th{border-bottom:none}
+table.gaiyo th{border-bottom:1px solid var(--c-line)}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.contact-card{padding:clamp(30px,4vw,48px);text-align:center}
+.contact-card .tel-cap{font-size:13px;font-weight:500;color:var(--c-sub)}
+.contact-card .tel-num{font-family:var(--font-num);font-size:clamp(26px,4vw,34px);font-weight:600;color:var(--c-teal-deep);letter-spacing:.02em;margin:6px 0}
+.contact-card .tel-note{font-size:11.5px;color:var(--c-lav-deep)}
+.form{max-width:560px;margin:32px auto 0;text-align:left}
+.form .row{margin-bottom:16px}
+.form label{display:block;font-size:12.5px;font-weight:700;font-family:var(--font-round);margin-bottom:7px;color:var(--c-ink)}
+.form input,.form textarea{width:100%;font-family:inherit;font-size:14px;color:var(--c-ink);background:rgba(255,255,255,.65);border:1px solid var(--glass-line);border-radius:12px;padding:13px 15px;transition:border-color .3s}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-teal)}
+.form textarea{min-height:110px;resize:vertical}
+.form .submit{width:100%;margin-top:6px;border:none;cursor:pointer}
+.form .demo-note{text-align:center;font-size:11.5px;color:var(--c-lav-deep);margin-top:14px}
+
+/* ===== フッター ===== */
+.footer{position:relative;z-index:1;text-align:center;padding:54px 20px 130px;color:var(--c-sub)}
+.footer .f-name{font-family:var(--font-round);font-weight:700;font-size:16px;color:var(--c-ink)}
+.footer p{font-size:12.5px;margin-top:6px}
+.sample-note{font-size:11px;color:var(--c-lav-deep);margin-top:18px;line-height:1.9;max-width:640px;margin-left:auto;margin-right:auto}
+.sample-note a{color:var(--c-teal-deep)}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(58,66,86,.9);color:#fff;text-decoration:none;font-family:var(--font-body);font-size:11px;letter-spacing:.02em;padding:9px 15px;border-radius:999px;backdrop-filter:blur(8px);box-shadow:0 8px 22px rgba(58,66,86,.3)}
+.pill svg{width:15px;height:15px;flex:none;color:var(--c-teal)}
+.pill b{font-weight:700}
+.pill:hover{background:rgba(62,143,140,.95)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar nav{display:none}
+  .topbar nav.sp-nav{display:block}
+  .menu-btn{display:block}
+  .sp-nav{position:fixed;inset:70px 0 auto 0;background:rgba(255,255,255,.9);backdrop-filter:blur(18px);border-bottom:1px solid var(--glass-line);padding:12px 24px 24px;transform:translateY(-16px);opacity:0;visibility:hidden;transition:.3s var(--ease);margin:0;flex-direction:column;gap:0}
+  .menu-open .sp-nav{transform:none;opacity:1;visibility:visible}
+  .sp-nav a{display:block;font-family:var(--font-round);font-weight:500;font-size:15px;padding:14px 4px;border-bottom:1px solid var(--c-line);border-radius:0}
+  .sp-nav a.cta{margin-top:14px;text-align:center;border-radius:999px;border-bottom:none}
+  .cards{grid-template-columns:1fr;gap:16px}
+  .menu-list{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr;gap:14px}
+  .hero{padding:110px 0 60px}
+  .hero-photos{grid-template-columns:1fr 1fr;margin-top:40px}
+  .hero-photos figure:first-child{grid-column:1/-1}
+  .hero-photos figure:first-child img{aspect-ratio:16/9}
+  .block{padding:58px 0}
+  table.gaiyo th{white-space:normal}
+}
+@media (max-width:560px){
+  .hero-photos{grid-template-columns:1fr}
+  .hero-photos figure:first-child img{aspect-ratio:4/3}
+  .hero-photos img{aspect-ratio:16/9}
+  .flow{grid-template-columns:1fr}
+  .pill span{display:none}
+  .pill{padding:10px}
+  /* 表は縦積み（横スクロール0） */
+  table.gaiyo,table.gaiyo tbody,table.gaiyo tr,table.gaiyo th,table.gaiyo td{display:block;width:100%}
+  table.gaiyo th{padding:14px 4px 4px;border-bottom:none;color:var(--c-teal-deep)}
+  table.gaiyo td{padding:0 4px 16px;border-bottom:1px solid var(--c-line)}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- 上部固定バー -->
+<header class="topbar" id="top">
+  <a class="logo" href="#top">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#5FB3B0"/><stop offset="1" stop-color="#9E97D6"/>
+        </linearGradient>
+      </defs>
+      <circle cx="20" cy="20" r="18" fill="url(#g)" opacity=".18"/>
+      <path d="M20 31c-5-2.5-9-6.5-9-11.5C11 15.4 14 13 17 13c1.6 0 2.6.7 3 1.6.4-.9 1.4-1.6 3-1.6 3 0 6 2.4 6 6.5 0 5-4 9-9 11.5Z" fill="url(#g)"/>
+    </svg>
+    <span class="t">日本メンタルサポート協会<small>NPO法人｜名古屋市南区</small></span>
+  </a>
+  <nav>
+    <a href="#support">支援のかたち</a>
+    <a href="#about">わたしたちのこと</a>
+    <a href="#menu">相談メニュー</a>
+    <a href="#flow">ご相談の流れ</a>
+    <a href="#faq">よくある質問</a>
+    <a href="#contact" class="cta">相談する</a>
+  </nav>
+  <nav class="sp-nav">
+    <a href="#support">支援のかたち</a>
+    <a href="#about">わたしたちのこと</a>
+    <a href="#menu">相談メニュー</a>
+    <a href="#flow">ご相談の流れ</a>
+    <a href="#faq">よくある質問</a>
+    <a href="#gaiyo">団体概要</a>
+    <a href="#contact" class="cta">相談する</a>
+  </nav>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<div class="main">
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <p class="eyebrow reveal on">名古屋市南区・こころと人間関係のサポート</p>
+    <h1 class="reveal on"><span class="kb">ひとりで</span><span class="kb">抱えこまなくて、</span><br><span class="kb"><span class="accent">だいじょうぶ。</span></span></h1>
+    <p class="sub reveal on">企業・家庭・学校・福祉施設など、地域社会のさまざまな場面で、<br><span class="kb">「温かく円滑な人間関係を築きたい」</span><span class="kb">という方に寄り添います。</span><br>まずは、お話をきかせてください。</p>
+    <div class="btns reveal on">
+      <a href="#contact" class="btn btn-primary">相談してみる</a>
+      <a href="#support" class="btn btn-ghost">できることを見る</a>
+    </div>
+    <div class="hero-photos reveal on">
+      <!-- 差し替えポイント: 相談・対話・穏やかな光のお写真（顔が特定されにくい構図） -->
+      <figure><img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=900&q=80&auto=format&fit=crop" alt="やわらかな光の中で対話するイメージ"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=700&q=80&auto=format&fit=crop" alt="窓辺のあたたかな光のイメージ"></figure>
+      <figure><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700&q=80&auto=format&fit=crop" alt="やさしい自然の光のイメージ"></figure>
+    </div>
+  </section>
+
+  <!-- 支援のかたち -->
+  <section class="block" id="support">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Support</span>
+        <h2>わたしたちにできること</h2>
+        <p class="lead">こころと、人と人との関係が、少しずつ楽になっていくように。3つの角度から寄り添います。</p>
+      </div>
+      <div class="cards">
+        <div class="card glass reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>きく・話す</h3>
+          <p>気持ちを言葉にする、その時間をていねいに。答えを急がず、あなたのペースで整理していけるようご一緒します。</p>
+        </div>
+        <div class="card glass reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>人との関係を整える</h3>
+          <p>家庭・職場・学校での人間関係のもやもやに。相手との距離感や伝え方を、一緒に考えていきます。</p>
+        </div>
+        <div class="card glass reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h3>学びの場をひらく</h3>
+          <p>こころや傾聴について学びたい方へ。地域や施設での講座・勉強会を通じて、支え合う輪を広げます。</p>
+        </div>
+      </div>
+
+      <!-- 対象の場面 -->
+      <div class="scene reveal">
+        <p class="b-head lead" style="margin:34px auto 16px">こんな場面の人間関係に寄り添います</p>
+        <div class="scene-grid">
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M6 21V7l6-4 6 4v14M9 9h.01M9 13h.01M15 9h.01M15 13h.01"/></svg>企業・職場</span>
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>家庭</span>
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>学校</span>
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.4"/></svg>福祉施設</span>
+          <span class="s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3a13 13 0 0 0 0 18M3 12h18"/></svg>地域・その他</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたちのこと -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">About</span>
+        <h2>わたしたちのこと</h2>
+      </div>
+      <div class="about-card glass reveal">
+        <p class="big"><span class="kb">温かく、</span><span class="kb">円滑な</span><em><span class="kb">人間関係</span></em><span class="kb">を</span><br><span class="kb">築きたいと願う</span><span class="kb">すべての人へ。</span></p>
+        <p>わたしたちは、名古屋市南区を拠点に、こころや人間関係にまつわる相談・傾聴・学びの場づくりに取り組むNPO法人です。企業・家庭・学校・福祉施設など、地域社会のさまざまな場面で、その人らしい関わりを取り戻すお手伝いをしています。<span class="note-sample">※本文は定款の目的（公開情報）をもとにしたサンプルです。実際のご紹介文に差し替えます</span></p>
+        <div class="purpose">
+          <p class="pl">わたしたちの目的（定款より）</p>
+          <q>企業・家庭・学校・福祉施設その他地域社会で、温かく円滑な人間関係の構築を望む人を支援する</q>
+          <span class="src">出典: 特定非営利活動法人 情報（登記の事業目的）</span>
+        </div>
+        <!-- ※サンプル: あいさつ文はダミー。ご本人のお言葉に差し替えます -->
+        <p style="margin-top:26px">こころは、目に見えないぶん、ひとりで抱えこみやすいもの。だからこそ、安心して言葉にできる場所でありたいと考えています。どうぞ、肩の力を抜いて、お気軽にご相談ください。<span class="note-sample">※あいさつ文はサンプルです</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相談メニュー -->
+  <section class="block" id="menu">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Menu</span>
+        <h2>相談・活動のメニュー</h2>
+        <p class="lead">どんなことでも、まずはお話から。※内容・区分は表示イメージのサンプルです</p>
+      </div>
+      <!-- ※サンプル: メニュー名・説明はダミー。実際の活動内容に差し替えます -->
+      <div class="menu-list">
+        <div class="menu-item glass reveal">
+          <span class="no">MENU 01</span>
+          <h3>こころの個別相談</h3>
+          <p>不安・落ち込み・対人関係のなやみなど、いま感じていることをゆっくりお話しいただけます。ひとりで抱えていることを、まず言葉にしてみませんか。</p>
+          <span class="tag">個別／対面・オンライン（サンプル）</span>
+        </div>
+        <div class="menu-item glass reveal">
+          <span class="no">MENU 02</span>
+          <h3>人間関係のご相談</h3>
+          <p>家庭・職場・学校での関わりのもやもやに。相手との距離感や、気持ちの伝え方を一緒に整理していきます。</p>
+          <span class="tag">個別／ご家族の相談も（サンプル）</span>
+        </div>
+        <div class="menu-item glass reveal">
+          <span class="no">MENU 03</span>
+          <h3>傾聴・こころの講座</h3>
+          <p>「話をきく力」を学びたい方へ。地域や施設での勉強会・ワークショップを通じて、支え合いの輪を広げます。</p>
+          <span class="tag">グループ／出張対応（サンプル）</span>
+        </div>
+        <div class="menu-item glass reveal">
+          <span class="no">MENU 04</span>
+          <h3>企業・施設へのサポート</h3>
+          <p>職場や施設での人間関係づくり、こころの健康について。研修・相談体制づくりのご相談を承ります。</p>
+          <span class="tag">法人向け／お見積り無料（サンプル）</span>
+        </div>
+      </div>
+      <p class="note-sample" style="text-align:center;margin-top:20px">※医療行為・治療ではありません。診断や治療が必要な場合は医療機関をご案内します。</p>
+    </div>
+  </section>
+
+  <!-- ご相談の流れ -->
+  <section class="block" id="flow">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Flow</span>
+        <h2>ご相談の流れ</h2>
+        <p class="lead">はじめての方も、どうぞご安心ください。※流れは表示イメージのサンプルです</p>
+      </div>
+      <div class="flow">
+        <div class="flow-step glass reveal"><span class="n">1</span><h3>お問い合わせ</h3><p>電話・フォームから。「話を聞いてほしい」だけで大丈夫です。</p></div>
+        <div class="flow-step glass reveal"><span class="n">2</span><h3>日時のご相談</h3><p>ご都合に合わせて、相談の日時を決めます。</p></div>
+        <div class="flow-step glass reveal"><span class="n">3</span><h3>お話をきく</h3><p>安心できる場で、いまの気持ちをゆっくりと。</p></div>
+        <div class="flow-step glass reveal"><span class="n">4</span><h3>これからを一緒に</h3><p>無理のないペースで、次の一歩を考えます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">News</span>
+        <h2>お知らせ</h2>
+        <p class="lead">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      </div>
+      <div class="news-card glass reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">講座</span><a href="#news">傾聴ボランティア入門講座を開催します</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">オンライン相談の受付を始めました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="cat">活動</span><a href="#news">地域の福祉施設でこころの勉強会を行いました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- よくあるご質問 -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">FAQ</span>
+        <h2>よくあるご質問</h2>
+      </div>
+      <!-- ※サンプル: 回答内容はダミー。実際のご案内に差し替えます -->
+      <div class="faq glass reveal" style="padding:8px 30px">
+        <details open><summary>どんなことでも相談していいですか？</summary><div class="a">はい。「こんなこと相談していいのかな」ということでも大丈夫です。うまく言葉にできなくても、ご一緒に整理していきます。<span class="note-sample">※回答はサンプルです</span></div></details>
+        <details><summary>治療やカウンセリングで必ず良くなりますか？</summary><div class="a">こころの状態は人それぞれで、効果を保証するものではありません。わたしたちは治療や診断は行わず、お気持ちに寄り添う支援を大切にしています。医療的な対応が必要な場合は、医療機関をご案内します。</div></details>
+        <details><summary>家族や職場のことでも相談できますか？</summary><div class="a">もちろんです。ご本人だけでなく、ご家族や、職場・施設での人間関係についてのご相談も承ります。<span class="note-sample">※内容はサンプルです</span></div></details>
+        <details><summary>相談したことは他の人に知られませんか？</summary><div class="a">お話しいただいた内容は、プライバシーに配慮して取り扱います。<span class="note-sample">※取扱い方針は公開時に正式にご案内します（サンプル）</span></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 団体概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Profile</span>
+        <h2>団体概要</h2>
+      </div>
+      <div class="gaiyo-card glass reveal">
+        <div class="tbl-wrap">
+          <table class="gaiyo">
+            <tr><th>名称</th><td>特定非営利活動法人 日本メンタルサポート協会</td></tr>
+            <tr><th>所在地</th><td>愛知県名古屋市南区<span class="note-sample">（詳しい番地は公開時に記載します）</span></td></tr>
+            <tr><th>活動分野</th><td>保健・医療・福祉の増進／社会教育の推進／学術・文化・芸術・スポーツの振興<span class="note-sample">（NPO活動分野の公開情報より）</span></td></tr>
+            <tr><th>目的</th><td>企業・家庭・学校・福祉施設その他地域社会で、温かく円滑な人間関係の構築を望む人を支援する<span class="note-sample">（定款の目的・公開情報より）</span></td></tr>
+            <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+            <tr><th>お問い合わせ</th><td>下記フォーム・お電話より承ります<span class="note-sample">（連絡先はサンプル）</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="b-head reveal">
+        <span class="en">Contact</span>
+        <h2>ご相談・お問い合わせ</h2>
+        <p class="lead">どうぞ、ひとりで抱えこまずに。まずはお気軽にご連絡ください。</p>
+      </div>
+      <div class="contact-card glass reveal">
+        <p class="tel-cap">お電話でのご相談</p>
+        <!-- ※サンプル: 電話番号はダミー。公開時に実番号へ差し替えます -->
+        <p class="tel-num">000-0000-0000</p>
+        <p class="tel-note">※サンプル表示です（受付時間・番号は公開時に記載します）</p>
+        <form class="form" onsubmit="return false" aria-label="お問い合わせ（デモ）">
+          <div class="row"><label for="n">お名前</label><input id="n" type="text" placeholder="例）山田 花子" autocomplete="off"></div>
+          <div class="row"><label for="e">メールアドレス</label><input id="e" type="email" placeholder="例）example@mail.com" autocomplete="off"></div>
+          <div class="row"><label for="m">ご相談内容</label><textarea id="m" placeholder="どんなことでも、書ける範囲で大丈夫です。"></textarea></div>
+          <button type="submit" class="btn btn-primary submit" id="submitBtn">送信する（デモ）</button>
+          <p class="demo-note">※こちらはデモフォームです。実際には送信されません（公開時に送信機能をご用意します）</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <p class="f-name">特定非営利活動法人 日本メンタルサポート協会</p>
+  <p>愛知県名古屋市南区｜こころと人間関係のサポート</p>
+  <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミーです。医療効果・治療を保証するものではありません）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  <p style="margin-top:14px;font-size:11px">&copy; 2026 日本メンタルサポート協会</p>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .topbar nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム: 送信されない旨を伝える
+const btn = document.getElementById("submitBtn");
+if (btn) btn.addEventListener("click", () => {
+  btn.textContent = "これはデモです（送信されません）";
+  setTimeout(() => { btn.textContent = "送信する（デモ）"; }, 2600);
+});
+
+// スクロールで浮かび上がる
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

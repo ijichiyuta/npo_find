@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 マライカの翼プロジェクト さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・数値（支援人数・年数など）はすべてサンプルの仮値です
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・代表者実名は記載していません／所在地は市までの表記です
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>マライカの翼プロジェクト｜タンザニアの子どもに教育の翼を【ご提案サンプル】</title>
+<meta name="description" content="愛知県稲沢市のNPO法人。タンザニアの孤児・生活困窮家庭の幼児が義務教育を受けられるよう支援しています。国際協力・子どもの健全育成。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Anton&family=Archivo+Black&family=Zen+Kaku+Gothic+Antique:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* アフリカの大地の色を品よく：生成り×朱×藍×黄土 */
+  --c-paper:#F4EEE1;      /* 生成り */
+  --c-paper-deep:#EAE1CE;
+  --c-ink:#241E17;        /* 焦茶に近い墨 */
+  --c-vermilion:#D8452B;  /* 朱 */
+  --c-vermilion-deep:#B3341E;
+  --c-indigo:#20324F;     /* 藍 */
+  --c-ochre:#C98A2B;      /* 黄土 */
+  --c-line:#CDBFA3;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-disp:"Anton",sans-serif;          /* 大級数の欧文ディスプレイ */
+  --font-disp-en:"Archivo Black",sans-serif;
+  --font-jp-disp:"Zen Kaku Gothic Antique","Noto Sans JP",sans-serif; /* 力強い和文見出し */
+  --ease:cubic-bezier(.19,1,.22,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-paper);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{line-height:1.05;word-break:auto-phrase}
+/* 文節改行（iOS折返し対策） */
+.kb{display:inline-block}
+::selection{background:var(--c-vermilion);color:#fff}
+
+/* ===== 上部固定バー ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(18px,4vw,44px);background:transparent;mix-blend-mode:normal;transition:background .4s var(--ease)}
+.topbar.solid{background:var(--c-ink)}
+.topbar .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-paper)}
+.topbar .brand .mk{width:34px;height:34px;flex:none}
+.topbar .brand .tx{font-family:var(--font-jp-disp);font-weight:900;font-size:16px;letter-spacing:.02em;line-height:1.15}
+.topbar .brand .tx small{display:block;font-family:var(--font-disp-en);font-size:9px;letter-spacing:.28em;color:var(--c-ochre);margin-top:2px}
+.topbar nav{display:flex;align-items:center;gap:26px}
+.topbar nav a{text-decoration:none;color:var(--c-paper);font-size:12.5px;font-weight:700;letter-spacing:.04em;opacity:.9;transition:opacity .3s}
+.topbar nav a:hover{opacity:1}
+.topbar .cta{background:var(--c-vermilion);color:#fff;padding:10px 20px;font-weight:900;font-size:12.5px;letter-spacing:.06em}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:26px;height:2.5px;background:var(--c-paper);margin:6px 0;transition:.3s}
+
+/* ===== ヒーロー：大胆な実験組版 ===== */
+.hero{position:relative;background:var(--c-indigo);color:var(--c-paper);padding:150px clamp(18px,4vw,44px) 70px;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.hero .bgimg{position:absolute;inset:0;z-index:0}
+.hero .bgimg img{width:100%;height:100%;object-fit:cover;opacity:.24;filter:saturate(1.05)}
+.hero .bgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,var(--c-indigo) 20%,rgba(32,50,79,.55) 70%,rgba(32,50,79,.3))}
+.hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;width:100%}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-disp-en);font-size:11px;letter-spacing:.32em;color:var(--c-ochre);margin-bottom:26px}
+.hero .eyebrow::before{content:"";width:46px;height:2px;background:var(--c-vermilion)}
+/* 大級数タイポ：行ごとにサイズ・色・寄せを変える実験組版 */
+.hero h1{font-family:var(--font-jp-disp);font-weight:900;letter-spacing:.01em}
+.hero h1 .l1{display:block;font-size:clamp(38px,9vw,118px);line-height:.94;color:var(--c-paper)}
+.hero h1 .l2{display:block;font-size:clamp(38px,9vw,118px);line-height:.94;color:var(--c-vermilion);text-indent:clamp(20px,7vw,140px);margin-top:.02em}
+.hero h1 .l3{display:block;font-family:var(--font-disp);font-weight:400;font-size:clamp(58px,17vw,240px);line-height:.82;color:var(--c-ochre);letter-spacing:.01em;margin-top:.08em;text-transform:uppercase;-webkit-text-stroke:0}
+.hero h1 .l3 .thin{-webkit-text-stroke:2px var(--c-ochre);color:transparent}
+.hero .lead{max-width:540px;margin-top:40px;font-size:clamp(15px,1.5vw,17px);line-height:2.1;color:#E7DECB}
+.hero .scr{position:absolute;left:clamp(18px,4vw,44px);bottom:26px;z-index:2;font-family:var(--font-disp-en);font-size:10px;letter-spacing:.3em;color:var(--c-ochre);writing-mode:vertical-rl}
+
+/* ===== 帯：数字を大級数で（サンプル値） ===== */
+.stat{background:var(--c-vermilion);color:#fff}
+.stat .in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);padding:clamp(34px,5vw,60px) clamp(18px,4vw,44px)}
+.stat .cell{padding:8px 0}
+.stat .cell + .cell{border-left:1px solid rgba(255,255,255,.28)}
+.stat .cell{padding-left:clamp(0px,3vw,40px)}
+.stat .cell:first-child{padding-left:0}
+.stat .num{font-family:var(--font-disp);font-weight:400;font-size:clamp(44px,8vw,86px);line-height:.9;letter-spacing:.01em}
+.stat .num .u{font-size:.4em;margin-left:.12em}
+.stat .cap{font-size:12.5px;font-weight:700;letter-spacing:.03em;margin-top:8px;line-height:1.6}
+.stat .note{display:block;font-size:10.5px;font-weight:400;opacity:.85;margin-top:3px}
+
+/* ===== セクション共通 ===== */
+.sec{max-width:1180px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(18px,4vw,44px)}
+.sec-head{margin-bottom:clamp(40px,6vw,72px)}
+.sec-head .idx{font-family:var(--font-disp-en);font-size:12px;letter-spacing:.3em;color:var(--c-vermilion)}
+.sec-head h2{font-family:var(--font-jp-disp);font-weight:900;font-size:clamp(30px,6vw,72px);line-height:1.02;margin-top:14px;letter-spacing:.005em}
+.sec-head h2 em{font-style:normal;color:var(--c-vermilion)}
+.sec-head .en{display:block;font-family:var(--font-disp);font-weight:400;font-size:clamp(30px,9vw,120px);line-height:.85;color:var(--c-paper-deep);text-transform:uppercase;margin-top:.05em;letter-spacing:.02em}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#8C7C5E}
+
+/* ===== ミッション（大きな引用組版） ===== */
+.mission{background:var(--c-paper-deep)}
+.mission .huge{font-family:var(--font-jp-disp);font-weight:900;font-size:clamp(24px,4.4vw,52px);line-height:1.42;letter-spacing:.01em;max-width:15em}
+.mission .huge .mk{color:var(--c-vermilion);position:relative}
+.mission .body{max-width:640px;margin-top:38px;font-size:15.5px;line-height:2.15}
+.mission .body .note-sample{display:block;margin-top:10px}
+
+/* ===== 課題→活動（交互・非対称） ===== */
+.doing{display:grid;gap:clamp(30px,5vw,64px)}
+.act{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.act:nth-child(even){grid-template-columns:1fr 1.05fr}
+.act:nth-child(even) .act-txt{order:2}
+.act .act-ph{position:relative}
+.act .act-ph img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.act .act-ph .no{position:absolute;top:-22px;left:-8px;font-family:var(--font-disp);font-size:clamp(56px,10vw,120px);line-height:1;color:var(--c-ochre);opacity:.9;z-index:2;pointer-events:none}
+.act .act-ph .frame{position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--c-indigo);z-index:-1}
+.act:nth-child(even) .act-ph .frame{inset:14px 14px -14px -14px}
+.act:nth-child(even) .act-ph .no{left:auto;right:-8px}
+.act h3{font-family:var(--font-jp-disp);font-weight:900;font-size:clamp(21px,2.6vw,32px);line-height:1.28;margin-bottom:16px}
+.act h3 .tag{display:block;font-family:var(--font-disp-en);font-size:11px;letter-spacing:.22em;color:var(--c-vermilion);margin-bottom:10px}
+.act p{font-size:14.5px;line-height:2.05}
+
+/* ===== 寄付でできること ===== */
+.give{background:var(--c-indigo);color:var(--c-paper)}
+.give .sec-head h2{color:var(--c-paper)}
+.give .sec-head .en{color:rgba(255,255,255,.09)}
+.give .sec-head .idx{color:var(--c-ochre)}
+.give-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,26px)}
+.give-card{border:2px solid rgba(255,255,255,.22);padding:clamp(24px,3vw,34px)}
+.give-card .amt{font-family:var(--font-disp);font-weight:400;font-size:clamp(34px,5vw,54px);line-height:.95;color:var(--c-ochre)}
+.give-card .amt .yen{font-size:.42em;color:var(--c-paper)}
+.give-card .for{font-weight:900;font-size:16px;margin:14px 0 8px;font-family:var(--font-jp-disp)}
+.give-card p{font-size:13px;line-height:1.9;color:#D8CFBB}
+.give-note{margin-top:clamp(24px,4vw,40px);font-size:11.5px;color:#B7AC94}
+
+/* ===== ごあいさつ ===== */
+.voice .box{background:var(--c-paper-deep);border-left:8px solid var(--c-vermilion);padding:clamp(30px,4vw,52px);max-width:820px}
+.voice .q{font-family:var(--font-jp-disp);font-weight:900;font-size:clamp(19px,2.4vw,28px);line-height:1.7;margin-bottom:20px}
+.voice p{font-size:14.5px;line-height:2.1}
+.voice .sign{margin-top:24px;font-weight:900;font-family:var(--font-jp-disp)}
+.voice .sign small{display:block;font-weight:500;font-size:11.5px;color:#8C7C5E;font-family:var(--font-body);margin-top:2px}
+
+/* ===== 支援方法（3列） ===== */
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px)}
+.way{background:var(--c-paper-deep);padding:clamp(26px,3vw,38px);position:relative}
+.way .n{font-family:var(--font-disp);font-size:clamp(30px,4vw,44px);color:var(--c-vermilion);line-height:1}
+.way h3{font-family:var(--font-jp-disp);font-weight:900;font-size:18px;margin:12px 0 10px}
+.way p{font-size:13.5px;line-height:1.95}
+
+/* ===== 概要表 ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:150px;text-align:left;font-family:var(--font-jp-disp);font-weight:900;background:var(--c-indigo);color:var(--c-paper);border:1px solid var(--c-indigo);padding:13px 18px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border:1px solid var(--c-line);background:var(--c-paper-deep);padding:13px 18px}
+.tbl-hint{display:none;font-size:11px;color:#8C7C5E;margin-top:8px}
+
+/* ===== お問い合わせ / フッター前CTA ===== */
+.contact{background:var(--c-vermilion);color:#fff}
+.contact .in{max-width:1180px;margin:0 auto;padding:clamp(60px,8vw,110px) clamp(18px,4vw,44px);display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,5vw,60px);align-items:center}
+.contact h2{font-family:var(--font-jp-disp);font-weight:900;font-size:clamp(28px,5vw,60px);line-height:1.06}
+.contact h2 .en{display:block;font-family:var(--font-disp);font-weight:400;font-size:clamp(30px,7vw,96px);line-height:.85;color:rgba(255,255,255,.28);margin-top:6px;text-transform:uppercase}
+.contact .r .tel-cap{font-weight:700;font-size:13px;letter-spacing:.04em}
+.contact .r .tel{font-family:var(--font-disp);font-size:clamp(30px,4.5vw,44px);line-height:1;letter-spacing:.01em;text-decoration:none;color:#fff;display:inline-block;margin:6px 0}
+.contact .r .sub{font-size:12px;opacity:.9;line-height:1.7}
+.contact .r .btn{display:inline-block;margin-top:18px;background:var(--c-ink);color:#fff;text-decoration:none;font-weight:900;font-size:14px;padding:15px 28px;letter-spacing:.04em}
+
+/* デモフォーム */
+.form{max-width:640px;margin:36px auto 0}
+.form .row{margin-bottom:16px}
+.form label{display:block;font-weight:700;font-size:12.5px;margin-bottom:6px;color:#fff}
+.form input,.form textarea{width:100%;border:none;background:#fff;color:var(--c-ink);padding:12px 14px;font-family:inherit;font-size:14px}
+.form .send{background:var(--c-ink);color:#fff;border:none;font-weight:900;font-size:14px;padding:14px 30px;cursor:pointer;letter-spacing:.04em}
+.form .demo{font-size:11.5px;color:#fff;opacity:.9;margin-top:10px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:var(--c-paper);padding:clamp(50px,7vw,88px) clamp(18px,4vw,44px) 40px}
+.footer .in{max-width:1180px;margin:0 auto}
+.footer .big{font-family:var(--font-disp);font-size:clamp(44px,12vw,140px);line-height:.85;color:rgba(244,238,225,.1);text-transform:uppercase;letter-spacing:.01em;margin-bottom:30px;overflow:hidden}
+.footer .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:end}
+.footer .f-name{font-family:var(--font-jp-disp);font-weight:900;font-size:19px}
+.footer .f-meta{font-size:12.5px;color:#B7AC94;margin-top:8px;line-height:1.9}
+.footer .f-nav{display:flex;flex-wrap:wrap;gap:14px 20px;justify-content:flex-end}
+.footer .f-nav a{color:var(--c-paper);text-decoration:none;font-size:12.5px;font-weight:700;opacity:.85}
+.footer .f-nav a:hover{opacity:1;color:var(--c-ochre)}
+.sample-note{border-top:1px solid rgba(244,238,225,.15);margin-top:34px;padding-top:22px;font-size:11px;color:#9A8E72;line-height:1.9}
+.sample-note a{color:var(--c-ochre)}
+.copy{font-size:11px;color:#7A6F58;margin-top:14px}
+
+/* ===== SPナビ ===== */
+.sp-nav{display:none}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar nav{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--c-ink);flex-direction:column;justify-content:flex-start;align-items:stretch;gap:0;padding:84px 0 30px;transform:translateX(100%);transition:transform .4s var(--ease)}
+  body.menu-open .topbar nav{transform:none}
+  .topbar nav a{padding:16px 30px;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px}
+  .topbar nav .cta{margin:20px 30px 0;text-align:center}
+  .menu-btn{display:block;z-index:210}
+  body.menu-open .menu-btn span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+  body.menu-open .menu-btn span:nth-child(2){opacity:0}
+  body.menu-open .menu-btn span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+  .stat .in{grid-template-columns:1fr;gap:20px}
+  .stat .cell + .cell{border-left:none;border-top:1px solid rgba(255,255,255,.28);padding-top:20px}
+  .stat .cell{padding-left:0}
+  .act,.act:nth-child(even){grid-template-columns:1fr;gap:22px}
+  .act:nth-child(even) .act-txt{order:0}
+  .act .act-ph .frame,.act:nth-child(even) .act-ph .frame{inset:10px -10px -10px 10px}
+  .act .act-ph .no{top:-14px}
+  .give-grid,.ways{grid-template-columns:1fr}
+  .contact .in{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .tbl-hint{display:block}
+}
+@media (max-width:640px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;padding:11px 15px 4px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 15px 13px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部固定バー -->
+<header class="topbar" id="bar">
+  <a class="brand" href="#top">
+    <svg class="mk" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#D8452B"/>
+      <path d="M20 6c7 4 11 10 11 17-6-1-10-6-11-12-1 6-5 11-11 12 0-7 4-13 11-17Z" fill="#F4EEE1"/>
+      <circle cx="20" cy="19" r="3.4" fill="#C98A2B"/>
+    </svg>
+    <span class="tx">マライカの翼<small>MALAIKA WINGS</small></span>
+  </a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="#mission">わたしたち</a>
+    <a href="#doing">活動</a>
+    <a href="#give">寄付でできること</a>
+    <a href="#voice">ごあいさつ</a>
+    <a href="#gaiyo">団体概要</a>
+    <a class="cta" href="#contact">支援・お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー：大胆な実験組版 -->
+<section class="hero">
+  <div class="bgimg">
+    <!-- 差し替えポイント: 現地の子ども・学びのお写真（顔が特定されにくいものが安心です） -->
+    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1600&q=80&auto=format&fit=crop" alt="学ぶ子どもたちのイメージ">
+  </div>
+  <div class="hero-inner">
+    <span class="eyebrow">NPO · TANZANIA × INAZAWA, JAPAN</span>
+    <h1>
+      <span class="l1 kb">その子に、</span>
+      <span class="l2 kb">教育という</span>
+      <span class="l3">Wings<span class="thin">.</span></span>
+    </h1>
+    <p class="lead">タンザニアの孤児や、生活が困難なご家庭の幼い子どもたちが、当たり前に義務教育を受けられるように。愛知県稲沢市から、学びの翼をとどけるプロジェクトです。</p>
+  </div>
+  <span class="scr">SCROLL</span>
+</section>
+
+<!-- 数字の帯（サンプル値） -->
+<section class="stat" aria-label="活動の数字（サンプル）">
+  <!-- ※サンプル: 以下の数値はすべてダミーの仮値です。実績値に差し替えます -->
+  <div class="in">
+    <div class="cell reveal">
+      <div class="num">120<span class="u">人</span></div>
+      <div class="cap">就学を支えた子ども<span class="note">※サンプル（仮の数値）</span></div>
+    </div>
+    <div class="cell reveal">
+      <div class="num">8<span class="u">年</span></div>
+      <div class="cap">現地での活動年数<span class="note">※サンプル（仮の数値）</span></div>
+    </div>
+    <div class="cell reveal">
+      <div class="num">3<span class="u">校</span></div>
+      <div class="cap">連携する現地の学校<span class="note">※サンプル（仮の数値）</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ミッション -->
+<section class="sec mission" id="mission">
+  <div class="sec-head reveal">
+    <span class="idx">01 / MISSION</span>
+    <h2>学びは、<em>翼</em>になる。</h2>
+    <span class="en" aria-hidden="true">Our Mission</span>
+  </div>
+  <p class="huge reveal">
+    <span class="kb">タンザニアの</span><span class="kb"><span class="mk">孤児</span>や、</span><span class="kb">生活に困っている</span><span class="kb">ご家庭の</span><span class="kb">幼い子どもたちが、</span><br>
+    <span class="kb"><span class="mk">義務教育</span>を</span><span class="kb">受けられるように。</span>
+  </p>
+  <div class="body reveal">
+    <p>「マライカ」は現地の言葉で「天使」を意味します。生まれた場所や家庭の事情で学びをあきらめる子を、ひとりでも減らしたい。わたしたちは稲沢市を拠点に、現地と手をつなぎながら、就学の入り口を支える活動をしています。
+    <span class="note-sample">※この文章は定款の目的（公開情報）をもとにしたサンプルです。実際のメッセージに差し替えます。</span></p>
+  </div>
+</section>
+
+<!-- 課題→活動 -->
+<section class="sec" id="doing" style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="idx">02 / ACTIVITIES</span>
+    <h2>わたしたちが<br>していること。</h2>
+    <span class="en" aria-hidden="true">Activities</span>
+  </div>
+  <div class="doing">
+
+    <div class="act reveal">
+      <div class="act-ph">
+        <span class="no" aria-hidden="true">01</span>
+        <span class="frame" aria-hidden="true"></span>
+        <!-- 差し替えポイント: 教室や学用品のお写真 -->
+        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1100&q=80&auto=format&fit=crop" alt="学びの場のイメージ">
+      </div>
+      <div class="act-txt">
+        <h3><span class="tag">EDUCATION</span>就学を支える</h3>
+        <p>学費や制服、ノートや鉛筆といった学用品がないために、学校に通えない子どもがいます。就学の入り口でつまずかないよう、必要なものをそろえる手伝いをします。<span class="note-sample">※活動内容はサンプル表記です</span></p>
+      </div>
+    </div>
+
+    <div class="act reveal">
+      <div class="act-ph">
+        <span class="no" aria-hidden="true">02</span>
+        <span class="frame" aria-hidden="true"></span>
+        <!-- 差し替えポイント: 幼児・見守りのお写真 -->
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=1100&q=80&auto=format&fit=crop" alt="幼い子どもたちのイメージ">
+      </div>
+      <div class="act-txt">
+        <h3><span class="tag">CARE</span>幼児の育ちを見守る</h3>
+        <p>孤児や、生活が困難なご家庭の幼い子どもたちが、安心して育ち、学びに向かえるように。現地のパートナーと連携し、日々の育ちに寄り添います。<span class="note-sample">※活動内容はサンプル表記です</span></p>
+      </div>
+    </div>
+
+    <div class="act reveal">
+      <div class="act-ph">
+        <span class="no" aria-hidden="true">03</span>
+        <span class="frame" aria-hidden="true"></span>
+        <!-- 差し替えポイント: 日本での報告会・イベントのお写真 -->
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1100&q=80&auto=format&fit=crop" alt="日本での活動報告のイメージ">
+      </div>
+      <div class="act-txt">
+        <h3><span class="tag">BRIDGE</span>日本と現地をつなぐ</h3>
+        <p>現地の子どもたちの様子を、日本の支援してくださる方へお伝えします。報告会や情報発信を通じて、遠く離れた場所どうしをつなぎます。<span class="note-sample">※活動内容はサンプル表記です</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 寄付でできること -->
+<section class="give">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="idx">03 / DONATION</span>
+      <h2>あなたの寄付で、<br>できること。</h2>
+      <span class="en" aria-hidden="true">Donation</span>
+    </div>
+    <div class="give-grid">
+      <div class="give-card reveal">
+        <div class="amt"><span class="yen">¥</span>1,500</div>
+        <div class="for">学用品ひとそろい</div>
+        <p>ノート・鉛筆など、学びをはじめる小さな道具を子どもたちに。</p>
+      </div>
+      <div class="give-card reveal">
+        <div class="amt"><span class="yen">¥</span>5,000</div>
+        <div class="for">制服のプレゼント</div>
+        <p>「みんなと同じ」を着て、胸を張って学校に通えるように。</p>
+      </div>
+      <div class="give-card reveal">
+        <div class="amt"><span class="yen">¥</span>10,000</div>
+        <div class="for">1人の1年の就学</div>
+        <p>ひとりの子どもの1年間の学びを、まるごと支えます。</p>
+      </div>
+    </div>
+    <p class="give-note">※上記の金額と使いみちは、寄付の見せ方をご提案するためのサンプルです。実際の金額・内容に差し替えます。</p>
+  </div>
+</section>
+
+<!-- ごあいさつ -->
+<section class="sec voice" id="voice">
+  <div class="sec-head reveal">
+    <span class="idx">04 / MESSAGE</span>
+    <h2>ごあいさつ</h2>
+    <span class="en" aria-hidden="true">Message</span>
+  </div>
+  <div class="box reveal">
+    <p class="q">「うまれた場所で、<br>学びをあきらめてほしくない。」</p>
+    <p>ある子は、家の事情で学校をあきらめかけていました。ほんの少しの手助けで、その子はまた鉛筆を握りました。わたしたちがしているのは、そんな小さな「もう一度」を、稲沢の地から少しずつ増やしていくことです。どうか力を貸してください。
+    <span class="note-sample">※このあいさつ文はサンプルです。代表者ご本人のお言葉に差し替えます。</span></p>
+    <p class="sign">特定非営利活動法人 マライカの翼プロジェクト<small>代表（お名前は公開時に記載します）</small></p>
+  </div>
+</section>
+
+<!-- 支援方法 -->
+<section class="sec" id="support" style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="idx">05 / JOIN US</span>
+    <h2>支援のかたち。</h2>
+    <span class="en" aria-hidden="true">Join us</span>
+  </div>
+  <div class="ways">
+    <div class="way reveal">
+      <div class="n">01</div>
+      <h3>寄付する</h3>
+      <p>1回のご寄付でも、毎月のご支援でも。金額の大小にかかわらず、子どもの学びにつながります。</p>
+    </div>
+    <div class="way reveal">
+      <div class="n">02</div>
+      <h3>会員になる</h3>
+      <p>正会員・賛助会員として、活動を継続的に支えていただけます。詳しくはお問い合わせください。</p>
+    </div>
+    <div class="way reveal">
+      <div class="n">03</div>
+      <h3>知らせる・つながる</h3>
+      <p>活動を知り、まわりに伝えていただくことも大きな力です。報告会・イベントの情報をお届けします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 団体概要 -->
+<section class="sec" id="gaiyo" style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="idx">06 / PROFILE</span>
+    <h2>団体概要</h2>
+    <span class="en" aria-hidden="true">Profile</span>
+  </div>
+  <div class="tbl-wrap reveal">
+    <table class="gaiyo">
+      <tr><th>正式名称</th><td>特定非営利活動法人 マライカの翼プロジェクト</td></tr>
+      <tr><th>所在地</th><td>愛知県稲沢市（詳細な住所は公開時に記載します）</td></tr>
+      <tr><th>活動分野</th><td>国際協力／子どもの健全育成</td></tr>
+      <tr><th>活動の目的</th><td>タンザニアの孤児・生活困窮家庭の幼児が、義務教育を受けられるよう支援する（定款の目的より）</td></tr>
+      <tr><th>主な活動地</th><td>タンザニア連合共和国／日本国内（稲沢市ほか）</td></tr>
+      <tr><th>設立</th><td>（公開時に記載します）※サンプル</td></tr>
+      <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+    </table>
+  </div>
+  <p class="tbl-hint">→ 表は横にスクロールできます</p>
+</section>
+
+<!-- お問い合わせ / 支援 -->
+<section class="contact" id="contact">
+  <div class="in">
+    <div class="l reveal">
+      <h2>力を、貸してください。<span class="en" aria-hidden="true">Support us</span></h2>
+    </div>
+    <div class="r reveal">
+      <p class="tel-cap">お問い合わせ・ご支援のご相談</p>
+      <!-- ※サンプル: 電話番号はダミーです。tel:リンクは無効化しています -->
+      <a class="tel" href="#" onclick="return false;" aria-disabled="true">000-XXX-XXXX</a>
+      <p class="sub">※サンプルのためダミー番号です（発信できません）。<br>公開時に実際の連絡先を記載します。</p>
+      <a class="btn" href="#form">メールでのお問い合わせ</a>
+    </div>
+  </div>
+
+  <!-- デモフォーム（送信されません） -->
+  <form class="form" id="form" onsubmit="event.preventDefault();document.getElementById('formmsg').style.display='block';">
+    <div class="row">
+      <label for="nm">お名前</label>
+      <input id="nm" type="text" placeholder="山田 太郎" autocomplete="name">
+    </div>
+    <div class="row">
+      <label for="ml">メールアドレス</label>
+      <input id="ml" type="email" placeholder="you@example.com" autocomplete="email">
+    </div>
+    <div class="row">
+      <label for="ms">お問い合わせ内容</label>
+      <textarea id="ms" rows="4" placeholder="ご支援・ご寄付・ご取材など、お気軽にどうぞ"></textarea>
+    </div>
+    <button class="send" type="submit">送信する（デモ）</button>
+    <p class="demo" id="formmsg" style="display:none">※これはデモフォームです。実際には送信されません。本番では入力内容がメールで届くように設定します。</p>
+    <p class="demo">※このフォームはサンプルのデモ動作です。送信は行われません。</p>
+  </form>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="in">
+    <div class="big" aria-hidden="true">MALAIKA WINGS</div>
+    <div class="cols">
+      <div>
+        <p class="f-name">特定非営利活動法人 マライカの翼プロジェクト</p>
+        <p class="f-meta">愛知県稲沢市｜国際協力・子どもの健全育成<br>タンザニアの子どもたちに、教育の翼を。</p>
+      </div>
+      <nav class="f-nav">
+        <a href="#mission">わたしたち</a>
+        <a href="#doing">活動</a>
+        <a href="#give">寄付</a>
+        <a href="#gaiyo">団体概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="sample-note">
+      本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印および数値の内容はダミーです）。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+    </p>
+    <p class="copy">&copy; 2026 NPO法人 マライカの翼プロジェクト（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<script>
+// SPメニュー
+const mb = document.querySelector(".menu-btn");
+mb.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  mb.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".topbar nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// スクロールでトップバーを塗る
+const bar = document.getElementById("bar");
+const onScroll = () => bar.classList.toggle("solid", window.scrollY > 60);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+// リビール
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+<!-- 制作サンプル 固定ピル（左下） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+</html>

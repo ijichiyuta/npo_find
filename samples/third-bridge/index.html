@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 サードブリッジあいち さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・数値・グラフはすべてダミー（イメージ）です
+  ・代表者実名は不使用／住所は区まで（番地・建物名なし）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: 円グラフ／ドーナツチャート主役型・データ調（白×藍×橙×緑）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 サードブリッジあいち｜多様な人材の学びと就労・社会参加を支える【ご提案サンプル】</title>
+<meta name="description" content="名古屋市中川区のNPO法人。少子高齢化社会で、多様な人材の学びと就労・社会参加を「橋」でつなぎ、明るい未来社会に資する活動を行います。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --panel:#FFFFFF;
+  --wash:#F5F7FB;
+  --ink:#141C2E;
+  --ink-soft:#5B647A;
+  --navy:#1E3A6E;
+  --navy-deep:#132murky;
+  --navy-deep:#13285A;
+  --navy-pale:#E7ECF6;
+  --orange:#F08A2C;
+  --orange-deep:#DB7315;
+  --orange-pale:#FCEBD7;
+  --green:#2FA36B;
+  --green-deep:#1F7E51;
+  --green-pale:#E1F2E8;
+  --line:#E4E8F0;
+  --grid:#EEF1F7;
+  --font:"Noto Sans JP",sans-serif;
+  --font-num:"Roboto",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+a{color:inherit}
+.kb{display:inline-block}
+.num{font-family:var(--font-num)}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.head-in{max-width:1120px;margin:0 auto;height:66px;display:flex;align-items:center;gap:14px;padding:0 26px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand .mark{width:38px;height:38px;flex:none}
+.brand .t{font-weight:900;font-size:18px;letter-spacing:.03em;line-height:1.15}
+.brand .t small{display:block;font-size:9.5px;font-weight:700;color:var(--navy);letter-spacing:.05em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:4px}
+.head nav a{text-decoration:none;color:var(--ink-soft);font-size:13px;font-weight:700;padding:8px 12px;border-radius:8px;transition:color .25s,background .25s}
+.head nav a:hover{color:var(--navy);background:var(--navy-pale)}
+.head .cta{margin-left:8px;background:var(--navy);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:10px 16px;border-radius:9px;white-space:nowrap;transition:background .25s}
+.head .cta:hover{background:var(--navy-deep)}
+.menu-btn{display:none}
+
+/* ===== 汎用 ===== */
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.block{padding:80px 0}
+.block.alt{background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.b-head{margin-bottom:38px}
+.b-head .en{display:inline-block;font-family:var(--font-num);font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--orange-deep);text-transform:uppercase;margin-bottom:8px}
+.b-head h2{font-size:clamp(22px,2.7vw,30px);letter-spacing:.02em}
+.b-head p{margin-top:12px;color:var(--ink-soft);font-size:14.5px;max-width:640px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#96A0B4}
+.pill{display:inline-block;background:var(--navy-pale);color:var(--navy-deep);font-size:11.5px;font-weight:700;padding:3px 11px;border-radius:999px;white-space:nowrap}
+
+/* ===== ヒーロー（円グラフ主役） ===== */
+.hero{padding:60px 0 76px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 82% 18%,var(--navy-pale),transparent 42%),
+  radial-gradient(circle at 12% 88%,var(--green-pale),transparent 38%);
+  opacity:.7;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero .cap{display:inline-block;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.1em;background:#fff;border:1px solid var(--navy-pale);padding:6px 14px;border-radius:999px;margin-bottom:20px}
+.hero h1{font-size:clamp(29px,4vw,46px);font-weight:900;line-height:1.55;letter-spacing:.02em}
+.hero h1 .hl{position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.34em;background:var(--orange-pale);z-index:-1}
+.hero .lead{margin-top:22px;font-size:15.5px;color:var(--ink-soft);max-width:520px}
+.hero .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .btns a{text-decoration:none;font-weight:700;font-size:14px;padding:14px 24px;border-radius:10px;transition:.25s}
+.hero .btns .p{background:var(--orange);color:#fff}
+.hero .btns .p:hover{background:var(--orange-deep)}
+.hero .btns .s{background:#fff;color:var(--navy);border:1.5px solid var(--navy-pale)}
+.hero .btns .s:hover{border-color:var(--navy);background:var(--navy-pale)}
+
+/* 円グラフ本体 */
+.chart-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 30px 26px;box-shadow:0 22px 50px -30px rgba(19,40,90,.35)}
+.chart-card .ct{font-size:13px;font-weight:700;color:var(--ink)}
+.chart-card .cs{font-size:11px;color:var(--ink-soft);margin-bottom:16px}
+.pie-row{display:flex;align-items:center;gap:26px}
+.pie{--v1:34;--v2:27;--v3:22;--v4:17;position:relative;width:200px;height:200px;flex:none;border-radius:50%;
+  /* conic-gradient で塗りの円グラフ（4区分, ダミー値） */
+  background:conic-gradient(
+    var(--navy)    0                              calc(var(--v1)*1%),
+    var(--orange)  calc(var(--v1)*1%)             calc((var(--v1)+var(--v2))*1%),
+    var(--green)   calc((var(--v1)+var(--v2))*1%) calc((var(--v1)+var(--v2)+var(--v3))*1%),
+    #9AB0D6        calc((var(--v1)+var(--v2)+var(--v3))*1%) 100%
+  );
+  -webkit-mask:radial-gradient(circle at center, transparent 40px, #000 41px);
+  mask:radial-gradient(circle at center, transparent 40px, #000 41px);
+  box-shadow:0 6px 20px -10px rgba(19,40,90,.4)}
+.pie-hole{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+.pie-hole .big{font-family:var(--font-num);font-weight:900;font-size:26px;line-height:1;color:var(--navy-deep)}
+.pie-hole .cap{font-size:10px;font-weight:700;color:var(--ink-soft);margin-top:5px;letter-spacing:.04em}
+.legend{list-style:none;font-size:13px}
+.legend li{display:flex;align-items:center;gap:9px;padding:6px 0}
+.legend .sw{width:12px;height:12px;border-radius:3px;flex:none}
+.legend b{margin-left:auto;font-family:var(--font-num);font-weight:700;color:var(--ink)}
+.chart-note{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line);display:flex;align-items:center;gap:8px}
+
+/* ===== 指標カード（KPI） ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+.kpi .ring-wrap{display:flex;align-items:center;gap:16px}
+.ring{width:64px;height:64px;flex:none}
+.ring circle{fill:none;stroke-width:8}
+.ring .track{stroke:var(--grid)}
+.ring .val{stroke-linecap:round;transition:stroke-dasharray 1.2s var(--ease)}
+.kpi .n{font-family:var(--font-num);font-weight:900;font-size:24px;line-height:1;color:var(--ink)}
+.kpi .n small{font-size:13px;font-weight:700;margin-left:2px}
+.kpi .lb{font-size:12.5px;color:var(--ink-soft);font-weight:700;margin-top:6px}
+
+/* ===== 事業（橋でつなぐ） ===== */
+.bridge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.bcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.bcard .ph{aspect-ratio:16/10;overflow:hidden}
+.bcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.bcard:hover .ph img{transform:scale(1.05)}
+.bcard .body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column}
+.bcard .no{font-family:var(--font-num);font-size:12px;font-weight:700;color:var(--orange-deep);letter-spacing:.14em}
+.bcard h3{font-size:18px;margin:6px 0 10px}
+.bcard p{font-size:13.5px;color:var(--ink-soft);flex:1}
+.bcard .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.bcard .tags span{font-size:11px;font-weight:700;color:var(--green-deep);background:var(--green-pale);padding:3px 10px;border-radius:999px}
+
+/* ===== つなぐ橋（フロー） ===== */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:14px;align-items:stretch}
+.flow .node{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 20px;text-align:center}
+.flow .node .ic{width:52px;height:52px;margin:0 auto 12px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--navy-pale)}
+.flow .node .ic svg{width:26px;height:26px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.flow .node.mid .ic{background:var(--orange-pale)}
+.flow .node.mid .ic svg{stroke:var(--orange-deep)}
+.flow .node.end .ic{background:var(--green-pale)}
+.flow .node.end .ic svg{stroke:var(--green-deep)}
+.flow .node h3{font-size:15.5px}
+.flow .node p{font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+.flow .arrow{display:flex;align-items:center;justify-content:center;color:var(--line)}
+.flow .arrow svg{width:26px;height:26px;stroke:#B9C3D6;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== 割合バー（横棒データ） ===== */
+.bars{max-width:720px}
+.bar-row{margin-bottom:20px}
+.bar-row .top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px;font-size:13.5px;font-weight:700}
+.bar-row .top .p{font-family:var(--font-num);color:var(--navy)}
+.bar-track{height:12px;background:var(--grid);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;width:0;transition:width 1.3s var(--ease)}
+
+/* ===== 想い / あいさつ ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about-txt .big{font-size:clamp(18px,2.4vw,24px);font-weight:900;line-height:1.85;margin-bottom:18px}
+.about-txt .big em{font-style:normal;color:var(--navy)}
+.about-txt p{color:var(--ink-soft);font-size:14.5px}
+.about-ph{border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.about-ph img{width:100%;height:100%;object-fit:cover}
+.sign-box{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.sign-box h3{font-size:14px;color:var(--navy);margin-bottom:8px}
+.sign-box p{font-size:13.5px;color:var(--ink-soft)}
+.sign-box .name{text-align:right;margin-top:14px;font-weight:700;font-size:13.5px;color:var(--ink)}
+.sign-box .name small{display:block;font-weight:500;font-size:11px;color:var(--ink-soft)}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:18px;padding:15px 4px;border-bottom:1px solid var(--line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:700;color:var(--ink-soft);font-size:12.5px}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--navy-pale);color:var(--navy-deep)}
+.news-row a{color:var(--ink);text-decoration:none}
+.news-row a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:4px}
+
+/* ===== 概要表 ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px;background:var(--panel)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--wash);border:1px solid var(--line);padding:13px 18px;white-space:nowrap;color:var(--navy-deep)}
+table.gaiyo td{border:1px solid var(--line);padding:13px 18px}
+.tbl-hint{display:none;font-size:11px;color:#96A0B4;margin-top:6px}
+
+/* ===== 参加（CTA） ===== */
+.join{background:var(--navy);color:#fff;border-radius:22px;padding:52px 46px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;position:relative;overflow:hidden}
+.join::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(240,138,44,.35),transparent 70%)}
+.join h2{font-size:clamp(22px,2.6vw,28px);position:relative}
+.join p{margin-top:14px;color:#C6D0E4;font-size:14px;position:relative}
+.join .acts{display:flex;flex-direction:column;gap:12px;position:relative}
+.join .acts a{text-decoration:none;font-weight:700;font-size:14.5px;padding:16px 22px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;transition:.25s}
+.join .acts .a1{background:var(--orange);color:#fff}
+.join .acts .a1:hover{background:var(--orange-deep)}
+.join .acts .a2{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28)}
+.join .acts .a2:hover{background:rgba(255,255,255,.18)}
+.join .acts svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== アクセス ===== */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+.map-full iframe{width:100%;height:340px;border:1px solid var(--line);border-radius:14px}
+.tel-card{background:var(--panel);border:2px solid var(--navy-pale);border-radius:16px;padding:28px}
+.tel-card .cap{font-size:13px;font-weight:700;color:var(--navy-deep)}
+.tel-card a.tel{font-family:var(--font-num);font-size:30px;font-weight:900;color:var(--navy);text-decoration:none;display:inline-block;margin:4px 0}
+.tel-card p{font-size:12px;color:var(--ink-soft)}
+.tel-card .divider{height:1px;background:var(--line);margin:18px 0}
+
+/* デモフォーム */
+.form label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--navy-deep)}
+.form input,.form textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-family:inherit;font-size:14px;margin-bottom:14px;background:var(--wash)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--navy);background:#fff}
+.form button{width:100%;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:14px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:background .25s}
+.form button:hover{background:var(--navy-deep)}
+.form-note{font-size:11.5px;color:#96A0B4;margin-top:10px;text-align:center}
+
+/* ===== フッター ===== */
+.footer{background:var(--wash);border-top:1px solid var(--line);padding:44px 0 30px;text-align:center}
+.footer .f-name{font-weight:900;font-size:16px}
+.footer p{font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+.sample-note{font-size:11px;color:#96A0B4;margin-top:16px;line-height:1.9}
+.sample-note a{color:var(--navy)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .head nav{display:none}
+  .head .cta{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:12px 26px 22px;z-index:99;box-shadow:0 14px 30px -18px rgba(19,40,90,.4)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--ink);font-weight:700;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--line)}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .bridge-grid{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .flow .arrow{transform:rotate(90deg)}
+  .about-grid{grid-template-columns:1fr;gap:28px}
+  .about-grid .about-ph{order:-1}
+  .join{grid-template-columns:1fr;padding:40px 28px}
+  .access-grid{grid-template-columns:1fr}
+  .block{padding:60px 0}
+}
+@media (max-width:560px){
+  .kpi-grid{grid-template-columns:1fr}
+  .pie-row{flex-direction:column;gap:20px}
+  .tbl-hint{display:block}
+  .head-in,.wrap{padding-left:18px;padding-right:18px}
+}
+.sp-nav{display:none}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="head-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#E7ECF6"/>
+        <!-- 3つのアーチ＝つなぐ橋 -->
+        <path d="M8 27c0-5 3.5-8 6-8s6 3 6 8" fill="none" stroke="#1E3A6E" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M20 27c0-5 3.5-8 6-8s6 3 6 8" fill="none" stroke="#F08A2C" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="14" cy="14" r="2.6" fill="#2FA36B"/>
+        <circle cx="26" cy="14" r="2.6" fill="#2FA36B"/>
+      </svg>
+      <span class="t">サードブリッジあいち<small>NPO法人｜名古屋市中川区</small></span>
+    </a>
+    <nav>
+      <a href="#activity">活動でつなぐ</a>
+      <a href="#business">事業</a>
+      <a href="#flow">つなぐ橋</a>
+      <a href="#about">わたしたち</a>
+      <a href="#gaiyo">概要</a>
+      <a href="#access">お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#join">活動に参加する</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#activity">活動でつなぐ</a>
+    <a href="#business">事業</a>
+    <a href="#flow">つなぐ橋</a>
+    <a href="#about">わたしたち</a>
+    <a href="#gaiyo">概要</a>
+    <a href="#access">お問い合わせ</a>
+    <a href="#join">活動に参加する</a>
+  </nav>
+</header>
+
+<!-- ヒーロー：円グラフ主役 -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="cap reveal on">名古屋市中川区・社会教育／職業能力開発／雇用</span>
+      <h1 class="reveal on"><span class="kb">学びと就労、</span><span class="kb">社会参加を、</span><br><span class="kb"><span class="hl">「橋」でつなぐ</span>。</span></h1>
+      <p class="lead reveal on">少子高齢化のなかで、多様な人材の学びと就労・社会参加を支え、明るい未来社会に資する。サードブリッジあいちは、人と機会のあいだに、いくつもの小さな橋をかけていきます。</p>
+      <div class="btns reveal on">
+        <a class="p" href="#join">活動に参加する</a>
+        <a class="s" href="#business">事業を見る</a>
+      </div>
+    </div>
+
+    <!-- 円グラフカード -->
+    <div class="chart-card reveal on">
+      <p class="ct">わたしたちが支える「参加のかたち」</p>
+      <p class="cs">多様な就労・学び・社会参加の内訳（イメージ）</p>
+      <div class="pie-row">
+        <!-- ※サンプル: 円グラフの割合はすべてダミー値です -->
+        <div class="pie" role="img" aria-label="参加のかたちの割合（サンプル値）">
+          <div class="pie-hole"><span class="big">100<small style="font-size:13px">%</small></span><span class="cap">多様な参加</span></div>
+        </div>
+        <ul class="legend">
+          <li><span class="sw" style="background:var(--navy)"></span>学びの支援<b>34%</b></li>
+          <li><span class="sw" style="background:var(--orange)"></span>就労・仕事づくり<b>27%</b></li>
+          <li><span class="sw" style="background:var(--green)"></span>社会参加・居場所<b>22%</b></li>
+          <li><span class="sw" style="background:#9AB0D6"></span>地域・多世代交流<b>17%</b></li>
+        </ul>
+      </div>
+      <div class="chart-note">
+        <span class="pill">※サンプル</span>
+        <span class="note-sample">グラフの数値はイメージです。実際の活動データに差し替えます。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 指標カード（KPI） -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Impact</span>
+      <h2>数字で見る、わたしたちの一年</h2>
+      <p>橋をかけた分だけ、つながりが生まれます。<span class="note-sample">※以下の数値・グラフはすべて表示イメージのサンプルです。</span></p>
+    </div>
+    <div class="kpi-grid">
+      <!-- ※サンプル: 数値・リング割合はダミーです -->
+      <div class="kpi reveal">
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 40 40" data-dash="86">
+            <circle class="track" cx="20" cy="20" r="16"/>
+            <circle class="val" cx="20" cy="20" r="16" stroke="#1E3A6E" stroke-dasharray="0 100" transform="rotate(-90 20 20)" pathLength="100"/>
+          </svg>
+          <div><div class="n num">128<small>名</small></div><div class="lb">学び・就労の相談</div></div>
+        </div>
+      </div>
+      <div class="kpi reveal">
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 40 40" data-dash="72">
+            <circle class="track" cx="20" cy="20" r="16"/>
+            <circle class="val" cx="20" cy="20" r="16" stroke="#F08A2C" stroke-dasharray="0 100" transform="rotate(-90 20 20)" pathLength="100"/>
+          </svg>
+          <div><div class="n num">36<small>回</small></div><div class="lb">学びの講座・体験</div></div>
+        </div>
+      </div>
+      <div class="kpi reveal">
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 40 40" data-dash="64">
+            <circle class="track" cx="20" cy="20" r="16"/>
+            <circle class="val" cx="20" cy="20" r="16" stroke="#2FA36B" stroke-dasharray="0 100" transform="rotate(-90 20 20)" pathLength="100"/>
+          </svg>
+          <div><div class="n num">19<small>社</small></div><div class="lb">連携する事業所</div></div>
+        </div>
+      </div>
+      <div class="kpi reveal">
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 40 40" data-dash="90">
+            <circle class="track" cx="20" cy="20" r="16"/>
+            <circle class="val" cx="20" cy="20" r="16" stroke="#9AB0D6" stroke-dasharray="0 100" transform="rotate(-90 20 20)" pathLength="100"/>
+          </svg>
+          <div><div class="n num">42<small>名</small></div><div class="lb">支える仲間・会員</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note-sample" style="margin-top:20px">※上記は表示イメージのサンプル数値です（HTMLコメントにも明記）。ご契約後、実際の活動実績に差し替えます。</p>
+  </div>
+</section>
+
+<!-- 活動でつなぐ（割合バー） -->
+<section class="block" id="activity">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Activity</span>
+      <h2>「学び」から「就労・社会参加」へ</h2>
+      <p>ひとりの歩みには、いくつもの段階があります。それぞれの割合を見える化して、必要な橋をかけます。</p>
+    </div>
+    <div class="bars reveal">
+      <!-- ※サンプル: バーの割合はすべてダミーです -->
+      <div class="bar-row">
+        <div class="top"><span>学び・学び直しの支援</span><span class="p num" data-w="88">88%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="88" style="background:var(--navy)"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="top"><span>職業能力開発・スキル習得</span><span class="p num" data-w="74">74%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="74" style="background:var(--orange)"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="top"><span>就労・仕事づくりの支援</span><span class="p num" data-w="66">66%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="66" style="background:var(--green)"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="top"><span>社会参加・居場所づくり</span><span class="p num" data-w="59">59%</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="59" style="background:#9AB0D6"></div></div>
+      </div>
+    </div>
+    <p class="note-sample" style="margin-top:20px"><span class="pill">※サンプル</span>　割合はイメージです。実際の活動の重点に合わせて表現します。</p>
+  </div>
+</section>
+
+<!-- 事業（橋でつなぐ 3カード） -->
+<section class="block alt" id="business">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Business</span>
+      <h2>わたしたちの事業</h2>
+      <p>定款に掲げる「多様な人材の学びと就労・社会参加を支える」を、3つの柱で形にしています。<span class="note-sample">※事業内容は定款（公開情報）をもとにしたサンプル記述です。</span></p>
+    </div>
+    <div class="bridge-grid">
+      <div class="bcard reveal">
+        <!-- 差し替えポイント: 学びの場のお写真（顔が特定されにくいもの） -->
+        <div class="ph"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1000&q=80&auto=format&fit=crop" alt="学びの場のイメージ" loading="lazy"></div>
+        <div class="body">
+          <span class="no">BUSINESS 01</span>
+          <h3>学びの支援</h3>
+          <p>年齢や背景を問わず、学び・学び直しの機会をつくります。社会教育の講座や体験の場を通じて、「もう一度やってみたい」を後押しします。</p>
+          <div class="tags"><span>社会教育</span><span>学び直し</span></div>
+        </div>
+      </div>
+      <div class="bcard reveal">
+        <!-- 差し替えポイント: 職業訓練・作業の様子（手元中心など） -->
+        <div class="ph"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1000&q=80&auto=format&fit=crop" alt="職業能力開発のイメージ" loading="lazy"></div>
+        <div class="body">
+          <span class="no">BUSINESS 02</span>
+          <h3>職業能力の開発</h3>
+          <p>一人ひとりのペースに合わせて、仕事につながる力を育てます。スキル習得や実践の場を用意し、次の一歩を具体的にします。</p>
+          <div class="tags"><span>職業能力開発</span><span>スキル習得</span></div>
+        </div>
+      </div>
+      <div class="bcard reveal">
+        <!-- 差し替えポイント: 就労・多様な人が働く様子 -->
+        <div class="ph"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000&q=80&auto=format&fit=crop" alt="就労・社会参加のイメージ" loading="lazy"></div>
+        <div class="body">
+          <span class="no">BUSINESS 03</span>
+          <h3>就労・社会参加の支援</h3>
+          <p>連携する事業所や地域とつながり、働く場・参加する場へ橋をかけます。就労後も、安心して続けられる関係づくりを大切にします。</p>
+          <div class="tags"><span>雇用</span><span>社会参加</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- つなぐ橋（フロー） -->
+<section class="block" id="flow">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Bridge</span>
+      <h2>「サードブリッジ（第三の橋）」とは</h2>
+      <p>ご本人と、学び・仕事・地域のあいだに立つ、3つ目の橋。どこにもつながれなかった一歩を、そっと支えます。</p>
+    </div>
+    <div class="flow reveal">
+      <div class="node">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8l7-5 7 5"/><circle cx="12" cy="15" r="3"/></svg></div>
+        <h3>ご本人</h3>
+        <p>「学びたい」「働きたい」その気持ちから。</p>
+      </div>
+      <div class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+      <div class="node mid">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18c0-6 4-9 8-9s8 3 8 9"/><path d="M4 18h16"/><circle cx="8" cy="7" r="1.6"/><circle cx="16" cy="7" r="1.6"/></svg></div>
+        <h3>サードブリッジ</h3>
+        <p>相談・学び・訓練で、必要な橋をかけます。</p>
+      </div>
+      <div class="arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+      <div class="node end">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>学び・就労・地域</h3>
+        <p>安心して参加し続けられる場所へ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたち -->
+<section class="block alt" id="about">
+  <div class="wrap about-grid">
+    <div class="about-txt reveal">
+      <span class="en" style="display:inline-block;font-family:var(--font-num);font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--orange-deep);margin-bottom:8px">ABOUT US</span>
+      <p class="big"><span class="kb">少子高齢化の時代に、</span><br><span class="kb"><em>多様な人材</em>の</span><span class="kb">学びと就労・社会参加を</span><span class="kb">支えるために。</span></p>
+      <p>サードブリッジあいちは、名古屋市中川区を拠点に、社会教育・職業能力開発・雇用の分野で活動するNPO法人です。年齢や立場にかかわらず、だれもが学び、働き、社会に参加できる。そんな明るい未来社会に資することを目指しています。<span class="note-sample">※文章は定款（公開情報）の目的をもとにしたサンプルです。</span></p>
+      <div class="sign-box">
+        <h3>ごあいさつ</h3>
+        <p>だれかの「もう一度」や「はじめて」の一歩には、支える手が必要なときがあります。わたしたちは、家庭でも学校でも職場でもない「第三の橋」として、その一歩にそっと寄り添います。地域のみなさまと一緒に、つながりを広げていきたいと考えています。<span class="note-sample">※あいさつ文はサンプルです。ご本人のお言葉に差し替えます。</span></p>
+        <p class="name">特定非営利活動法人 サードブリッジあいち<small>代表（お名前は公開時に記載します）</small></p>
+      </div>
+    </div>
+    <div class="about-ph reveal">
+      <!-- 差し替えポイント: 多世代・多様な人が集うお写真 -->
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1100&q=80&auto=format&fit=crop" alt="多様な人が集うイメージ" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block" id="news">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+      <p class="note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</p>
+    </div>
+    <div class="reveal">
+      <!-- ※サンプル: 日付・カテゴリ・内容はすべてダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">講座</span><a href="#news">はたらく前の「学び直し講座」参加者を募集します</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">連携</span><a href="#news">地域の事業所との就労体験プログラムを開始しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">募集</span><a href="#news">活動を支えるボランティア・賛助会員を募集しています</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加（CTA） -->
+<section class="block alt" id="join">
+  <div class="wrap">
+    <div class="join reveal">
+      <div>
+        <h2>橋をかける仲間になりませんか</h2>
+        <p>寄付・賛助会員・ボランティアなど、できることを、できる範囲で。あなたの一歩が、だれかの「学び」と「就労」の橋になります。</p>
+      </div>
+      <div class="acts">
+        <a class="a1" href="#access">寄付・賛助会員について相談する<svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        <a class="a2" href="#access">ボランティアに参加する<svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 事業所概要 -->
+<section class="block" id="gaiyo">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Profile</span>
+      <h2>団体概要</h2>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 サードブリッジあいち</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市中川区（詳細は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>社会教育／職業能力開発・雇用</td></tr>
+        <tr><th>目的</th><td>少子高齢化社会において、多様な人材の学びと就労・社会参加を支え、明るい未来社会に資する（定款目的より）</td></tr>
+        <tr><th>電話</th><td><a href="#access" style="color:var(--navy);font-weight:700;text-decoration:none">052-XXX-XXXX</a>（サンプル・タップは無効）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample" style="margin-top:14px">※電話番号はサンプル用のダミーです（発信されません）。所在地は区までの表示にしています。</p>
+  </div>
+</section>
+
+<!-- アクセス・お問い合わせ -->
+<section class="block alt" id="access">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Contact</span>
+      <h2>アクセス・お問い合わせ</h2>
+      <p>見学・ご相談、活動へのご参加など、お気軽にどうぞ。</p>
+    </div>
+    <div class="access-grid">
+      <div class="reveal">
+        <div class="map-full">
+          <!-- 区までの範囲地図（番地なし） -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%B7%9D%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市中川区の地図"></iframe>
+        </div>
+        <div class="tel-card" style="margin-top:20px">
+          <p class="cap">お電話でのご相談</p>
+          <a class="tel" href="#access">052-XXX-XXXX</a>
+          <p>※サンプル用のダミー番号です（発信されません）</p>
+          <div class="divider"></div>
+          <p style="font-size:12.5px;color:var(--ink-soft)">受付時間・メールアドレスは、ご契約後に実際の連絡先へ差し替えます。</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="form" onsubmit="return false">
+          <label for="nm">お名前</label>
+          <input id="nm" type="text" placeholder="山田 太郎" autocomplete="name">
+          <label for="em">メールアドレス</label>
+          <input id="em" type="email" placeholder="sample@example.com" autocomplete="email">
+          <label for="ms">お問い合わせ内容</label>
+          <textarea id="ms" rows="4" placeholder="見学希望・活動への参加など、ご自由にお書きください"></textarea>
+          <button type="submit">送信する（デモ）</button>
+          <p class="form-note">※これはデモ用のフォームです。実際には送信されません。ご契約後、お問い合わせが届く形に設定します。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 サードブリッジあいち</p>
+    <p>愛知県名古屋市中川区｜社会教育・職業能力開発・雇用</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、数値・グラフおよび「※サンプル」印の内容はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px">&copy; 2026 NPO法人 サードブリッジあいち（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// reveal + データ系アニメーション（円リング・バーは可視時に描画）
+function animate(el){
+  // KPIリング
+  el.querySelectorAll(".ring .val").forEach(c => {
+    const ring = c.closest(".ring");
+    const dash = ring ? ring.getAttribute("data-dash") : null;
+    if (dash) c.setAttribute("stroke-dasharray", dash + " 100");
+  });
+  // 割合バー
+  el.querySelectorAll(".bar-fill").forEach(b => { b.style.width = (b.dataset.w || 0) + "%"; });
+}
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); animate(e.target); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => {
+  if (io) io.observe(el); else { el.classList.add("on"); animate(el); }
+});
+// 初期表示済み(.on)のヒーロー内グラフも一度アニメ
+document.querySelectorAll(".reveal.on").forEach(animate);
+</script>
+</body>
+</html>

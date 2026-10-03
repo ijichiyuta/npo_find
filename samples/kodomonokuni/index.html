@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 子どもの国 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文の事実は公開情報の範囲に限定
+    （NPOポータルの法人名称・所在地=名古屋市天白区・活動分野=
+      社会教育／人権・平和／国際協力、および登記された目的
+      「日本社会の国際化に向け、主に青少年に対して多文化共生を支援する」）
+  ・「※サンプル」表記の内容（プログラム名・日程・数値・参加者の声・
+    あいさつ文・お知らせ・連絡先など）はすべてダミーです。
+    ご契約後に実データへ差し替えます
+  ・代表者の実名は記載していません（公開時にご本人確認のうえ記載）
+  ・住所は区までの表記（番地・建物名は非掲載）
+  ・電話番号はダミー、tel:リンクは無効化、format-detectionで自動リンク抑止
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージ。差し替え前提
+  ・デザイン: チケット／半券モチーフ型（点線ミシン目・半券・スタンプ）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 子どもの国｜名古屋市天白区・多文化共生プログラム【ご提案サンプル】</title>
+<meta name="description" content="名古屋市天白区のNPO法人。日本社会の国際化に向け、主に青少年に対して多文化共生を支援します。国際交流・多文化理解のプログラムを「参加チケット」の体裁でご案内。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Kiwi+Maru:wght@500&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FBF4E4;          /* クリーム */
+  --c-paper:#FFFDF7;
+  --c-ink:#3A3226;
+  --c-ink-soft:#7A6E5B;
+  --c-teal:#1F9E8F;        /* 青緑 */
+  --c-teal-deep:#157567;
+  --c-blue:#2E7DB5;        /* 青 */
+  --c-orange:#F08A24;      /* 橙 */
+  --c-orange-deep:#D96F12;
+  --c-red:#E85C4A;
+  --c-cream-2:#F5E9CF;
+  --c-line:#E4D8BC;
+  --font-body:"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;
+  --font-hand:"Kiwi Maru",serif;
+  --font-en:"Fredoka",sans-serif;
+  --ease:cubic-bezier(.34,1.2,.44,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:900;line-height:1.5;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+
+/* 背景のうっすらドット（クリーム地に紙の質感） */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(rgba(31,158,143,.05) 1.2px,transparent 1.2px);
+  background-size:22px 22px}
+
+/* ===== 上部ヘッダー（チケットカウンター風） ===== */
+.head{position:sticky;top:0;z-index:120;background:var(--c-paper);
+  border-bottom:2px dashed var(--c-line);display:flex;align-items:center;gap:18px;
+  height:66px;padding:0 26px}
+.head .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.head .brand .mark{width:40px;height:40px;flex:none}
+.head .brand .t{font-weight:900;font-size:17px;line-height:1.2}
+.head .brand .t small{display:block;font-family:var(--font-en);font-weight:600;font-size:9.5px;letter-spacing:.06em;color:var(--c-teal-deep);margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:22px}
+.head nav a{text-decoration:none;font-size:13.5px;font-weight:700;color:var(--c-ink-soft);transition:color .25s}
+.head nav a:hover{color:var(--c-teal-deep)}
+.head .cta{margin-left:6px;background:var(--c-orange);color:#fff;text-decoration:none;font-weight:900;font-size:13px;padding:10px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 3px 0 var(--c-orange-deep);transition:transform .2s var(--ease)}
+.head .cta:hover{transform:translateY(-2px)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.menu-btn span{display:block;width:24px;height:2.5px;background:var(--c-ink);border-radius:2px;margin:5px 0;transition:.3s}
+
+/* ===== チケット共通パーツ ===== */
+/* ミシン目で左スタブ／右本体に割れる券面 */
+.ticket{position:relative;background:var(--c-paper);border-radius:16px;
+  box-shadow:0 10px 30px rgba(58,50,38,.10);overflow:hidden}
+/* ミシン目の穴（券の上下に半円をくり抜く） */
+.ticket::before,.ticket::after{content:"";position:absolute;width:26px;height:26px;
+  background:var(--c-bg);border-radius:50%}
+/* 点線ミシン目（縦） */
+.perf-v{position:absolute;top:14px;bottom:14px;border-left:3px dotted var(--c-line)}
+
+/* スタンプ（丸い認証ハンコ風） */
+.stamp{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+  width:78px;height:78px;border-radius:50%;border:2.5px solid var(--c-red);
+  color:var(--c-red);transform:rotate(-9deg);flex:none;
+  font-weight:900;line-height:1.1;text-align:center;background:rgba(232,92,74,.05)}
+.stamp .s-en{font-family:var(--font-en);font-size:9px;letter-spacing:.14em;opacity:.9}
+.stamp .s-jp{font-size:15px;margin-top:1px}
+.stamp .s-star{font-size:11px;margin-top:1px}
+
+/* 見出しの共通 */
+.sec{position:relative;z-index:1;padding:74px 0}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.sec-head .tag{font-family:var(--font-en);font-weight:700;font-size:11px;letter-spacing:.18em;
+  color:#fff;background:var(--c-teal);padding:5px 12px;border-radius:6px;white-space:nowrap;text-transform:uppercase}
+.sec-head h2{font-size:clamp(21px,3vw,28px);letter-spacing:.02em}
+.sec-head .rule{flex:1;height:0;border-top:2px dashed var(--c-line)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#A79A82}
+.tbl-hint{display:none;font-size:11px;color:#A79A82;margin-top:6px}
+
+/* ===== ヒーロー（1枚の大きな入場チケット） ===== */
+.hero{position:relative;z-index:1;padding:52px 0 20px}
+.hero-ticket{display:grid;grid-template-columns:1fr 210px;background:var(--c-paper);
+  border-radius:20px;overflow:hidden;box-shadow:0 16px 40px rgba(58,50,38,.14);position:relative}
+.hero-ticket .perf{position:absolute;top:16px;bottom:16px;left:calc(100% - 210px);
+  border-left:3px dotted var(--c-line)}
+.hero-ticket::before,.hero-ticket::after{content:"";position:absolute;width:30px;height:30px;
+  background:var(--c-bg);border-radius:50%;left:calc(100% - 210px);transform:translateX(-50%)}
+.hero-ticket::before{top:-15px}
+.hero-ticket::after{bottom:-15px}
+.hero-main{padding:44px 46px 40px}
+.hero-main .row1{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.hero-main .adm{font-family:var(--font-en);font-weight:700;font-size:11px;letter-spacing:.2em;
+  color:var(--c-orange-deep);border:1.5px solid var(--c-orange);padding:4px 10px;border-radius:5px}
+.hero-main .field{font-size:12px;font-weight:700;color:var(--c-teal-deep)}
+.hero-main h1{font-size:clamp(26px,4.4vw,44px);line-height:1.5;letter-spacing:.03em}
+.hero-main h1 .hl{color:var(--c-teal-deep);position:relative}
+.hero-main h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.28em;
+  background:rgba(240,138,36,.28);z-index:-1;border-radius:3px}
+.hero-main .lead{margin-top:20px;font-size:15px;color:var(--c-ink-soft);max-width:560px}
+.hero-main .chips{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.hero-main .chip{font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.chip.c1{background:rgba(31,158,143,.12);color:var(--c-teal-deep)}
+.chip.c2{background:rgba(46,125,181,.12);color:var(--c-blue)}
+.chip.c3{background:rgba(240,138,36,.14);color:var(--c-orange-deep)}
+.hero-main .acts{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{text-decoration:none;font-weight:900;font-size:14px;padding:14px 26px;border-radius:999px;white-space:nowrap;transition:transform .2s var(--ease)}
+.btn-primary{background:var(--c-orange);color:#fff;box-shadow:0 4px 0 var(--c-orange-deep)}
+.btn-ghost{background:#fff;color:var(--c-teal-deep);border:2px solid var(--c-teal)}
+.btn:hover{transform:translateY(-2px)}
+/* 右スタブ（半券） */
+.hero-stub{background:linear-gradient(160deg,var(--c-teal),var(--c-teal-deep));color:#fff;
+  padding:34px 24px;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
+.hero-stub .st-label{font-family:var(--font-en);font-size:10px;letter-spacing:.2em;opacity:.85;text-transform:uppercase}
+.hero-stub .st-no{font-family:var(--font-en);font-weight:700;font-size:15px;letter-spacing:.1em;margin-top:4px}
+.hero-stub .st-mid{font-size:13px;line-height:1.9}
+.hero-stub .st-mid b{display:block;font-size:19px;font-weight:900;margin-top:4px}
+.hero-stub .barcode{height:38px;background-image:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 4px,#fff 4px 5px,transparent 5px 9px);opacity:.85;border-radius:3px;margin-top:6px}
+.hero-note{text-align:center;font-size:11.5px;color:#A79A82;margin-top:16px}
+
+/* ===== プログラム（参加チケットのカード） ===== */
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pcard{position:relative;background:var(--c-paper);border-radius:14px;overflow:hidden;
+  box-shadow:0 8px 22px rgba(58,50,38,.09);display:flex;flex-direction:column}
+.pcard .ph{position:relative;aspect-ratio:16/9;overflow:hidden}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pcard:hover .ph img{transform:scale(1.05)}
+.pcard .ph .no{position:absolute;top:12px;left:12px;font-family:var(--font-en);font-weight:700;
+  font-size:12px;letter-spacing:.1em;color:#fff;background:rgba(58,50,38,.6);padding:4px 10px;border-radius:6px}
+/* カード内のミシン目区切り */
+.pcard .tear{position:relative;height:0;border-top:2px dotted var(--c-line);margin:0 16px}
+.pcard .tear::before,.pcard .tear::after{content:"";position:absolute;top:-11px;width:20px;height:20px;
+  background:var(--c-bg);border-radius:50%}
+.pcard .tear::before{left:-26px}
+.pcard .tear::after{right:-26px}
+.pcard .body{padding:18px 22px 22px;flex:1;display:flex;flex-direction:column}
+.pcard h3{font-size:18px;letter-spacing:.02em}
+.pcard .cat{font-size:11px;font-weight:700;color:var(--c-orange-deep);letter-spacing:.06em;margin-bottom:2px}
+.pcard p{font-size:13.5px;color:var(--c-ink-soft);margin-top:8px;flex:1}
+.pcard .foot{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.pcard .foot .price{font-family:var(--font-en);font-weight:700;font-size:13px;color:var(--c-teal-deep);
+  background:rgba(31,158,143,.1);padding:4px 11px;border-radius:6px}
+.pcard .foot .who{font-size:11.5px;color:var(--c-ink-soft)}
+.prog-note{margin-top:20px}
+
+/* ===== ミッション（半券の帯） ===== */
+.mission{position:relative;z-index:1;padding:64px 0}
+.mission-band{position:relative;background:var(--c-paper);border-radius:18px;padding:48px 44px;
+  box-shadow:0 10px 30px rgba(58,50,38,.10);overflow:hidden}
+.mission-band::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;
+  background:repeating-linear-gradient(180deg,var(--c-teal) 0 16px,var(--c-orange) 16px 32px,var(--c-blue) 32px 48px)}
+.mission-band .m-tag{font-family:var(--font-en);font-weight:700;font-size:11px;letter-spacing:.18em;color:var(--c-teal-deep);text-transform:uppercase}
+.mission-band .m-lead{font-size:clamp(19px,2.8vw,26px);font-weight:900;line-height:1.8;margin:14px 0 18px;letter-spacing:.02em}
+.mission-band .m-lead em{font-style:normal;color:var(--c-orange-deep)}
+.mission-band p{font-size:14.5px;color:var(--c-ink-soft);max-width:680px}
+.mission-band .src{font-size:11.5px;color:#A79A82;margin-top:12px}
+
+/* ===== 数字（もぎった半券が3枚） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.stat{position:relative;background:var(--c-paper);border-radius:12px;padding:26px 20px;text-align:center;
+  box-shadow:0 6px 18px rgba(58,50,38,.08)}
+.stat::before{content:"";position:absolute;top:0;bottom:0;left:14px;border-left:2.5px dotted var(--c-line)}
+.stat .num{font-family:var(--font-en);font-weight:700;font-size:clamp(30px,5vw,42px);color:var(--c-teal-deep);line-height:1}
+.stat .num small{font-size:16px;font-weight:600;margin-left:2px}
+.stat .cap{font-size:12.5px;font-weight:700;margin-top:8px}
+
+/* ===== 参加者の声（チケット裏書き） ===== */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.voice{background:var(--c-paper);border-radius:12px;padding:24px 26px;box-shadow:0 6px 18px rgba(58,50,38,.08);
+  border:2px dashed var(--c-line);position:relative}
+.voice .mark{font-family:var(--font-en);font-weight:700;font-size:34px;color:var(--c-orange);opacity:.5;line-height:.7}
+.voice p{font-size:14px;margin-top:6px}
+.voice .who{margin-top:14px;font-size:12px;font-weight:700;color:var(--c-teal-deep)}
+.voice .who small{display:block;font-weight:500;color:var(--c-ink-soft);font-size:11px}
+
+/* ===== お知らせ（半券の控え） ===== */
+.news-list{display:flex;flex-direction:column;gap:2px}
+.news-row{display:flex;gap:16px;align-items:center;padding:14px 6px;border-bottom:1px dashed var(--c-line);font-size:14px}
+.news-row time{flex:none;font-family:var(--font-en);font-weight:600;color:var(--c-ink-soft);font-size:12.5px}
+.news-row .lb{flex:none;font-size:10.5px;font-weight:700;color:#fff;background:var(--c-blue);padding:2px 9px;border-radius:5px}
+.news-row .lb.ev{background:var(--c-orange)}
+.news-row a{color:var(--c-ink);text-decoration:none}
+.news-row a:hover{color:var(--c-teal-deep)}
+
+/* ===== 参加の流れ（もぎる手順） ===== */
+.flow{counter-reset:fl;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.flow li{counter-increment:fl;position:relative;background:var(--c-paper);border-radius:12px;padding:44px 22px 24px;
+  box-shadow:0 6px 18px rgba(58,50,38,.08);text-align:center}
+.flow li::before{content:counter(fl);position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  width:40px;height:40px;border-radius:50%;background:var(--c-orange);color:#fff;font-family:var(--font-en);
+  font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 0 var(--c-orange-deep)}
+.flow h3{font-size:15.5px}
+.flow p{font-size:13px;color:var(--c-ink-soft);margin-top:6px}
+
+/* ===== 概要（券面の明細） ===== */
+.gaiyo-ticket{position:relative;background:var(--c-paper);border-radius:16px;overflow:hidden;
+  box-shadow:0 8px 24px rgba(58,50,38,.10)}
+.gaiyo-ticket .top{background:var(--c-teal-deep);color:#fff;padding:16px 26px;font-weight:900;font-size:15px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.gaiyo-ticket .top .en{font-family:var(--font-en);font-size:11px;letter-spacing:.16em;opacity:.85}
+table.gaiyo{width:100%;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;color:var(--c-teal-deep);
+  border-bottom:1px dashed var(--c-line);padding:13px 26px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border-bottom:1px dashed var(--c-line);padding:13px 26px}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+
+/* ===== 問い合わせ（申込チケット） ===== */
+.contact-ticket{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--c-paper);
+  border-radius:18px;overflow:hidden;box-shadow:0 12px 34px rgba(58,50,38,.12);position:relative}
+.contact-ticket .perf{position:absolute;top:16px;bottom:16px;left:50%;border-left:3px dotted var(--c-line)}
+.contact-ticket::before,.contact-ticket::after{content:"";position:absolute;width:30px;height:30px;
+  background:var(--c-bg);border-radius:50%;left:50%;transform:translateX(-50%)}
+.contact-ticket::before{top:-15px}
+.contact-ticket::after{bottom:-15px}
+.ct-info{padding:38px 40px;background:linear-gradient(160deg,var(--c-blue),var(--c-teal-deep));color:#fff}
+.ct-info h3{font-size:20px}
+.ct-info p{font-size:13.5px;opacity:.92;margin-top:10px}
+.ct-info .tel{margin-top:22px}
+.ct-info .tel .cap{font-size:11px;letter-spacing:.08em;opacity:.85}
+.ct-info .tel .num{font-family:var(--font-en);font-weight:700;font-size:27px;letter-spacing:.02em}
+.ct-info .tel .num a{color:#fff;text-decoration:none}
+.ct-info .addr{margin-top:20px;font-size:12.5px;opacity:.9;line-height:1.9}
+.ct-form{padding:34px 38px}
+.ct-form .fm-note{font-size:11.5px;color:#A79A82;margin-bottom:14px}
+.ct-form label{display:block;font-size:12.5px;font-weight:700;margin:12px 0 5px}
+.ct-form input,.ct-form textarea{width:100%;font-family:inherit;font-size:14px;color:var(--c-ink);
+  background:var(--c-bg);border:1.5px solid var(--c-line);border-radius:9px;padding:11px 13px}
+.ct-form textarea{resize:vertical;min-height:88px}
+.ct-form input:focus,.ct-form textarea:focus{outline:none;border-color:var(--c-teal)}
+.ct-form button{margin-top:16px;width:100%;background:var(--c-orange);color:#fff;border:none;
+  font-family:inherit;font-weight:900;font-size:15px;padding:14px;border-radius:999px;cursor:pointer;
+  box-shadow:0 4px 0 var(--c-orange-deep);transition:transform .2s var(--ease)}
+.ct-form button:hover{transform:translateY(-2px)}
+
+/* ===== フッター ===== */
+.footer{position:relative;z-index:1;padding:52px 0 34px;text-align:center;border-top:2px dashed var(--c-line);margin-top:40px}
+.footer .f-brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:10px}
+.footer .f-brand .mark{width:34px;height:34px}
+.footer .f-name{font-weight:900;font-size:16px}
+.footer .f-meta{font-size:12.5px;color:var(--c-ink-soft);margin-top:6px}
+.sample-note{font-size:11px;color:#A79A82;margin-top:18px;line-height:1.9}
+.sample-note a{color:var(--c-ink-soft)}
+.copy{margin-top:14px;font-size:11px;color:#A79A82}
+
+/* ===== SPナビ ===== */
+.sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:var(--c-paper);
+  border-bottom:2px dashed var(--c-line);padding:10px 22px 18px;z-index:110}
+.menu-open .sp-nav{display:block}
+.sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:700;font-size:15px;
+  padding:12px 4px;border-bottom:1px dashed var(--c-line)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:880px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .hero-ticket{grid-template-columns:1fr}
+  .hero-ticket .perf{display:none}
+  .hero-ticket::before,.hero-ticket::after{left:50%;display:none}
+  .hero-main{padding:32px 28px 28px}
+  .hero-stub{flex-direction:row;align-items:center;justify-content:space-between;text-align:left;padding:20px 24px;gap:14px;
+    border-top:3px dotted rgba(255,255,255,.5)}
+  .hero-stub .barcode{display:none}
+  .prog-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat::before{display:none}
+  .voices{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr;gap:30px}
+  .contact-ticket{grid-template-columns:1fr}
+  .contact-ticket .perf{left:16px;right:16px;top:auto;bottom:auto;border-left:none;
+    border-top:3px dotted var(--c-line);height:0;width:auto}
+  .contact-ticket::before,.contact-ticket::after{display:none}
+  .sec{padding:56px 0}
+  .mission-band,.contact-ticket .ct-info,.contact-ticket .ct-form{padding-left:28px;padding-right:28px}
+}
+@media (max-width:600px){
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;padding:9px 22px}
+  table.gaiyo th{border-bottom:none;padding-bottom:2px}
+  table.gaiyo td{padding-top:2px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="head" id="top">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="2" y="9" width="36" height="22" rx="5" fill="#FFFDF7" stroke="#1F9E8F" stroke-width="2"/>
+      <line x1="26" y1="9" x2="26" y2="31" stroke="#1F9E8F" stroke-width="1.6" stroke-dasharray="2.4 2.4"/>
+      <circle cx="12.5" cy="20" r="3.4" fill="#F08A24"/>
+      <path d="M31.5 16.5l1.1 2.3 2.5.3-1.8 1.7.5 2.5-2.3-1.2-2.3 1.2.5-2.5-1.8-1.7 2.5-.3z" fill="#2E7DB5"/>
+    </svg>
+    <span class="t">子どもの国<small>NPO — TENPAKU, NAGOYA</small></span>
+  </a>
+  <nav>
+    <a href="#program">プログラム</a>
+    <a href="#mission">ミッション</a>
+    <a href="#voice">参加者の声</a>
+    <a href="#news">お知らせ</a>
+    <a href="#gaiyo">団体概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <a class="cta" href="#contact">参加チケットを申込む</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#program">プログラム</a>
+  <a href="#mission">ミッション</a>
+  <a href="#voice">参加者の声</a>
+  <a href="#news">お知らせ</a>
+  <a href="#gaiyo">団体概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<!-- ヒーロー：入場チケット -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-ticket reveal on">
+      <span class="perf"></span>
+      <div class="hero-main">
+        <div class="row1">
+          <span class="adm">ADMIT ONE</span>
+          <span class="field">社会教育／人権・平和／国際協力</span>
+        </div>
+        <h1><span class="kb">ちがいを、</span><span class="kb"><span class="hl">たのしむ</span>チカラを。</span><br><span class="kb">多文化共生の</span><span class="kb">"入口"へ。</span></h1>
+        <p class="lead">わたしたちは、日本社会の国際化に向けて、主に青少年へ多文化共生を届けるNPO法人です。国や文化のちがいを"こわいもの"ではなく"おもしろいもの"に変える。その一歩を、1枚のチケットからはじめませんか。</p>
+        <div class="chips">
+          <span class="chip c1">青少年むけ</span>
+          <span class="chip c2">国際交流</span>
+          <span class="chip c3">名古屋市天白区</span>
+        </div>
+        <div class="acts">
+          <a class="btn btn-primary" href="#program">プログラムを見る</a>
+          <a class="btn btn-ghost" href="#contact">参加・お問い合わせ</a>
+        </div>
+      </div>
+      <!-- 右スタブ（半券） -->
+      <div class="hero-stub">
+        <div>
+          <div class="st-label">Participation Ticket</div>
+          <div class="st-no">No. 0000-XXXX</div>
+        </div>
+        <div class="st-mid">
+          みんなで学ぶ<b>多文化のまち</b>
+        </div>
+        <div>
+          <div class="barcode" aria-hidden="true"></div>
+          <div class="st-label" style="margin-top:8px">KODOMO NO KUNI</div>
+        </div>
+      </div>
+    </div>
+    <p class="hero-note">※チケット番号・キャッチコピーは表示イメージのサンプルです。実際の内容に差し替えます</p>
+  </div>
+</section>
+
+<!-- プログラム -->
+<section class="sec" id="program">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag">Program</span><h2>参加チケット（プログラム）</h2><span class="rule"></span></div>
+    <p class="note-sample" style="margin-bottom:20px">※以下のプログラム名・日程・対象・参加費はすべて表示イメージのサンプルです。実際の活動内容に差し替えます</p>
+    <div class="prog-grid">
+
+      <!-- ※サンプル: プログラム内容はダミー -->
+      <div class="pcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 多文化交流ワークショップのお写真 -->
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1000&q=80&auto=format&fit=crop" alt="多文化交流ワークショップのイメージ">
+          <span class="no">TICKET 01</span>
+        </div>
+        <div class="tear"></div>
+        <div class="body">
+          <p class="cat">WORKSHOP</p>
+          <h3>世界のことば・あそび教室</h3>
+          <p>いろいろな国の言葉や遊びを、留学生や海外にルーツのある人と一緒に体験。ちがいの中にある「おなじ」を見つけます。</p>
+          <div class="foot">
+            <span class="price">参加費 無料 ※サンプル</span>
+            <span class="who">小学生〜中学生</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ※サンプル: プログラム内容はダミー -->
+      <div class="pcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 国際交流イベントのお写真 -->
+          <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=1000&q=80&auto=format&fit=crop" alt="国際交流イベントのイメージ">
+          <span class="no">TICKET 02</span>
+        </div>
+        <div class="tear"></div>
+        <div class="body">
+          <p class="cat">EXCHANGE</p>
+          <h3>ワールドキッチン交流会</h3>
+          <p>いろいろな国の家庭料理をつくって、食べて、話す。台所は、いちばん身近な国際交流の場所です。</p>
+          <div class="foot">
+            <span class="price">参加費 ¥500 ※サンプル</span>
+            <span class="who">どなたでも</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ※サンプル: プログラム内容はダミー -->
+      <div class="pcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 学習支援・日本語サポートのお写真 -->
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000&q=80&auto=format&fit=crop" alt="学習サポートのイメージ">
+          <span class="no">TICKET 03</span>
+        </div>
+        <div class="tear"></div>
+        <div class="body">
+          <p class="cat">SUPPORT</p>
+          <h3>にほんご・まなびサポート</h3>
+          <p>海外にルーツのある子どもたちの学びを、地域のボランティアと一緒に応援。宿題や日本語を、やさしく寄りそって。</p>
+          <div class="foot">
+            <span class="price">参加費 無料 ※サンプル</span>
+            <span class="who">外国ルーツの青少年</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ※サンプル: プログラム内容はダミー -->
+      <div class="pcard reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 講座・人権/多文化理解セミナーのお写真 -->
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1000&q=80&auto=format&fit=crop" alt="講座・セミナーのイメージ">
+          <span class="no">TICKET 04</span>
+        </div>
+        <div class="tear"></div>
+        <div class="body">
+          <p class="cat">SEMINAR</p>
+          <h3>多文化共生を学ぶ市民講座</h3>
+          <p>「共に生きる」ってどういうこと？ 地域で暮らす大人むけに、多文化理解と人権について考える連続講座です。</p>
+          <div class="foot">
+            <span class="price">全4回 ※サンプル</span>
+            <span class="who">地域のみなさま</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="note-sample prog-note">※プログラムは活動分野（社会教育・国際協力・人権・多文化共生）に沿ったサンプル構成です。実施中の事業に合わせて再構成します</p>
+  </div>
+</section>
+
+<!-- ミッション -->
+<section class="mission" id="mission">
+  <div class="wrap">
+    <div class="mission-band reveal">
+      <p class="m-tag">Our Mission</p>
+      <p class="m-lead">日本社会の国際化に向け、<br><em>主に青少年に対して多文化共生を支援する。</em></p>
+      <p>国籍や文化のちがいをこえて、だれもが自分らしく暮らせるまちへ。わたしたちは、次の世代を担う青少年が、ちがいをおもしろがり、尊重しあえる力を育めるよう、学びと出会いの場をつくっています。</p>
+      <p class="src">出典：NPOポータルに登記された当法人の目的（公開情報）。上記の説明文はその趣旨に沿ったサンプルです</p>
+    </div>
+
+    <div class="stats reveal" style="margin-top:22px">
+      <!-- ※サンプル: 数値はすべてダミーです -->
+      <div class="stat">
+        <div class="num">00<small>+</small></div>
+        <div class="cap">年間プログラム回数 ※サンプル</div>
+      </div>
+      <div class="stat">
+        <div class="num">000<small>名</small></div>
+        <div class="cap">のべ参加者数 ※サンプル</div>
+      </div>
+      <div class="stat">
+        <div class="num">00<small>か国</small></div>
+        <div class="cap">交流した国・地域 ※サンプル</div>
+      </div>
+    </div>
+    <p class="note-sample" style="margin-top:12px;text-align:center">※上記の数値は表示イメージのダミーです。実績の数字に差し替えます</p>
+  </div>
+</section>
+
+<!-- 参加者の声 -->
+<section class="sec" id="voice">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag">Voice</span><h2>参加者の声（チケットの裏書き）</h2><span class="rule"></span></div>
+    <p class="note-sample" style="margin-bottom:20px">※以下のコメント・お名前はすべてサンプルです。実際にいただいた声に差し替えます</p>
+    <div class="voices">
+      <!-- ※サンプル: 声・氏名はダミー -->
+      <div class="voice reveal">
+        <div class="mark">&ldquo;</div>
+        <p>ちがう国のことばを教えてもらって、こわくなくなった。友だちに、おしえてあげたい。</p>
+        <div class="who">小学5年生 ※サンプル<small>ワークショップに参加</small></div>
+      </div>
+      <div class="voice reveal">
+        <div class="mark">&ldquo;</div>
+        <p>子どもが「世界っておもしろい」と言うようになりました。家では出会えない体験に感謝しています。</p>
+        <div class="who">保護者の方 ※サンプル<small>交流会に参加</small></div>
+      </div>
+      <div class="voice reveal">
+        <div class="mark">&ldquo;</div>
+        <p>日本語のサポートのおかげで、学校の勉強が少しずつ分かるようになりました。ありがとう。</p>
+        <div class="who">中学生 ※サンプル<small>学習サポート利用</small></div>
+      </div>
+      <div class="voice reveal">
+        <div class="mark">&ldquo;</div>
+        <p>ボランティアとして関わり、多文化共生が「特別なこと」ではなく身近なことだと実感しました。</p>
+        <div class="who">地域ボランティア ※サンプル<small>運営に協力</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="sec" id="news" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag">News</span><h2>お知らせ・活動予定</h2><span class="rule"></span></div>
+    <p class="note-sample" style="margin-bottom:12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    <div class="news-list reveal">
+      <!-- ※サンプル: 日付・内容はダミー -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="lb ev">イベント</span><a href="#news">「ワールドキッチン交流会」の参加者を募集します</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="lb">お知らせ</span><a href="#news">にほんご・まなびサポートのボランティアを募集します</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="lb ev">イベント</span><a href="#news">市民講座「多文化共生を学ぶ」第1回を開催しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="lb">お知らせ</span><a href="#news">年間活動報告を掲載しました</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加の流れ -->
+<section class="sec" id="flow" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag">How to</span><h2>参加までの流れ（3枚もぎるだけ）</h2><span class="rule"></span></div>
+    <ol class="flow reveal">
+      <li><h3>お問い合わせ</h3><p>下のフォームかお電話で、気になるプログラムをお知らせください。「見てみたい」だけでも大丈夫です。</p></li>
+      <li><h3>ご案内・お申込み</h3><p>日程や持ち物など、参加チケットの詳細をご案内します。オンラインでもお受けできます。</p></li>
+      <li><h3>当日、参加！</h3><p>会場でスタッフがお迎えします。はじめてでも、ひとりでも、安心してご参加ください。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 団体概要 -->
+<section class="sec" id="gaiyo" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag">About</span><h2>団体概要</h2><span class="rule"></span></div>
+    <div class="gaiyo-ticket reveal">
+      <div class="top"><span>特定非営利活動法人 子どもの国</span><span class="en">ORGANIZATION PROFILE</span></div>
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 子どもの国</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市天白区<span class="note-sample">（番地・建物名は公開時に記載します）</span></td></tr>
+        <tr><th>活動分野</th><td>社会教育の推進／人権の擁護・平和の推進／国際協力（公開情報）</td></tr>
+        <tr><th>目的</th><td>日本社会の国際化に向け、主に青少年に対して多文化共生を支援する<span class="note-sample">（登記された目的・公開情報）</span></td></tr>
+        <tr><th>代表者</th><td>（公開時に、ご本人確認のうえ記載します）<span class="note-sample">※本サンプルでは実名を掲載していません</span></td></tr>
+        <tr><th>電話</th><td>052-XXX-XXXX<span class="note-sample">（※サンプルのダミー番号です）</span></td></tr>
+        <tr><th>メール</th><td>info@example.jp<span class="note-sample">（※サンプルのダミーです）</span></td></tr>
+        <tr><th>設立</th><td>（公開時に記載します）<span class="note-sample">※サンプル</span></td></tr>
+      </table>
+    </div>
+    <p class="note-sample" style="margin-top:12px">※本文の事実は公開情報（法人名称・所在地=区まで・活動分野・登記目的）の範囲です。※印の項目はダミーで、ご契約後に実データへ差し替えます</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="sec" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag">Contact</span><h2>参加・お問い合わせ</h2><span class="rule"></span></div>
+    <div class="contact-ticket reveal">
+      <span class="perf"></span>
+      <div class="ct-info">
+        <h3>まずは、お気軽に。</h3>
+        <p>プログラムへの参加、ボランティア、ご寄付・ご協力など、どんなことでもお問い合わせください。青少年ご本人からのご連絡も歓迎です。</p>
+        <div class="tel">
+          <div class="cap">お電話でのお問い合わせ（平日）</div>
+          <div class="num"><a href="#contact" aria-disabled="true">052-XXX-XXXX</a></div>
+          <div class="note-sample">※サンプルのダミー番号です。tel:リンクは無効化しています</div>
+        </div>
+        <div class="addr">
+          〒--------<br>
+          愛知県名古屋市天白区<br>
+          <span class="note-sample">（番地・建物名は公開時に記載します）</span>
+        </div>
+      </div>
+      <form class="ct-form" onsubmit="return false" aria-label="お問い合わせフォーム（デモ）">
+        <p class="fm-note">※これは表示イメージのデモフォームです。送信は行われません。ご契約後に実際に届くフォームを設置します。</p>
+        <label>お名前</label>
+        <input type="text" placeholder="例）名古屋 太郎" autocomplete="off">
+        <label>メールアドレス</label>
+        <input type="email" placeholder="例）taro@example.jp" autocomplete="off">
+        <label>ご用件・参加希望のプログラム</label>
+        <textarea placeholder="例）ワールドキッチン交流会に参加してみたいです。"></textarea>
+        <button type="submit">この内容で送信（デモ）</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-brand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="9" width="36" height="22" rx="5" fill="#FFFDF7" stroke="#1F9E8F" stroke-width="2"/>
+        <line x1="26" y1="9" x2="26" y2="31" stroke="#1F9E8F" stroke-width="1.6" stroke-dasharray="2.4 2.4"/>
+        <circle cx="12.5" cy="20" r="3.4" fill="#F08A24"/>
+        <path d="M31.5 16.5l1.1 2.3 2.5.3-1.8 1.7.5 2.5-2.3-1.2-2.3 1.2.5-2.5-1.8-1.7 2.5-.3z" fill="#2E7DB5"/>
+      </svg>
+    </div>
+    <p class="f-name">特定非営利活動法人 子どもの国</p>
+    <p class="f-meta">愛知県名古屋市天白区｜社会教育・人権平和・国際協力｜多文化共生の支援</p>
+    <p class="sample-note">
+      本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号・住所番地は非掲載）。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+    </p>
+    <p class="copy">&copy; 2026 NPO法人 子どもの国</p>
+  </div>
+</footer>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// スクロールで出現
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px/1.4 -apple-system,sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)">制作サンプル｜スマートコネクト</a></body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 祭だワッショイ さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の
+    範囲で作成。代表者実名・番地・建物名・電話番号は未記載
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: かるた／百人一首の「札」をモチーフに、
+    祭の躍動と日本文化への誇りを和の意匠で表現
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 祭だワッショイ｜岡崎市・祭で地域文化をつなぐ【ご提案サンプル】</title>
+<meta name="description" content="愛知県岡崎市で、祭を通じて地域文化の継承と交流を進めるNPO法人。日本文化への誇りを、次の世代へ。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-kinari:#F6F0E2;      /* 生成り */
+  --c-paper:#FCF8EF;
+  --c-shu:#C8342B;         /* 朱 */
+  --c-shu-deep:#A2231C;
+  --c-ai:#1F3A5F;          /* 藍 */
+  --c-ai-deep:#152840;
+  --c-kin:#B08327;         /* 金 */
+  --c-kin-l:#D9B75E;
+  --c-ink:#2A2622;         /* 墨 */
+  --c-line:#E3D9C2;
+  --font-mincho:"Shippori Mincho",serif;
+  --font-fude:"Yuji Syuku",serif;
+  --font-body:"Zen Kaku Gothic New",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);color:var(--c-ink);line-height:1.95;font-size:15px;
+  background:var(--c-kinari);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(200,52,43,.04) 0 40%, transparent 60%),
+    radial-gradient(circle at 88% 82%, rgba(31,58,95,.04) 0 40%, transparent 60%);
+  font-feature-settings:"palt";overflow-wrap:break-word;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-mincho);font-weight:700;line-height:1.5}
+.kb{display:inline-block}
+a{color:inherit}
+
+/* 麻の葉風の細い罫（区切り） */
+.rule-wa{height:6px;border:none;background:
+  repeating-linear-gradient(90deg,var(--c-shu) 0 14px,transparent 14px 22px);
+  opacity:.5}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(246,240,226,.94);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--c-line)}
+.head-in{max-width:1080px;margin:0 auto;padding:0 26px;height:70px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .seal{width:46px;height:46px;flex:none}
+.brand .t{font-family:var(--font-fude);font-size:22px;color:var(--c-ink);letter-spacing:.06em;line-height:1}
+.brand .t small{display:block;font-family:var(--font-body);font-size:9.5px;font-weight:700;color:var(--c-ai);letter-spacing:.14em;margin-top:5px}
+.gnav{margin-left:auto;display:flex;align-items:center;gap:24px}
+.gnav a{text-decoration:none;font-size:13.5px;font-weight:500;color:var(--c-ink);position:relative;padding:4px 0}
+.gnav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--c-shu);transition:right .3s var(--ease)}
+.gnav a:hover::after{right:0}
+.gnav .cta{background:var(--c-shu);color:#fff;padding:10px 18px;border-radius:2px;font-weight:700;font-size:13px;transition:background .3s}
+.gnav .cta:hover{background:var(--c-shu-deep)}
+.gnav .cta::after{display:none}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+
+/* ===== ヒーロー（大きな一番札） ===== */
+.hero{max-width:1080px;margin:0 auto;padding:54px 26px 24px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero .lead .zecha{display:inline-block;font-family:var(--font-fude);font-size:12.5px;color:var(--c-shu-deep);
+  border:1px solid var(--c-shu);border-radius:999px;padding:4px 15px;letter-spacing:.12em;margin-bottom:22px}
+.hero h1{font-family:var(--font-fude);font-size:clamp(34px,5.4vw,58px);line-height:1.32;color:var(--c-ai-deep);letter-spacing:.04em}
+.hero h1 em{font-style:normal;color:var(--c-shu)}
+.hero .sub{margin-top:24px;font-size:15px;max-width:440px;line-height:2.1}
+.hero .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;padding:14px 26px;border-radius:2px;transition:.3s var(--ease)}
+.btn-shu{background:var(--c-shu);color:#fff}
+.btn-shu:hover{background:var(--c-shu-deep)}
+.btn-ai{background:transparent;color:var(--c-ai-deep);border:1.5px solid var(--c-ai)}
+.btn-ai:hover{background:var(--c-ai);color:#fff}
+
+/* 一番札（大きなかるた札） */
+.fuda-hero{position:relative;background:var(--c-paper);border:2px solid var(--c-ai-deep);border-radius:6px;
+  padding:0;overflow:hidden;box-shadow:10px 12px 0 rgba(31,58,95,.12);aspect-ratio:3/4}
+.fuda-hero .ph{height:64%;overflow:hidden;position:relative}
+.fuda-hero .ph img{width:100%;height:100%;object-fit:cover}
+.fuda-hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(21,40,64,.35))}
+.fuda-hero .cap{position:relative;height:36%;padding:20px 22px;background:var(--c-paper);
+  border-top:3px double var(--c-kin)}
+.fuda-hero .cap .n{position:absolute;top:14px;right:18px;font-family:var(--font-fude);font-size:15px;color:var(--c-shu)}
+.fuda-hero .cap .waka{font-family:var(--font-mincho);font-weight:600;font-size:clamp(15px,2vw,19px);line-height:1.7;color:var(--c-ai-deep)}
+.fuda-hero .cap .yomi{margin-top:10px;font-size:11.5px;color:#8A7C63;letter-spacing:.04em}
+
+/* ===== 帯（活動分野チップ） ===== */
+.obi{background:var(--c-ai-deep);color:#fff}
+.obi-in{max-width:1080px;margin:0 auto;padding:16px 26px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
+.obi .lbl{font-family:var(--font-mincho);font-size:13px;color:var(--c-kin-l);letter-spacing:.08em}
+.obi .chip{border:1px solid rgba(217,183,94,.55);color:#F6F0E2;font-size:12.5px;font-weight:500;padding:5px 14px;border-radius:999px}
+
+/* ===== セクション共通 ===== */
+.sec{max-width:1080px;margin:0 auto;padding:76px 26px}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head .en{font-family:var(--font-fude);font-size:12px;letter-spacing:.3em;color:var(--c-shu);display:block;margin-bottom:10px}
+.sec-head h2{font-size:clamp(24px,3.2vw,32px);color:var(--c-ai-deep);letter-spacing:.06em}
+.sec-head .lead{margin-top:16px;font-size:14.5px;color:#5C5347;max-width:600px;margin-left:auto;margin-right:auto}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#A0937B}
+
+/* ===== 私たちの願い（藍地の一枚） ===== */
+.wish{background:var(--c-ai-deep);color:#F6F0E2;position:relative;overflow:hidden}
+.wish::before{content:"祭";position:absolute;font-family:var(--font-fude);font-size:min(46vw,560px);color:rgba(217,183,94,.06);
+  top:50%;left:50%;transform:translate(-50%,-50%);line-height:1;pointer-events:none}
+.wish .sec{position:relative}
+.wish .sec-head h2{color:#fff}
+.wish .sec-head .en{color:var(--c-kin-l)}
+.wish .body{max-width:720px;margin:0 auto;text-align:center}
+.wish .big{font-family:var(--font-mincho);font-size:clamp(20px,3vw,28px);line-height:2;font-weight:600}
+.wish .big em{font-style:normal;color:var(--c-kin-l)}
+.wish .desc{margin-top:24px;font-size:14.5px;line-height:2.1;color:rgba(246,240,226,.86)}
+
+/* ===== 活動（三枚札） ===== */
+.fuda-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fuda{background:var(--c-paper);border:1.5px solid var(--c-line);border-radius:5px;overflow:hidden;
+  box-shadow:5px 6px 0 rgba(31,58,95,.07);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.fuda:hover{transform:translateY(-6px);box-shadow:7px 10px 0 rgba(200,52,43,.13)}
+.fuda .ph{aspect-ratio:4/3;overflow:hidden;position:relative}
+.fuda .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.fuda:hover .ph img{transform:scale(1.05)}
+.fuda .ph .idx{position:absolute;top:12px;left:12px;width:34px;height:34px;background:var(--c-shu);color:#fff;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-fude);font-size:15px}
+.fuda .in{padding:22px 22px 26px;border-top:3px double var(--c-kin)}
+.fuda h3{font-size:19px;color:var(--c-ai-deep);letter-spacing:.03em}
+.fuda .in p{margin-top:12px;font-size:13.5px;color:#5C5347;line-height:1.95}
+
+/* ===== 祭ごよみ（縦の札並び） ===== */
+.koyomi{max-width:760px;margin:0 auto}
+.koyomi .row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 0;border-bottom:1px dashed var(--c-line);align-items:baseline}
+.koyomi .row:last-child{border-bottom:none}
+.koyomi .when{font-family:var(--font-mincho);font-weight:700;color:var(--c-shu);font-size:16px;letter-spacing:.04em}
+.koyomi .when small{display:block;font-family:var(--font-body);font-size:11px;font-weight:500;color:#8A7C63;margin-top:3px;letter-spacing:.02em}
+.koyomi .what h3{font-size:17px;color:var(--c-ai-deep)}
+.koyomi .what p{margin-top:6px;font-size:13.5px;color:#5C5347}
+
+/* ===== 参加のかたち（読み札／取り札） ===== */
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.join-card{background:var(--c-paper);border:1.5px solid var(--c-ai);border-radius:5px;padding:30px 26px;text-align:center;position:relative}
+.join-card .mark{font-family:var(--font-fude);font-size:30px;color:var(--c-shu);line-height:1}
+.join-card h3{margin-top:14px;font-size:18px;color:var(--c-ai-deep)}
+.join-card p{margin-top:12px;font-size:13.5px;color:#5C5347;line-height:1.9}
+
+/* ===== 概要表 ===== */
+.gaiyo-wrap{max-width:760px;margin:0 auto}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:160px;text-align:left;font-family:var(--font-mincho);font-weight:700;background:#F0E7D2;
+  border:1px solid var(--c-line);padding:13px 18px;white-space:nowrap;color:var(--c-ai-deep)}
+table.gaiyo td{border:1px solid var(--c-line);padding:13px 18px}
+.tbl-hint{display:none;font-size:11px;color:#A0937B;margin-top:6px}
+
+/* ===== お問い合わせ ===== */
+.contact{max-width:760px;margin:0 auto}
+.form{background:var(--c-paper);border:2px solid var(--c-ai-deep);border-radius:6px;padding:34px 32px;box-shadow:8px 9px 0 rgba(31,58,95,.1)}
+.form .demo{font-size:12px;color:var(--c-shu-deep);background:#FBEAE8;border:1px solid #F1CBC7;padding:9px 14px;border-radius:3px;margin-bottom:22px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px;color:var(--c-ai-deep)}
+.field input,.field textarea{width:100%;border:1px solid var(--c-line);background:#fff;border-radius:3px;padding:12px 14px;font:inherit;font-size:14px;color:var(--c-ink)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--c-shu)}
+.form .submit{width:100%;background:var(--c-shu);color:#fff;border:none;border-radius:3px;padding:15px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;transition:background .3s}
+.form .submit:hover{background:var(--c-shu-deep)}
+.tel-alt{text-align:center;margin-top:26px;font-size:14px}
+.tel-alt a{font-family:var(--font-mincho);font-weight:700;font-size:24px;color:var(--c-ai-deep);text-decoration:none;letter-spacing:.02em}
+.tel-alt small{display:block;font-size:11.5px;color:#8A7C63;margin-top:4px}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ai-deep);color:#E9E1CF;padding:48px 26px 34px;text-align:center}
+.footer .f-name{font-family:var(--font-fude);font-size:20px;color:#fff;letter-spacing:.06em}
+.footer p{font-size:12.5px;color:rgba(233,225,207,.8);margin-top:8px}
+.footer .sample-note{font-size:11px;color:rgba(233,225,207,.62);margin-top:20px;line-height:1.9}
+.footer .sample-note a{color:var(--c-kin-l)}
+.footer .cr{margin-top:16px;font-size:11px;color:rgba(233,225,207,.5)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .gnav{display:none;position:fixed;inset:70px 0 auto 0;background:var(--c-kinari);border-bottom:2px solid var(--c-line);
+    flex-direction:column;gap:0;padding:8px 26px 22px;align-items:stretch;margin-left:0}
+  .menu-open .gnav{display:flex}
+  .gnav a{padding:14px 4px;border-bottom:1px solid var(--c-line);font-size:15px}
+  .gnav a::after{display:none}
+  .gnav .cta{text-align:center;margin-top:14px;border-radius:3px}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .hero{grid-template-columns:1fr;gap:34px;padding-top:40px}
+  .fuda-hero{max-width:360px;margin:0 auto;width:100%}
+  .fuda-grid{grid-template-columns:1fr;gap:18px}
+  .fuda .ph{aspect-ratio:16/9}
+  .join-grid{grid-template-columns:1fr;gap:16px}
+  .sec{padding:56px 26px}
+  .tbl-hint{display:block}
+}
+@media (max-width:600px){
+  .koyomi .row{grid-template-columns:1fr;gap:6px;padding:18px 0}
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 14px 2px;background:transparent;font-size:12.5px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 14px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="head" id="top">
+  <div class="head-in">
+    <a class="brand" href="#top" aria-label="祭だワッショイ トップへ">
+      <svg class="seal" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="2" y="2" width="44" height="44" rx="5" fill="#C8342B"/>
+        <rect x="5.5" y="5.5" width="37" height="37" rx="3" fill="none" stroke="#D9B75E" stroke-width="1.4"/>
+        <text x="24" y="31" text-anchor="middle" font-family="'Yuji Syuku',serif" font-size="26" fill="#F6F0E2">祭</text>
+      </svg>
+      <span class="t">祭だワッショイ<small>特定非営利活動法人｜愛知県岡崎市</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="gnav">
+      <a href="#wish">私たちの願い</a>
+      <a href="#activity">活動</a>
+      <a href="#koyomi">祭ごよみ</a>
+      <a href="#join">参加のかたち</a>
+      <a href="#gaiyo">法人概要</a>
+      <a class="cta" href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== ヒーロー（一番札） ===== -->
+<section class="hero">
+  <div class="lead reveal on">
+    <span class="zecha">愛知県岡崎市・まちづくり／文化芸術</span>
+    <h1><span class="kb">祭で、</span><span class="kb">この町の</span><br><span class="kb"><em>文化</em>を</span><span class="kb">つなぐ。</span></h1>
+    <p class="sub">祭は、地域が世代をこえて出会う場所。特定非営利活動法人 祭だワッショイは、祭を通じて地域文化の継承と交流を進め、日本文化への誇りを次の世代へ手わたします。</p>
+    <div class="btns">
+      <a class="btn btn-shu" href="#join">祭に参加する</a>
+      <a class="btn btn-ai" href="#wish">私たちの願い</a>
+    </div>
+  </div>
+  <!-- 大きなかるた札（一番札） -->
+  <div class="fuda-hero reveal on">
+    <div class="ph">
+      <!-- 差し替えポイント: 祭・神輿・地域の躍動が伝わるお写真 -->
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1000&q=80&auto=format&fit=crop" alt="祭のイメージ">
+    </div>
+    <div class="cap">
+      <span class="n">一</span>
+      <p class="waka"><span class="kb">わっしょいと</span><span class="kb">声かさなれば</span><span class="kb">この町も</span></p>
+      <p class="yomi">※イメージ用の一句です（サンプル）</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 帯（活動分野） ===== -->
+<div class="obi">
+  <div class="obi-in">
+    <span class="lbl">活動分野</span>
+    <span class="chip">まちづくりの推進</span>
+    <span class="chip">文化・芸術の振興</span>
+    <span class="chip">地域文化の継承</span>
+    <span class="chip">世代間の交流</span>
+  </div>
+</div>
+
+<!-- ===== 私たちの願い（藍地） ===== -->
+<section class="wish" id="wish">
+  <div class="sec">
+    <div class="sec-head reveal">
+      <span class="en">O U R  W I S H</span>
+      <h2>私たちの願い</h2>
+    </div>
+    <div class="body reveal">
+      <p class="big"><span class="kb">日本文化への誇りを持つ人々とともに、</span><br><span class="kb"><em>祭を通じて</em></span><span class="kb">地域文化の継承と</span><span class="kb">交流を進める。</span></p>
+      <p class="desc">祭のかけ声、笛や太鼓の音、みんなで担ぐ神輿——そこには、この地域が長く受けついできた文化と、人と人とのつながりがあります。私たちは、その火を絶やさず、子どもから大人まで、誰もが「担い手」になれる場をつくっていきます。<br><span class="note-sample">※この文章は定款上の目的（公開情報）をもとにしたサンプルです。ご契約後に御団体のお言葉へ差し替えます。</span></p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule-wa">
+
+<!-- ===== 活動（三枚札） ===== -->
+<section class="sec" id="activity">
+  <div class="sec-head reveal">
+    <span class="en">A C T I V I T Y</span>
+    <h2>私たちの活動</h2>
+    <p class="lead">祭を核に、地域の文化と交流を育てる三つの取り組み。<span class="note-sample">（内容は表示イメージのサンプルです）</span></p>
+  </div>
+  <div class="fuda-grid">
+    <article class="fuda reveal">
+      <div class="ph"><span class="idx">壱</span>
+        <!-- 差し替えポイント: お祭りの運営・神輿渡御のお写真 -->
+        <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=900&q=80&auto=format&fit=crop" alt="祭の運営イメージ">
+      </div>
+      <div class="in">
+        <h3>祭の企画・運営</h3>
+        <p>地域の祭やイベントの企画・運営に取り組みます。担ぎ手や運営ボランティアが集い、世代をこえて祭を支える場をつくります。</p>
+      </div>
+    </article>
+    <article class="fuda reveal">
+      <div class="ph"><span class="idx">弐</span>
+        <!-- 差し替えポイント: 太鼓・囃子など伝統文化の稽古のお写真 -->
+        <img src="https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?w=900&q=80&auto=format&fit=crop" alt="伝統文化の継承イメージ">
+      </div>
+      <div class="in">
+        <h3>伝統文化の継承</h3>
+        <p>笛・太鼓・囃子など、地域に伝わる祭の技を次の世代へ。稽古や体験の機会を通じて、日本文化への誇りを育みます。</p>
+      </div>
+    </article>
+    <article class="fuda reveal">
+      <div class="ph"><span class="idx">参</span>
+        <!-- 差し替えポイント: 子ども・地域の人々が集う交流のお写真 -->
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900&q=80&auto=format&fit=crop" alt="地域交流イメージ">
+      </div>
+      <div class="in">
+        <h3>地域の交流づくり</h3>
+        <p>祭を入り口に、子どもも大人も、はじめての人も気軽に参加できる交流の場を。町の人と人がつながるきっかけをつくります。</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<hr class="rule-wa">
+
+<!-- ===== 祭ごよみ ===== -->
+<section class="sec" id="koyomi">
+  <div class="sec-head reveal">
+    <span class="en">C A L E N D A R</span>
+    <h2>祭ごよみ</h2>
+    <p class="lead note-sample">※以下は表示イメージのサンプルです。実際の年間予定に差し替えます。</p>
+  </div>
+  <div class="koyomi">
+    <!-- ※サンプル: 時期・内容はダミーです -->
+    <div class="row reveal"><div class="when">春<small>March – May</small></div><div class="what"><h3>担ぎ手・囃子の稽古はじめ</h3><p>祭に向けて、太鼓や囃子の稽古がスタート。はじめての方も一緒に練習します。</p></div></div>
+    <div class="row reveal"><div class="when">夏<small>June – August</small></div><div class="what"><h3>夏祭り・神輿渡御</h3><p>地域の夏祭りの運営に参加。子ども神輿から大人の担ぎまで、町をあげての一日。</p></div></div>
+    <div class="row reveal"><div class="when">秋<small>September – November</small></div><div class="what"><h3>収穫の祭・文化交流会</h3><p>実りに感謝する祭と、地域の文化にふれる交流のつどいを開きます。</p></div></div>
+    <div class="row reveal"><div class="when">冬<small>December – February</small></div><div class="what"><h3>ふりかえりと来季の準備</h3><p>一年をふりかえり、次の祭に向けて仲間づくり・道具の手入れを行います。</p></div></div>
+  </div>
+</section>
+
+<hr class="rule-wa">
+
+<!-- ===== 参加のかたち ===== -->
+<section class="sec" id="join">
+  <div class="sec-head reveal">
+    <span class="en">J O I N  U S</span>
+    <h2>参加のかたち</h2>
+    <p class="lead">「担ぎたい」「支えたい」「見てみたい」。どんな関わり方も大歓迎です。</p>
+  </div>
+  <div class="join-grid">
+    <div class="join-card reveal">
+      <div class="mark">担</div>
+      <h3>担ぎ手・出演者</h3>
+      <p>神輿を担ぎ、囃子を奏でる。祭のまんなかで一緒に汗をかく仲間を募集しています。</p>
+    </div>
+    <div class="join-card reveal">
+      <div class="mark">支</div>
+      <h3>運営ボランティア</h3>
+      <p>準備・受付・安全の見守りなど、祭を裏から支える役割。できる範囲での参加でOKです。</p>
+    </div>
+    <div class="join-card reveal">
+      <div class="mark">友</div>
+      <h3>賛助・応援</h3>
+      <p>活動を応援してくださる賛助会員・ご寄付を受けつけています。地域の文化を、みんなで守りましょう。</p>
+    </div>
+  </div>
+  <p class="note-sample" style="text-align:center;margin-top:24px">※募集区分・条件は表示イメージのサンプルです。実際の内容に差し替えます。</p>
+</section>
+
+<hr class="rule-wa">
+
+<!-- ===== 法人概要 ===== -->
+<section class="sec" id="gaiyo">
+  <div class="sec-head reveal">
+    <span class="en">P R O F I L E</span>
+    <h2>法人概要</h2>
+  </div>
+  <div class="gaiyo-wrap reveal">
+    <div class="tbl-wrap">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 祭だワッショイ</td></tr>
+        <tr><th>所在地</th><td>愛知県岡崎市（詳細住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>まちづくりの推進／文化・芸術の振興</td></tr>
+        <tr><th>目的</th><td>日本文化への誇りを持つ人々に対し、祭を通じて地域文化の継承と交流を進めること（定款目的より）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>お問い合わせ</th><td>下記フォーム、またはお電話にて承ります</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<hr class="rule-wa">
+
+<!-- ===== お問い合わせ ===== -->
+<section class="sec" id="contact">
+  <div class="sec-head reveal">
+    <span class="en">C O N T A C T</span>
+    <h2>お問い合わせ</h2>
+    <p class="lead">祭への参加、賛助・ご寄付、取材のご相談など、お気軽にどうぞ。</p>
+  </div>
+  <div class="contact reveal">
+    <form class="form" onsubmit="return false;">
+      <p class="demo">※これはサンプルフォームです。送信ボタンを押しても送信されません（デモ動作）。</p>
+      <div class="field"><label for="f-name">お名前</label><input id="f-name" type="text" placeholder="山田 太郎" autocomplete="name"></div>
+      <div class="field"><label for="f-mail">メールアドレス</label><input id="f-mail" type="email" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="field"><label for="f-msg">ご用件</label><textarea id="f-msg" rows="5" placeholder="祭に参加してみたい／賛助会員について知りたい など"></textarea></div>
+      <button class="submit" type="submit">送信する（デモ）</button>
+    </form>
+    <div class="tel-alt">
+      <p>お電話でも承ります</p>
+      <!-- ダミー番号。tel:リンクは無効化しています（サンプル） -->
+      <a href="#" onclick="return false;">000-0000-0000</a>
+      <small>※サンプル用のダミー番号です。実際の番号に差し替えます。</small>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <p class="f-name">特定非営利活動法人 祭だワッショイ</p>
+  <p>愛知県岡崎市｜まちづくり・文化芸術</p>
+  <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号・住所詳細は未記載）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  <p class="cr">&copy; 2026 NPO法人 祭だワッショイ（ご提案用サンプル）</p>
+</footer>
+
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".gnav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

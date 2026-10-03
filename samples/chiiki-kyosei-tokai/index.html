@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 地域共生とうかい さま
+  デザイン: モジュラー・ベントグリッド型（大小カードのモザイク）
+  制作: スマートコネクト (https://smcn-jp.com)
+
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・設立年・活動分野、
+    就労支援を運営中という公開されている事業情報）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表挨拶／実績数値／利用者の声などは【※サンプル】の仮テキスト（虚偽なし）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージ。差し替えポイントをコメント明記
+  ・実在団体名を含むため noindex。先方の了承前にインターネット公開しないこと
+  ・ロゴは使用せず、汎用の図形マークで代替しています
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 地域共生とうかい｜豊川市の就労支援・地域共生【ご提案サンプル】</title>
+<meta name="description" content="愛知県豊川市で就労支援を運営するNPO法人 地域共生とうかい。福祉・まちづくり・子どもの健全育成など、多世代がつながる地域共生の輪をひろげます。ご相談はお気軽に。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F1E7;         /* 生成り */
+  --card:#FCFAF3;       /* カード面（少し明るい生成り） */
+  --ink:#2C2620;        /* 濃い墨 */
+  --ink-soft:#6B6459;
+  --orange:#C4531E;     /* 深いオレンジ（主役） */
+  --orange-deep:#9E3F13;
+  --orange-pale:#F4E2D3;
+  --green:#4C7A46;      /* 緑のアクセント */
+  --green-pale:#E4EDDD;
+  --line:#E4DBC9;
+  --line-ink:#D6CBB4;
+  --font:"Noto Sans JP",sans-serif;
+  --font-disp:"Zen Kaku Gothic New","Noto Sans JP",sans-serif; /* 見出しの個性 */
+  --font-num:"Outfit",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-disp);font-weight:900;line-height:1.5;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(246,241,231,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head .inner{max-width:1160px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .t{font-family:var(--font-disp);font-weight:900;font-size:18px;letter-spacing:.03em;line-height:1.25}
+.brand .t small{display:block;font-family:var(--font);font-weight:500;font-size:10px;color:var(--green);letter-spacing:.04em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.head nav a{text-decoration:none;font-size:13.5px;font-weight:500;color:var(--ink);padding:8px 12px;border-radius:999px;transition:background .25s,color .25s}
+.head nav a:hover{background:var(--orange-pale);color:var(--orange-deep)}
+.head .cta{margin-left:6px;background:var(--orange);color:#fff;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:999px;text-decoration:none;transition:background .25s,transform .2s}
+.head .cta:hover{background:var(--orange-deep);transform:translateY(-1px)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+.sp-nav{display:none}
+
+/* ===== 共通レイアウト ===== */
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.sec{padding:64px 0}
+.sec-head{margin-bottom:30px}
+.sec-head .en{font-family:var(--font-num);font-size:12px;font-weight:600;letter-spacing:.22em;color:var(--orange);text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.sec-head .en::before{content:"";width:26px;height:2px;background:var(--orange)}
+.sec-head h2{font-size:clamp(23px,3.2vw,31px);letter-spacing:.02em;margin-top:12px}
+.sec-head p.lede{margin-top:12px;color:var(--ink-soft);font-size:14.5px;max-width:640px}
+.note-sample{font-size:11.5px;color:var(--ink-soft);opacity:.85}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ============================================================
+   HERO = ベントグリッドの一部
+   ============================================================ */
+.hero{padding:34px 0 20px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:16px}
+.cell{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;position:relative}
+.cell.pad{padding:26px}
+
+/* --- ヒーロー主役セル --- */
+.c-lead{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;background:var(--orange);color:#FDF3EA;border-color:var(--orange)}
+.c-lead .tag{font-family:var(--font-num);font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.c-lead h1{font-size:clamp(26px,3.4vw,38px);line-height:1.42;letter-spacing:.02em;margin:14px 0 0;color:#fff}
+.c-lead h1 .hl{background:linear-gradient(transparent 62%, rgba(255,255,255,.28) 62%)}
+.c-lead .sub{font-size:13.5px;line-height:1.9;opacity:.95;margin-top:14px;max-width:34em}
+.c-lead .deco{position:absolute;right:-30px;bottom:-30px;width:160px;height:160px;opacity:.16;pointer-events:none}
+
+/* --- 写真セル --- */
+.c-photo{grid-column:span 2;grid-row:span 2}
+.c-photo img{width:100%;height:100%;object-fit:cover}
+.c-photo .cap{position:absolute;left:14px;bottom:14px;background:rgba(44,38,32,.72);color:#fff;font-size:11px;padding:5px 11px;border-radius:999px;backdrop-filter:blur(4px)}
+
+/* --- 統計/ミニカード --- */
+.c-stat{grid-column:span 1;grid-row:span 1;display:flex;flex-direction:column;justify-content:center}
+.c-stat .n{font-family:var(--font-num);font-weight:700;font-size:34px;line-height:1;color:var(--orange-deep)}
+.c-stat .n small{font-size:15px;font-weight:600;margin-left:2px}
+.c-stat .k{font-size:12.5px;color:var(--ink-soft);margin-top:8px;line-height:1.5}
+.c-green{background:var(--green);border-color:var(--green);color:#fff}
+.c-green .n,.c-green .k{color:#fff}
+.c-green .n{color:#fff}
+.c-photo-s{grid-column:span 1;grid-row:span 1}
+.c-photo-s img{width:100%;height:100%;object-fit:cover}
+.c-cta{grid-column:span 2;grid-row:span 1;background:var(--card);display:flex;align-items:center;justify-content:space-between;gap:16px;border-style:dashed;border-color:var(--line-ink)}
+.c-cta .txt strong{display:block;font-family:var(--font-disp);font-weight:900;font-size:16px}
+.c-cta .txt span{font-size:12px;color:var(--ink-soft)}
+.c-cta a{flex:none;background:var(--orange);color:#fff;font-weight:700;font-size:13.5px;text-decoration:none;padding:11px 18px;border-radius:999px;white-space:nowrap;transition:background .25s}
+.c-cta a:hover{background:var(--orange-deep)}
+
+/* ============================================================
+   事業紹介（Bentoカード）
+   ============================================================ */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.svc:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(44,38,32,.08)}
+.svc .ic{width:52px;height:52px;border-radius:14px;background:var(--orange-pale);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.svc .ic svg{width:28px;height:28px;stroke:var(--orange-deep)}
+.svc.big{grid-column:span 2}
+.svc.big .ic{background:var(--green-pale)}
+.svc.big .ic svg{stroke:var(--green)}
+.svc h3{font-size:18px;letter-spacing:.02em}
+.svc .badge{display:inline-block;font-family:var(--font-num);font-size:10.5px;font-weight:600;letter-spacing:.12em;color:var(--orange);border:1px solid var(--line-ink);border-radius:999px;padding:2px 10px;margin-bottom:12px}
+.svc p{font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.85}
+.svc ul{list-style:none;margin-top:12px;display:flex;flex-wrap:wrap;gap:7px}
+.svc ul li{font-size:12px;font-weight:500;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+
+/* ============================================================
+   活動分野（5分野・タイル）
+   ============================================================ */
+.field-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.field-tile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px;display:flex;align-items:flex-start;gap:13px}
+.field-tile .fic{width:38px;height:38px;flex:none;border-radius:11px;background:var(--green-pale);display:flex;align-items:center;justify-content:center}
+.field-tile .fic svg{width:21px;height:21px;stroke:var(--green)}
+.field-tile h3{font-size:14.5px;line-height:1.5}
+.field-tile p{font-size:11.5px;color:var(--ink-soft);margin-top:5px;line-height:1.6}
+
+/* ============================================================
+   活動の輪 / 参加のかたち
+   ============================================================ */
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.join{border-radius:var(--radius);padding:26px 24px;border:1px solid var(--line);background:var(--card)}
+.join.hi{background:var(--orange-pale);border-color:var(--orange-pale)}
+.join .num{font-family:var(--font-num);font-weight:700;font-size:13px;color:var(--orange);letter-spacing:.1em}
+.join h3{font-size:16.5px;margin-top:6px}
+.join p{font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.8}
+
+/* ============================================================
+   代表あいさつ + 写真（Bento 2セル）
+   ============================================================ */
+.about-bento{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:stretch}
+.about-msg{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 32px}
+.about-msg .big{font-family:var(--font-disp);font-weight:900;font-size:clamp(18px,2.4vw,23px);line-height:1.7;letter-spacing:.02em}
+.about-msg .big em{font-style:normal;color:var(--orange-deep)}
+.about-msg p{font-size:13.5px;color:var(--ink-soft);margin-top:16px;line-height:1.95}
+.about-msg .sign{margin-top:22px;text-align:right;font-weight:700;font-size:14px}
+.about-msg .sign small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-soft)}
+.about-photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px;position:relative}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ============================================================
+   利用者の声（サンプル）
+   ============================================================ */
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.voice{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;position:relative}
+.voice .q{font-family:var(--font-disp);font-size:40px;color:var(--orange-pale);line-height:.7;height:24px}
+.voice p{font-size:13.5px;line-height:1.85;margin-top:6px}
+.voice .who{font-size:12px;color:var(--ink-soft);margin-top:14px;font-weight:500}
+
+/* ============================================================
+   お知らせ
+   ============================================================ */
+.news-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 28px}
+.news-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);align-items:center}
+.news-row:last-child{border-bottom:none}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:600;color:var(--ink-soft);font-size:12.5px}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;color:var(--green);border:1px solid var(--green-pale);background:var(--green-pale);border-radius:999px;padding:2px 10px}
+.news-row .ttl{font-size:13.5px}
+
+/* ============================================================
+   概要 表
+   ============================================================ */
+.gaiyo-bento{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:420px;border-collapse:collapse;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+table.gaiyo th{width:120px;text-align:left;font-weight:700;background:var(--orange-pale);border-bottom:1px solid var(--line);padding:12px 16px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border-bottom:1px solid var(--line);padding:12px 16px}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+table.gaiyo td a{color:var(--orange-deep);font-weight:700;text-decoration:none}
+.tbl-hint{display:none;font-size:11px;color:var(--ink-soft);margin-top:6px}
+.map-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:280px}
+.map-card iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
+
+/* ============================================================
+   お問い合わせ（デモフォーム）
+   ============================================================ */
+.contact{background:linear-gradient(135deg,#FBEFE3,#F1E4CF)}
+.contact-bento{display:grid;grid-template-columns:1fr 1.1fr;gap:16px;align-items:start}
+.contact-side{background:var(--orange);color:#FDF3EA;border-radius:var(--radius);padding:32px 30px;position:relative;overflow:hidden}
+.contact-side h3{color:#fff;font-size:22px;line-height:1.5}
+.contact-side p{font-size:13px;opacity:.95;margin-top:12px;line-height:1.9}
+.contact-side .tel{margin-top:22px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:16px 18px}
+.contact-side .tel .cap{font-size:11.5px;font-weight:700;opacity:.9}
+.contact-side .tel a{display:inline-block;font-family:var(--font-num);font-weight:700;font-size:26px;color:#fff;text-decoration:none;letter-spacing:.01em;margin-top:2px}
+.contact-side .tel small{display:block;font-size:11px;opacity:.85;margin-top:2px}
+.contact-side .deco{position:absolute;right:-24px;top:-24px;width:130px;height:130px;opacity:.14;pointer-events:none}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line-ink);border-radius:12px;padding:11px 13px;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(196,83,30,.14)}
+.field textarea{min-height:96px;resize:vertical}
+.form-card button{width:100%;background:var(--orange);color:#fff;font-family:inherit;font-weight:700;font-size:15px;border:none;border-radius:999px;padding:14px;cursor:pointer;transition:background .25s,transform .2s}
+.form-card button:hover{background:var(--orange-deep);transform:translateY(-1px)}
+.form-msg{display:none;margin-top:14px;background:var(--green-pale);border:1px solid var(--green);border-radius:12px;padding:13px 15px;font-size:12.5px;color:var(--green);line-height:1.7}
+.form-msg.show{display:block}
+
+/* ============================================================
+   フッター
+   ============================================================ */
+.footer{background:var(--ink);color:#E9E2D4;padding:52px 0 34px}
+.footer .cols{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between}
+.footer .f-name{font-family:var(--font-disp);font-weight:900;font-size:17px;color:#fff}
+.footer .f-name small{display:block;font-family:var(--font);font-weight:500;font-size:11px;color:#B9B0A0;margin-top:5px}
+.footer .f-addr{font-size:12.5px;color:#B9B0A0;margin-top:10px;line-height:1.9}
+.footer .f-nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px}
+.footer .f-nav a{color:#CFC7B7;text-decoration:none}
+.footer .f-nav a:hover{color:#fff}
+.sample-box{margin-top:32px;padding-top:22px;border-top:1px solid #423b31;font-size:11.5px;color:#B9B0A0;line-height:1.9}
+.sample-box a{color:#E9E2D4}
+.footer .copy{margin-top:14px;font-size:11px;color:#8E867A}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(44,38,32,.92);color:#F6F1E7;text-decoration:none;font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.22)}
+.pill svg{width:15px;height:15px;flex:none}
+.pill b{font-weight:700}
+
+/* ============================================================
+   レスポンシブ
+   ============================================================ */
+@media (max-width:920px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:none;position:fixed;inset:64px 0 auto 0;background:var(--card);border-bottom:1px solid var(--line);padding:12px 22px 20px;z-index:99;box-shadow:0 12px 24px rgba(44,38,32,.1)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--line)}
+  .sp-nav a.cta{color:var(--orange-deep);font-weight:700;border-bottom:none;margin-top:6px}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .svc-grid,.voice-grid,.join-grid{grid-template-columns:1fr 1fr}
+  .svc.big{grid-column:span 2}
+  .about-bento,.gaiyo-bento,.contact-bento{grid-template-columns:1fr}
+  .about-photo{min-height:240px}
+}
+
+@media (max-width:640px){
+  .sec{padding:48px 0}
+  .wrap{padding:0 18px}
+  /* --- ベントを縦積みに再構成 --- */
+  .bento{grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:12px}
+  .c-lead{grid-column:span 2;grid-row:auto;padding:26px 22px}
+  .c-photo{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}
+  .c-photo img{position:absolute;inset:0}
+  .c-photo-s{grid-column:span 1;grid-row:auto;aspect-ratio:1/1}
+  .c-photo-s img{position:absolute;inset:0}
+  .c-stat{grid-column:span 1;grid-row:auto;min-height:120px}
+  .c-cta{grid-column:span 2;grid-row:auto;flex-direction:column;align-items:flex-start;gap:12px}
+  .c-cta a{width:100%;text-align:center}
+
+  .svc-grid,.voice-grid,.join-grid{grid-template-columns:1fr;gap:12px}
+  .svc.big{grid-column:span 1}
+  .field-grid{grid-template-columns:1fr 1fr}
+  .field-row{grid-template-columns:1fr}
+  /* 概要表: 横スクロールをやめて縦積みに */
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border-bottom:none;padding:10px 16px 4px;font-size:12px}
+  table.gaiyo td{display:block;width:100%;border-bottom:none;padding:0 16px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header class="head" id="top">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <!-- 汎用マーク（ロゴ不使用）: 3つの手/世代が輪でつながる図形 -->
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#F4E2D3"/>
+        <circle cx="20" cy="12.5" r="4.4" fill="#C4531E"/>
+        <circle cx="12.5" cy="25" r="4.4" fill="#4C7A46"/>
+        <circle cx="27.5" cy="25" r="4.4" fill="#E0A24A"/>
+        <path d="M20 12.5 12.5 25M20 12.5 27.5 25M12.5 25h15" stroke="#2C2620" stroke-width="1.4" stroke-linecap="round" opacity=".55" fill="none"/>
+      </svg>
+      <span class="t">地域共生とうかい<small>特定非営利活動法人｜愛知県豊川市</small></span>
+    </a>
+    <nav>
+      <a href="#services">事業</a>
+      <a href="#fields">活動分野</a>
+      <a href="#join">活動の輪</a>
+      <a href="#about">わたしたち</a>
+      <a href="#gaiyo">概要</a>
+      <a href="#contact">相談</a>
+    </nav>
+    <a class="cta" href="#contact">ご相談・お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sp-nav">
+  <a href="#services">事業のご案内</a>
+  <a href="#fields">活動分野</a>
+  <a href="#join">活動の輪・参加のかたち</a>
+  <a href="#about">わたしたちのこと</a>
+  <a href="#voice">利用者の声</a>
+  <a href="#news">お知らせ</a>
+  <a href="#gaiyo">法人概要・アクセス</a>
+  <a href="#contact" class="cta">ご相談・お問い合わせ</a>
+</nav>
+
+<!-- ============================================================
+     HERO = ベントグリッド
+     ============================================================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="bento reveal on">
+
+      <!-- 主役セル -->
+      <div class="cell c-lead pad">
+        <div>
+          <p class="tag">Toyokawa, Aichi ／ 地域共生</p>
+          <h1><span class="kb">まちのなかに、</span><span class="kb"><span class="hl">はたらく</span>を、</span><br><span class="kb"><span class="hl">つながる</span>を、</span><span class="kb">つくる。</span></h1>
+        </div>
+        <p class="sub"><span class="kb">豊川市を拠点に、</span><span class="kb">就労支援を軸として、</span><span class="kb">福祉・まちづくり・</span><span class="kb">子どもの健全育成まで。</span><span class="kb">世代をこえて</span><span class="kb">支えあう地域を</span><span class="kb">めざすNPOです。</span></p>
+        <!-- 装飾図形 -->
+        <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="30" r="14" fill="#fff"/><circle cx="30" cy="66" r="14" fill="#fff"/><circle cx="70" cy="66" r="14" fill="#fff"/></svg>
+      </div>
+
+      <!-- メイン写真 -->
+      <!-- 差し替えポイント: 活動の様子（作業・手仕事・地域の風景など、顔が特定されにくい構図のお写真） -->
+      <div class="cell c-photo">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80&auto=format&fit=crop" alt="みんなで作業をする様子のイメージ">
+        <span class="cap">活動風景（イメージ）</span>
+      </div>
+
+      <!-- 設立年（実データ・公開情報） -->
+      <div class="cell c-stat pad">
+        <span class="n">2019<small>年</small></span>
+        <span class="k">設立<br>（NPOポータル公開情報）</span>
+      </div>
+
+      <!-- 5分野（実データ・公開情報） -->
+      <div class="cell c-stat c-green pad">
+        <span class="n">5<small>分野</small></span>
+        <span class="k">定款に定める<br>活動分野</span>
+      </div>
+
+      <!-- サブ写真1 -->
+      <!-- 差し替えポイント: 手仕事・軽作業などのお写真 -->
+      <div class="cell c-photo-s">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80&auto=format&fit=crop" alt="手仕事のイメージ">
+      </div>
+
+      <!-- サブ写真2 -->
+      <!-- 差し替えポイント: まちの雰囲気・多世代の交流のお写真 -->
+      <div class="cell c-photo-s">
+        <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=700&q=80&auto=format&fit=crop" alt="まちの雰囲気のイメージ">
+      </div>
+
+      <!-- CTAセル -->
+      <div class="cell c-cta pad">
+        <div class="txt">
+          <strong>見学・ご相談はお気軽に</strong>
+          <span>ご本人・ご家族・支援機関の方も</span>
+        </div>
+        <a href="#contact">相談してみる</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     事業のご案内
+     ============================================================ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Services</span>
+      <h2>事業のご案内</h2>
+      <p class="lede">就労支援を軸に、地域のなかで「はたらく」「つながる」を支える活動に取り組んでいます。<span class="note-sample">※各事業の詳細な定員・内容は、ご契約後に公開情報や実データへ差し替えます。</span></p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc big reveal">
+        <span class="badge">MAIN / 運営中</span>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"/><path d="M9 7V5h6v2"/></svg>
+        </div>
+        <h3>就労支援</h3>
+        <p>一人ひとりのペースや得意に合わせて、「はたらく」に向けた活動や作業の場をご用意します。仕事の練習だけでなく、生活のリズムづくりや人とのつながりも大切にしています。<span class="note-sample">※本文は公開されている事業情報（就労支援を運営中）をもとにしたサンプルです。</span></p>
+        <ul>
+          <li>作業・軽作業</li>
+          <li>生活リズムづくり</li>
+          <li>個別のサポート</li>
+          <li>見学・体験できます</li>
+        </ul>
+      </div>
+
+      <div class="svc reveal">
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>地域・まちづくりの活動</h3>
+        <p>住み慣れたまちで安心して暮らせるよう、地域とつながる取り組みを行っています。<span class="note-sample">※定款の活動分野（まちづくり・地域安全）に基づくサンプルです。</span></p>
+      </div>
+
+      <div class="svc reveal">
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-8.5C1.5 9 3 6 6 6c2 0 3 1.2 3.5 2 .5-.8 1.5-2 3.5-2 3 0 4.5 3 3 6.5-2 4-9 8.5-9 8.5Z"/></svg>
+        </div>
+        <h3>子ども・多世代の支援</h3>
+        <p>子どもの健全育成をはじめ、世代をこえて支えあうつながりづくりに取り組みます。<span class="note-sample">※定款の活動分野（子どもの健全育成）に基づくサンプルです。</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     活動分野（定款・公開情報）
+     ============================================================ -->
+<section class="sec" id="fields" style="background:var(--card)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Fields</span>
+      <h2>わたしたちの活動分野</h2>
+      <p class="lede">NPOポータルに登録された定款の活動分野です。「地域共生」を軸に、暮らしのさまざまな場面を支えます。<span class="note-sample">※分野名は公開情報。各分野の具体的な事業内容はサンプルです。</span></p>
+    </div>
+    <div class="field-grid">
+      <div class="field-tile reveal">
+        <div class="fic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-8.5C1.5 9 3 6 6 6c2 0 3 1.2 3.5 2 .5-.8 1.5-2 3.5-2 3 0 4.5 3 3 6.5-2 4-9 8.5-9 8.5Z"/></svg></div>
+        <div><h3>保健・医療・福祉</h3><p>暮らしと健康を支える</p></div>
+      </div>
+      <div class="field-tile reveal">
+        <div class="fic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/></svg></div>
+        <div><h3>まちづくり</h3><p>住みよいまちへ</p></div>
+      </div>
+      <div class="field-tile reveal">
+        <div class="fic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h3>地域安全</h3><p>安心して暮らせる地域</p></div>
+      </div>
+      <div class="field-tile reveal">
+        <div class="fic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div><h3>子どもの健全育成</h3><p>未来を担う世代を</p></div>
+      </div>
+      <div class="field-tile reveal">
+        <div class="fic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="11" r="2.5"/><path d="M2.5 20c0-3 2.9-5 6.5-5s6.5 2 6.5 5"/><path d="M17 15c2.6 0 4.5 1.6 4.5 4"/></svg></div>
+        <div><h3>地域共生の推進</h3><p>世代をこえてつながる</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     活動の輪 / 参加のかたち
+     ============================================================ -->
+<section class="sec" id="join">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Get Involved</span>
+      <h2>活動の輪にくわわる</h2>
+      <p class="lede">地域共生の活動は、たくさんの手で支えられています。あなたにできるかたちで、ご一緒しませんか。<span class="note-sample">※募集内容・条件はサンプルです。実際の募集にあわせて差し替えます。</span></p>
+    </div>
+    <div class="join-grid">
+      <div class="join hi reveal">
+        <span class="num">01</span>
+        <h3>ご利用・ご相談</h3>
+        <p>「はたらいてみたい」「まず話を聞いてみたい」――ご本人もご家族も、支援機関の方も、お気軽にどうぞ。</p>
+      </div>
+      <div class="join reveal">
+        <span class="num">02</span>
+        <h3>ボランティア・会員</h3>
+        <p>活動のお手伝いや賛助会員として、できる範囲でご参加いただけます。</p>
+      </div>
+      <div class="join reveal">
+        <span class="num">03</span>
+        <h3>連携・ご協力</h3>
+        <p>地域の企業・団体・行政のみなさまとの協働も歓迎しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     わたしたちのこと（代表あいさつ）
+     ============================================================ -->
+<section class="sec" id="about" style="background:var(--card)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">About Us</span>
+      <h2>わたしたちのこと</h2>
+    </div>
+    <div class="about-bento">
+      <div class="about-msg reveal">
+        <p class="big"><span class="kb">だれもが、</span><span class="kb">この町で</span><em><span class="kb">自分らしく</span></em><br><em><span class="kb">はたらき、</span><span class="kb">暮らせる</span></em><span class="kb">ように。</span></p>
+        <p>わたしたち地域共生とうかいは、就労支援を軸に、福祉・まちづくり・子どもの健全育成といった幅広い分野で、世代をこえて支えあえる地域づくりに取り組んでいます。一人ひとりの「やってみたい」を大切に、地域のみなさまとともに歩んでいきます。<span class="note-sample">※本文は定款の目的（公開情報）をもとにしたサンプルです。</span></p>
+        <!-- ※サンプル: 代表あいさつは仮テキストです。ご契約後に代表者ご本人のお言葉へ差し替えます（虚偽・実名記載なし） -->
+        <p class="sign">代表 <span class="note-sample">※お名前はサンプル</span><small>特定非営利活動法人 地域共生とうかい</small></p>
+      </div>
+      <!-- 差し替えポイント: 代表者・スタッフのお写真、または活動風景 -->
+      <div class="about-photo reveal">
+        <img src="https://images.unsplash.com/photo-1531844251246-9a1bfaae09fc?w=900&q=80&auto=format&fit=crop" alt="地域の風景・多世代のつながりのイメージ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     利用者の声（サンプル）
+     ============================================================ -->
+<section class="sec" id="voice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Voices</span>
+      <h2>活動にふれた方の声</h2>
+      <p class="lede note-sample">※以下はすべて表示イメージのサンプル（ダミー）です。ご契約後、実際にいただいたお声（掲載許可のあるもの）に差し替えます。</p>
+    </div>
+    <!-- ※サンプル: 以下の声はすべてダミーです -->
+    <div class="voice-grid">
+      <div class="voice reveal">
+        <div class="q">“</div>
+        <p>自分のペースで作業できるのがうれしい。少しずつ「できた」が増えていく実感があります。</p>
+        <p class="who">利用者さん（※サンプル）</p>
+      </div>
+      <div class="voice reveal">
+        <div class="q">“</div>
+        <p>家族としても、地域に相談できる場所があるのは心強いです。まずは見学から相談できました。</p>
+        <p class="who">ご家族（※サンプル）</p>
+      </div>
+      <div class="voice reveal">
+        <div class="q">“</div>
+        <p>世代をこえて交流できる取り組みが地域にあるのはありがたい。今後の活動も応援しています。</p>
+        <p class="who">地域の方（※サンプル）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     お知らせ
+     ============================================================ -->
+<section class="sec" id="news" style="background:var(--card)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+      <p class="lede note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</p>
+    </div>
+    <!-- ※サンプル: 日付・内容はダミーです -->
+    <div class="news-list reveal">
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><span class="ttl">ホームページを公開しました（※サンプル）</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">活動報告</span><span class="ttl">地域の清掃活動に参加しました（※サンプル）</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">募集</span><span class="ttl">ボランティア・賛助会員を募集しています（※サンプル）</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     法人概要・アクセス
+     ============================================================ -->
+<section class="sec" id="gaiyo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要・アクセス</h2>
+    </div>
+    <div class="gaiyo-bento">
+      <div class="reveal">
+        <div class="tbl-wrap">
+          <table class="gaiyo">
+            <tr><th>正式名称</th><td>特定非営利活動法人 地域共生とうかい</td></tr>
+            <tr><th>所在地</th><td>愛知県豊川市塔ノ木町2丁目58番地の2</td></tr>
+            <tr><th>設立</th><td>2019年（NPOポータルの公開情報より）</td></tr>
+            <tr><th>活動分野</th><td>保健・医療・福祉／まちづくり／地域安全／子どもの健全育成 ほか（定款・公開情報）</td></tr>
+            <tr><th>主な事業</th><td>就労支援 ほか（公開されている事業情報より）</td></tr>
+            <tr><th>電話</th><td><span class="note-sample">公開時に記載します（※サンプル）</span></td></tr>
+            <tr><th>参考</th><td><a href="https://www.npo-homepage.go.jp/npoportal/detail/023002327" target="_blank" rel="noopener">内閣府NPOポータル 掲載ページ</a></td></tr>
+          </table>
+        </div>
+        <p class="tbl-hint">→ 表は横にスクロールできます</p>
+      </div>
+      <!-- 地図: 所在地（豊川市塔ノ木町）周辺 -->
+      <div class="map-card reveal">
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E5%B7%9D%E5%B8%82%E5%A1%94%E3%83%8E%E6%9C%A8%E7%94%BA2%E4%B8%81%E7%9B%AE&output=embed&z=15" loading="lazy" title="所在地周辺の地図"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     お問い合わせ（デモフォーム）
+     ============================================================ -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Contact</span>
+      <h2>ご相談・お問い合わせ</h2>
+      <p class="lede">見学・ご利用のご相談、活動へのご協力など、なんでもお気軽にどうぞ。</p>
+    </div>
+    <div class="contact-bento">
+      <div class="contact-side reveal">
+        <h3><span class="kb">まずは</span><span class="kb">お気軽に</span><span class="kb">ご相談ください</span></h3>
+        <p>ご本人・ご家族はもちろん、支援機関や地域の方からのお問い合わせも歓迎しています。「話を聞いてみたい」だけでも大丈夫です。</p>
+        <div class="tel">
+          <span class="cap">お電話でのご相談</span><br>
+          <!-- ※サンプル: 公開連絡先が確認でき次第、実データへ差し替えます。tel発信はformat-detectionで無効化中 -->
+          <a>公開時に記載します</a>
+          <small>（※サンプル。ご契約後に実際の番号を掲載します）</small>
+        </div>
+        <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="30" r="14" fill="#fff"/><circle cx="30" cy="66" r="14" fill="#fff"/><circle cx="70" cy="66" r="14" fill="#fff"/></svg>
+      </div>
+
+      <div class="form-card reveal">
+        <form id="demoForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">お名前</label>
+              <input type="text" id="f-name" name="name" placeholder="山田 太郎" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="f-tel">お電話番号</label>
+              <input type="tel" id="f-tel" name="tel" placeholder="000-0000-0000" autocomplete="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-kind">ご相談の種類</label>
+            <select id="f-kind" name="kind">
+              <option>見学を希望したい</option>
+              <option>利用について相談したい</option>
+              <option>支援機関からの問い合わせ</option>
+              <option>ボランティア・会員・連携について</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">ご相談内容</label>
+            <textarea id="f-msg" name="message" placeholder="ご質問やご希望の見学日など、ご自由にご記入ください。"></textarea>
+          </div>
+          <button type="submit">送信する（デモ）</button>
+          <p class="form-msg" id="formMsg">こちらはご提案用サンプルのデモフォームです。実際には送信されません。本番では、入力内容をメールでお届けする形などにご用意します。</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     フッター
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="f-name">特定非営利活動法人 地域共生とうかい<small>愛知県豊川市｜就労支援・地域共生</small></p>
+        <p class="f-addr">愛知県豊川市塔ノ木町2丁目58番地の2</p>
+      </div>
+      <nav class="f-nav" aria-label="フッターナビ">
+        <a href="#services">事業のご案内</a>
+        <a href="#fields">活動分野</a>
+        <a href="#join">活動の輪</a>
+        <a href="#about">わたしたちのこと</a>
+        <a href="#gaiyo">法人概要</a>
+        <a href="#contact">ご相談</a>
+      </nav>
+    </div>
+    <p class="sample-box">
+      本ページはホームページ制作の<b>ご提案用サンプル</b>です。実在団体名を含むため検索エンジンには非表示（noindex）にしています。<br>
+      本文は公開情報（内閣府NPOポータルの定款目的・所在地・設立年・活動分野、および公開されている事業情報）の範囲で作成し、代表あいさつ・利用者の声・お知らせ・実績数値などの「※サンプル」表記の内容はダミーです。写真はイメージ素材（Unsplash・商用可）で、ロゴは使用していません。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+    </p>
+    <p class="copy">&copy; 2026 NPO法人 地域共生とうかい ／ Sample by SmartConnect</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("demoForm");
+const msg = document.getElementById("formMsg");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  msg.classList.add("show");
+  msg.scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+// 出現アニメ
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

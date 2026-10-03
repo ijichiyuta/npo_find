@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 青ねこくらぶ さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の
+    範囲で作成。代表者名・番地・建物名・電話番号は掲載していません
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: 図書館の目録カード（インデックスカード）を思わせる、
+    生成り×藍×からしの端正な佇まい。猫をさりげなくあしらう
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 青ねこくらぶ｜刈谷市の福祉と環境づくり【ご提案サンプル】</title>
+<meta name="description" content="愛知県刈谷市を拠点に、社会福祉の充実と、誰もが当たり前に暮らせる地域づくりを進めるNPO法人。保健・医療・福祉と環境保全の活動をご紹介します。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4EFE3;          /* 生成り */
+  --c-card:#FBF8F0;        /* カード地（少し明るい生成り） */
+  --c-ink:#26303B;         /* 藍寄りの墨 */
+  --c-ai:#1E3A5F;          /* 藍 */
+  --c-ai-deep:#152A46;     /* 濃藍 */
+  --c-mustard:#C98A25;     /* からし */
+  --c-mustard-pale:#EFE0BE;
+  --c-line:#D8CDB4;        /* 罫線（うすからし茶） */
+  --c-line-ai:#B7C2CE;
+  --c-sub:#6E6553;
+  --font-min:"Shippori Mincho",serif;
+  --font-body:"Zen Kaku Gothic New",sans-serif;
+  --font-mono:"Spline Sans Mono",monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-min);font-weight:700;line-height:1.6;word-break:auto-phrase}
+/* 文節単位で折り返す塊 */
+.kb{display:inline-block}
+
+/* 生成り紙のかすかな地合い */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(rgba(120,100,60,.05) 1px,transparent 1px);
+  background-size:5px 5px;opacity:.6}
+
+/* ===== 左固定サイドバー（目録の引き出し見出し風） ===== */
+.side{position:fixed;left:0;top:0;bottom:0;width:262px;background:var(--c-card);border-right:2px solid var(--c-ai);display:flex;flex-direction:column;padding:32px 26px 24px;z-index:100}
+.side::after{content:"";position:absolute;right:6px;top:0;bottom:0;width:1px;background:var(--c-line)}
+.side .logo{text-decoration:none;color:var(--c-ink);display:block}
+.side .logo .mark{width:46px;height:46px;margin-bottom:12px}
+.side .logo .t{font-family:var(--font-min);font-weight:800;font-size:24px;letter-spacing:.06em;line-height:1.25;color:var(--c-ai-deep)}
+.side .logo .t small{display:block;font-family:var(--font-body);font-size:10.5px;font-weight:500;color:var(--c-sub);letter-spacing:.04em;margin-top:6px;line-height:1.6}
+/* 目録カードのインデックスタブ風ナビ */
+.side .cat-label{margin-top:30px;font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:var(--c-mustard);text-transform:uppercase;border-bottom:1px solid var(--c-line);padding-bottom:6px}
+.side nav{margin-top:6px;flex:1}
+.side nav a{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--c-ink);font-size:13.5px;font-weight:500;padding:9px 2px;border-bottom:1px dashed var(--c-line);transition:color .3s var(--ease),padding-left .3s var(--ease)}
+.side nav a .idx{font-family:var(--font-mono);font-size:10.5px;color:var(--c-mustard);flex:none;width:22px}
+.side nav a:hover{color:var(--c-ai);padding-left:6px}
+.side .tel{margin-top:18px;border:1px solid var(--c-line);background:var(--c-bg);padding:13px;text-align:center}
+.side .tel .cap{font-size:11px;font-weight:700;color:var(--c-ai-deep)}
+.side .tel .num{font-family:var(--font-mono);font-size:18px;font-weight:600;color:var(--c-ai);letter-spacing:.01em}
+.side .tel p{font-size:10px;color:var(--c-sub);line-height:1.6}
+.side .visit{margin-top:9px;display:block;background:var(--c-ai);color:#fff;text-decoration:none;text-align:center;font-weight:700;font-size:13.5px;padding:12px;transition:background .3s}
+.side .visit:hover{background:var(--c-ai-deep)}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+.main{margin-left:262px;position:relative;z-index:1}
+.wrap{max-width:880px;margin:0 auto;padding:0 44px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:82px 0;border-bottom:1px solid var(--c-line)}
+.b-head{display:flex;align-items:baseline;gap:14px;margin-bottom:34px}
+.b-head .cno{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--c-mustard);flex:none}
+.b-head h2{font-size:clamp(21px,2.5vw,27px);letter-spacing:.05em;color:var(--c-ai-deep)}
+.b-head .en{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;color:var(--c-sub);text-transform:uppercase;margin-left:auto;white-space:nowrap}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-sub)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-sub);margin-top:6px}
+
+/* ===== 冒頭ヒーロー（目録カード） ===== */
+.opening{padding:74px 0 66px;border-bottom:1px solid var(--c-line);position:relative}
+.filing-card{position:relative;background:var(--c-card);border:1px solid var(--c-line);padding:0}
+.filing-card::before{content:"";position:absolute;left:44px;top:0;bottom:0;width:1px;background:var(--c-mustard-pale)} /* 目録カードの左マージン罫 */
+.fc-tab{display:inline-block;position:absolute;top:-15px;left:36px;background:var(--c-ai);color:#fff;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;padding:5px 14px}
+.fc-punch{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--c-bg);border:1px solid var(--c-line)} /* 目録カードの綴じ穴 */
+.fc-inner{padding:48px 44px 44px 70px}
+.opening .cap{font-family:var(--font-mono);font-size:11.5px;color:var(--c-mustard);letter-spacing:.1em;margin-bottom:16px}
+.opening h1{font-size:clamp(26px,3.5vw,40px);font-weight:800;line-height:1.7;letter-spacing:.045em;color:var(--c-ai-deep)}
+.opening h1 .u{background:linear-gradient(transparent 62%,var(--c-mustard-pale) 62%)}
+.opening .lead{margin-top:20px;max-width:600px;font-size:15px;color:var(--c-ink)}
+.opening .catalog-meta{margin-top:28px;display:grid;grid-template-columns:1fr;gap:0;border-top:1px dashed var(--c-line);max-width:560px}
+.opening .catalog-meta div{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:9px 0;border-bottom:1px dashed var(--c-line);font-size:13px}
+.opening .catalog-meta dt{font-family:var(--font-mono);font-size:11px;color:var(--c-mustard);letter-spacing:.06em;padding-top:2px}
+.opening .catalog-meta dd{color:var(--c-ink)}
+.photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:34px}
+.photo-strip figure{position:relative;background:var(--c-card);border:1px solid var(--c-line);padding:8px 8px 26px}
+.photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.photo-strip figcaption{position:absolute;left:8px;right:8px;bottom:6px;font-family:var(--font-mono);font-size:9.5px;color:var(--c-sub);letter-spacing:.04em}
+
+/* ===== 活動のご案内（カード目録の束） ===== */
+.act-row{display:grid;grid-template-columns:300px 1fr;gap:34px;padding:38px 0;border-top:1px solid var(--c-line)}
+.act-row:first-of-type{border-top:none;padding-top:0}
+.act-row .ph{position:relative}
+.act-row .ph img{width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--c-line)}
+.act-row .ph .stamp{position:absolute;right:-8px;bottom:-8px;background:var(--c-mustard);color:#fff;font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;padding:5px 10px}
+.act-row h3{font-size:21px;color:var(--c-ai-deep)}
+.act-row h3 .no{font-family:var(--font-mono);font-size:11.5px;color:var(--c-mustard);letter-spacing:.16em;display:block;margin-bottom:3px}
+.act-row .desc{font-size:14px;margin:10px 0 16px;line-height:2}
+.spec{width:100%;min-width:440px;border-collapse:collapse;font-size:13.5px;background:var(--c-card)}
+.spec th{width:118px;text-align:left;font-weight:700;font-family:var(--font-body);background:var(--c-mustard-pale);border:1px solid var(--c-line);padding:9px 14px;white-space:nowrap;color:var(--c-ai-deep)}
+.spec td{border:1px solid var(--c-line);padding:9px 14px}
+.spec td b{color:var(--c-mustard)}
+
+/* ===== わたしたちの目的（定款カード） ===== */
+.mission{background:var(--c-ai-deep);color:#F4EFE3;padding:56px 0;border-bottom:1px solid var(--c-line)}
+.mission .b-head h2{color:#F4EFE3}
+.mission .b-head .cno{color:var(--c-mustard)}
+.mission .b-head .en{color:#9FB0C2}
+.mission .quote{max-width:680px;font-family:var(--font-min);font-size:clamp(19px,2.6vw,25px);font-weight:600;line-height:2;letter-spacing:.03em}
+.mission .quote em{font-style:normal;color:var(--c-mustard)}
+.mission .quote .mk{color:var(--c-mustard);font-size:1.3em;line-height:0}
+.mission .src{margin-top:20px;font-family:var(--font-mono);font-size:11px;color:#9FB0C2;letter-spacing:.05em}
+.mission .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.mission .pillars div{border:1px solid rgba(255,255,255,.22);padding:20px 18px}
+.mission .pillars .pno{font-family:var(--font-mono);font-size:11px;color:var(--c-mustard);letter-spacing:.1em}
+.mission .pillars h3{font-size:16px;color:#F4EFE3;margin:6px 0 8px}
+.mission .pillars p{font-size:12.5px;color:#CFD8E2;line-height:1.85}
+
+/* ===== ごあいさつ ===== */
+.about-txt{max-width:660px;font-size:15px;line-height:2.05}
+.about-txt .big{font-family:var(--font-min);font-size:clamp(18px,2.3vw,22px);font-weight:700;line-height:2;margin-bottom:18px;color:var(--c-ai-deep)}
+.about-txt .big em{font-style:normal;color:var(--c-mustard)}
+.sign-box{margin-top:40px;border:1px solid var(--c-line);background:var(--c-card);padding:30px 34px;max-width:660px;position:relative}
+.sign-box::before{content:"CARD";position:absolute;top:12px;right:16px;font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--c-line)}
+.sign-box h3{font-family:var(--font-min);font-size:16px;color:var(--c-ai);margin-bottom:12px}
+.sign-box p{font-size:14px;line-height:2.05}
+.sign-box .name{text-align:right;margin-top:18px;font-family:var(--font-min);font-weight:700;font-size:14px;color:var(--c-ai-deep)}
+.sign-box .name small{display:block;font-family:var(--font-body);font-weight:500;font-size:11.5px;color:var(--c-sub)}
+
+/* ===== お知らせ（貸出票の記入欄風） ===== */
+.news-row{display:flex;gap:18px;padding:14px 2px;border-bottom:1px dashed var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-mono);font-weight:500;color:var(--c-mustard);font-size:12px}
+.news-row a{color:var(--c-ink);text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+.news-row a:hover{color:var(--c-ai)}
+
+/* ===== 法人概要（目録の書誌事項） ===== */
+.gaiyo{width:100%;min-width:440px;border-collapse:collapse;font-size:14px;background:var(--c-card)}
+.gaiyo th{width:150px;text-align:left;font-weight:700;font-family:var(--font-body);background:var(--c-mustard-pale);border:1px solid var(--c-line);padding:11px 16px;white-space:nowrap;color:var(--c-ai-deep)}
+.gaiyo td{border:1px solid var(--c-line);padding:11px 16px}
+
+/* ===== ご参加・お問い合わせ ===== */
+.join-list{list-style:none;max-width:680px;counter-reset:js;margin-top:4px}
+.join-list li{counter-increment:js;position:relative;padding:0 0 26px 60px}
+.join-list li::before{content:counter(js,decimal-leading-zero);position:absolute;left:0;top:-2px;font-family:var(--font-mono);font-weight:600;font-size:22px;color:var(--c-mustard)}
+.join-list li::after{content:"";position:absolute;left:14px;top:32px;bottom:2px;width:1px;background:var(--c-line)}
+.join-list li:last-child::after{display:none}
+.join-list h3{font-family:var(--font-min);font-size:16.5px;color:var(--c-ai-deep)}
+.join-list p{font-size:13.5px;color:var(--c-sub);line-height:1.95}
+.support-line{margin-top:14px;background:var(--c-mustard-pale);border-left:4px solid var(--c-mustard);padding:20px 24px;font-size:14px;max-width:680px;line-height:2}
+.support-line b{color:var(--c-ai-deep)}
+
+/* ===== フォーム（デモ） ===== */
+.form-card{margin-top:20px;border:1px solid var(--c-line);background:var(--c-card);padding:28px 30px;max-width:640px}
+.form-card .frow{margin-bottom:16px}
+.form-card label{display:block;font-size:12.5px;font-weight:700;color:var(--c-ai-deep);margin-bottom:6px}
+.form-card input,.form-card textarea{width:100%;border:1px solid var(--c-line);background:#fff;padding:11px 13px;font-family:var(--font-body);font-size:14px;color:var(--c-ink)}
+.form-card textarea{min-height:110px;resize:vertical}
+.form-card button{background:var(--c-ai);color:#fff;border:none;font-family:var(--font-body);font-weight:700;font-size:14px;padding:13px 30px;cursor:pointer;transition:background .3s}
+.form-card button:hover{background:var(--c-ai-deep)}
+.form-demo-note{font-size:11.5px;color:var(--c-sub);margin-top:12px}
+
+/* ===== アクセス ===== */
+.map-full iframe{width:100%;height:360px;border:1px solid var(--c-line)}
+.access-note{margin-top:16px;font-size:13px;color:var(--c-sub)}
+
+/* ===== フッター ===== */
+.footer{padding:46px 0 88px;text-align:center;background:var(--c-card);border-top:1px solid var(--c-line)}
+.footer .f-name{font-family:var(--font-min);font-weight:800;font-size:16px;color:var(--c-ai-deep)}
+.footer p{font-size:12.5px;color:var(--c-sub);margin-top:6px}
+.sample-note{font-size:11px;color:var(--c-sub);margin-top:18px;line-height:1.9}
+.sample-note a{color:var(--c-ai)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .side{display:none}
+  .main{margin-left:0}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:rgba(251,248,240,.97);border-bottom:2px solid var(--c-ai);height:62px;align-items:center;gap:10px;padding:0 18px}
+  .sp-head .t{font-family:var(--font-min);font-weight:800;font-size:18px;color:var(--c-ai-deep)}
+  .sp-head .t small{font-family:var(--font-body);font-size:9.5px;color:var(--c-sub);font-weight:500;display:block;line-height:1;margin-top:3px}
+  .sp-head .tel-ic{margin-left:auto;background:var(--c-ai);color:#fff;text-decoration:none;font-weight:700;font-size:12px;padding:9px 14px;white-space:nowrap}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ai-deep);margin:5.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:62px 0 auto 0;background:var(--c-card);border-bottom:2px solid var(--c-line);padding:10px 20px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px dashed var(--c-line)}
+  .wrap{padding:0 22px}
+  .block{padding:54px 0}
+  .opening{padding:46px 0 44px}
+  .fc-inner{padding:40px 24px 36px 40px}
+  .filing-card::before{left:24px}
+  .photo-strip{gap:6px;margin-top:26px}
+  .act-row{grid-template-columns:1fr;gap:18px;padding:30px 0}
+  .act-row .ph img{aspect-ratio:16/9}
+  .mission .pillars{grid-template-columns:1fr;gap:10px}
+  .tbl-hint{display:block}
+}
+
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:720px){
+  .spec,.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  .spec tr,.gaiyo tr{display:block}
+  .spec th,.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:7px 14px;font-size:12px}
+  .spec tr:first-child th,.gaiyo tr:first-child th{border-top:none}
+  .spec td,.gaiyo td{display:block;width:100%;border:none;padding:8px 14px 12px}
+  .opening .catalog-meta div{grid-template-columns:76px 1fr}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PC: 左固定サイドバー（目録の引き出し風） -->
+<aside class="side">
+  <a class="logo" href="#top">
+    <svg class="mark" viewBox="0 0 46 46" aria-hidden="true">
+      <rect x="2" y="2" width="42" height="42" rx="3" fill="#FBF8F0" stroke="#1E3A5F" stroke-width="2"/>
+      <line x1="2" y1="14" x2="44" y2="14" stroke="#D8CDB4"/>
+      <line x1="2" y1="22" x2="44" y2="22" stroke="#D8CDB4"/>
+      <!-- さりげない猫（丸い背と耳） -->
+      <path d="M14 33c0-4 4-6 9-6s9 2 9 6" fill="none" stroke="#1E3A5F" stroke-width="2" stroke-linecap="round"/>
+      <path d="M15 28l2-4 2 4M27 28l2-4 2 4" fill="none" stroke="#1E3A5F" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="23" cy="9" r="2.2" fill="#C98A25"/>
+    </svg>
+    <span class="t">青ねこくらぶ<small>特定非営利活動法人｜愛知県刈谷市</small></span>
+  </a>
+  <p class="cat-label">Contents / 目録</p>
+  <nav>
+    <a href="#mission"><span class="idx">01</span>わたしたちの目的</a>
+    <a href="#activity"><span class="idx">02</span>活動のご案内</a>
+    <a href="#about"><span class="idx">03</span>ごあいさつ</a>
+    <a href="#news"><span class="idx">04</span>お知らせ</a>
+    <a href="#gaiyo"><span class="idx">05</span>法人概要</a>
+    <a href="#join"><span class="idx">06</span>ご参加・ご支援</a>
+    <a href="#access"><span class="idx">07</span>アクセス</a>
+  </nav>
+  <div class="tel">
+    <p class="cap">お問い合わせ</p>
+    <!-- ※サンプル: 電話番号はダミー。tel:リンクは無効化しています -->
+    <span class="num">0566-XX-XXXX</span>
+    <p>※サンプル（番号は<br>公開時に差し替え）</p>
+  </div>
+  <a class="visit" href="#join">お問い合わせ</a>
+</aside>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">青ねこくらぶ<small>NPO法人｜刈谷市</small></span>
+  <a class="tel-ic" href="#join">お問い合わせ</a>
+</header>
+<nav class="sp-nav">
+  <a href="#mission">わたしたちの目的</a>
+  <a href="#activity">活動のご案内</a>
+  <a href="#about">ごあいさつ</a>
+  <a href="#news">お知らせ</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#join">ご参加・ご支援</a>
+  <a href="#access">アクセス</a>
+</nav>
+
+<div class="main">
+
+  <!-- 冒頭（目録カード） -->
+  <section class="opening">
+    <div class="wrap">
+      <div class="filing-card reveal on">
+        <span class="fc-tab">CARD No. 001</span>
+        <div class="fc-inner">
+          <p class="cap">刈谷市／保健・医療・福祉／環境保全</p>
+          <h1><span class="kb">誰もが</span><span class="kb"><span class="u">当たり前に</span></span><span class="kb"><span class="u">暮らせる</span>まちを、</span><br><span class="kb">この地域から。</span></h1>
+          <p class="lead">青ねこくらぶは、愛知県刈谷市を拠点に、地域住民・法人・企業・行政とともに、社会福祉の充実と、誰もが当たり前に暮らせる地域づくりを進めるNPO法人です。福祉と環境、ふたつの分野から地域を支えます。</p>
+          <dl class="catalog-meta">
+            <div><dt>AREA</dt><dd>愛知県刈谷市</dd></div>
+            <div><dt>FIELD</dt><dd>保健・医療・福祉の増進／環境の保全</dd></div>
+            <div><dt>FORM</dt><dd>特定非営利活動法人（NPO法人）</dd></div>
+          </dl>
+        </div>
+        <span class="fc-punch"></span>
+      </div>
+      <div class="photo-strip reveal">
+        <!-- 差し替えポイント: 地域・福祉・環境の活動風景のお写真 -->
+        <figure><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&q=80&auto=format&fit=crop" alt="地域での語らいのイメージ"><figcaption>地域のつながり</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=80&auto=format&fit=crop" alt="緑ゆたかな自然のイメージ"><figcaption>環境の保全</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=900&q=80&auto=format&fit=crop" alt="窓辺の猫のイメージ"><figcaption>まちの猫と暮らし</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたちの目的（定款カード） -->
+  <section class="mission" id="mission">
+    <div class="wrap">
+      <div class="b-head reveal on"><span class="cno">01</span><h2>わたしたちの目的</h2><span class="en">Mission</span></div>
+      <p class="quote reveal"><span class="mk">「</span><em>地域住民・法人・企業・行政に対し、</em>社会福祉の充実と、誰もが当たり前に暮らせる地域づくりを推進する<span class="mk">」</span></p>
+      <p class="src reveal">— 定款に定める目的より（公開情報）</p>
+      <div class="pillars reveal">
+        <div>
+          <p class="pno">FIELD 01</p>
+          <h3>保健・医療・福祉</h3>
+          <p>年齢や障がいのあるなしにかかわらず、誰もが安心して暮らせるよう、福祉の充実に取り組みます。<span class="note-sample">※活動内容の表記はサンプルです</span></p>
+        </div>
+        <div>
+          <p class="pno">FIELD 02</p>
+          <h3>環境の保全</h3>
+          <p>身近な自然や生きものを守り、次の世代へつなぐ環境づくりを、地域のみなさまとともに進めます。<span class="note-sample">※活動内容の表記はサンプルです</span></p>
+        </div>
+        <div>
+          <p class="pno">FIELD 03</p>
+          <h3>地域づくり</h3>
+          <p>住民・企業・行政をつなぎ、「当たり前」を分かち合えるまちを、一歩ずつかたちにしていきます。<span class="note-sample">※活動内容の表記はサンプルです</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 活動のご案内 -->
+  <section class="block" id="activity">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="cno">02</span><h2>活動のご案内</h2><span class="en">Activity</span></div>
+      <p class="note-sample" style="margin-bottom:26px">※以下の活動内容は、定款の活動分野（福祉・環境）をもとにした表示イメージのサンプルです。実際の活動に差し替えます</p>
+
+      <div class="act-row reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 福祉活動のお写真 -->
+          <img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=1200&q=80&auto=format&fit=crop" alt="地域での支え合いのイメージ">
+          <span class="stamp">WELFARE</span>
+        </div>
+        <div>
+          <h3><span class="no">ACTIVITY 01</span>福祉・支え合いの活動</h3>
+          <p class="desc">高齢の方や障がいのある方、そのご家族が、住み慣れた地域で安心して暮らしつづけられるよう、身近な支え合いの場づくりを行います。</p>
+          <div class="tbl-wrap">
+            <table class="spec">
+              <tr><th>分野</th><td><b>保健・医療・福祉の増進</b>（定款の活動分野）</td></tr>
+              <tr><th>活動の例</th><td>居場所づくり／地域の見守り／相談のご案内 ※サンプル</td></tr>
+              <tr><th>対象</th><td>地域にお住まいの方・ご家族 ※サンプル</td></tr>
+            </table>
+          </div>
+          <p class="tbl-hint">→ 表は横にスクロールできます</p>
+        </div>
+      </div>
+
+      <div class="act-row reveal">
+        <div class="ph">
+          <!-- 差し替えポイント: 環境活動のお写真 -->
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1200&q=80&auto=format&fit=crop" alt="里山・自然保全のイメージ">
+          <span class="stamp">NATURE</span>
+        </div>
+        <div>
+          <h3><span class="no">ACTIVITY 02</span>環境保全の活動</h3>
+          <p class="desc">身近な自然や生きものとの共生をめざし、清掃や保全、学びの場づくりなどを通じて、地域の環境を次の世代へつないでいきます。</p>
+          <div class="tbl-wrap">
+            <table class="spec">
+              <tr><th>分野</th><td><b>環境の保全</b>（定款の活動分野）</td></tr>
+              <tr><th>活動の例</th><td>清掃・美化／生きものの観察会／環境の学び ※サンプル</td></tr>
+              <tr><th>対象</th><td>地域の皆さま・ご家族・企業 ※サンプル</td></tr>
+            </table>
+          </div>
+          <p class="tbl-hint">→ 表は横にスクロールできます</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ごあいさつ -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="cno">03</span><h2>ごあいさつ</h2><span class="en">About</span></div>
+      <div class="about-txt reveal">
+        <p class="big"><span class="kb">「当たり前」を、</span><span class="kb"><em>あきらめない</em>まちへ。</span></p>
+        <p>青ねこくらぶは、刈谷市とその周辺で、福祉と環境のふたつの分野から地域を支えるNPO法人です。誰かの「当たり前」が、別の誰かにとってはそうではないこともあります。わたしたちは、地域の住民・企業・行政をつなぎながら、その差をひとつずつ埋めていく活動を続けます。<span class="note-sample">※文章は定款（公開情報）をもとにしたサンプルです</span></p>
+      </div>
+      <div class="sign-box reveal">
+        <h3>代表よりごあいさつ</h3>
+        <p>小さな一歩でも、地域の誰かの毎日が少し軽くなるなら、その積み重ねに意味があると信じています。福祉も環境も、まちに暮らす一人ひとりの「当たり前」を守るための、同じ願いから始まっています。どうぞお気軽にお声がけください。<span class="note-sample">※あいさつ文はサンプルです。代表者のお言葉に差し替えいたします</span></p>
+        <p class="name"><small>特定非営利活動法人 青ねこくらぶ</small>代表　（お名前は公開時に記載）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="cno">04</span><h2>お知らせ</h2><span class="en">News</span></div>
+      <p class="note-sample" style="margin-bottom:12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">地域清掃ボランティアの参加者を募集します</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">福祉のよろず相談会を開催しました</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">生きもの観察会のようすを掲載しました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 法人概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="cno">05</span><h2>法人概要</h2><span class="en">Profile</span></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 青ねこくらぶ</td></tr>
+          <tr><th>所在地</th><td>愛知県刈谷市（詳しい住所は公開時に記載します）</td></tr>
+          <tr><th>活動分野</th><td>保健・医療・福祉の増進／環境の保全</td></tr>
+          <tr><th>目的</th><td>地域住民・法人・企業・行政に対し、社会福祉の充実と、誰もが当たり前に暮らせる地域づくりを推進する（定款より）</td></tr>
+          <tr><th>お問い合わせ</th><td>下記フォーム、またはお電話（公開時に記載）</td></tr>
+          <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- ご参加・ご支援 / お問い合わせ -->
+  <section class="block" id="join">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="cno">06</span><h2>ご参加・ご支援</h2><span class="en">Join</span></div>
+      <ol class="join-list reveal">
+        <li><h3>まずはお問い合わせ</h3><p>「話を聞いてみたい」だけで大丈夫です。下のフォームからお気軽にどうぞ。</p></li>
+        <li><h3>活動を知る・参加する</h3><p>清掃や観察会、福祉の活動など、できることを、できる範囲で。見学も歓迎です。</p></li>
+        <li><h3>支える（ご寄付・賛助会員）</h3><p>会員やご寄付というかたちでも、地域の活動を支えていただけます。</p></li>
+      </ol>
+      <p class="support-line reveal"><b>地域の福祉と環境を、いっしょに支えてくださる方を募集しています。</b>　ボランティア・賛助会員・ご寄付など、無理のないかたちでのご参加をお待ちしています。</p>
+
+      <form class="form-card reveal" onsubmit="return false" aria-label="お問い合わせフォーム（デモ）">
+        <div class="frow"><label for="f-name">お名前</label><input id="f-name" type="text" placeholder="山田 太郎" autocomplete="name"></div>
+        <div class="frow"><label for="f-mail">メールアドレス</label><input id="f-mail" type="email" placeholder="example@mail.com" autocomplete="email"></div>
+        <div class="frow"><label for="f-msg">お問い合わせ内容</label><textarea id="f-msg" placeholder="ご相談・見学のご希望など、お気軽にどうぞ"></textarea></div>
+        <button type="submit">送信する（デモ）</button>
+        <p class="form-demo-note">※このフォームはデザイン確認用のデモです。実際には送信されません。ご契約後、送信先メール等を設定します。</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section class="block" id="access" style="border-bottom:none">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="cno">07</span><h2>アクセス</h2><span class="en">Access</span></div>
+      <div class="map-full reveal">
+        <!-- 地図は市の中心付近を表示（番地は非掲載）。公開時に正確な位置へ差し替えます -->
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%88%88%E8%B0%B7%E5%B8%82&output=embed&z=13" loading="lazy" title="愛知県刈谷市の地図"></iframe>
+      </div>
+      <p class="access-note reveal">愛知県刈谷市を拠点に活動しています。詳しい所在地・お問い合わせ先は、公開時に掲載いたします。<span class="note-sample">※地図は刈谷市の中心付近を表示しています（サンプル）</span></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 青ねこくらぶ</p>
+      <p>愛知県刈谷市｜保健・医療・福祉／環境保全</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、電話番号・住所番地・代表者名は掲載していません）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p style="margin-top:14px;font-size:11px">&copy; 2026 NPO法人 青ねこくらぶ</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .side nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+</body>
+</html>

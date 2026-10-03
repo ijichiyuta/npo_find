@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 クレサラあしたの会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地の範囲）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者の実名・番地・建物名・実在の電話番号は記載していません
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: 付箋ボード型（相談のステップやチェック項目を付箋で整理）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 クレサラあしたの会｜名古屋市の多重債務・借金のご相談【ご提案サンプル】</title>
+<meta name="description" content="名古屋市熱田区の消費者支援NPO。多重債務や借金でお困りの方へ、健全な生活設計のための勉強会と相談を行っています。まず一人で悩まず、ご相談ください。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4F6F9;
+  --c-board:#FBFCFE;
+  --c-paper:#FFFFFF;
+  --c-ink:#26313D;
+  --c-ink-soft:#5D6A78;
+  --c-blue:#3E6E9E;
+  --c-blue-deep:#2C5478;
+  --c-blue-pale:#E8F0F7;
+  --c-line:#D9E1EA;
+  /* 付箋の色（明るすぎない、落ち着いたトーン） */
+  --note-yellow:#FBEFA8;
+  --note-yellow-line:#E8D877;
+  --note-green:#D2E9C4;
+  --note-green-line:#B4D6A2;
+  --note-blue:#CFE1F0;
+  --note-blue-line:#A9C8E1;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.7;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* うっすらとしたコルクボード風の背景ドット */
+body{background-image:radial-gradient(var(--c-line) 1px,transparent 1px);background-size:22px 22px;background-attachment:fixed}
+
+/* ===== 左固定サイドバー（PC） ===== */
+.side{position:fixed;left:0;top:0;bottom:0;width:250px;background:var(--c-paper);border-right:1px solid var(--c-line);display:flex;flex-direction:column;padding:32px 24px 24px;z-index:100}
+.side .logo{text-decoration:none;color:var(--c-ink);display:block}
+.side .logo .mark{width:46px;height:46px;margin-bottom:12px}
+.side .logo .t{font-weight:900;font-size:20px;letter-spacing:.04em;line-height:1.4}
+.side .logo .t small{display:block;font-size:10.5px;font-weight:500;color:var(--c-blue-deep);letter-spacing:.05em;margin-top:5px;line-height:1.6}
+.side nav{margin-top:30px;flex:1}
+.side nav a{display:block;text-decoration:none;color:var(--c-ink);font-size:13.5px;font-weight:500;padding:10px 2px;border-bottom:1px solid var(--c-line);transition:color .3s var(--ease),padding-left .3s var(--ease)}
+.side nav a:hover{color:var(--c-blue-deep);padding-left:8px}
+.side .tel{margin-top:18px;border:1px solid var(--c-line);border-radius:8px;padding:14px;text-align:center;background:var(--c-blue-pale)}
+.side .tel .cap{font-size:11px;font-weight:700;color:var(--c-blue-deep)}
+.side .tel .num{font-family:var(--font-num);font-size:19px;font-weight:700;color:var(--c-blue-deep);letter-spacing:.02em;margin:2px 0;display:block}
+.side .tel p{font-size:10px;color:var(--c-ink-soft);line-height:1.6}
+.side .visit{margin-top:10px;display:block;background:var(--c-blue);color:#fff;text-decoration:none;text-align:center;font-weight:700;font-size:13.5px;padding:13px;border-radius:8px;transition:opacity .3s}
+.side .visit:hover{opacity:.85}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+.main{margin-left:250px}
+.wrap{max-width:880px;margin:0 auto;padding:0 40px}
+
+/* ===== 付箋（共通の見た目） ===== */
+.note{position:relative;background:var(--note-yellow);border-radius:2px;padding:22px 24px 24px;box-shadow:2px 5px 14px -6px rgba(38,49,61,.4);border-bottom:1px solid var(--note-yellow-line)}
+.note::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#6F9AC4,var(--c-blue-deep));box-shadow:0 3px 5px -1px rgba(38,49,61,.5)}
+.note.n-green{background:var(--note-green);border-bottom-color:var(--note-green-line)}
+.note.n-blue{background:var(--note-blue);border-bottom-color:var(--note-blue-line)}
+.note.tilt-l{transform:rotate(-1.1deg)}
+.note.tilt-r{transform:rotate(1.1deg)}
+
+/* ===== 共通ブロック ===== */
+.block{padding:80px 0;border-bottom:1px solid var(--c-line)}
+.b-head{display:flex;align-items:center;gap:13px;margin-bottom:34px}
+.b-head .tab{font-family:var(--font-num);font-weight:700;font-size:12px;color:#fff;background:var(--c-blue);padding:5px 12px;border-radius:4px 4px 4px 0;letter-spacing:.1em;flex:none}
+.b-head h2{font-size:clamp(20px,2.4vw,25px);letter-spacing:.03em}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+.note.reveal.on.tilt-l{transform:rotate(-1.1deg)}
+.note.reveal.on.tilt-r{transform:rotate(1.1deg)}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#8290A0}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#8290A0;margin-top:6px}
+
+/* ===== 冒頭ヒーロー ===== */
+.opening{padding:92px 0 68px;border-bottom:1px solid var(--c-line)}
+.opening .cap{font-size:12.5px;font-weight:700;color:var(--c-blue-deep);letter-spacing:.1em;margin-bottom:18px}
+.opening h1{font-size:clamp(26px,3.5vw,38px);font-weight:900;line-height:1.75;letter-spacing:.04em}
+.opening h1 .u{background:linear-gradient(transparent 68%,var(--note-yellow) 68%);padding:0 2px}
+.opening .lead{margin-top:22px;max-width:620px;font-size:15px}
+.opening .chips{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--c-blue);color:var(--c-blue-deep);font-size:12px;font-weight:700;padding:4px 13px;white-space:nowrap;border-radius:20px;background:var(--c-paper)}
+.opening .photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:40px}
+.opening .photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+
+/* ===== ひとりで悩まないで（安心メッセージ） ===== */
+.assure{background:var(--c-blue-pale);border-radius:12px;padding:34px 36px;max-width:680px}
+.assure p.big{font-size:clamp(16px,2.1vw,20px);font-weight:700;line-height:1.95;color:var(--c-blue-deep);margin-bottom:12px}
+.assure p{font-size:14.5px}
+
+/* ===== こんなことでお困りではありませんか（付箋ボード） ===== */
+.board{display:grid;grid-template-columns:1fr 1fr;gap:26px 22px;margin-top:8px}
+.board .note h3{font-size:15.5px;margin-bottom:6px;color:var(--c-ink)}
+.board .note p{font-size:13.5px;line-height:1.85;color:#3F4B58}
+
+/* ===== 相談を整理する3ステップ（ボード列） ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.step-col{background:var(--c-board);border:1px solid var(--c-line);border-radius:12px;padding:20px 18px 24px}
+.step-col .col-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.step-col .col-head .no{font-family:var(--font-num);font-weight:700;font-size:13px;color:#fff;background:var(--c-blue);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.step-col .col-head h3{font-size:15.5px}
+.step-col .note{margin-top:14px;padding:14px 16px 16px;font-size:13px;line-height:1.8}
+.step-col .note::before{width:11px;height:11px;top:-7px}
+.step-col .note b{color:var(--c-blue-deep)}
+
+/* ===== ご相談できること（チェック付箋） ===== */
+.check-board{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.check-item{display:flex;gap:12px;align-items:flex-start;background:var(--c-paper);border:1px solid var(--c-line);border-radius:8px;padding:16px 18px}
+.check-item .ck{flex:none;width:24px;height:24px;border-radius:6px;background:var(--note-green);border:1px solid var(--note-green-line);position:relative;margin-top:2px}
+.check-item .ck::after{content:"";position:absolute;left:8px;top:4px;width:6px;height:11px;border:solid var(--c-blue-deep);border-width:0 2.5px 2.5px 0;transform:rotate(43deg)}
+.check-item .tx b{display:block;font-size:14.5px;margin-bottom:3px}
+.check-item .tx p{font-size:12.5px;color:var(--c-ink-soft);line-height:1.75}
+
+/* ===== 勉強会・活動 ===== */
+.activity{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.act-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:12px;overflow:hidden}
+.act-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.act-card .bd{padding:20px 22px 24px}
+.act-card .tag{display:inline-block;font-family:var(--font-num);font-weight:700;font-size:11px;letter-spacing:.08em;color:var(--c-blue-deep);background:var(--c-blue-pale);padding:3px 10px;border-radius:4px;margin-bottom:10px}
+.act-card h3{font-size:16.5px;margin-bottom:8px}
+.act-card p{font-size:13.5px;color:#3F4B58;line-height:1.85}
+
+/* ===== わたしたちのこと ===== */
+.about-txt{max-width:660px;font-size:15px}
+.about-txt .big{font-size:clamp(17px,2.2vw,20px);font-weight:700;line-height:2.05;margin-bottom:16px}
+.about-txt .big em{font-style:normal;color:var(--c-blue-deep)}
+.sign-box{margin-top:40px;border:1px solid var(--c-line);background:var(--c-paper);border-radius:12px;padding:28px 32px;max-width:660px}
+.sign-box h3{font-size:15px;color:var(--c-blue-deep);margin-bottom:10px}
+.sign-box p{font-size:14px}
+.sign-box .name{text-align:right;margin-top:16px;font-weight:700;font-size:14px}
+.sign-box .name small{display:block;font-weight:500;font-size:11.5px;color:var(--c-ink-soft)}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:18px;padding:14px 2px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:600;color:var(--c-ink-soft);font-size:12.5px}
+.news-row .lbl{flex:none;font-size:11px;font-weight:700;color:var(--c-blue-deep);background:var(--c-blue-pale);padding:2px 9px;border-radius:12px}
+.news-row span.tt{color:var(--c-ink)}
+
+/* ===== 概要（表） ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-blue-pale);color:var(--c-blue-deep);border:1px solid var(--c-line);padding:11px 16px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-line);padding:11px 16px}
+
+/* ===== よくあるご質問 ===== */
+.qa{max-width:700px}
+.qa details{background:var(--c-paper);border:1px solid var(--c-line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:16px 20px;font-weight:700;font-size:14.5px;display:flex;gap:12px;align-items:flex-start}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .q{flex:none;font-family:var(--font-num);font-weight:700;color:var(--c-blue);font-size:15px}
+.qa summary::after{content:"＋";margin-left:auto;color:var(--c-blue);font-weight:700;flex:none}
+.qa details[open] summary::after{content:"−"}
+.qa .a{padding:0 20px 18px 50px;font-size:13.5px;color:#3F4B58;line-height:1.9}
+
+/* ===== お問い合わせ（アクセス＋デモフォーム） ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.tel-big{border:2px solid var(--c-blue);background:var(--c-paper);border-radius:12px;padding:26px;text-align:center}
+.tel-big .cap{font-size:13px;font-weight:700;color:var(--c-blue-deep)}
+.tel-big .num{font-family:var(--font-num);font-size:30px;font-weight:700;color:var(--c-blue-deep);letter-spacing:.02em;margin:6px 0;display:block}
+.tel-big p{font-size:12px;color:var(--c-ink-soft)}
+.map-full{margin-top:16px}
+.map-full iframe{width:100%;height:260px;border:1px solid var(--c-line);border-radius:10px}
+.demo-form{background:var(--c-paper);border:1px solid var(--c-line);border-radius:12px;padding:24px 24px 26px}
+.demo-form .fmnote{font-size:11.5px;color:#8290A0;margin-bottom:14px;line-height:1.7}
+.demo-form label{display:block;font-size:12.5px;font-weight:700;margin-bottom:5px;color:var(--c-ink)}
+.demo-form input,.demo-form textarea{width:100%;border:1px solid var(--c-line);border-radius:8px;padding:11px 13px;font-family:var(--font-body);font-size:14px;background:#FBFCFE;margin-bottom:14px;color:var(--c-ink)}
+.demo-form textarea{resize:vertical;min-height:88px}
+.demo-form button{width:100%;background:var(--c-blue);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-weight:700;font-size:14.5px;padding:13px;cursor:pointer;transition:opacity .3s}
+.demo-form button:hover{opacity:.88}
+
+/* ===== フッター ===== */
+.footer{padding:44px 0 30px;text-align:center}
+.footer .f-name{font-weight:900;font-size:15px}
+.footer p{font-size:12.5px;color:var(--c-ink-soft);margin-top:6px}
+.sample-note{font-size:11px;color:#8290A0;margin-top:16px;line-height:1.9}
+.sample-note a{color:var(--c-ink-soft)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .side{display:none}
+  .main{margin-left:0}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--c-line);height:62px;align-items:center;gap:10px;padding:0 18px}
+  .sp-head .t{font-weight:900;font-size:16px;line-height:1.2}
+  .sp-head .t small{font-size:9.5px;color:var(--c-blue-deep);font-weight:700;display:block;line-height:1;margin-top:2px}
+  .sp-head .tel-ic{margin-left:auto;background:var(--c-blue);color:#fff;text-decoration:none;font-weight:700;font-size:12px;padding:9px 14px;border-radius:6px;white-space:nowrap}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:62px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line);padding:10px 20px 20px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .wrap{padding:0 22px}
+  .block{padding:56px 0}
+  .opening{padding:50px 0 46px}
+  .opening .photo-strip{gap:8px;margin-top:30px}
+  .steps{grid-template-columns:1fr;gap:16px}
+  .activity{grid-template-columns:1fr;gap:18px}
+  .contact-grid{grid-template-columns:1fr;gap:20px}
+  .tbl-hint{display:block}
+  .footer{padding-bottom:26px}
+}
+
+@media (max-width:640px){
+  .board{grid-template-columns:1fr;gap:22px}
+  .check-board{grid-template-columns:1fr}
+  .assure{padding:26px 22px}
+  /* スマホの表: 横スクロールをやめて積み上げ表示に */
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:8px 14px 2px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 14px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PC: 左固定サイドバー -->
+<aside class="side">
+  <a class="logo" href="#top">
+    <svg class="mark" viewBox="0 0 46 46" aria-hidden="true">
+      <rect x="4" y="4" width="38" height="38" rx="4" fill="#E8F0F7"/>
+      <rect x="11" y="10" width="24" height="24" rx="2" transform="rotate(-4 23 22)" fill="#FBEFA8" stroke="#E8D877"/>
+      <circle cx="23" cy="12" r="2.6" fill="#3E6E9E"/>
+      <path d="M16 22l4 4 8-9" fill="none" stroke="#2C5478" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="t">クレサラあしたの会<small>特定非営利活動法人<br>名古屋市熱田区</small></span>
+  </a>
+  <nav>
+    <a href="#trouble">こんなお悩み</a>
+    <a href="#steps">整理の3ステップ</a>
+    <a href="#support">ご相談できること</a>
+    <a href="#activity">勉強会・活動</a>
+    <a href="#about">わたしたちのこと</a>
+    <a href="#faq">よくあるご質問</a>
+    <a href="#gaiyo">団体概要</a>
+    <a href="#contact">ご相談・お問い合わせ</a>
+  </nav>
+  <div class="tel">
+    <p class="cap">まず一人で悩まず</p>
+    <!-- ※サンプル: 電話番号はダミー。実データに差し替えます -->
+    <span class="num">000-000-0000</span>
+    <p>相談は無料・秘密は守られます<br>（※番号はサンプルです）</p>
+  </div>
+  <a class="visit" href="#contact">相談を申し込む</a>
+</aside>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">クレサラあしたの会<small>NPO法人｜名古屋市熱田区</small></span>
+  <a class="tel-ic" href="#contact">相談する</a>
+</header>
+<nav class="sp-nav">
+  <a href="#trouble">こんなお悩み</a>
+  <a href="#steps">整理の3ステップ</a>
+  <a href="#support">ご相談できること</a>
+  <a href="#activity">勉強会・活動</a>
+  <a href="#about">わたしたちのこと</a>
+  <a href="#faq">よくあるご質問</a>
+  <a href="#gaiyo">団体概要</a>
+  <a href="#contact">ご相談・お問い合わせ</a>
+</nav>
+
+<div class="main">
+
+  <!-- 冒頭ヒーロー -->
+  <section class="opening">
+    <div class="wrap">
+      <p class="cap reveal on">名古屋市熱田区の消費者支援NPO（多重債務・借金のご相談）</p>
+      <h1 class="reveal on"><span class="kb">借金のこと、</span><span class="kb"><span class="u">一つずつ</span></span><span class="kb">整理していけば、</span><br><span class="kb">きっと<span class="u">あした</span>は</span><span class="kb">変えられる。</span></h1>
+      <p class="lead reveal on">クレサラあしたの会は、多重債務に陥った方などへ、健全な生活設計に向けた勉強会と相談を行うNPO法人です。今の状況を一枚ずつ「付箋」で整理するように、一緒に道すじを立て直していきます。まず一人で悩まず、ご相談ください。</p>
+      <div class="chips reveal on">
+        <span class="chip">相談は無料</span>
+        <span class="chip">秘密は守られます</span>
+        <span class="chip">まずは話すだけでも</span>
+      </div>
+      <div class="photo-strip reveal on">
+        <!-- 差し替えポイント: 相談・寄り添いのお写真（顔が特定されにくい構図で） -->
+        <img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=900&q=80&auto=format&fit=crop" alt="相談の様子のイメージ">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop" alt="書類を整理するイメージ">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&auto=format&fit=crop" alt="寄り添う手のイメージ">
+      </div>
+    </div>
+  </section>
+
+  <!-- ひとりで悩まないで -->
+  <section class="block" id="assure">
+    <div class="wrap">
+      <div class="assure reveal">
+        <p class="big"><span class="kb">「相談していいのかな」と</span><span class="kb">迷っている方こそ、</span><span class="kb">どうぞお気軽に。</span></p>
+        <p>借金の問題は、時間がたつほど選択肢が少なくなってしまうことがあります。けれど、早めに整理を始めれば、生活を立て直す道すじは見つかります。わたしたちは解決を約束するのではなく、あなたが自分で一歩を踏み出せるよう、一緒に考える場所です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- こんなことでお困りではありませんか（付箋ボード） -->
+  <section class="block" id="trouble">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">CHECK</span><h2>こんなことで、お困りではありませんか</h2></div>
+      <p class="note-sample" style="margin-bottom:22px">※以下はよくあるお悩みの例です（内容は表示イメージのサンプル）</p>
+      <div class="board">
+        <div class="note tilt-l reveal">
+          <h3>返済に、返済が重なっている</h3>
+          <p>複数の借入があり、毎月の支払いに追われて、何から手をつけていいか分からない。</p>
+        </div>
+        <div class="note n-green tilt-r reveal">
+          <h3>家計のどこを直せばいいか分からない</h3>
+          <p>収入と支出のバランスが見えず、いつも月末になると足りなくなってしまう。</p>
+        </div>
+        <div class="note n-blue tilt-r reveal">
+          <h3>誰に相談したらいいか分からない</h3>
+          <p>家族にも言いにくい。専門家に頼むのも不安で、一人で抱え込んでしまっている。</p>
+        </div>
+        <div class="note tilt-l reveal">
+          <h3>これからの生活が不安</h3>
+          <p>とりあえず今をしのいでいるけれど、この先どうなるのか見通しが立たない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相談を整理する3ステップ（ボード列） -->
+  <section class="block" id="steps">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">STEP</span><h2>一緒に整理する、3つのステップ</h2></div>
+      <p class="note-sample" style="margin-bottom:22px">※進め方の一例です。おひとりずつ状況に合わせて進めます（表示イメージのサンプル）</p>
+      <div class="steps">
+        <div class="step-col reveal">
+          <div class="col-head"><span class="no">1</span><h3>今の状況を書き出す</h3></div>
+          <p style="font-size:13px;color:#3F4B58">まずは頭の中を「付箋」に。借入・収入・支出を一枚ずつ書き出して、全体を見えるようにします。</p>
+          <div class="note tilt-l">借入の一覧<br><b>「見える化」から</b></div>
+          <div class="note n-green tilt-r">毎月の収支<br><b>ここも整理</b></div>
+        </div>
+        <div class="step-col reveal">
+          <div class="col-head"><span class="no">2</span><h3>一緒に並べ替える</h3></div>
+          <p style="font-size:13px;color:#3F4B58">書き出した付箋を、優先順位や生活設計の視点で並べ替え。何から手をつけるかを一緒に考えます。</p>
+          <div class="note n-blue tilt-r">優先順位を<br><b>つけていく</b></div>
+          <div class="note tilt-l">使える制度は<br><b>ないか確認</b></div>
+        </div>
+        <div class="step-col reveal">
+          <div class="col-head"><span class="no">3</span><h3>あしたの計画を立てる</h3></div>
+          <p style="font-size:13px;color:#3F4B58">整理した内容から、無理のない生活設計へ。必要に応じて専門の窓口もご案内します。</p>
+          <div class="note n-green tilt-l">生活の立て直し<br><b>計画を作る</b></div>
+          <div class="note n-blue tilt-r">必要なら<br><b>専門窓口へ</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご相談できること（チェック付箋） -->
+  <section class="block" id="support">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">SUPPORT</span><h2>ご相談いただけること</h2></div>
+      <p class="note-sample" style="margin-bottom:22px">※定款に定められた「勉強会・相談」の範囲での例です（表示イメージのサンプル）</p>
+      <div class="check-board reveal">
+        <div class="check-item">
+          <span class="ck"></span>
+          <div class="tx"><b>多重債務・借金についての相談</b><p>今の状況を整理し、これからをどう考えるか、一緒に見つめます。</p></div>
+        </div>
+        <div class="check-item">
+          <span class="ck"></span>
+          <div class="tx"><b>健全な生活設計の勉強会</b><p>家計の立て直しやお金との付き合い方を、みんなで学ぶ場です。</p></div>
+        </div>
+        <div class="check-item">
+          <span class="ck"></span>
+          <div class="tx"><b>家計の見直し・整理のお手伝い</b><p>収入と支出を「見える化」して、無理のない計画づくりを支えます。</p></div>
+        </div>
+        <div class="check-item">
+          <span class="ck"></span>
+          <div class="tx"><b>必要に応じた窓口のご案内</b><p>専門的な手続きが必要なときは、適切な相談先へおつなぎします。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 勉強会・活動 -->
+  <section class="block" id="activity">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">ACTIVITY</span><h2>勉強会・活動のご案内</h2></div>
+      <p class="note-sample" style="margin-bottom:22px">※内容・日程は表示イメージのサンプルです。実際の活動に差し替えます</p>
+      <div class="activity reveal">
+        <div class="act-card">
+          <!-- 差し替えポイント: 勉強会の様子のお写真 -->
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1000&q=80&auto=format&fit=crop" alt="勉強会のイメージ">
+          <div class="bd">
+            <span class="tag">STUDY</span>
+            <h3>生活設計の勉強会</h3>
+            <p>お金の基本や家計の立て直し方を、少人数で学ぶ会です。「知っておけばよかった」を、これからに活かせます。</p>
+          </div>
+        </div>
+        <div class="act-card">
+          <!-- 差し替えポイント: 個別相談の様子のお写真（顔が特定されにくい構図で） -->
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&q=80&auto=format&fit=crop" alt="個別相談のイメージ">
+          <div class="bd">
+            <span class="tag">CONSULT</span>
+            <h3>個別のご相談</h3>
+            <p>周りを気にせず、じっくりお話しいただける場です。「まず話を聞いてほしい」だけでも大丈夫です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたちのこと -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">ABOUT</span><h2>わたしたちのこと</h2></div>
+      <div class="about-txt reveal">
+        <p class="big"><span class="kb">多重債務に陥った方などが、</span><br><span class="kb"><em>健全な生活を</em></span><span class="kb"><em>取り戻せる</em>ように。</span></p>
+        <p>クレサラあしたの会は、名古屋市熱田区を拠点に、多重債務に陥った消費者などに対して、健全な生活設計や社会生活に必要な勉強会・相談を行うNPO法人です。一人ひとりが自分の力で暮らしを立て直していけるよう、そっと寄り添います。<span class="note-sample">※文章は定款（公開情報）をもとにしたサンプルです</span></p>
+      </div>
+      <div class="sign-box reveal">
+        <h3>ごあいさつ</h3>
+        <p>お金の問題は、誰にでも起こりうることです。大切なのは、一人で抱え込まず、早めに整理を始めること。わたしたちは、答えを押しつけるのではなく、あなたが自分で「あした」を描けるよう、一緒に付箋を並べる仲間でありたいと思っています。どうぞ、お気軽にお声がけください。<span class="note-sample">※あいさつ文はサンプルです。ご担当者のお言葉に差し替えいたします</span></p>
+        <p class="name"><small>特定非営利活動法人 クレサラあしたの会</small>代表　（お名前は公開時に記載）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">NEWS</span><h2>お知らせ</h2></div>
+      <p class="note-sample" style="margin-bottom:12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><span class="lbl">勉強会</span><span class="tt">次回「家計の立て直し」勉強会の日程を掲載しました</span></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="lbl">相談</span><span class="tt">個別相談の受付状況を更新しました</span></div>
+        <div class="news-row"><time>20XX.XX.XX</time><span class="lbl">お知らせ</span><span class="tt">年末年始の相談受付についてのご案内</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- よくあるご質問 -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">FAQ</span><h2>よくあるご質問</h2></div>
+      <p class="note-sample" style="margin-bottom:18px">※回答は表示イメージのサンプルです。実際のご案内に差し替えます</p>
+      <div class="qa reveal">
+        <details>
+          <summary><span class="q">Q</span>相談すると、必ず何か手続きをしないといけませんか？</summary>
+          <div class="a">いいえ。まずはお話をうかがい、状況を一緒に整理するところからです。「話を聞いてほしいだけ」でも大丈夫です。</div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>相談したことが、家族や職場に知られませんか？</summary>
+          <div class="a">ご相談の内容やプライバシーは大切にお守りします。安心してお話しください。</div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>どんな状態でも相談できますか？</summary>
+          <div class="a">「もう手遅れかも」と感じている方こそ、まずご相談ください。状況に応じて、必要な窓口もご案内します。</div>
+        </details>
+        <details>
+          <summary><span class="q">Q</span>費用はかかりますか？</summary>
+          <div class="a">ご相談の費用については、お問い合わせ時にご案内します（※具体的な内容は公開時に記載します）。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 団体概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">PROFILE</span><h2>団体概要</h2></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 クレサラあしたの会</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市熱田区（詳細は公開時に記載します）</td></tr>
+          <tr><th>分野</th><td>社会教育の推進／人権の擁護・平和の推進</td></tr>
+          <tr><th>活動の目的</th><td>多重債務に陥った消費者等に対し、健全な生活設計や社会生活に必要な勉強会・相談を行う（定款目的より）</td></tr>
+          <tr><th>電話</th><td>000-000-0000（※サンプル：番号は公開時に記載します）</td></tr>
+          <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- ご相談・お問い合わせ -->
+  <section class="block" id="contact" style="border-bottom:none">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="tab">CONTACT</span><h2>ご相談・お問い合わせ</h2></div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="tel-big">
+            <p class="cap">まず一人で悩まず、お電話ください</p>
+            <!-- ※サンプル: 電話番号はダミー。tel:リンクは無効化しています -->
+            <span class="num">000-000-0000</span>
+            <p>相談は無料・秘密は守られます<br>（※番号は表示サンプルです）</p>
+          </div>
+          <div class="map-full">
+            <!-- 地図は区の中心付近を表示（番地は伏せています） -->
+            <iframe src="https://maps.google.com/maps?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%86%B1%E7%94%B0%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市熱田区の地図"></iframe>
+          </div>
+        </div>
+        <form class="demo-form reveal" onsubmit="return false">
+          <p class="fmnote">※これはデモ用のフォームです。送信ボタンを押しても実際には送信されません。ご契約後、メール通知つきの本番フォームに差し替えます。</p>
+          <label for="nm">お名前（ニックネームでも可）</label>
+          <input id="nm" type="text" placeholder="例：名古屋 花子" autocomplete="off">
+          <label for="ml">メールアドレス</label>
+          <input id="ml" type="email" placeholder="例：sample@example.com" autocomplete="off">
+          <label for="ms">ご相談内容</label>
+          <textarea id="ms" placeholder="どんなことでもかまいません。まずはお気持ちをお聞かせください。"></textarea>
+          <button type="submit">送信する（デモ）</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 クレサラあしたの会</p>
+      <p>愛知県名古屋市熱田区（社会教育・人権擁護／消費者・多重債務支援）</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、電話番号はダミー、※印の内容はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p style="margin-top:14px;font-size:11px">&copy; 2026 NPO法人 クレサラあしたの会</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .side nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px/1.4 -apple-system,sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)">制作サンプル｜スマートコネクト</a></body>
+</html>

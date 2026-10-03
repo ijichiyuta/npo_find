@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 地域人権ゆうあい会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・デザイン方向: 水平スワイプ（横スクロール・セクション型）
+    生成り×臙脂×藍／力強い明朝見出し／人権・共生の落ち着いた品位
+  ・本文は公開情報（NPO法人ポータルサイトの法人名・所在市・活動分野・
+    設立年）の範囲のみで作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者の実名は掲載していません（公開情報の範囲を厳守）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。顔が特定
+    されにくい構図を選んでいます。<!-- 差し替えポイント --> コメント参照
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 地域人権ゆうあい会｜名古屋市【ご提案サンプル】</title>
+<meta name="description" content="名古屋市を拠点に、保健・医療・福祉、まちづくり、人権・平和、子どもの健全育成に取り組むNPO法人。だれもが尊重される地域社会をめざして。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Zilla+Slab:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F4EEE0;        /* 生成り（紙） */
+  --c-bg2:#EFE7D5;       /* 生成りの陰 */
+  --c-paper:#FBF7EE;     /* 明るい生成り面 */
+  --c-ink:#26221C;       /* 墨 */
+  --c-enji:#8C2B2E;      /* 臙脂 */
+  --c-enji-d:#6E2124;    /* 深い臙脂 */
+  --c-ai:#1F3A5F;        /* 藍 */
+  --c-ai-d:#16294490;    /* 藍（半透明） */
+  --c-line:#D8CDB6;      /* 罫（生成り系） */
+  --c-line2:#C9BBA0;
+  --c-sub:#7A6F5C;       /* 補助文字 */
+  --f-min:"Kaisei Tokumin",serif;             /* 力強い明朝（見出し） */
+  --f-body:"Noto Sans JP",sans-serif;         /* 本文 */
+  --f-en:"Zilla Slab",serif;                  /* 英字・番号 */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-min);font-weight:700;line-height:1.5;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.en{font-family:var(--f-en);letter-spacing:.14em}
+
+/* ====== 上部・固定ヘッダー ====== */
+.top{position:fixed;top:0;left:0;right:0;height:64px;z-index:120;display:flex;align-items:center;gap:14px;padding:0 22px;background:rgba(244,238,224,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-line)}
+.top .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.top .brand .mk{width:38px;height:38px;flex:none}
+.top .brand .nm{font-family:var(--f-min);font-weight:700;font-size:17px;letter-spacing:.06em;line-height:1.2}
+.top .brand .nm small{display:block;font-family:var(--f-body);font-size:9.5px;font-weight:500;color:var(--c-enji-d);letter-spacing:.08em;margin-top:2px}
+.top nav{margin-left:auto;display:flex;gap:2px}
+.top nav a{text-decoration:none;font-size:13px;font-weight:500;color:var(--c-ink);padding:8px 12px;border-radius:2px;transition:color .3s,background .3s}
+.top nav a:hover{color:var(--c-enji-d);background:var(--c-bg2)}
+.top .cta{margin-left:8px;background:var(--c-enji);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 18px;border-radius:2px;transition:background .3s}
+.top .cta:hover{background:var(--c-enji-d)}
+.menu-btn{display:none}
+
+/* ====== 水平スクロールの舞台 ====== */
+.stage{position:fixed;top:64px;left:0;right:0;bottom:0;display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
+.stage::-webkit-scrollbar{height:8px}
+.stage::-webkit-scrollbar-track{background:var(--c-bg2)}
+.stage::-webkit-scrollbar-thumb{background:var(--c-line2);border-radius:8px}
+.panel{flex:0 0 100vw;width:100vw;height:100%;scroll-snap-align:start;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative}
+.pad{min-height:100%;padding:56px clamp(28px,7vw,110px) 96px;display:flex;flex-direction:column;justify-content:center;max-width:1180px}
+.panel::-webkit-scrollbar{width:0}
+
+/* 進行インジケータ（横スクロールの位置） */
+.progress{position:fixed;left:0;bottom:0;height:3px;background:var(--c-enji);z-index:130;width:0;transition:width .12s linear}
+/* 「横に進む」ヒント */
+.swipe-hint{position:fixed;right:20px;bottom:22px;z-index:125;display:flex;align-items:center;gap:9px;background:var(--c-ai);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:9px 15px;border-radius:40px;box-shadow:0 6px 20px rgba(31,58,95,.28);transition:opacity .5s}
+.swipe-hint .ar{display:inline-block;animation:nudge 1.3s var(--ease) infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.swipe-hint.hide{opacity:0;pointer-events:none}
+
+/* ラベル群 */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-en);font-size:12px;font-weight:600;letter-spacing:.18em;color:var(--c-enji-d);text-transform:uppercase;margin-bottom:22px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--c-enji)}
+.sec-jp{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--c-sub);font-family:var(--f-body)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.panel.active .reveal{opacity:1;transform:none}
+.panel.active .reveal.d1{transition-delay:.08s}
+.panel.active .reveal.d2{transition-delay:.16s}
+.panel.active .reveal.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.swipe-hint .ar{animation:none}}
+.note-sample{font-size:11.5px;color:var(--c-sub);font-family:var(--f-body);line-height:1.8}
+
+/* ====== 表紙パネル ====== */
+.cover .pad{max-width:none;padding-right:clamp(28px,7vw,110px)}
+.cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;width:100%;max-width:1180px}
+.cover h1{font-size:clamp(30px,4.6vw,58px);line-height:1.42;letter-spacing:.03em}
+.cover h1 .en-line{border-bottom:5px solid var(--c-enji);padding-bottom:2px}
+.cover .lead{margin-top:26px;font-size:15.5px;max-width:520px;color:#3a352c}
+.cover .fields{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.field-chip{border:1px solid var(--c-line2);background:var(--c-paper);font-size:12px;font-weight:700;padding:5px 13px;border-radius:2px;white-space:nowrap}
+.field-chip.hl{border-color:var(--c-enji);color:var(--c-enji-d)}
+.cover-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px}
+.cover-photos figure{position:relative;overflow:hidden;border-radius:3px}
+.cover-photos img{width:100%;height:100%;object-fit:cover}
+.cover-photos .tall{grid-row:span 2;aspect-ratio:3/4.4}
+.cover-photos .wide{aspect-ratio:4/3}
+.cover-photos .band{position:absolute;left:0;bottom:0;right:0;background:var(--c-ai-d);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:6px 10px;font-family:var(--f-body)}
+
+/* ====== 理念パネル（藍地） ====== */
+.creed{background:var(--c-ai);color:#F4EEE0}
+.creed .eyebrow{color:#E8B4A0}
+.creed .eyebrow::before{background:#C98C7A}
+.creed .sec-jp{color:#B9C4D4}
+.creed .pad{max-width:940px}
+.creed h2{font-size:clamp(24px,3.4vw,42px);line-height:1.7;letter-spacing:.04em}
+.creed h2 em{font-style:normal;color:#E7A78F;border-bottom:2px solid rgba(231,167,143,.5)}
+.creed .body{margin-top:26px;font-size:15.5px;max-width:640px;color:#E4DCCB;line-height:2.1}
+.creed .divider{width:64px;height:3px;background:#E7A78F;margin:30px 0 0}
+
+/* ====== 活動パネル（横トラック） ====== */
+.acts .pad{max-width:none;justify-content:flex-start;padding-top:40px}
+.acts-head{max-width:1180px;width:100%}
+.act-track{display:flex;gap:20px;overflow-x:auto;padding:28px 4px 20px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;margin-top:8px}
+.act-track::-webkit-scrollbar{height:7px}
+.act-track::-webkit-scrollbar-thumb{background:var(--c-line2);border-radius:7px}
+.act-card{flex:0 0 300px;scroll-snap-align:start;background:var(--c-paper);border:1px solid var(--c-line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.act-card .ph{aspect-ratio:16/10;overflow:hidden}
+.act-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.act-card:hover .ph img{transform:scale(1.05)}
+.act-card .in{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+.act-card .no{font-family:var(--f-en);font-size:12px;font-weight:600;letter-spacing:.16em;color:var(--c-enji-d)}
+.act-card h3{font-size:19px;margin:4px 0 10px;line-height:1.4}
+.act-card p{font-size:13px;color:#4a4438;line-height:1.9}
+.act-card .tag{margin-top:auto;padding-top:14px;font-size:11px;font-weight:700;color:var(--c-ai);letter-spacing:.04em}
+
+/* ====== ごあいさつ / わたしたち ====== */
+.about .pad{max-width:1120px}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(26px,5vw,64px);align-items:center;width:100%}
+.about .figure{position:relative;border-radius:4px;overflow:hidden}
+.about .figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about .figure .cap{position:absolute;left:0;bottom:0;right:0;background:var(--c-ai-d);color:#fff;font-size:10.5px;font-weight:700;padding:7px 12px}
+.about h2{font-size:clamp(22px,3vw,34px);line-height:1.65;letter-spacing:.03em}
+.about h2 em{font-style:normal;color:var(--c-enji-d)}
+.about .body{margin-top:20px;font-size:15px;color:#3a352c;max-width:560px}
+.sign{margin-top:26px;border-left:3px solid var(--c-enji);padding:6px 0 6px 18px;font-size:14px;color:#3a352c;max-width:560px}
+.sign .who{margin-top:12px;font-family:var(--f-min);font-weight:700;font-size:14px}
+.sign .who small{display:block;font-family:var(--f-body);font-weight:500;font-size:11.5px;color:var(--c-sub);margin-top:2px}
+
+/* ====== 参加・支援 ====== */
+.join .pad{max-width:1080px}
+.join h2{font-size:clamp(22px,3vw,34px);letter-spacing:.03em}
+.join .lead{margin-top:14px;font-size:15px;color:#3a352c;max-width:620px}
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.join-card{background:var(--c-paper);border:1px solid var(--c-line);border-top:4px solid var(--c-enji);border-radius:3px;padding:26px 24px}
+.join-card .ic{width:38px;height:38px;color:var(--c-enji-d);margin-bottom:14px}
+.join-card h3{font-size:18px;margin-bottom:9px}
+.join-card p{font-size:13px;color:#4a4438;line-height:1.9}
+
+/* ====== 法人概要 ====== */
+.profile .pad{max-width:920px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:24px}
+table.gaiyo{width:100%;min-width:520px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:170px;text-align:left;font-weight:700;background:var(--c-bg2);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap;font-family:var(--f-body)}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+.tbl-hint{display:none;font-size:11px;color:var(--c-sub);margin-top:6px}
+
+/* ====== お問い合わせ（デモフォーム） ====== */
+.contact{background:var(--c-bg2)}
+.contact .pad{max-width:820px}
+.contact h2{font-size:clamp(22px,3vw,34px)}
+.contact .lead{margin-top:12px;font-size:14.5px;color:#3a352c;max-width:560px}
+.form-note{margin-top:16px;background:#F6E7DF;border:1px solid #E4B9A9;color:var(--c-enji-d);font-size:12.5px;font-weight:700;padding:11px 16px;border-radius:3px;font-family:var(--f-body)}
+form.demo{margin-top:22px;display:grid;gap:16px;max-width:560px}
+form.demo label{font-size:13px;font-weight:700}
+form.demo label span{color:var(--c-enji-d)}
+form.demo input,form.demo textarea{width:100%;margin-top:6px;font-family:inherit;font-size:14px;padding:11px 13px;border:1px solid var(--c-line2);border-radius:3px;background:var(--c-paper);color:var(--c-ink)}
+form.demo textarea{min-height:110px;resize:vertical}
+form.demo button{justify-self:start;background:var(--c-enji);color:#fff;border:none;font-family:inherit;font-weight:700;font-size:14.5px;padding:13px 34px;border-radius:3px;cursor:pointer;transition:background .3s}
+form.demo button:hover{background:var(--c-enji-d)}
+.form-msg{font-size:13px;font-weight:700;color:var(--c-ai);min-height:20px}
+
+/* ====== フッターパネル ====== */
+.foot{background:var(--c-ai);color:#E4DCCB}
+.foot .pad{max-width:940px}
+.foot .f-name{font-family:var(--f-min);font-weight:700;font-size:20px;color:#F4EEE0;letter-spacing:.04em}
+.foot .f-meta{font-size:12.5px;margin-top:10px;line-height:2;color:#B9C4D4}
+.foot .f-tel a{color:#E7A78F;text-decoration:none;font-family:var(--f-en);font-weight:600}
+.sample-box{margin-top:26px;border:1px solid rgba(233,167,143,.4);border-radius:3px;padding:18px 20px;font-size:11.5px;line-height:1.9;color:#CDD6E0;max-width:640px}
+.sample-box b{color:#E7A78F}
+.sample-box a{color:#E7A78F}
+.foot .copy{margin-top:20px;font-size:11px;color:#8F9DB2}
+
+/* 表紙以外の共通見出しブロック上余白 */
+.panel-head{margin-bottom:6px}
+
+/* ====== 制作サンプル・ピル（左下固定） ====== */
+.sample-pill{position:fixed;left:16px;bottom:16px;z-index:140;background:var(--c-ink);color:#F4EEE0;font-size:11px;font-weight:700;letter-spacing:.04em;padding:8px 14px;border-radius:40px;box-shadow:0 4px 14px rgba(0,0,0,.25);text-decoration:none;font-family:var(--f-body)}
+.sample-pill span{color:#E7A78F}
+
+/* ====== スマホ / タブレット: 縦積みに切り替え ====== */
+@media (max-width:900px){
+  .top{height:58px;padding:0 16px}
+  .top nav{display:none}
+  .top .cta{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:58px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line);padding:8px 18px 18px;z-index:119}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:12px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav a.cta-m{color:var(--c-enji-d);font-weight:700}
+
+  /* 水平の舞台 → 通常の縦フロー */
+  .stage{position:static;display:block;overflow:visible;scroll-snap-type:none;height:auto}
+  .panel{flex:none;width:100%;height:auto;overflow:visible;scroll-snap-align:none}
+  .pad{min-height:0;padding:52px 22px 56px;display:block;max-width:none}
+  .reveal{opacity:1;transform:none}   /* JS外でも見えるように */
+  .progress,.swipe-hint{display:none}
+  body{overflow-x:hidden}
+  .top{position:sticky}
+
+  .cover-grid{grid-template-columns:1fr;gap:28px}
+  .cover-photos{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:24px}
+  .about .figure img{aspect-ratio:16/11}
+  .join-grid{grid-template-columns:1fr;gap:14px}
+  .act-track{padding:22px 0 16px}
+  .act-card{flex-basis:78vw}
+  .tbl-hint{display:block}
+}
+@media (max-width:520px){
+  .cover-photos{grid-template-columns:1fr}
+  .cover-photos .tall{grid-row:auto;aspect-ratio:4/3}
+}
+/* スマホの表: 横スクロールをやめて縦積みに */
+@media (max-width:600px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo th{display:block;width:100%;border:none;padding:9px 14px 3px;font-size:12px;background:transparent;color:var(--c-enji-d)}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 14px 11px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- 固定ヘッダー -->
+<header class="top" id="top">
+  <a class="brand" href="#cover" data-goto="cover">
+    <svg class="mk" viewBox="0 0 44 44" aria-hidden="true">
+      <rect width="44" height="44" rx="6" fill="#F4EEE0"/>
+      <circle cx="22" cy="22" r="17" fill="none" stroke="#1F3A5F" stroke-width="2"/>
+      <path d="M15 24c3 4 11 4 14 0" fill="none" stroke="#8C2B2E" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="17" cy="18" r="2.2" fill="#8C2B2E"/>
+      <circle cx="27" cy="18" r="2.2" fill="#1F3A5F"/>
+    </svg>
+    <span class="nm">地域人権ゆうあい会<small>特定非営利活動法人｜名古屋市</small></span>
+  </a>
+  <nav>
+    <a href="#creed" data-goto="creed">理念</a>
+    <a href="#acts" data-goto="acts">活動</a>
+    <a href="#about" data-goto="about">わたしたち</a>
+    <a href="#join" data-goto="join">参加・支援</a>
+    <a href="#profile" data-goto="profile">法人概要</a>
+    <a href="#contact" data-goto="contact">お問い合わせ</a>
+  </nav>
+  <a class="cta" href="#contact" data-goto="contact">相談・お問い合わせ</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#creed" data-goto="creed">理念</a>
+  <a href="#acts" data-goto="acts">活動</a>
+  <a href="#about" data-goto="about">わたしたち</a>
+  <a href="#join" data-goto="join">参加・支援</a>
+  <a href="#profile" data-goto="profile">法人概要</a>
+  <a href="#contact" data-goto="contact" class="cta-m">相談・お問い合わせ</a>
+</nav>
+
+<!-- 横スクロールの舞台 -->
+<main class="stage" id="stage">
+
+  <!-- ① 表紙 -->
+  <section class="panel cover active" id="cover" data-name="cover">
+    <div class="pad">
+      <div class="cover-grid">
+        <div>
+          <span class="eyebrow reveal">Nagoya · Human Rights & Community</span>
+          <h1 class="reveal d1">
+            <span class="kb">だれもが、</span><span class="kb">この地域で</span><br>
+            <span class="kb"><span class="en-line">尊重される</span>まちを。</span>
+          </h1>
+          <p class="lead reveal d2">地域人権ゆうあい会は、名古屋市を拠点に、保健・医療・福祉、まちづくり、人権・平和、そして子どもの健全育成に取り組むNPO法人です。一人ひとりの尊厳を大切に、支え合える地域社会をめざします。</p>
+          <div class="fields reveal d3">
+            <span class="field-chip hl">人権・平和</span>
+            <span class="field-chip">保健・医療・福祉</span>
+            <span class="field-chip">まちづくり</span>
+            <span class="field-chip">子どもの健全育成</span>
+          </div>
+        </div>
+        <div class="cover-photos reveal d2">
+          <!-- 差し替えポイント: 活動・地域の風景のお写真（顔が大きく写らない構図が安心です） -->
+          <figure class="tall">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80&auto=format&fit=crop" alt="学びと交流のイメージ">
+            <figcaption class="band">※イメージ写真（差し替え）</figcaption>
+          </figure>
+          <figure class="wide">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=900&q=80&auto=format&fit=crop" alt="手を取り合うイメージ">
+          </figure>
+          <figure class="wide">
+            <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=900&q=80&auto=format&fit=crop" alt="地域の景色のイメージ">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② 理念（藍地） -->
+  <section class="panel creed" id="creed" data-name="creed">
+    <div class="pad">
+      <span class="eyebrow reveal">Our Creed</span>
+      <p class="sec-jp reveal panel-head" style="margin-bottom:18px">わたしたちがめざすもの</p>
+      <h2 class="reveal d1">
+        <span class="kb">ちがいを認め、</span><span class="kb"><em>ともに生きる</em>。</span><br>
+        <span class="kb">人権が尊重される地域を、</span><span class="kb">この名古屋から。</span>
+      </h2>
+      <p class="body reveal d2">
+        年齢や障がい、国籍や生い立ち――。人はみな、ちがいを持って生きています。そのちがいが、不当な差別や生きづらさにつながらないように。だれもが安心して暮らし、自分らしくいられる地域社会を、住民や関係機関とともにつくっていくことが、わたしたちの願いです。
+      </p>
+      <!-- ※文章の趣旨は活動分野（人権・平和／福祉／まちづくり／子どもの健全育成）をもとにしたサンプルです -->
+      <p class="body note-sample reveal d3" style="margin-top:14px">※上記の理念文は、公開されている活動分野をもとに作成したサンプルです。ご契約後、御団体の理念・活動方針に沿った文章へ差し替えます。</p>
+      <span class="divider reveal d3"></span>
+    </div>
+  </section>
+
+  <!-- ③ 活動（横トラック） -->
+  <section class="panel acts" id="acts" data-name="acts">
+    <div class="pad">
+      <div class="acts-head">
+        <span class="eyebrow reveal">Activities</span>
+        <p class="sec-jp reveal panel-head" style="margin-bottom:6px">4つの分野で、地域を支える</p>
+        <p class="reveal d1" style="font-size:14px;color:#4a4438;max-width:640px;margin-top:8px">公開されている活動分野をもとにした構成例です。実際の事業内容にあわせて、写真・見出し・説明を差し替えられます。<span class="note-sample">（各カードの内容は※サンプル）</span></p>
+      </div>
+      <!-- ※以下4項目の見出し・説明はサンプルです。実際の事業に差し替えます -->
+      <div class="act-track reveal d2">
+        <article class="act-card">
+          <div class="ph"><!-- 差し替えポイント: 人権啓発・相談の様子 -->
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&auto=format&fit=crop" alt="対話・相談のイメージ"></div>
+          <div class="in">
+            <span class="no">FIELD 01</span>
+            <h3>人権・平和のとりくみ</h3>
+            <p>差別や偏見のない地域づくりに向けた、啓発・学習の機会や、身近な相談の場づくりに取り組みます。</p>
+            <span class="tag">人権・平和</span>
+          </div>
+        </article>
+        <article class="act-card">
+          <div class="ph"><!-- 差し替えポイント: 福祉・見守り活動の様子 -->
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80&auto=format&fit=crop" alt="福祉・支え合いのイメージ"></div>
+          <div class="in">
+            <span class="no">FIELD 02</span>
+            <h3>保健・医療・福祉の支援</h3>
+            <p>高齢の方や支援を必要とする方が、住み慣れた地域で安心して暮らせるよう、見守りや相談の輪を広げます。</p>
+            <span class="tag">保健・医療・福祉</span>
+          </div>
+        </article>
+        <article class="act-card">
+          <div class="ph"><!-- 差し替えポイント: まちづくり・地域交流の様子 -->
+            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=900&q=80&auto=format&fit=crop" alt="地域交流のイメージ"></div>
+          <div class="in">
+            <span class="no">FIELD 03</span>
+            <h3>まちづくり・地域交流</h3>
+            <p>住民同士がつながり、支え合える場づくり。世代や立場を越えて交流できる、開かれた地域をめざします。</p>
+            <span class="tag">まちづくり</span>
+          </div>
+        </article>
+        <article class="act-card">
+          <div class="ph"><!-- 差し替えポイント: 子どもの活動・居場所の様子 -->
+            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900&q=80&auto=format&fit=crop" alt="子どもの学びのイメージ"></div>
+          <div class="in">
+            <span class="no">FIELD 04</span>
+            <h3>子どもの健全育成</h3>
+            <p>子どもたちが安心して過ごし、学び、育つことのできる居場所や機会を、地域とともに支えていきます。</p>
+            <span class="tag">子どもの健全育成</span>
+          </div>
+        </article>
+      </div>
+      <p class="tbl-hint" style="display:block;margin-top:4px">→ カードは横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- ④ わたしたち・ごあいさつ -->
+  <section class="panel about" id="about" data-name="about">
+    <div class="pad">
+      <div class="about-grid">
+        <div class="figure reveal">
+          <!-- 差し替えポイント: 活動風景・集合写真など -->
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80&auto=format&fit=crop" alt="地域の集いのイメージ">
+          <span class="cap">※イメージ写真（差し替え）</span>
+        </div>
+        <div>
+          <span class="eyebrow reveal">About Us</span>
+          <p class="sec-jp reveal panel-head" style="margin-bottom:14px">ごあいさつ</p>
+          <h2 class="reveal d1">
+            <span class="kb">小さな声を、</span><span class="kb">地域の力に。</span><br>
+            <span class="kb"><em>2000年から</em>、この名古屋で。</span>
+          </h2>
+          <p class="body reveal d2">地域人権ゆうあい会は、2000年に設立されたNPO法人です。名古屋市を拠点に、人権・平和、保健・医療・福祉、まちづくり、子どもの健全育成といった分野で、地域とともに歩んできました。一人ひとりの尊厳が大切にされる社会を、これからも地道に築いていきます。</p>
+          <!-- 設立年（2000年）は公開情報。以下あいさつ文の詳細・年月日はサンプル -->
+          <div class="sign reveal d3">
+            <p>「困っている人が、困ったと言える地域でありたい」――そんな思いを、活動の原点にしています。どうぞお気軽に、お声がけください。<span class="note-sample">※あいさつ文はサンプルです。ご契約後、御団体のお言葉へ差し替えます。代表者のお名前はご希望に応じて掲載します。</span></p>
+            <p class="who">特定非営利活動法人 地域人権ゆうあい会<small>代表者名は公開時に記載（本サンプルでは非掲載）</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ 参加・支援 -->
+  <section class="panel join" id="join" data-name="join">
+    <div class="pad">
+      <span class="eyebrow reveal">Get Involved</span>
+      <p class="sec-jp reveal panel-head" style="margin-bottom:8px">できることから、いっしょに</p>
+      <h2 class="reveal d1"><span class="kb">支える側にも、</span><span class="kb">どうぞ。</span></h2>
+      <p class="lead reveal d2">地域の活動は、多くの方の参加に支えられています。無理のない範囲で、あなたにできるかたちで関わってみませんか。<span class="note-sample">（各項目の内容は※サンプルです）</span></p>
+      <!-- ※以下3項目はサンプル構成です。実際の募集内容に差し替えます -->
+      <div class="join-grid">
+        <div class="join-card reveal d2">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9.1C1 8.5 2.7 5.5 6 5.5c2 0 3.2 1.2 4 2.4.8-1.2 2-2.4 4-2.4 3.3 0 5 3 3.3 6.4C19 16.4 12 21 12 21Z"/></svg>
+          <h3>ボランティア</h3>
+          <p>活動のお手伝いや、地域の集いへの参加など。はじめての方も歓迎します。</p>
+        </div>
+        <div class="join-card reveal d2">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 10h16"/><path d="M8 15h4"/></svg>
+          <h3>賛助会員・ご寄付</h3>
+          <p>活動を継続的に支えていただく仕組みです。金額・方法はご相談ください。</p>
+        </div>
+        <div class="join-card reveal d3">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M8 12h8"/><path d="M12 8v8"/><circle cx="12" cy="12" r="9"/></svg>
+          <h3>連携・ご相談</h3>
+          <p>地域の団体・機関の皆さまとの協働も歓迎します。まずはお問い合わせください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ 法人概要 -->
+  <section class="panel profile" id="profile" data-name="profile">
+    <div class="pad">
+      <span class="eyebrow reveal">Profile</span>
+      <p class="sec-jp reveal panel-head" style="margin-bottom:4px">法人概要</p>
+      <div class="tbl-wrap reveal d1">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 地域人権ゆうあい会</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市<span class="note-sample">（詳細住所は公開時に記載します／本サンプルでは非掲載）</span></td></tr>
+          <tr><th>設立</th><td>2000年</td></tr>
+          <tr><th>活動分野</th><td>保健・医療・福祉／まちづくり／人権・平和／子どもの健全育成</td></tr>
+          <tr><th>代表者</th><td>公開時に記載<span class="note-sample">（本サンプルでは実名を掲載していません）</span></td></tr>
+          <tr><th>電話・連絡先</th><td>公開時に記載<span class="note-sample">（本サンプルでは非掲載）</span></td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+      <p class="note-sample reveal d2" style="margin-top:16px;max-width:640px">法人名・所在市・活動分野・設立年は、内閣府NPO法人ポータルサイト等の公開情報にもとづきます。その他の項目は、ご契約後に御団体からご提供いただく情報へ差し替えます。</p>
+    </div>
+  </section>
+
+  <!-- ⑦ お問い合わせ（デモフォーム） -->
+  <section class="panel contact" id="contact" data-name="contact">
+    <div class="pad">
+      <span class="eyebrow reveal">Contact</span>
+      <h2 class="reveal d1">お気軽にご相談ください</h2>
+      <p class="lead reveal d2">活動へのご参加、ご支援、連携のご相談など。どんなことでもお寄せください。</p>
+      <p class="form-note reveal d2">※これは表示サンプルです。送信ボタンを押しても実際には送信されません（デモ動作）。ご契約後、実際に届くお問い合わせフォームを設置します。</p>
+      <form class="demo reveal d3" id="demoForm" novalidate>
+        <label>お名前 <span>*</span>
+          <input type="text" name="name" placeholder="山田 太郎" autocomplete="name">
+        </label>
+        <label>メールアドレス <span>*</span>
+          <input type="email" name="email" placeholder="example@mail.com" autocomplete="email">
+        </label>
+        <label>お問い合わせ内容
+          <textarea name="message" placeholder="ボランティアに関心があります／連携についてご相談したいです など"></textarea>
+        </label>
+        <button type="submit">送信する（デモ）</button>
+        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ⑧ フッター -->
+  <section class="panel foot" id="foot" data-name="foot">
+    <div class="pad">
+      <p class="f-name">特定非営利活動法人 地域人権ゆうあい会</p>
+      <p class="f-meta">
+        愛知県名古屋市（詳細住所は非掲載）｜設立 2000年<br>
+        活動分野：保健・医療・福祉／まちづくり／人権・平和／子どもの健全育成
+      </p>
+      <div class="sample-box">
+        <b>本ページはホームページ制作のご提案用サンプルです。</b><br>
+        本文は公開情報（法人名・所在市・活動分野・設立年）の範囲で作成し、その他の実績・沿革・あいさつ・連絡先などの「※サンプル」表記の内容はダミーです。写真はイメージ素材（Unsplash）で、代表者の実名は掲載していません。<br>
+        制作：<a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+      </div>
+      <p class="copy">&copy; 2026 NPO法人 地域人権ゆうあい会（ご提案用サンプル）</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- 横スクロールの進行バーとヒント（PCのみ） -->
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="swipe-hint" id="swipeHint"><span>横にスクロールして進む</span><span class="ar">→</span></div>
+
+<!-- 左下: 制作サンプル・ピル -->
+<a class="sample-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">制作<span>サンプル</span>｜スマートコネクト</a>
+
+<script>
+// ===== SPメニュー =====
+const menuBtn = document.querySelector(".menu-btn");
+if (menuBtn) {
+  menuBtn.addEventListener("click", () => {
+    const open = document.body.classList.toggle("menu-open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+}
+document.querySelectorAll(".sp-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+const stage = document.getElementById("stage");
+const panels = Array.from(document.querySelectorAll(".panel"));
+const isDesktop = () => window.matchMedia("(min-width:901px)").matches;
+
+// ===== ナビ / ロゴ: 該当パネルへ横スクロール（PC）/ アンカー（SP） =====
+document.querySelectorAll("[data-goto]").forEach(a => {
+  a.addEventListener("click", e => {
+    const id = a.getAttribute("data-goto");
+    const target = document.getElementById(id) || document.querySelector('[data-name="'+id+'"]');
+    if (!target) return;
+    if (isDesktop()) {
+      e.preventDefault();
+      stage.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+    }
+    // SPでは通常のアンカー遷移に任せる
+  });
+});
+
+// ===== 横スクロール: 進行バー・現在パネルのactive付与・ヒント非表示 =====
+const progress = document.getElementById("progress");
+const swipeHint = document.getElementById("swipeHint");
+function onScroll() {
+  if (!isDesktop()) return;
+  const max = stage.scrollWidth - stage.clientWidth;
+  const ratio = max > 0 ? stage.scrollLeft / max : 0;
+  progress.style.width = (ratio * 100) + "%";
+  // 現在中心にあるパネルをactiveに
+  const center = stage.scrollLeft + stage.clientWidth / 2;
+  panels.forEach(p => {
+    const active = center >= p.offsetLeft && center < p.offsetLeft + p.offsetWidth;
+    p.classList.toggle("active", active);
+  });
+  if (stage.scrollLeft > 40) swipeHint.classList.add("hide");
+}
+stage.addEventListener("scroll", onScroll, { passive: true });
+
+// ===== マウスホイールの縦回転を横スクロールへ変換（PC・トラックパッドは横も尊重） =====
+stage.addEventListener("wheel", e => {
+  if (!isDesktop()) return;
+  // パネル内が縦にスクロール可能で、まだ縦の余地がある場合は縦を優先
+  const active = panels.find(p => p.classList.contains("active"));
+  if (active) {
+    const canScrollDown = active.scrollTop + active.clientHeight < active.scrollHeight - 1;
+    const canScrollUp = active.scrollTop > 0;
+    if ((e.deltaY > 0 && canScrollDown) || (e.deltaY < 0 && canScrollUp)) {
+      // 縦方向にコンテンツが残っている → 既定の縦スクロールに任せる
+      return;
+    }
+  }
+  if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+    stage.scrollLeft += e.deltaY;
+    e.preventDefault();
+  }
+}, { passive: false });
+
+// ===== キーボード操作（左右矢印でパネル移動） =====
+window.addEventListener("keydown", e => {
+  if (!isDesktop()) return;
+  if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+  const idx = panels.findIndex(p => p.classList.contains("active"));
+  const next = e.key === "ArrowRight" ? Math.min(idx + 1, panels.length - 1) : Math.max(idx - 1, 0);
+  stage.scrollTo({ left: panels[next].offsetLeft, behavior: "smooth" });
+});
+
+// 初期化
+onScroll();
+window.addEventListener("resize", onScroll);
+// SPでは全パネルを表示状態に（reveal解除）
+if (!isDesktop()) panels.forEach(p => p.classList.add("active"));
+
+// ===== デモフォーム =====
+const form = document.getElementById("demoForm");
+if (form) {
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    document.getElementById("formMsg").textContent =
+      "※これはサンプルです。実際には送信されていません。ご契約後、実際に届くフォームを設置します。";
+  });
+}
+</script>
+</body>
+</html>

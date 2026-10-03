@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 環境会議所 さま（エリアマップ型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地=中村区・設立年・活動分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者のお名前は記載していません（公開時にご本人の許可を得て掲載）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。差し替えポイントにコメントを入れています
+  ・活動エリアの地図（SVG簡易イラスト）とピンの位置は表示イメージのサンプルです
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 環境会議所｜名古屋・地域と環境の会議所【ご提案サンプル】</title>
+<meta name="description" content="名古屋市中村区の環境NPO。環境・社会教育・まちづくり・学術文化芸術の活動を、地域のマップ上で見える化。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F3EFE3;        /* ベージュ（紙） */
+  --c-paper:#FBF9F2;
+  --c-ink:#22322B;
+  --c-green:#1F5B47;     /* 深緑 */
+  --c-green-deep:#153F31;
+  --c-green-pale:#E4EFE7;
+  --c-sky:#5FA8C9;       /* 水色 */
+  --c-sky-deep:#3A88AB;
+  --c-sky-pale:#DDEEF4;
+  --c-line:#D9D2BF;
+  --c-sub:#66746B;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-num:"Roboto Mono",monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.65;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(251,249,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--c-line)}
+.head .inner{max-width:1120px;margin:0 auto;padding:0 26px;height:66px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand svg{width:38px;height:38px;flex:none}
+.brand .t{font-weight:900;font-size:18px;letter-spacing:.06em;line-height:1.2}
+.brand .t small{display:block;font-size:9.5px;font-weight:700;color:var(--c-green);letter-spacing:.08em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:4px}
+.head nav a{text-decoration:none;font-size:13px;font-weight:500;color:var(--c-ink);padding:8px 12px;border-radius:6px;transition:background .25s,color .25s}
+.head nav a:hover{background:var(--c-green-pale);color:var(--c-green-deep)}
+.head .cta{margin-left:8px;background:var(--c-green);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:10px 18px;border-radius:999px;white-space:nowrap;transition:background .25s}
+.head .cta:hover{background:var(--c-green-deep)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.menu-btn span{display:block;width:23px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+
+/* ===== ヒーロー（地図起点） ===== */
+.hero{max-width:1120px;margin:0 auto;padding:60px 26px 34px}
+.hero .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:46px;align-items:center}
+.hero .cap{display:inline-block;font-size:12px;font-weight:700;color:var(--c-sky-deep);letter-spacing:.14em;background:var(--c-sky-pale);padding:5px 13px;border-radius:999px;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.55;letter-spacing:.04em}
+.hero h1 em{font-style:normal;color:var(--c-green);border-bottom:5px solid var(--c-sky-pale)}
+.hero .lead{margin-top:22px;font-size:15px;max-width:440px;color:#3c4a42}
+.hero .chips{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
+.chip{border:1px solid var(--c-green);color:var(--c-green-deep);font-size:12px;font-weight:700;padding:4px 13px;border-radius:999px;white-space:nowrap;background:var(--c-paper)}
+
+/* --- 地図パネル（SVGイラスト地図＋ピン） --- */
+.mapcard{position:relative;background:var(--c-paper);border:1px solid var(--c-line);border-radius:16px;padding:16px;box-shadow:0 18px 40px -22px rgba(21,63,49,.4)}
+.mapcard .maptop{display:flex;align-items:center;justify-content:space-between;padding:2px 6px 12px}
+.mapcard .maptop b{font-size:12.5px;font-weight:700;letter-spacing:.06em}
+.mapcard .maptop span{font-family:var(--font-num);font-size:10.5px;color:var(--c-sub);letter-spacing:.08em}
+.map-svg{width:100%;height:auto;display:block;border-radius:10px;overflow:hidden}
+.pin{cursor:default}
+.pin .dot{transition:transform .3s var(--ease)}
+.pin:hover .dot{transform:scale(1.18)}
+.pin .lbl{font-family:var(--font-body);font-size:9.5px;font-weight:700;fill:var(--c-green-deep)}
+.map-legend{display:flex;flex-wrap:wrap;gap:12px;padding:12px 6px 2px}
+.map-legend .lg{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--c-sub)}
+.map-legend .lg i{width:11px;height:11px;border-radius:999px;flex:none;display:inline-block}
+.map-note{font-size:10.5px;color:#9aa79e;padding:6px 6px 0}
+
+/* ===== 共通ブロック ===== */
+.block{max-width:1120px;margin:0 auto;padding:70px 26px}
+.block.line{border-top:1px solid var(--c-line)}
+.b-head{display:flex;align-items:baseline;gap:14px;margin-bottom:34px}
+.b-head .en{font-family:var(--font-num);font-size:11px;letter-spacing:.2em;color:var(--c-sky-deep);text-transform:uppercase}
+.b-head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.04em}
+.b-head .en::before{content:"";display:inline-block;width:26px;height:2px;background:var(--c-sky);vertical-align:middle;margin-right:9px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#9aa79e}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:#9aa79e;margin-top:6px}
+
+/* ===== 活動（マップの凡例に対応するカード） ===== */
+.act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.act{background:var(--c-paper);border:1px solid var(--c-line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.act .ph{aspect-ratio:4/3;overflow:hidden}
+.act .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.act:hover .ph img{transform:scale(1.05)}
+.act .body{padding:16px 18px 20px;flex:1;display:flex;flex-direction:column}
+.act .tagpin{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-num);font-size:10.5px;font-weight:600;color:var(--c-sub);letter-spacing:.06em;margin-bottom:8px}
+.act .tagpin i{width:10px;height:10px;border-radius:999px;flex:none}
+.act h3{font-size:16.5px;line-height:1.5}
+.act p{font-size:13px;color:#55635a;margin-top:8px}
+
+/* ===== 拠点・エリア（リスト） ===== */
+.spot-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.spot{display:flex;gap:14px;background:var(--c-paper);border:1px solid var(--c-line);border-radius:12px;padding:16px 18px;align-items:flex-start}
+.spot .num{font-family:var(--font-num);font-weight:600;font-size:13px;color:#fff;background:var(--c-green);width:26px;height:26px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center}
+.spot .num.sky{background:var(--c-sky-deep)}
+.spot .num.sand{background:#B08A3E}
+.spot h3{font-size:15px}
+.spot p{font-size:12.5px;color:#66746b;margin-top:3px}
+
+/* ===== わたしたちのこと ===== */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center}
+.about .txt .big{font-size:clamp(18px,2.3vw,22px);font-weight:700;line-height:1.95;margin-bottom:16px}
+.about .txt .big em{font-style:normal;color:var(--c-green)}
+.about .txt p{font-size:14.5px;color:#3c4a42}
+.about .ph{border-radius:16px;overflow:hidden;aspect-ratio:4/5}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.mission-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.mcard{background:var(--c-green);color:#fff;border-radius:14px;padding:22px 20px}
+.mcard:nth-child(2){background:var(--c-sky-deep)}
+.mcard:nth-child(3){background:#8A6C34}
+.mcard .n{font-family:var(--font-num);font-size:12px;opacity:.75;letter-spacing:.1em}
+.mcard h3{font-size:16px;margin:6px 0 8px;color:#fff}
+.mcard p{font-size:12.5px;opacity:.9;line-height:1.8}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:18px;padding:14px 2px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:600;color:var(--c-sub);font-size:12.5px}
+.news-row .cat{flex:none;font-size:10.5px;font-weight:700;color:var(--c-sky-deep);border:1px solid var(--c-sky);padding:1px 9px;border-radius:999px}
+.news-row a{color:var(--c-ink);text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== 概要（表） ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper)}
+table.gaiyo th{width:170px;text-align:left;font-weight:700;background:var(--c-green-pale);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap;color:var(--c-green-deep)}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+
+/* ===== 参加・お問い合わせ（デモフォーム） ===== */
+.contact{background:var(--c-green);color:#fff;border-radius:20px;padding:48px 44px;margin-top:6px}
+.contact .lead-c{font-size:14.5px;opacity:.92;max-width:560px;margin-top:8px}
+.form{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .full{grid-column:1/-1}
+.form label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px;letter-spacing:.04em}
+.form input,.form select,.form textarea{width:100%;font-family:inherit;font-size:14px;padding:12px 14px;border:1px solid rgba(255,255,255,.4);border-radius:10px;background:rgba(255,255,255,.12);color:#fff}
+.form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.6)}
+.form textarea{min-height:110px;resize:vertical}
+.form option{color:#000}
+.form .submit{grid-column:1/-1;background:var(--c-sky);color:#0e2a20;border:none;border-radius:999px;padding:15px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;transition:background .25s}
+.form .submit:hover{background:#fff}
+.form-note{grid-column:1/-1;font-size:11.5px;opacity:.8;text-align:center}
+.contact .tel-line{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;font-size:13.5px;opacity:.92}
+.contact .tel-line b{font-family:var(--font-num);font-size:18px;letter-spacing:.02em}
+
+/* ===== フッター ===== */
+.footer{border-top:1px solid var(--c-line);margin-top:6px}
+.footer .inner{max-width:1120px;margin:0 auto;padding:44px 26px 30px;text-align:center}
+.footer .f-name{font-weight:900;font-size:15.5px}
+.footer p{font-size:12.5px;color:var(--c-sub);margin-top:6px}
+.sample-note{font-size:11px;color:#9aa79e;margin-top:18px;line-height:1.9}
+.sample-note a{color:var(--c-sub)}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;background:var(--c-ink);color:#fff;font-size:11.5px;font-weight:700;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.25);opacity:.94;transition:opacity .25s}
+.pill:hover{opacity:1}
+.pill b{color:var(--c-sky)}
+
+/* ===== SPナビ ===== */
+.sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line);padding:10px 24px 20px;z-index:99}
+.menu-open .sp-nav{display:block}
+.sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .head nav,.head .cta{display:none}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hero{padding:36px 22px 20px}
+  .hero .grid{grid-template-columns:1fr;gap:30px}
+  .hero .lead{max-width:none}
+  .block{padding:52px 22px}
+  .act-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .about{grid-template-columns:1fr;gap:26px}
+  .about .ph{aspect-ratio:16/10;order:-1}
+  .mission-row{grid-template-columns:1fr;gap:12px}
+  .spot-list{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .contact{padding:34px 24px;border-radius:16px}
+  .tbl-hint{display:block}
+}
+@media (max-width:560px){
+  .act-grid{grid-template-columns:1fr}
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:8px 14px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:8px 14px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="head" id="top">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="36" rx="9" fill="#E4EFE7"/>
+        <path d="M20 8c6 3 8 7 8 12 0 6-4 10-8 12-4-2-8-6-8-12 0-5 2-9 8-12Z" fill="#1F5B47"/>
+        <path d="M20 12v18M20 18l5-4M20 23l-5-4" stroke="#DDEEF4" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <circle cx="20" cy="19" r="3.4" fill="#5FA8C9"/>
+      </svg>
+      <span class="t">環境会議所<small>特定非営利活動法人｜名古屋市中村区</small></span>
+    </a>
+    <nav>
+      <a href="#map">活動マップ</a>
+      <a href="#activities">活動分野</a>
+      <a href="#spots">拠点・エリア</a>
+      <a href="#about">わたしたち</a>
+      <a href="#gaiyo">法人概要</a>
+    </nav>
+    <a class="cta" href="#contact">参加・お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="sp-nav">
+  <a href="#map">活動マップ</a>
+  <a href="#activities">活動分野</a>
+  <a href="#spots">拠点・エリア</a>
+  <a href="#about">わたしたち</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#contact">参加・お問い合わせ</a>
+</nav>
+
+<!-- ヒーロー：地図起点 -->
+<section class="hero" id="map">
+  <div class="grid">
+    <div>
+      <span class="cap reveal on">名古屋・中村区の環境NPO</span>
+      <h1 class="reveal on"><span class="kb">この<em>まち</em>から、</span><span class="kb">つながる</span><br><span class="kb"><em>環境</em>と</span><span class="kb"><em>暮らし</em>の</span><span class="kb">会議所。</span></h1>
+      <p class="lead reveal on">環境会議所は、名古屋を拠点に、環境・社会教育・まちづくり・学術文化芸術の活動を地域とともに進めるNPO法人です。「どこで・何をしているか」を、地域のマップの上で見える化しました。</p>
+      <div class="chips reveal on">
+        <span class="chip">環境保全</span>
+        <span class="chip">社会教育</span>
+        <span class="chip">まちづくり</span>
+        <span class="chip">学術・文化・芸術</span>
+      </div>
+    </div>
+
+    <!-- SVG簡易地図（名古屋・中村区エリアのイメージ／※ピン位置はサンプル） -->
+    <div class="mapcard reveal on">
+      <div class="maptop">
+        <b>活動エリアマップ</b>
+        <span>NAGOYA / NAKAMURA AREA</span>
+      </div>
+      <!-- 差し替えポイント: 実際の活動地点にピンを打ち直します。GoogleマップやSVG地図に置き換え可 -->
+      <svg class="map-svg" viewBox="0 0 520 400" role="img" aria-label="活動エリアの簡易地図（サンプル）">
+        <!-- 背景・水域 -->
+        <rect width="520" height="400" fill="#DDEEF4"/>
+        <!-- 陸地（ざっくりした市街のブロック） -->
+        <path d="M0 0H520V400H0Z" fill="#EEE7D3"/>
+        <path d="M340 0h180v400H340c-16-40-8-90 10-130-22-52-14-118 0-160-18-40-22-80-10-110Z" fill="#DDEEF4"/>
+        <!-- 緑地（公園・河川敷のイメージ） -->
+        <path d="M60 250c40-14 90-6 120 14 24 16 12 60-18 74-44 20-108 6-124-28-12-26 2-48 22-60Z" fill="#CFE3D3"/>
+        <ellipse cx="150" cy="90" rx="70" ry="40" fill="#CFE3D3"/>
+        <!-- 川（水色の帯） -->
+        <path d="M330 0c-30 60-10 120-40 180s-70 90-60 160" fill="none" stroke="#9FCFE2" stroke-width="20" stroke-linecap="round" opacity=".85"/>
+        <!-- 道路グリッド -->
+        <g stroke="#E7DEC6" stroke-width="7">
+          <path d="M0 130H520M0 210H520M0 300H520"/>
+          <path d="M110 0V400M230 0V400"/>
+        </g>
+        <g stroke="#F6F1E2" stroke-width="2" stroke-dasharray="6 8">
+          <path d="M0 170H520M0 255H520M170 0V400M300 0V400"/>
+        </g>
+        <!-- 鉄道（名古屋駅のイメージ） -->
+        <path d="M300 0c-6 100-30 190-40 400" fill="none" stroke="#B7AE93" stroke-width="4" stroke-dasharray="2 6"/>
+        <circle cx="292" cy="118" r="6" fill="#fff" stroke="#B7AE93" stroke-width="3"/>
+        <text x="302" y="112" font-size="10" fill="#7d7458" font-family="Noto Sans JP">名古屋駅（イメージ）</text>
+
+        <!-- ピン群（活動分野に対応・※サンプル位置） -->
+        <!-- 1 環境保全（緑） -->
+        <g class="pin">
+          <g class="dot">
+            <path d="M150 250c-13 0-24 10-24 24 0 17 24 40 24 40s24-23 24-40c0-14-11-24-24-24Z" fill="#1F5B47"/>
+            <circle cx="150" cy="274" r="9" fill="#E4EFE7"/>
+            <text x="150" y="278" text-anchor="middle" font-size="11" font-weight="700" fill="#1F5B47" font-family="Roboto Mono">1</text>
+          </g>
+          <text class="lbl" x="150" y="332" text-anchor="middle">環境保全・自然観察</text>
+        </g>
+        <!-- 2 社会教育（水色） -->
+        <g class="pin">
+          <g class="dot">
+            <path d="M150 60c-13 0-24 10-24 24 0 17 24 40 24 40s24-23 24-40c0-14-11-24-24-24Z" fill="#3A88AB"/>
+            <circle cx="150" cy="84" r="9" fill="#DDEEF4"/>
+            <text x="150" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#3A88AB" font-family="Roboto Mono">2</text>
+          </g>
+          <text class="lbl" x="150" y="142" text-anchor="middle">環境学習・講座</text>
+        </g>
+        <!-- 3 まちづくり（砂/緑） -->
+        <g class="pin">
+          <g class="dot">
+            <path d="M410 175c-13 0-24 10-24 24 0 17 24 40 24 40s24-23 24-40c0-14-11-24-24-24Z" fill="#8A6C34"/>
+            <circle cx="410" cy="199" r="9" fill="#F3EBD8"/>
+            <text x="410" y="203" text-anchor="middle" font-size="11" font-weight="700" fill="#8A6C34" font-family="Roboto Mono">3</text>
+          </g>
+          <text class="lbl" x="410" y="257" text-anchor="middle">まちづくり連携</text>
+        </g>
+        <!-- 4 学術文化芸術（深緑） -->
+        <g class="pin">
+          <g class="dot">
+            <path d="M380 300c-13 0-24 10-24 24 0 17 24 40 24 40s24-23 24-40c0-14-11-24-24-24Z" fill="#153F31"/>
+            <circle cx="380" cy="324" r="9" fill="#E4EFE7"/>
+            <text x="380" y="328" text-anchor="middle" font-size="11" font-weight="700" fill="#153F31" font-family="Roboto Mono">4</text>
+          </g>
+          <text class="lbl" x="380" y="382" text-anchor="middle">調査・文化芸術</text>
+        </g>
+        <!-- 事務局マーカー（中村区・イメージ） -->
+        <g class="pin">
+          <circle cx="245" cy="200" r="7" fill="#fff" stroke="#1F5B47" stroke-width="3"/>
+          <circle cx="245" cy="200" r="2.4" fill="#1F5B47"/>
+          <text class="lbl" x="245" y="186" text-anchor="middle">事務局（中村区）</text>
+        </g>
+      </svg>
+      <div class="map-legend">
+        <span class="lg"><i style="background:#1F5B47"></i>環境保全</span>
+        <span class="lg"><i style="background:#3A88AB"></i>社会教育</span>
+        <span class="lg"><i style="background:#8A6C34"></i>まちづくり</span>
+        <span class="lg"><i style="background:#153F31"></i>学術・文化・芸術</span>
+      </div>
+      <p class="map-note">※ 地図とピンの位置は表示イメージのサンプルです。実際の活動地点に差し替えます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 活動分野（マップの凡例に対応） -->
+<section class="block line" id="activities">
+  <div class="b-head reveal"><span class="en">Activities</span><h2>4つの活動分野</h2></div>
+  <p class="note-sample reveal" style="margin:-18px 0 26px">※各活動の写真・説明文は表示イメージのサンプルです。定款の目的（公開情報）をもとに構成しています。</p>
+  <div class="act-grid">
+    <div class="act reveal">
+      <div class="ph"><!-- 差し替えポイント: 環境保全・清掃活動などのお写真 -->
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80&auto=format&fit=crop" alt="森・緑地のイメージ"></div>
+      <div class="body">
+        <span class="tagpin"><i style="background:#1F5B47"></i>PIN 01 ／ 環境保全</span>
+        <h3>環境の保全・自然観察</h3>
+        <p>身近な自然や水辺を守り、次の世代へつなぐ活動。観察会や環境調査を通じて、地域の環境を「じぶんごと」に。<span class="note-sample">※サンプル文</span></p>
+      </div>
+    </div>
+    <div class="act reveal">
+      <div class="ph"><!-- 差し替えポイント: 講座・ワークショップのお写真 -->
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80&auto=format&fit=crop" alt="学習・講座のイメージ"></div>
+      <div class="body">
+        <span class="tagpin"><i style="background:#3A88AB"></i>PIN 02 ／ 社会教育</span>
+        <h3>環境学習・社会教育</h3>
+        <p>子どもから大人まで学べる講座やワークショップ。学びの場を地域に開き、環境について考えるきっかけをつくります。<span class="note-sample">※サンプル文</span></p>
+      </div>
+    </div>
+    <div class="act reveal">
+      <div class="ph"><!-- 差し替えポイント: 地域連携・まちの風景のお写真 -->
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80&auto=format&fit=crop" alt="まちなみのイメージ"></div>
+      <div class="body">
+        <span class="tagpin"><i style="background:#8A6C34"></i>PIN 03 ／ まちづくり</span>
+        <h3>まちづくりへの参画</h3>
+        <p>行政・企業・市民と連携し、環境の視点からまちづくりに参画。持続可能な地域づくりを、多様な立場の人と進めます。<span class="note-sample">※サンプル文</span></p>
+      </div>
+    </div>
+    <div class="act reveal">
+      <div class="ph"><!-- 差し替えポイント: 調査・展示・文化芸術のお写真 -->
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80&auto=format&fit=crop" alt="調査・資料のイメージ"></div>
+      <div class="body">
+        <span class="tagpin"><i style="background:#153F31"></i>PIN 04 ／ 学術・文化・芸術</span>
+        <h3>学術・文化・芸術の振興</h3>
+        <p>調査研究や記録、文化・芸術を通じた発信。地域の環境や暮らしの価値を、学びと表現のかたちで伝えます。<span class="note-sample">※サンプル文</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 拠点・エリア -->
+<section class="block line" id="spots">
+  <div class="b-head reveal"><span class="en">Spots</span><h2>拠点・活動エリア</h2></div>
+  <p class="note-sample reveal" style="margin:-18px 0 26px">※以下の拠点・エリア名は表示イメージのサンプルです。実際の活動地点に差し替えます。</p>
+  <div class="spot-list">
+    <div class="spot reveal">
+      <span class="num">1</span>
+      <div><h3>環境保全フィールド</h3><p>河川敷・緑地での観察・保全活動のエリア（サンプル）</p></div>
+    </div>
+    <div class="spot reveal">
+      <span class="num sky">2</span>
+      <div><h3>まなびの拠点</h3><p>公民館・地域施設での環境学習・講座の会場（サンプル）</p></div>
+    </div>
+    <div class="spot reveal">
+      <span class="num sand">3</span>
+      <div><h3>まちづくり連携先</h3><p>行政・企業・地域団体との協働の場（サンプル）</p></div>
+    </div>
+    <div class="spot reveal">
+      <span class="num" style="background:#153F31">4</span>
+      <div><h3>調査・発信の拠点</h3><p>資料整理・記録・文化芸術活動の場（サンプル）</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたちのこと -->
+<section class="block line" id="about">
+  <div class="b-head reveal"><span class="en">About</span><h2>わたしたちのこと</h2></div>
+  <div class="about">
+    <div class="txt reveal">
+      <p class="big"><span class="kb">環境と地域を、</span><span class="kb"><em>会議の場</em>で</span><span class="kb">つなぐ。</span></p>
+      <p>環境会議所は、2003年に設立された名古屋市中村区のNPO法人です。環境の保全、社会教育、まちづくり、学術・文化・芸術の振興を目的に、市民・行政・企業をつなぐ「会議の場」として活動しています。<span class="note-sample">※活動分野・設立年・所在地（中村区）は公開情報。紹介文はそれをもとにしたサンプルです。</span></p>
+    </div>
+    <div class="ph reveal"><!-- 差し替えポイント: 活動風景・メンバー集合などのお写真（顔が特定されにくい構図推奨） -->
+      <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=900&q=80&auto=format&fit=crop" alt="自然・地域のイメージ"></div>
+  </div>
+  <div class="mission-row">
+    <div class="mcard reveal"><span class="n">MISSION 01</span><h3>まもる</h3><p>身近な環境と自然を、地域の手でまもり、次の世代へつなぎます。</p></div>
+    <div class="mcard reveal"><span class="n">MISSION 02</span><h3>まなぶ・つたえる</h3><p>環境について学び、考え、伝える場を地域に開きます。</p></div>
+    <div class="mcard reveal"><span class="n">MISSION 03</span><h3>つなぐ</h3><p>市民・行政・企業をつなぎ、持続可能なまちづくりに参画します。</p></div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block line" id="news">
+  <div class="b-head reveal"><span class="en">News</span><h2>お知らせ</h2></div>
+  <p class="note-sample reveal" style="margin:-18px 0 12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</p>
+  <div class="reveal">
+    <!-- ※サンプル: 日付・内容はダミーです -->
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">イベント</span><a href="#news">春の自然観察会の参加者を募集します</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">講座</span><a href="#news">親子で学ぶ環境ワークショップを開催しました</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">年次の活動報告を公開しました</a></div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="block line" id="gaiyo">
+  <div class="b-head reveal"><span class="en">Profile</span><h2>法人概要</h2></div>
+  <div class="tbl-wrap reveal">
+    <table class="gaiyo">
+      <tr><th>正式名称</th><td>特定非営利活動法人 環境会議所</td></tr>
+      <tr><th>所在地</th><td>愛知県名古屋市中村区（詳細住所は公開時に記載します）</td></tr>
+      <tr><th>設立</th><td>2003年（公開情報より）</td></tr>
+      <tr><th>活動分野</th><td>保健・医療・福祉／社会教育／まちづくり／学術・文化・芸術・スポーツ／環境の保全 ほか（定款の目的・公開情報より）</td></tr>
+      <tr><th>主な活動</th><td>環境の保全、環境学習・社会教育、まちづくりへの参画、調査研究・文化芸術の振興 <span class="note-sample">※定款目的をもとにしたサンプル表記</span></td></tr>
+      <tr><th>電話</th><td>（公開時に記載します）</td></tr>
+      <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+    </table>
+  </div>
+  <p class="tbl-hint">→ 表は横にスクロールできます</p>
+</section>
+
+<!-- 参加・お問い合わせ（デモフォーム） -->
+<section class="block" id="contact">
+  <div class="contact reveal">
+    <div class="b-head" style="margin-bottom:6px"><span class="en" style="color:#DDEEF4">Contact</span><h2 style="color:#fff">活動に参加・お問い合わせ</h2></div>
+    <p class="lead-c">会員・ボランティア・寄付・協働など、参加のかたちはさまざまです。「まずは話を聞いてみたい」だけでも大丈夫です。下のフォームからお気軽にどうぞ。</p>
+    <!-- デモフォーム: 実際には送信されません（ご契約後にメール送信/フォーム連携を設定します） -->
+    <form class="form" onsubmit="return false" aria-label="お問い合わせフォーム（デモ）">
+      <div><label for="f-name">お名前</label><input id="f-name" type="text" placeholder="山田 太郎"></div>
+      <div><label for="f-mail">メールアドレス</label><input id="f-mail" type="email" placeholder="example@mail.com"></div>
+      <div class="full"><label for="f-kind">ご相談の種類</label>
+        <select id="f-kind">
+          <option>会員・ボランティアについて</option>
+          <option>寄付・ご支援について</option>
+          <option>連携・協働のご相談</option>
+          <option>取材・その他</option>
+        </select>
+      </div>
+      <div class="full"><label for="f-msg">お問い合わせ内容</label><textarea id="f-msg" placeholder="ご相談内容をご記入ください"></textarea></div>
+      <button class="submit" type="submit" onclick="document.getElementById('f-done').style.display='block'">送信する（デモ）</button>
+      <p class="form-note" id="f-done" style="display:none">※これはサンプルのためのデモ表示です。実際には送信されません。ご契約後に、送信先メールや自動返信を設定します。</p>
+      <p class="form-note">※ このフォームはデモです。送信は行われません。</p>
+    </form>
+    <div class="tel-line">
+      <span>お電話でのお問い合わせ</span>
+      <b>000-0000-0000</b>
+      <span class="note-sample" style="color:#DDEEF4;opacity:.85">※電話番号は公開時に実データへ差し替えます</span>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="inner">
+    <p class="f-name">特定非営利活動法人 環境会議所</p>
+    <p>愛知県名古屋市中村区 ／ 環境・社会教育・まちづくり・学術文化芸術</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容・地図のピン位置はダミー、代表者名は非掲載）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px">&copy; 2026 特定非営利活動法人 環境会議所</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">ご提案用サンプル｜制作 <b>スマートコネクト</b></a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// reveal
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

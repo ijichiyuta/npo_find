@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ジオテクチャーフォーラム さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者氏名・番地・建物名・実電話番号は記載していません（サンプル方針）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。差し替え前提です
+  ・デザイン主旨: 表面=専門用語 / 裏面=やさしい説明 の「カードを裏返す」仕掛けで、
+    専門知を市民に橋渡しする活動を表現しています
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 ジオテクチャーフォーラム｜科学技術を、まちのことばに【ご提案サンプル】</title>
+<meta name="description" content="名古屋市昭和区のまちづくりNPO。専門化する科学技術を市民に分かりやすく橋渡しし、市民のまちづくり参加を支えます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-navy:#12224A;
+  --c-navy-deep:#0B1730;
+  --c-navy-soft:#20356B;
+  --c-paper:#FFFFFF;
+  --c-bg:#F4F6FB;
+  --c-ink:#17202E;
+  --c-sub:#5B6678;
+  --c-yellow:#F5C518;
+  --c-yellow-deep:#D9A800;
+  --c-yellow-pale:#FCF3D2;
+  --c-line:#D8DEEC;
+  --c-line-navy:#2A3E70;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-mono:"Roboto Mono",monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+.kb{display:inline-block}
+a{color:inherit}
+
+/* ===== 上部ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(11,23,48,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-line-navy)}
+.head-in{max-width:1120px;margin:0 auto;padding:0 30px;height:66px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}
+.brand .mark{width:36px;height:36px;flex:none}
+.brand .t{font-weight:900;font-size:16.5px;letter-spacing:.04em;line-height:1.2}
+.brand .t small{display:block;font-family:var(--font-mono);font-size:9.5px;font-weight:500;color:var(--c-yellow);letter-spacing:.18em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:2px}
+.head nav a{text-decoration:none;color:#C6D0E6;font-size:13px;font-weight:500;padding:9px 13px;border-radius:4px;transition:color .25s,background .25s}
+.head nav a:hover{color:#fff;background:var(--c-navy-soft)}
+.head .cta{margin-left:8px;background:var(--c-yellow);color:var(--c-navy-deep);text-decoration:none;font-weight:700;font-size:13px;padding:9px 16px;border-radius:4px;white-space:nowrap;transition:transform .25s}
+.head .cta:hover{transform:translateY(-1px)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー ===== */
+.hero{background:var(--c-navy-deep);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--c-line-navy) 1px,transparent 1px),linear-gradient(90deg,var(--c-line-navy) 1px,transparent 1px);background-size:52px 52px;opacity:.28;-webkit-mask-image:radial-gradient(ellipse 90% 70% at 70% 30%,#000,transparent);mask-image:radial-gradient(ellipse 90% 70% at 70% 30%,#000,transparent)}
+.hero-in{max-width:1120px;margin:0 auto;padding:86px 30px 92px;position:relative}
+.hero .ey{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.16em;color:var(--c-yellow);border:1px solid var(--c-line-navy);border-radius:999px;padding:6px 15px;margin-bottom:26px}
+.hero .ey::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-yellow)}
+.hero h1{font-size:clamp(28px,4.6vw,50px);font-weight:900;line-height:1.5;letter-spacing:.02em}
+.hero h1 .hi{color:var(--c-yellow)}
+.hero h1 .ul{position:relative;white-space:nowrap}
+.hero h1 .ul::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:8px;background:rgba(245,197,24,.28);z-index:-1}
+.hero .lead{margin-top:26px;max-width:640px;font-size:15.5px;color:#C6D0E6;line-height:2.1}
+.hero .btns{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .btns a{text-decoration:none;font-weight:700;font-size:14px;padding:14px 26px;border-radius:6px;transition:transform .25s}
+.hero .btns a:hover{transform:translateY(-2px)}
+.hero .btns .p{background:var(--c-yellow);color:var(--c-navy-deep)}
+.hero .btns .s{border:1px solid var(--c-line-navy);color:#fff}
+.hero .hint{margin-top:30px;font-size:12px;color:#8A99BC;display:flex;align-items:center;gap:8px}
+.hero .hint .card-ic{width:26px;height:18px;border:1.5px solid var(--c-yellow);border-radius:3px;position:relative;flex:none}
+.hero .hint .card-ic::after{content:"";position:absolute;left:3px;top:3px;right:3px;height:2px;background:var(--c-yellow);box-shadow:0 4px 0 rgba(245,197,24,.5)}
+
+/* ===== 共通 ===== */
+.sec{max-width:1120px;margin:0 auto;padding:84px 30px;border-bottom:1px solid var(--c-line)}
+.sec-head{margin-bottom:44px}
+.sec-head .en{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;color:var(--c-yellow-deep);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.sec-head .en::before{content:"";width:22px;height:2px;background:var(--c-yellow-deep)}
+.sec-head h2{font-size:clamp(23px,3vw,31px);font-weight:900;margin-top:14px;letter-spacing:.02em}
+.sec-head p{margin-top:14px;color:var(--c-sub);max-width:660px;font-size:14.5px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#9AA6BB}
+
+/* ===== カードフリップ（活動テーマ） ===== */
+.flip-intro{background:var(--c-navy);color:#fff;border-radius:14px;padding:26px 30px;display:flex;align-items:center;gap:18px;margin-bottom:36px}
+.flip-intro .n{font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--c-yellow);flex:none}
+.flip-intro p{font-size:14px;color:#D3DBEE;line-height:1.9}
+.flip-intro b{color:#fff}
+.flip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.flip{background:transparent;perspective:1400px;cursor:pointer;border:0;padding:0;font:inherit;text-align:left;width:100%}
+.flip-inner{position:relative;width:100%;min-height:270px;transform-style:preserve-3d;transition:transform .7s var(--ease)}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;overflow:hidden}
+.flip-front{background:var(--c-navy);color:#fff;border:1px solid var(--c-line-navy)}
+.flip-front::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--c-line-navy) 1px,transparent 1px),linear-gradient(90deg,var(--c-line-navy) 1px,transparent 1px);background-size:30px 30px;opacity:.4;-webkit-mask-image:radial-gradient(circle at 80% 15%,#000,transparent 70%);mask-image:radial-gradient(circle at 80% 15%,#000,transparent 70%)}
+.flip-front .term-tag{position:relative;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--c-yellow);margin-bottom:16px}
+.flip-front .term{position:relative;font-size:21px;font-weight:900;line-height:1.5;letter-spacing:.02em}
+.flip-front .term-en{position:relative;font-family:var(--font-mono);font-size:12px;color:#9AA9CC;margin-top:8px}
+.flip-front .diff{position:relative;margin-top:auto;font-size:11.5px;color:#C6D0E6;display:flex;align-items:center;gap:7px}
+.flip-front .diff .lv{display:inline-flex;gap:3px}
+.flip-front .diff .lv i{width:16px;height:5px;border-radius:3px;background:var(--c-line-navy)}
+.flip-front .diff .lv i.on{background:var(--c-yellow)}
+.flip-back{background:var(--c-paper);color:var(--c-ink);border:1px solid var(--c-line);transform:rotateY(180deg)}
+.flip-back .easy-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--c-yellow-deep);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.flip-back .easy-tag::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--c-yellow);display:inline-block;flex:none}
+.flip-back h3{font-size:16px;font-weight:900;margin-bottom:10px;line-height:1.6}
+.flip-back p{font-size:13px;color:var(--c-sub);line-height:1.95}
+.flip-hint{margin-top:auto;padding-top:12px;font-size:11px;color:#9AA6BB;display:flex;align-items:center;gap:6px}
+.flip-hint .arw{color:var(--c-yellow-deep);font-weight:700}
+.flip-tip{margin-top:22px;font-size:12px;color:var(--c-sub);text-align:center}
+.flip-tip b{color:var(--c-navy)}
+
+/* ===== 私たちがすること（3列） ===== */
+.do-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.do-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:14px;padding:30px 26px;border-top:3px solid var(--c-yellow)}
+.do-card .ic{width:46px;height:46px;border-radius:10px;background:var(--c-yellow-pale);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.do-card .ic svg{width:24px;height:24px;stroke:var(--c-navy);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.do-card h3{font-size:17px;font-weight:900;margin-bottom:10px}
+.do-card p{font-size:13.5px;color:var(--c-sub);line-height:1.95}
+
+/* ===== 数字 ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{background:var(--c-navy);color:#fff;border-radius:14px;padding:28px 22px;text-align:center}
+.stat .num{font-family:var(--font-mono);font-size:34px;font-weight:600;color:var(--c-yellow);line-height:1.1}
+.stat .num small{font-size:15px;margin-left:2px}
+.stat .lb{font-size:12.5px;color:#C6D0E6;margin-top:10px}
+
+/* ===== 活動レポート（お知らせ） ===== */
+.news-list{border-top:1px solid var(--c-line)}
+.news-row{display:flex;gap:20px;align-items:center;padding:16px 4px;border-bottom:1px solid var(--c-line);text-decoration:none;transition:background .25s}
+.news-row:hover{background:var(--c-paper)}
+.news-row time{font-family:var(--font-mono);font-size:12.5px;color:var(--c-sub);flex:none;width:96px}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;color:var(--c-navy);background:var(--c-yellow-pale);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.news-row .ti{font-size:14px;color:var(--c-ink)}
+.news-row:hover .ti{color:var(--c-navy)}
+
+/* ===== 参加する（CTA帯） ===== */
+.join{background:var(--c-navy-deep);color:#fff;border-radius:18px;padding:52px 44px;position:relative;overflow:hidden}
+.join::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--c-line-navy) 1px,transparent 1px),linear-gradient(90deg,var(--c-line-navy) 1px,transparent 1px);background-size:46px 46px;opacity:.3;-webkit-mask-image:radial-gradient(ellipse 70% 90% at 20% 50%,#000,transparent);mask-image:radial-gradient(ellipse 70% 90% at 20% 50%,#000,transparent)}
+.join-in{position:relative;max-width:760px}
+.join h2{font-size:clamp(22px,3vw,30px);font-weight:900;line-height:1.55}
+.join h2 .hi{color:var(--c-yellow)}
+.join p{margin-top:16px;color:#C6D0E6;font-size:14.5px;line-height:2}
+.join .ways{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.join .way{background:var(--c-navy);border:1px solid var(--c-line-navy);border-radius:12px;padding:20px}
+.join .way h3{font-size:15px;font-weight:900;color:var(--c-yellow);margin-bottom:7px}
+.join .way p{margin-top:0;font-size:12.5px;color:#C6D0E6;line-height:1.85}
+
+/* ===== フォーム ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.info-box{background:var(--c-paper);border:1px solid var(--c-line);border-radius:14px;padding:30px 28px}
+.info-box h3{font-size:16px;font-weight:900;margin-bottom:18px}
+.info-row{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--c-line);font-size:14px}
+.info-row:first-of-type{border-top:none}
+.info-row .k{flex:none;width:74px;font-weight:700;color:var(--c-navy);font-size:12.5px}
+.info-row .v{color:var(--c-sub)}
+.info-row .v a{color:var(--c-navy);font-weight:700;text-decoration:none}
+form{background:var(--c-paper);border:1px solid var(--c-line);border-radius:14px;padding:30px 28px}
+.demo-tag{display:inline-block;background:var(--c-yellow-pale);color:var(--c-yellow-deep);font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;margin-bottom:20px}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px}
+.fld input,.fld textarea{width:100%;border:1px solid var(--c-line);border-radius:8px;padding:11px 13px;font-family:inherit;font-size:14px;background:var(--c-bg)}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--c-navy);background:#fff}
+.fld textarea{resize:vertical;min-height:104px}
+.submit{width:100%;background:var(--c-yellow);color:var(--c-navy-deep);border:0;border-radius:8px;padding:14px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;transition:transform .2s}
+.submit:hover{transform:translateY(-1px)}
+.form-msg{margin-top:14px;font-size:13px;text-align:center;color:var(--c-navy);font-weight:700;display:none}
+.form-msg.show{display:block}
+
+/* ===== 概要表 ===== */
+.gaiyo{width:100%;border-collapse:collapse;font-size:14px;background:var(--c-paper);border:1px solid var(--c-line);border-radius:14px;overflow:hidden}
+.gaiyo th{width:170px;text-align:left;font-weight:700;background:var(--c-navy);color:#fff;border-bottom:1px solid var(--c-line-navy);padding:14px 20px;white-space:nowrap;font-size:13px}
+.gaiyo td{border-bottom:1px solid var(--c-line);padding:14px 20px;color:var(--c-sub)}
+.gaiyo tr:last-child th,.gaiyo tr:last-child td{border-bottom:none}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-navy-deep);color:#fff;padding:56px 30px 40px}
+.footer-in{max-width:1120px;margin:0 auto}
+.footer .brand .t{color:#fff}
+.footer .f-desc{margin-top:16px;color:#9AA9CC;font-size:13px;max-width:460px;line-height:1.9}
+.footer .f-meta{margin-top:24px;font-size:12.5px;color:#C6D0E6;line-height:2}
+.sample-note{margin-top:26px;padding-top:22px;border-top:1px solid var(--c-line-navy);font-size:11.5px;color:#8A99BC;line-height:1.95}
+.sample-note a{color:var(--c-yellow)}
+.copy{margin-top:16px;font-size:11px;color:#6C7B9E}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none}
+  .head .cta{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:0;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:#fff;margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:var(--c-navy-deep);border-bottom:1px solid var(--c-line-navy);padding:12px 24px 22px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:#fff;font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line-navy)}
+  .sp-nav .cta{color:var(--c-yellow);font-weight:700}
+  .flip-grid{grid-template-columns:1fr;gap:16px}
+  .flip-inner{min-height:230px}
+  .do-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .join{padding:38px 26px}
+  .join .ways{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:24px}
+  .flip-intro{flex-direction:column;text-align:center;gap:10px}
+}
+@media (max-width:520px){
+  .sec{padding:60px 20px}
+  .hero-in{padding:60px 20px 66px}
+  .head-in{padding:0 20px}
+  .stats{grid-template-columns:1fr}
+  /* 概要表: 縦積み */
+  .gaiyo,.gaiyo tbody,.gaiyo tr,.gaiyo th,.gaiyo td{display:block;width:100%}
+  .gaiyo th{border-bottom:none;padding:12px 18px 4px;background:var(--c-navy)}
+  .gaiyo td{padding:6px 18px 14px;border-bottom:1px solid var(--c-line);background:var(--c-paper);color:var(--c-sub)}
+  .gaiyo tr:last-child td{border-bottom:none}
+  .news-row{flex-wrap:wrap;gap:8px}
+  .news-row time{width:auto}
+}
+.sp-nav{display:none}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="head-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="8" fill="#12224A" stroke="#2A3E70"/>
+        <path d="M9 26 L16 15 L22 22 L31 11" fill="none" stroke="#F5C518" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="31" cy="11" r="3" fill="#F5C518"/>
+        <line x1="9" y1="30" x2="31" y2="30" stroke="#5B6ea0" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="t">ジオテクチャーフォーラム<small>SCIENCE × MACHIZUKURI</small></span>
+    </a>
+    <nav>
+      <a href="#theme">活動テーマ</a>
+      <a href="#do">私たちの役割</a>
+      <a href="#report">活動レポート</a>
+      <a href="#join">参加する</a>
+      <a href="#about">団体概要</a>
+    </nav>
+    <a class="cta" href="#contact">お問い合わせ</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#theme">活動テーマ</a>
+    <a href="#do">私たちの役割</a>
+    <a href="#report">活動レポート</a>
+    <a href="#join">参加する</a>
+    <a href="#about">団体概要</a>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-in">
+    <span class="ey reveal on">名古屋市昭和区・まちづくり支援</span>
+    <h1 class="reveal on"><span class="kb">むずかしい</span><span class="kb"><span class="hi">科学技術</span>を、</span><br><span class="kb"><span class="ul">まちのことば</span>に。</span></h1>
+    <p class="lead reveal on">専門化していく科学技術と、まちで暮らす市民のあいだには、少しずつ距離が生まれています。ジオテクチャーフォーラムは、その「あいだ」に立ち、専門知を分かりやすく橋渡しして、市民のまちづくり参加を支えるNPOです。</p>
+    <div class="btns reveal on">
+      <a class="p" href="#theme">活動テーマを見る</a>
+      <a class="s" href="#join">参加する</a>
+    </div>
+    <p class="hint reveal on"><span class="card-ic" aria-hidden="true"></span>下の各カードは<b style="color:#fff;font-weight:700;margin:0 4px">タップ／クリックで裏返り</b>、専門用語がやさしい説明に変わります。</p>
+  </div>
+</section>
+
+<!-- 活動テーマ（カードフリップ） -->
+<section class="sec" id="theme">
+  <div class="sec-head reveal">
+    <span class="en">Our Themes</span>
+    <h2>専門用語を、裏返してみる。</h2>
+    <p>まちづくりの現場では、防災・環境・都市計画などの専門用語がよく登場します。カードの表は「専門のことば」、裏はその「やさしい説明」。裏返して、まちのことばに翻訳してみてください。</p>
+  </div>
+
+  <div class="flip-intro reveal">
+    <span class="n">04</span>
+    <p>私たちが市民のみなさんと一緒に考えている、代表的な<b>4つのテーマ</b>です。専門家まかせにせず「自分ごと」として考えられるよう、いちばんやさしいことばに置きなおしています。</p>
+  </div>
+
+  <div class="flip-grid">
+    <!-- カード1 -->
+    <button type="button" class="flip reveal" aria-pressed="false">
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="term-tag">TERM 01｜防災</span>
+          <span class="term">液状化<br>ハザードマップ</span>
+          <span class="term-en">Liquefaction Hazard Map</span>
+          <span class="diff">専門度 <span class="lv"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+        </div>
+        <div class="flip-face flip-back">
+          <span class="easy-tag">まちのことばで</span>
+          <h3>地震で地面がやわらかくなる場所の地図</h3>
+          <p>大きな地震のとき、水分の多い地面が一時的にドロドロになり、建物が傾くことがあります。どこで起きやすいかを色分けした地図を、一緒に読み解きます。<span class="note-sample">※説明文はサンプルです</span></p>
+          <span class="flip-hint"><span class="arw">↺</span> もう一度タップで表にもどります</span>
+        </div>
+      </div>
+    </button>
+    <!-- カード2 -->
+    <button type="button" class="flip reveal" aria-pressed="false">
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="term-tag">TERM 02｜都市計画</span>
+          <span class="term">グリーン<br>インフラ</span>
+          <span class="term-en">Green Infrastructure</span>
+          <span class="diff">専門度 <span class="lv"><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+        </div>
+        <div class="flip-face flip-back">
+          <span class="easy-tag">まちのことばで</span>
+          <h3>木や土の力で、まちを快適にする工夫</h3>
+          <p>植木や芝生、雨を地面にしみこませる仕組みなどを使って、暑さや大雨をやわらげる考え方です。コンクリートだけに頼らないまちづくりを目指します。<span class="note-sample">※説明文はサンプルです</span></p>
+          <span class="flip-hint"><span class="arw">↺</span> もう一度タップで表にもどります</span>
+        </div>
+      </div>
+    </button>
+    <!-- カード3 -->
+    <button type="button" class="flip reveal" aria-pressed="false">
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="term-tag">TERM 03｜環境</span>
+          <span class="term">カーボン<br>ニュートラル</span>
+          <span class="term-en">Carbon Neutral</span>
+          <span class="diff">専門度 <span class="lv"><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+        </div>
+        <div class="flip-face flip-back">
+          <span class="easy-tag">まちのことばで</span>
+          <h3>出したCO2と、減らしたCO2をゼロにする</h3>
+          <p>暮らしや活動で出てしまう二酸化炭素を、省エネや植林などで打ち消し、差し引きゼロにしていく目標です。まちの中でできる一歩を一緒に探します。<span class="note-sample">※説明文はサンプルです</span></p>
+          <span class="flip-hint"><span class="arw">↺</span> もう一度タップで表にもどります</span>
+        </div>
+      </div>
+    </button>
+    <!-- カード4 -->
+    <button type="button" class="flip reveal" aria-pressed="false">
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="term-tag">TERM 04｜合意形成</span>
+          <span class="term">ワーク<br>ショップ型合意</span>
+          <span class="term-en">Consensus Building</span>
+          <span class="diff">専門度 <span class="lv"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+        </div>
+        <div class="flip-face flip-back">
+          <span class="easy-tag">まちのことばで</span>
+          <h3>みんなで話し合って、納得して決めること</h3>
+          <p>専門家が一方的に決めるのではなく、住民が意見を出し合いながらまちの計画を作る進め方です。話しやすい場づくりから私たちがお手伝いします。<span class="note-sample">※説明文はサンプルです</span></p>
+          <span class="flip-hint"><span class="arw">↺</span> もう一度タップで表にもどります</span>
+        </div>
+      </div>
+    </button>
+  </div>
+  <p class="flip-tip reveal">カードは<b>裏返す</b>と、専門のことばがやさしい説明に変わります。これが私たちのやっている「橋渡し」そのものです。</p>
+</section>
+
+<!-- 私たちの役割 -->
+<section class="sec" id="do">
+  <div class="sec-head reveal">
+    <span class="en">What We Do</span>
+    <h2>科学技術と市民の「あいだ」に立つ</h2>
+    <p>専門家と市民、それぞれのことばを行き来しながら、まちづくりに市民が参加しやすい状態をつくります。</p>
+  </div>
+  <div class="do-grid">
+    <div class="do-card reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div>
+      <h3>翻訳する</h3>
+      <p>専門的な資料や計画を、市民の目線でわかりやすく読み解き、やさしいことばと図で伝えなおします。<span class="note-sample">※内容はサンプルです</span></p>
+    </div>
+    <div class="do-card reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="10" r="2.6"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M15 19c.4-2 1.8-3.4 3.5-3.6"/></svg></div>
+      <h3>場をつくる</h3>
+      <p>専門家と市民が同じテーブルで話せるワークショップや勉強会を企画し、対話が生まれる場を運営します。<span class="note-sample">※内容はサンプルです</span></p>
+    </div>
+    <div class="do-card reveal">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 4-3.5 7-8 8-4.5-1-8-4-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>支える</h3>
+      <p>まちづくりに関わりたい市民や団体に、情報提供や相談対応で伴走し、一歩を踏み出す後押しをします。<span class="note-sample">※内容はサンプルです</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 数字 -->
+<section class="sec" id="stats" style="border-bottom:none;padding-bottom:0">
+  <div class="stats">
+    <div class="stat reveal"><div class="num">120<small>回</small></div><div class="lb">勉強会・講座<br>（※サンプル）</div></div>
+    <div class="stat reveal"><div class="num">2,800<small>名</small></div><div class="lb">のべ参加者<br>（※サンプル）</div></div>
+    <div class="stat reveal"><div class="num">18<small>地区</small></div><div class="lb">連携したまち<br>（※サンプル）</div></div>
+    <div class="stat reveal"><div class="num">04<small>分野</small></div><div class="lb">防災・環境・都市・合意<br>（※サンプル）</div></div>
+  </div>
+  <p class="note-sample reveal" style="text-align:center;margin-top:20px">※上記の数値はすべて表示イメージのサンプルです。ご契約後に実績値へ差し替えます</p>
+</section>
+
+<!-- 活動レポート -->
+<section class="sec" id="report">
+  <div class="sec-head reveal">
+    <span class="en">Reports & News</span>
+    <h2>活動レポート・お知らせ</h2>
+    <p>勉強会やまち歩き、市民ワークショップの様子をお届けします。</p>
+  </div>
+  <!-- 差し替えポイント: 活動写真（まち・市民・科学のイメージ／顔が特定されにくい構図） -->
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px">
+    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&q=80&auto=format&fit=crop" alt="まちなみのイメージ" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px">
+    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80&auto=format&fit=crop" alt="学びの場のイメージ" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80&auto=format&fit=crop" alt="科学・データのイメージ" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px">
+  </div>
+  <p class="note-sample reveal" style="margin-bottom:14px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+  <!-- ※サンプル: 日付・内容はダミーです -->
+  <div class="news-list reveal">
+    <a class="news-row" href="#report"><time>20XX.XX.XX</time><span class="cat">勉強会</span><span class="ti">市民向け「液状化ハザードマップの読み方」講座を開催しました</span></a>
+    <a class="news-row" href="#report"><time>20XX.XX.XX</time><span class="cat">まち歩き</span><span class="ti">昭和区のまちを歩いて、身近な防災を考えるワークを行いました</span></a>
+    <a class="news-row" href="#report"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><span class="ti">次回ワークショップ「グリーンインフラってなに？」参加者募集</span></a>
+    <a class="news-row" href="#report"><time>20XX.XX.XX</time><span class="cat">レポート</span><span class="ti">専門家と市民の対話イベントの記録を公開しました</span></a>
+  </div>
+</section>
+
+<!-- 参加する -->
+<section class="sec" id="join" style="border-bottom:none">
+  <div class="join reveal">
+    <div class="join-in">
+      <h2><span class="hi">科学とまち</span>の橋渡しを、<br>一緒に支えてくれる方へ。</h2>
+      <p>専門知識がなくても大丈夫です。「まちのことに関心がある」その気持ちが、いちばんの力になります。できることを、できる範囲で。</p>
+      <div class="ways">
+        <div class="way"><h3>会員になる</h3><p>会費で活動を支え、勉強会やイベントに優先的にご参加いただけます。<span class="note-sample" style="color:#8A99BC">※サンプル</span></p></div>
+        <div class="way"><h3>ボランティア</h3><p>イベント運営や広報など、得意なことでお手伝いいただけます。<span class="note-sample" style="color:#8A99BC">※サンプル</span></p></div>
+        <div class="way"><h3>ご寄付</h3><p>いただいた寄付は、市民向け講座や資料づくりに活用します。<span class="note-sample" style="color:#8A99BC">※サンプル</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="sec" id="contact">
+  <div class="sec-head reveal">
+    <span class="en">Contact</span>
+    <h2>お問い合わせ</h2>
+    <p>ご質問・見学・取材・連携のご相談など、お気軽にお寄せください。</p>
+  </div>
+  <div class="contact-grid">
+    <div class="info-box reveal">
+      <h3>団体情報</h3>
+      <div class="info-row"><span class="k">名称</span><span class="v">特定非営利活動法人<br>ジオテクチャーフォーラム</span></div>
+      <div class="info-row"><span class="k">所在地</span><span class="v">愛知県名古屋市昭和区<br><span class="note-sample">（詳細住所は公開時に記載します）</span></span></div>
+      <div class="info-row"><span class="k">分野</span><span class="v">まちづくりの推進</span></div>
+      <div class="info-row"><span class="k">電話</span><span class="v"><a href="#access">000-0000-0000</a><br><span class="note-sample">※サンプル番号のため発信できません</span></span></div>
+      <div class="info-row"><span class="k">受付</span><span class="v">平日 10:00–17:00<br><span class="note-sample">※サンプル表記</span></span></div>
+    </div>
+    <form class="reveal" onsubmit="return false">
+      <span class="demo-tag">デモフォーム（送信はされません）</span>
+      <div class="fld"><label for="n">お名前</label><input id="n" type="text" placeholder="山田 太郎" autocomplete="name"></div>
+      <div class="fld"><label for="e">メールアドレス</label><input id="e" type="email" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="fld"><label for="m">お問い合わせ内容</label><textarea id="m" placeholder="ご相談内容をご記入ください"></textarea></div>
+      <button type="submit" class="submit" id="submitBtn">送信する（デモ）</button>
+      <p class="form-msg" id="formMsg">これはサンプルのデモフォームです。実際には送信されません。ご契約後、実際に届くフォームに設定します。</p>
+    </form>
+  </div>
+</section>
+
+<!-- 団体概要 -->
+<section class="sec" id="about">
+  <div class="sec-head reveal">
+    <span class="en">About</span>
+    <h2>団体概要</h2>
+  </div>
+  <div class="reveal">
+    <table class="gaiyo">
+      <tr><th>正式名称</th><td>特定非営利活動法人 ジオテクチャーフォーラム</td></tr>
+      <tr><th>所在地</th><td>愛知県名古屋市昭和区（詳細住所は公開時に記載します）</td></tr>
+      <tr><th>活動分野</th><td>まちづくりの推進</td></tr>
+      <tr><th>目的</th><td>専門化する科学技術を市民に分かりやすく橋渡しし、市民のまちづくり参加を支える（定款目的・公開情報より）</td></tr>
+      <tr><th>主な活動</th><td>市民向け講座・勉強会／まち歩き・ワークショップ／情報提供・相談対応（※活動内容はサンプルを含みます）</td></tr>
+      <tr><th>代表者</th><td>公開時に記載します</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="brand" style="display:inline-flex">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="8" fill="#12224A" stroke="#2A3E70"/>
+        <path d="M9 26 L16 15 L22 22 L31 11" fill="none" stroke="#F5C518" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="31" cy="11" r="3" fill="#F5C518"/>
+        <line x1="9" y1="30" x2="31" y2="30" stroke="#5B6ea0" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="t">ジオテクチャーフォーラム<small>SCIENCE × MACHIZUKURI</small></span>
+    </div>
+    <p class="f-desc">専門化する科学技術を、まちのことばに翻訳して。市民のまちづくり参加を、名古屋・昭和区から支えます。</p>
+    <p class="f-meta">特定非営利活動法人 ジオテクチャーフォーラム｜愛知県名古屋市昭和区</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、「※サンプル」の内容はダミー、電話番号はサンプル）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO法人 ジオテクチャーフォーラム（ご提案サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下固定ピル（必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// カードフリップ
+document.querySelectorAll(".flip").forEach(card => {
+  card.addEventListener("click", () => {
+    const flipped = card.classList.toggle("flipped");
+    card.setAttribute("aria-pressed", flipped ? "true" : "false");
+  });
+});
+
+// デモフォーム
+document.getElementById("submitBtn").addEventListener("click", () => {
+  document.getElementById("formMsg").classList.add("show");
+});
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

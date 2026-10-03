@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 総合塾「人間館」さま
+  制作: スマートコネクト (https://smcn-jp.com)
+
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野・設立年）の
+    範囲で作成しています
+  ・代表者の実名は記載していません（公開時にご本人のお名前を記載）
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。<!-- 差し替えポイント -->
+  ・デザインの方向：対話ふきだし主役型
+    （左右の会話バブルでコンテンツを進行し「学びの対話」を表現）
+    配色＝藍×クリーム×橙／親しみやすい丸ゴシック
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 総合塾「人間館」｜名古屋市守山区の学び・育ちの場【ご提案サンプル】</title>
+<meta name="description" content="名古屋市守山区で、社会教育・まちづくり・学術文化芸術スポーツにとりくむNPO法人。世代をこえた学びと育ちの場です。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#26456E;        /* 藍 */
+  --indigo-deep:#1B3454;
+  --indigo-soft:#5C7BA3;
+  --cream:#FBF5E9;         /* クリーム */
+  --cream-2:#F4E9D4;
+  --paper:#FFFFFF;
+  --orange:#E8823A;        /* 橙 */
+  --orange-deep:#CE6A22;
+  --orange-pale:#FBE6CF;
+  --ink:#2C2A26;
+  --ink-soft:#6B655C;
+  --line:#E6DCC7;
+  --font:"Zen Maru Gothic",sans-serif;   /* 親しみやすい丸ゴシック */
+  --font-en:"Fredoka",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--cream);color:var(--ink);line-height:1.95;font-size:15.5px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.65;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:200;background:rgba(251,245,233,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+.head .bar{max-width:1000px;margin:0 auto;padding:0 22px;height:66px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .t{font-weight:900;font-size:17.5px;letter-spacing:.02em;line-height:1.2}
+.brand .t small{display:block;font-size:10px;font-weight:500;color:var(--indigo);letter-spacing:.04em;margin-top:2px}
+.nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.nav a{text-decoration:none;color:var(--indigo-deep);font-size:13.5px;font-weight:500;padding:8px 12px;border-radius:20px;transition:background .25s var(--ease)}
+.nav a:hover{background:var(--cream-2)}
+.nav .cta{background:var(--orange);color:#fff;font-weight:700;padding:9px 18px;box-shadow:0 4px 12px rgba(232,130,58,.32)}
+.nav .cta:hover{background:var(--orange-deep)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:7px}
+.menu-btn span{display:block;width:23px;height:2.4px;background:var(--indigo-deep);border-radius:2px;margin:5px 0;transition:.3s}
+
+/* ===== 会話バブルの共通パーツ ===== */
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+.sec{padding:78px 0}
+.sec-cream2{background:var(--cream-2)}
+.sec-paper{background:var(--paper)}
+.sec-indigo{background:var(--indigo);color:#fff}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head .en{font-family:var(--font-en);font-size:12px;letter-spacing:.28em;color:var(--orange);text-transform:uppercase;font-weight:600}
+.sec-head h2{font-size:clamp(22px,3vw,29px);letter-spacing:.03em;margin-top:6px}
+.sec-head p{font-size:14px;color:var(--ink-soft);margin-top:10px}
+.sec-indigo .sec-head p{color:#C9D6E6}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--indigo-soft)}
+
+/* 会話ユニット（このサイトの主構造） */
+.talk{display:flex;flex-direction:column;gap:22px;max-width:760px;margin:0 auto}
+.turn{display:flex;gap:14px;align-items:flex-end;max-width:82%}
+.turn.q{align-self:flex-start}
+.turn.a{align-self:flex-end;flex-direction:row-reverse}
+.ava{width:52px;height:52px;flex:none;border-radius:50%;overflow:hidden;border:2.5px solid #fff;box-shadow:0 3px 10px rgba(38,69,110,.18)}
+.ava svg{width:100%;height:100%;display:block}
+.bubble{position:relative;padding:16px 20px;border-radius:22px;font-size:14.5px;line-height:1.9;box-shadow:0 4px 16px rgba(44,42,38,.06)}
+.bubble .who{display:block;font-size:11px;font-weight:700;letter-spacing:.04em;margin-bottom:4px;opacity:.7}
+.turn.q .bubble{background:var(--paper);border-bottom-left-radius:6px;color:var(--ink)}
+.turn.q .bubble .who{color:var(--indigo)}
+.turn.a .bubble{background:var(--indigo);color:#fff;border-bottom-right-radius:6px}
+.turn.a .bubble .who{color:var(--orange-pale)}
+.turn.a .bubble b{color:#fff;border-bottom:2px solid var(--orange)}
+/* 吹き出しのしっぽ */
+.turn.q .bubble::before,.turn.a .bubble::before{content:"";position:absolute;bottom:0;width:14px;height:14px}
+.turn.q .bubble::before{left:-6px;background:radial-gradient(circle at top left,transparent 14px,var(--paper) 14px)}
+.turn.a .bubble::before{right:-6px;background:radial-gradient(circle at top right,transparent 14px,var(--indigo) 14px)}
+
+/* ===== ヒーロー ===== */
+.hero{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);padding:64px 0 76px;overflow:hidden;position:relative}
+.hero .wrap{position:relative;z-index:2}
+.hero .tag{display:inline-block;background:var(--orange-pale);color:var(--orange-deep);font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(27px,4.4vw,44px);font-weight:900;line-height:1.7;letter-spacing:.04em;color:var(--indigo-deep)}
+.hero h1 .hl{color:var(--orange-deep)}
+.hero .lead{margin-top:20px;max-width:560px;font-size:15.5px;color:var(--ink-soft)}
+.hero-talk{margin-top:40px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;padding:15px 28px;border-radius:30px;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.btn-p{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(232,130,58,.34)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,130,58,.42)}
+.btn-s{background:#fff;color:var(--indigo-deep);border:2px solid var(--line)}
+.btn-s:hover{transform:translateY(-2px)}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5;z-index:1}
+.hero .b1{width:220px;height:220px;background:var(--orange-pale);top:-40px;right:-30px}
+.hero .b2{width:160px;height:160px;background:#DCE6F2;bottom:20px;right:80px}
+
+/* ===== 分野チップ ===== */
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:760px;margin:0 auto}
+.field-card{background:var(--paper);border-radius:20px;padding:26px 22px;text-align:center;border:2px solid var(--line);transition:transform .25s var(--ease),border-color .25s var(--ease)}
+.field-card:hover{transform:translateY(-4px);border-color:var(--orange)}
+.field-card .ic{width:56px;height:56px;margin:0 auto 14px}
+.field-card h3{font-size:16px;color:var(--indigo-deep)}
+.field-card p{font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.85}
+
+/* ===== 活動（会話＋写真） ===== */
+.act-photos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;max-width:760px;margin:0 auto 44px}
+.act-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
+
+/* ===== 概要テーブル ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:720px;margin:0 auto}
+.tbl-hint{display:none;text-align:center;font-size:11px;color:var(--indigo-soft);margin-top:8px}
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px;background:var(--paper);border-radius:16px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--cream-2);border:1px solid var(--line);padding:13px 18px;white-space:nowrap;color:var(--indigo-deep)}
+table.gaiyo td{border:1px solid var(--line);padding:13px 18px}
+
+/* ===== お知らせ ===== */
+.news{max-width:720px;margin:0 auto}
+.news-row{display:flex;gap:16px;padding:15px 4px;border-bottom:1px dashed var(--line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-en);font-weight:600;color:var(--orange-deep);font-size:12.5px}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;background:var(--cream-2);color:var(--indigo);padding:2px 10px;border-radius:12px}
+
+/* ===== 参加バナー ===== */
+.join{max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.join-card{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.25);border-radius:18px;padding:24px 20px;text-align:center}
+.join-card .ic{font-size:26px;margin-bottom:8px}
+.join-card h3{font-size:16px;color:#fff}
+.join-card p{font-size:12.5px;color:#C9D6E6;margin-top:6px;line-height:1.8}
+
+/* ===== フォーム ===== */
+.form-card{max-width:600px;margin:0 auto;background:var(--paper);border-radius:24px;padding:38px 34px;border:2px solid var(--line);box-shadow:0 12px 40px rgba(44,42,38,.06)}
+.demo-tag{display:inline-block;background:var(--orange-pale);color:var(--orange-deep);border-radius:20px;font-size:12px;font-weight:700;padding:4px 14px;margin-bottom:14px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--indigo-deep);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:15px;padding:12px 15px;border:2px solid var(--line);border-radius:14px;background:var(--cream);color:var(--ink);transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
+.field textarea{min-height:110px;resize:vertical}
+.submit{width:100%;background:var(--orange);color:#fff;font-family:inherit;font-weight:700;font-size:16px;border:none;border-radius:30px;padding:15px;cursor:pointer;box-shadow:0 6px 18px rgba(232,130,58,.34);transition:background .2s}
+.submit:hover{background:var(--orange-deep)}
+.form-msg{display:none;margin-top:16px;background:var(--cream-2);border-radius:14px;padding:14px 16px;font-size:13.5px;color:var(--indigo-deep);line-height:1.85}
+.form-msg.show{display:block}
+
+/* ===== アクセス ===== */
+.map-wrap{max-width:720px;margin:0 auto}
+.map-wrap iframe{width:100%;height:360px;border:2px solid var(--line);border-radius:18px}
+.tel-big{max-width:520px;margin:26px auto 0;background:var(--paper);border:2px solid var(--orange);border-radius:20px;padding:26px;text-align:center}
+.tel-big .cap{font-size:13px;font-weight:700;color:var(--indigo-deep)}
+.tel-big .num{font-family:var(--font-en);font-size:30px;font-weight:600;color:var(--orange-deep);margin:6px 0}
+.tel-big p{font-size:12px;color:var(--ink-soft)}
+
+/* ===== フッター ===== */
+.footer{background:var(--indigo-deep);color:#fff;padding:52px 0 34px;text-align:center}
+.footer .fmark{width:52px;height:52px;margin:0 auto 14px}
+.footer .fname{font-weight:900;font-size:16.5px}
+.footer .fmeta{font-size:12.5px;color:#B7C6DB;margin-top:6px}
+.sample-note{font-size:11px;color:#93A8C4;margin-top:18px;line-height:1.95;max-width:640px;margin-left:auto;margin-right:auto}
+.sample-note a{color:#DCE6F2}
+.sample-note b{color:var(--orange-pale)}
+.cr{font-size:11px;color:#7C93B3;margin-top:14px}
+
+/* ===== 左下ピル ===== */
+.credit-pill{position:fixed;left:16px;bottom:16px;z-index:300;background:var(--indigo-deep);color:#fff;text-decoration:none;font-weight:700;font-size:11.5px;padding:9px 15px;border-radius:30px;box-shadow:0 4px 14px rgba(0,0,0,.28);border:2px solid #fff;line-height:1.3;transition:transform .2s var(--ease)}
+.credit-pill b{color:var(--orange-pale)}
+.credit-pill:hover{transform:translateY(-2px)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:860px){
+  .nav{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--cream);border-bottom:2px solid var(--line);padding:10px 18px 18px;gap:2px}
+  .nav.open{display:flex}
+  .nav a{padding:13px 8px;border-radius:14px;font-size:15px}
+  .nav .cta{text-align:center;margin-top:8px}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.4px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.4px) rotate(-45deg)}
+  .sec{padding:56px 0}
+  .turn{max-width:90%}
+  .fields{grid-template-columns:1fr;gap:12px}
+  .join{grid-template-columns:1fr}
+  .act-photos{gap:8px}
+  .tbl-hint{display:block}
+}
+@media (max-width:560px){
+  .turn{max-width:100%}
+  .ava{width:44px;height:44px}
+  .act-photos{grid-template-columns:1fr 1fr}
+  .act-photos img:first-child{grid-column:1 / -1;aspect-ratio:16/9}
+}
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:640px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border:none;padding:11px 16px 3px;font-size:12px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 16px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="bar">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="41" height="41" rx="12" fill="#26456E"/>
+        <!-- 対話の吹き出し2つ＝学びの対話のシンボル -->
+        <path d="M11 13h15a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-8l-5 4v-4h-2a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Z" fill="#FBF5E9"/>
+        <circle cx="15" cy="20" r="1.7" fill="#26456E"/><circle cx="20" cy="20" r="1.7" fill="#26456E"/><circle cx="25" cy="20" r="1.7" fill="#26456E"/>
+        <path d="M33 22h4a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h1v3l-4-3a3 3 0 0 1-1-2v-4a3 3 0 0 1 0-4Z" fill="#E8823A"/>
+      </svg>
+      <span class="t">総合塾「人間館」<small>特定非営利活動法人｜名古屋市守山区</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="#about">わたしたち</a>
+      <a href="#fields">分野</a>
+      <a href="#activity">活動</a>
+      <a href="#news">お知らせ</a>
+      <a href="#gaiyo">法人概要</a>
+      <a class="cta" href="#contact">見学・相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero" id="top">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="wrap">
+    <span class="tag reveal on">名古屋市守山区の学び・育ちの場</span>
+    <h1 class="reveal on"><span class="kb">「どうして？」から</span><span class="kb">はじまる、</span><br><span class="kb"><span class="hl">世代をこえた</span></span><span class="kb"><span class="hl">学び</span>の対話。</span></h1>
+    <p class="lead reveal on">総合塾「人間館」は、名古屋市守山区で社会教育・まちづくり・学術文化芸術スポーツにとりくむNPO法人です。子どもも大人も、問いを持ちより、語り合いながら育っていく。そんな場所をめざしています。</p>
+
+    <!-- 会話バブル（このサイトの主構造） -->
+    <div class="hero-talk talk reveal on">
+      <div class="turn q">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#F4E9D4"/><circle cx="26" cy="21" r="9" fill="#E8823A"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#CE6A22"/></svg></span>
+        <div class="bubble"><span class="who">まちの子ども</span>勉強って、どうして学校だけじゃだめなの？</div>
+      </div>
+      <div class="turn a">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#26456E"/><circle cx="26" cy="21" r="9" fill="#FBF5E9"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#5C7BA3"/></svg></span>
+        <div class="bubble"><span class="who">人間館</span>だめじゃないよ。でも学びは、<b>まちの中</b>にも、<b>人と人の間</b>にもある。だから一緒に見つけにいこう。</div>
+      </div>
+    </div>
+
+    <div class="btns reveal on">
+      <a class="btn btn-p" href="#contact">見学・ご相談はこちら</a>
+      <a class="btn btn-s" href="#about">わたしたちのこと →</a>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたち（会話で語る） -->
+<section class="sec sec-paper" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">About Us</span>
+      <h2>わたしたちのこと</h2>
+      <p>会話でお話しします</p>
+    </div>
+    <div class="talk">
+      <div class="turn q reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#F4E9D4"/><circle cx="26" cy="21" r="9" fill="#E8823A"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#CE6A22"/></svg></span>
+        <div class="bubble"><span class="who">はじめての方</span>「総合塾」って、いわゆる学習塾のことですか？</div>
+      </div>
+      <div class="turn a reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#26456E"/><circle cx="26" cy="21" r="9" fill="#FBF5E9"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#5C7BA3"/></svg></span>
+        <div class="bubble"><span class="who">人間館</span>いいえ、成績のための塾ではありません。わたしたちは<b>「人間まるごとを育てる場」</b>をめざすNPOです。学び・育ち・地域のつながりを、まとめて「総合」でとらえています。</div>
+      </div>
+      <div class="turn q reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#F4E9D4"/><circle cx="26" cy="21" r="9" fill="#E8823A"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#CE6A22"/></svg></span>
+        <div class="bubble"><span class="who">はじめての方</span>いつごろ、どこで活動しているんですか？</div>
+      </div>
+      <div class="turn a reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#26456E"/><circle cx="26" cy="21" r="9" fill="#FBF5E9"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#5C7BA3"/></svg></span>
+        <div class="bubble"><span class="who">人間館</span><b>2004年</b>から、名古屋市守山区を拠点に活動しています。社会教育・まちづくり・学術文化芸術スポーツの3つの分野で、子どもから大人まで、世代をこえて集まれる場をつくってきました。</div>
+      </div>
+      <div class="turn q reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#F4E9D4"/><circle cx="26" cy="21" r="9" fill="#E8823A"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#CE6A22"/></svg></span>
+        <div class="bubble"><span class="who">はじめての方</span>大切にしていることは、なんですか？</div>
+      </div>
+      <div class="turn a reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#26456E"/><circle cx="26" cy="21" r="9" fill="#FBF5E9"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#5C7BA3"/></svg></span>
+        <div class="bubble"><span class="who">人間館</span>答えを教えるより、<b>一緒に問いを育てること</b>。だから、この会話みたいなやりとりを、いつも大事にしています。<span class="note-sample">※このあいさつ文はサンプルです。ご契約後、代表の言葉に差し替えます</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 分野 -->
+<section class="sec sec-cream2" id="fields">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Our Fields</span>
+      <h2>3つの分野で活動しています</h2>
+      <p>定款に定める活動分野（公開情報）です</p>
+    </div>
+    <div class="fields">
+      <div class="field-card reveal">
+        <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><rect x="8" y="14" width="40" height="30" rx="4" fill="#26456E"/><path d="M28 14v30" stroke="#FBF5E9" stroke-width="2"/><path d="M14 22h10M14 28h10M32 22h10M32 28h10" stroke="#FBF5E9" stroke-width="2" stroke-linecap="round"/><circle cx="28" cy="10" r="4" fill="#E8823A"/></svg>
+        <h3>社会教育</h3>
+        <p>年代をこえた学びの機会づくり。講座・読書・体験の場を通して、暮らしの中の「学びたい」を応援します。</p>
+      </div>
+      <div class="field-card reveal">
+        <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><path d="M28 8l18 12v24H10V20L28 8Z" fill="#26456E"/><rect x="20" y="30" width="7" height="14" fill="#FBF5E9"/><rect x="30" y="30" width="7" height="10" fill="#FBF5E9"/><circle cx="28" cy="20" r="4" fill="#E8823A"/></svg>
+        <h3>まちづくり</h3>
+        <p>地域の人がつながる場づくり。世代交流や地域の行事を通して、守山のまちを少しずつ元気にしていきます。</p>
+      </div>
+      <div class="field-card reveal">
+        <svg class="ic" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="20" fill="#26456E"/><path d="M28 14c6 4 6 24 0 28-6-4-6-24 0-28Z" fill="#FBF5E9"/><path d="M14 28c4-6 24-6 28 0-4 6-24 6-28 0Z" fill="#5C7BA3" opacity=".6"/><circle cx="28" cy="28" r="4" fill="#E8823A"/></svg>
+        <h3>学術・文化・芸術・スポーツ</h3>
+        <p>知る・つくる・体を動かす。文化芸術やスポーツの体験を通して、心とからだの育ちを支えます。</p>
+      </div>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-top:22px">※各分野の具体的な事業名・実施内容は表示イメージのサンプルです。実際の活動に差し替えます</p>
+  </div>
+</section>
+
+<!-- 活動（写真＋会話） -->
+<section class="sec sec-paper" id="activity">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Activity</span>
+      <h2>活動のようす</h2>
+      <p>ふだんの一場面をのぞいてみてください</p>
+    </div>
+    <div class="act-photos reveal">
+      <!-- 差し替えポイント: 実際の活動風景のお写真（学び・対話・世代交流／顔が特定されにくい構図） -->
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80&auto=format&fit=crop" alt="学びの場のイメージ">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900&q=80&auto=format&fit=crop" alt="話し合いのイメージ">
+      <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=900&q=80&auto=format&fit=crop" alt="世代交流のイメージ">
+    </div>
+    <div class="talk">
+      <div class="turn q reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#F4E9D4"/><circle cx="26" cy="21" r="9" fill="#E8823A"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#CE6A22"/></svg></span>
+        <div class="bubble"><span class="who">参加を考えている方</span>ふだんは、どんなことをしているんですか？</div>
+      </div>
+      <div class="turn a reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#26456E"/><circle cx="26" cy="21" r="9" fill="#FBF5E9"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#5C7BA3"/></svg></span>
+        <div class="bubble"><span class="who">人間館</span>たとえば、子どもと大人が一緒に取り組む学びの時間、地域の方をまじえた語らいの会、季節ごとの文化・スポーツの体験など。<b>「教える／教わる」が入れ替わる</b>のが、わたしたちの特徴です。<span class="note-sample">※活動内容はサンプルです</span></div>
+      </div>
+      <div class="turn q reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#F4E9D4"/><circle cx="26" cy="21" r="9" fill="#E8823A"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#CE6A22"/></svg></span>
+        <div class="bubble"><span class="who">参加を考えている方</span>知識がなくても、参加できますか？</div>
+      </div>
+      <div class="turn a reveal">
+        <span class="ava"><svg viewBox="0 0 52 52" aria-hidden="true"><rect width="52" height="52" fill="#26456E"/><circle cx="26" cy="21" r="9" fill="#FBF5E9"/><path d="M9 50c0-10 8-15 17-15s17 5 17 15Z" fill="#5C7BA3"/></svg></span>
+        <div class="bubble"><span class="who">人間館</span>もちろんです。<b>「知りたい」という気持ち</b>があれば十分。まずは気軽に、見学からどうぞ。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 参加のかたち（藍背景） -->
+<section class="sec sec-indigo" id="join">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Join Us</span>
+      <h2>いろんな関わり方があります</h2>
+      <p>できることを、できる範囲で</p>
+    </div>
+    <div class="join">
+      <div class="join-card reveal"><div class="ic">🙋</div><h3>参加する</h3><p>子ども・大人どなたでも。学びや交流の場に、まずは一度いらしてください。</p></div>
+      <div class="join-card reveal"><div class="ic">🤝</div><h3>支える</h3><p>ボランティア・賛助会員として。得意なことで運営を支えていただけます。</p></div>
+      <div class="join-card reveal"><div class="ic">🎁</div><h3>寄付する</h3><p>活動を続けるための力になります。<span class="note-sample" style="color:#93A8C4">※寄付導線はサンプルです</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="sec sec-cream2" id="news">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+      <p>更新はご自身でかんたんに行える形にできます</p>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-bottom:14px">※以下は表示イメージのサンプルです（日付・内容はダミー）</p>
+    <div class="news reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">講座</span><span>親子で楽しむ「まちの探究ひろば」の参加者を募集します</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">交流</span><span>世代交流おしゃべり会をひらきました（活動のようす）</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><span>ボランティア・賛助会員を随時募集しています</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="sec sec-paper" id="gaiyo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要</h2>
+      <p>公開情報の範囲で記載しています</p>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 総合塾「人間館」</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市守山区</td></tr>
+        <tr><th>設立</th><td>2004年</td></tr>
+        <tr><th>活動分野</th><td>社会教育／まちづくり／学術・文化・芸術・スポーツの振興</td></tr>
+        <tr><th>活動の目的</th><td>世代をこえた学び・育ちの場づくりと、地域のつながりづくり<span class="note-sample">※定款の目的をもとにしたサンプル表現です</span></td></tr>
+        <tr><th>代表者</th><td>（公開時にお名前を記載します）</td></tr>
+        <tr><th>連絡先</th><td>お問い合わせフォームより承ります（本番では電話・メールも掲載できます）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- お問い合わせ（デモフォーム） -->
+<section class="sec sec-cream2" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Contact</span>
+      <h2>見学・ご相談・お問い合わせ</h2>
+      <p>「話を聞いてみたい」だけでも大歓迎です</p>
+    </div>
+    <form class="form-card reveal" id="demoForm" novalidate>
+      <span class="demo-tag">✎ デモフォーム</span>
+      <p class="note-sample" style="margin-bottom:16px;line-height:1.85">※このフォームはサンプルです。送信ボタンを押しても実際には送信されません。本番では、自動返信つきのお問い合わせフォームをご用意します。</p>
+      <div class="field">
+        <label for="f-name">お名前</label>
+        <input type="text" id="f-name" name="name" placeholder="やまだ はなこ" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-kind">ご用件</label>
+        <select id="f-kind" name="kind">
+          <option>活動を見学したい</option>
+          <option>参加してみたい</option>
+          <option>ボランティア・賛助会員について</option>
+          <option>取材・その他</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-mail">メールアドレス</label>
+        <input type="email" id="f-mail" name="email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="f-msg">メッセージ</label>
+        <textarea id="f-msg" name="message" placeholder="どんなことでも、お気軽にどうぞ。"></textarea>
+      </div>
+      <button type="submit" class="submit">送信する（デモ）</button>
+      <p class="form-msg" id="formMsg">ありがとうございます。これはデモ表示です（実際には送信されていません）。本番では担当者にメールが届き、送信された方へ自動返信メールをお送りできます。</p>
+    </form>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="sec sec-paper" id="access">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">Access</span>
+      <h2>アクセス</h2>
+      <p>名古屋市守山区で活動しています</p>
+    </div>
+    <div class="map-wrap reveal">
+      <!-- 差し替えポイント: 正確な住所が確定したら、その地点の地図に差し替えます -->
+      <iframe src="https://maps.google.com/maps?q=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%AE%88%E5%B1%B1%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市守山区の地図"></iframe>
+    </div>
+    <div class="tel-big reveal">
+      <p class="cap">見学・ご相談</p>
+      <p class="num">お問い合わせフォームへ</p>
+      <p>本番では、お電話番号やメールアドレスも掲載できます</p>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <svg class="fmark" viewBox="0 0 44 44" aria-hidden="true">
+      <rect x="1.5" y="1.5" width="41" height="41" rx="12" fill="#5C7BA3"/>
+      <path d="M11 13h15a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-8l-5 4v-4h-2a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4Z" fill="#FBF5E9"/>
+      <circle cx="15" cy="20" r="1.7" fill="#26456E"/><circle cx="20" cy="20" r="1.7" fill="#26456E"/><circle cx="25" cy="20" r="1.7" fill="#26456E"/>
+      <path d="M33 22h4a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h1v3l-4-3a3 3 0 0 1-1-2v-4a3 3 0 0 1 0-4Z" fill="#E8823A"/>
+    </svg>
+    <p class="fname">特定非営利活動法人 総合塾「人間館」</p>
+    <p class="fmeta">愛知県名古屋市守山区</p>
+    <p class="fmeta">活動分野：社会教育／まちづくり／学術・文化・芸術・スポーツの振興</p>
+    <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です（写真はイメージ素材、※印の内容はダミー、代表者名は非掲載、フォーム・寄付導線はデモです）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="cr">&copy; 2026 特定非営利活動法人 総合塾「人間館」</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="credit-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">ご提案用サンプル / <b>スマートコネクト</b></a>
+
+<script>
+// ハンバーガーメニュー
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.getElementById("nav");
+menuBtn.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  document.body.classList.toggle("menu-open", open);
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  nav.classList.remove("open");
+  document.body.classList.remove("menu-open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+// デモフォーム（送信させない）
+const form = document.getElementById("demoForm");
+const formMsg = document.getElementById("formMsg");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  formMsg.classList.add("show");
+  formMsg.scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+// スクロールで会話バブルを順に出す
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

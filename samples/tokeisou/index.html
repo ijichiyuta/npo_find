@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 とけいそう さま
+  （ボタニカル・やさしい曲線型／時計草モチーフ・ラベンダー×緑）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（正式名称・所在地=一宮市、活動分野=保健・医療・福祉、
+    独自HP無し）の範囲のみで作成しています
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・電話番号は公開情報で確認できなかったため記載していません
+    （公開時に正式値を記載します）。ご相談はデモフォームでの想定です
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。差し替えポイントをコメントで明記
+  ・実在団体名を含むため noindex。先方の了承前にインターネット公開しないこと
+  ・法人名「とけいそう」は時計草（トケイソウ／パッションフラワー）にちなむと想定し、
+    花のモチーフをデザインに用いていますが、由来はサンプル上の解釈です
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 とけいそう｜一宮市の保健・医療・福祉【ご提案サンプル】</title>
+<meta name="description" content="愛知県一宮市で保健・医療・福祉の活動に取り組むNPO法人とけいそう。時計草のように、一人ひとりの時間にそっと寄り添う場所を目指して。見学・ご相談はお気軽に。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F7F5FB;          /* うすいラベンダー */
+  --c-paper:#FFFFFF;
+  --c-ink:#3B3A46;
+  --c-lav:#8E7CC3;         /* ラベンダー（時計草） */
+  --c-lav-deep:#6E5BA6;
+  --c-lav-pale:#EFEAF7;
+  --c-green:#6FA57C;       /* やわらかい緑 */
+  --c-green-deep:#548062;
+  --c-green-pale:#E7F1E9;
+  --c-cream:#FBF9F3;
+  --c-line:#E4DEF0;
+  --c-sub:#8A8698;
+  --font-body:"Zen Maru Gothic",sans-serif;   /* 丸ゴシック＝やさしい */
+  --font-ser:"Noto Serif JP",serif;
+  --font-en:"Jost",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2.05;font-size:16px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+/* 文節単位の改行（iOS: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+a{color:inherit}
+.en{font-family:var(--font-en);letter-spacing:.24em;text-transform:uppercase}
+
+/* ===== トップバー（中央寄せ・丸み） ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:16px;height:70px;padding:0 30px;background:rgba(247,245,251,.82);backdrop-filter:blur(9px);border-bottom:1px solid transparent;transition:border-color .5s var(--ease),background .5s var(--ease)}
+body.scrolled .topbar{border-bottom-color:var(--c-line);background:rgba(255,255,255,.9)}
+.topbar .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.topbar .brand .mark{width:38px;height:38px;flex:none}
+.topbar .brand .t{font-weight:700;font-size:19px;letter-spacing:.06em;line-height:1.2}
+.topbar .brand .t small{display:block;font-size:10px;font-weight:400;color:var(--c-lav-deep);letter-spacing:.08em;margin-top:2px}
+.topbar nav{margin-left:auto;display:flex;gap:26px}
+.topbar nav a{position:relative;text-decoration:none;font-size:14px;font-weight:500;padding:6px 0}
+.topbar nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;border-radius:2px;background:var(--c-lav);transition:right .35s var(--ease)}
+.topbar nav a:hover::after{right:0}
+.topbar .cta{margin-left:6px;background:var(--c-lav);color:#fff;text-decoration:none;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:999px;transition:background .3s,transform .3s}
+.topbar .cta:hover{background:var(--c-lav-deep);transform:translateY(-1px)}
+
+/* SPメニュー */
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.menu-btn span{display:block;width:24px;height:2px;border-radius:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+.sp-nav{display:none}
+
+/* ===== ヒーロー（曲線の谷） ===== */
+.hero{position:relative;padding:150px 24px 120px;text-align:center;overflow:hidden;background:
+  radial-gradient(120% 90% at 82% -10%, var(--c-lav-pale) 0%, rgba(239,234,247,0) 55%),
+  radial-gradient(110% 85% at 8% 12%, var(--c-green-pale) 0%, rgba(231,241,233,0) 50%),
+  var(--c-bg)}
+.hero .inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.hero .cap{display:inline-block;font-size:12.5px;letter-spacing:.16em;color:var(--c-lav-deep);background:#fff;border:1px solid var(--c-line);border-radius:999px;padding:7px 18px;margin-bottom:26px}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:700;line-height:1.75;letter-spacing:.04em}
+.hero h1 .hl{background:linear-gradient(transparent 62%, var(--c-lav-pale) 62%)}
+.hero .lead{margin:26px auto 0;max-width:560px;font-size:clamp(15px,2.2vw,17px);color:#54525F}
+.hero .btns{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:700;padding:15px 30px;border-radius:999px;transition:transform .3s,box-shadow .3s,background .3s}
+.btn.primary{background:var(--c-lav);color:#fff;box-shadow:0 10px 26px rgba(142,124,195,.28)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(142,124,195,.36)}
+.btn.ghost{background:#fff;color:var(--c-lav-deep);border:1.5px solid var(--c-line)}
+.btn.ghost:hover{border-color:var(--c-lav);transform:translateY(-2px)}
+/* 背景の花びら装飾 */
+.petal{position:absolute;border-radius:60% 60% 60% 0;opacity:.5;z-index:1}
+.petal.p1{width:120px;height:120px;background:var(--c-lav-pale);top:16%;left:6%;transform:rotate(20deg)}
+.petal.p2{width:80px;height:80px;background:var(--c-green-pale);top:24%;right:9%;transform:rotate(-30deg)}
+.petal.p3{width:60px;height:60px;background:var(--c-lav-pale);bottom:16%;left:14%;transform:rotate(-10deg)}
+
+/* ===== 波の区切り ===== */
+.wave{display:block;width:100%;height:70px;line-height:0}
+.wave svg{width:100%;height:100%;display:block}
+
+/* ===== 共通セクション ===== */
+.sec{padding:96px 24px}
+.in{max-width:960px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-head .num{display:block;font-family:var(--font-en);font-size:11px;letter-spacing:.3em;color:var(--c-lav);margin-bottom:12px}
+.sec-head h2{font-size:clamp(23px,3.6vw,32px);font-weight:700;letter-spacing:.04em}
+.sec-head p{margin-top:14px;font-size:15px;color:#5C5A68;max-width:600px;margin-left:auto;margin-right:auto}
+.note-sample{font-size:12px;color:var(--c-sub)}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== 想い（緑背景・曲線） ===== */
+.wish{background:var(--c-green-pale)}
+.wish .in{max-width:720px;text-align:center}
+.wish .big{font-family:var(--font-ser);font-size:clamp(19px,3vw,26px);font-weight:600;line-height:2.1;color:var(--c-green-deep);margin-bottom:22px}
+.wish p{font-size:15.5px;color:#4C5A50}
+
+/* ===== 活動カード（丸みカード・3列） ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:22px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(110,91,166,.14)}
+.card .ph{aspect-ratio:4/3;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.card:hover .ph img{transform:scale(1.06)}
+.card .body{padding:24px 24px 28px}
+.card .ic{width:44px;height:44px;border-radius:50%;background:var(--c-lav-pale);display:flex;align-items:center;justify-content:center;margin:-46px 0 12px;position:relative;border:3px solid #fff}
+.card .ic svg{width:22px;height:22px;color:var(--c-lav-deep)}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{font-size:14px;color:#5C5A68;line-height:1.95}
+
+/* ===== 1日の流れ（やさしいタイムライン） ===== */
+.flow{background:var(--c-cream)}
+.timeline{max-width:660px;margin:0 auto;position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--c-line)}
+.tl-item{position:relative;padding:0 0 30px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-30px;top:5px;width:16px;height:16px;border-radius:50%;background:var(--c-lav);border:3px solid #fff;box-shadow:0 0 0 2px var(--c-lav-pale)}
+.tl-item .time{font-family:var(--font-en);font-size:13px;font-weight:500;color:var(--c-lav-deep);letter-spacing:.06em}
+.tl-item h3{font-size:16.5px;margin:2px 0 4px}
+.tl-item p{font-size:13.5px;color:#5C5A68;line-height:1.9}
+
+/* ===== お知らせ ===== */
+.news{max-width:680px;margin:0 auto}
+.news-row{display:flex;gap:18px;align-items:baseline;padding:15px 6px;border-bottom:1px dashed var(--c-line);font-size:14.5px}
+.news-row time{flex:none;font-family:var(--font-en);font-size:12.5px;color:var(--c-sub)}
+.news-row .tag{flex:none;font-size:11px;font-weight:700;color:var(--c-green-deep);background:var(--c-green-pale);border-radius:999px;padding:2px 10px}
+.news-row a{text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== 概要テーブル ===== */
+.gaiyo-wrap{max-width:680px;margin:0 auto}
+table.gaiyo{width:100%;border-collapse:separate;border-spacing:0;font-size:14.5px;background:var(--c-paper);border:1px solid var(--c-line);border-radius:18px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-lav-pale);padding:14px 18px;white-space:nowrap;vertical-align:top;border-bottom:1px solid var(--c-line)}
+table.gaiyo td{padding:14px 18px;border-bottom:1px solid var(--c-line);vertical-align:top}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+
+/* ===== 見学・相談（ラベンダー背景・デモフォーム） ===== */
+.contact{background:linear-gradient(160deg, var(--c-lav-deep), var(--c-lav));color:#fff}
+.contact .in{max-width:1000px;display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:start}
+.contact .lead-col .label{font-family:var(--font-en);font-size:11px;letter-spacing:.3em;color:#E7DFF6}
+.contact .lead-col h2{font-size:clamp(23px,3.2vw,30px);letter-spacing:.04em;margin:12px 0 18px}
+.contact .lead-col p{font-size:14.5px;line-height:2.2;color:#EFEAF9}
+.contact .info-block{margin-top:26px;border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:20px 22px}
+.contact .info-block .cap{font-size:12px;letter-spacing:.06em;color:#E7DFF6}
+.contact .info-block p{font-size:14px;color:#fff;margin-top:6px;line-height:1.9}
+.form-card{background:var(--c-paper);border-radius:22px;padding:32px 32px 28px;color:var(--c-ink);box-shadow:0 20px 50px rgba(70,55,120,.25)}
+.demo-flag{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--c-lav-deep);background:var(--c-lav-pale);border-radius:12px;padding:11px 14px;margin-bottom:20px}
+.demo-flag svg{width:18px;height:18px;flex:none}
+.form-card label{display:block;font-size:13px;font-weight:500;margin-bottom:7px}
+.form-card .field{margin-bottom:16px}
+.form-card input,.form-card select,.form-card textarea{width:100%;font-family:inherit;font-size:14.5px;color:var(--c-ink);background:#fff;border:1px solid var(--c-line);border-radius:12px;padding:12px 15px;transition:border-color .3s,box-shadow .3s}
+.form-card input:focus,.form-card select:focus,.form-card textarea:focus{outline:none;border-color:var(--c-lav);box-shadow:0 0 0 3px var(--c-lav-pale)}
+.form-card textarea{resize:vertical;min-height:96px;line-height:1.9}
+.form-card .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-card button{width:100%;background:var(--c-lav);color:#fff;font-family:inherit;font-size:15px;font-weight:700;letter-spacing:.06em;border:none;border-radius:999px;padding:15px;cursor:pointer;transition:background .3s,transform .3s}
+.form-card button:hover{background:var(--c-lav-deep);transform:translateY(-1px)}
+.form-msg{display:none;margin-top:16px;font-size:13px;line-height:1.9;background:var(--c-green-pale);color:var(--c-green-deep);border-radius:12px;padding:14px 16px}
+.form-msg.show{display:block}
+
+/* ===== アクセス ===== */
+.access .in{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.access .map iframe{width:100%;height:340px;border:1px solid var(--c-line);border-radius:18px}
+.access h3{font-size:19px;margin-bottom:12px}
+.access p{font-size:14.5px;color:#5C5A68}
+.access .addr{margin-top:10px;font-weight:700;color:var(--c-ink)}
+
+/* ===== フッター ===== */
+.footer{background:#33323E;color:#DCD8EA;padding:56px 24px 34px;text-align:center}
+.footer .f-brand{display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:14px}
+.footer .f-brand .mark{width:36px;height:36px}
+.footer .f-name{font-weight:700;font-size:17px;color:#fff}
+.footer .f-addr{font-size:13px;color:#B4AECB}
+.footer .sample-note{font-size:11.5px;color:#9C96B4;line-height:2;margin-top:22px;max-width:640px;margin-left:auto;margin-right:auto}
+.footer .sample-note a{color:#CFC8E6}
+.footer .copy{font-size:11px;color:#7E7994;margin-top:16px}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(51,50,62,.92);color:#EFEAF9;text-decoration:none;font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.pill svg{width:14px;height:14px;flex:none;color:#C9BEE6}
+.pill b{font-weight:700}
+.pill:hover{background:rgba(51,50,62,1)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar nav,.topbar .cta{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:none;position:fixed;inset:70px 0 auto 0;background:#fff;border-bottom:1px solid var(--c-line);padding:12px 22px 22px;z-index:110}
+  body.menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;font-weight:500;font-size:15.5px;padding:14px 4px;border-bottom:1px solid var(--c-line)}
+  body.menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.menu-open .menu-btn span:nth-child(2){opacity:0}
+  body.menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .cards{grid-template-columns:1fr;gap:20px}
+  .card .ph{aspect-ratio:16/9}
+  .contact .in,.access .in{grid-template-columns:1fr;gap:30px}
+  .sec{padding:70px 22px}
+  .hero{padding:118px 22px 92px}
+  .form-card .row2{grid-template-columns:1fr}
+  .petal{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- トップバー -->
+<header class="topbar" id="top">
+  <a class="brand" href="#top">
+    <!-- 時計草モチーフのマーク（放射状の花） -->
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" fill="#EFEAF7"/>
+      <g stroke="#8E7CC3" stroke-width="1.6" stroke-linecap="round">
+        <line x1="20" y1="20" x2="20" y2="6"/><line x1="20" y1="20" x2="30" y2="10"/>
+        <line x1="20" y1="20" x2="34" y2="20"/><line x1="20" y1="20" x2="30" y2="30"/>
+        <line x1="20" y1="20" x2="20" y2="34"/><line x1="20" y1="20" x2="10" y2="30"/>
+        <line x1="20" y1="20" x2="6" y2="20"/><line x1="20" y1="20" x2="10" y2="10"/>
+      </g>
+      <circle cx="20" cy="20" r="5.5" fill="#6FA57C"/>
+      <circle cx="20" cy="20" r="2.4" fill="#fff"/>
+    </svg>
+    <span class="t">とけいそう<small>NPO法人｜愛知県一宮市</small></span>
+  </a>
+  <nav>
+    <a href="#wish">わたしたちの想い</a>
+    <a href="#service">活動のご案内</a>
+    <a href="#day">1日の流れ</a>
+    <a href="#gaiyo">法人概要</a>
+    <a href="#access">アクセス</a>
+  </nav>
+  <a class="cta" href="#contact">見学・相談</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#wish">わたしたちの想い</a>
+  <a href="#service">活動のご案内</a>
+  <a href="#day">1日の流れ</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#access">アクセス</a>
+  <a href="#contact">見学・相談</a>
+</nav>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span>
+  <div class="inner">
+    <p class="cap reveal on">愛知県一宮市｜保健・医療・福祉のNPO法人</p>
+    <h1 class="reveal on"><span class="kb">時計草のように、</span><br><span class="kb">その人の<span class="hl">時間</span>に、</span><span class="kb">そっと寄り添う。</span></h1>
+    <p class="lead reveal on">とけいそうは、一宮市で保健・医療・福祉の分野に取り組むNPO法人です。急がず、決めつけず。一人ひとりのペースを大切にする居場所を目指しています。</p>
+    <div class="btns reveal on">
+      <a class="btn primary" href="#contact">見学・ご相談はこちら</a>
+      <a class="btn ghost" href="#service">活動を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- 波の区切り（緑へ） -->
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,70 L0,70 Z" fill="#E7F1E9"/></svg>
+</div>
+
+<!-- わたしたちの想い -->
+<section class="sec wish" id="wish">
+  <div class="in reveal">
+    <p class="big"><span class="kb">「ここに来ると、</span><span class="kb">すこし呼吸がらくになる」</span><br><span class="kb">——そんな場所でありたい。</span></p>
+    <p>とけいそうという名前は、時計草（トケイソウ）の花にちなんでいます。時計の文字盤のように放射状に咲くこの花のように、いろいろな人がそれぞれの場所から集まって、ゆっくりと時間を過ごせる場所を目指しています。<br>わたしたちは、一宮市とその周辺で、地域の人が安心して暮らしつづけられるよう、保健・医療・福祉の分野で活動しています。<span class="note-sample">※文章はサンプルです。ご契約後に、みなさまのお言葉に差し替えます</span></p>
+  </div>
+</section>
+
+<!-- 波の区切り（白背景へ） -->
+<div class="wave" aria-hidden="true" style="background:var(--c-green-pale)">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,35 C240,5 480,65 720,40 C960,15 1200,60 1440,35 L1440,70 L0,70 Z" fill="#F7F5FB"/></svg>
+</div>
+
+<!-- 活動のご案内 -->
+<section class="sec" id="service">
+  <div class="in">
+    <div class="sec-head reveal">
+      <span class="num en">Service</span>
+      <h2>活動のご案内</h2>
+      <p>以下は活動イメージのご提案です。実際の事業内容にあわせて構成・文章・お写真を差し替えます。<br><span class="note-sample">※各項目の内容はサンプルです</span></p>
+    </div>
+    <div class="cards">
+      <!-- 差し替えポイント: それぞれの実際の活動風景のお写真 -->
+      <div class="card reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=900&q=80&auto=format&fit=crop" alt="やわらかな光がさす室内のイメージ"></div>
+        <div class="body">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>日中の居場所・交流</h3>
+          <p>気軽に立ち寄り、ゆっくり過ごせる時間。おしゃべりや軽い作業を通じて、人とのつながりを大切にします。<span class="note-sample">※サンプル</span></p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1522543558187-768b6df7c25c?w=900&q=80&auto=format&fit=crop" alt="花の手入れをする手元のイメージ"></div>
+        <div class="body">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-4 6-8 6-11a6 6 0 1 0-12 0c0 3 2 7 6 11Z"/><circle cx="12" cy="11" r="2"/></svg></div>
+          <h3>暮らしと健康の相談</h3>
+          <p>体調のこと、日々の困りごと。ひとりで抱え込まず、まずは話してみませんか。地域の相談先へのおつなぎも行います。<span class="note-sample">※サンプル</span></p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=900&q=80&auto=format&fit=crop" alt="紫の花（時計草を思わせる植物）のイメージ"></div>
+        <div class="body">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8v6a8 8 0 0 1-16 0V8"/><path d="M12 2v6M8 5h8"/></svg></div>
+          <h3>ご家族の支え・地域活動</h3>
+          <p>ご本人だけでなく、支えるご家族もほっと一息つける場を。季節の行事や地域とのつながりも大切にします。<span class="note-sample">※サンプル</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 波の区切り（クリームへ） -->
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C300,10 520,70 760,38 C1000,8 1200,55 1440,30 L1440,70 L0,70 Z" fill="#FBF9F3"/></svg>
+</div>
+
+<!-- 1日の流れ -->
+<section class="sec flow" id="day">
+  <div class="in">
+    <div class="sec-head reveal">
+      <span class="num en">A Day</span>
+      <h2>過ごし方の一例</h2>
+      <p>ゆったりとした1日の流れのイメージです。<br><span class="note-sample">※時間・内容は表示イメージのサンプルです。実際の流れに差し替えます</span></p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item"><span class="time">10:00</span><h3>おはようございます</h3><p>あたたかいお茶で一息。今日の体調や気分をゆっくり伺います。</p></div>
+      <div class="tl-item"><span class="time">10:30</span><h3>午前の活動</h3><p>手仕事や軽い体操、季節の作業など、その日の気分にあわせて。</p></div>
+      <div class="tl-item"><span class="time">12:00</span><h3>お昼ごはん・休憩</h3><p>みんなで食卓を囲んで、ゆっくりと。午後にそなえて休みます。</p></div>
+      <div class="tl-item"><span class="time">13:30</span><h3>午後のひととき</h3><p>おしゃべりや趣味の時間。無理のないペースで過ごします。</p></div>
+      <div class="tl-item"><span class="time">15:30</span><h3>また明日</h3><p>今日の小さな「よかったこと」をふりかえって、お見送りします。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 波の区切り（うす紫背景へ） -->
+<div class="wave" aria-hidden="true" style="background:var(--c-cream)">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,30 C240,60 480,5 720,35 C960,65 1200,15 1440,40 L1440,70 L0,70 Z" fill="#F7F5FB"/></svg>
+</div>
+
+<!-- お知らせ -->
+<section class="sec" id="news">
+  <div class="in">
+    <div class="sec-head reveal">
+      <span class="num en">News</span>
+      <h2>お知らせ</h2>
+      <p><span class="note-sample">※以下は表示イメージのサンプルです。かんたんに更新できる形にできます</span></p>
+    </div>
+    <div class="news reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">お知らせ</span><a href="#news">春の交流会の参加者を募集しています</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">活動</span><a href="#news">みんなで育てた花が咲きました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">相談</span><a href="#news">暮らしのご相談を受け付けています</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 波の区切り（うす緑へ） -->
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,70 L0,70 Z" fill="#E7F1E9"/></svg>
+</div>
+
+<!-- 法人概要 -->
+<section class="sec wish" id="gaiyo" style="background:var(--c-green-pale)">
+  <div class="in" style="max-width:760px">
+    <div class="sec-head reveal">
+      <span class="num en">Profile</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="gaiyo-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 とけいそう</td></tr>
+        <tr><th>所在地</th><td>愛知県一宮市小信中島字下郷西12番地</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉</td></tr>
+        <tr><th>設立</th><td><span class="note-sample">（公開情報に基づき、公開時に記載します）</span></td></tr>
+        <tr><th>代表者</th><td><span class="note-sample">（公開時に記載します）</span></td></tr>
+        <tr><th>電話</th><td><span class="note-sample">（公開情報で確認できなかったため、公開時に記載します）</span></td></tr>
+        <tr><th>法人番号</th><td><span class="note-sample">（公開時に記載します）</span></td></tr>
+      </table>
+      <p class="note-sample" style="margin-top:14px;text-align:center">※正式名称・所在地・活動分野は公開情報に基づく実データです。その他「※サンプル」の項目は公開時に差し替えます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 波の区切り（ラベンダーへ） -->
+<div class="wave" aria-hidden="true" style="background:var(--c-green-pale)">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,35 C240,5 480,65 720,40 C960,15 1200,60 1440,35 L1440,70 L0,70 Z" fill="#6E5BA6"/></svg>
+</div>
+
+<!-- 見学・相談（デモフォーム） -->
+<section class="sec contact" id="contact" style="padding-top:56px">
+  <div class="in">
+    <div class="lead-col reveal">
+      <p class="label">Contact</p>
+      <h2><span class="kb">見学・ご相談</span></h2>
+      <p>「どんな場所か見てみたい」「まずは話を聞いてみたい」——そんな気持ちからで大丈夫です。ご本人、ご家族、支援機関の方、どなたからのお問い合わせも歓迎します。急かすことはありません。ゆっくりお声がけください。</p>
+      <div class="info-block">
+        <span class="cap">お問い合わせ先</span>
+        <p>公開時に、お電話・メール・お問い合わせフォームなど、ご希望の窓口を掲載できます。<span class="note-sample" style="color:#E7DFF6">※連絡先はサンプル段階のため未掲載です</span></p>
+      </div>
+    </div>
+    <div class="form-card reveal">
+      <!-- ============================================================
+           デモフォーム: 送信されません（サンプル）。
+           ご契約後にメール送信 or お問い合わせ管理につなぎます。
+           ============================================================ -->
+      <div class="demo-flag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>こちらは表示サンプルのため、送信は行われません。</span>
+      </div>
+      <form id="demoForm" novalidate>
+        <div class="row2">
+          <div class="field">
+            <label for="f-name">お名前</label>
+            <input type="text" id="f-name" name="name" placeholder="山田 花子" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-tel">ご連絡先</label>
+            <input type="text" id="f-tel" name="tel" placeholder="お電話番号・メールなど" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-kind">ご相談の種類</label>
+          <select id="f-kind" name="kind">
+            <option>見学を希望したい</option>
+            <option>活動について相談したい</option>
+            <option>支援機関からの問い合わせ</option>
+            <option>ボランティア・支援について</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">ご相談内容</label>
+          <textarea id="f-msg" name="message" placeholder="ご質問やご希望の見学日など、ご自由にご記入ください。"></textarea>
+        </div>
+        <button type="submit">送信する（デモ）</button>
+        <p class="form-msg" id="formMsg">こちらはご提案用サンプルのデモフォームです。実際には送信されません。本番では、入力内容をメールでお届けする形などにご用意します。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="sec access" id="access">
+  <div class="in">
+    <div class="map reveal">
+      <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E4%B8%80%E5%AE%AE%E5%B8%82%E5%B0%8F%E4%BF%A1%E4%B8%AD%E5%B3%B6%E5%AD%97%E4%B8%8B%E9%83%B7%E8%A5%BF12%E7%95%AA%E5%9C%B0&output=embed&z=15" loading="lazy" title="所在地の地図"></iframe>
+    </div>
+    <div class="reveal">
+      <span class="num en" style="color:var(--c-lav)">Access</span>
+      <h3 style="margin-top:10px">アクセス</h3>
+      <p>愛知県一宮市の福祉・地域活動の拠点です。お車・公共交通機関でのお越し方や駐車場のご案内も、公開時に掲載できます。</p>
+      <p class="addr">愛知県一宮市小信中島字下郷西12番地</p>
+      <p class="note-sample" style="margin-top:8px">※詳しい道順・目印などはサンプル段階では省略しています</p>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="f-brand">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" fill="#4A4857"/>
+      <g stroke="#B4A6DC" stroke-width="1.6" stroke-linecap="round">
+        <line x1="20" y1="20" x2="20" y2="6"/><line x1="20" y1="20" x2="30" y2="10"/>
+        <line x1="20" y1="20" x2="34" y2="20"/><line x1="20" y1="20" x2="30" y2="30"/>
+        <line x1="20" y1="20" x2="20" y2="34"/><line x1="20" y1="20" x2="10" y2="30"/>
+        <line x1="20" y1="20" x2="6" y2="20"/><line x1="20" y1="20" x2="10" y2="10"/>
+      </g>
+      <circle cx="20" cy="20" r="5.5" fill="#8FBF9C"/>
+    </svg>
+    <span class="f-name">特定非営利活動法人 とけいそう</span>
+  </div>
+  <p class="f-addr">愛知県一宮市小信中島字下郷西12番地｜保健・医療・福祉</p>
+  <p class="sample-note">本ページはホームページ制作のご提案用サンプルです。実在団体名を含むため検索エンジンには非表示（noindex）にしています。<br>本文は公開情報の範囲で作成し、「※サンプル」印の内容はダミーです。連絡先は未確認のため掲載していません。ご契約後に正式な情報・お写真へ差し替えます。写真はイメージ素材（Unsplash・商用可）です。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  <p class="copy">&copy; 2026 NPO法人 とけいそう（ご提案用サンプル）</p>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// スクロールでトップバーに枠線
+const onScroll = () => document.body.classList.toggle("scrolled", window.scrollY > 20);
+onScroll();
+window.addEventListener("scroll", onScroll, {passive:true});
+
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .topbar nav a, .topbar .cta").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("demoForm");
+const msg = document.getElementById("formMsg");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  msg.classList.add("show");
+  msg.scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+// 出現アニメ
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

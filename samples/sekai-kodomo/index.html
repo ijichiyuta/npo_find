@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 世界のこども支援機構 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文の事実は公開情報（NPOポータルの法人名称・所在地、
+    および法人名称から明らかな活動分野=国際的な子ども支援）の範囲に限定
+  ・「※サンプル」表記の内容（代表者名・設立年・数値・あいさつ文・
+    お知らせ・連絡先など）はすべてダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。差し替え前提
+  ・国際協力の「フォトフォワード＋寄付導線強調」型として試作
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 世界のこども支援機構｜世界の子どもたちに、希望を【ご提案サンプル】</title>
+<meta name="description" content="国際的な子ども支援に取り組むNPO法人。教育・栄養・安心して育つ環境を、世界の子どもたちへ。あなたの寄付が、明日を変えます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FFFFFF;
+  --c-ink:#1C2530;
+  --c-ink-soft:#54626F;
+  --c-sky:#1D8FD1;
+  --c-sky-deep:#146FA6;
+  --c-sun:#F5A623;
+  --c-coral:#F0574B;
+  --c-sky-pale:#EAF6FD;
+  --c-line:#E3E9EE;
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-head:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+  --font-en:"Archivo",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-head);font-weight:900;line-height:1.55;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* ===== 上部ヘッダー ===== */
+.head{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:22px;height:70px;padding:0 32px;background:rgba(255,255,255,.55);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease)}
+.head.solid{background:rgba(255,255,255,.95);border-color:var(--c-line)}
+.head .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;transition:color .4s var(--ease)}
+.head.solid .brand{color:var(--c-ink)}
+.head .brand .mark{width:38px;height:38px;flex:none}
+.head .brand .t{font-family:var(--font-head);font-weight:900;font-size:16.5px;line-height:1.2;letter-spacing:.01em}
+.head .brand .t small{display:block;font-weight:500;font-size:10px;letter-spacing:.04em;opacity:.85;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:26px}
+.head nav a{position:relative;text-decoration:none;color:#fff;font-size:13.5px;font-weight:700;transition:color .4s var(--ease)}
+.head.solid nav a{color:var(--c-ink)}
+.head nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--c-sun);transition:right .3s var(--ease)}
+.head nav a:hover::after{right:0}
+.head .donate-btn{background:var(--c-coral);color:#fff;text-decoration:none;font-weight:900;font-size:13.5px;padding:11px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 8px 22px -8px rgba(240,87,75,.8);transition:transform .3s var(--ease)}
+.head .donate-btn:hover{transform:translateY(-2px)}
+.menu-btn{display:none}
+
+/* ===== ヒーロー（大きな写真前面） ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,45,.5) 0%,rgba(20,30,45,.15) 34%,rgba(20,30,45,.72) 100%)}
+.hero .inner{position:relative;z-index:1;width:100%;padding:0 0 88px}
+.hero .cap{display:inline-block;font-family:var(--font-en);font-size:12px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;padding:7px 16px;border:1px solid rgba(255,255,255,.7);border-radius:999px;margin-bottom:26px}
+.hero h1{font-size:clamp(32px,6vw,64px);font-weight:900;line-height:1.32;letter-spacing:.01em;text-shadow:0 2px 24px rgba(0,0,0,.28)}
+.hero h1 .hl{color:var(--c-sun)}
+.hero .lead{margin-top:22px;max-width:560px;font-size:clamp(14.5px,1.7vw,17px);line-height:2;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+.hero .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .cta a{text-decoration:none;font-weight:900;font-size:15px;padding:16px 32px;border-radius:999px;transition:transform .3s var(--ease)}
+.hero .cta a:hover{transform:translateY(-3px)}
+.hero .cta .primary{background:var(--c-coral);color:#fff;box-shadow:0 14px 34px -10px rgba(240,87,75,.9)}
+.hero .cta .ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(4px)}
+.hero .scroll{position:absolute;right:32px;bottom:34px;z-index:1;font-family:var(--font-en);font-size:10px;letter-spacing:.28em;writing-mode:vertical-rl;opacity:.85}
+
+/* ===== 帯（インパクト数字） ===== */
+.stats{background:var(--c-sky-deep);color:#fff;position:relative;z-index:2}
+.stats .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.stats .cell{padding:44px 24px;text-align:center;border-left:1px solid rgba(255,255,255,.16)}
+.stats .cell:first-child{border-left:none}
+.stats .num{font-family:var(--font-en);font-weight:800;font-size:clamp(36px,5vw,54px);line-height:1;color:var(--c-sun)}
+.stats .num .unit{font-size:.42em;color:#fff;margin-left:4px;letter-spacing:.02em}
+.stats .lbl{margin-top:12px;font-size:13.5px;font-weight:700;letter-spacing:.02em}
+.stats .foot{text-align:center;padding:0 24px 22px;font-size:11px;color:rgba(255,255,255,.65)}
+
+/* ===== 共通ブロック ===== */
+.sec{padding:104px 0}
+.sec.pale{background:var(--c-sky-pale)}
+.s-head{margin-bottom:48px}
+.s-head .en{display:block;font-family:var(--font-en);font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--c-sky);margin-bottom:12px}
+.s-head h2{font-size:clamp(24px,3.4vw,36px);letter-spacing:.02em}
+.s-head p{margin-top:16px;max-width:640px;font-size:15px;color:var(--c-ink-soft)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#8FA0B0}
+
+/* ===== わたしたちについて（写真＋文） ===== */
+.intro{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.intro .txt .big{font-family:var(--font-head);font-weight:900;font-size:clamp(20px,2.6vw,28px);line-height:1.75;letter-spacing:.02em;margin-bottom:22px}
+.intro .txt .big em{font-style:normal;color:var(--c-sky-deep)}
+.intro .txt p{color:var(--c-ink-soft);font-size:15px}
+.intro .txt p + p{margin-top:16px}
+.intro .figs{position:relative}
+.intro .figs .m{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px}
+.intro .figs .s{position:absolute;left:-30px;bottom:-30px;width:52%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:6px solid #fff;box-shadow:0 22px 50px -18px rgba(20,30,45,.4)}
+.intro .figs .badge{position:absolute;right:-14px;top:24px;background:var(--c-sun);color:#1C2530;font-weight:900;font-size:12.5px;padding:12px 18px;border-radius:14px;box-shadow:0 12px 30px -12px rgba(245,166,35,.9);transform:rotate(4deg);line-height:1.5;text-align:center}
+
+/* ===== 活動（大きな写真カード） ===== */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.act-card{position:relative;border-radius:18px;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;color:#fff;text-decoration:none}
+.act-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.act-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,45,0) 34%,rgba(20,30,45,.82) 100%)}
+.act-card:hover img{transform:scale(1.06)}
+.act-card .body{position:relative;z-index:1;padding:28px 26px}
+.act-card .no{font-family:var(--font-en);font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--c-sun)}
+.act-card h3{font-size:20px;margin:8px 0 8px;line-height:1.5}
+.act-card p{font-size:13px;line-height:1.9;color:rgba(255,255,255,.9)}
+
+/* ===== 寄付導線（フルバナー） ===== */
+.donate{position:relative;overflow:hidden;color:#fff;padding:110px 0}
+.donate .bg{position:absolute;inset:0;z-index:0}
+.donate .bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.donate .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,111,166,.94) 0%,rgba(29,143,209,.82) 60%,rgba(29,143,209,.55) 100%)}
+.donate .inner{position:relative;z-index:1;max-width:720px}
+.donate .en{font-family:var(--font-en);font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--c-sun)}
+.donate h2{font-size:clamp(26px,4vw,42px);line-height:1.5;margin:14px 0 18px}
+.donate .lead{font-size:15.5px;line-height:2;max-width:600px}
+.donate .tiers{display:flex;gap:14px;flex-wrap:wrap;margin:34px 0}
+.tier{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:18px 22px;min-width:150px;backdrop-filter:blur(4px)}
+.tier .amt{font-family:var(--font-en);font-weight:800;font-size:24px}
+.tier .amt small{font-size:.55em;font-weight:600;margin-left:2px}
+.tier .desc{font-size:12.5px;color:rgba(255,255,255,.92);margin-top:6px;line-height:1.7}
+.donate .btns{display:flex;gap:14px;flex-wrap:wrap}
+.donate .btns a{text-decoration:none;font-weight:900;font-size:15px;padding:16px 34px;border-radius:999px;transition:transform .3s var(--ease)}
+.donate .btns a:hover{transform:translateY(-3px)}
+.donate .btns .primary{background:var(--c-sun);color:#1C2530;box-shadow:0 14px 34px -10px rgba(245,166,35,.8)}
+.donate .btns .ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.7)}
+
+/* ===== 活動レポート（お知らせ） ===== */
+.reports{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.report{border:1px solid var(--c-line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.report:hover{transform:translateY(-5px);box-shadow:0 24px 44px -22px rgba(20,30,45,.35)}
+.report .ph{aspect-ratio:16/10;overflow:hidden}
+.report .ph img{width:100%;height:100%;object-fit:cover}
+.report .body{padding:22px 22px 26px}
+.report .meta{display:flex;align-items:center;gap:10px;font-size:11.5px}
+.report time{font-family:var(--font-en);font-weight:700;color:var(--c-ink-soft)}
+.report .tag{background:var(--c-sky-pale);color:var(--c-sky-deep);font-weight:700;padding:2px 10px;border-radius:999px}
+.report h3{font-size:16px;line-height:1.6;margin-top:12px}
+
+/* ===== 法人概要 ===== */
+.gaiyo-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}
+table.gaiyo{width:100%;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:130px;text-align:left;font-weight:700;color:var(--c-sky-deep);border-bottom:1px solid var(--c-line);padding:15px 8px;vertical-align:top;white-space:nowrap}
+table.gaiyo td{border-bottom:1px solid var(--c-line);padding:15px 8px;vertical-align:top}
+.map iframe{width:100%;height:340px;border:1px solid var(--c-line);border-radius:14px}
+.map .cap{font-size:12px;color:var(--c-ink-soft);margin-top:10px}
+
+/* ===== お問い合わせ ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-lead .quote{font-family:var(--font-head);font-weight:900;font-size:clamp(20px,2.6vw,26px);line-height:1.7;margin-bottom:18px}
+.contact-lead .quote em{font-style:normal;color:var(--c-coral)}
+.contact-lead p{color:var(--c-ink-soft)}
+.tel-card{margin-top:26px;border:1px solid var(--c-line);border-radius:16px;padding:24px 26px;background:var(--c-sky-pale)}
+.tel-card .cap{font-size:12.5px;font-weight:700;color:var(--c-sky-deep)}
+.tel-card .num{font-family:var(--font-en);font-weight:800;font-size:30px;color:var(--c-ink);margin:6px 0 4px;letter-spacing:.02em}
+.tel-card .sub{font-size:11.5px;color:#8FA0B0;line-height:1.7}
+.form-card{background:#fff;border:1px solid var(--c-line);border-radius:18px;padding:32px 30px;box-shadow:0 24px 50px -30px rgba(20,30,45,.3)}
+.form-card h3{font-size:17px;margin-bottom:6px}
+.form-card .hint{font-size:12.5px;color:var(--c-ink-soft);margin-bottom:20px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:7px}
+.field input,.field textarea{width:100%;border:1px solid var(--c-line);border-radius:10px;background:#FBFCFD;padding:12px 14px;font-family:inherit;font-size:14.5px;color:var(--c-ink)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--c-sky);box-shadow:0 0 0 3px rgba(29,143,209,.14)}
+.field textarea{min-height:120px;resize:vertical}
+.form-card button{width:100%;background:var(--c-sky);color:#fff;border:none;border-radius:999px;font-family:inherit;font-weight:900;font-size:15px;padding:15px;cursor:pointer;transition:background .3s}
+.form-card button:hover{background:var(--c-sky-deep)}
+.form-demo{font-size:11.5px;color:#8FA0B0;text-align:center;margin-top:14px;line-height:1.7}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ink);color:#C6D0DA;padding:64px 0 40px}
+.footer .top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer .brand-f{display:flex;align-items:center;gap:12px}
+.footer .brand-f .mark{width:42px;height:42px;flex:none}
+.footer .brand-f .t{font-family:var(--font-head);font-weight:900;font-size:17px;color:#fff}
+.footer .brand-f .t small{display:block;font-weight:400;font-size:11px;opacity:.7;margin-top:3px}
+.footer .fnav{display:flex;gap:24px;flex-wrap:wrap}
+.footer .fnav a{color:#C6D0DA;text-decoration:none;font-size:13px;font-weight:700}
+.footer .fnav a:hover{color:#fff}
+.footer .meta{margin-top:26px;font-size:12.5px;line-height:1.9}
+.sample-note{font-size:11.5px;color:#8494A2;margin-top:22px;line-height:1.95}
+.sample-note b{color:#C6D0DA}
+.sample-note a{color:#9FB4C4}
+.footer .cr{margin-top:16px;font-size:11px;color:#7A8896}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(28,37,48,.92);color:#fff;text-decoration:none;font-size:11.5px;letter-spacing:.02em;padding:9px 15px 9px 12px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);backdrop-filter:blur(6px);transition:transform .3s var(--ease)}
+.pill:hover{transform:translateY(-2px)}
+.pill .dot{width:9px;height:9px;border-radius:50%;background:var(--c-sun);flex:none}
+.pill b{font-weight:700}
+
+/* ===== SPメニュー ===== */
+.sp-nav{display:none}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .head nav{display:none}
+  .head .donate-btn{margin-left:auto}
+  .menu-btn{display:flex;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:0}
+  .menu-btn span{display:block;width:24px;height:2px;background:#fff;transition:.3s var(--ease)}
+  .head.solid .menu-btn span{background:var(--c-ink)}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:block;position:fixed;inset:70px 0 auto 0;z-index:110;background:#fff;border-bottom:1px solid var(--c-line);padding:14px 32px 26px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:.3s var(--ease)}
+  .menu-open .sp-nav{transform:none;opacity:1;visibility:visible}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:700;font-size:15px;padding:14px 4px;border-bottom:1px solid var(--c-line)}
+  .stats .grid{grid-template-columns:1fr;gap:0}
+  .stats .cell{border-left:none;border-top:1px solid rgba(255,255,255,.16);padding:34px 24px}
+  .stats .cell:first-child{border-top:none}
+  .intro{grid-template-columns:1fr;gap:52px}
+  .intro .figs{max-width:440px;margin:0 auto}
+  .acts{grid-template-columns:1fr}
+  .act-card{min-height:340px}
+  .reports{grid-template-columns:1fr}
+  .gaiyo-wrap{grid-template-columns:1fr;gap:36px}
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .sec{padding:72px 0}
+  .head{padding:0 18px;gap:12px}
+  .head .brand .t{font-size:15px}
+  .hero .inner{padding-bottom:64px}
+  .hero .cta a{flex:1;text-align:center;padding:15px 18px;font-size:14px}
+  .donate{padding:80px 0}
+  .donate .tiers{gap:10px}
+  .tier{min-width:0;flex:1 1 46%;padding:15px 16px}
+  .intro .figs .s{left:-14px;bottom:-18px}
+  .pill{left:12px;bottom:12px;font-size:11px;padding:8px 13px 8px 10px}
+}
+</style>
+</head>
+<body>
+
+<!-- 上部ヘッダー -->
+<header class="head" id="top">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+      <circle cx="22" cy="22" r="21" fill="#1D8FD1"/>
+      <path d="M22 8a14 14 0 1 0 0 28 14 14 0 0 0 0-28Zm0 2.4c1.9 0 4.4 3.4 5.4 9.4H16.6c1-6 3.5-9.4 5.4-9.4Zm-8.9 6.4h4.4a30 30 0 0 0-.3 4.9h-5.5a11.6 11.6 0 0 1 1.4-4.9Zm-1.4 7.3h5.5c0 1.7.1 3.4.3 4.9h-4.4a11.6 11.6 0 0 1-1.4-4.9Zm3 7.3h4c.5 2.1 1.2 3.8 2 5a11.7 11.7 0 0 1-6-5Zm7.3 5.9c-1.2-.8-2.3-2.7-3-5.9h6c-.7 3.2-1.8 5.1-3 5.9Zm3.6-8.3h-7.2a27 27 0 0 1-.3-4.9h7.8a27 27 0 0 1-.3 4.9Zm.6-7.3h-8.4c.2-1.8.5-3.5.9-4.9h6.6c.4 1.4.7 3.1.9 4.9Zm5.7 0h-3.3a30 30 0 0 0-.3-4.9h4a11.6 11.6 0 0 1 1 4.9h-1.1Zm-3.6 7.3c.2-1.5.3-3.2.3-4.9h5.5a11.6 11.6 0 0 1-1.4 4.9h-4.4Zm4-7.3Zm-1 9.7a11.7 11.7 0 0 1-6 5c.8-1.2 1.5-2.9 2-5h4Z" fill="#fff"/>
+      <circle cx="33" cy="12" r="4.4" fill="#F5A623"/>
+    </svg>
+    <span class="t">世界のこども支援機構<small>特定非営利活動法人｜国際的な子ども支援</small></span>
+  </a>
+  <nav>
+    <a href="#about">わたしたち</a>
+    <a href="#activities">活動</a>
+    <a href="#reports">レポート</a>
+    <a href="#profile">法人概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <a class="donate-btn" href="#donate">寄付する</a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<nav class="sp-nav">
+  <a href="#about">わたしたち</a>
+  <a href="#activities">活動</a>
+  <a href="#reports">レポート</a>
+  <a href="#profile">法人概要</a>
+  <a href="#contact">お問い合わせ</a>
+  <a href="#donate">寄付する</a>
+</nav>
+
+<!-- ヒーロー（大きな写真） -->
+<section class="hero">
+  <div class="bg">
+    <!-- 差し替えポイント: 支援先の子どもたち・活動現場のメイン写真（顔が特定されにくい構図が安心） -->
+    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1900&q=80&auto=format&fit=crop" alt="世界の子どもたちのイメージ">
+  </div>
+  <div class="inner wrap">
+    <span class="cap reveal on">International Children Support</span>
+    <h1 class="reveal on"><span class="kb">世界のどこかで、</span><span class="kb">今日を</span><span class="kb"><span class="hl">生きぬく</span>子どもへ。</span><br><span class="kb">その手に、</span><span class="kb">明日への希望を。</span></h1>
+    <p class="lead reveal on">わたしたちは、国境をこえて子どもたちの育ちを支えるNPO法人です。学びの機会、栄養、安心して過ごせる場所を届けるために活動しています。</p>
+    <div class="cta reveal on">
+      <a class="primary" href="#donate">寄付で支援する</a>
+      <a class="ghost" href="#activities">活動を見る</a>
+    </div>
+  </div>
+  <span class="scroll">SCROLL</span>
+</section>
+
+<!-- インパクト数字（帯） -->
+<section class="stats">
+  <div class="wrap">
+    <!-- ※サンプル: 以下の数値はすべてダミーです。実際の活動実績に差し替えます -->
+    <div class="grid">
+      <div class="cell reveal">
+        <div class="num">◯◯<span class="unit">人+</span></div>
+        <div class="lbl">支援を届けた子どもたち<span class="note-sample">※サンプル</span></div>
+      </div>
+      <div class="cell reveal">
+        <div class="num">◯<span class="unit">の国と地域</span></div>
+        <div class="lbl">活動しているエリア<span class="note-sample">※サンプル</span></div>
+      </div>
+      <div class="cell reveal">
+        <div class="num">◯◯<span class="unit">%</span></div>
+        <div class="lbl">現地の子どもに使われた寄付<span class="note-sample">※サンプル</span></div>
+      </div>
+    </div>
+    <p class="foot">※上記の数値は表示イメージのサンプルです。公開時に実際の活動実績へ差し替えます。</p>
+  </div>
+</section>
+
+<!-- わたしたちについて -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="intro">
+      <div class="txt reveal">
+        <p class="s-head" style="margin:0"><span class="en">About Us</span></p>
+        <p class="big"><span class="kb">生まれた場所で、</span><span class="kb">未来が</span><span class="kb">決まってしまわない</span><span class="kb">世界へ。</span><br><span class="kb"><em>すべての子どもに、</em></span><span class="kb"><em>育つ力を。</em></span></p>
+        <p>特定非営利活動法人 世界のこども支援機構は、国際的な子ども支援に取り組む団体です。困難な環境で暮らす子どもたちが、学び、健やかに育ち、自分の未来を選べるように。現地とつながりながら、一人ひとりに寄り添った支援を続けています。</p>
+        <p><span class="note-sample">※上記の紹介文は、法人名称と活動分野（国際的な子ども支援）をもとにしたサンプルです。理念・沿革・代表あいさつなどは、御団体の実際の言葉に差し替えてご提案します。</span></p>
+      </div>
+      <div class="figs reveal">
+        <!-- 差し替えポイント: 活動の主役となる写真（メイン=縦長、サブ=正方形） -->
+        <img class="m" src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1100&q=80&auto=format&fit=crop" alt="学ぶ子どもたちのイメージ">
+        <img class="s" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=80&auto=format&fit=crop" alt="子どもの笑顔のイメージ">
+        <div class="badge">生まれた場所で<br>未来が決まらない世界へ<br><span style="font-weight:700;font-size:.82em">※サンプル</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動（大きな写真カード） -->
+<section class="sec pale" id="activities">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">Our Activities</span>
+      <h2>子どもたちに、届けているもの</h2>
+      <p>教育・栄養・安心できる環境を柱に活動しています。<span class="note-sample">※以下の活動内容・写真は表示イメージのサンプルです。実際の事業に差し替えます。</span></p>
+    </div>
+    <div class="acts">
+      <a class="act-card reveal" href="#activities">
+        <!-- 差し替えポイント: 教育支援の現場写真 -->
+        <img src="https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?w=1000&q=80&auto=format&fit=crop" alt="学びの支援のイメージ">
+        <div class="body">
+          <span class="no">ACTIVITY 01</span>
+          <h3>学びの機会を届ける</h3>
+          <p>教材や学びの場を用意し、子どもたちが「学びたい」を続けられるように支えます。<span class="note-sample" style="color:#F5A623">※サンプル</span></p>
+        </div>
+      </a>
+      <a class="act-card reveal" href="#activities">
+        <!-- 差し替えポイント: 栄養・食支援の現場写真 -->
+        <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=1000&q=80&auto=format&fit=crop" alt="栄養支援のイメージ">
+        <div class="body">
+          <span class="no">ACTIVITY 02</span>
+          <h3>健やかな成長を支える</h3>
+          <p>栄養や健康を守る支援を通じて、子どもたちが安心して大きくなれる毎日をつくります。<span class="note-sample" style="color:#F5A623">※サンプル</span></p>
+        </div>
+      </a>
+      <a class="act-card reveal" href="#activities">
+        <!-- 差し替えポイント: 居場所・コミュニティ支援の写真 -->
+        <img src="https://images.unsplash.com/photo-1602052793312-b99c2a9ee797?w=1000&q=80&auto=format&fit=crop" alt="安心できる居場所のイメージ">
+        <div class="body">
+          <span class="no">ACTIVITY 03</span>
+          <h3>安心できる居場所をつくる</h3>
+          <p>子どもたちが笑顔でいられる場所と、寄り添う大人を、地域とともに育てています。<span class="note-sample" style="color:#F5A623">※サンプル</span></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 寄付導線（フルバナー） -->
+<section class="donate" id="donate">
+  <div class="bg">
+    <!-- 差し替えポイント: 希望を感じさせる子ども・国際協力の写真 -->
+    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1900&q=80&auto=format&fit=crop" alt="希望を感じる子どもたちのイメージ">
+  </div>
+  <div class="inner wrap">
+    <span class="en">Donation</span>
+    <h2><span class="kb">あなたの</span><span class="kb">1つの寄付が、</span><br><span class="kb">世界の子どもの</span><span class="kb">明日を変える。</span></h2>
+    <p class="lead">継続でも、一度きりでも。あなたの想いは、現地の子どもたちにまっすぐ届きます。無理のない範囲で、できることから。</p>
+    <!-- ※サンプル: 寄付コースの金額・使いみちはすべてダミーです。実際の寄付メニューに差し替えます -->
+    <div class="tiers">
+      <div class="tier">
+        <div class="amt">1,000<small>円/月</small></div>
+        <div class="desc">学びのための<br>教材を届けます<span class="note-sample" style="color:#EAF6FD">※サンプル</span></div>
+      </div>
+      <div class="tier">
+        <div class="amt">3,000<small>円/月</small></div>
+        <div class="desc">栄養のある食事を<br>継続して支えます<span class="note-sample" style="color:#EAF6FD">※サンプル</span></div>
+      </div>
+      <div class="tier">
+        <div class="amt">5,000<small>円/月</small></div>
+        <div class="desc">安心できる居場所<br>づくりを応援します<span class="note-sample" style="color:#EAF6FD">※サンプル</span></div>
+      </div>
+    </div>
+    <div class="btns">
+      <a class="primary" href="#contact">寄付について問い合わせる</a>
+      <a class="ghost" href="#contact">賛助会員・ボランティア</a>
+    </div>
+    <p class="note-sample" style="color:#EAF6FD;margin-top:18px">※金額・使いみち・お申し込みボタンは表示イメージのサンプルです。公開時に決済サービス等と連携できます。</p>
+  </div>
+</section>
+
+<!-- 活動レポート -->
+<section class="sec" id="reports">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">Reports</span>
+      <h2>活動レポート・お知らせ</h2>
+      <p>現地の様子や活動の報告をお届けします。<span class="note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます。</span></p>
+    </div>
+    <div class="reports">
+      <!-- ※サンプル: 日付・見出し・写真はすべてダミーです -->
+      <a class="report reveal" href="#reports">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1587653263995-422546a7a569?w=900&q=80&auto=format&fit=crop" alt="活動レポートのイメージ"></div>
+        <div class="body">
+          <div class="meta"><time>20XX.XX.XX</time><span class="tag">現地レポート</span></div>
+          <h3>子どもたちへ学用品を届けました<span class="note-sample">※サンプル</span></h3>
+        </div>
+      </a>
+      <a class="report reveal" href="#reports">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=900&q=80&auto=format&fit=crop" alt="活動レポートのイメージ"></div>
+        <div class="body">
+          <div class="meta"><time>20XX.XX.XX</time><span class="tag">お知らせ</span></div>
+          <h3>年次活動報告を公開しました<span class="note-sample">※サンプル</span></h3>
+        </div>
+      </a>
+      <a class="report reveal" href="#reports">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1526976668912-1a811878dd37?w=900&q=80&auto=format&fit=crop" alt="活動レポートのイメージ"></div>
+        <div class="body">
+          <div class="meta"><time>20XX.XX.XX</time><span class="tag">ご支援のお願い</span></div>
+          <h3>寄付キャンペーンを実施しています<span class="note-sample">※サンプル</span></h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="sec pale" id="profile">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="gaiyo-wrap">
+      <table class="gaiyo reveal">
+        <tr><th>正式名称</th><td>特定非営利活動法人 世界のこども支援機構</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市守山区大字中志段味字西山島1836番地の3</td></tr>
+        <tr><th>活動分野</th><td>国際的な子ども支援（法人名称にもとづく）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）<span class="note-sample">※サンプル欄</span></td></tr>
+        <tr><th>設立</th><td>（公開時に記載します）<span class="note-sample">※サンプル欄</span></td></tr>
+        <tr><th>電話</th><td>000-0000-0000<span class="note-sample">※サンプルの番号です</span></td></tr>
+        <tr><th>メール</th><td>info@example.org<span class="note-sample">※サンプルのアドレスです</span></td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+      <div class="map reveal">
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%AE%88%E5%B1%B1%E5%8C%BA%E5%A4%A7%E5%AD%97%E4%B8%AD%E5%BF%97%E6%AE%B5%E5%91%B3%E5%AD%97%E8%A5%BF%E5%B1%B1%E5%B3%B61836&output=embed&z=15" loading="lazy" title="所在地の地図"></iframe>
+        <p class="cap">所在地（愛知県名古屋市守山区）周辺の地図です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">Contact</span>
+      <h2>お問い合わせ・ご支援</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-lead reveal">
+        <p class="quote"><span class="kb"><em>寄付</em>で支えたい方も、</span><span class="kb"><em>一緒に活動</em>したい方も。</span><br><span class="kb">まずは、</span><span class="kb">お気軽にどうぞ。</span></p>
+        <p>ご寄付・賛助会員・ボランティア・取材のご相談など、どんなことでもお問い合わせください。世界の子どもたちのために、できることを一緒に考えましょう。</p>
+        <!-- ※サンプル: 電話番号はダミーです。format-detection=telephone=no のためリンクにはしていません -->
+        <div class="tel-card">
+          <div class="cap">お電話でのお問い合わせ</div>
+          <div class="num">000-0000-0000</div>
+          <div class="sub">※サンプルの番号です。公開時に実際の連絡先を記載します</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <!-- ※サンプル: フォームはデモ表示です。送信は行われません。公開時に送信先を設定します -->
+        <form class="form-card" id="demoForm" novalidate>
+          <h3>お問い合わせフォーム</h3>
+          <p class="hint">下記にご入力のうえ送信してください。</p>
+          <div class="field"><label for="f-name">お名前</label><input id="f-name" type="text" placeholder="山田 太郎" autocomplete="name"></div>
+          <div class="field"><label for="f-mail">メールアドレス</label><input id="f-mail" type="email" placeholder="example@mail.com" autocomplete="email"></div>
+          <div class="field"><label for="f-body">お問い合わせ内容</label><textarea id="f-body" placeholder="ご寄付・ご支援・ご質問など"></textarea></div>
+          <button type="submit">送信する</button>
+          <p class="form-demo">※ こちらは表示サンプルのため送信されません（公開時に有効化します）</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand-f">
+        <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+          <circle cx="22" cy="22" r="21" fill="#1D8FD1"/>
+          <path d="M22 8a14 14 0 1 0 0 28 14 14 0 0 0 0-28Zm0 2.4c1.9 0 4.4 3.4 5.4 9.4H16.6c1-6 3.5-9.4 5.4-9.4Zm-8.9 6.4h4.4a30 30 0 0 0-.3 4.9h-5.5a11.6 11.6 0 0 1 1.4-4.9Zm-1.4 7.3h5.5c0 1.7.1 3.4.3 4.9h-4.4a11.6 11.6 0 0 1-1.4-4.9Zm3 7.3h4c.5 2.1 1.2 3.8 2 5a11.7 11.7 0 0 1-6-5Zm7.3 5.9c-1.2-.8-2.3-2.7-3-5.9h6c-.7 3.2-1.8 5.1-3 5.9Zm3.6-8.3h-7.2a27 27 0 0 1-.3-4.9h7.8a27 27 0 0 1-.3 4.9Zm.6-7.3h-8.4c.2-1.8.5-3.5.9-4.9h6.6c.4 1.4.7 3.1.9 4.9Zm5.7 0h-3.3a30 30 0 0 0-.3-4.9h4a11.6 11.6 0 0 1 1 4.9h-1.1Zm-3.6 7.3c.2-1.5.3-3.2.3-4.9h5.5a11.6 11.6 0 0 1-1.4 4.9h-4.4Zm-1 9.7a11.7 11.7 0 0 1-6 5c.8-1.2 1.5-2.9 2-5h4Z" fill="#fff"/>
+          <circle cx="33" cy="12" r="4.4" fill="#F5A623"/>
+        </svg>
+        <span class="t">世界のこども支援機構<small>特定非営利活動法人</small></span>
+      </div>
+      <nav class="fnav">
+        <a href="#about">わたしたち</a>
+        <a href="#activities">活動</a>
+        <a href="#reports">レポート</a>
+        <a href="#donate">寄付する</a>
+        <a href="#profile">法人概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="meta">特定非営利活動法人 世界のこども支援機構<br>愛知県名古屋市守山区大字中志段味字西山島1836番地の3</p>
+    <p class="sample-note">本ページはホームページ制作の<b>ご提案用サンプル</b>です。写真はイメージ素材（Unsplash・商用可）、「※サンプル」印の数値・文章・連絡先・お知らせはダミーです。事実として記載しているのは公開情報（NPOポータルの法人名称・所在地、および法人名称から明らかな活動分野）のみで、代表者名・設立年・実績などは公開時に御団体の実データへ差し替えます。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="cr">&copy; 2026 特定非営利活動法人 世界のこども支援機構（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <span class="dot"></span><span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー開閉
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a => a.addEventListener("click", () => {
+  document.body.classList.remove("menu-open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+// ヘッダーの背景（スクロールで白く）
+const head = document.querySelector(".head");
+const onScroll = () => head.classList.toggle("solid", window.scrollY > 40);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+// デモフォーム（送信させない）
+document.getElementById("demoForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("これは表示サンプルのため、送信は行われません。公開時に送信機能を設定します。");
+});
+
+// スクロール表示アニメ
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

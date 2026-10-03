@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 レインボー さま（ご提案用）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・骨格: 上部ヘッダー + カード分割グリッド型（既存サンプルと別デザイン）
+  ・本文は公開情報（豊橋市の就労支援施設一覧・定款目的・所在地）の
+    範囲で作成。連絡先はサンプル扱いです
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです → 差し替えポイント
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 レインボー｜豊橋市の就労支援・ワーキングファクトリー Reflection【ご提案サンプル】</title>
+<meta name="description" content="愛知県豊橋市の障害福祉。就労継続支援施設「ワーキングファクトリー Reflection」を運営。障害を持つ人が社会の一員として共に生き、働く力を身につける支援をしています。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FBFAF7;         /* オフホワイト */
+  --c-paper:#FFFFFF;
+  --c-ink:#3A3A42;
+  --c-sub:#7C7C86;
+  --c-line:#ECE9E2;
+  /* 上品な虹（彩度を抑えたパステル） */
+  --c-red:#E4A0A6;
+  --c-orange:#EFC199;
+  --c-yellow:#E9D79A;
+  --c-green:#A9CEA8;
+  --c-blue:#9FC1D6;
+  --c-purple:#BBA9CE;
+  /* テキスト用のやや濃い虹（可読性確保） */
+  --c-red-d:#C46A72;
+  --c-orange-d:#C9915A;
+  --c-green-d:#5E9A5C;
+  --c-blue-d:#5D8CAD;
+  --c-purple-d:#8873A6;
+  --font-body:"Zen Maru Gothic",sans-serif;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.7;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+
+/* ===== 上部ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(251,250,247,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--c-line)}
+.head .inner{max-width:1080px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .t{font-weight:900;font-size:19px;letter-spacing:.04em;line-height:1.2}
+.brand .t small{display:block;font-size:10px;font-weight:500;color:var(--c-sub);letter-spacing:.05em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+.head nav a{text-decoration:none;color:var(--c-ink);font-size:13.5px;font-weight:500;padding:8px 12px;border-radius:999px;transition:background .25s var(--ease),color .25s var(--ease)}
+.head nav a:hover{background:#F1EEE7;color:var(--c-purple-d)}
+.head .cta{margin-left:6px;background:var(--c-ink);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:11px 18px;border-radius:999px;white-space:nowrap;transition:opacity .25s}
+.head .cta:hover{opacity:.85}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:24px;height:2px;border-radius:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.sp-nav{display:none}
+
+/* ===== 虹のリボン（装飾） ===== */
+.rainbow-bar{height:6px;display:flex}
+.rainbow-bar span{flex:1}
+.rainbow-bar span:nth-child(1){background:var(--c-red)}
+.rainbow-bar span:nth-child(2){background:var(--c-orange)}
+.rainbow-bar span:nth-child(3){background:var(--c-yellow)}
+.rainbow-bar span:nth-child(4){background:var(--c-green)}
+.rainbow-bar span:nth-child(5){background:var(--c-blue)}
+.rainbow-bar span:nth-child(6){background:var(--c-purple)}
+
+/* ===== キャッチ（ヘッダー直下・カードグリッドの導入） ===== */
+.hero{padding:60px 0 34px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:stretch}
+.hero-copy{background:var(--c-paper);border:1px solid var(--c-line);border-radius:var(--radius);padding:44px 42px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-copy .arc{position:absolute;right:-70px;top:-70px;width:210px;height:210px;border-radius:50%;background:
+  radial-gradient(circle at center,transparent 54%,var(--c-purple) 54% 62%,transparent 62%),
+  radial-gradient(circle at center,transparent 64%,var(--c-blue) 64% 72%,transparent 72%),
+  radial-gradient(circle at center,transparent 74%,var(--c-green) 74% 82%,transparent 82%),
+  radial-gradient(circle at center,transparent 84%,var(--c-yellow) 84% 92%,transparent 92%);
+  opacity:.7;pointer-events:none}
+.hero-copy .cap{font-size:12.5px;font-weight:700;color:var(--c-blue-d);letter-spacing:.1em;margin-bottom:16px}
+.hero-copy h1{font-size:clamp(26px,3.5vw,38px);font-weight:900;line-height:1.7;letter-spacing:.04em;position:relative;z-index:1}
+.hero-copy h1 .hl{background:linear-gradient(transparent 62%,var(--c-yellow) 62%)}
+.hero-copy .lead{margin-top:20px;font-size:15px;color:#55555f;max-width:30em;position:relative;z-index:1}
+.hero-copy .chips{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.chip.c1{background:#F6E7E8;color:var(--c-red-d)}
+.chip.c2{background:#EAF3E9;color:var(--c-green-d)}
+.chip.c3{background:#E7EEF4;color:var(--c-blue-d)}
+.hero-photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--c-line);min-height:320px}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ===== セクション共通 ===== */
+.sec{padding:56px 0}
+.s-head{margin-bottom:30px}
+.s-head .en{font-family:var(--font-num);font-size:11px;letter-spacing:.24em;color:var(--c-sub);text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.s-head .en::before{content:"";width:20px;height:20px;border-radius:6px;flex:none;display:inline-block}
+.s-head h2{font-size:clamp(21px,2.6vw,27px);letter-spacing:.03em;margin-top:8px}
+.s-head p.sub{font-size:14px;color:var(--c-sub);margin-top:8px}
+/* セクションごとの色アクセント */
+.sec.about  .s-head .en::before{background:var(--c-blue)}
+.sec.facility .s-head .en::before{background:var(--c-green)}
+.sec.day    .s-head .en::before{background:var(--c-orange)}
+.sec.consult .s-head .en::before{background:var(--c-purple)}
+.sec.access .s-head .en::before{background:var(--c-red)}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#A6A29A}
+
+/* ===== 私たちについて（テキスト + 3つの価値カード） ===== */
+.about-lead{font-size:clamp(17px,2.2vw,20px);font-weight:500;line-height:2.1;max-width:34em;margin-bottom:12px}
+.about-lead em{font-style:normal;color:var(--c-blue-d);font-weight:700}
+.about-body{font-size:14.5px;color:#55555f;max-width:44em}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.value-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:var(--radius);padding:26px 24px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.value-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px -18px rgba(60,60,80,.35)}
+.value-card .ic{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.value-card:nth-child(1) .ic{background:#F6E7E8}
+.value-card:nth-child(2) .ic{background:#EAF3E9}
+.value-card:nth-child(3) .ic{background:#F1EBF6}
+.value-card h3{font-size:16px;margin-bottom:6px}
+.value-card p{font-size:13px;color:var(--c-sub);line-height:1.9}
+
+/* ===== 就労施設 Reflection（大カード） ===== */
+.facility-card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.facility-card .ph{min-height:340px}
+.facility-card .ph img{width:100%;height:100%;object-fit:cover}
+.facility-card .body{padding:40px 40px 36px}
+.facility-card .badge{display:inline-block;font-family:var(--font-num);font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--c-green-d);background:#EAF3E9;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.facility-card h3{font-size:clamp(20px,2.4vw,25px);letter-spacing:.02em}
+.facility-card h3 small{display:block;font-size:12px;font-weight:500;color:var(--c-sub);letter-spacing:.05em;margin-top:4px}
+.facility-card .desc{font-size:14px;color:#55555f;margin:16px 0 22px}
+.work-list{list-style:none;display:grid;gap:10px}
+.work-list li{display:flex;gap:11px;font-size:13.5px;align-items:flex-start}
+.work-list li .dot{width:9px;height:9px;border-radius:50%;flex:none;margin-top:9px}
+.work-list li:nth-child(1) .dot{background:var(--c-red)}
+.work-list li:nth-child(2) .dot{background:var(--c-orange)}
+.work-list li:nth-child(3) .dot{background:var(--c-green)}
+.work-list li:nth-child(4) .dot{background:var(--c-blue)}
+.work-list li b{color:var(--c-ink)}
+.work-list li span.n{display:block;font-size:12px;color:var(--c-sub);line-height:1.7}
+
+/* ===== 1日の流れ（カード横並び） ===== */
+.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.flow-item{background:var(--c-paper);border:1px solid var(--c-line);border-radius:var(--radius);padding:22px 18px;position:relative;text-align:center}
+.flow-item .time{font-family:var(--font-num);font-weight:600;font-size:15px;padding:4px 0;border-radius:999px;margin-bottom:12px;letter-spacing:.02em}
+.flow-item:nth-child(1) .time{color:var(--c-red-d);background:#F6E7E8}
+.flow-item:nth-child(2) .time{color:var(--c-orange-d);background:#F7ECDD}
+.flow-item:nth-child(3) .time{color:var(--c-green-d);background:#EAF3E9}
+.flow-item:nth-child(4) .time{color:var(--c-blue-d);background:#E7EEF4}
+.flow-item:nth-child(5) .time{color:var(--c-purple-d);background:#F1EBF6}
+.flow-item .fic{width:40px;height:40px;margin:0 auto 12px}
+.flow-item h3{font-size:14.5px;margin-bottom:6px}
+.flow-item p{font-size:12px;color:var(--c-sub);line-height:1.8}
+
+/* ===== 利用の相談（デモフォーム） ===== */
+.consult-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:start}
+.consult-info{background:var(--c-paper);border:1px solid var(--c-line);border-radius:var(--radius);padding:34px 32px}
+.consult-info h3{font-size:18px;margin-bottom:12px}
+.consult-info p{font-size:13.5px;color:#55555f}
+.tel-box{margin-top:22px;border:1.5px solid var(--c-purple);border-radius:14px;padding:18px 20px;text-align:center}
+.tel-box .cap{font-size:12px;font-weight:700;color:var(--c-purple-d)}
+.tel-box a{font-family:var(--font-num);font-size:26px;font-weight:600;color:var(--c-ink);text-decoration:none;letter-spacing:.02em;display:block;margin:2px 0}
+.tel-box small{font-size:11px;color:var(--c-sub)}
+.demo-form{background:var(--c-paper);border:1px solid var(--c-line);border-radius:var(--radius);padding:34px 32px}
+.form-note{font-size:11.5px;color:#A6A29A;background:#F7F5F0;border-radius:10px;padding:9px 14px;margin-bottom:20px;text-align:center}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px}
+.field label .req{color:var(--c-red-d);font-size:11px;margin-left:5px}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--c-line);border-radius:11px;padding:12px 14px;font-family:inherit;font-size:14px;background:#FCFBF8;color:var(--c-ink);transition:border-color .25s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--c-blue)}
+.field textarea{resize:vertical;min-height:96px;line-height:1.8}
+.submit-btn{width:100%;background:var(--c-ink);color:#fff;border:none;border-radius:999px;padding:15px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;transition:opacity .25s}
+.submit-btn:hover{opacity:.88}
+.form-msg{display:none;margin-top:16px;background:#EAF3E9;color:var(--c-green-d);border-radius:11px;padding:14px;font-size:13px;font-weight:700;text-align:center}
+.form-msg.show{display:block}
+
+/* ===== アクセス ===== */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
+.access-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--c-line);min-height:320px}
+.access-map iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+.gaiyo{background:var(--c-paper);border:1px solid var(--c-line);border-radius:var(--radius);padding:34px 32px}
+.gaiyo h3{font-size:17px;margin-bottom:16px}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.info{width:100%;border-collapse:collapse;font-size:13.5px}
+table.info th{width:120px;text-align:left;font-weight:700;color:var(--c-sub);padding:11px 4px;border-bottom:1px solid var(--c-line);white-space:nowrap;vertical-align:top}
+table.info td{padding:11px 4px 11px 14px;border-bottom:1px solid var(--c-line);vertical-align:top}
+table.info tr:last-child th,table.info tr:last-child td{border-bottom:none}
+table.info td a{color:var(--c-purple-d);font-weight:700;text-decoration:none}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-paper);border-top:1px solid var(--c-line);padding:44px 0 34px;text-align:center;margin-top:20px}
+.footer .f-brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px}
+.footer .f-brand .mark{width:34px;height:34px}
+.footer .f-name{font-weight:900;font-size:16px}
+.footer p{font-size:12.5px;color:var(--c-sub);margin-top:4px}
+.sample-note{font-size:11px;color:#A6A29A;margin-top:18px;line-height:1.9}
+.sample-note a{color:var(--c-sub)}
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;background:var(--c-ink);color:#fff;font-size:11.5px;font-weight:700;padding:8px 15px;border-radius:999px;box-shadow:0 6px 18px -6px rgba(0,0,0,.4);letter-spacing:.03em}
+.pill::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c-yellow);margin-right:7px;vertical-align:middle}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:920px){
+  .head nav{display:none}
+  .head .cta{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:none;position:fixed;inset:73px 0 auto 0;background:#fff;border-bottom:1px solid var(--c-line);padding:8px 24px 20px;z-index:99;box-shadow:0 10px 24px -14px rgba(0,0,0,.25)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--c-ink);font-weight:500;font-size:15.5px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav a:last-child{border-bottom:none}
+  .sp-nav .cta{display:block;margin-top:12px;background:var(--c-ink);color:#fff;text-align:center;border-radius:999px;padding:14px;font-weight:700;border:none}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{min-height:240px}
+  .facility-card{grid-template-columns:1fr}
+  .facility-card .ph{min-height:220px}
+  .consult-grid{grid-template-columns:1fr}
+  .access-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:620px){
+  .wrap{padding:0 20px}
+  .head .inner{padding:0 20px}
+  .hero{padding:36px 0 24px}
+  .hero-copy{padding:32px 26px}
+  .sec{padding:44px 0}
+  .value-grid{grid-template-columns:1fr;gap:14px}
+  .facility-card .body{padding:30px 26px}
+  .flow-grid{grid-template-columns:1fr}
+  .consult-info,.demo-form,.gaiyo,.consult-info{padding:28px 24px}
+  /* スマホの表: 横スクロールをやめて縦積みに */
+  table.info,table.info tbody,table.info tr,table.info th,table.info td{display:block;width:100%}
+  table.info th{border-bottom:none;padding:12px 4px 2px;color:var(--c-blue-d)}
+  table.info td{padding:0 4px 12px;border-bottom:1px solid var(--c-line)}
+  .pill{left:12px;bottom:12px;font-size:11px;padding:7px 13px}
+}
+</style>
+</head>
+<body>
+
+<!-- 左下「制作サンプル」ピル -->
+<div class="pill">制作サンプル</div>
+
+<!-- 上部ヘッダー -->
+<header class="head" id="top">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 30a16 16 0 0 1 32 0" fill="none" stroke="#E4A0A6" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M8 30a12 12 0 0 1 24 0" fill="none" stroke="#E9D79A" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M12 30a8 8 0 0 1 16 0" fill="none" stroke="#A9CEA8" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M16 30a4 4 0 0 1 8 0" fill="none" stroke="#9FC1D6" stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <span class="t">レインボー<small>特定非営利活動法人｜愛知県豊橋市</small></span>
+    </a>
+    <nav>
+      <a href="#about">私たちについて</a>
+      <a href="#facility">就労施設</a>
+      <a href="#day">1日の流れ</a>
+      <a href="#consult">利用のご相談</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a class="cta" href="#consult">見学・相談する</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#about">私たちについて</a>
+    <a href="#facility">就労施設 Reflection</a>
+    <a href="#day">1日の流れ</a>
+    <a href="#consult">利用のご相談</a>
+    <a href="#access">アクセス</a>
+    <a class="cta" href="#consult">見学・相談する</a>
+  </nav>
+</header>
+<div class="rainbow-bar" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- キャッチ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal on">
+        <div class="arc" aria-hidden="true"></div>
+        <p class="cap">愛知県豊橋市の障害福祉・就労支援</p>
+        <h1><span class="kb">はたらく</span><span class="kb">よろこびを、</span><br><span class="kb"><span class="hl">その人らしく。</span></span></h1>
+        <p class="lead">レインボーは、障害を持つ人が社会の一員として<span class="kb">共に生き、</span><span class="kb">「働く力」を</span><span class="kb">身につけていく</span>ことを支える、豊橋市のNPO法人です。</p>
+        <div class="chips">
+          <span class="chip c1">就労継続支援</span>
+          <span class="chip c2">多様性を大切に</span>
+          <span class="chip c3">見学できます</span>
+        </div>
+      </div>
+      <div class="hero-photo reveal on">
+        <!-- 差し替えポイント: 施設での作業風景のお写真に差し替えます -->
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1100&q=80&auto=format&fit=crop" alt="みんなで働く様子のイメージ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 私たちについて -->
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">About us</span>
+      <h2>私たちについて</h2>
+    </div>
+    <p class="about-lead reveal"><span class="kb">障害を持つ人が、</span><em>社会の一員として</em><span class="kb">共に生き、</span><span class="kb">働く力を</span><span class="kb">身につけていく。</span></p>
+    <p class="about-body reveal">レインボーは、その一人ひとりの歩みに寄り添うために活動しています。得意なことも、苦手なことも、みんなちがう。だからこそ、それぞれの「できる」を見つけ、伸ばしていける場所でありたいと考えています。<span class="note-sample">※この文章は定款の目的（公開情報）をもとにしたサンプルです。ご契約後に御団体のお言葉へ差し替えます</span></p>
+
+    <div class="value-grid">
+      <!-- ※サンプル: 下記3つの価値の見出し・説明は、定款目的をもとにしたイメージ文です -->
+      <div class="value-card reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C6 17 3 13 3 9a4 4 0 0 1 7-2.6A4 4 0 0 1 17 5a4 4 0 0 1 4 4c0 4-3 8-9 12Z" stroke="#C46A72" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>共に生きる</h3>
+        <p>障害のあるなしに関わらず、同じ地域の仲間として。安心して過ごせる居場所づくりを大切にします。</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20v-1a5 5 0 0 1 5-5h1M15 10a3 3 0 1 0-3-3M20 20l-3-3m3 0-3 3" stroke="#5E9A5C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="3" stroke="#5E9A5C" stroke-width="1.7"/></svg>
+        </div>
+        <h3>働く力を育む</h3>
+        <p>作業を通じて、集中する力・続ける力・仲間と協力する力を、無理のないペースで身につけていきます。</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v2m0 14v2M5 12H3m18 0h-2M6 6 4.5 4.5M18 6l1.5-1.5M6 18l-1.5 1.5M18 18l1.5 1.5" stroke="#8873A6" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="#8873A6" stroke-width="1.7"/></svg>
+        </div>
+        <h3>一人ひとりの色</h3>
+        <p>できることも、ペースも、みんなちがう。その違いを、虹のように豊かな個性として尊重します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 就労施設 Reflection -->
+<section class="sec facility" id="facility">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">Our facility</span>
+      <h2>就労施設「ワーキングファクトリー Reflection」</h2>
+      <p class="sub">レインボーが運営する就労継続支援施設です</p>
+    </div>
+    <div class="facility-card reveal">
+      <div class="ph">
+        <!-- 差し替えポイント: 施設内での手仕事・軽作業の様子のお写真に差し替えます -->
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1100&q=80&auto=format&fit=crop" alt="手仕事・軽作業のイメージ">
+      </div>
+      <div class="body">
+        <span class="badge">WORKING FACTORY</span>
+        <h3>ワーキングファクトリー Reflection<small>就労継続支援施設</small></h3>
+        <p class="desc">「Reflection（リフレクション）＝映し出す・ふりかえる」。一つひとつの作業に丁寧に向き合いながら、自分の成長を実感できる場所です。<span class="note-sample">※作業内容は表示イメージのサンプルです。実際の作業内容に差し替えます</span></p>
+        <ul class="work-list">
+          <li><span class="dot"></span><span><b>手作業・軽作業</b><span class="n">部品の組み立てや袋詰めなど、集中して取り組む作業</span></span></li>
+          <li><span class="dot"></span><span><b>ものづくり・生産活動</b><span class="n">手仕事を通じて、完成させる達成感を積み重ねます</span></span></li>
+          <li><span class="dot"></span><span><b>清掃・環境整備</b><span class="n">身のまわりを整える、暮らしにつながる作業</span></span></li>
+          <li><span class="dot"></span><span><b>仲間との協働</b><span class="n">役割を分担し、協力して一つの仕事を仕上げます</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1日の流れ -->
+<section class="sec day" id="day">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">A day at Reflection</span>
+      <h2>1日の流れ</h2>
+      <p class="sub note-sample" style="font-size:11.5px">※時間・内容は表示イメージのサンプルです。実際のスケジュールに差し替えます</p>
+    </div>
+    <div class="flow-grid">
+      <!-- ※サンプル: 以下の時間割はダミーです -->
+      <div class="flow-item reveal">
+        <span class="time">9:30</span>
+        <svg class="fic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="13" stroke="#C46A72" stroke-width="2.4"/><path d="M20 13v7l5 3" stroke="#C46A72" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h3>登所・朝の会</h3>
+        <p>あいさつと体調チェックで、1日がはじまります</p>
+      </div>
+      <div class="flow-item reveal">
+        <span class="time">10:00</span>
+        <svg class="fic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M12 27V17l8-5 8 5v10" stroke="#C9915A" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 27v-6h6v6" stroke="#C9915A" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <h3>午前の作業</h3>
+        <p>集中しやすい時間に、その日の作業へ</p>
+      </div>
+      <div class="flow-item reveal">
+        <span class="time">12:00</span>
+        <svg class="fic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M15 12v8a2 2 0 0 0 4 0v-8M17 12v16M25 12c-2 0-3 2-3 5s1 4 3 4v7" stroke="#5E9A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>昼食・休憩</h3>
+        <p>ゆっくり食べて、午後にそなえます</p>
+      </div>
+      <div class="flow-item reveal">
+        <span class="time">13:00</span>
+        <svg class="fic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M13 20a7 7 0 1 0 14 0 7 7 0 0 0-14 0Z" stroke="#5D8CAD" stroke-width="2.4"/><path d="M20 16v4l3 2" stroke="#5D8CAD" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h3>午後の作業</h3>
+        <p>仲間と協力しながら、仕事を仕上げます</p>
+      </div>
+      <div class="flow-item reveal">
+        <span class="time">15:30</span>
+        <svg class="fic" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M14 24c2-6 4-9 10-11-1 6-4 9-10 11Z" stroke="#8873A6" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 24c-1-4-2-6 0-9" stroke="#8873A6" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <h3>帰りの会</h3>
+        <p>今日の「できた」をふりかえって、また明日</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 利用のご相談（デモフォーム） -->
+<section class="sec consult" id="consult">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">Contact</span>
+      <h2>利用のご相談・見学のお申し込み</h2>
+      <p class="sub">「話を聞いてみたい」だけでも大丈夫です。お気軽にどうぞ。</p>
+    </div>
+    <div class="consult-grid">
+      <div class="consult-info reveal">
+        <h3>まずはお気軽に</h3>
+        <p>ご本人・ご家族・支援機関の方、どなたからのご相談も歓迎します。見学は随時受け付けています（※サンプル表記）。</p>
+        <div class="tel-box">
+          <span class="cap">お電話でのご相談</span>
+          <!-- ※電話番号は豊橋市の就労支援施設一覧より・サンプル扱い。format-detectionで自動リンクは無効化。href発信はデモ -->
+          <a href="tel:0532747140">0532-74-7140</a>
+          <small>「ホームページを見た」とお伝えください</small>
+        </div>
+      </div>
+
+      <form class="demo-form reveal" id="demoForm" novalidate>
+        <p class="form-note">※これは動作デモです。実際には送信されません（ご契約後に本番のお問い合わせフォームを設置します）</p>
+        <div class="field">
+          <label for="f-name">お名前<span class="req">必須</span></label>
+          <input id="f-name" type="text" placeholder="例）豊橋 太郎" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-tel">電話番号 または メール</label>
+          <input id="f-tel" type="text" placeholder="ご連絡のつきやすい方をご記入ください" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-type">ご相談の種類</label>
+          <select id="f-type">
+            <option>施設の見学をしたい</option>
+            <option>利用について相談したい</option>
+            <option>ご家族・支援者からの相談</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">ご相談内容</label>
+          <textarea id="f-msg" placeholder="気になっていることを、そのままご記入ください"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">相談内容を送信する（デモ）</button>
+        <p class="form-msg" id="formMsg">送信ありがとうございます（※これはデモ表示です。実際には送信されていません）</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="sec access" id="access">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="en">Access</span>
+      <h2>アクセス・法人概要</h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-map reveal">
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%A9%8B%E5%B8%82%E6%9D%B1%E5%B0%8F%E6%B5%9C%E7%94%BA164%E7%95%AA%E5%9C%B02&output=embed&z=15" loading="lazy" title="所在地の地図"></iframe>
+      </div>
+      <div class="gaiyo reveal">
+        <h3>法人概要</h3>
+        <div class="tbl-wrap">
+          <table class="info">
+            <tr><th>正式名称</th><td>特定非営利活動法人 レインボー</td></tr>
+            <tr><th>所在地</th><td>愛知県豊橋市東小浜町164番地2</td></tr>
+            <tr><th>運営施設</th><td>ワーキングファクトリー Reflection（就労継続支援施設）</td></tr>
+            <tr><th>活動分野</th><td>障害福祉・就労支援</td></tr>
+            <tr><th>電話</th><td><a href="tel:0532747140">0532-74-7140</a><br><span class="note-sample" style="font-weight:400">※豊橋市の就労支援施設一覧より・サンプル扱い</span></td></tr>
+            <tr><th>設立・法人番号</th><td class="note-sample" style="color:var(--c-sub)">公開時に記載します（※サンプル）</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-brand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 30a16 16 0 0 1 32 0" fill="none" stroke="#E4A0A6" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M8 30a12 12 0 0 1 24 0" fill="none" stroke="#E9D79A" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M12 30a8 8 0 0 1 16 0" fill="none" stroke="#A9CEA8" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M16 30a4 4 0 0 1 8 0" fill="none" stroke="#9FC1D6" stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <span class="f-name">特定非営利活動法人 レインボー</span>
+    </div>
+    <p>愛知県豊橋市東小浜町164番地2</p>
+    <p>就労継続支援施設「ワーキングファクトリー Reflection」運営</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容・電話番号はサンプル扱いです）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p style="margin-top:14px;font-size:11px">&copy; 2026 特定非営利活動法人 レインボー</p>
+  </div>
+</footer>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// スクロールで表示（reveal）
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// デモフォーム（送信しない）
+const form = document.getElementById("demoForm");
+const msg = document.getElementById("formMsg");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  msg.classList.add("show");
+  msg.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+</script>
+</body>
+</html>

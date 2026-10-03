@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 アパート研究会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（内閣府NPOポータル・登記情報の定款目的／所在地／
+    活動分野／法人番号）の範囲で作成しています
+  ・代表者名など未公開の個人情報は掲載していません
+  ・「※サンプル」表記およびソース内コメントで注記した内容はダミーです。
+    ご契約後に実データへ差し替えます
+  ・主役はイラスト（アイソメトリック＝等角図・CSS/SVG）です。写真は使用していません
+  ・デザインの方向: アイソメトリック・イラスト主役型（住まい・まちづくり）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>アパート研究会｜名古屋市北区・良質な賃貸住宅とまちづくり【ご提案サンプル】</title>
+<meta name="description" content="名古屋市北区のNPO法人。アパート経営者とこれから始める方への情報提供・相談・助言を通じて、良質な賃貸住宅と健全なまちづくり・環境保全に取り組みます。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF4E8;          /* 温かいベージュ */
+  --paper:#FFFFFF;
+  --cream:#F5E9D4;
+  --ink:#3A3630;
+  --sub:#7A7264;
+  --blue:#2F6FB0;        /* 青 */
+  --blue-deep:#245A92;
+  --blue-pale:#E4EEF7;
+  --orange:#E8823A;      /* 橙 */
+  --orange-pale:#FBEBDA;
+  --line:#EADFC9;
+  --font-disp:"Zen Maru Gothic",sans-serif;      /* 親しみやすい丸ゴシック（見出し） */
+  --font-body:"Noto Sans JP",sans-serif;
+  --font-num:"Baloo 2",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-disp);font-weight:700;line-height:1.6;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+a{color:inherit}
+
+/* ===== 上部バー ===== */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(251,244,232,.92);backdrop-filter:blur(8px);height:66px;display:flex;align-items:center;gap:18px;padding:0 30px;transition:box-shadow .3s var(--ease)}
+.topbar.scrolled{box-shadow:0 2px 14px rgba(58,54,48,.08)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand .mk{width:38px;height:38px;flex:none}
+.brand .t{font-family:var(--font-disp);font-weight:900;font-size:19px;letter-spacing:.02em;line-height:1.2}
+.brand .t small{display:block;font-family:var(--font-body);font-size:10px;font-weight:500;color:var(--blue-deep);letter-spacing:.04em;margin-top:1px}
+.topbar nav{margin-left:auto;display:flex;gap:4px}
+.topbar nav a{text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:500;padding:8px 13px;border-radius:999px;transition:background .25s,color .25s}
+.topbar nav a:hover{background:var(--blue-pale);color:var(--blue-deep)}
+.topbar .cta{margin-left:8px;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 12px rgba(232,130,58,.32)}
+.topbar .cta:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(232,130,58,.4)}
+
+.menu-btn{display:none}
+.sp-nav{display:none}
+
+.wrap{max-width:1020px;margin:0 auto;padding:0 30px}
+
+/* ===== ヒーロー（アイソメトリック・イラスト主役） ===== */
+.hero{position:relative;padding:56px 0 40px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:30px;align-items:center}
+.hero .cap{display:inline-block;background:var(--blue-pale);color:var(--blue-deep);font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:6px 15px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.55;letter-spacing:.02em}
+.hero h1 .hl{color:var(--blue-deep);position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:2px;height:11px;background:var(--orange-pale);z-index:-1;border-radius:3px}
+.hero .lead{margin-top:22px;max-width:460px;font-size:15px;color:#4b463d}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn-o{background:var(--orange);color:#fff;text-decoration:none;font-family:var(--font-disp);font-weight:700;font-size:14.5px;padding:14px 26px;border-radius:14px;box-shadow:0 6px 16px rgba(232,130,58,.3);transition:transform .2s,box-shadow .2s}
+.btn-o:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(232,130,58,.4)}
+.btn-b{background:var(--paper);color:var(--blue-deep);text-decoration:none;font-family:var(--font-disp);font-weight:700;font-size:14.5px;padding:14px 26px;border-radius:14px;border:2px solid var(--blue-pale);transition:border-color .2s,transform .2s}
+.btn-b:hover{border-color:var(--blue);transform:translateY(-2px)}
+
+/* --- アイソメトリック・シーン（CSS+SVG） --- */
+.iso-stage{position:relative;aspect-ratio:1/1;filter:drop-shadow(0 24px 34px rgba(58,54,48,.14))}
+.iso-stage svg{width:100%;height:100%;overflow:visible}
+.float{animation:bob 6s ease-in-out infinite}
+.float.b{animation-duration:7.5s;animation-delay:-2s}
+.float.c{animation-duration:8.5s;animation-delay:-4s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media (prefers-reduced-motion:reduce){.float{animation:none}}
+.blob{position:absolute;inset:auto;border-radius:50%;filter:blur(2px);opacity:.5;z-index:-1}
+.blob.one{width:200px;height:200px;background:var(--orange-pale);top:-12px;left:-24px}
+.blob.two{width:150px;height:150px;background:var(--blue-pale);bottom:0;right:-14px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:76px 0}
+.block.tint{background:var(--paper)}
+.block.cream{background:var(--cream)}
+.b-head{text-align:center;margin-bottom:44px}
+.b-head .en{font-family:var(--font-num);font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--orange);text-transform:uppercase;display:block}
+.b-head h2{font-size:clamp(22px,2.8vw,29px);font-weight:900;margin-top:6px;letter-spacing:.03em}
+.b-head p{font-size:14px;color:var(--sub);margin-top:10px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:#a99a7d}
+
+/* ===== 私たちがめざすこと（4本柱・アイソメアイコン） ===== */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pillar{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 22px;text-align:center;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.pillar:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(58,54,48,.1)}
+.pillar .ico{width:88px;height:88px;margin:0 auto 14px}
+.pillar h3{font-size:16.5px;font-weight:700}
+.pillar p{font-size:13px;color:var(--sub);margin-top:8px;line-height:1.85}
+
+/* ===== 活動のご案内（イラスト＋テキスト交互） ===== */
+.act-row{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;margin-bottom:52px}
+.act-row:last-child{margin-bottom:0}
+.act-row.rev .art{order:2}
+.act-row .art{background:linear-gradient(160deg,var(--blue-pale),var(--cream));border-radius:24px;aspect-ratio:5/4;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden}
+.act-row .art svg{width:82%;height:82%;overflow:visible}
+.act-row .no{font-family:var(--font-num);font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--orange)}
+.act-row h3{font-size:clamp(19px,2.3vw,23px);font-weight:900;margin:4px 0 12px;letter-spacing:.02em}
+.act-row p{font-size:14.5px;color:#4b463d}
+.act-row ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px}
+.act-row ul li{position:relative;padding-left:28px;font-size:14px}
+.act-row ul li::before{content:"";position:absolute;left:0;top:8px;width:15px;height:15px;border-radius:5px;background:var(--orange);box-shadow:inset 0 0 0 4px var(--orange-pale)}
+
+/* ===== 目的（定款の引用ボード） ===== */
+.mission{background:var(--blue-deep);color:#fff;border-radius:26px;padding:52px 46px;position:relative;overflow:hidden}
+.mission::before{content:"“";position:absolute;top:6px;left:26px;font-family:var(--font-num);font-size:120px;color:rgba(255,255,255,.12);line-height:1}
+.mission .lb{display:inline-block;background:rgba(255,255,255,.16);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:999px;letter-spacing:.04em}
+.mission p.q{font-family:var(--font-disp);font-weight:500;font-size:clamp(17px,2.2vw,21px);line-height:2;margin-top:20px;position:relative}
+.mission .src{margin-top:18px;font-size:12px;color:rgba(255,255,255,.7)}
+
+/* ===== 数字（※サンプル） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px 22px;text-align:center}
+.stat .n{font-family:var(--font-num);font-weight:700;font-size:clamp(34px,5vw,46px);color:var(--blue-deep);line-height:1}
+.stat .n small{font-family:var(--font-disp);font-size:17px;color:var(--orange);margin-left:2px}
+.stat .lb{font-size:13.5px;font-weight:700;margin-top:8px}
+.stat .sub{font-size:11.5px;color:var(--sub);margin-top:2px}
+
+/* ===== ご相談の流れ ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:st}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:28px 24px;position:relative;counter-increment:st}
+.step::before{content:counter(st);position:absolute;top:-16px;left:24px;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--font-num);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(232,130,58,.34)}
+.step h3{font-size:16.5px;font-weight:700;margin-top:10px}
+.step p{font-size:13.5px;color:var(--sub);margin-top:8px}
+
+/* ===== お知らせ ===== */
+.news{max-width:720px;margin:0 auto}
+.news-row{display:flex;gap:16px;align-items:baseline;padding:16px 6px;border-bottom:1px dashed var(--line);font-size:14px}
+.news-row time{flex:none;font-family:var(--font-num);font-weight:700;color:var(--sub);font-size:13px}
+.news-row .tag{flex:none;background:var(--blue-pale);color:var(--blue-deep);font-size:11px;font-weight:700;padding:2px 10px;border-radius:999px}
+.news-row span.tx{color:var(--ink)}
+
+/* ===== 概要表 ===== */
+.gaiyo-wrap{max-width:720px;margin:0 auto}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;border-collapse:collapse;font-size:14px;background:var(--paper);border-radius:16px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--cream);border:1px solid var(--line);padding:13px 18px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--line);padding:13px 18px}
+.tbl-hint{display:none;font-size:11px;color:#a99a7d;margin-top:6px;text-align:center}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.contact-card{background:var(--blue-pale);border-radius:24px;padding:34px}
+.contact-card h3{font-size:19px;font-weight:900}
+.contact-card p{font-size:14px;margin-top:10px;color:#3f4a55}
+.tel-box{margin-top:22px;background:var(--paper);border-radius:16px;padding:20px;text-align:center}
+.tel-box .cap{font-size:12.5px;font-weight:700}
+.tel-box .num{font-family:var(--font-num);font-size:30px;font-weight:700;color:var(--blue-deep);letter-spacing:.01em}
+.tel-box .note{font-size:11.5px;color:var(--sub)}
+form.demo{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:30px}
+form.demo label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+form.demo label:first-child{margin-top:0}
+form.demo input,form.demo textarea{width:100%;font-family:inherit;font-size:14px;border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;background:var(--bg);color:var(--ink)}
+form.demo input:focus,form.demo textarea:focus{outline:none;border-color:var(--blue)}
+form.demo textarea{min-height:96px;resize:vertical}
+form.demo .submit{margin-top:20px;width:100%;background:var(--orange);color:#fff;font-family:var(--font-disp);font-weight:700;font-size:15px;border:none;border-radius:12px;padding:14px;cursor:pointer;transition:transform .2s}
+form.demo .submit:hover{transform:translateY(-1px)}
+form.demo .demo-note{font-size:11.5px;color:var(--sub);text-align:center;margin-top:12px}
+.form-msg{display:none;background:var(--orange-pale);color:#9a5417;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:700;margin-top:16px;text-align:center}
+.form-msg.show{display:block}
+
+/* ===== フッター ===== */
+.footer{background:var(--ink);color:#EDE6D8;padding:50px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-disp);font-weight:900;font-size:17px;color:#fff}
+.footer .f-addr{font-size:12.5px;color:#c3bbab;margin-top:8px}
+.sample-note{font-size:11px;color:#9a917f;margin-top:20px;line-height:1.9;max-width:640px;margin-left:auto;margin-right:auto}
+.sample-note a{color:#c3bbab}
+.footer .cc{font-size:11px;color:#8a8172;margin-top:14px}
+
+/* 左下ピル */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(58,54,48,.93);color:#FBF4E8;text-decoration:none;font-family:var(--font-body);font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.24)}
+.pill svg{width:15px;height:15px;color:var(--orange)}
+.pill b{font-weight:700}
+.pill:hover{background:rgba(58,54,48,1)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:920px){
+  .topbar nav{display:none}
+  .topbar .cta{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5.5px 0;border-radius:2px;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:66px 0 auto 0;background:var(--bg);border-bottom:2px solid var(--line);padding:12px 24px 22px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--ink);font-weight:500;font-size:15.5px;padding:13px 4px;border-bottom:1px solid var(--line)}
+  .sp-nav .cta-sp{margin-top:14px;background:var(--orange);color:#fff;border:none;border-radius:12px;text-align:center;font-weight:700}
+  .hero .wrap{grid-template-columns:1fr;gap:6px}
+  .iso-stage{max-width:400px;margin:8px auto 0}
+  .pillars{grid-template-columns:1fr 1fr;gap:14px}
+  .act-row{grid-template-columns:1fr;gap:22px}
+  .act-row.rev .art{order:0}
+  .stats,.steps{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:24px}
+  .block{padding:56px 0}
+  .mission{padding:38px 26px}
+}
+@media (max-width:560px){
+  .pillars{grid-template-columns:1fr 1fr}
+  table.gaiyo th{width:110px}
+}
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:520px){
+  table.gaiyo,table.gaiyo tbody{display:block}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--line)}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:9px 16px}
+  table.gaiyo th{background:var(--cream);font-size:12px;padding-bottom:4px}
+  table.gaiyo td{padding-top:2px;padding-bottom:12px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部バー -->
+<header class="topbar">
+  <a class="brand" href="#top">
+    <svg class="mk" viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="4" y="6" width="32" height="28" rx="7" fill="#E4EEF7"/>
+      <path d="M20 9 9 16v13h22V16L20 9Z" fill="#2F6FB0"/>
+      <rect x="14" y="21" width="5" height="8" fill="#FBF4E8"/>
+      <rect x="21" y="21" width="5" height="5" fill="#FBF4E8"/>
+      <circle cx="20" cy="15" r="2.4" fill="#E8823A"/>
+    </svg>
+    <span class="t">アパート研究会<small>特定非営利活動法人｜名古屋市北区</small></span>
+  </a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="#about">私たちについて</a>
+    <a href="#activity">活動</a>
+    <a href="#mission">目的</a>
+    <a href="#flow">相談の流れ</a>
+    <a href="#gaiyo">概要</a>
+    <a class="cta" href="#contact">相談する</a>
+  </nav>
+</header>
+<nav class="sp-nav">
+  <a href="#about">私たちについて</a>
+  <a href="#activity">活動のご案内</a>
+  <a href="#mission">私たちの目的</a>
+  <a href="#flow">ご相談の流れ</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#contact" class="cta-sp">ご相談する</a>
+</nav>
+
+<!-- ヒーロー（アイソメトリック・イラスト主役） -->
+<section class="hero">
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+  <div class="wrap">
+    <div>
+      <span class="cap reveal on">名古屋市北区／まちづくり・環境保全・住まい</span>
+      <h1 class="reveal on"><span class="kb">よい<span class="hl">賃貸住宅</span>が、</span><span class="kb">よい<span class="hl">まち</span>をつくる。</span></h1>
+      <p class="lead reveal on">アパート研究会は、アパート経営者と、これから始めようとする方を支える名古屋市北区のNPO法人です。情報提供・相談・助言を通じて、良質な賃貸住宅と、健全で豊かなまちづくり・環境保全に取り組んでいます。</p>
+      <div class="btns reveal on">
+        <a class="btn-o" href="#contact">まずは相談してみる</a>
+        <a class="btn-b" href="#activity">活動を知る</a>
+      </div>
+    </div>
+
+    <!-- アイソメトリックのまち（CSS/SVG・写真不使用） -->
+    <div class="iso-stage reveal on" aria-hidden="true">
+      <svg viewBox="0 0 400 400" role="img" aria-label="アイソメトリックのまち並みのイラスト">
+        <!-- 地面プレート -->
+        <g class="float">
+          <polygon points="200,300 360,208 200,116 40,208" fill="#F5E9D4"/>
+          <polygon points="40,208 200,300 200,320 40,228" fill="#E7D6B4"/>
+          <polygon points="360,208 200,300 200,320 360,228" fill="#DEC9A0"/>
+          <!-- 道（斜めの帯） -->
+          <polygon points="120,254 200,208 260,242 180,289" fill="#EFE3CB"/>
+          <polygon points="150,240 165,231 232,269 217,278" fill="#CBB78E" opacity=".5"/>
+          <!-- 街路樹 -->
+          <g>
+            <polygon points="112,214 118,217 118,226 112,223" fill="#7A5A34"/>
+            <circle cx="115" cy="205" r="12" fill="#5FA26B"/>
+            <circle cx="122" cy="210" r="8" fill="#4F8C5B"/>
+          </g>
+          <g>
+            <polygon points="286,222 292,225 292,234 286,231" fill="#7A5A34"/>
+            <circle cx="289" cy="213" r="11" fill="#5FA26B"/>
+            <circle cx="283" cy="218" r="7" fill="#4F8C5B"/>
+          </g>
+        </g>
+
+        <!-- 中央のアパート（青） -->
+        <g class="float b">
+          <!-- 左面 -->
+          <polygon points="164,206 200,185 200,118 164,139" fill="#2F6FB0"/>
+          <!-- 右面 -->
+          <polygon points="236,206 200,185 200,118 236,139" fill="#245A92"/>
+          <!-- 天面 -->
+          <polygon points="200,97 236,118 200,139 164,118" fill="#4E8AC6"/>
+          <!-- 左面の窓 -->
+          <polygon points="171,158 183,151 183,164 171,171" fill="#CFE4F5"/>
+          <polygon points="171,178 183,171 183,184 171,191" fill="#CFE4F5"/>
+          <!-- 右面の窓 -->
+          <polygon points="217,158 229,151 229,164 217,171" fill="#A9CBEA"/>
+          <polygon points="217,178 229,171 229,184 217,191" fill="#A9CBEA"/>
+          <!-- 玄関ドア（橙） -->
+          <polygon points="194,206 206,199 206,185 194,192" fill="#E8823A"/>
+        </g>
+
+        <!-- 左のアパート（橙・低め） -->
+        <g class="float c">
+          <polygon points="80,246 116,225 116,180 80,201" fill="#E8823A"/>
+          <polygon points="152,246 116,225 116,180 152,201" fill="#CC6C2A"/>
+          <polygon points="116,159 152,180 116,201 80,180" fill="#F19A5B"/>
+          <polygon points="88,214 100,207 100,220 88,227" fill="#FBE7D3"/>
+          <polygon points="128,214 140,207 140,220 128,227" fill="#F3D3B4"/>
+        </g>
+
+        <!-- 右のアパート（クリーム・高め） -->
+        <g class="float">
+          <polygon points="248,242 284,221 284,150 248,171" fill="#EBD9B6"/>
+          <polygon points="320,242 284,221 284,150 320,171" fill="#D9C193"/>
+          <polygon points="284,129 320,150 284,171 248,150" fill="#F5E9D4"/>
+          <polygon points="256,192 268,185 268,198 256,205" fill="#2F6FB0" opacity=".7"/>
+          <polygon points="256,208 268,201 268,214 256,221" fill="#2F6FB0" opacity=".7"/>
+          <polygon points="300,192 312,185 312,198 300,205" fill="#245A92" opacity=".7"/>
+          <polygon points="300,208 312,201 312,214 300,221" fill="#245A92" opacity=".7"/>
+        </g>
+
+        <!-- 浮遊する吹き出し（相談・鍵・葉） -->
+        <g class="float b">
+          <circle cx="316" cy="120" r="24" fill="#FFFFFF" stroke="#EADFC9" stroke-width="2"/>
+          <path d="M310 132 l6 8 l4 -10" fill="#FFFFFF" stroke="#EADFC9" stroke-width="2" stroke-linejoin="round"/>
+          <!-- 鍵 -->
+          <circle cx="311" cy="116" r="5" fill="none" stroke="#E8823A" stroke-width="3"/>
+          <path d="M315 119 l9 9 M321 125 l3 -3 M323 127 l3 -3" stroke="#E8823A" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </g>
+        <g class="float c">
+          <circle cx="74" cy="134" r="21" fill="#FFFFFF" stroke="#EADFC9" stroke-width="2"/>
+          <!-- 葉（環境保全） -->
+          <path d="M66 140 C66 128 78 122 84 122 C84 134 74 142 66 140 Z" fill="#5FA26B"/>
+          <path d="M70 137 C73 132 78 128 82 126" stroke="#FFFFFF" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 私たちについて（4本柱） -->
+<section class="block tint" id="about">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Our Focus</span>
+      <h2>住まいから、まちを考える</h2>
+      <p>定款にかかげる目的にそって、4つの視点を大切にしています</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <svg class="ico" viewBox="0 0 88 88" aria-hidden="true">
+          <polygon points="44,60 60,50 60,28 44,38" fill="#2F6FB0"/>
+          <polygon points="76,60 60,50 60,28 76,38" fill="#245A92"/>
+          <polygon points="60,18 76,28 60,38 44,28" fill="#4E8AC6"/>
+          <polygon points="20,66 36,56 36,40 20,50" fill="#E8823A"/>
+          <polygon points="52,66 36,56 36,40 52,50" fill="#CC6C2A"/>
+          <polygon points="36,30 52,40 36,50 20,40" fill="#F19A5B"/>
+        </svg>
+        <h3>良質な賃貸住宅</h3>
+        <p>長く安心して住める住まいづくりを、経営者の立場から支えます。</p>
+      </div>
+      <div class="pillar reveal">
+        <svg class="ico" viewBox="0 0 88 88" aria-hidden="true">
+          <polygon points="44,64 68,50 68,42 44,56" fill="#EBD9B6"/>
+          <polygon points="20,50 44,64 44,56 20,42" fill="#F5E9D4"/>
+          <polygon points="20,42 44,56 68,42 44,28" fill="#D9C193"/>
+          <circle cx="30" cy="34" r="7" fill="#5FA26B"/>
+          <circle cx="56" cy="36" r="6" fill="#4F8C5B"/>
+          <rect x="41" y="20" width="6" height="10" rx="2" fill="#E8823A"/>
+        </svg>
+        <h3>健全なまちづくり</h3>
+        <p>住まいがつながって、暮らしやすい地域が育っていきます。</p>
+      </div>
+      <div class="pillar reveal">
+        <svg class="ico" viewBox="0 0 88 88" aria-hidden="true">
+          <path d="M44 22 C44 22 30 30 30 44 C30 56 44 62 44 62 C44 62 58 56 58 44 C58 30 44 22 44 22Z" fill="#5FA26B"/>
+          <path d="M44 28 C44 28 36 36 40 52" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <circle cx="44" cy="44" r="26" fill="none" stroke="#4F8C5B" stroke-width="2" opacity=".4"/>
+        </svg>
+        <h3>環境の保全</h3>
+        <p>住まいと地域の環境を守る取り組みを大切にしています。</p>
+      </div>
+      <div class="pillar reveal">
+        <svg class="ico" viewBox="0 0 88 88" aria-hidden="true">
+          <circle cx="34" cy="30" r="9" fill="#E8823A"/>
+          <circle cx="56" cy="34" r="7" fill="#2F6FB0"/>
+          <path d="M20 62 C20 50 28 44 34 44 C40 44 48 50 48 62 Z" fill="#F19A5B"/>
+          <path d="M44 62 C44 52 51 47 56 47 C61 47 68 52 68 62 Z" fill="#4E8AC6"/>
+        </svg>
+        <h3>地域の安全と子ども</h3>
+        <p>安全で、子どもが健やかに育つ地域づくりに寄与します。</p>
+      </div>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-top:22px">※4つの視点は、公開されている定款目的（まちづくり・環境保全・地域安全・子どもの健全育成）をもとに整理したものです</p>
+  </div>
+</section>
+
+<!-- 活動のご案内 -->
+<section class="block" id="activity">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Activities</span>
+      <h2>活動のご案内</h2>
+      <p>アパート経営者・これから始める方への支援活動</p>
+    </div>
+
+    <div class="act-row reveal">
+      <div class="art">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <!-- 相談テーブルのアイソメ -->
+          <polygon points="100,140 160,105 100,70 40,105" fill="#F5E9D4"/>
+          <polygon points="40,105 100,140 100,150 40,115" fill="#DEC9A0"/>
+          <polygon points="160,105 100,140 100,150 160,115" fill="#CBB78E"/>
+          <!-- 書類 -->
+          <polygon points="86,108 108,95 122,103 100,116" fill="#FFFFFF"/>
+          <polygon points="92,105 108,96 116,101 100,110" fill="#E4EEF7"/>
+          <!-- 人（青） -->
+          <circle cx="70" cy="86" r="9" fill="#2F6FB0"/>
+          <path d="M56 116 C56 100 64 94 70 94 C76 94 84 100 84 116 Z" fill="#4E8AC6"/>
+          <!-- 人（橙） -->
+          <circle cx="132" cy="86" r="9" fill="#E8823A"/>
+          <path d="M118 116 C118 100 126 94 132 94 C138 94 146 100 146 116 Z" fill="#F19A5B"/>
+        </svg>
+      </div>
+      <div>
+        <span class="no">ACTIVITY 01</span>
+        <h3>情報提供・相談・助言</h3>
+        <p>アパート経営者、そしてこれから経営を始めようとする方に向けて、賃貸住宅にかかわる情報の提供や、ご相談・助言などの支援を行います。</p>
+        <ul>
+          <li>賃貸住宅の企画・管理・運営についてのご相談</li>
+          <li>これから経営を始める方への情報提供・助言</li>
+          <li>入居者と地域にとってよい住まいづくりの検討</li>
+        </ul>
+        <p class="note-sample" style="margin-top:12px">※活動の具体例は定款目的にそったサンプルです。実際の活動内容に差し替えます</p>
+      </div>
+    </div>
+
+    <div class="act-row rev reveal">
+      <div class="art">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <!-- まちのブロック -->
+          <polygon points="100,150 150,121 100,92 50,121" fill="#EFE3CB"/>
+          <polygon points="70,121 92,108 92,84 70,97" fill="#2F6FB0"/>
+          <polygon points="114,121 92,108 92,84 114,97" fill="#245A92"/>
+          <polygon points="92,72 114,84 92,97 70,84" fill="#4E8AC6"/>
+          <polygon points="108,133 128,121 128,102 108,114" fill="#E8823A"/>
+          <polygon points="88,133 108,121 108,102 88,114" fill="#F19A5B"/>
+          <polygon points="108,90 128,102 108,114 88,102" fill="#FBE7D3"/>
+          <circle cx="58" cy="112" r="8" fill="#5FA26B"/>
+          <circle cx="150" cy="120" r="7" fill="#4F8C5B"/>
+        </svg>
+      </div>
+      <div>
+        <span class="no">ACTIVITY 02</span>
+        <h3>良質な賃貸住宅とまちづくり</h3>
+        <p>良質な賃貸住宅の形成・管理・流通をはかることを通じて、豊かで健全なまちづくりの推進、環境の保全、地域の安全、子どもの健全育成に寄与することをめざします。</p>
+        <ul>
+          <li>住まいの質を高める取り組みの普及</li>
+          <li>地域の安全・環境に配慮したまちづくりへの参加</li>
+          <li>消費者（入居者）保護の視点の共有</li>
+        </ul>
+        <p class="note-sample" style="margin-top:12px">※具体例は定款目的をもとにしたサンプルです</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 私たちの目的（定款の引用） -->
+<section class="block cream" id="mission">
+  <div class="wrap">
+    <div class="mission reveal">
+      <span class="lb">私たちの目的（定款より）</span>
+      <p class="q">アパート経営者及びこれからアパート経営を始めようとする人々に対して、情報の提供・相談・助言その他の支援活動を行い、良質な賃貸住宅の形成・管理・流通を図り、豊かで健全なまちづくりの推進、環境の保全、経済の活性化及び消費者の保護等の公益の増進に寄与すること。</p>
+      <p class="src">出典: 内閣府NPO法人ポータルサイト掲載の定款目的（公開情報）</p>
+    </div>
+
+    <!-- 数字（※サンプル） -->
+    <div class="stats" style="margin-top:44px">
+      <div class="stat reveal">
+        <div class="n">20XX<small>年</small></div>
+        <div class="lb">活動のあゆみ</div>
+        <div class="sub note-sample">※サンプル（設立年は公開時に記載）</div>
+      </div>
+      <div class="stat reveal">
+        <div class="n">00<small>件</small></div>
+        <div class="lb">ご相談の対応</div>
+        <div class="sub note-sample">※サンプル数値</div>
+      </div>
+      <div class="stat reveal">
+        <div class="n">00<small>回</small></div>
+        <div class="lb">勉強会・情報提供</div>
+        <div class="sub note-sample">※サンプル数値</div>
+      </div>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-top:16px">※数値はすべて表示イメージのダミーです。ご契約後に実績へ差し替えます</p>
+  </div>
+</section>
+
+<!-- ご相談の流れ -->
+<section class="block" id="flow">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">How to Start</span>
+      <h2>ご相談の流れ</h2>
+      <p>お気軽にお声がけください</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>お問い合わせ</h3>
+        <p>フォームまたはお電話で、ご相談したいことをお知らせください。「聞いてみたい」だけで大丈夫です。</p>
+      </div>
+      <div class="step reveal">
+        <h3>お話をうかがう</h3>
+        <p>賃貸住宅の運営やこれからの計画について、ご状況をお聞かせください。</p>
+      </div>
+      <div class="step reveal">
+        <h3>情報提供・助言</h3>
+        <p>公開情報や事例をもとに、できる範囲での情報提供・助言を行います。<span class="note-sample">※流れはサンプルです</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block tint">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+      <p>ご自身で更新できる形にできます</p>
+    </div>
+    <div class="news reveal">
+      <!-- ※サンプル: 日付・内容はすべてダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">お知らせ</span><span class="tx">賃貸経営の勉強会を開催しました（サンプル）</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">相談</span><span class="tx">ご相談の受付についてお知らせします（サンプル）</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">まちづくり</span><span class="tx">地域の清掃・美化活動に参加しました（サンプル）</span></div>
+    </div>
+    <p class="note-sample" style="text-align:center;margin-top:16px">※上記は表示イメージのサンプルです</p>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="block" id="gaiyo">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="gaiyo-wrap reveal">
+      <div class="tbl-wrap">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 アパート研究会</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市北区（詳細は公開時に記載）</td></tr>
+          <tr><th>活動分野</th><td>まちづくりの推進／環境の保全／地域安全／子どもの健全育成（住まい・まちづくり）</td></tr>
+          <tr><th>目的</th><td>良質な賃貸住宅の形成・管理・流通を図り、豊かで健全なまちづくり・環境保全・公益の増進に寄与する（定款目的より）</td></tr>
+          <tr><th>法人番号</th><td>8180005006587</td></tr>
+          <tr><th>設立</th><td>（公開時に記載します）</td></tr>
+          <tr><th>電話</th><td>（公開時に記載します）</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は縦にご覧いただけます</p>
+      <p class="note-sample" style="text-align:center;margin-top:14px">※所在地・名称・活動分野・法人番号・目的は公開情報（内閣府NPOポータル／登記情報）にもとづきます。代表者名など未公開情報は掲載していません</p>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ（デモフォーム） -->
+<section class="block cream" id="contact">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Contact</span>
+      <h2>お問い合わせ・ご相談</h2>
+      <p>賃貸住宅・まちづくりのことなら、お気軽にどうぞ</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>まずはご相談ください</h3>
+        <p>アパート経営のこと、これから始めたいこと、地域や住まいのお困りごと。「聞いてみたい」だけでも大丈夫です。</p>
+        <div class="tel-box">
+          <p class="cap">お電話でのご相談</p>
+          <!-- ※サンプル: 電話番号は未公開のためダミー表示。format-detectionでtel無効化済 -->
+          <p class="num">000-0000-0000</p>
+          <p class="note note-sample">※サンプル表示です。公開時に実番号を記載します</p>
+        </div>
+      </div>
+      <form class="demo reveal" onsubmit="return false">
+        <label for="f-name">お名前</label>
+        <input id="f-name" type="text" placeholder="山田 太郎" autocomplete="off">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="email" placeholder="you@example.com" autocomplete="off">
+        <label for="f-msg">ご相談内容</label>
+        <textarea id="f-msg" placeholder="ご相談したいことをご記入ください"></textarea>
+        <button type="button" class="submit" id="demo-send">送信する（デモ）</button>
+        <p class="demo-note">※これはデモ用フォームです。実際には送信されません。<br>ご契約後、実際に届くお問い合わせフォームを設置します。</p>
+        <div class="form-msg" id="form-msg">これはサンプルのため送信されません。ありがとうございます。</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 アパート研究会</p>
+    <p class="f-addr">愛知県名古屋市北区（詳細は公開時に記載）｜法人番号 8180005006587</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（イラストはCSS/SVGによるイメージ、※印の内容および数値・お知らせはすべてダミー、代表者名など未公開情報は不掲載。名称・所在地・活動分野・法人番号・定款目的は公開情報にもとづきます）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="cc">&copy; 2026 NPO法人 アパート研究会（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .topbar nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// スクロールで上部バーに影
+const topbar = document.querySelector(".topbar");
+const onScroll = () => topbar.classList.toggle("scrolled", window.scrollY > 12);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+// デモフォーム
+document.getElementById("demo-send").addEventListener("click", () => {
+  document.getElementById("form-msg").classList.add("show");
+});
+
+// リビール
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

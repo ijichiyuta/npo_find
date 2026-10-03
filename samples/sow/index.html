@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ＳＯＷ さま（ご提案用サンプル）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款「事業の種類」・分野・所在地の市区）の
+    範囲で作成しています
+  ・「※サンプル」表記の内容（数値・沿革・あいさつ・ビフォーアフターの対比など）は
+    すべてダミーです。ご契約後に実データへ差し替えます
+  ・代表者の実名は記載していません／番地は市・区までの表記にしています
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替え前提）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 ＳＯＷ｜名古屋市中区・異世代交流共育／環境コミュニケーション【ご提案サンプル】</title>
+<meta name="description" content="名古屋市中区のNPO法人ＳＯＷ。世代を越えた学び合い「異世代交流共育」と、環境コミュニケーションで、まちに小さな循環をつくります。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#F6F1E4;        /* 生成り */
+  --c-bg2:#EFE7D2;       /* 生成りの陰 */
+  --c-paper:#FCF9F1;     /* 明るい紙面 */
+  --c-ink:#2A2E26;       /* 墨（やや緑みの黒） */
+  --c-green:#234A34;     /* 深緑 */
+  --c-green-d:#193828;   /* さらに深い緑 */
+  --c-green-pale:#DCE6D6;/* 深緑の淡色面 */
+  --c-orange:#E07B39;    /* 橙 */
+  --c-orange-d:#C4642A;  /* 深い橙 */
+  --c-line:#D9CFB6;      /* 罫（生成り系） */
+  --c-sub:#7C7562;       /* 補助文字 */
+  --f-body:"Zen Kaku Gothic New",sans-serif;   /* 本文・親しみ */
+  --f-head:"Zen Old Mincho",serif;             /* 見出し・知性 */
+  --f-en:"Fraunces",serif;                     /* 英字・番号 */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:700;line-height:1.6;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.en{font-family:var(--f-en);font-style:italic}
+.note-sample{font-size:11.5px;color:#9A9075;font-weight:500;font-style:normal}
+
+/* ===== 上部ナビ（横／固定） ===== */
+.top{position:sticky;top:0;z-index:120;background:rgba(246,241,228,.94);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--c-line)}
+.top .in{max-width:1180px;margin:0 auto;height:70px;display:flex;align-items:center;gap:16px;padding:0 26px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .t{line-height:1.2}
+.brand .t b{font-family:var(--f-head);font-size:22px;letter-spacing:.14em;font-weight:700;display:block}
+.brand .t small{font-size:10px;color:var(--c-green);letter-spacing:.08em;font-weight:500}
+.top nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.top nav a{text-decoration:none;font-size:13px;font-weight:500;padding:8px 12px;border-radius:20px;transition:background .25s,color .25s}
+.top nav a:hover{background:var(--c-green-pale);color:var(--c-green-d)}
+.top nav .cta{background:var(--c-orange);color:#fff;font-weight:700;padding:9px 18px;margin-left:6px}
+.top nav .cta:hover{background:var(--c-orange-d);color:#fff}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.sp-nav{display:none}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.block{padding:92px 0}
+.block.alt{background:var(--c-bg2)}
+.b-head{text-align:center;max-width:720px;margin:0 auto 52px}
+.b-head .en{display:block;font-size:12px;letter-spacing:.34em;color:var(--c-orange-d);margin-bottom:12px;text-transform:uppercase}
+.b-head h2{font-family:var(--f-head);font-size:clamp(23px,3vw,31px);letter-spacing:.04em;line-height:1.5}
+.b-head p{margin-top:16px;font-size:14.5px;color:#57604E}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== ヒーロー ===== */
+.hero{padding:70px 0 84px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(224,123,57,.14),transparent 70%);pointer-events:none}
+.hero .cap{display:inline-block;background:var(--c-green-pale);color:var(--c-green-d);font-size:12px;font-weight:700;letter-spacing:.06em;padding:6px 16px;border-radius:20px}
+.hero h1{font-family:var(--f-head);font-size:clamp(30px,5vw,50px);line-height:1.55;letter-spacing:.04em;margin-top:24px;font-weight:700}
+.hero h1 .o{color:var(--c-orange-d)}
+.hero h1 .g{color:var(--c-green)}
+.hero .lead{margin-top:24px;max-width:620px;font-size:15.5px;color:#4C5445}
+.hero .acts{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;padding:14px 28px;border-radius:30px;transition:transform .2s,background .25s,box-shadow .25s}
+.btn.p{background:var(--c-orange);color:#fff;box-shadow:0 8px 20px rgba(224,123,57,.28)}
+.btn.p:hover{background:var(--c-orange-d);transform:translateY(-2px)}
+.btn.s{background:transparent;color:var(--c-green-d);border:1.5px solid var(--c-green)}
+.btn.s:hover{background:var(--c-green-pale)}
+.hero-imgs{margin-top:52px;display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
+.hero-imgs .a{grid-row:span 2}
+.hero-imgs img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.hero-imgs .a img{aspect-ratio:auto;min-height:340px}
+.hero-imgs .b img,.hero-imgs .c img{aspect-ratio:16/10}
+
+/* ===== 主役：ビフォーアフター比較 ===== */
+.ba-intro{max-width:760px;margin:0 auto 44px;text-align:center}
+.ba-intro .lead{font-size:15px;color:#57604E}
+.ba-flag{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px dashed var(--c-orange);color:var(--c-orange-d);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:18px}
+.ba-flag::before{content:"◆";font-size:9px}
+
+/* スライダー式（対比を1枚に重ねて仕切りを動かす） */
+.compare{max-width:900px;margin:0 auto}
+.cmp{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;box-shadow:0 18px 44px rgba(30,45,30,.16);user-select:none;touch-action:pan-y}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .after{clip-path:inset(0 0 0 50%)}
+.cmp .lab{position:absolute;top:16px;z-index:3;font-size:12px;font-weight:700;letter-spacing:.04em;padding:6px 14px;border-radius:20px;color:#fff}
+.cmp .lab.l{left:16px;background:rgba(42,46,38,.82)}
+.cmp .lab.r{right:16px;background:var(--c-orange)}
+.cmp .divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:4;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.cmp .knob{position:absolute;top:50%;left:50%;z-index:5;width:52px;height:52px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 6px 16px rgba(0,0,0,.24);display:flex;align-items:center;justify-content:center;cursor:ew-resize}
+.cmp .knob::before{content:"";width:20px;height:20px;border:solid var(--c-green);border-width:0;position:relative}
+.cmp .knob svg{width:26px;height:26px;color:var(--c-green)}
+.cmp input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:6}
+.cmp-note{text-align:center;margin-top:14px;font-size:12px;color:var(--c-sub)}
+.cmp-hint{text-align:center;margin-top:6px;font-size:12px;color:var(--c-orange-d);font-weight:700}
+
+/* 左右パネル型の対比（2テーマ） */
+.split{max-width:940px;margin:56px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(30,45,30,.10)}
+.split .col{padding:36px 32px}
+.split .before{background:#fff}
+.split .after{background:var(--c-green);color:#F3EEE0}
+.split .col .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;padding:4px 12px;border-radius:16px;margin-bottom:16px}
+.split .before .tag{background:var(--c-bg2);color:var(--c-sub)}
+.split .after .tag{background:rgba(255,255,255,.16);color:#fff}
+.split .col h3{font-family:var(--f-head);font-size:19px;margin-bottom:14px;line-height:1.5}
+.split .after h3{color:#fff}
+.split ul{list-style:none}
+.split li{position:relative;padding:9px 0 9px 26px;font-size:14px;border-top:1px solid var(--c-line)}
+.split .after li{border-top-color:rgba(255,255,255,.18)}
+.split .before li::before{content:"—";position:absolute;left:0;color:var(--c-sub)}
+.split .after li::before{content:"→";position:absolute;left:0;color:var(--c-orange);font-weight:700}
+.split .col:first-child{border-right:1px solid var(--c-line)}
+
+/* ===== 2つの柱（事業） ===== */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:960px;margin:0 auto}
+.pillar{background:var(--c-paper);border:1px solid var(--c-line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.pillar .ph{aspect-ratio:16/9;overflow:hidden}
+.pillar .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pillar:hover .ph img{transform:scale(1.05)}
+.pillar .bd{padding:28px 30px 32px}
+.pillar .no{font-family:var(--f-en);font-size:13px;color:var(--c-orange-d);letter-spacing:.1em}
+.pillar h3{font-family:var(--f-head);font-size:21px;margin:6px 0 12px}
+.pillar p{font-size:14px;color:#57604E}
+.pillar .keys{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+.pillar .keys span{font-size:11.5px;font-weight:700;background:var(--c-green-pale);color:var(--c-green-d);padding:4px 11px;border-radius:14px}
+
+/* ===== 数字（インパクト） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
+.stat{background:var(--c-paper);border:1px solid var(--c-line);border-radius:16px;padding:30px 22px;text-align:center}
+.stat .num{font-family:var(--f-en);font-size:clamp(34px,6vw,52px);font-weight:600;color:var(--c-green);line-height:1;font-style:normal}
+.stat .num small{font-size:.4em;color:var(--c-orange-d);margin-left:3px}
+.stat .lbl{margin-top:12px;font-size:13px;font-weight:700}
+.stat .sub{font-size:11.5px;color:var(--c-sub);margin-top:4px}
+
+/* ===== 歩み（沿革） ===== */
+.timeline{max-width:720px;margin:0 auto;position:relative;padding-left:8px}
+.tl-row{display:grid;grid-template-columns:96px 1fr;gap:22px;padding:0 0 26px 0;position:relative}
+.tl-row .yr{font-family:var(--f-en);font-size:17px;font-weight:600;color:var(--c-orange-d);font-style:normal;padding-top:2px}
+.tl-row .dot{position:absolute;left:96px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--c-green);transform:translateX(-50%);z-index:2}
+.tl-row .bd{padding-left:22px;border-left:1px solid var(--c-line);padding-bottom:8px}
+.tl-row:last-child .bd{border-left-color:transparent}
+.tl-row h3{font-size:15px;font-family:var(--f-body)}
+.tl-row p{font-size:13px;color:#57604E}
+
+/* ===== あいさつ ===== */
+.greet{max-width:760px;margin:0 auto;background:var(--c-paper);border:1px solid var(--c-line);border-radius:20px;padding:44px 44px 38px;position:relative}
+.greet::before{content:"“";position:absolute;top:8px;left:26px;font-family:var(--f-en);font-size:88px;color:var(--c-green-pale);line-height:1}
+.greet .big{font-family:var(--f-head);font-size:clamp(18px,2.4vw,22px);line-height:1.9;position:relative;z-index:1}
+.greet .big em{font-style:normal;color:var(--c-green);border-bottom:2px solid var(--c-orange)}
+.greet p{margin-top:18px;font-size:14px;color:#57604E}
+.greet .sign{text-align:right;margin-top:22px;font-weight:700;font-size:14px}
+.greet .sign small{display:block;font-weight:500;font-size:11.5px;color:var(--c-sub)}
+
+/* ===== お知らせ ===== */
+.news{max-width:760px;margin:0 auto}
+.news-row{display:flex;gap:18px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--c-line);font-size:14px}
+.news-row time{flex:none;font-family:var(--f-en);font-weight:600;font-style:normal;color:var(--c-sub);font-size:13px}
+.news-row .cat{flex:none;font-size:11px;font-weight:700;padding:2px 10px;border-radius:12px;background:var(--c-green-pale);color:var(--c-green-d)}
+.news-row a{text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== 概要表 ===== */
+.gaiyo-wrap{max-width:760px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper);border-radius:12px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;background:var(--c-green-pale);border:1px solid var(--c-line);padding:12px 16px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 16px}
+.tbl-hint{display:none;text-align:center;font-size:11px;color:var(--c-sub);margin-top:8px}
+
+/* ===== 参加・お問い合わせ ===== */
+.contact{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.contact .card{background:var(--c-paper);border:1px solid var(--c-line);border-radius:18px;padding:32px 30px}
+.contact .card h3{font-family:var(--f-head);font-size:19px;margin-bottom:14px}
+.contact form label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+.contact form input,.contact form textarea{width:100%;font-family:inherit;font-size:14px;padding:11px 14px;border:1px solid var(--c-line);border-radius:10px;background:#fff;color:var(--c-ink)}
+.contact form textarea{min-height:110px;resize:vertical}
+.contact form button{margin-top:18px;width:100%;background:var(--c-orange);color:#fff;font-weight:700;font-size:14px;border:none;border-radius:26px;padding:14px;cursor:pointer;transition:background .25s}
+.contact form button:hover{background:var(--c-orange-d)}
+.contact .demo{font-size:11.5px;color:var(--c-sub);margin-top:12px;text-align:center}
+.join{list-style:none}
+.join li{padding:12px 0;border-bottom:1px solid var(--c-line);font-size:14px;display:flex;gap:12px;align-items:flex-start}
+.join li b{color:var(--c-green-d)}
+.join li::before{content:"●";color:var(--c-orange);font-size:10px;margin-top:6px}
+.info-line{margin-top:20px;font-size:13.5px}
+.info-line .lbl{font-weight:700;color:var(--c-green-d)}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-green-d);color:#E7E1CF;padding:52px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--f-head);font-weight:700;font-size:18px;letter-spacing:.1em}
+.footer p{font-size:12.5px;color:#B9C2A8;margin-top:8px}
+.footer .sample-note{font-size:11px;color:#93A088;margin-top:20px;line-height:1.9}
+.footer .sample-note a{color:#D7CDB0}
+.footer .copy{margin-top:14px;font-size:11px;color:#7E8B72}
+
+/* ===== 制作サンプル・ピル（左下固定） ===== */
+.sample-pill{position:fixed;left:16px;bottom:16px;z-index:200;background:var(--c-ink);color:#F3EEE0;font-size:11px;font-weight:700;letter-spacing:.03em;padding:8px 14px;border-radius:40px;box-shadow:0 4px 14px rgba(0,0,0,.26);text-decoration:none;font-family:var(--f-body)}
+.sample-pill span{color:var(--c-orange)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:860px){
+  .top nav{display:none;position:fixed;inset:70px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line);flex-direction:column;align-items:stretch;padding:10px 20px 22px;gap:2px;z-index:110}
+  .menu-open .top nav{display:flex}
+  .top nav a{padding:13px 6px;border-radius:0;border-bottom:1px solid var(--c-line);font-size:15px}
+  .top nav .cta{margin:12px 0 0;text-align:center;border-radius:24px}
+  .menu-btn{display:block}
+  .block{padding:60px 0}
+  .hero{padding:44px 0 56px}
+  .hero-imgs{grid-template-columns:1fr;margin-top:34px}
+  .hero-imgs .a{grid-row:auto}
+  .hero-imgs .a img{min-height:0;aspect-ratio:16/10}
+  .split{grid-template-columns:1fr}
+  .split .col:first-child{border-right:none;border-bottom:1px solid var(--c-line)}
+  .pillars{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr;gap:14px}
+  .contact{grid-template-columns:1fr}
+  .tbl-hint{display:block}
+}
+@media (max-width:560px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 14px 3px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:2px 14px 12px}
+  .tbl-hint{display:none}
+  .tl-row{grid-template-columns:70px 1fr;gap:14px}
+  .tl-row .dot{left:70px}
+  .greet{padding:36px 26px 30px}
+  .split .col{padding:28px 24px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- 上部ナビ -->
+<header class="top">
+  <div class="in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="21" fill="#DCE6D6"/>
+        <path d="M22 33c-6-2-10-6-11-13 7 1 11 5 11 13Z" fill="#234A34"/>
+        <path d="M22 33c6-2 10-6 11-13-7 1-11 5-11 13Z" fill="#7FA07A"/>
+        <circle cx="22" cy="13" r="4" fill="#E07B39"/>
+      </svg>
+      <span class="t"><b>ＳＯＷ</b><small>NPO法人｜名古屋市中区</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="#compare">わたしたちの変化</a>
+      <a href="#pillars">2つの事業</a>
+      <a href="#about">わたしたちのこと</a>
+      <a href="#history">歩み</a>
+      <a href="#gaiyo">法人概要</a>
+      <a class="cta" href="#contact">参加・お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap">
+    <span class="cap reveal on">異世代交流共育 × 環境コミュニケーション</span>
+    <h1 class="reveal on"><span class="kb">世代を<span class="o">越えて</span>学び合い、</span><br><span class="kb">まちに<span class="g">小さな循環</span>を。</span></h1>
+    <p class="lead reveal on">ＳＯＷ（ソウ）は、名古屋市中区を拠点に「異世代交流共育」と「環境コミュニケーション」に取り組むNPO法人です。子どもも大人も、まちも自然も——分けずに、つなげて、育て合う。その"つながる前"と"つながった後"を、このページでご覧いただけます。</p>
+    <div class="acts reveal on">
+      <a class="btn p" href="#compare">つながる前／後を見る</a>
+      <a class="btn s" href="#contact">活動に参加する</a>
+    </div>
+    <div class="hero-imgs reveal on">
+      <!-- 差し替えポイント: 多世代の交流・自然活動のお写真（顔が特定されにくい構図を推奨） -->
+      <div class="a"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1100&q=80&auto=format&fit=crop" alt="多世代で学び合うイメージ"></div>
+      <div class="b"><img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=900&q=80&auto=format&fit=crop" alt="緑と自然のイメージ"></div>
+      <div class="c"><img src="https://images.unsplash.com/photo-1444492417251-9c84a5fa18e0?w=900&q=80&auto=format&fit=crop" alt="世代を越えた交流のイメージ"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ★主役: ビフォーアフター比較 -->
+<section class="block alt" id="compare">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Before &amp; After</span>
+      <h2>「つながる前」と「つながった後」</h2>
+      <p>世代のあいだ、人とまちと自然のあいだに引かれた線を、少しずつほどいていく。<br>ＳＯＷの活動で生まれる変化を、左右の対比でご覧ください。</p>
+    </div>
+
+    <div class="ba-intro reveal">
+      <span class="ba-flag">対比の内容はすべて表示イメージのサンプルです</span>
+      <p class="lead">仕切りを左右に動かすと、同じ場所の"前"と"後"が切り替わります。<span class="note-sample">※写真・変化の内容はダミーです。実際の活動記録に差し替えます</span></p>
+    </div>
+
+    <!-- スライダー式比較 -->
+    <div class="compare reveal">
+      <div class="cmp" id="cmp">
+        <!-- 差し替えポイント: 左=活動前 / 右=活動後 の同一構図の写真 -->
+        <img class="before" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=80&auto=format&fit=crop&sat=-60" alt="つながる前のイメージ（サンプル）">
+        <img class="after" id="cmpAfter" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1400&q=80&auto=format&fit=crop" alt="つながった後のイメージ（サンプル）">
+        <span class="lab l">つながる前<span class="note-sample" style="color:#D9D2C0;display:block">※サンプル</span></span>
+        <span class="lab r">つながった後<span class="note-sample" style="color:#FCE7D6;display:block">※サンプル</span></span>
+        <div class="divider" id="cmpDiv"></div>
+        <div class="knob" id="cmpKnob" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7L3 12l5 5M16 7l5 5-5 5"/></svg>
+        </div>
+        <input type="range" min="0" max="100" value="50" id="cmpRange" aria-label="つながる前と後を比較">
+      </div>
+      <p class="cmp-hint">← 仕切りを左右に動かしてみてください →</p>
+      <p class="cmp-note">上の写真・キャプションはすべて表示イメージのサンプルです（HTMLコメントにも明記）</p>
+    </div>
+
+    <!-- 左右パネル型の対比（テーマ別） -->
+    <div class="split reveal">
+      <div class="col before">
+        <span class="tag">これまで（Before）</span>
+        <h3>世代も、まちも、ばらばらに</h3>
+        <ul>
+          <!-- ※サンプル: 以下の対比項目はすべてダミーです -->
+          <li>子どもと高齢者が出会う場が少ない</li>
+          <li>地域の知恵や技が受け継がれにくい</li>
+          <li>環境の話が「自分ごと」になりにくい</li>
+          <li>参加のきっかけが見つけづらい</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <span class="tag">ＳＯＷと（After）</span>
+        <h3>学び合いが、循環になる</h3>
+        <ul>
+          <li>多世代が同じテーブルで学ぶ場ができる</li>
+          <li>まちの知恵が次の世代へ受け継がれる</li>
+          <li>環境を「暮らしの言葉」で語り合える</li>
+          <li>誰でも一歩を踏み出せる入口がある</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cmp-note reveal" style="margin-top:16px">※上記の対比項目は活動の方向性を示すサンプルです。実際の成果・事例に差し替えます</p>
+  </div>
+</section>
+
+<!-- 2つの事業 -->
+<section class="block" id="pillars">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Our Work</span>
+      <h2>ＳＯＷの2つの事業</h2>
+      <p>定款に定める「事業の種類」（公開情報）をもとに、2つの柱でご紹介します。</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1100&q=80&auto=format&fit=crop" alt="多世代で学び合う活動のイメージ"></div>
+        <div class="bd">
+          <span class="no en">WORK 01</span>
+          <h3>異世代交流共育</h3>
+          <p>子どもから高齢者まで、世代を越えて「教え合い・学び合う」場をつくります。暮らしの知恵、遊び、地域の物語——年齢の枠を外すと、学びはもっと豊かになります。<span class="note-sample">※活動内容の記述は定款の事業目的をもとにしたサンプルです</span></p>
+          <div class="keys"><span>多世代の学び</span><span>地域の知恵の継承</span><span>居場所づくり</span></div>
+        </div>
+      </div>
+      <div class="pillar reveal">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1552799446-159ba9523315?w=1100&q=80&auto=format&fit=crop" alt="自然・環境の活動のイメージ"></div>
+        <div class="bd">
+          <span class="no en">WORK 02</span>
+          <h3>環境コミュニケーション</h3>
+          <p>環境の課題を、専門用語ではなく「暮らしの言葉」で語り合う。ワークショップや対話を通じて、一人ひとりが自分の暮らしから環境を考えるきっかけをつくります。<span class="note-sample">※活動内容の記述は定款の事業目的をもとにしたサンプルです</span></p>
+          <div class="keys"><span>環境の学び合い</span><span>対話の場づくり</span><span>暮らしと自然</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 数字 -->
+<section class="block alt" id="stats">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">In Numbers</span>
+      <h2>活動を、数字でも</h2>
+      <p class="note-sample">※以下の数値はすべて表示イメージのサンプルです。実績値に差し替えます</p>
+    </div>
+    <div class="stats reveal">
+      <!-- ※サンプル: 数値はダミーです -->
+      <div class="stat"><div class="num">00<small>回</small></div><div class="lbl">年間の交流プログラム</div><div class="sub">※サンプル</div></div>
+      <div class="stat"><div class="num">0<small>世代</small></div><div class="lbl">同じ場に集う世代</div><div class="sub">※サンプル</div></div>
+      <div class="stat"><div class="num">000<small>人</small></div><div class="lbl">のべ参加者</div><div class="sub">※サンプル</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- わたしたちのこと -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">About Us</span>
+      <h2>わたしたちのこと</h2>
+    </div>
+    <div class="greet reveal">
+      <p class="big"><span class="kb">世代を分けず、</span><span class="kb">人とまちと自然を分けず、</span><br><span class="kb"><em>「共に育つ」</em>を</span><span class="kb">まちの真ん中で。</span></p>
+      <p>ＳＯＷは、名古屋市中区を拠点に、保健・医療・福祉、社会教育、まちづくり、学術・文化・芸術といった分野で活動するNPO法人です。異世代交流共育と環境コミュニケーションを軸に、誰もが学び合い、支え合えるまちを目指しています。<span class="note-sample">※文章は定款・分野（公開情報）をもとにしたサンプルです</span></p>
+      <p class="sign">特定非営利活動法人 ＳＯＷ<small>代表（お名前は公開時に記載します）</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block alt" id="news">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">News</span>
+      <h2>お知らせ</h2>
+      <p class="note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+    </div>
+    <div class="news reveal">
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">交流</span><a href="#news">多世代で学ぶワークショップを開催しました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">環境</span><a href="#news">まちの緑をめぐる対話の会を行いました</a></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="cat">募集</span><a href="#news">活動を支えてくださるボランティアを募集中です</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 歩み -->
+<section class="block" id="history">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">History</span>
+      <h2>ＳＯＷの歩み</h2>
+      <p class="note-sample">※年・出来事はすべて表示イメージのサンプルです。実際の沿革に差し替えます</p>
+    </div>
+    <div class="timeline reveal">
+      <!-- ※サンプル: 沿革はダミーです -->
+      <div class="tl-row"><div class="yr">20XX</div><div class="dot"></div><div class="bd"><h3>ＳＯＷ、はじまる</h3><p>世代を越えた学び合いを願う有志で、活動をスタート。（※サンプル）</p></div></div>
+      <div class="tl-row"><div class="yr">20XX</div><div class="dot"></div><div class="bd"><h3>異世代交流共育の場づくり</h3><p>子どもと大人が共に学ぶプログラムを開始。（※サンプル）</p></div></div>
+      <div class="tl-row"><div class="yr">20XX</div><div class="dot"></div><div class="bd"><h3>環境コミュニケーションへ</h3><p>暮らしから環境を考える対話の場を広げる。（※サンプル）</p></div></div>
+      <div class="tl-row"><div class="yr">現在</div><div class="dot"></div><div class="bd"><h3>まちの循環を、これからも</h3><p>2つの事業を軸に、誰もが学び合えるまちづくりを続けています。（※サンプル）</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="block alt" id="gaiyo">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Profile</span>
+      <h2>法人概要</h2>
+    </div>
+    <div class="gaiyo-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 ＳＯＷ</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市中区（詳細住所は公開時に記載します）</td></tr>
+        <tr><th>活動分野</th><td>保健・医療・福祉／社会教育／まちづくり／学術・文化・芸術（NPO法上の分野）</td></tr>
+        <tr><th>事業の種類</th><td>異世代交流共育事業／環境コミュニケーション事業（定款の事業目的より）</td></tr>
+        <tr><th>設立</th><td>20XX年　<span class="note-sample">※サンプル。実際の設立年に差し替えます</span></td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>連絡先</th><td>お問い合わせフォームよりご連絡ください</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+  </div>
+</section>
+
+<!-- 参加・お問い合わせ -->
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="b-head reveal">
+      <span class="en">Join &amp; Contact</span>
+      <h2>参加・お問い合わせ</h2>
+      <p>「話を聞いてみたい」だけでも大丈夫です。世代も分野も問いません。</p>
+    </div>
+    <div class="contact reveal">
+      <div class="card">
+        <h3>いっしょに活動しませんか</h3>
+        <ul class="join">
+          <li><b>ボランティア</b>として：交流プログラムや環境の場づくりを、できる範囲で。</li>
+          <li><b>賛助会員・ご寄付</b>で：活動を続ける力になります。</li>
+          <li><b>プログラム参加</b>：世代を問わず、どなたでもご参加いただけます。</li>
+        </ul>
+        <p class="info-line"><span class="lbl">拠点</span>　愛知県名古屋市中区</p>
+        <p class="info-line note-sample" style="margin-top:6px">※参加区分・内容の記述はサンプルです。実際の募集内容に差し替えます</p>
+      </div>
+      <div class="card">
+        <h3>お問い合わせフォーム</h3>
+        <form onsubmit="return false" novalidate>
+          <label for="f-name">お名前</label>
+          <input id="f-name" type="text" placeholder="山田 太郎" autocomplete="name">
+          <label for="f-mail">メールアドレス</label>
+          <input id="f-mail" type="email" placeholder="you@example.com" autocomplete="email">
+          <label for="f-msg">ご用件</label>
+          <textarea id="f-msg" placeholder="活動に参加したい／取材・見学など、お気軽にどうぞ"></textarea>
+          <button type="submit">送信する（デモ）</button>
+        </form>
+        <p class="demo">※これはサンプルのデモフォームです。送信は行われません。本番では受信先メール等に設定します</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 ＳＯＷ</p>
+    <p>愛知県名古屋市中区｜異世代交流共育・環境コミュニケーション</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の数値・沿革・あいさつ・ビフォーアフターの対比などはダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO法人 ＳＯＷ（ご提案用サンプル）</p>
+  </div>
+</footer>
+
+<!-- 左下: 制作サンプル・ピル -->
+<a class="sample-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">制作<span>サンプル</span>｜スマートコネクト</a>
+
+<script>
+// メニュー開閉（SP）
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".top nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// ビフォーアフター・スライダー
+(function(){
+  const range = document.getElementById("cmpRange");
+  const after = document.getElementById("cmpAfter");
+  const div = document.getElementById("cmpDiv");
+  const knob = document.getElementById("cmpKnob");
+  if(!range) return;
+  function set(v){
+    after.style.clipPath = "inset(0 0 0 " + v + "%)";
+    div.style.left = v + "%";
+    knob.style.left = v + "%";
+  }
+  range.addEventListener("input", () => set(range.value));
+  set(range.value);
+})();
+
+// スクロールで表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

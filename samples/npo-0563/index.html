@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 ０５６３.ｎｅｔＮＰＯ さま（ご提案用サンプル）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの登記された事業目的・所在地・活動分野）の
+    範囲で作成。代表者名など未公開情報は掲載していません
+  ・「※サンプル」表記の内容（お知らせ・活動例・数値・声など）はダミーです。
+    ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。差し替え可
+  ・デザインの方向: レトロ・フォークアート型（版画／民藝調の「地域の刷り物」）
+    生成り × 藍 × 朱茶 の民藝トーン、レトロな和字書体
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>０５６３.ｎｅｔＮＰＯ｜西尾市・地域情報と市民活動の情報化支援【ご提案サンプル】</title>
+<meta name="description" content="愛知県西尾市。地域市民への情報サービス支援を中心に、地域情報の利用向上と、市民活動団体の情報化をお手伝いする中間支援のNPO法人。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-paper:#F1E7D0;      /* 生成り（刷り紙） */
+  --c-paper2:#E9DCBF;
+  --c-card:#F7EFDC;
+  --c-ink:#2A2620;        /* 墨 */
+  --c-ink-soft:#5A5346;
+  --c-ai:#274060;         /* 藍 */
+  --c-ai-deep:#1C2E45;
+  --c-ai-pale:#D6DCE2;
+  --c-shu:#9E4A34;        /* 朱茶（弁柄） */
+  --c-shu-deep:#7E3826;
+  --c-line:#C9B78E;       /* 罫（薄い茶） */
+  --font-disp:"Yuji Syuku",serif;              /* レトロ和字（見出し・題字） */
+  --font-serif:"Shippori Mincho",serif;        /* 明朝（本文の格） */
+  --font-body:"Zen Kaku Gothic New",sans-serif;/* 読みやすい本文 */
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--c-ink);
+  line-height:1.95;
+  font-size:15px;
+  font-feature-settings:"palt";
+  overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+  background-color:var(--c-paper);
+  /* 民藝／版画の紙テクスチャ（SVGノイズ・軽量） */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.55;word-break:auto-phrase;font-weight:700}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 上部バー（刷り物の柱） ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:16px;height:66px;padding:0 26px;background:rgba(241,231,208,.92);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--c-ai);transition:box-shadow .4s var(--ease)}
+.topbar.scrolled{box-shadow:0 4px 18px rgba(42,38,32,.14)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .seal{width:42px;height:42px;flex:none}
+.brand .t{font-family:var(--font-disp);font-size:20px;letter-spacing:.06em;line-height:1.15}
+.brand .t small{display:block;font-family:var(--font-body);font-size:10px;font-weight:500;color:var(--c-shu-deep);letter-spacing:.08em;margin-top:3px}
+.topbar nav{margin-left:auto;display:flex;gap:22px}
+.topbar nav a{position:relative;text-decoration:none;font-family:var(--font-serif);font-size:14px;font-weight:600;padding:4px 0;color:var(--c-ink)}
+.topbar nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--c-shu);transition:right .35s var(--ease)}
+.topbar nav a:hover::after{right:0}
+.topbar .cta{margin-left:4px;background:var(--c-ai);color:var(--c-paper);text-decoration:none;font-family:var(--font-serif);font-weight:700;font-size:13.5px;padding:10px 18px;transition:background .3s;border:1.5px solid var(--c-ai)}
+.topbar .cta:hover{background:var(--c-ai-deep)}
+
+/* SP head */
+.menu-btn{display:none}
+.sp-nav{display:none}
+
+.main{padding-top:66px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 38px}
+.narrow{max-width:760px}
+
+/* ===== 共通ブロック ===== */
+.block{padding:92px 0;position:relative}
+.b-head{margin-bottom:44px}
+.b-head .idx{font-family:var(--font-disp);display:inline-block;font-size:15px;color:var(--c-paper);background:var(--c-shu);padding:2px 12px 4px;letter-spacing:.1em;margin-bottom:14px}
+.b-head h2{font-family:var(--font-disp);font-size:clamp(24px,3.4vw,32px);letter-spacing:.06em;color:var(--c-ai-deep)}
+.b-head .en{display:block;font-family:var(--font-serif);font-size:11px;letter-spacing:.28em;color:var(--c-ink-soft);text-transform:uppercase;margin-top:8px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-ink-soft);font-family:var(--font-body)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-ink-soft);margin-top:6px}
+
+/* 版画調の二重罫セクション区切り */
+.rule{height:0;border-top:1.5px solid var(--c-ai);border-bottom:1.5px solid var(--c-ai);height:5px;max-width:1000px;margin:0 auto}
+
+/* ===== 題字（ヒーロー：かわら版の題字面） ===== */
+.hero{padding:64px 0 40px;position:relative;overflow:hidden}
+.hero .frame{border:2px solid var(--c-ai);position:relative;background:var(--c-card);padding:46px 44px 40px}
+.hero .frame::before{content:"";position:absolute;inset:7px;border:1px solid var(--c-line);pointer-events:none}
+.hero .kicker{display:inline-block;font-family:var(--font-serif);font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--c-paper);background:var(--c-ai);padding:5px 14px;margin-bottom:22px}
+.hero h1{font-family:var(--font-disp);font-size:clamp(30px,5.6vw,54px);line-height:1.5;letter-spacing:.05em;color:var(--c-ai-deep)}
+.hero h1 .shu{color:var(--c-shu)}
+.hero .num{font-family:var(--font-disp);color:var(--c-shu);letter-spacing:.02em}
+.hero .lead{margin-top:24px;max-width:620px;font-family:var(--font-serif);font-size:16px;font-weight:500;line-height:2.05;color:var(--c-ink)}
+.hero .tags{display:flex;gap:9px;margin-top:26px;flex-wrap:wrap}
+.tag{font-family:var(--font-serif);border:1.5px solid var(--c-shu);color:var(--c-shu-deep);font-size:12.5px;font-weight:700;padding:5px 13px;white-space:nowrap;background:var(--c-paper)}
+.hero .seal-lg{position:absolute;right:34px;bottom:30px;width:96px;height:96px;opacity:.9}
+@media (max-width:620px){.hero .seal-lg{width:66px;height:66px;right:16px;bottom:14px;opacity:.85}}
+
+.photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:34px}
+.photo-strip figure{position:relative;overflow:hidden;border:1.5px solid var(--c-ai)}
+.photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:sepia(.22) contrast(1.02) saturate(.9)}
+.photo-strip figcaption{position:absolute;left:0;bottom:0;font-family:var(--font-serif);font-size:11px;font-weight:700;color:var(--c-paper);background:var(--c-ai-deep);padding:3px 9px;letter-spacing:.06em}
+
+/* ===== ごあいさつ／わたしたちのこと ===== */
+.about-grid{display:grid;grid-template-columns:1fr;gap:0;max-width:760px}
+.about-txt .big{font-family:var(--font-disp);font-size:clamp(19px,2.7vw,25px);line-height:1.9;letter-spacing:.04em;color:var(--c-ai-deep);margin-bottom:18px}
+.about-txt .big em{font-style:normal;color:var(--c-shu);border-bottom:3px solid var(--c-shu);padding-bottom:1px}
+.about-txt p{font-family:var(--font-serif);font-size:15px;line-height:2.1}
+.about-txt p + p{margin-top:14px}
+.quote-def{margin-top:26px;background:var(--c-card);border-left:5px solid var(--c-ai);padding:20px 24px;max-width:760px}
+.quote-def h3{font-family:var(--font-disp);font-size:15px;color:var(--c-ai-deep);letter-spacing:.05em;margin-bottom:8px}
+.quote-def p{font-family:var(--font-serif);font-size:14.5px}
+.quote-def .src{display:block;margin-top:8px;font-size:11.5px;color:var(--c-ink-soft);font-family:var(--font-body)}
+
+/* ===== おしごと（事業）＝木版パネル ===== */
+.works{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.work{background:var(--c-card);border:1.5px solid var(--c-ai);padding:0;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.work:hover{transform:translateY(-3px);box-shadow:6px 6px 0 var(--c-ai)}
+.work .cap{background:var(--c-ai);color:var(--c-paper);font-family:var(--font-disp);font-size:16px;letter-spacing:.08em;padding:11px 18px;display:flex;align-items:baseline;gap:10px}
+.work .cap .n{font-size:12px;color:var(--c-paper);opacity:.8}
+.work .body{padding:20px 22px 24px}
+.work h3{font-family:var(--font-serif);font-size:17px;color:var(--c-ai-deep);margin-bottom:8px}
+.work p{font-family:var(--font-serif);font-size:14px;line-height:1.95;color:var(--c-ink)}
+.work ul{list-style:none;margin-top:12px;font-size:13.5px;font-family:var(--font-body)}
+.work li{position:relative;padding-left:20px;margin-bottom:4px}
+.work li::before{content:"◦";position:absolute;left:2px;color:var(--c-shu);font-weight:700}
+
+/* ===== かわら版風「地域だより」お知らせ ===== */
+.dayori{background:var(--c-card);border:1.5px solid var(--c-ai);position:relative}
+.dayori .masthead{background:var(--c-ai-deep);color:var(--c-paper);padding:12px 20px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.dayori .masthead .ttl{font-family:var(--font-disp);font-size:19px;letter-spacing:.14em}
+.dayori .masthead .sub{font-family:var(--font-serif);font-size:11.5px;opacity:.85;letter-spacing:.08em}
+.news-row{display:flex;gap:16px;padding:14px 20px;border-bottom:1px dashed var(--c-line);align-items:baseline;font-size:14px}
+.news-row:last-child{border-bottom:none}
+.news-row time{flex:none;font-family:var(--font-serif);font-weight:700;color:var(--c-shu-deep);font-size:12.5px;letter-spacing:.04em}
+.news-row .cat{flex:none;font-family:var(--font-body);font-size:10.5px;font-weight:700;color:var(--c-paper);background:var(--c-shu);padding:2px 8px}
+.news-row a{font-family:var(--font-serif);color:var(--c-ink);text-decoration:none}
+.news-row a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ===== ご相談の流れ（番号） ===== */
+.flow-list{list-style:none;max-width:720px;counter-reset:fs}
+.flow-list li{counter-increment:fs;position:relative;padding:0 0 30px 68px}
+.flow-list li::before{content:counter(fs);position:absolute;left:0;top:-4px;font-family:var(--font-disp);font-size:30px;color:var(--c-paper);background:var(--c-ai);width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.flow-list li::after{content:"";position:absolute;left:22px;top:48px;bottom:6px;width:1.5px;background:var(--c-line)}
+.flow-list li:last-child::after{display:none}
+.flow-list h3{font-family:var(--font-serif);font-size:16.5px;color:var(--c-ai-deep)}
+.flow-list p{font-family:var(--font-serif);font-size:13.5px;color:var(--c-ink-soft)}
+
+/* ===== 法人概要（台帳表） ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-card);border:1.5px solid var(--c-ai)}
+table.gaiyo th{width:150px;text-align:left;font-family:var(--font-serif);font-weight:700;background:var(--c-ai-pale);border:1px solid var(--c-line);padding:11px 16px;white-space:nowrap;color:var(--c-ai-deep)}
+table.gaiyo td{border:1px solid var(--c-line);padding:11px 16px;font-family:var(--font-serif)}
+
+/* ===== お問い合わせ ===== */
+.contact{background:var(--c-paper2)}
+.c-lead{font-family:var(--font-serif);max-width:640px;font-size:15px;margin-bottom:28px}
+.form{max-width:560px}
+.form label{display:block;font-family:var(--font-serif);font-weight:700;font-size:13.5px;margin:16px 0 6px;color:var(--c-ai-deep)}
+.form input,.form textarea{width:100%;font-family:var(--font-body);font-size:15px;padding:12px 14px;border:1.5px solid var(--c-line);background:var(--c-card);color:var(--c-ink)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-ai)}
+.form textarea{min-height:120px;resize:vertical}
+.form button{margin-top:20px;font-family:var(--font-serif);font-weight:700;font-size:15px;color:var(--c-paper);background:var(--c-ai);border:1.5px solid var(--c-ai);padding:13px 34px;cursor:pointer;transition:background .3s}
+.form button:hover{background:var(--c-ai-deep)}
+.demo-note{margin-top:14px;font-size:11.5px;color:var(--c-shu-deep);font-family:var(--font-body);line-height:1.8}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-ai-deep);color:var(--c-paper);padding:50px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-disp);font-size:19px;letter-spacing:.08em}
+.footer p{font-size:12.5px;color:#D9CEB6;margin-top:8px;font-family:var(--font-body)}
+.footer a{color:#EAD9B6}
+.sample-note{font-size:11px;color:#B9AB8C;margin-top:18px;line-height:1.95;max-width:720px;margin-left:auto;margin-right:auto}
+.footer .cc{margin-top:14px;font-size:11px;color:#9A8F74}
+
+/* ===== 左下ピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(28,46,69,.94);color:#F1E7D0;text-decoration:none;font-family:var(--font-body);font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.24)}
+.pill svg{width:14px;height:14px;flex:none}
+.pill b{font-weight:700}
+@media (max-width:620px){.pill span{display:none}.pill{padding:11px}}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .topbar nav{display:none}
+  .menu-btn{display:inline-flex;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column}
+  .menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .topbar .cta{display:none}
+  .sp-nav{display:block;position:fixed;inset:66px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-ai);padding:8px 26px 22px;z-index:110;transform:translateY(-16px);opacity:0;visibility:hidden;transition:.3s var(--ease)}
+  .menu-open .sp-nav{transform:none;opacity:1;visibility:visible}
+  .sp-nav a{display:block;text-decoration:none;font-family:var(--font-serif);font-weight:700;font-size:16px;padding:13px 4px;border-bottom:1px solid var(--c-line);color:var(--c-ink)}
+  .works{grid-template-columns:1fr}
+  .wrap{padding:0 22px}
+  .block{padding:64px 0}
+  .hero{padding:40px 0 30px}
+  .hero .frame{padding:34px 24px 30px}
+  .photo-strip{gap:6px;margin-top:26px}
+  .tbl-hint{display:block}
+}
+@media (max-width:720px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th{display:block;width:100%;border:none;padding:8px 14px 4px;font-size:12.5px}
+  table.gaiyo td{display:block;width:100%;border:none;padding:0 14px 10px}
+  .tbl-hint{display:none}
+  .photo-strip{grid-template-columns:1fr 1fr}
+  .photo-strip figure:last-child{grid-column:1 / -1}
+}
+</style>
+</head>
+<body>
+
+<!-- 上部バー -->
+<header class="topbar" id="top">
+  <a class="brand" href="#top">
+    <svg class="seal" viewBox="0 0 48 48" aria-hidden="true">
+      <rect x="2" y="2" width="44" height="44" rx="4" fill="#9E4A34"/>
+      <rect x="5" y="5" width="38" height="38" rx="2" fill="none" stroke="#F1E7D0" stroke-width="1.4"/>
+      <text x="24" y="20" text-anchor="middle" font-family="'Yuji Syuku',serif" font-size="13" fill="#F1E7D0" letter-spacing="1">地域</text>
+      <text x="24" y="38" text-anchor="middle" font-family="'Yuji Syuku',serif" font-size="13" fill="#F1E7D0" letter-spacing="1">情報</text>
+    </svg>
+    <span class="t">０５６３.ｎｅｔＮＰＯ<small>特定非営利活動法人｜愛知県西尾市</small></span>
+  </a>
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="#about">わたしたち</a>
+    <a href="#works">おしごと</a>
+    <a href="#dayori">地域だより</a>
+    <a href="#flow">ご相談の流れ</a>
+    <a href="#gaiyo">法人概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <a class="cta" href="#contact">相談してみる</a>
+</header>
+<nav class="sp-nav">
+  <a href="#about">わたしたち</a>
+  <a href="#works">おしごと</a>
+  <a href="#dayori">地域だより</a>
+  <a href="#flow">ご相談の流れ</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<div class="main">
+
+  <!-- 題字（ヒーロー） -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="frame reveal on">
+        <span class="kicker">愛知県西尾市｜地域情報・市民活動の情報化支援</span>
+        <h1><span class="kb">まちの<span class="shu">情報</span>を、</span><span class="kb">まちの<span class="shu">力</span>に。</span><br><span class="kb"><span class="num">０５６３</span>は、</span><span class="kb">西尾の市外局番。</span></h1>
+        <p class="lead">地域市民への情報サービス支援を中心に、地域情報の利用向上と、市民活動団体の「情報化」をお手伝いする、西尾のまちの中間支援団体です。デジタルが少し苦手な団体さんにも、となりで、ゆっくり。</p>
+        <div class="tags">
+          <span class="tag">地域情報サービス支援</span>
+          <span class="tag">市民活動団体の情報化</span>
+          <span class="tag">西尾市の中間支援</span>
+        </div>
+        <svg class="seal-lg" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#9E4A34" stroke-width="3"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#9E4A34" stroke-width="1.2"/>
+          <text x="50" y="42" text-anchor="middle" font-family="'Yuji Syuku',serif" font-size="20" fill="#9E4A34">西尾</text>
+          <text x="50" y="66" text-anchor="middle" font-family="'Yuji Syuku',serif" font-size="14" fill="#9E4A34" letter-spacing="2">の縁</text>
+        </svg>
+      </div>
+      <div class="photo-strip reveal on">
+        <!-- 差し替えポイント: 西尾の町並み・地域活動・人の集まりのお写真（顔が特定されにくい構図で） -->
+        <figure>
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80&auto=format&fit=crop" alt="まちの通りのイメージ">
+          <figcaption>まちの通り</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=900&q=80&auto=format&fit=crop" alt="集まって話し合う人々のイメージ">
+          <figcaption>寄り合い</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80&auto=format&fit=crop" alt="一緒に作業する手元のイメージ">
+          <figcaption>手を貸す</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- わたしたちのこと -->
+  <section class="block" id="about">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="idx">其の一</span><h2>わたしたちのこと</h2><span class="en">About us</span></div>
+      <div class="about-txt reveal">
+        <p class="big"><span class="kb">地域の<em>情報</em>が、</span><span class="kb">ちゃんと<em>届く</em>まちに。</span></p>
+        <p>「０５６３」は、西尾市の市外局番です。わたしたちは、地域市民への情報サービス支援を軸に、地域情報がもっと使われるように、そして市民活動を担う団体さんが「情報化」の一歩を踏み出せるように、となりでお手伝いをしています。</p>
+        <p>チラシしかなかったお知らせをネットにのせる、名簿や会計を紙から見直す、SNSやホームページをはじめてみる——小さな一歩を、その団体のペースに合わせて。<span class="note-sample">※活動の具体例は、登記された事業の目的にそった方向性のサンプルです。実際の活動に差し替えます。</span></p>
+      </div>
+      <!-- ※定款（公開情報）の事業目的をそのまま引用 -->
+      <div class="quote-def reveal">
+        <h3>登記された事業の目的</h3>
+        <p>「地域市民への情報サービス支援を中心に、地域情報の利用向上と市民活動団体の情報化を支援」</p>
+        <span class="src">出典: NPO法人ポータル等で公開されている登記情報より（公開情報）</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- おしごと（事業） -->
+  <section class="block" id="works">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="idx">其の二</span><h2>おしごと</h2><span class="en">What we do</span></div>
+      <p class="note-sample reveal" style="margin:-28px 0 26px">※以下の3つは、登記された事業の目的にそって想定した活動イメージ（サンプル）です。実際の事業に差し替えます。</p>
+      <div class="works">
+        <div class="work reveal">
+          <div class="cap"><span class="n">01</span>地域情報サービス支援</div>
+          <div class="body">
+            <h3>まちの情報を、届くかたちに</h3>
+            <p>紙のお知らせやイベント情報を、必要な人へ届くように整えるお手伝い。地域の「知りたい」と「知らせたい」を、そっとつなぎます。</p>
+            <ul>
+              <li>地域情報のまとめ・発信のご相談</li>
+              <li>お知らせ配信・掲示のしくみづくり</li>
+              <li>紙とネット、両方でのご案内</li>
+            </ul>
+          </div>
+        </div>
+        <div class="work reveal">
+          <div class="cap"><span class="n">02</span>市民活動団体の情報化支援</div>
+          <div class="body">
+            <h3>団体の「情報化」の一歩を</h3>
+            <p>自治会・サークル・ボランティア団体などの、名簿・会計・お知らせを、無理なくデジタルへ。むずかしい言葉は使わず、となりでゆっくり。</p>
+            <ul>
+              <li>ホームページ・SNSのはじめ方</li>
+              <li>名簿・会計・連絡のデジタル化</li>
+              <li>スマホ・パソコンの困りごと相談</li>
+            </ul>
+          </div>
+        </div>
+        <div class="work reveal">
+          <div class="cap"><span class="n">03</span>地域情報の利用向上</div>
+          <div class="body">
+            <h3>もっと使える地域情報へ</h3>
+            <p>ある情報が、ちゃんと使われるように。探しやすく、わかりやすく。地域の情報を、みんなの手が届くところへ整えていきます。</p>
+            <ul>
+              <li>地域情報の整理・見やすい案内づくり</li>
+              <li>問い合わせ窓口・導線のご提案</li>
+              <li>使い方の講座・勉強会（サンプル）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="work reveal">
+          <div class="cap"><span class="n">04</span>中間支援・おつなぎ</div>
+          <div class="body">
+            <h3>団体と地域を、おつなぎ</h3>
+            <p>「こんなことをしたい」を、必要な人や場所へ。西尾のまちの中で、団体と団体、団体と市民のあいだをつなぐ役目を担います。</p>
+            <ul>
+              <li>活動のご相談・情報のおつなぎ</li>
+              <li>他団体・地域とのマッチング</li>
+              <li>ちいさな相談ごとの窓口</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 地域だより（お知らせ・かわら版） -->
+  <section class="block" id="dayori">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="idx">其の三</span><h2>地域だより</h2><span class="en">News</span></div>
+      <p class="note-sample reveal" style="margin:-28px 0 20px">※以下は表示イメージのサンプルです。日付・内容はダミー。ご自身で更新できる形にできます。</p>
+      <div class="dayori reveal">
+        <div class="masthead">
+          <span class="ttl">０５６３だより</span>
+          <span class="sub">まちの情報、ときどきお届け　※サンプル紙面</span>
+        </div>
+        <!-- ※サンプル: 日付・内容はすべてダミーです -->
+        <div class="news-row"><time>２０XX.XX.XX</time><span class="cat">講座</span><a href="#dayori">はじめてのスマホ相談会をひらきます</a></div>
+        <div class="news-row"><time>２０XX.XX.XX</time><span class="cat">お知らせ</span><a href="#dayori">市民活動団体さんの情報化サポートを受付中です</a></div>
+        <div class="news-row"><time>２０XX.XX.XX</time><span class="cat">地域</span><a href="#dayori">まちのイベント情報のまとめ方をご案内しました</a></div>
+        <div class="news-row"><time>２０XX.XX.XX</time><span class="cat">紙面</span><a href="#dayori">「０５６３だより」を発行しました</a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ご相談の流れ -->
+  <section class="block" id="flow">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="idx">其の四</span><h2>ご相談の流れ</h2><span class="en">Flow</span></div>
+      <ol class="flow-list reveal">
+        <li><h3>まずはお声がけを</h3><p>「こういうことで困っている」だけで大丈夫です。お問い合わせフォームから、お気軽にどうぞ。</p></li>
+        <li><h3>お話をうかがう</h3><p>いまの困りごとや、やってみたいことをお聞きします。むずかしい言葉は使いません。</p></li>
+        <li><h3>できることから、一緒に</h3><p>その団体・その方のペースに合わせて、無理のないところから、となりでお手伝いします。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- 法人概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="idx">其の五</span><h2>法人概要</h2><span class="en">Profile</span></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 ０５６３.ｎｅｔＮＰＯ</td></tr>
+          <tr><th>所在地</th><td>愛知県西尾市（詳細は公開時に記載します）</td></tr>
+          <tr><th>活動分野</th><td>まちづくり／中間支援（市民活動団体の運営・活動に関する連絡・助言・援助）</td></tr>
+          <tr><th>事業の目的</th><td>地域市民への情報サービス支援を中心に、地域情報の利用向上と市民活動団体の情報化を支援</td></tr>
+          <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+          <tr><th>連絡先</th><td>お問い合わせフォームよりご連絡ください</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+      <p class="note-sample reveal" style="margin-top:14px">※名称・所在地の市・活動分野・事業の目的は、公開されている登記情報にもとづきます。代表者名など未公開の項目は、公開のご了承後に記載します。</p>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- お問い合わせ -->
+  <section class="block contact" id="contact">
+    <div class="wrap narrow">
+      <div class="b-head reveal"><span class="idx">其の六</span><h2>お問い合わせ</h2><span class="en">Contact</span></div>
+      <p class="c-lead reveal">地域の情報のこと、団体の情報化のこと、ちいさな困りごとまで。西尾のまちのことなら、まずはお気軽にご相談ください。</p>
+      <form class="form reveal" onsubmit="return false" aria-label="お問い合わせフォーム（デモ）">
+        <label for="f-name">お名前・団体名</label>
+        <input id="f-name" type="text" placeholder="西尾 花子／〇〇の会" autocomplete="name">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="email" placeholder="you@example.com" autocomplete="email">
+        <label for="f-msg">ご相談・メッセージ</label>
+        <textarea id="f-msg" placeholder="「団体のホームページをはじめたい」「スマホの使い方を教わりたい」など、お気軽にどうぞ"></textarea>
+        <button type="submit">送信する（デモ）</button>
+        <p class="demo-note">※これは表示サンプルのため、実際には送信されません。ご契約後、実際に届くフォームに設定します。</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name">特定非営利活動法人 ０５６３.ｎｅｔＮＰＯ</p>
+      <p>愛知県西尾市｜地域情報サービス支援・市民活動団体の情報化支援（まちづくり／中間支援）</p>
+      <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、「地域だより」や※印の内容はすべてダミー、代表者名など未公開情報は不掲載。名称・所在地の市・活動分野・事業の目的は公開されている登記情報にもとづきます）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+      <p class="cc">&copy; 2026 特定非営利活動法人 ０５６３.ｎｅｔＮＰＯ（ご提案用サンプル）</p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .topbar nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// スクロールで上部バーに影
+const topbar = document.querySelector(".topbar");
+const onScroll = () => topbar.classList.toggle("scrolled", window.scrollY > 8);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+// リビール
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

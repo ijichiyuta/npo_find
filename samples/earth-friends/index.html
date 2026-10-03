@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 地球友の会中部委員会 さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML / 内部CSS / 依存なし。ブラウザで開くだけで表示できます
+  ・デザイン方向: 「スワイプ式ストーリーズ型」
+    SNSストーリー風に、縦フルスクリーンの写真主体スライドを
+    横スワイプ（またはタップ・矢印）で切り替える没入型UI。
+    世界環境写真展にちなみ、地球・自然・環境の写真を主役に据える。
+    配色=黒×白×アクセント1色（新緑グリーン）。モダンなサンセリフ。
+  ・本文は公開情報のみで作成:
+    法人名称／所在地=愛知県稲沢市（市まで。番地・建物名は出さない）／
+    活動分野=社会教育・環境保全・国際協力・子どもの健全育成／
+    定款の事業目的=「世界環境写真展の開催等、環境に関する啓発事業を行う」
+  ・「※サンプル」表記の内容（設立年・数値・あいさつ文・お知らせ・
+    展示写真の説明・連絡先など）はすべてダミーです。ご契約後に実データへ差し替えます
+  ・代表者の実名は掲載していません（公開情報の範囲を厳守）
+  ・電話番号はダミー。tel:リンクは無効化し、format-detectionで自動リンクも抑止
+  ・受賞・提携などの虚偽記載なし／他団体のロゴ不使用
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです。
+    顔が特定されにくい構図を選んでいます。<!-- 差し替えポイント --> コメント参照
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 地球友の会中部委員会｜愛知県稲沢市・環境啓発【ご提案サンプル】</title>
+<meta name="description" content="世界環境写真展の開催など、環境に関する啓発事業に取り組むNPO法人。1枚の写真から、地球のいまを見つめる。愛知県稲沢市。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-ink:#0B0C0B;         /* 黒 */
+  --c-ink2:#16181A;
+  --c-paper:#FFFFFF;       /* 白 */
+  --c-accent:#4ADE80;      /* 新緑グリーン（アクセント1色） */
+  --c-accent-d:#22C55E;
+  --c-mut:rgba(255,255,255,.72);
+  --c-mut2:rgba(255,255,255,.5);
+  --c-line:rgba(255,255,255,.16);
+  --f-body:"Noto Sans JP",sans-serif;
+  --f-en:"Manrope",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --dur:7000ms;            /* 1ストーリーの自動送り時間 */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:#000;color:#fff;line-height:1.9;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-weight:900;line-height:1.5;word-break:auto-phrase;letter-spacing:.01em}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.en{font-family:var(--f-en)}
+
+/* ========= ストーリーズの舞台 ========= */
+.stories{position:fixed;inset:0;background:#000;overflow:hidden}
+/* トラック: 横に並べたスライドを translateX で切り替える */
+.track{display:flex;height:100%;width:100%;transition:transform .55s var(--ease);will-change:transform}
+.slide{position:relative;flex:0 0 100%;width:100%;height:100%;overflow:hidden}
+
+/* 背景写真 + 黒のグラデ被せ（文字可読性） */
+.slide .bg{position:absolute;inset:0;z-index:0}
+.slide .bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%;transform:scale(1.06);transition:transform 8s linear}
+.stories.playing .slide.active .bg img{transform:scale(1)}
+.slide .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.12) 30%,rgba(0,0,0,.28) 58%,rgba(0,0,0,.86) 100%)}
+
+/* スライド中身（縦フルスクリーン・下寄せ） */
+.inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:calc(env(safe-area-inset-top,0px) + 96px) clamp(22px,6vw,80px) calc(env(safe-area-inset-bottom,0px) + 118px);
+  max-width:760px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-en);font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--c-accent);margin-bottom:18px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--c-accent)}
+.slide h2{font-size:clamp(27px,6.2vw,52px);line-height:1.35;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.slide h2 .hl{color:var(--c-accent)}
+.slide .lead{margin-top:18px;font-size:clamp(14.5px,1.7vw,17px);line-height:2;color:var(--c-mut);max-width:560px;text-shadow:0 1px 14px rgba(0,0,0,.55)}
+.slide .lead + .lead{margin-top:12px}
+
+/* アニメーション: activeスライドの中身をふわっと */
+.inner > *{opacity:0;transform:translateY(16px)}
+.slide.active .inner > *{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.slide.active .inner > *:nth-child(2){transition-delay:.06s}
+.slide.active .inner > *:nth-child(3){transition-delay:.14s}
+.slide.active .inner > *:nth-child(4){transition-delay:.22s}
+.slide.active .inner > *:nth-child(5){transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){
+  .inner > *{opacity:1;transform:none}
+  .stories.playing .slide.active .bg img{transition:none;transform:none}
+  .track{transition:none}
+}
+
+/* チップ */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{border:1px solid var(--c-line);background:rgba(255,255,255,.06);backdrop-filter:blur(4px);font-size:12px;font-weight:700;padding:6px 13px;border-radius:999px;white-space:nowrap}
+.chip.hl{border-color:var(--c-accent);color:var(--c-accent)}
+
+/* スライド内 CTA */
+.s-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.s-cta a{text-decoration:none;font-weight:800;font-size:14px;padding:13px 24px;border-radius:999px;transition:transform .3s var(--ease),background .3s}
+.s-cta a:hover{transform:translateY(-2px)}
+.s-cta .primary{background:var(--c-accent);color:#0B0C0B}
+.s-cta .primary:hover{background:#fff}
+.s-cta .ghost{border:1px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.05)}
+
+/* 表・データを載せるスライド用の小パネル（白面） */
+.card-list{margin-top:20px;display:grid;gap:10px;max-width:560px}
+.dl{background:rgba(255,255,255,.07);border:1px solid var(--c-line);backdrop-filter:blur(6px);border-radius:14px;padding:14px 18px;display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:baseline}
+.dl dt{font-size:12px;font-weight:700;color:var(--c-accent);letter-spacing:.04em}
+.dl dd{font-size:14px;color:#fff;line-height:1.85}
+.dl dd small{color:var(--c-mut2);font-size:11.5px}
+
+/* お知らせ行 */
+.news{margin-top:20px;display:grid;gap:2px;max-width:560px}
+.news a{display:flex;gap:16px;align-items:baseline;padding:12px 2px;border-bottom:1px solid var(--c-line);text-decoration:none}
+.news a time{flex:none;font-family:var(--f-en);font-weight:700;font-size:12.5px;color:var(--c-accent)}
+.news a span{font-size:14px;color:#fff}
+
+.note-sample{display:block;font-size:11px;color:var(--c-mut2);margin-top:14px;line-height:1.8}
+
+/* ========= 上部: 進行バー（ストーリーズ） ========= */
+.bars{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:12px;right:12px;z-index:40;display:flex;gap:6px}
+.bars .bar{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.28);overflow:hidden}
+.bars .bar i{display:block;height:100%;width:0;background:#fff;border-radius:3px}
+.bars .bar.done i{width:100%}
+.bars .bar.active i{width:0;animation:fill var(--dur) linear forwards}
+.stories.paused .bars .bar.active i{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+@media (prefers-reduced-motion:reduce){
+  .bars .bar.active i{animation:none;width:100%}
+}
+
+/* ========= 上部: ブランド行 ========= */
+.brandbar{position:fixed;top:calc(env(safe-area-inset-top,0px) + 26px);left:0;right:0;z-index:41;display:flex;align-items:center;gap:11px;padding:0 16px}
+.brandbar .mk{width:38px;height:38px;flex:none;border-radius:50%;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);padding:5px}
+.brandbar .nm{line-height:1.25}
+.brandbar .nm b{font-size:14.5px;font-weight:800;letter-spacing:.02em;display:block}
+.brandbar .nm small{font-size:10.5px;color:var(--c-mut);font-weight:500}
+.brandbar .live{margin-left:auto;display:flex;align-items:center;gap:6px;font-family:var(--f-en);font-size:10.5px;font-weight:700;letter-spacing:.12em;color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);padding:6px 11px;border-radius:999px}
+.brandbar .live .dot{width:7px;height:7px;border-radius:50%;background:var(--c-accent);box-shadow:0 0 0 0 rgba(74,222,128,.6);animation:pulse 2s var(--ease) infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(74,222,128,.55)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+
+/* ========= タップゾーン（左=戻る / 右=進む） ========= */
+.tapzone{position:absolute;top:0;bottom:0;width:32%;z-index:20;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tapzone.prev{left:0}
+.tapzone.next{right:0}
+
+/* ========= 下部: ナビ ドット + ラベル + 再生/停止 ========= */
+.dockrow{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);z-index:42;display:flex;flex-direction:column;align-items:center;gap:12px;pointer-events:none}
+.dots{display:flex;gap:8px;pointer-events:auto}
+.dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,.32);cursor:pointer;padding:0;transition:transform .3s var(--ease),background .3s}
+.dots button.on{background:var(--c-accent);transform:scale(1.35)}
+.dockrow .hint{pointer-events:none;display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;color:var(--c-mut);letter-spacing:.02em}
+.dockrow .hint .sw{display:inline-block;animation:nudge 1.4s var(--ease) infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.dockrow.moved .hint{opacity:0;transition:opacity .5s}
+@media (prefers-reduced-motion:reduce){.dockrow .hint .sw{animation:none}}
+
+.ctrl{position:fixed;right:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 58px);z-index:42;display:flex;gap:8px;pointer-events:auto}
+.ctrl button{width:40px;height:40px;border-radius:50%;border:1px solid var(--c-line);background:rgba(0,0,0,.4);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .3s,transform .3s}
+.ctrl button:hover{background:rgba(0,0,0,.7);transform:translateY(-2px)}
+.ctrl svg{width:16px;height:16px;fill:#fff}
+
+/* 左右矢印（PC用の大きめボタン） */
+.arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:39;width:46px;height:46px;border-radius:50%;border:1px solid var(--c-line);background:rgba(0,0,0,.32);backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:none;place-items:center;transition:background .3s,transform .3s}
+.arrow:hover{background:rgba(0,0,0,.7)}
+.arrow.l{left:18px}
+.arrow.r{right:18px}
+.arrow.l:hover{transform:translateY(-50%) translateX(-2px)}
+.arrow.r:hover{transform:translateY(-50%) translateX(2px)}
+.arrow svg{width:18px;height:18px;fill:#fff}
+
+/* ========= 最後のスライド（お問い合わせ・締め） ========= */
+.slide.contact .inner{justify-content:center;max-width:640px}
+.tel-line{margin-top:8px;font-family:var(--f-en);font-weight:800;font-size:clamp(26px,5vw,36px);color:#fff;letter-spacing:.02em}
+.tel-line small{display:block;font-family:var(--f-body);font-size:12px;font-weight:500;color:var(--c-mut2);letter-spacing:0;margin-top:6px}
+.footcredit{margin-top:30px;padding-top:20px;border-top:1px solid var(--c-line);font-size:11px;color:var(--c-mut2);line-height:1.9;max-width:560px}
+.footcredit a{color:var(--c-mut);text-decoration:underline;text-underline-offset:3px}
+.footcredit b{color:#fff;font-weight:800}
+
+/* ========= レスポンシブ ========= */
+@media (min-width:900px){
+  .arrow{display:grid}
+  .brandbar{padding:0 26px}
+  .bars{left:24px;right:24px}
+}
+@media (max-width:420px){
+  .dl{grid-template-columns:88px 1fr;gap:10px;padding:12px 14px}
+  .slide h2{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<main class="stories playing" id="stories">
+
+  <!-- 上部: 進行バー（スライド枚数ぶん、JSで生成） -->
+  <div class="bars" id="bars" aria-hidden="true"></div>
+
+  <!-- 上部: ブランド行 -->
+  <div class="brandbar">
+    <svg class="mk" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#0B0C0B"/>
+      <circle cx="20" cy="20" r="12.5" fill="none" stroke="#4ADE80" stroke-width="2"/>
+      <path d="M20 8.5c5 3 5 20 0 23" fill="none" stroke="#4ADE80" stroke-width="1.6"/>
+      <path d="M20 8.5c-5 3-5 20 0 23" fill="none" stroke="#4ADE80" stroke-width="1.6"/>
+      <path d="M8 20h24" stroke="#4ADE80" stroke-width="1.6"/>
+      <path d="M12 25c4-3 12-3 16 0" fill="none" stroke="#fff" stroke-width="1.3" opacity=".8"/>
+    </svg>
+    <span class="nm"><b>地球友の会 中部委員会</b><small>NPO法人｜愛知県稲沢市・環境啓発</small></span>
+    <span class="live"><span class="dot"></span>STORY</span>
+  </div>
+
+  <!-- 横に並ぶスライド -->
+  <div class="track" id="track">
+
+    <!-- 01 表紙 -->
+    <section class="slide" data-title="はじめに">
+      <div class="bg">
+        <!-- 差し替えポイント: 表紙は「世界環境写真展」を象徴する地球・自然の1枚に -->
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=80&auto=format&fit=crop" alt="霧の森のイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">Earth Friends · Chubu</span>
+        <h2><span class="kb">1枚の写真から、</span><br><span class="kb">地球の<span class="hl">いま</span></span><span class="kb">を見つめる。</span></h2>
+        <p class="lead">わたしたちは、世界環境写真展の開催などを通じて、環境について考えるきっかけを届けるNPO法人です。<span class="note-sample">※このページはSNSの「ストーリーズ」のように、横スワイプ（またはタップ・矢印）で読み進められます</span></p>
+        <div class="chips">
+          <span class="chip hl">環境の保全</span>
+          <span class="chip">社会教育</span>
+          <span class="chip">国際協力</span>
+          <span class="chip">子どもの健全育成</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 わたしたちのこと -->
+    <section class="slide" data-title="わたしたち">
+      <div class="bg">
+        <!-- 差し替えポイント: 活動理念を象徴する自然の風景 -->
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&q=80&auto=format&fit=crop" alt="陽のさす森のイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">About Us</span>
+        <h2><span class="kb">見て、知って、</span><span class="kb">考える。</span><br><span class="kb">その一歩を、</span><span class="kb"><span class="hl">この地域から。</span></span></h2>
+        <p class="lead">地球友の会中部委員会は、愛知県稲沢市を拠点に、環境に関する啓発事業に取り組む特定非営利活動法人です。世界環境写真展の開催をはじめ、社会教育・環境保全・国際協力・子どもの健全育成の分野で活動しています。</p>
+        <p class="lead"><span class="note-sample">※活動分野と事業目的は定款（公開情報）に基づく記載です。具体的な活動内容・実績はご契約後に実データへ差し替えます</span></p>
+      </div>
+    </section>
+
+    <!-- 03 世界環境写真展（主役事業） -->
+    <section class="slide" data-title="世界環境写真展">
+      <div class="bg">
+        <!-- 差し替えポイント: 展示のメインビジュアル。実際の写真展の1枚に -->
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1600&q=80&auto=format&fit=crop" alt="広がる自然のイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">Exhibition</span>
+        <h2><span class="kb">世界環境</span><span class="kb">写真展</span></h2>
+        <p class="lead">世界のいまを写した一枚一枚が、ことばよりも雄弁に環境を語りかけます。会場でゆっくりと、地球のうつくしさと、いま起きていることに向き合ってみてください。</p>
+        <div class="card-list">
+          <!-- ※サンプル: 開催概要はダミーです。実際の会期・会場に差し替えます -->
+          <dl class="dl"><dt>会期</dt><dd>20XX年XX月XX日〜XX日 <small>※サンプル</small></dd></dl>
+          <dl class="dl"><dt>会場</dt><dd>稲沢市内の公共施設ほか <small>※サンプル（具体施設名は差し替え）</small></dd></dl>
+          <dl class="dl"><dt>入場</dt><dd>無料 <small>※サンプル</small></dd></dl>
+        </div>
+        <span class="note-sample">※展示写真そのもの・キャプションは掲載していません。イメージ写真です</span>
+      </div>
+    </section>
+
+    <!-- 04 展示のテーマ（写真のギャラリー風） -->
+    <section class="slide" data-title="展示のテーマ">
+      <div class="bg">
+        <!-- 差し替えポイント: テーマを象徴する海・水の写真 -->
+        <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&q=80&auto=format&fit=crop" alt="海と波のイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">Themes</span>
+        <h2><span class="kb">森、海、</span><span class="kb">そして、</span><span class="kb"><span class="hl">わたしたちの暮らし。</span></span></h2>
+        <p class="lead">失われていく風景、めぐる水、生きものたちの営み。写真が切り取るテーマは、遠い世界のことのようで、じつは毎日の暮らしとつながっています。</p>
+        <div class="chips">
+          <!-- ※サンプル: 展示テーマの例。実際の構成に差し替えます -->
+          <span class="chip">森と生きもの</span>
+          <span class="chip">水とくらし</span>
+          <span class="chip">気候の変化</span>
+          <span class="chip">地域の自然</span>
+        </div>
+        <span class="note-sample">※テーマ名は表示イメージのサンプルです</span>
+      </div>
+    </section>
+
+    <!-- 05 子ども・社会教育 -->
+    <section class="slide" data-title="学びの場">
+      <div class="bg">
+        <!-- 差し替えポイント: 学び・ワークショップを象徴する自然の中の風景（顔が特定されにくい構図） -->
+        <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1600&q=80&auto=format&fit=crop" alt="木もれ日のイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">Learning</span>
+        <h2><span class="kb">子どもたちに、</span><br><span class="kb">地球を</span><span class="kb"><span class="hl">手わたす。</span></span></h2>
+        <p class="lead">写真を入り口に、環境について学び、話し合う。次の世代が自分のこととして地球を考えられるように、社会教育と子どもの健全育成にも取り組みます。</p>
+        <p class="lead"><span class="note-sample">※具体的なプログラム内容・開催実績はサンプルです。ご契約後に実データへ差し替えます</span></p>
+      </div>
+    </section>
+
+    <!-- 06 参加・支援 -->
+    <section class="slide" data-title="参加する">
+      <div class="bg">
+        <!-- 差し替えポイント: 手・つながりを感じさせる自然の写真 -->
+        <img src="https://images.unsplash.com/photo-1552799446-159ba9523315?w=1600&q=80&auto=format&fit=crop" alt="新緑の葉のイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">Join Us</span>
+        <h2><span class="kb">あなたにも、</span><span class="kb">できることが</span><span class="kb"><span class="hl">あります。</span></span></h2>
+        <p class="lead">写真展に足を運ぶこと。だれかに伝えること。活動を支えること。どれも、地球にとってのたしかな一歩です。ボランティア・賛助会員・ご寄付など、できる範囲でご参加いただけます。</p>
+        <div class="card-list">
+          <!-- ※サンプル: 参加メニューはダミーです。実際の募集内容に差し替えます -->
+          <dl class="dl"><dt>見に行く</dt><dd>写真展・イベントに来場する <small>※サンプル</small></dd></dl>
+          <dl class="dl"><dt>ささえる</dt><dd>賛助会員・ご寄付・ボランティア <small>※サンプル</small></dd></dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 お知らせ -->
+    <section class="slide" data-title="お知らせ">
+      <div class="bg">
+        <!-- 差し替えポイント: 落ち着いた自然の写真 -->
+        <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=1600&q=80&auto=format&fit=crop" alt="山なみのイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">News</span>
+        <h2>お知らせ</h2>
+        <p class="lead"><span class="note-sample">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</span></p>
+        <div class="news">
+          <!-- ※サンプル: 日付・内容はダミーです -->
+          <a href="#news"><time>20XX.XX.XX</time><span>世界環境写真展の開催が決まりました</span></a>
+          <a href="#news"><time>20XX.XX.XX</time><span>ボランティアスタッフを募集しています</span></a>
+          <a href="#news"><time>20XX.XX.XX</time><span>子ども向け環境学習会のご案内</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 概要・お問い合わせ（締め） -->
+    <section class="slide contact" data-title="お問い合わせ">
+      <div class="bg">
+        <!-- 差し替えポイント: 締めにふさわしい地球・空の写真 -->
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1600&q=80&auto=format&fit=crop" alt="夕暮れの森のイメージ">
+      </div>
+      <div class="inner">
+        <span class="eyebrow">Contact</span>
+        <h2><span class="kb">地球のこと、</span><span class="kb">はなしませんか。</span></h2>
+        <p class="lead">写真展のこと、活動への参加のこと。どんなことでもお気軽にお問い合わせください。</p>
+        <div class="card-list">
+          <dl class="dl"><dt>法人名</dt><dd>特定非営利活動法人 地球友の会中部委員会</dd></dl>
+          <dl class="dl"><dt>所在地</dt><dd>愛知県稲沢市 <small>（詳細住所は公開時に記載）</small></dd></dl>
+          <dl class="dl"><dt>活動分野</dt><dd>社会教育／環境保全／国際協力／子どもの健全育成</dd></dl>
+        </div>
+        <div class="tel-line">
+          052-XXX-XXXX
+          <small>※サンプル用のダミー番号です（発信できません）。実際の連絡先に差し替えます</small>
+        </div>
+        <div class="s-cta">
+          <a class="primary" href="#" onclick="return false">お問い合わせフォーム<span class="note-sample" style="display:inline;color:#0B0C0B;opacity:.6">（デモ）</span></a>
+        </div>
+        <div class="footcredit">
+          <b>本ページはホームページ制作のご提案用サンプルです。</b><br>
+          本文は公開情報（法人名称・所在地・活動分野・定款の事業目的）の範囲で作成しています。「※サンプル」表記の内容と写真はイメージで、ご契約後に実データへ差し替えます。<br>
+          制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a><br>
+          &copy; 2026 NPO法人 地球友の会中部委員会
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- タップゾーン（左=戻る / 右=進む） -->
+  <div class="tapzone prev" id="tapPrev" aria-hidden="true"></div>
+  <div class="tapzone next" id="tapNext" aria-hidden="true"></div>
+
+  <!-- PC用 左右矢印 -->
+  <button class="arrow l" id="arrowPrev" aria-label="前のストーリー"><svg viewBox="0 0 24 24"><path d="M15.4 4.6 8 12l7.4 7.4 1.4-1.4L10.8 12l6-6z"/></svg></button>
+  <button class="arrow r" id="arrowNext" aria-label="次のストーリー"><svg viewBox="0 0 24 24"><path d="M8.6 4.6 16 12l-7.4 7.4L7.2 18l6-6-6-6z"/></svg></button>
+
+  <!-- 再生 / 一時停止 -->
+  <div class="ctrl">
+    <button id="playToggle" aria-label="一時停止">
+      <svg id="icPause" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+      <svg id="icPlay" viewBox="0 0 24 24" style="display:none"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+  </div>
+
+  <!-- 下部: ドット + ヒント -->
+  <div class="dockrow" id="dockrow">
+    <div class="dots" id="dots" role="tablist" aria-label="ストーリーの一覧"></div>
+    <div class="hint"><span class="sw">↔</span>スワイプ・タップで読み進める</div>
+  </div>
+
+</main>
+
+<script>
+(function(){
+  var stories = document.getElementById("stories");
+  var track   = document.getElementById("track");
+  var slides  = Array.prototype.slice.call(track.querySelectorAll(".slide"));
+  var barsWrap = document.getElementById("bars");
+  var dotsWrap = document.getElementById("dots");
+  var dockrow  = document.getElementById("dockrow");
+  var total = slides.length;
+  var idx = 0;
+  var paused = false;
+  var timer = null;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // 進行バー・ドットを生成
+  var bars = [], dots = [];
+  slides.forEach(function(sl, i){
+    var b = document.createElement("div");
+    b.className = "bar";
+    b.innerHTML = "<i></i>";
+    barsWrap.appendChild(b);
+    bars.push(b);
+
+    var d = document.createElement("button");
+    d.setAttribute("role","tab");
+    d.setAttribute("aria-label", (sl.getAttribute("data-title")||("ストーリー"+(i+1))));
+    d.addEventListener("click", function(){ go(i); });
+    dotsWrap.appendChild(d);
+    dots.push(d);
+  });
+
+  function clearTimer(){ if(timer){ clearTimeout(timer); timer = null; } }
+
+  function schedule(){
+    clearTimer();
+    if(paused || reduce) return;
+    timer = setTimeout(function(){ next(); }, 7000);
+  }
+
+  function render(){
+    track.style.transform = "translateX(" + (-idx * 100) + "%)";
+    slides.forEach(function(sl,i){ sl.classList.toggle("active", i===idx); });
+    dots.forEach(function(d,i){ d.classList.toggle("on", i===idx); });
+    bars.forEach(function(b,i){
+      b.classList.remove("active","done");
+      if(i < idx) b.classList.add("done");
+      else if(i === idx && !paused) b.classList.add("active");
+    });
+    // アニメーションを確実に再start（activeバーのiを差し替え）
+    if(!paused && !reduce){
+      var active = bars[idx];
+      var i = active.querySelector("i");
+      var clone = i.cloneNode(true);
+      active.replaceChild(clone, i);
+    }
+    schedule();
+  }
+
+  function go(i){
+    if(i<0) i=0;
+    if(i>total-1) i=total-1;
+    idx = i;
+    render();
+  }
+  function next(){ if(idx < total-1) go(idx+1); else go(0); /* ループ */ }
+  function prev(){ if(idx > 0) go(idx-1); }
+
+  function setPaused(p){
+    paused = p;
+    stories.classList.toggle("paused", p);
+    document.getElementById("icPause").style.display = p ? "none":"block";
+    document.getElementById("icPlay").style.display  = p ? "block":"none";
+    document.getElementById("playToggle").setAttribute("aria-label", p ? "再生":"一時停止");
+    if(p){ clearTimer(); }
+    else { render(); }
+  }
+
+  // 操作
+  document.getElementById("tapNext").addEventListener("click", function(){ markMoved(); next(); });
+  document.getElementById("tapPrev").addEventListener("click", function(){ markMoved(); prev(); });
+  document.getElementById("arrowNext").addEventListener("click", function(){ markMoved(); next(); });
+  document.getElementById("arrowPrev").addEventListener("click", function(){ markMoved(); prev(); });
+  document.getElementById("playToggle").addEventListener("click", function(){ setPaused(!paused); });
+
+  // キーボード
+  document.addEventListener("keydown", function(e){
+    if(e.key === "ArrowRight"){ markMoved(); next(); }
+    else if(e.key === "ArrowLeft"){ markMoved(); prev(); }
+    else if(e.key === " "){ e.preventDefault(); setPaused(!paused); }
+  });
+
+  // スワイプ（タッチ）
+  var sx=0, sy=0, moved=false;
+  track.addEventListener("touchstart", function(e){
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY; moved=false;
+    setPaused(true);
+  }, {passive:true});
+  track.addEventListener("touchmove", function(e){
+    if(Math.abs(e.touches[0].clientX - sx) > 8) moved=true;
+  }, {passive:true});
+  track.addEventListener("touchend", function(e){
+    var dx = e.changedTouches[0].clientX - sx;
+    var dy = e.changedTouches[0].clientY - sy;
+    setPaused(false);
+    if(Math.abs(dx) > 46 && Math.abs(dx) > Math.abs(dy)){
+      markMoved();
+      if(dx < 0) next(); else prev();
+    }
+  });
+
+  // マウスドラッグ（PCでのスワイプ感）
+  var down=false, mx=0;
+  track.addEventListener("mousedown", function(e){ down=true; mx=e.clientX; });
+  window.addEventListener("mouseup", function(e){
+    if(!down) return; down=false;
+    var dx = e.clientX - mx;
+    if(Math.abs(dx) > 60){ markMoved(); if(dx<0) next(); else prev(); }
+  });
+
+  // ヒントを消す
+  function markMoved(){ dockrow.classList.add("moved"); }
+
+  // タブ非表示のときは止める（自動送りの暴発防止）
+  document.addEventListener("visibilitychange", function(){
+    if(document.hidden){ clearTimer(); }
+    else if(!paused){ schedule(); }
+  });
+
+  // 初期化
+  render();
+})();
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px/1.4 -apple-system,sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)">制作サンプル｜スマートコネクト</a></body>
+</html>

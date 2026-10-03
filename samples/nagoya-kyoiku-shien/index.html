@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 名古屋教育支援センター さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・分野）の範囲で作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者のお名前は記載していません／住所は区までの表記です
+  ・電話番号はダミーのため tel: リンクは無効化しています
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: 黒板／チョークアート型（学びの再スタートに寄り添う温かみ）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 名古屋教育支援センター｜不登校・高校中退からの学びなおし【ご提案サンプル】</title>
+<meta name="description" content="名古屋市緑区。不登校や高校中退を経験した方の、教育支援・社会復帰支援に取り組むNPO法人です。「またここから」を、あなたのペースで。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --board:#20362B;          /* 深緑の黒板 */
+  --board-deep:#182A22;
+  --board-soft:#2A473A;
+  --chalk:#F4F2E9;          /* 白チョーク */
+  --chalk-dim:#C7CFC5;
+  --chalk-faint:#8FA394;
+  --yellow:#F2D585;         /* 淡い黄 */
+  --yellow-soft:#E9CE86;
+  --line:rgba(244,242,233,.22);
+  --font-hand:"Yomogi","Zen Maru Gothic",sans-serif;   /* 手書き風 */
+  --font-title:"Kiwi Maru","Zen Maru Gothic",serif;     /* 見出し（丸み） */
+  --font-body:"Zen Maru Gothic",sans-serif;             /* 読みやすいゴシック */
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--chalk);
+  line-height:2;
+  font-size:15px;
+  font-feature-settings:"palt";
+  overflow-wrap:break-word;
+  background:var(--board);
+  /* 黒板の質感: ごく淡いチョーク粉のムラ */
+  background-image:
+    radial-gradient(120% 80% at 15% 0%, rgba(244,242,233,.05), transparent 55%),
+    radial-gradient(100% 70% at 90% 100%, rgba(242,213,133,.05), transparent 55%);
+}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.7;word-break:auto-phrase;font-weight:500}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* チョークの下線（手描きのラフさ） */
+.uline{
+  background:linear-gradient(transparent 62%, var(--yellow-soft) 62%, var(--yellow-soft) 88%, transparent 88%);
+  padding:0 .1em;
+}
+
+/* ===== 左固定サイドバー（PC） ===== */
+.side{position:fixed;left:0;top:0;bottom:0;width:256px;background:var(--board-deep);border-right:1px dashed var(--line);display:flex;flex-direction:column;padding:36px 26px 24px;z-index:100}
+.side .logo{text-decoration:none;color:var(--chalk);display:block}
+.side .logo .mark{width:52px;height:52px;margin-bottom:14px}
+.side .logo .t{font-family:var(--font-title);font-weight:500;font-size:20px;letter-spacing:.06em;line-height:1.5}
+.side .logo .t small{display:block;font-family:var(--font-hand);font-size:11px;color:var(--yellow-soft);letter-spacing:.04em;margin-top:6px;font-weight:400}
+.side nav{margin-top:32px;flex:1}
+.side nav a{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--chalk-dim);font-family:var(--font-hand);font-size:14px;padding:11px 2px;border-bottom:1px dotted var(--line);transition:color .3s var(--ease),padding-left .3s var(--ease)}
+.side nav a::before{content:"✎";font-size:11px;color:var(--chalk-faint);transition:color .3s}
+.side nav a:hover{color:var(--yellow);padding-left:7px}
+.side nav a:hover::before{color:var(--yellow)}
+.side .tel{margin-top:18px;border:1px dashed var(--line);border-radius:14px;padding:15px;text-align:center}
+.side .tel .cap{font-family:var(--font-hand);font-size:12px;color:var(--yellow-soft)}
+.side .tel .num{font-family:var(--font-title);font-size:20px;font-weight:500;color:var(--chalk);letter-spacing:.02em;display:block;margin:3px 0 2px}
+.side .tel p{font-size:10.5px;color:var(--chalk-faint);line-height:1.7}
+.side .visit{margin-top:10px;display:block;background:var(--yellow);color:var(--board-deep);text-decoration:none;text-align:center;font-family:var(--font-title);font-weight:500;font-size:14px;padding:13px;border-radius:12px;transition:transform .25s var(--ease),box-shadow .25s}
+.side .visit:hover{transform:translateY(-2px);box-shadow:0 6px 0 rgba(233,206,134,.35)}
+
+/* SPヘッダー */
+.sp-head{display:none}
+
+.main{margin-left:256px}
+.wrap{max-width:840px;margin:0 auto;padding:0 40px}
+
+/* ===== 共通 ===== */
+.block{padding:80px 0;border-bottom:1px dashed var(--line)}
+.b-head{display:flex;align-items:baseline;gap:14px;margin-bottom:34px}
+.b-head .en{font-family:var(--font-hand);font-size:12px;letter-spacing:.16em;color:var(--yellow-soft);text-transform:uppercase}
+.b-head h2{font-family:var(--font-title);font-size:clamp(21px,2.6vw,27px);letter-spacing:.03em;font-weight:500}
+.b-head .en::before{content:"◜ ";opacity:.6}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-family:var(--font-hand);font-size:11.5px;color:var(--chalk-faint)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-family:var(--font-hand);font-size:11.5px;color:var(--chalk-faint);margin-top:8px}
+
+/* ===== 冒頭ヒーロー（黒板に書いた言葉） ===== */
+.opening{padding:74px 0 66px;position:relative;overflow:hidden}
+.opening .cap{font-family:var(--font-hand);font-size:13px;color:var(--yellow-soft);letter-spacing:.08em;margin-bottom:20px}
+.opening .cap::before{content:"╌╌ ";opacity:.6}
+.opening h1{font-family:var(--font-title);font-size:clamp(28px,4.2vw,46px);font-weight:500;line-height:1.7;letter-spacing:.04em}
+.opening .lead{margin-top:24px;max-width:600px;font-size:15px;color:var(--chalk-dim)}
+.chalk-doodle{position:absolute;right:34px;top:52px;width:120px;opacity:.5;pointer-events:none}
+.photo-strip{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px;margin-top:44px}
+.photo-strip figure{position:relative;border:3px solid var(--chalk);border-radius:4px;overflow:hidden;transform:rotate(-1.2deg);background:var(--board-soft)}
+.photo-strip figure:nth-child(2){transform:rotate(1.4deg)}
+.photo-strip figure:nth-child(3){transform:rotate(-.6deg)}
+.photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(.92)}
+.chips{display:flex;gap:9px;margin-top:22px;flex-wrap:wrap}
+.chip{font-family:var(--font-hand);border:1px dashed var(--yellow-soft);color:var(--yellow);font-size:12.5px;padding:5px 14px;border-radius:999px;white-space:nowrap}
+
+/* ===== 想い（大きな言葉） ===== */
+.creed .big{font-family:var(--font-title);font-size:clamp(19px,2.6vw,26px);font-weight:500;line-height:2;letter-spacing:.03em;max-width:680px}
+.creed .big em{font-style:normal;color:var(--yellow)}
+.creed p{max-width:660px;margin-top:20px;color:var(--chalk-dim);font-size:15px}
+
+/* ===== 支援（カード＝黒板に貼った紙） ===== */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:var(--board-soft);border:1px solid var(--line);border-radius:16px;padding:28px 26px;position:relative}
+.card::before{content:"";position:absolute;left:50%;top:-9px;transform:translateX(-50%);width:56px;height:16px;background:rgba(242,213,133,.5);border-radius:2px} /* マスキングテープ */
+.card .no{font-family:var(--font-hand);font-size:12px;color:var(--yellow-soft);letter-spacing:.14em;display:block;margin-bottom:4px}
+.card h3{font-family:var(--font-title);font-size:19px;font-weight:500;margin-bottom:10px}
+.card p{font-size:14px;color:var(--chalk-dim)}
+.card ul{list-style:none;margin-top:14px}
+.card li{font-size:13.5px;color:var(--chalk-dim);padding:5px 0 5px 22px;position:relative}
+.card li::before{content:"○";position:absolute;left:0;color:var(--yellow-soft);font-size:12px}
+
+/* ===== 一日の過ごし方（時間軸） ===== */
+.day-list{list-style:none;max-width:660px;position:relative}
+.day-list::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.day-list li{position:relative;padding:0 0 26px 40px}
+.day-list li::before{content:"";position:absolute;left:2px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--board);border:2px solid var(--yellow)}
+.day-list .time{font-family:var(--font-title);font-size:14px;color:var(--yellow-soft);letter-spacing:.03em}
+.day-list h3{font-size:15.5px;font-weight:500;margin:1px 0 2px}
+.day-list p{font-size:13px;color:var(--chalk-dim)}
+
+/* ===== 声（ふきだし） ===== */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.voice{background:var(--board-soft);border:1px dashed var(--line);border-radius:16px;padding:22px 24px;position:relative}
+.voice .q{font-family:var(--font-title);font-size:34px;color:var(--yellow-soft);line-height:.6;opacity:.7}
+.voice p{font-size:14px;color:var(--chalk-dim);margin-top:6px}
+.voice .who{font-family:var(--font-hand);font-size:12px;color:var(--chalk-faint);margin-top:12px;display:block}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:18px;padding:15px 2px;border-bottom:1px dotted var(--line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-title);color:var(--yellow-soft);font-size:13px}
+.news-row a{color:var(--chalk-dim);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;transition:color .3s}
+.news-row a:hover{color:var(--chalk)}
+
+/* ===== 概要（表） ===== */
+table.gaiyo{width:100%;min-width:460px;border-collapse:collapse;font-size:14px}
+table.gaiyo th{width:150px;text-align:left;font-weight:500;font-family:var(--font-hand);color:var(--yellow-soft);border-bottom:1px dashed var(--line);padding:13px 8px 13px 0;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border-bottom:1px dashed var(--line);padding:13px 0 13px 8px;color:var(--chalk-dim)}
+
+/* ===== 流れ ===== */
+.flow-list{list-style:none;max-width:660px;counter-reset:fs}
+.flow-list li{counter-increment:fs;position:relative;padding:0 0 28px 62px}
+.flow-list li::before{content:"STEP " counter(fs);position:absolute;left:0;top:2px;font-family:var(--font-hand);font-size:11px;color:var(--yellow-soft);white-space:nowrap;letter-spacing:.05em}
+.flow-list li::after{content:"";position:absolute;left:6px;top:26px;bottom:6px;width:1px;background:var(--line)}
+.flow-list li:last-child::after{display:none}
+.flow-list h3{font-size:16px;font-weight:500}
+.flow-list p{font-size:13.5px;color:var(--chalk-dim)}
+.support-line{margin-top:12px;background:var(--board-soft);border:1px dashed var(--line);border-radius:14px;padding:22px 26px;font-size:14px;color:var(--chalk-dim);max-width:660px}
+.support-line b{color:var(--yellow)}
+
+/* ===== お問い合わせ（デモフォーム） ===== */
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:start}
+.form-note{background:rgba(242,213,133,.1);border:1px dashed var(--yellow-soft);border-radius:12px;padding:12px 16px;font-family:var(--font-hand);font-size:12px;color:var(--yellow-soft);margin-bottom:18px}
+.demo-form label{display:block;font-family:var(--font-hand);font-size:13px;color:var(--chalk-dim);margin:14px 0 6px}
+.demo-form input,.demo-form textarea{width:100%;background:var(--board-deep);border:1px solid var(--line);border-radius:10px;color:var(--chalk);font-family:var(--font-body);font-size:14px;padding:11px 14px;line-height:1.7}
+.demo-form input:focus,.demo-form textarea:focus{outline:none;border-color:var(--yellow-soft)}
+.demo-form textarea{min-height:110px;resize:vertical}
+.demo-form button{margin-top:18px;width:100%;background:var(--yellow);color:var(--board-deep);border:none;border-radius:12px;font-family:var(--font-title);font-weight:500;font-size:15px;padding:14px;cursor:pointer;transition:transform .25s var(--ease)}
+.demo-form button:hover{transform:translateY(-2px)}
+.form-msg{margin-top:14px;font-family:var(--font-hand);font-size:13px;color:var(--yellow);display:none}
+.contact-side .tel-big{border:1px dashed var(--line);border-radius:16px;padding:24px;text-align:center}
+.contact-side .tel-big .cap{font-family:var(--font-hand);font-size:13px;color:var(--yellow-soft)}
+.contact-side .tel-big .num{font-family:var(--font-title);font-size:30px;font-weight:500;color:var(--chalk);display:block;margin:4px 0}
+.contact-side .tel-big p{font-size:12px;color:var(--chalk-faint)}
+.map-full{margin-top:16px}
+.map-full iframe{width:100%;height:220px;border:1px solid var(--line);border-radius:12px;filter:grayscale(.2) contrast(.95)}
+
+/* ===== フッター ===== */
+.footer{padding:46px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-title);font-size:16px}
+.footer p{font-size:12.5px;color:var(--chalk-faint);margin-top:6px}
+.sample-note{font-family:var(--font-hand);font-size:11.5px;color:var(--chalk-faint);margin-top:18px;line-height:2}
+.sample-note a{color:var(--yellow-soft)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:960px){
+  .side{display:none}
+  .main{margin-left:0}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:var(--board-deep);border-bottom:1px dashed var(--line);height:60px;align-items:center;gap:10px;padding:0 18px}
+  .sp-head .t{font-family:var(--font-title);font-weight:500;font-size:16px;line-height:1.2}
+  .sp-head .t small{font-family:var(--font-hand);font-size:9.5px;color:var(--yellow-soft);display:block;line-height:1;margin-top:2px}
+  .sp-head .tel-ic{margin-left:auto;background:var(--yellow);color:var(--board-deep);text-decoration:none;font-family:var(--font-title);font-size:12px;padding:9px 14px;border-radius:8px;white-space:nowrap}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:23px;height:2px;background:var(--chalk);margin:5.5px 0;transition:.3s;border-radius:2px}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:60px 0 auto 0;background:var(--board-deep);border-bottom:1px dashed var(--line);padding:10px 20px 22px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;color:var(--chalk-dim);font-family:var(--font-hand);font-size:15px;padding:13px 4px;border-bottom:1px dotted var(--line)}
+  .wrap{padding:0 22px}
+  .block{padding:56px 0}
+  .opening{padding:48px 0 44px}
+  .chalk-doodle{display:none}
+  .photo-strip{grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}
+  .photo-strip figure:first-child{grid-column:1 / -1}
+  .cards{grid-template-columns:1fr;gap:26px}
+  .voices{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:24px}
+  .tbl-hint{display:block}
+  .footer{padding-bottom:28px}
+}
+
+/* スマホの表: 横スクロールをやめて積み上げ表示に */
+@media (max-width:640px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;padding:6px 0}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:2px 0}
+  table.gaiyo th{padding-top:10px}
+  table.gaiyo tr{border-bottom:1px dashed var(--line)}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PC: 左固定サイドバー -->
+<aside class="side">
+  <a class="logo" href="#top">
+    <svg class="mark" viewBox="0 0 52 52" aria-hidden="true">
+      <rect x="2" y="6" width="48" height="34" rx="3" fill="none" stroke="#F4F2E9" stroke-width="2"/>
+      <path d="M9 45c4-3 8-3 12 0M23 45c4-3 8-3 12 0" fill="none" stroke="#8FA394" stroke-width="2" stroke-linecap="round"/>
+      <path d="M11 30c5-8 13-9 18-6" fill="none" stroke="#F2D585" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M29 24l4-3 3 4" fill="none" stroke="#F2D585" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="26" cy="16" r="2.6" fill="#F2D585"/>
+    </svg>
+    <span class="t">名古屋教育支援センター<small>特定非営利活動法人｜名古屋市緑区</small></span>
+  </a>
+  <nav>
+    <a href="#creed">わたしたちの想い</a>
+    <a href="#support">できる支援</a>
+    <a href="#day">ある一日</a>
+    <a href="#voices">よせられた声</a>
+    <a href="#news">お知らせ</a>
+    <a href="#flow">ご相談の流れ</a>
+    <a href="#gaiyo">団体概要</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <div class="tel">
+    <p class="cap">まずはご相談を</p>
+    <!-- ※サンプル: 電話番号はダミー（発信されません） -->
+    <span class="num">052-000-0000</span>
+    <p>受付時間や番号は<br>公開時に差し替えます</p>
+  </div>
+  <a class="visit" href="#contact">相談してみる</a>
+</aside>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">名古屋教育支援センター<small>NPO法人｜名古屋市緑区</small></span>
+  <!-- ※サンプル: 電話番号はダミー（発信されません） -->
+  <a class="tel-ic" href="#contact">相談する</a>
+</header>
+<nav class="sp-nav">
+  <a href="#creed">わたしたちの想い</a>
+  <a href="#support">できる支援</a>
+  <a href="#day">ある一日</a>
+  <a href="#voices">よせられた声</a>
+  <a href="#news">お知らせ</a>
+  <a href="#flow">ご相談の流れ</a>
+  <a href="#gaiyo">団体概要</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<div class="main">
+
+  <!-- 冒頭ヒーロー -->
+  <section class="opening">
+    <div class="wrap">
+      <svg class="chalk-doodle" viewBox="0 0 120 80" aria-hidden="true">
+        <path d="M8 60c14-2 22-14 20-30M10 58l-6 4M10 58l7 3" fill="none" stroke="#F4F2E9" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+        <path d="M40 68c10-20 26-30 44-28" fill="none" stroke="#F2D585" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 6"/>
+        <path d="M84 40l4-6 5 5" fill="none" stroke="#F2D585" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="cap reveal on">名古屋市緑区・不登校／高校中退からの学びなおしを支えるNPO</p>
+      <h1 class="reveal on"><span class="kb">「もう一度」を、</span><span class="kb"><span class="uline">あなたのペース</span>で。</span></h1>
+      <p class="lead reveal on">学校に行けなくなっても、途中で立ち止まっても、そこから先の道はいくつもあります。名古屋教育支援センターは、教育支援と社会復帰の支援を通じて、一人ひとりの「またここから」に、静かに寄り添う場所です。</p>
+      <div class="chips reveal on">
+        <span class="chip"># まずはご相談ください</span>
+        <span class="chip"># 一人ひとりのペースで</span>
+        <span class="chip"># ご家族の相談も</span>
+      </div>
+      <div class="photo-strip reveal on">
+        <!-- 差し替えポイント: 学びの場・面談スペースなどのお写真（顔が特定されにくい構図を推奨） -->
+        <figure><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1100&q=80&auto=format&fit=crop" alt="本や学びのイメージ" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop" alt="対話・相談のイメージ" loading="lazy"></figure>
+        <figure><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80&auto=format&fit=crop" alt="ノートに書くイメージ" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- わたしたちの想い -->
+  <section class="block creed" id="creed">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Our Wish</span><h2>わたしたちの想い</h2></div>
+      <p class="big reveal"><span class="kb">歩みを止めた時間は、</span><span class="kb">立ち止まっただけで、</span><br><span class="kb"><em>終わりではありません。</em></span></p>
+      <p class="reveal">学校に行けない日が続くこと、進んだ道の途中で引き返すこと。それはけっして、その人が弱いからでも、努力が足りないからでもありません。わたしたちは、事情を問いただすことなく、いまの気持ちからそっとお話をうかがい、これからの学びと暮らしを、ご本人・ご家族と一緒に考えていきます。<span class="note-sample">※文章は定款の目的（公開情報）をもとにしたサンプルです。ご契約後に実際のお言葉へ差し替えます</span></p>
+    </div>
+  </section>
+
+  <!-- できる支援 -->
+  <section class="block" id="support">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Support</span><h2>できる支援</h2></div>
+      <p class="note-sample" style="margin-bottom:24px">※支援内容の具体は表示イメージのサンプルです。実際に行っている内容へ差し替えます</p>
+      <div class="cards">
+        <div class="card reveal">
+          <span class="no">SUPPORT 01</span>
+          <h3>教育支援</h3>
+          <p>「勉強しなさい」ではなく、まず「今日はどう過ごしたい？」から。基礎の学びなおしや、その人に合う学びの場さがしを、あせらず一緒に進めます。</p>
+          <ul>
+            <li>学びなおしのサポート</li>
+            <li>進路・学校さがしのご相談</li>
+            <li>高卒認定などの情報のご案内</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="no">SUPPORT 02</span>
+          <h3>社会復帰の支援</h3>
+          <p>「また人と関わるのがこわい」その気持ちも大切にしながら、小さな一歩から。安心できる居場所づくりと、次の場所へのつなぎを行います。</p>
+          <ul>
+            <li>安心して過ごせる居場所</li>
+            <li>少人数での交流の機会</li>
+            <li>就労・進学など次の一歩の相談</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="no">SUPPORT 03</span>
+          <h3>ご家族の相談</h3>
+          <p>悩んでいるのは、ご本人だけではありません。「どう接したらいいのか」というご家族のお気持ちにも、同じ目線で寄り添います。</p>
+          <ul>
+            <li>保護者の方のご相談</li>
+            <li>ご家庭でのかかわり方のヒント</li>
+            <li>必要に応じ関係機関のご案内</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <span class="no">SUPPORT 04</span>
+          <h3>広報・啓発</h3>
+          <p>不登校や高校中退は、特別なことではありません。地域のなかで、正しく知り、支え合える空気を育てるための発信を続けています。</p>
+          <ul>
+            <li>地域に向けた情報発信</li>
+            <li>学びなおしに関する啓発</li>
+            <li>支援の輪を広げる活動</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ある一日 -->
+  <section class="block" id="day">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">A Day</span><h2>ここでの、ある一日</h2></div>
+      <p class="note-sample" style="margin-bottom:22px">※時間・過ごし方は表示イメージのサンプルです。実際の様子へ差し替えます</p>
+      <ol class="day-list reveal">
+        <li><span class="time">10:00</span><h3>ゆっくり登所</h3><p>来られる時間に、来られる日に。「今日はここまで」で大丈夫です。</p></li>
+        <li><span class="time">10:30</span><h3>それぞれの学び</h3><p>教科書でも、好きなことでも。その日にやりたいことから始めます。</p></li>
+        <li><span class="time">12:00</span><h3>お昼・ひと休み</h3><p>話したい人は話し、そっとしていたい人はそっと。どちらも自由です。</p></li>
+        <li><span class="time">13:30</span><h3>交流・活動の時間</h3><p>少人数での対話や、季節の活動など。参加しない選択も尊重します。</p></li>
+        <li><span class="time">15:00</span><h3>ふりかえり・帰り</h3><p>「今日できたこと」をひとつ。小さな一歩を、一緒に確かめます。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- よせられた声 -->
+  <section class="block" id="voices">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Voices</span><h2>よせられた声</h2></div>
+      <p class="note-sample" style="margin-bottom:22px">※以下はすべて表示イメージのサンプルです。実際にいただいたお声へ差し替えます（掲載可否は必ず確認します）</p>
+      <div class="voices">
+        <!-- ※サンプル: 内容はダミーです -->
+        <div class="voice reveal"><div class="q">“</div><p>行けなくてもいい、と言ってもらえて、はじめて肩の力が抜けました。今は自分のペースで少しずつ勉強しています。</p><span class="who">— 利用された方（サンプル）</span></div>
+        <div class="voice reveal"><div class="q">“</div><p>家でどう声をかけていいか分からず悩んでいました。親の話もていねいに聞いてくださって、気持ちが楽になりました。</p><span class="who">— 保護者の方（サンプル）</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="block" id="news">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">News</span><h2>お知らせ</h2></div>
+      <p class="note-sample" style="margin-bottom:12px">※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p>
+      <div class="reveal">
+        <!-- ※サンプル: 日付・内容はダミーです -->
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">保護者向けの相談会（費用は※サンプル）を行います</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">見学・体験の受け付けについてのご案内</a></div>
+        <div class="news-row"><time>20XX.XX.XX</time><a href="#news">活動を支えてくださる方を募集しています</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ご相談の流れ -->
+  <section class="block" id="flow">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Flow</span><h2>ご相談の流れ</h2></div>
+      <ol class="flow-list reveal">
+        <li><h3>まずは、お問い合わせください</h3><p>「どうしたらいいか分からない」だけで大丈夫です。ご本人でも、ご家族からでも構いません。</p></li>
+        <li><h3>お話をうかがいます</h3><p>いまのお気持ちや、これからのことを、時間をかけてお聞きします。無理に話す必要はありません。</p></li>
+        <li><h3>一緒に考えます</h3><p>ご本人のペースを大切に、できそうなことから。急がず、一歩ずつ進めていきましょう。</p></li>
+      </ol>
+      <p class="support-line reveal"><b>活動を支えてくださる方も、お待ちしています。</b>　寄付・賛助会員・ボランティアなど、できることを、できる範囲で。子どもと若者の学びなおしを、地域みんなで支えていけたらと思います。</p>
+    </div>
+  </section>
+
+  <!-- 団体概要 -->
+  <section class="block" id="gaiyo">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Profile</span><h2>団体概要</h2></div>
+      <div class="tbl-wrap reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 名古屋教育支援センター</td></tr>
+          <tr><th>所在地</th><td>愛知県名古屋市緑区<span class="note-sample">（番地・建物名は公開時に記載します）</span></td></tr>
+          <tr><th>活動分野</th><td>子どもの健全育成</td></tr>
+          <tr><th>活動の目的</th><td>不登校・高校中退の方に対し、教育支援・社会復帰支援・広報活動を行う<span class="note-sample">（定款の目的｜公開情報）</span></td></tr>
+          <tr><th>電話</th><td><!-- ※サンプル: ダミー番号のため発信されません -->052-000-0000<span class="note-sample">（サンプル｜公開時に差し替えます）</span></td></tr>
+          <tr><th>代表者</th><td class="note-sample" style="color:var(--chalk-dim)">公開時に記載します</td></tr>
+          <tr><th>法人番号</th><td class="note-sample" style="color:var(--chalk-dim)">公開時に記載します</td></tr>
+        </table>
+      </div>
+      <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="block" id="contact" style="border-bottom:none">
+    <div class="wrap">
+      <div class="b-head reveal"><span class="en">Contact</span><h2>お問い合わせ</h2></div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="form-note">※これは動作サンプルのフォームです。実際には送信されません（本番では受信できる形にします）。</div>
+          <form class="demo-form" id="demoForm" novalidate>
+            <label for="f-name">お名前（ニックネームでも大丈夫です）</label>
+            <input type="text" id="f-name" name="name" placeholder="例：みどり" autocomplete="off">
+            <label for="f-contact">ご連絡先（メール など）</label>
+            <input type="text" id="f-contact" name="contact" placeholder="例：sample@example.com" autocomplete="off">
+            <label for="f-msg">ご相談ごと（書けるところまでで大丈夫です）</label>
+            <textarea id="f-msg" name="message" placeholder="どんなことでも構いません。今のお気持ちからお聞かせください。"></textarea>
+            <button type="submit">相談内容を送る（サンプル）</button>
+            <p class="form-msg" id="formMsg">これはサンプルのため送信されません。本番では、この内容がご担当者へ届きます。</p>
+          </form>
+        </div>
+        <div class="contact-side reveal">
+          <div class="tel-big">
+            <p class="cap">お電話でのご相談</p>
+            <!-- ※サンプル: ダミー番号のため発信されません -->
+            <span class="num">052-000-0000</span>
+            <p>「ホームページを見た」と<br>お伝えください（サンプル番号）</p>
+          </div>
+          <div class="map-full">
+            <!-- 区までの表示にとどめています（番地は非表示） -->
+            <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%B7%91%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市緑区の地図"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="f-name reveal">特定非営利活動法人 名古屋教育支援センター</p>
+      <p>愛知県名古屋市緑区｜活動分野：子どもの健全育成</p>
+      <p class="sample-note">本ページはホームページ制作の<strong style="color:var(--yellow-soft);font-weight:500">ご提案用サンプル</strong>です（写真はイメージ素材、電話番号はダミー、※印の内容はサンプルです）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のホームページ制作・公式LINE構築）</a></p>
+      <p style="margin-top:14px;font-size:11px">&copy; 2026 NPO法人 名古屋教育支援センター（サンプル）</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .side nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// デモフォーム: 送信せずメッセージを表示するだけ
+const form = document.getElementById("demoForm");
+if (form) {
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    document.getElementById("formMsg").style.display = "block";
+  });
+}
+
+// スクロールで浮かび上がる演出
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+
+<!-- 左下固定ピル（制作サンプル表示｜必須） -->
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none">制作サンプル｜スマートコネクト</a>
+</body>
+</html>

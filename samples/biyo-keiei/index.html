@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 名古屋美容経営者センター さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・分野・所在地）の
+    範囲で作成。所在地は区までの表記としています
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者名・番地・建物名・電話番号は掲載しておりません
+    （電話番号はダミー・tel:リンクは無効化しています）
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  ・デザイン: ミッドセンチュリー・レトロモダン（1950-60s）
+    マスタード×ティール×生成り×黒／幾何オーナメント
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 名古屋美容経営者センター｜美容技能の向上と社会人教育【ご提案サンプル】</title>
+<meta name="description" content="名古屋市緑区の特定非営利活動法人。社会人や各種団体に美容に関連する技能向上の事業を行い、社会人教育の推進に寄与します。講座・研修のご案内。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-cream:#F4EBD9;       /* 生成り 背景 */
+  --c-cream-deep:#EADFC6;
+  --c-paper:#FBF6EC;
+  --c-ink:#211F1C;         /* 黒 */
+  --c-ink-soft:#4A453D;
+  --c-mustard:#D89C2B;     /* マスタード */
+  --c-mustard-deep:#B27E1C;
+  --c-teal:#1F6E63;        /* ティール */
+  --c-teal-deep:#164F47;
+  --c-teal-pale:#DDE9E4;
+  --c-line:#D8CBB0;
+  --font-body:"Zen Kaku Gothic New",sans-serif;
+  --font-disp:"Shippori Mincho",serif;
+  --font-num:"Poppins",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-cream);color:var(--c-ink);line-height:1.95;font-size:15px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.6;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+a{color:inherit}
+
+/* ===== レトロな幾何背景オーナメント ===== */
+.orn{position:fixed;pointer-events:none;z-index:0;opacity:.5}
+.orn-1{top:-70px;right:-70px;width:260px;height:260px;border:22px solid var(--c-mustard);border-radius:50%;opacity:.14}
+.orn-2{bottom:8%;left:-60px;width:180px;height:180px;background:
+  radial-gradient(circle at 50% 50%, var(--c-teal) 0 22%, transparent 23%);opacity:.1}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:var(--c-cream);border-bottom:2px solid var(--c-ink)}
+.head-in{max-width:1080px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:44px;height:44px;flex:none}
+.brand .t{line-height:1.25}
+.brand .t b{display:block;font-family:var(--font-disp);font-weight:700;font-size:19px;letter-spacing:.04em}
+.brand .t small{display:block;font-size:10px;font-weight:500;color:var(--c-teal-deep);letter-spacing:.14em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:26px}
+.head nav a{text-decoration:none;font-size:13.5px;font-weight:500;letter-spacing:.03em;position:relative;padding:4px 0}
+.head nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--c-mustard);transition:right .3s var(--ease)}
+.head nav a:hover::after{right:0}
+.head .cta{background:var(--c-teal);color:var(--c-paper);text-decoration:none;font-weight:700;font-size:13px;padding:10px 20px;border-radius:999px;white-space:nowrap;transition:background .3s}
+.head .cta:hover{background:var(--c-teal-deep)}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:5.5px 0;transition:.3s}
+
+/* ===== コンテナ ===== */
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.block{padding:92px 0}
+.block.alt{background:var(--c-paper);border-top:2px solid var(--c-ink);border-bottom:2px solid var(--c-ink)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-mustard-deep);font-weight:500}
+
+/* セクション見出し */
+.b-head{margin-bottom:44px}
+.b-head .en{font-family:var(--font-num);font-size:12px;font-weight:600;letter-spacing:.28em;color:var(--c-mustard-deep);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.b-head .en::before{content:"";width:30px;height:2px;background:var(--c-mustard)}
+.b-head h2{font-family:var(--font-disp);font-weight:700;font-size:clamp(23px,3vw,32px);letter-spacing:.05em;margin-top:12px}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;overflow:hidden;background:var(--c-teal);color:var(--c-paper)}
+.hero-in{max-width:1080px;margin:0 auto;padding:78px 32px 88px;position:relative;z-index:2}
+.hero .ey{font-family:var(--font-num);font-size:12px;font-weight:600;letter-spacing:.26em;color:var(--c-mustard);text-transform:uppercase}
+.hero h1{font-family:var(--font-disp);font-weight:700;font-size:clamp(29px,4.6vw,50px);line-height:1.55;letter-spacing:.04em;margin:22px 0 26px}
+.hero h1 .hl{color:var(--c-mustard)}
+.hero .lead{max-width:600px;font-size:15.5px;line-height:2.05;color:#E7EEEB}
+.hero .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+.hero .chip{border:1.5px solid rgba(244,235,217,.55);border-radius:999px;font-size:12.5px;font-weight:500;padding:6px 16px;white-space:nowrap}
+.hero-arc{position:absolute;right:-90px;top:50%;transform:translateY(-50%);width:min(46%,460px);aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:8px solid var(--c-mustard);z-index:1}
+.hero-arc img{width:100%;height:100%;object-fit:cover}
+.hero-ring{position:absolute;left:36%;bottom:-120px;width:220px;height:220px;border:20px solid rgba(216,156,43,.35);border-radius:50%;z-index:0}
+
+/* ===== ミッション（定款目的） ===== */
+.mission{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.mission .big{font-family:var(--font-disp);font-weight:600;font-size:clamp(19px,2.5vw,25px);line-height:2;letter-spacing:.03em}
+.mission .big em{font-style:normal;color:var(--c-teal-deep);border-bottom:3px solid var(--c-mustard)}
+.mission p{margin-top:22px;font-size:14.5px;color:var(--c-ink-soft)}
+.mission-card{background:var(--c-cream);border:2px solid var(--c-ink);padding:0;position:relative}
+.mission-card .ttl{background:var(--c-ink);color:var(--c-cream);font-family:var(--font-num);font-size:11px;font-weight:600;letter-spacing:.2em;padding:10px 20px}
+.mission-card .body{padding:26px 24px 28px}
+.mission-card .body p{font-family:var(--font-disp);font-size:16px;line-height:1.95;color:var(--c-ink)}
+.mission-card .src{margin-top:16px;font-size:11px;color:var(--c-ink-soft)}
+
+/* ===== 事業（カード3列） ===== */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc{background:var(--c-cream);border:2px solid var(--c-ink);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:10px 10px 0 var(--c-mustard)}
+.svc .ph{aspect-ratio:5/4;overflow:hidden;border-bottom:2px solid var(--c-ink)}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.svc:hover .ph img{transform:scale(1.05)}
+.svc .in{padding:22px 22px 26px;flex:1}
+.svc .no{font-family:var(--font-num);font-size:11px;font-weight:600;letter-spacing:.22em;color:var(--c-mustard-deep)}
+.svc h3{font-family:var(--font-disp);font-weight:700;font-size:19px;margin:6px 0 10px;letter-spacing:.03em}
+.svc p{font-size:13.5px;color:var(--c-ink-soft);line-height:1.9}
+
+/* ===== 講座一覧（表） ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-mustard-deep);margin-top:8px}
+table.course{width:100%;min-width:560px;border-collapse:collapse;font-size:14px;background:var(--c-cream)}
+table.course th{background:var(--c-teal);color:var(--c-paper);font-weight:700;text-align:left;padding:13px 18px;font-size:13.5px;letter-spacing:.04em}
+table.course td{border:1px solid var(--c-line);padding:14px 18px;vertical-align:top}
+table.course tr:nth-child(even) td{background:var(--c-paper)}
+table.course td.nm{font-family:var(--font-disp);font-weight:700;color:var(--c-ink);white-space:nowrap}
+table.course td .tag{display:inline-block;background:var(--c-mustard);color:var(--c-ink);font-size:11px;font-weight:700;padding:2px 10px;border-radius:999px;margin-top:6px}
+
+/* ===== 数字（サンプル指標） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.stat{background:var(--c-teal);color:var(--c-paper);border:2px solid var(--c-ink);padding:30px 24px;text-align:center;position:relative}
+.stat .n{font-family:var(--font-num);font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1;color:var(--c-mustard)}
+.stat .n small{font-size:.42em;font-weight:600;margin-left:4px;color:var(--c-paper)}
+.stat .l{font-size:13px;margin-top:12px;letter-spacing:.04em}
+
+/* ===== 参加の流れ ===== */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:fl}
+.flow .st{background:var(--c-cream);border:2px solid var(--c-ink);padding:28px 24px;counter-increment:fl;position:relative}
+.flow .st::before{content:counter(fl,decimal-leading-zero);font-family:var(--font-num);font-weight:700;font-size:40px;color:var(--c-mustard);line-height:1;display:block;margin-bottom:12px}
+.flow .st h3{font-family:var(--font-disp);font-weight:700;font-size:17px;margin-bottom:8px;letter-spacing:.03em}
+.flow .st p{font-size:13.5px;color:var(--c-ink-soft)}
+
+/* ===== 概要表 ===== */
+table.gaiyo{width:100%;min-width:520px;border-collapse:collapse;font-size:14.5px;background:var(--c-cream)}
+table.gaiyo th{width:170px;text-align:left;font-weight:700;background:var(--c-cream-deep);border:1px solid var(--c-line);padding:14px 18px;white-space:nowrap;font-family:var(--font-disp)}
+table.gaiyo td{border:1px solid var(--c-line);padding:14px 18px}
+
+/* ===== お問い合わせ ===== */
+.contact{background:var(--c-ink);color:var(--c-cream);border:none}
+.contact .b-head h2{color:var(--c-cream)}
+.contact .b-head .en{color:var(--c-mustard)}
+.cont-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.cont-lead{font-size:15px;line-height:2.05;color:#E4DDCC}
+.tel-card{margin-top:26px;border:2px solid var(--c-mustard);padding:24px;text-align:center}
+.tel-card .cap{font-size:12.5px;font-weight:700;color:var(--c-mustard);letter-spacing:.06em}
+.tel-card .num{font-family:var(--font-num);font-size:30px;font-weight:700;color:var(--c-cream);margin:6px 0;letter-spacing:.02em}
+.tel-card .num a{text-decoration:none;pointer-events:none}
+.tel-card p{font-size:11.5px;color:#B4AD9C}
+form.demo{background:var(--c-cream);color:var(--c-ink);border:2px solid var(--c-mustard);padding:26px 24px}
+form.demo .fnote{font-size:11.5px;color:var(--c-mustard-deep);font-weight:500;margin-bottom:16px}
+form.demo label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+form.demo input,form.demo textarea{width:100%;border:1.5px solid var(--c-line);background:var(--c-paper);padding:11px 13px;font-family:inherit;font-size:14px;color:var(--c-ink)}
+form.demo textarea{min-height:96px;resize:vertical}
+form.demo button{margin-top:20px;width:100%;background:var(--c-teal);color:var(--c-paper);border:none;font-family:inherit;font-weight:700;font-size:15px;padding:14px;cursor:pointer;border-radius:2px;transition:background .3s}
+form.demo button:hover{background:var(--c-teal-deep)}
+
+/* ===== フッター ===== */
+.footer{background:var(--c-cream);border-top:2px solid var(--c-ink);padding:48px 0 34px;text-align:center;position:relative;z-index:1}
+.footer .pill{position:fixed;left:16px;bottom:16px;z-index:200;text-decoration:none;font-family:var(--font-num);font-size:10px;font-weight:600;letter-spacing:.1em;background:var(--c-ink);color:var(--c-cream);padding:5px 12px;border-radius:999px}
+.footer .f-name{font-family:var(--font-disp);font-weight:700;font-size:17px;letter-spacing:.04em}
+.footer .f-meta{font-size:12.5px;color:var(--c-ink-soft);margin-top:8px}
+.sample-note{font-size:11px;color:var(--c-mustard-deep);margin-top:20px;line-height:1.9}
+.sample-note a{color:var(--c-teal-deep);font-weight:700}
+.copy{margin-top:14px;font-size:11px;color:var(--c-ink-soft)}
+
+/* SPナビ */
+.sp-nav{display:none}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none}
+  .head .cta{display:none}
+  .menu-btn{display:block}
+  .head-in{padding:12px 20px}
+  .sp-nav{display:none;position:fixed;inset:71px 0 auto 0;background:var(--c-cream);border-bottom:2px solid var(--c-ink);padding:10px 22px 22px;z-index:99}
+  .menu-open .sp-nav{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav a{display:block;text-decoration:none;font-weight:500;font-size:15px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav .cta{display:block;margin-top:14px;background:var(--c-teal);color:var(--c-paper);text-align:center;border-radius:999px;padding:13px;border:none}
+  .wrap{padding:0 22px}
+  .block{padding:60px 0}
+  .hero-in{padding:52px 22px 60px}
+  .hero-arc{position:relative;right:auto;top:auto;transform:none;width:100%;max-width:320px;margin:34px auto 0}
+  .hero-ring{display:none}
+  .mission{grid-template-columns:1fr;gap:34px}
+  .grid3{grid-template-columns:1fr;gap:20px}
+  .stats{grid-template-columns:1fr;gap:16px}
+  .flow{grid-template-columns:1fr;gap:16px}
+  .cont-grid{grid-template-columns:1fr;gap:30px}
+  .tbl-hint{display:block}
+}
+@media (max-width:640px){
+  table.gaiyo{min-width:0;border:1px solid var(--c-line)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line);padding:9px 16px 3px;font-size:12px;background:var(--c-cream-deep)}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:4px 16px 12px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<span class="orn orn-1" aria-hidden="true"></span>
+<span class="orn orn-2" aria-hidden="true"></span>
+
+<!-- ヘッダー -->
+<header class="head" id="top">
+  <div class="head-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="6" fill="#211F1C"/>
+        <circle cx="22" cy="22" r="13" fill="none" stroke="#D89C2B" stroke-width="2.4"/>
+        <path d="M22 9v26M9 22h26" stroke="#1F6E63" stroke-width="2.4"/>
+        <circle cx="22" cy="22" r="4.4" fill="#D89C2B"/>
+      </svg>
+      <span class="t"><b>名古屋美容経営者センター</b><small>NPO法人｜BEAUTY EDUCATION</small></span>
+    </a>
+    <nav>
+      <a href="#mission">私たちの目的</a>
+      <a href="#service">事業内容</a>
+      <a href="#course">講座・研修</a>
+      <a href="#gaiyo">法人概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="cta" href="#contact">受講のご相談</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="sp-nav">
+    <a href="#mission">私たちの目的</a>
+    <a href="#service">事業内容</a>
+    <a href="#course">講座・研修</a>
+    <a href="#gaiyo">法人概要</a>
+    <a href="#contact">お問い合わせ</a>
+    <a class="cta" href="#contact">受講のご相談</a>
+  </nav>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-in">
+    <p class="ey">Nagoya Beauty Management Center</p>
+    <h1><span class="kb">美容の<span class="hl">技能</span>を、</span><span class="kb">まなびへ。</span><br><span class="kb">まなびを、</span><span class="kb">まちの<span class="hl">力</span>へ。</span></h1>
+    <p class="lead">名古屋市緑区を拠点に、社会人や各種団体に向けて、美容に関連する技能向上の事業を行うNPO法人です。学びの機会を通じて、社会人教育の推進に寄与します。</p>
+    <div class="chips">
+      <span class="chip">技能向上の講座・研修</span>
+      <span class="chip">社会人教育の推進</span>
+      <span class="chip">団体向けプログラム</span>
+    </div>
+  </div>
+  <div class="hero-arc" aria-hidden="true">
+    <!-- 差し替えポイント: 講座・技能研修の様子のお写真 -->
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80&auto=format&fit=crop" alt="美容技能の研修イメージ">
+  </div>
+  <span class="hero-ring" aria-hidden="true"></span>
+</section>
+
+<!-- ミッション（定款目的） -->
+<section class="block" id="mission">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Our Mission</span><h2>私たちの目的</h2></div>
+    <div class="mission">
+      <div class="reveal">
+        <p class="big"><span class="kb">美容に関わる<em>技能</em>を高め、</span><span class="kb">その学びを</span><span class="kb"><em>社会人教育</em>の</span><span class="kb">推進へとつなげる。</span></p>
+        <p>技術は、身につけて終わりではありません。学び続ける人が増え、その学びが人から人へと受け継がれていくことで、まちの美容文化そのものが育っていきます。私たちは、社会人や各種団体が新しい技能に出会える場をつくり、学びの循環を支えます。<span class="note-sample">※本文は定款目的（公開情報）をもとにしたサンプルです</span></p>
+      </div>
+      <div class="mission-card reveal">
+        <div class="ttl">MISSION / 定款に定める目的</div>
+        <div class="body">
+          <p>「社会人や各種団体に対して美容に関連する技能向上の事業を行い、社会人教育の推進に寄与する」</p>
+          <p class="src">出典: NPO法人ポータルの公開情報（定款目的）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 事業内容 -->
+<section class="block alt" id="service">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Service</span><h2>事業内容</h2></div>
+    <div class="grid3">
+      <div class="svc reveal">
+        <div class="ph"><!-- 差し替えポイント: 技能講習の様子 -->
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=900&q=80&auto=format&fit=crop" alt="技能講座のイメージ"></div>
+        <div class="in">
+          <span class="no">SERVICE 01</span>
+          <h3>技能向上の講座</h3>
+          <p>美容に関連する技能の習得・向上を目的とした講座を開きます。基礎から実践まで、学びたい段階に合わせてご参加いただけます。</p>
+        </div>
+      </div>
+      <div class="svc reveal">
+        <div class="ph"><!-- 差し替えポイント: 研修・セミナーの様子 -->
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&auto=format&fit=crop" alt="団体向け研修のイメージ"></div>
+        <div class="in">
+          <span class="no">SERVICE 02</span>
+          <h3>団体向け研修</h3>
+          <p>各種団体からのご依頼に応じ、目的に合わせた研修プログラムをご提供します。人材育成・社会人教育の一助となる内容を組み立てます。</p>
+        </div>
+      </div>
+      <div class="svc reveal">
+        <div class="ph"><!-- 差し替えポイント: 交流・普及活動の様子 -->
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=900&q=80&auto=format&fit=crop" alt="普及・啓発活動のイメージ"></div>
+        <div class="in">
+          <span class="no">SERVICE 03</span>
+          <h3>普及・啓発</h3>
+          <p>美容に関する知識や技能を広く社会へ伝える活動を行います。学びのきっかけを増やし、社会人教育の推進へつなげます。</p>
+        </div>
+      </div>
+    </div>
+    <p class="note-sample" style="margin-top:22px">※事業の区分・内容は定款目的（公開情報）にもとづく構成例です。実際の事業内容に差し替えます</p>
+  </div>
+</section>
+
+<!-- 講座・研修 -->
+<section class="block" id="course">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Courses</span><h2>講座・研修のご案内</h2></div>
+    <p class="note-sample" style="margin-bottom:20px">※以下の講座名・区分・時間は表示イメージのサンプルです。実際のカリキュラムに差し替えます</p>
+    <div class="tbl-wrap reveal">
+      <!-- ※サンプル: 講座内容はダミーです -->
+      <table class="course">
+        <tr><th>講座・研修</th><th>対象</th><th>ねらい</th></tr>
+        <tr>
+          <td class="nm">技能基礎講座<span class="tag">はじめて</span></td>
+          <td>これから学びたい社会人の方</td>
+          <td>美容に関する基礎的な技能と考え方を、順を追って身につけます。</td>
+        </tr>
+        <tr>
+          <td class="nm">実践ステップアップ<span class="tag">経験者</span></td>
+          <td>技能をさらに高めたい方</td>
+          <td>現場で活きる応用技術を、実習を中心に磨きます。</td>
+        </tr>
+        <tr>
+          <td class="nm">団体向け出張研修<span class="tag">団体</span></td>
+          <td>各種団体・グループ</td>
+          <td>ご依頼の目的に合わせ、内容と日程を組み立ててお届けします。</td>
+        </tr>
+        <tr>
+          <td class="nm">公開セミナー<span class="tag">どなたでも</span></td>
+          <td>関心のある社会人の方</td>
+          <td>美容と社会人教育をテーマに、学びのきっかけをつくります。</td>
+        </tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+
+    <!-- サンプル指標 -->
+    <div class="stats reveal" style="margin-top:44px">
+      <!-- ※サンプル: 数値はすべてダミーです -->
+      <div class="stat"><div class="n">XX<small>講座</small></div><div class="l">年間の開講講座（サンプル）</div></div>
+      <div class="stat"><div class="n">XXX<small>名</small></div><div class="l">のべ受講者数（サンプル）</div></div>
+      <div class="stat"><div class="n">XX<small>団体</small></div><div class="l">研修のご依頼団体（サンプル）</div></div>
+    </div>
+    <p class="note-sample" style="margin-top:16px">※上記の数値はすべて表示イメージのダミーです。実績値に差し替えます</p>
+  </div>
+</section>
+
+<!-- 参加の流れ -->
+<section class="block alt" id="flow">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Flow</span><h2>受講までの流れ</h2></div>
+    <div class="flow reveal">
+      <div class="st"><h3>お問い合わせ</h3><p>ご関心のある講座や、団体研修のご要望をお気軽にお知らせください。</p></div>
+      <div class="st"><h3>内容のご相談</h3><p>目的やご経験に合わせて、おすすめの講座・日程をご案内します。</p></div>
+      <div class="st"><h3>お申し込み・受講</h3><p>お申し込み後、当日は手ぶらで学べるようご案内します。<span class="note-sample">※流れは構成例です</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="block" id="gaiyo">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Profile</span><h2>法人概要</h2></div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 名古屋美容経営者センター</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市緑区<span class="note-sample">（詳細な番地・建物名は公開時に記載します）</span></td></tr>
+        <tr><th>活動分野</th><td>保健・医療または福祉の増進／社会教育の推進／学術・文化・芸術またはスポーツの振興</td></tr>
+        <tr><th>目的</th><td>社会人や各種団体に対して美容に関連する技能向上の事業を行い、社会人教育の推進に寄与すること</td></tr>
+        <tr><th>電話</th><td>052-XXX-XXXX <span class="note-sample">（※サンプル・ダミー番号です）</span></td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample" style="margin-top:16px">※所在地は区までの表記としています。連絡先は公開情報の範囲で公開時に記載します</p>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="block contact" id="contact">
+  <div class="wrap">
+    <div class="b-head reveal"><span class="en">Contact</span><h2>お問い合わせ</h2></div>
+    <div class="cont-grid">
+      <div class="reveal">
+        <p class="cont-lead">講座の受講、団体研修のご依頼、活動へのご協力など、どうぞお気軽にお問い合わせください。「ホームページを見た」とお伝えいただけますと、ご案内がスムーズです。</p>
+        <div class="tel-card">
+          <p class="cap">お電話でのお問い合わせ</p>
+          <p class="num"><a href="#contact">052-XXX-XXXX</a></p>
+          <p>※サンプルのダミー番号です（発信されません）</p>
+        </div>
+      </div>
+      <form class="demo reveal" onsubmit="return false" aria-label="お問い合わせフォーム（サンプル）">
+        <p class="fnote">※これは表示サンプルです。送信は行われません（デモ動作）</p>
+        <label for="f-name">お名前・団体名</label>
+        <input id="f-name" type="text" placeholder="例）名古屋 花子" autocomplete="off">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="email" placeholder="例）info@example.com" autocomplete="off">
+        <label for="f-msg">ご相談内容</label>
+        <textarea id="f-msg" placeholder="ご希望の講座や、研修のご要望をご記入ください"></textarea>
+        <button type="submit">送信する（サンプル）</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 名古屋美容経営者センター</p>
+    <p class="f-meta">愛知県名古屋市緑区｜美容に関連する技能向上・社会人教育の推進</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容・数値・連絡先はダミー）。<br>所在地は区まで／代表者名・電話番号は掲載しておりません。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+    <p class="copy">&copy; 2026 NPO法人 名古屋美容経営者センター（サンプル）</p>
+  </div>
+  <a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">制作サンプル｜スマートコネクト</a>
+</footer>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>

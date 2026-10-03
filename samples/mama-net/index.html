@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 NPOママネット さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの定款目的・所在地・活動分野）の
+    範囲で作成。代表者氏名・番地・建物名は記載していません
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（差し替え前提）
+  ・電話番号はダミー・tel:リンク無効・自動電話検出オフ
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>NPO法人 NPOママネット｜西尾市・女性のネットワークでつなぐ地域【ご提案サンプル】</title>
+<meta name="description" content="西尾市を拠点に、環境保全・男女共同参画・中間支援に取り組むNPO法人。女性のネットワークを活かし、地域の課題を社会とつなげて解決します。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#FFFCF8;
+  --c-paper:#FFFFFF;
+  --c-ink:#4A4550;
+  --c-ink-soft:#7A7382;
+  /* 珊瑚 × 藤 × 若草 のやわらかな多色 */
+  --c-coral:#F08A7E;
+  --c-coral-deep:#E06B5E;
+  --c-coral-pale:#FDECE8;
+  --c-wist:#A99BD1;
+  --c-wist-deep:#8776BE;
+  --c-wist-pale:#EFEAF7;
+  --c-grass:#8FC08A;
+  --c-grass-deep:#6BA267;
+  --c-grass-pale:#EAF4E8;
+  --c-line:#EDE7E0;
+  --font-body:"Zen Kaku Gothic New",sans-serif;
+  --font-round:"Zen Maru Gothic",sans-serif;
+  --font-disp:"Fraunces",serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--c-bg);color:var(--c-ink);line-height:2;font-size:15.5px;font-feature-settings:"palt";overflow-wrap:break-word;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--font-round);font-weight:700;line-height:1.6;word-break:auto-phrase}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== ヘッダー ===== */
+.head{position:sticky;top:0;z-index:100;background:rgba(255,252,248,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-line)}
+.head-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:12px 26px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--c-ink)}
+.brand .mark{width:42px;height:42px;flex:none}
+.brand .t{font-family:var(--font-round);font-weight:700;font-size:19px;letter-spacing:.02em;line-height:1.2}
+.brand .t small{display:block;font-size:10.5px;font-weight:500;color:var(--c-wist-deep);letter-spacing:.04em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:4px;align-items:center}
+.head nav a{text-decoration:none;font-size:13.5px;font-weight:500;padding:8px 12px;border-radius:999px;transition:background .3s var(--ease),color .3s var(--ease)}
+.head nav a:hover{background:var(--c-coral-pale);color:var(--c-coral-deep)}
+.head .cta{margin-left:6px;background:var(--c-coral);color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;padding:10px 20px;border-radius:999px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);box-shadow:0 6px 16px rgba(224,107,94,.28)}
+.head .cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(224,107,94,.34)}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--c-ink);margin:5.5px 0;border-radius:2px;transition:.3s}
+.sp-nav{display:none}
+
+/* ===== 帯・リボン（流線型）背景 ===== */
+.ribbon-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#FFF6F1 0%,#FBF3FA 52%,#F1F8EF 100%)}
+.hero-in{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:78px 26px 92px;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-round);font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--c-wist-deep);background:#fff;border:1px solid var(--c-wist-pale);padding:7px 15px;border-radius:999px;box-shadow:0 4px 14px rgba(135,118,190,.12)}
+.hero .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--c-coral)}
+.hero h1{margin-top:22px;font-size:clamp(28px,4.2vw,46px);line-height:1.5;letter-spacing:.02em}
+.hero h1 .fade{background:linear-gradient(90deg,var(--c-coral-deep),var(--c-wist-deep) 60%,var(--c-grass-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin-top:22px;font-size:15.5px;max-width:500px;color:var(--c-ink)}
+.hero .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.hero .btns a{text-decoration:none;font-family:var(--font-round);font-weight:700;font-size:14.5px;padding:14px 26px;border-radius:999px;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.hero .btns .p{background:var(--c-coral);color:#fff;box-shadow:0 8px 20px rgba(224,107,94,.3)}
+.hero .btns .p:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(224,107,94,.36)}
+.hero .btns .s{background:#fff;color:var(--c-wist-deep);border:1.5px solid var(--c-wist);box-shadow:0 6px 16px rgba(135,118,190,.14)}
+.hero .btns .s:hover{transform:translateY(-2px)}
+.hero-art{position:relative}
+.hero-art .frame{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 22px 50px rgba(120,100,140,.2);aspect-ratio:4/5}
+.hero-art .frame img{width:100%;height:100%;object-fit:cover}
+.hero-art .badge{position:absolute;left:-18px;bottom:26px;background:#fff;border-radius:18px;padding:14px 20px;box-shadow:0 14px 30px rgba(120,100,140,.22);display:flex;align-items:center;gap:12px}
+.hero-art .badge .ic{width:38px;height:38px;border-radius:50%;background:var(--c-grass-pale);display:flex;align-items:center;justify-content:center;flex:none}
+.hero-art .badge .tx{font-family:var(--font-round);font-weight:700;font-size:13px;line-height:1.4}
+.hero-art .badge .tx small{display:block;font-weight:500;font-size:11px;color:var(--c-ink-soft)}
+
+/* ===== 分野チップ帯 ===== */
+.fields{max-width:1120px;margin:0 auto;padding:0 26px;transform:translateY(-30px)}
+.fields-in{background:#fff;border:1px solid var(--c-line);border-radius:20px;box-shadow:0 12px 34px rgba(120,100,140,.1);padding:24px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:5}
+.field{display:flex;gap:14px;align-items:flex-start}
+.field .n{font-family:var(--font-disp);font-size:26px;font-weight:600;line-height:1;flex:none}
+.field:nth-child(1) .n{color:var(--c-coral)}
+.field:nth-child(2) .n{color:var(--c-wist)}
+.field:nth-child(3) .n{color:var(--c-grass-deep)}
+.field h3{font-size:15.5px;margin-bottom:2px}
+.field p{font-size:12.5px;color:var(--c-ink-soft);line-height:1.8}
+
+/* ===== 共通ブロック ===== */
+.block{position:relative;max-width:1120px;margin:0 auto;padding:76px 26px}
+.b-head{text-align:center;margin-bottom:46px}
+.b-head .en{font-family:var(--font-disp);font-size:13px;font-style:italic;letter-spacing:.1em;color:var(--c-wist)}
+.b-head h2{font-size:clamp(23px,3vw,32px);margin-top:6px;letter-spacing:.03em}
+.b-head p{font-size:14px;color:var(--c-ink-soft);margin-top:12px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--c-ink-soft)}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-hint{display:none;font-size:11px;color:var(--c-ink-soft);margin-top:6px}
+
+/* ===== わたしたち（つながりの図＋文） ===== */
+.about{position:relative;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;position:relative;z-index:2}
+.about-txt .big{font-family:var(--font-round);font-size:clamp(19px,2.5vw,25px);font-weight:700;line-height:1.9;margin-bottom:20px}
+.about-txt .big em{font-style:normal;background:linear-gradient(transparent 62%,var(--c-coral-pale) 62%)}
+.about-txt p{font-size:15px}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.about-photos img{width:100%;border-radius:18px;object-fit:cover;box-shadow:0 10px 26px rgba(120,100,140,.14)}
+.about-photos img:nth-child(1){aspect-ratio:3/4;grid-row:span 2}
+.about-photos img:nth-child(2){aspect-ratio:4/3}
+.about-photos img:nth-child(3){aspect-ratio:4/3}
+
+/* ===== 活動（帯レイアウト） ===== */
+.acts{display:flex;flex-direction:column;gap:22px}
+.act{display:grid;grid-template-columns:200px 1fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--c-line);border-radius:22px;padding:22px;box-shadow:0 10px 28px rgba(120,100,140,.08);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.act:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(120,100,140,.14)}
+.act .ph{border-radius:16px;overflow:hidden;aspect-ratio:1/1}
+.act .ph img{width:100%;height:100%;object-fit:cover}
+.act .tag{display:inline-block;font-family:var(--font-round);font-weight:700;font-size:11.5px;padding:4px 13px;border-radius:999px;margin-bottom:10px}
+.act:nth-child(3n+1) .tag{background:var(--c-coral-pale);color:var(--c-coral-deep)}
+.act:nth-child(3n+2) .tag{background:var(--c-wist-pale);color:var(--c-wist-deep)}
+.act:nth-child(3n+3) .tag{background:var(--c-grass-pale);color:var(--c-grass-deep)}
+.act h3{font-size:19px;margin-bottom:8px}
+.act p{font-size:14px;color:var(--c-ink)}
+
+/* ===== つながりの流れ（ネットワーク図） ===== */
+.net{position:relative;overflow:hidden;background:linear-gradient(180deg,#FBF3FA,#FFF6F1)}
+.net-in{position:relative;z-index:2;max-width:1120px;margin:0 auto;padding:76px 26px}
+.net-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+.net-card{background:#fff;border-radius:20px;padding:30px 26px;text-align:center;box-shadow:0 12px 30px rgba(120,100,140,.1)}
+.net-card .ic{width:64px;height:64px;margin:0 auto 16px}
+.net-card h3{font-size:17px;margin-bottom:8px}
+.net-card p{font-size:13.5px;color:var(--c-ink-soft);line-height:1.9}
+
+/* ===== 数字（※サンプル） ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.stat{background:#fff;border:1px solid var(--c-line);border-radius:20px;padding:30px 20px;text-align:center;box-shadow:0 10px 26px rgba(120,100,140,.08)}
+.stat .num{font-family:var(--font-disp);font-size:clamp(34px,5vw,50px);font-weight:600;line-height:1}
+.stat:nth-child(1) .num{color:var(--c-coral)}
+.stat:nth-child(2) .num{color:var(--c-wist-deep)}
+.stat:nth-child(3) .num{color:var(--c-grass-deep)}
+.stat .lb{font-size:13px;font-weight:500;margin-top:12px}
+
+/* ===== お知らせ ===== */
+.news-row{display:flex;gap:18px;padding:16px 4px;border-bottom:1px dotted var(--c-line);align-items:baseline;font-size:14px}
+.news-row time{flex:none;font-family:var(--font-disp);font-weight:500;color:var(--c-ink-soft);font-size:12.5px}
+.news-row .cat{flex:none;font-family:var(--font-round);font-size:11px;font-weight:700;padding:2px 11px;border-radius:999px;background:var(--c-grass-pale);color:var(--c-grass-deep)}
+.news-row a{text-decoration:underline;text-decoration-color:var(--c-line);text-underline-offset:4px}
+
+/* ===== 参加・応援 ===== */
+.join{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.join-card{border-radius:22px;padding:32px 26px;color:#fff;position:relative;overflow:hidden}
+.join-card:nth-child(1){background:linear-gradient(150deg,var(--c-coral),var(--c-coral-deep))}
+.join-card:nth-child(2){background:linear-gradient(150deg,var(--c-wist),var(--c-wist-deep))}
+.join-card:nth-child(3){background:linear-gradient(150deg,var(--c-grass),var(--c-grass-deep))}
+.join-card h3{color:#fff;font-size:19px;margin-bottom:10px}
+.join-card p{font-size:13.5px;line-height:1.9;opacity:.96}
+
+/* ===== 概要表 ===== */
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:#fff;border-radius:14px;overflow:hidden}
+table.gaiyo th{width:150px;text-align:left;font-weight:700;font-family:var(--font-round);background:var(--c-wist-pale);border:1px solid var(--c-line);padding:12px 18px;white-space:nowrap}
+table.gaiyo td{border:1px solid var(--c-line);padding:12px 18px}
+
+/* ===== お問い合わせCTA ===== */
+.contact{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(150deg,#FFF1EC 0%,#F3ECFA 55%,#EDF6EB 100%);padding:56px 40px;text-align:center;box-shadow:0 18px 44px rgba(120,100,140,.12)}
+.contact h2{font-size:clamp(22px,3vw,30px)}
+.contact p{font-size:14.5px;color:var(--c-ink);margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto}
+.contact .tel-big{margin-top:26px;display:inline-block;background:#fff;border-radius:20px;padding:22px 40px;box-shadow:0 10px 26px rgba(120,100,140,.14)}
+.contact .tel-big .cap{font-size:12.5px;font-weight:700;color:var(--c-coral-deep)}
+.contact .tel-big a{font-family:var(--font-disp);font-size:clamp(26px,4vw,36px);font-weight:600;color:var(--c-ink);text-decoration:none;letter-spacing:.02em;pointer-events:none}
+.contact .tel-big p{font-size:11.5px;color:var(--c-ink-soft);margin-top:2px}
+
+/* ===== デモフォーム ===== */
+.form{max-width:560px;margin:34px auto 0;text-align:left;background:#fff;border-radius:22px;padding:30px;box-shadow:0 12px 30px rgba(120,100,140,.1)}
+.form label{display:block;font-size:13px;font-weight:700;font-family:var(--font-round);margin:0 0 6px}
+.form input,.form textarea{width:100%;border:1.5px solid var(--c-line);border-radius:12px;padding:12px 14px;font-family:inherit;font-size:14.5px;margin-bottom:16px;background:var(--c-bg);color:var(--c-ink)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--c-wist)}
+.form button{width:100%;background:var(--c-coral);color:#fff;border:none;border-radius:999px;font-family:var(--font-round);font-weight:700;font-size:15px;padding:15px;cursor:pointer;transition:transform .3s var(--ease)}
+.form button:hover{transform:translateY(-2px)}
+.form .demo-note{font-size:11.5px;color:var(--c-ink-soft);text-align:center;margin-top:12px}
+
+/* ===== フッター ===== */
+.footer{margin-top:70px;background:#4A4550;color:#EFEAF7;padding:52px 26px 34px;text-align:center}
+.footer .f-name{font-family:var(--font-round);font-weight:700;font-size:17px;color:#fff}
+.footer .f-meta{font-size:12.5px;color:#C7BFD1;margin-top:8px}
+.sample-note{font-size:11px;color:#B7AEC2;margin-top:22px;line-height:1.9;max-width:640px;margin-left:auto;margin-right:auto}
+.sample-note a{color:#EAD8D4}
+.footer .copy{font-size:11px;color:#9C93A8;margin-top:16px}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none}
+  .head .cta{display:none}
+  .menu-btn{display:block}
+  .sp-nav{display:none;position:fixed;inset:64px 0 auto 0;background:#fff;border-bottom:2px solid var(--c-line);padding:12px 22px 20px;z-index:99;box-shadow:0 14px 30px rgba(120,100,140,.14)}
+  .menu-open .sp-nav{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .sp-nav a{display:block;text-decoration:none;font-weight:500;font-size:15.5px;padding:13px 4px;border-bottom:1px solid var(--c-line)}
+  .sp-nav a:last-child{border-bottom:none}
+  .hero-in{grid-template-columns:1fr;gap:34px;padding:52px 22px 72px}
+  .hero-art{max-width:400px}
+  .about-grid{grid-template-columns:1fr;gap:30px}
+  .act{grid-template-columns:1fr;gap:16px}
+  .act .ph{aspect-ratio:16/9}
+  .fields-in{grid-template-columns:1fr;gap:16px}
+  .net-steps,.stats,.join{grid-template-columns:1fr}
+  .block{padding:56px 22px}
+  .contact{padding:44px 24px}
+  .tbl-hint{display:block}
+}
+@media (max-width:720px){
+  table.gaiyo{min-width:0}
+  table.gaiyo tr{display:block;border-bottom:1px solid var(--c-line)}
+  table.gaiyo tr:last-child{border-bottom:none}
+  table.gaiyo th,table.gaiyo td{display:block;width:100%;border:none;padding:9px 16px}
+  table.gaiyo th{background:var(--c-wist-pale);font-size:12.5px;padding-bottom:4px}
+  table.gaiyo td{padding-top:2px}
+  .tbl-hint{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ヘッダー -->
+<header class="head">
+  <div class="head-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="21" fill="#FDECE8"/>
+        <path d="M6 26c6-5 10 5 16 0s10-5 16 0" fill="none" stroke="#F08A7E" stroke-width="3" stroke-linecap="round"/>
+        <path d="M6 20c6-5 10 5 16 0s10-5 16 0" fill="none" stroke="#A99BD1" stroke-width="3" stroke-linecap="round"/>
+        <path d="M6 32c6-5 10 5 16 0s10-5 16 0" fill="none" stroke="#8FC08A" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="t">NPOママネット<small>特定非営利活動法人｜愛知県西尾市</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="#about">わたしたち</a>
+      <a href="#activity">活動</a>
+      <a href="#network">つながり</a>
+      <a href="#news">お知らせ</a>
+      <a href="#join">参加・応援</a>
+      <a href="#contact" class="cta">お問い合わせ</a>
+    </nav>
+  </div>
+  <nav class="sp-nav">
+    <a href="#about">わたしたち</a>
+    <a href="#activity">活動</a>
+    <a href="#network">つながり</a>
+    <a href="#news">お知らせ</a>
+    <a href="#join">参加・応援</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ヒーロー（うねる帯・リボンが横断） -->
+<section class="hero">
+  <svg class="ribbon-bg" viewBox="0 0 1440 720" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-100,180 C300,60 560,300 900,200 C1200,110 1360,260 1600,180" fill="none" stroke="#F08A7E" stroke-width="60" stroke-linecap="round" opacity=".16"/>
+    <path d="M-100,320 C260,200 620,440 980,320 C1260,225 1420,400 1600,320" fill="none" stroke="#A99BD1" stroke-width="70" stroke-linecap="round" opacity=".18"/>
+    <path d="M-100,480 C320,360 560,600 940,480 C1220,390 1400,560 1600,480" fill="none" stroke="#8FC08A" stroke-width="56" stroke-linecap="round" opacity=".16"/>
+  </svg>
+  <div class="hero-in">
+    <div class="hero-txt">
+      <span class="eyebrow reveal on"><span class="dot"></span>愛知県西尾市｜環境保全・男女共同参画・中間支援</span>
+      <h1 class="reveal on"><span class="kb">女性の</span><span class="kb"><span class="fade">ネットワーク</span>で、</span><br><span class="kb">地域の課題を</span><span class="kb">社会とつなぐ。</span></h1>
+      <p class="lead reveal on">NPOママネットは、西尾市を拠点に活動するNPO法人です。環境・教育・福祉などの身近な課題を、女性ならではのつながりを活かして社会と結びつけ、一つひとつ解決へと取り組んでいます。</p>
+      <div class="btns reveal on">
+        <a class="p" href="#activity">活動を見る</a>
+        <a class="s" href="#join">参加・応援する</a>
+      </div>
+    </div>
+    <div class="hero-art reveal on">
+      <div class="frame">
+        <!-- 差し替えポイント: 活動風景・メンバーのお写真（顔が特定されにくい構図で） -->
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&auto=format&fit=crop" alt="女性たちが手を重ねてつながるイメージ">
+      </div>
+      <div class="badge">
+        <span class="ic" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6BA267" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg>
+        </span>
+        <span class="tx">つながりで、まちを元気に<small>環境・共同参画・中間支援</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 分野チップ -->
+<div class="fields">
+  <div class="fields-in reveal">
+    <div class="field"><span class="n">01</span><div><h3>環境保全</h3><p>暮らしの中からできる環境活動を、地域の輪で広げます。</p></div></div>
+    <div class="field"><span class="n">02</span><div><h3>男女共同参画</h3><p>女性が力を発揮できる、多様なつながりの場をつくります。</p></div></div>
+    <div class="field"><span class="n">03</span><div><h3>中間支援</h3><p>人・団体・地域をつなぎ、活動と活動を結びます。</p></div></div>
+  </div>
+</div>
+
+<!-- わたしたち -->
+<section class="block about" id="about">
+  <div class="b-head reveal"><span class="en">About us</span><h2>わたしたちのこと</h2></div>
+  <div class="about-grid">
+    <div class="about-txt reveal">
+      <p class="big"><span class="kb">身近な課題を、</span><span class="kb"><em>女性のネットワーク</em>で</span><br><span class="kb">社会と結び、</span><span class="kb">解決へ。</span></p>
+      <p>NPOママネットは、環境・教育・福祉などの地域の問題を、女性のネットワークを使って社会と結びつけ、その解決に取り組むことを目的とするNPO法人です。一人では難しいことも、つながることで動き出す——そんな「つながりの力」を、西尾市とその周辺で育てています。<span class="note-sample">※文章は定款（公開情報）をもとにしたサンプルです</span></p>
+    </div>
+    <div class="about-photos reveal">
+      <!-- 差し替えポイント: 活動・地域・つながりのお写真 -->
+      <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800&q=80&auto=format&fit=crop" alt="話し合う人たちのイメージ">
+      <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&q=80&auto=format&fit=crop" alt="ノートに書き込むイメージ">
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80&auto=format&fit=crop" alt="集う人たちのイメージ">
+    </div>
+  </div>
+</section>
+
+<!-- 活動 -->
+<section class="block" id="activity">
+  <div class="b-head reveal"><span class="en">Activities</span><h2>おもな活動</h2><p>※活動の具体例は表示イメージのサンプルです。実際の活動内容に差し替えます</p></div>
+  <div class="acts">
+    <!-- ※サンプル: 以下の活動タイトル・説明はダミーです -->
+    <div class="act reveal">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80&auto=format&fit=crop" alt="植物と手のイメージ"></div>
+      <div>
+        <span class="tag">環境保全</span>
+        <h3>暮らしから広げる環境の輪</h3>
+        <p>ごみの減量や自然に親しむ機会づくりなど、毎日の暮らしからできる環境活動を、地域のみなさんと一緒に進めます。子どもも大人も参加できる、身近な取り組みです。</p>
+      </div>
+    </div>
+    <div class="act reveal">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=800&q=80&auto=format&fit=crop" alt="女性たちが語り合うイメージ"></div>
+      <div>
+        <span class="tag">男女共同参画</span>
+        <h3>女性がつながり、力を発揮する場</h3>
+        <p>子育て・仕事・地域活動——立場のちがう女性たちが出会い、学び合う場をつくります。一人ひとりの「やってみたい」を、ネットワークの力で後押しします。</p>
+      </div>
+    </div>
+    <div class="act reveal">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&auto=format&fit=crop" alt="複数人で協力するイメージ"></div>
+      <div>
+        <span class="tag">中間支援</span>
+        <h3>人と団体、活動と活動をつなぐ</h3>
+        <p>地域で活動する人や団体どうしをつなぎ、情報や困りごとを共有できる橋渡し役をめざします。それぞれの活動が響き合うことで、まち全体の力を大きくしていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- つながりの流れ -->
+<section class="net" id="network">
+  <div class="net-in">
+    <div class="b-head reveal"><span class="en">Network</span><h2>つながりが、力になる</h2><p>小さな声を、地域と社会へ届けるまで</p></div>
+    <div class="net-steps">
+      <div class="net-card reveal">
+        <svg class="ic" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#FDECE8"/><circle cx="32" cy="26" r="8" fill="#F08A7E"/><path d="M18 46c2-8 26-8 28 0" fill="#F08A7E"/></svg>
+        <h3>1. 出会う</h3>
+        <p>暮らしの中の「困った」「やってみたい」を持つ人が、集いの場で出会います。</p>
+      </div>
+      <div class="net-card reveal">
+        <svg class="ic" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#EFEAF7"/><circle cx="22" cy="28" r="6" fill="#A99BD1"/><circle cx="42" cy="28" r="6" fill="#A99BD1"/><path d="M28 28h8" stroke="#8776BE" stroke-width="3" stroke-linecap="round"/><path d="M14 44c1-6 15-6 16 0M34 44c1-6 15-6 16 0" fill="#A99BD1"/></svg>
+        <h3>2. つながる</h3>
+        <p>人と人、団体と団体がつながり、知恵と力を持ち寄って動き出します。</p>
+      </div>
+      <div class="net-card reveal">
+        <svg class="ic" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#EAF4E8"/><path d="M20 34l8 8 16-18" stroke="#6BA267" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <h3>3. 社会へ届く</h3>
+        <p>つながりが課題を社会と結びつけ、一つひとつの解決へとつながっていきます。</p>
+      </div>
+    </div>
+
+    <div class="b-head reveal" style="margin-top:60px"><span class="en">Our steps</span><h2>これまでの歩み<span class="note-sample" style="display:block;font-weight:400;margin-top:6px">※数値は表示イメージのサンプルです</span></h2></div>
+    <div class="stats">
+      <!-- ※サンプル: 数値はダミーです -->
+      <div class="stat reveal"><div class="num">00</div><div class="lb">年の活動実績（サンプル）</div></div>
+      <div class="stat reveal"><div class="num">00</div><div class="lb">つながった団体数（サンプル）</div></div>
+      <div class="stat reveal"><div class="num">000</div><div class="lb">のべ参加者数（サンプル）</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="block" id="news">
+  <div class="b-head reveal"><span class="en">News</span><h2>お知らせ</h2><p>※以下は表示イメージのサンプルです。ご自身で更新できる形にできます</p></div>
+  <div class="reveal" style="max-width:760px;margin:0 auto">
+    <!-- ※サンプル: 日付・内容はダミーです -->
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">イベント</span><a href="#news">女性のつながりを考える交流会を開きました</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">環境</span><a href="#news">地域の清掃・自然観察の活動を行いました</a></div>
+    <div class="news-row"><time>20XX.XX.XX</time><span class="cat">お知らせ</span><a href="#news">ボランティア・賛助会員を募集しています</a></div>
+  </div>
+</section>
+
+<!-- 参加・応援 -->
+<section class="block" id="join">
+  <div class="b-head reveal"><span class="en">Join us</span><h2>参加・応援する</h2><p>あなたにできることから、いっしょに。</p></div>
+  <div class="join">
+    <div class="join-card reveal"><h3>ボランティア</h3><p>「できる範囲で、できることを」。活動のお手伝いを募集しています。はじめての方も歓迎です。<span style="opacity:.85">※募集内容はサンプルです</span></p></div>
+    <div class="join-card reveal"><h3>賛助会員・寄付</h3><p>会費やご寄付は、地域のつながりを育てる活動に活かされます。応援の輪が、まちの力になります。<span style="opacity:.85">※内容はサンプルです</span></p></div>
+    <div class="join-card reveal"><h3>連携・協働</h3><p>団体・企業・行政のみなさまと、地域の課題解決に向けて連携します。まずはお気軽にご相談ください。</p></div>
+  </div>
+</section>
+
+<!-- 法人概要 -->
+<section class="block" id="gaiyo">
+  <div class="b-head reveal"><span class="en">Profile</span><h2>法人概要</h2></div>
+  <div class="tbl-wrap reveal" style="max-width:760px;margin:0 auto">
+    <table class="gaiyo">
+      <tr><th>正式名称</th><td>特定非営利活動法人 NPOママネット</td></tr>
+      <tr><th>所在地</th><td>愛知県西尾市（詳細は公開時に記載します）</td></tr>
+      <tr><th>活動分野</th><td>環境保全／男女共同参画社会の形成の促進／中間支援（NPO等の連絡・助言・援助）</td></tr>
+      <tr><th>目的</th><td>環境・教育・福祉などの問題を、女性のネットワークを使って社会と結びつけ、その解決に取り組むこと（定款目的より）</td></tr>
+      <tr><th>電話</th><td>0563-XX-XXXX<span class="note-sample">（※サンプルの番号です。実際の番号に差し替えます）</span></td></tr>
+      <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+    </table>
+  </div>
+  <p class="tbl-hint" style="max-width:760px;margin:6px auto 0">→ 表は横にスクロールできます</p>
+</section>
+
+<!-- お問い合わせ -->
+<section class="block" id="contact">
+  <div class="contact reveal">
+    <svg class="ribbon-bg" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-100,120 C300,40 560,200 900,130 C1200,70 1360,180 1600,120" fill="none" stroke="#F08A7E" stroke-width="46" stroke-linecap="round" opacity=".12"/>
+      <path d="M-100,260 C260,180 620,320 980,250 C1260,190 1420,300 1600,250" fill="none" stroke="#8FC08A" stroke-width="46" stroke-linecap="round" opacity=".12"/>
+    </svg>
+    <div style="position:relative;z-index:2">
+      <h2>お気軽にお問い合わせください</h2>
+      <p>活動へのご参加・ご寄付・連携のご相談、取材・見学など、どんなことでもお声がけください。つながりの第一歩を、いっしょに。</p>
+      <div class="tel-big">
+        <p class="cap">お電話でのご連絡</p>
+        <a href="#contact" aria-disabled="true">0563-XX-XXXX</a>
+        <p>※サンプルの番号です（発信されません）</p>
+      </div>
+
+      <!-- デモフォーム（送信されません） -->
+      <form class="form" onsubmit="return false" aria-label="お問い合わせ（デモ）">
+        <label for="f-name">お名前</label>
+        <input id="f-name" type="text" placeholder="山田 花子" autocomplete="name">
+        <label for="f-mail">メールアドレス</label>
+        <input id="f-mail" type="email" placeholder="example@example.com" autocomplete="email">
+        <label for="f-msg">お問い合わせ内容</label>
+        <textarea id="f-msg" rows="4" placeholder="ご相談・ご質問など"></textarea>
+        <button type="submit">送信する（デモ）</button>
+        <p class="demo-note">※このフォームはサンプルです。実際には送信されません。ご契約後に受信できる形にいたします。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <p class="f-name">特定非営利活動法人 NPOママネット</p>
+  <p class="f-meta">愛知県西尾市｜環境保全・男女共同参画・中間支援</p>
+  <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容・電話番号はダミーです。本文は公開情報の範囲で作成しています）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  <p class="copy">&copy; 2026 NPO法人 NPOママネット</p>
+</footer>
+
+<script>
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".sp-nav a, .head nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+<a href="https://smcn-jp.com/" target="_blank" rel="noopener" style="position:fixed;left:16px;bottom:16px;z-index:99999;background:#0f1720;color:#fff;font:600 11px/1.4 -apple-system,sans-serif;padding:7px 13px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)">制作サンプル｜スマートコネクト</a></body>
+</html>

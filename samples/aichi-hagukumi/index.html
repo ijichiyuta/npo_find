@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 愛知はぐくみの会 さま
+                    （スクラップブック／コラージュ温かみ型）
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（NPOポータルの法人名・所在地=小牧市、活動分野=
+    子どもの健全育成／子育て・はぐくみ支援）の範囲のみで作成
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです（顔が特定
+    されにくい構図を選定）。差し替えポイントをコメントで明記しています
+  ・数値・日付・活動の具体（回数・人数・あいさつ文など）はすべて
+    サンプルのダミーです。虚偽の受賞・提携の記載はありません
+  ・お問い合わせフォームはデモ表示です。公開時に送信先を設定します
+  ・noindex 設定済み（先方の了承前にインターネット公開しないこと）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><!-- サンプルのため検索エンジンに載せない -->
+<meta name="format-detection" content="telephone=no"><!-- 電話番号の自動リンク無効化 -->
+<title>愛知はぐくみの会｜小牧市の子育て・はぐくみ支援【ご提案サンプル】</title>
+<meta name="description" content="愛知県小牧市で、子どもと子育て家庭を支える活動をするNPO法人。親子のつながりと、まちぐるみのはぐくみを大切にしています。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Klee+One:wght@600&family=Kaisei+Decol:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF4EA;         /* 紙のクリーム地 */
+  --paper-2:#FFFDF8;       /* 貼り紙の白 */
+  --card:#FFFFFF;
+  --ink:#4A4038;           /* 焦げ茶インク */
+  --ink-soft:#7C7167;
+  --pink:#F6C9C6;          /* パステルピンク */
+  --pink-deep:#E39B96;
+  --mint:#BFE0CE;          /* パステルミント */
+  --mint-deep:#7FB79A;
+  --sky:#BCD8E6;           /* パステルスカイ */
+  --lav:#D6CDEA;           /* パステルラベンダー */
+  --butter:#FBE6A8;        /* バター色 */
+  --tape:rgba(191,224,206,.55);   /* マスキングテープ（半透明） */
+  --tape2:rgba(246,201,198,.55);
+  --line:#E9DEC9;
+  --font-round:"Zen Maru Gothic",sans-serif;
+  --font-hand:"Klee One",cursive;
+  --font-title:"Kaisei Decol",serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-round);color:var(--ink);line-height:1.95;font-size:15.5px;font-weight:500;
+  overflow-wrap:break-word;overflow-x:hidden;
+  background-color:var(--paper);
+  /* 紙のような淡いドット地 */
+  background-image:radial-gradient(rgba(74,64,56,.045) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{line-height:1.5;word-break:auto-phrase;font-weight:900}
+a{color:inherit}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* ===== あしらい共通（テープ・付箋・手書き） ===== */
+.tape{position:absolute;width:96px;height:28px;background:var(--tape);transform:rotate(-6deg);box-shadow:0 1px 3px rgba(0,0,0,.06);z-index:3}
+.tape.b{background:var(--tape2);transform:rotate(5deg)}
+.hand{font-family:var(--font-hand);font-weight:600}
+.marker{position:relative;display:inline-block;z-index:1}
+.marker::after{content:"";position:absolute;left:-2px;right:-4px;bottom:2px;height:42%;background:var(--butter);z-index:-1;transform:rotate(-1.2deg);border-radius:4px}
+.wave{display:block;width:100%;line-height:0}
+
+/* ===== 追従ヘッダー（貼り紙風） ===== */
+.head{position:sticky;top:0;z-index:200;background:rgba(251,244,234,.94);backdrop-filter:blur(6px);border-bottom:2px dashed var(--line)}
+.head-in{max-width:1000px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.brand .mk{width:40px;height:40px;flex:none}
+.brand .nm{font-family:var(--font-title);font-size:19px;letter-spacing:.02em;line-height:1.2}
+.brand .nm small{display:block;font-family:var(--font-round);font-size:10px;font-weight:700;color:var(--mint-deep);letter-spacing:.04em;margin-top:2px}
+.head nav{margin-left:auto;display:flex;gap:4px;align-items:center}
+.head nav a{text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;padding:8px 12px;border-radius:20px;transition:background .25s var(--ease)}
+.head nav a:hover{background:var(--mint)}
+.head nav a.cta{background:var(--pink-deep);color:#fff;padding:9px 18px}
+.head nav a.cta:hover{background:#d98a85}
+.menu-btn{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:6px}
+.menu-btn span{display:block;width:24px;height:2.5px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+
+/* ===== ヒーロー（コラージュ） ===== */
+.hero{position:relative;padding:64px 0 76px;overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(6px);z-index:0;pointer-events:none;opacity:.6}
+.hero .b1{width:280px;height:280px;background:var(--pink);top:-60px;right:-60px}
+.hero .b2{width:240px;height:240px;background:var(--sky);bottom:-70px;left:-70px}
+.hero .b3{width:150px;height:150px;background:var(--lav);top:120px;left:40%}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}
+.hero .badge{display:inline-block;font-family:var(--font-hand);font-weight:600;background:var(--paper-2);border:2px dashed var(--pink-deep);color:var(--pink-deep);border-radius:30px;padding:5px 16px;font-size:13.5px;margin-bottom:20px;transform:rotate(-1.5deg)}
+.hero h1{font-family:var(--font-title);font-size:clamp(30px,4.6vw,50px);line-height:1.45;letter-spacing:.01em}
+.hero p.lead{margin-top:22px;font-size:15.5px;color:var(--ink);max-width:440px}
+.hero .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:900;font-size:14.5px;padding:14px 26px;border-radius:40px;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.btn.p{background:var(--pink-deep);color:#fff;box-shadow:0 5px 0 #c47f7a}
+.btn.p:hover{transform:translateY(-2px);box-shadow:0 7px 0 #c47f7a}
+.btn.g{background:#fff;color:var(--mint-deep);border:2.5px solid var(--mint-deep)}
+.btn.g:hover{transform:translateY(-2px)}
+
+/* ヒーローのコラージュ写真束 */
+.collage{position:relative;height:400px}
+.photo{position:absolute;background:#fff;padding:10px 10px 42px;box-shadow:0 8px 22px rgba(74,64,56,.16);border-radius:3px}
+.photo img{width:100%;height:100%;object-fit:cover;border-radius:2px}
+.photo .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:var(--font-hand);font-weight:600;font-size:12.5px;color:var(--ink-soft)}
+.collage .p1{width:220px;height:250px;top:0;left:26%;transform:rotate(-5deg);z-index:2}
+.collage .p2{width:170px;height:190px;top:150px;left:-6%;transform:rotate(6deg);z-index:3}
+.collage .p3{width:158px;height:158px;top:180px;right:-2%;transform:rotate(-3deg);z-index:1}
+.collage .sticker{position:absolute;font-family:var(--font-hand);font-weight:600;background:var(--butter);color:var(--ink);border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;line-height:1.3;box-shadow:0 4px 10px rgba(74,64,56,.2);top:-10px;right:8%;transform:rotate(10deg);z-index:5}
+
+/* ===== 区切りの波 ===== */
+.divider{line-height:0}
+.divider svg{display:block;width:100%;height:44px}
+
+/* ===== セクション共通 ===== */
+.sec{padding:76px 0;position:relative}
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-head .en{font-family:var(--font-hand);font-weight:600;color:var(--pink-deep);font-size:14px;letter-spacing:.08em}
+.sec-head h2{font-family:var(--font-title);font-size:clamp(24px,3.2vw,34px);margin-top:6px;line-height:1.4}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.note-sample{font-size:11.5px;color:var(--ink-soft);font-weight:500}
+
+/* ===== おもい（About） ===== */
+.about{background:var(--paper-2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about-txt .big{font-family:var(--font-title);font-size:clamp(19px,2.6vw,26px);line-height:1.75;margin-bottom:18px}
+.about-txt p{font-size:15px}
+.about-photo{position:relative}
+.about-photo .photo{position:relative;width:100%;height:auto;padding:12px 12px 46px}
+.about-photo .photo img{aspect-ratio:4/3;height:auto}
+.about-photo .tape{top:-14px;left:30px}
+
+/* ===== できること（活動カード） ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{position:relative;background:var(--card);border-radius:14px;padding:26px 24px 28px;box-shadow:0 6px 18px rgba(74,64,56,.09);border:1px solid var(--line)}
+.card:nth-child(1){transform:rotate(-1.2deg)}
+.card:nth-child(2){transform:rotate(.8deg)}
+.card:nth-child(3){transform:rotate(-.6deg)}
+.card .ico{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card:nth-child(1) .ico{background:var(--pink)}
+.card:nth-child(2) .ico{background:var(--mint)}
+.card:nth-child(3) .ico{background:var(--sky)}
+.card .ico svg{width:32px;height:32px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{font-size:14px;color:var(--ink-soft)}
+
+/* ===== 活動のようす（スクラップ写真） ===== */
+.gallery{background:var(--mint);position:relative}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.g-grid .photo{position:relative;width:100%;padding:9px 9px 36px;box-shadow:0 6px 16px rgba(74,64,56,.14)}
+.g-grid .photo img{aspect-ratio:1/1;height:auto}
+.g-grid .photo:nth-child(odd){transform:rotate(-2deg)}
+.g-grid .photo:nth-child(even){transform:rotate(2deg)}
+.g-grid .photo .cap{font-size:11.5px}
+
+/* ===== お知らせ（メモ帳風） ===== */
+.news-wrap{max-width:720px;margin:0 auto;background:var(--paper-2);border-radius:14px;box-shadow:0 6px 18px rgba(74,64,56,.08);border:1px solid var(--line);padding:14px 30px 24px;position:relative}
+.news-wrap .clip{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:70px;height:26px;background:var(--lav);border-radius:6px;box-shadow:0 2px 5px rgba(0,0,0,.12)}
+.news-row{display:flex;gap:18px;padding:16px 4px;border-bottom:1px dashed var(--line);align-items:baseline;font-size:14.5px}
+.news-row:last-child{border-bottom:none}
+.news-row time{flex:none;font-family:var(--font-hand);font-weight:600;color:var(--mint-deep);font-size:13px}
+.news-row .tag{flex:none;font-size:11px;font-weight:900;background:var(--butter);color:var(--ink);border-radius:20px;padding:2px 11px}
+
+/* ===== 応援（サポート） ===== */
+.support{background:var(--pink)}
+.support-in{background:var(--paper-2);border-radius:20px;padding:48px 40px;text-align:center;box-shadow:0 8px 22px rgba(74,64,56,.1);position:relative}
+.support-in h2{font-family:var(--font-title);font-size:clamp(22px,3vw,30px);margin-bottom:14px}
+.support-ways{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;text-align:left}
+.way{background:var(--card);border-radius:14px;padding:22px 20px;border:1px solid var(--line)}
+.way h3{font-size:16px;margin-bottom:6px}
+.way h3 span{display:inline-block;width:34px;height:34px;line-height:34px;text-align:center;border-radius:50%;background:var(--mint);font-size:16px;margin-right:8px;vertical-align:middle}
+.way p{font-size:13.5px;color:var(--ink-soft)}
+
+/* ===== 概要＋フォーム ===== */
+.contact{background:var(--paper-2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+table.gaiyo{width:100%;min-width:0;border-collapse:collapse;font-size:14px;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(74,64,56,.07)}
+table.gaiyo th{width:120px;text-align:left;font-weight:900;background:var(--mint);border-bottom:2px solid var(--paper-2);padding:12px 16px;white-space:nowrap;vertical-align:top}
+table.gaiyo td{border-bottom:1px solid var(--line);padding:12px 16px}
+table.gaiyo tr:last-child th,table.gaiyo tr:last-child td{border-bottom:none}
+.map{margin-top:18px;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(74,64,56,.07)}
+.map iframe{width:100%;height:260px;border:none;display:block}
+.form{background:var(--card);border-radius:16px;padding:30px 28px;box-shadow:0 6px 18px rgba(74,64,56,.1);border:1px solid var(--line)}
+.form h3{font-size:19px;margin-bottom:6px}
+.form label{display:block;font-size:13px;font-weight:700;margin:16px 0 6px}
+.form input,.form textarea{width:100%;font-family:inherit;font-size:15px;border:2px solid var(--line);border-radius:10px;padding:11px 13px;background:var(--paper);transition:border-color .2s}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--mint-deep)}
+.form button{margin-top:20px;width:100%;background:var(--pink-deep);color:#fff;border:none;font-family:inherit;font-weight:900;font-size:15.5px;padding:14px;border-radius:40px;cursor:pointer;box-shadow:0 5px 0 #c47f7a;transition:transform .2s var(--ease)}
+.form button:hover{transform:translateY(-2px)}
+.form .sent{display:none;margin-top:14px;font-size:13px;color:var(--mint-deep);font-weight:700;text-align:center}
+
+/* ===== フッター ===== */
+.footer{background:var(--ink);color:#F3EBDD;padding:52px 0 34px;text-align:center}
+.footer .f-name{font-family:var(--font-title);font-size:20px;color:#fff}
+.footer .f-addr{font-size:13px;color:#C9BEAF;margin-top:10px}
+.footer .sns{display:flex;gap:10px;justify-content:center;margin:22px 0 4px}
+.footer .sns span{border:1px solid #6E6156;border-radius:20px;padding:5px 15px;font-size:12px;color:#C9BEAF}
+.footer .copy{font-size:11.5px;color:#9A8E7F;margin-top:24px}
+.sample-note{font-size:11px;color:#B7A791;margin-top:16px;line-height:1.9;max-width:640px;margin-left:auto;margin-right:auto}
+.sample-note a{color:#E7C7C3}
+
+/* ===== 左下ピル ===== */
+.credit-pill{position:fixed;left:16px;bottom:16px;z-index:300;background:var(--ink);color:#fff;text-decoration:none;font-family:var(--font-round);font-weight:700;font-size:11.5px;padding:9px 15px;border-radius:30px;box-shadow:0 4px 14px rgba(0,0,0,.28);border:2px solid #fff;line-height:1.3;transition:transform .2s var(--ease)}
+.credit-pill b{color:var(--butter)}
+.credit-pill:hover{transform:translateY(-2px)}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .head nav{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper-2);border-bottom:3px dashed var(--line);padding:8px 20px 18px}
+  .head nav a{padding:13px 6px;border-radius:0;border-bottom:1px solid var(--line)}
+  .head nav a.cta{border-radius:30px;text-align:center;margin-top:10px}
+  .menu-open .head nav{display:flex}
+  .menu-btn{display:block}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .hero-in,.about-grid,.contact-grid{grid-template-columns:1fr;gap:30px}
+  .collage{height:340px;margin-top:6px}
+  .cards,.support-ways{grid-template-columns:1fr}
+  .card,.card:nth-child(n){transform:none}
+  .g-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:15px}
+  .sec{padding:56px 0}
+  .hero{padding:44px 0 56px}
+  .collage .p1{width:180px;height:210px;left:16%}
+  .collage .p2{width:140px;height:158px}
+  .collage .p3{width:132px;height:132px}
+  .support-in,.form{padding:28px 20px}
+  /* 概要表: 横スクロールをやめて縦積みに */
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border-bottom:none;padding:10px 16px 4px}
+  table.gaiyo td{display:block;width:100%;padding:0 16px 12px;border-bottom:1px solid var(--line)}
+}
+</style>
+</head>
+<body>
+
+<!-- 追従ヘッダー -->
+<header class="head" id="top">
+  <div class="head-in">
+    <a class="brand" href="#top">
+      <svg class="mk" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="21" fill="#BFE0CE"/>
+        <path d="M22 33c-6-2-11-6-11-12 0-4 3-6 6-6 2.5 0 4 1.5 5 3.5C28 15.5 29.5 15 31 15c3 0 6 2 6 6 0 6-5 10-15 12Z" fill="#E39B96"/>
+        <circle cx="16.5" cy="18.5" r="1.6" fill="#4A4038"/>
+        <circle cx="27.5" cy="18.5" r="1.6" fill="#4A4038"/>
+      </svg>
+      <span class="nm">愛知はぐくみの会<small>NPO法人｜愛知県小牧市</small></span>
+    </a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="#about">おもい</a>
+      <a href="#do">できること</a>
+      <a href="#gallery">活動のようす</a>
+      <a href="#news">お知らせ</a>
+      <a href="#support">応援する</a>
+      <a class="cta" href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <div class="wrap hero-in">
+    <div class="reveal on">
+      <span class="badge">愛知県小牧市の子育て・はぐくみ支援</span>
+      <h1><span class="kb">こどもの毎日に、</span><br><span class="kb"><span class="marker">まちの</span>あたたかい</span><span class="kb">手を。</span></h1>
+      <p class="lead">愛知はぐくみの会は、こどもとその家庭を、地域みんなで「はぐくむ」ことを願って活動するNPO法人です。ちいさな成長を、いっしょに喜べる場所をめざしています。</p>
+      <div class="btns">
+        <a class="btn p" href="#support">活動を応援する</a>
+        <a class="btn g" href="#about">わたしたちのこと</a>
+      </div>
+    </div>
+    <div class="collage reveal on" aria-hidden="false">
+      <!-- 差し替えポイント: 親子・子育てのお写真（顔が特定されにくい構図がおすすめ） -->
+      <div class="photo p1"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=700&q=80&auto=format&fit=crop" alt="親子が手をつなぐイメージ"><span class="cap hand">いっしょに、ね</span></div>
+      <div class="photo p2"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=600&q=80&auto=format&fit=crop" alt="外あそびのイメージ"><span class="cap hand">おそとであそぼ</span></div>
+      <div class="photo p3"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80&auto=format&fit=crop" alt="つみきであそぶ手元のイメージ"><span class="cap hand">できた！</span></div>
+      <span class="sticker">すくすく</span>
+    </div>
+  </div>
+</section>
+
+<!-- 波の区切り -->
+<div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 44" preserveAspectRatio="none"><path d="M0,22 C150,44 300,0 450,18 C600,36 750,4 900,20 C1050,36 1150,10 1200,22 L1200,44 L0,44 Z" fill="#FFFDF8"/></svg>
+</div>
+
+<!-- おもい -->
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="en">Our thought</span><h2>わたしたちのおもい</h2></div>
+    <div class="about-grid">
+      <div class="about-txt reveal">
+        <p class="big"><span class="kb">こどもが育つよろこびを、</span><span class="kb">まちのみんなで</span><span class="kb">分かち合えたら。</span></p>
+        <p>愛知はぐくみの会は、小牧市とその周辺で、こどもの健全な育ちと、子育て家庭を支える活動に取り組むNPO法人です。おうちの人だけでがんばらなくていいように、地域のつながりのなかで、こどもも大人もほっとできる居場所づくりをめざしています。<span class="note-sample">※文章は活動分野（公開情報）をもとにしたサンプルです。実際の活動方針に差し替えます</span></p>
+      </div>
+      <div class="about-photo reveal">
+        <span class="tape"></span>
+        <!-- 差し替えポイント: 活動風景・スタッフとこどものお写真 -->
+        <div class="photo"><img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=900&q=80&auto=format&fit=crop" alt="親子でえほんを読むイメージ"><span class="cap hand">きょうも、あつまれ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- できること -->
+<section class="sec" id="do">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="en">What we do</span><h2>できること・やっていること</h2></div>
+    <p class="note-sample" style="text-align:center;margin:-32px 0 34px">※以下は活動分野をもとにした表示イメージのサンプルです。実際の活動内容に差し替えます</p>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#E39B96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3.5-8-6.5-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 3.5-3 6.5-8 10Z"/></svg></div>
+        <h3>子育てのなかまづくり</h3>
+        <p>おしゃべりしたり、あそんだり。おうちの人どうし、こどもどうしがつながれる、ほっとできる時間をつくります。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#7FB79A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></div>
+        <h3>こどもの居場所</h3>
+        <p>あそびや学びを通じて、こどもが安心してすごせる場所を。ちいさな「できた」を、いっしょに喜びます。</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#6C9CB0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18" opacity="0"/><path d="M4 18c3-1 5-4 8-4s5 3 8 4M4 12c3-1 5-4 8-4s5 3 8 4"/><circle cx="12" cy="5" r="2"/></svg></div>
+        <h3>地域とのつながり</h3>
+        <p>地域のみなさんや団体と手をつなぎ、まちぐるみで子育てを支える輪を広げていきます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動のようす -->
+<section class="sec gallery" id="gallery">
+  <span class="tape" style="top:26px;left:8%"></span>
+  <span class="tape b" style="top:40px;right:10%"></span>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="en">Scrapbook</span><h2>活動のようす</h2></div>
+    <p class="note-sample" style="text-align:center;margin:-32px 0 34px">※お写真・ひとことは表示イメージのサンプルです。実際の活動写真に差し替えます</p>
+    <div class="g-grid">
+      <!-- 差し替えポイント: 実際の活動のお写真（掲載可否をご確認のうえ差し替えます） -->
+      <div class="photo reveal"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80&auto=format&fit=crop" alt="お絵かきのイメージ"><span class="cap hand">おえかきの日</span></div>
+      <div class="photo reveal"><img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=600&q=80&auto=format&fit=crop" alt="外あそびのイメージ"><span class="cap hand">みんなで、そとへ</span></div>
+      <div class="photo reveal"><img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&q=80&auto=format&fit=crop" alt="工作のイメージ"><span class="cap hand">こうさくタイム</span></div>
+      <div class="photo reveal"><img src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=600&q=80&auto=format&fit=crop" alt="季節の草花のイメージ"><span class="cap hand">きせつを、かんじて</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- お知らせ -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="en">News</span><h2>お知らせ</h2></div>
+    <p class="note-sample" style="text-align:center;margin:-32px 0 30px">※以下は表示イメージのサンプルです。公開後はご自身で更新できる形にできます</p>
+    <div class="news-wrap reveal">
+      <span class="clip"></span>
+      <!-- ※サンプル: 日付・内容はダミーです -->
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">おしらせ</span><span>あそびの会の参加者を募集しています</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">レポート</span><span>季節のイベントを開催しました</span></div>
+      <div class="news-row"><time>20XX.XX.XX</time><span class="tag">ぼしゅう</span><span>いっしょに活動するボランティアさんを募集中です</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 応援する -->
+<section class="sec support" id="support">
+  <div class="wrap">
+    <div class="support-in reveal">
+      <div class="sec-head" style="margin-bottom:8px"><span class="en">Support</span></div>
+      <h2><span class="kb">こどもの毎日を、</span><span class="kb">いっしょに<span class="marker">はぐくむ</span>。</span></h2>
+      <p style="max-width:560px;margin:8px auto 0">できることを、できるかたちで。あなたの応援が、こどもたちの「あんしん」につながります。</p>
+      <div class="support-ways">
+        <div class="way">
+          <h3><span>💛</span>ご寄付</h3>
+          <p>活動を続けるための力になります。単発でも、継続でも大歓迎です。<span class="note-sample">※寄付の受付方法はサンプルです。実際の方法に差し替えます</span></p>
+        </div>
+        <div class="way">
+          <h3><span>🌱</span>ボランティア</h3>
+          <p>あそびのお手伝いや、行事の運営など。得意なこと・すきなことで参加できます。</p>
+        </div>
+        <div class="way">
+          <h3><span>🤝</span>賛助・協力</h3>
+          <p>企業・団体・地域のみなさまとの連携も大切にしています。まずはご相談ください。</p>
+        </div>
+      </div>
+      <a class="btn p" href="#contact" style="margin-top:32px">お問い合わせはこちら</a>
+    </div>
+  </div>
+</section>
+
+<!-- 概要＋お問い合わせ -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="en">Contact</span><h2>団体概要・お問い合わせ</h2></div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <table class="gaiyo">
+          <tr><th>正式名称</th><td>特定非営利活動法人 愛知はぐくみの会</td></tr>
+          <tr><th>所在地</th><td>愛知県小牧市弥生町44番地</td></tr>
+          <tr><th>活動分野</th><td>子どもの健全育成／子育て・はぐくみ支援</td></tr>
+          <tr><th>活動地域</th><td>愛知県小牧市 ほか</td></tr>
+          <tr><th>設立</th><td>（公開時に記載します）<span class="note-sample">※サンプル</span></td></tr>
+          <tr><th>連絡先</th><td>下記フォームよりお問い合わせください<span class="note-sample">（お電話・メールは公開時に設定します）</span></td></tr>
+        </table>
+        <div class="map">
+          <!-- 地図は所在地（小牧市弥生町44番地）で表示 -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B0%8F%E7%89%A7%E5%B8%82%E5%BC%A5%E7%94%9F%E7%94%BA44%E7%95%AA%E5%9C%B0&output=embed&z=15" loading="lazy" title="所在地の地図"></iframe>
+        </div>
+      </div>
+      <div class="form reveal">
+        <h3>お問い合わせフォーム</h3>
+        <p style="font-size:13px;color:var(--ink-soft);margin-top:4px">参加・ご寄付・ボランティア・取材など、お気軽にどうぞ。</p>
+        <!-- ※サンプル: フォームはデモ表示です。公開時に送信先を設定します -->
+        <form id="demoForm">
+          <label>お名前</label>
+          <input type="text" placeholder="例：山田 花子">
+          <label>メールアドレス</label>
+          <input type="email" placeholder="例：hanako@example.com">
+          <label>お問い合わせ内容</label>
+          <textarea rows="4" placeholder="例：あそびの会に参加したいです。次回の予定を教えてください。"></textarea>
+          <button type="submit">送信する</button>
+          <p class="sent" id="sentMsg">※ サンプルページのため送信されません（公開時に有効化します）</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-name">特定非営利活動法人 愛知はぐくみの会</p>
+    <p class="f-addr">愛知県小牧市弥生町44番地｜子育て・はぐくみ支援</p>
+    <div class="sns"><span>Instagram</span><span>LINE</span><span>X</span></div><!-- SNS枠: 開設済みアカウントに差し替え -->
+    <p class="copy">&copy; 2026 NPO法人 愛知はぐくみの会</p>
+    <p class="sample-note">本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の数値・日付・文章はダミー）。<br>制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a></p>
+  </div>
+</footer>
+
+<!-- 左下ピル -->
+<a class="credit-pill" href="https://smcn-jp.com/" target="_blank" rel="noopener">ご提案用サンプル / <b>スマートコネクト</b></a>
+
+<script>
+// モバイルメニュー
+const menuBtn = document.querySelector(".menu-btn");
+menuBtn.addEventListener("click", () => {
+  const open = document.body.classList.toggle("menu-open");
+  menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+});
+document.querySelectorAll(".head nav a").forEach(a => a.addEventListener("click", () => document.body.classList.remove("menu-open")));
+
+// ふわっと表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+
+// デモフォーム（サンプルのため送信しない）
+document.getElementById("demoForm").addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("sentMsg").style.display = "block";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  営業用サンプルHP: 特定非営利活動法人 トランスポート・トラスト・ジャパン さま
+  制作: スマートコネクト (https://smcn-jp.com)
+  ・単一HTML/内部CSS/依存なし。ブラウザで開くだけで表示できます
+  ・本文は公開情報（登記の事業目的・所在地・分野・設立年など）の範囲で作成
+    事業目的（登記）: 歴史的車両の保存や研究に関する事業を行い、技術者たちの
+    斬新な発想と叡智が蓄積された偉大な文化遺産を保護し、公益の増進に寄与する
+    → 鉄道・自動車など歴史的車両（ヴィンテージ／クラシック）の保存・修復・
+      研究・展示による「文化遺産保護」の団体
+  ・「※サンプル」表記の内容はダミーです。ご契約後に実データへ差し替えます
+  ・代表者の実名は記載していません（公開時に差し替え）
+  ・記事本文・数値・年表はダミー（サンプル）で、活動を断定するものではありません
+  ・実在の車両・ブランドのロゴ／名称は使用していません
+  ・写真はフリー素材（Unsplash・商用利用可）のイメージです
+  デザインの方向: 新聞紙面・ブロードシート型（多段組み・題字・見出し階層・罫線）
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>特定非営利活動法人 トランスポート・トラスト・ジャパン｜名古屋市中川区【ご提案サンプル】</title>
+<meta name="description" content="名古屋市中川区を拠点に、歴史的車両（クラシックカー・ヴィンテージ鉄道車両）の保存・修復・研究・展示を行うNPO法人。技術者たちの叡智が宿る文化遺産を、次の世代へ。※ホームページ制作のご提案用サンプルです">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Old+Mincho:wght@600;700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-paper:#F4F0E6;      /* 生成り紙 */
+  --c-paper2:#FBF8F1;
+  --c-ink:#1C1A17;        /* 墨 */
+  --c-ink2:#403B34;
+  --c-sub:#6E675C;
+  --c-line:#C9BFAC;       /* 罫線 */
+  --c-line-strong:#2A2620;
+  --c-vermil:#B5322A;     /* 朱アクセント（1色のみ） */
+  --c-vermil-deep:#8F241E;
+  --font-mincho:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif;
+  --font-title:"Zen Old Mincho","Yu Mincho",serif;
+  --font-num:"Inter",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-mincho);
+  background:var(--c-paper);
+  color:var(--c-ink);
+  line-height:1.95;
+  font-size:15px;
+  font-feature-settings:"palt";
+  overflow-wrap:break-word;
+  /* 紙の質感（うっすらノイズ／繊維の縦罫） */
+  background-image:
+    linear-gradient(rgba(28,26,23,.018) 1px,transparent 1px);
+  background-size:100% 30px;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-weight:700;line-height:1.5;word-break:auto-phrase}
+/* 文節単位の改行（iOS対策: inline-blockの塊でしか折り返さない） */
+.kb{display:inline-block}
+
+/* ===== 新聞シート枠 ===== */
+.sheet{max-width:1140px;margin:0 auto;background:var(--c-paper);padding:0 26px}
+
+/* ===== 題字（マストヘッド） ===== */
+.masthead{border-bottom:3px double var(--c-line-strong);padding-top:18px}
+.mh-top{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-num);font-size:11px;letter-spacing:.06em;color:var(--c-sub);padding-bottom:8px;border-bottom:1px solid var(--c-line)}
+.mh-top .edition{font-weight:600;color:var(--c-vermil-deep)}
+.mh-main{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:20px 0 18px}
+.mh-side{font-size:11.5px;line-height:1.9;color:var(--c-sub)}
+.mh-side.right{text-align:right}
+.mh-side b{display:block;font-weight:700;color:var(--c-ink);font-size:12.5px;letter-spacing:.04em}
+.nameplate{text-align:center}
+.nameplate .en{font-family:var(--font-num);font-size:10.5px;letter-spacing:.42em;color:var(--c-sub);text-transform:uppercase;padding-left:.42em}
+.nameplate .jp{font-family:var(--font-title);font-weight:900;font-size:clamp(30px,6vw,58px);letter-spacing:.06em;line-height:1.1;margin:6px 0 4px;color:var(--c-ink)}
+.nameplate .sub{font-size:11.5px;letter-spacing:.28em;color:var(--c-vermil-deep);font-weight:600;padding-left:.28em}
+.mh-strap{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--c-line-strong);border-bottom:1px solid var(--c-line-strong);padding:7px 2px;font-size:11.5px;letter-spacing:.14em;color:var(--c-ink2)}
+.mh-strap span{font-family:var(--font-num);font-size:11px;letter-spacing:.06em;color:var(--c-sub)}
+
+/* ===== ナビ（紙面インデックス風） ===== */
+.paper-nav{position:sticky;top:0;z-index:80;background:var(--c-paper);border-bottom:2px solid var(--c-line-strong);}
+.paper-nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center}
+.paper-nav li{border-left:1px solid var(--c-line)}
+.paper-nav li:last-child{border-right:1px solid var(--c-line)}
+.paper-nav a{display:block;text-decoration:none;font-size:13px;letter-spacing:.1em;padding:11px 17px;transition:background .25s var(--ease),color .25s var(--ease)}
+.paper-nav a:hover{background:var(--c-ink);color:var(--c-paper)}
+.paper-nav a .en{display:block;font-family:var(--font-num);font-size:8.5px;letter-spacing:.14em;color:var(--c-sub);text-align:center;margin-top:2px}
+.paper-nav a:hover .en{color:var(--c-line)}
+
+/* ===== 共通の見出し（版名／欄名） ===== */
+.section{padding:52px 0;border-bottom:1px solid var(--c-line)}
+.kicker{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.kicker .tag{background:var(--c-ink);color:var(--c-paper);font-size:12px;font-weight:700;letter-spacing:.16em;padding:5px 13px;white-space:nowrap}
+.kicker .tag.v{background:var(--c-vermil)}
+.kicker h2{font-family:var(--font-title);font-size:clamp(20px,3vw,27px);font-weight:700;letter-spacing:.06em;white-space:nowrap}
+.kicker .rule{flex:1;border-top:1px solid var(--c-line-strong)}
+.kicker .en{font-family:var(--font-num);font-size:10px;letter-spacing:.24em;color:var(--c-sub);text-transform:uppercase;white-space:nowrap}
+.note-sample{font-size:11.5px;color:var(--c-sub);font-family:var(--font-mincho)}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ===== トップ記事（リード面・多段組み） ===== */
+.lead{padding:44px 0 46px;border-bottom:3px double var(--c-line-strong)}
+.lead .dateline{font-family:var(--font-num);font-size:11px;letter-spacing:.14em;color:var(--c-vermil-deep);font-weight:600;margin-bottom:14px;text-transform:uppercase}
+.lead h1{font-family:var(--font-title);font-size:clamp(30px,6.4vw,64px);font-weight:900;line-height:1.28;letter-spacing:.03em;margin-bottom:8px}
+.lead h1 .em{color:var(--c-vermil)}
+.lead .deck{font-size:clamp(14px,1.9vw,17px);color:var(--c-ink2);letter-spacing:.02em;border-top:1px solid var(--c-line-strong);border-bottom:1px solid var(--c-line-strong);padding:12px 0;margin:14px 0 30px;font-weight:500}
+.lead-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+.lead-figure figure{border:1px solid var(--c-line-strong);padding:6px;background:var(--c-paper2)}
+.lead-figure img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:grayscale(100%) contrast(1.04)}
+.lead-figure figcaption{font-size:11.5px;color:var(--c-sub);padding:8px 2px 2px;line-height:1.6;letter-spacing:.02em}
+/* 本文は新聞のマルチカラム */
+.lead-body{columns:2;column-gap:26px;column-rule:1px solid var(--c-line);font-size:14px;line-height:2.05;text-align:justify}
+.lead-body p{margin-bottom:12px}
+.lead-body p:first-child::first-letter{font-family:var(--font-title);font-size:52px;font-weight:900;float:left;line-height:.82;padding:6px 8px 0 0;color:var(--c-vermil)}
+.lead-body p:last-child{margin-bottom:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.chip{border:1px solid var(--c-ink);font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:4px 12px;white-space:nowrap}
+.chip.v{border-color:var(--c-vermil);color:var(--c-vermil-deep)}
+
+/* ===== 私たちの立場（三本社説型） ===== */
+.stance{columns:3;column-gap:30px;column-rule:1px solid var(--c-line)}
+.stance .col{break-inside:avoid;margin-bottom:8px}
+.stance h3{font-family:var(--font-title);font-size:18px;font-weight:700;letter-spacing:.04em;margin-bottom:8px;padding-bottom:8px;border-bottom:2px solid var(--c-ink)}
+.stance h3 .no{font-family:var(--font-num);font-size:12px;color:var(--c-vermil);margin-right:8px}
+.stance p{font-size:13.5px;line-height:2;text-align:justify}
+
+/* ===== 事業（記事カード・罫線区切り） ===== */
+.articles{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.art{padding:26px 26px;border-top:1px solid var(--c-line)}
+.art:nth-child(-n+2){border-top:none;padding-top:0}
+.art:nth-child(odd){border-right:1px solid var(--c-line);padding-left:0}
+.art:nth-child(even){padding-right:0;padding-left:26px}
+.art .badge{font-family:var(--font-num);font-size:10.5px;font-weight:700;letter-spacing:.14em;color:var(--c-vermil-deep)}
+.art h3{font-family:var(--font-title);font-size:19px;font-weight:700;letter-spacing:.03em;margin:5px 0 4px;line-height:1.4}
+.art .hl{width:44px;border-top:2px solid var(--c-vermil);margin:0 0 12px}
+.art img{width:100%;aspect-ratio:16/9;object-fit:cover;filter:grayscale(100%) contrast(1.04);border:1px solid var(--c-line-strong);margin-bottom:12px}
+.art p{font-size:13.5px;line-height:1.95;text-align:justify}
+
+/* ===== 沿革（年表・縦罫の側注型） ===== */
+.chrono{border-top:2px solid var(--c-ink)}
+.chrono-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:16px 4px;border-bottom:1px solid var(--c-line);align-items:baseline}
+.chrono-row .yr{font-family:var(--font-num);font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--c-ink)}
+.chrono-row .yr small{display:block;font-family:var(--font-mincho);font-size:11px;color:var(--c-sub);font-weight:500;letter-spacing:.04em}
+.chrono-row .ev h4{font-size:15px;font-weight:700;margin-bottom:2px}
+.chrono-row .ev p{font-size:13px;color:var(--c-ink2)}
+.chrono-row.real .yr{color:var(--c-vermil-deep)}
+
+/* ===== 概要（法人データ表） ===== */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.gaiyo{width:100%;min-width:480px;border-collapse:collapse;font-size:14px;background:var(--c-paper2)}
+table.gaiyo th{width:160px;text-align:left;font-weight:700;background:#ECE6D8;border:1px solid var(--c-line-strong);padding:11px 16px;white-space:nowrap;letter-spacing:.04em}
+table.gaiyo td{border:1px solid var(--c-line-strong);padding:11px 16px}
+.tbl-hint{display:none;font-size:11px;color:var(--c-sub);margin-top:6px}
+
+/* ===== 参加（募集告知・囲み記事） ===== */
+.join{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:2px solid var(--c-ink)}
+.join .cell{padding:24px 22px;border-left:1px solid var(--c-line)}
+.join .cell:first-child{border-left:none}
+.join .cell .ico{font-family:var(--font-num);font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--c-vermil-deep);margin-bottom:8px}
+.join .cell h3{font-family:var(--font-title);font-size:18px;margin-bottom:8px}
+.join .cell p{font-size:13px;line-height:1.9}
+
+/* ===== お問い合わせ（投書欄型フォーム） ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.contact-info .lede{font-size:15px;line-height:2;margin-bottom:20px}
+.contact-info .tel-box{border:2px solid var(--c-ink);background:var(--c-paper2);padding:20px 22px;margin-bottom:16px}
+.contact-info .tel-box .cap{font-size:12px;font-weight:700;letter-spacing:.1em}
+.contact-info .tel-box .num{font-family:var(--font-num);font-size:26px;font-weight:700;color:var(--c-vermil-deep);letter-spacing:.01em;line-height:1.3}
+.contact-info .tel-box .num a{text-decoration:none}
+.contact-info .tel-box p{font-size:11.5px;color:var(--c-sub)}
+.map iframe{width:100%;height:220px;border:1px solid var(--c-line-strong);filter:grayscale(60%) contrast(1.02)}
+form.demo{border:1px solid var(--c-line-strong);background:var(--c-paper2);padding:22px}
+form.demo .fld{margin-bottom:14px}
+form.demo label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;margin-bottom:5px}
+form.demo input,form.demo textarea{width:100%;font-family:var(--font-mincho);font-size:14px;background:var(--c-paper);border:1px solid var(--c-line-strong);padding:10px 12px;color:var(--c-ink)}
+form.demo textarea{resize:vertical;min-height:96px}
+form.demo input:focus,form.demo textarea:focus{outline:2px solid var(--c-vermil);outline-offset:-1px}
+form.demo button{width:100%;background:var(--c-ink);color:var(--c-paper);font-family:var(--font-mincho);font-size:15px;font-weight:700;letter-spacing:.1em;padding:13px;border:none;cursor:pointer;transition:background .25s var(--ease)}
+form.demo button:hover{background:var(--c-vermil)}
+.demo-flag{font-size:11.5px;color:var(--c-sub);margin-top:10px;text-align:center}
+
+/* ===== フッター（発行元・奥付） ===== */
+.colophon{border-top:3px double var(--c-line-strong);padding:34px 0 26px;text-align:center}
+.colophon .f-name{font-family:var(--font-title);font-weight:900;font-size:19px;letter-spacing:.06em}
+.colophon .f-meta{font-size:12.5px;color:var(--c-ink2);margin-top:8px;letter-spacing:.02em}
+.colophon .sample-note{font-size:11px;color:var(--c-sub);margin-top:18px;line-height:1.9}
+.colophon .sample-note a{color:var(--c-vermil-deep)}
+.colophon .cc{margin-top:14px;font-family:var(--font-num);font-size:11px;color:var(--c-sub)}
+
+/* ===== SPヘッダー（既定は非表示） ===== */
+.sp-head{display:none}
+
+/* ===== 左下・制作クレジットのピル ===== */
+.pill{position:fixed;left:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:8px;background:rgba(28,26,23,.94);color:#F4F0E6;text-decoration:none;font-size:11px;letter-spacing:.02em;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.28);transition:transform .3s var(--ease)}
+.pill:hover{transform:translateY(-2px)}
+.pill svg{width:15px;height:15px;flex:none;color:var(--c-vermil)}
+.pill b{font-weight:700;color:#fff}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:900px){
+  .lead-grid{grid-template-columns:1fr;gap:24px}
+  .stance{columns:2}
+  .join{grid-template-columns:1fr}
+  .join .cell{border-left:none;border-top:1px solid var(--c-line)}
+  .join .cell:first-child{border-top:none}
+  .contact-grid{grid-template-columns:1fr;gap:26px}
+}
+
+@media (max-width:720px){
+  /* スマホ: 多段組みは全て1カラムに畳む（横スクロール0） */
+  .sheet{padding:0 16px}
+  .paper-nav{display:none}
+  .sp-head{display:flex;position:sticky;top:0;z-index:100;background:var(--c-paper);border-bottom:2px solid var(--c-line-strong);height:58px;align-items:center;gap:10px;padding:0 16px}
+  .sp-head .t{font-family:var(--font-title);font-weight:900;font-size:16px;letter-spacing:.04em;line-height:1.15}
+  .sp-head .t small{display:block;font-family:var(--font-mincho);font-size:9px;color:var(--c-vermil-deep);font-weight:600;letter-spacing:.06em;margin-top:2px}
+  .sp-head .tel-ic{margin-left:auto;background:var(--c-ink);color:var(--c-paper);text-decoration:none;font-weight:700;font-size:12px;letter-spacing:.06em;padding:9px 13px;white-space:nowrap}
+  .menu-btn{background:none;border:none;cursor:pointer;padding:6px}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--c-ink);margin:5px 0;transition:.3s}
+  .menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span:nth-child(2){opacity:0}
+  .menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .sp-nav{display:none;position:fixed;inset:58px 0 auto 0;background:var(--c-paper);border-bottom:2px solid var(--c-line-strong);padding:8px 20px 18px;z-index:99;box-shadow:0 14px 24px rgba(28,26,23,.14)}
+  .menu-open .sp-nav{display:block}
+  .sp-nav a{display:block;text-decoration:none;font-size:15px;letter-spacing:.06em;padding:12px 4px;border-bottom:1px solid var(--c-line)}
+
+  .mh-top{font-size:9.5px}
+  .mh-main{grid-template-columns:1fr;gap:6px}
+  .mh-side{display:none}
+  .nameplate .jp{font-size:34px}
+  .mh-strap{flex-direction:column;gap:4px;text-align:center;letter-spacing:.1em;font-size:10.5px}
+
+  .lead h1{line-height:1.34}
+  .lead-body{columns:1;column-rule:none}
+  .lead-body p:first-child::first-letter{font-size:44px}
+  .stance{columns:1;column-rule:none}
+  .stance .col{border-bottom:1px solid var(--c-line);padding-bottom:10px}
+  .articles{grid-template-columns:1fr}
+  .art{padding:24px 0!important;border-top:1px solid var(--c-line)!important;border-right:none!important}
+  .art:first-child{border-top:none!important;padding-top:0!important}
+  .chrono-row{grid-template-columns:1fr;gap:2px}
+  .chrono-row .yr{font-size:15px}
+  /* 表は縦積み（横スクロール0） */
+  table.gaiyo{min-width:0;border:1px solid var(--c-line-strong)}
+  table.gaiyo tr{display:block}
+  table.gaiyo th{display:block;width:100%;border:none;border-top:1px solid var(--c-line-strong);padding:8px 14px;font-size:12px}
+  table.gaiyo tr:first-child th{border-top:none}
+  table.gaiyo td{display:block;width:100%;border:none;padding:8px 14px 12px}
+  .tbl-hint{display:none}
+  .pill{left:12px;bottom:12px;font-size:10px;padding:8px 12px}
+}
+</style>
+</head>
+<body>
+
+<!-- SP: 上部バー -->
+<header class="sp-head" id="top-sp">
+  <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <span class="t">トランスポート・<br>トラスト・ジャパン<small>NPO法人｜名古屋市中川区</small></span>
+  <a class="tel-ic" href="tel:0520000000">電話で相談</a>
+</header>
+<nav class="sp-nav">
+  <a href="#lead">巻頭</a>
+  <a href="#stance">保存の理念</a>
+  <a href="#works">事業のご案内</a>
+  <a href="#history">沿革</a>
+  <a href="#gaiyo">法人概要</a>
+  <a href="#join">ご参加のご案内</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
+
+<div class="sheet" id="top">
+
+  <!-- ===== 題字 ===== -->
+  <header class="masthead">
+    <div class="mh-top">
+      <span>特定非営利活動法人 ／ 愛知県名古屋市中川区</span>
+      <span class="edition">分野：学術・文化・芸術・スポーツ</span>
+    </div>
+    <div class="mh-main">
+      <div class="mh-side">
+        <b>発行</b>
+        名古屋市中川区<br>
+        歴史的車両の保存・修復・<br>
+        研究・展示を行うNPO法人
+      </div>
+      <div class="nameplate">
+        <!-- 題字は「歴史的車両（機械遺産）の保存」にちなむ名。※サンプルの誌名 -->
+        <div class="en">Transport Trust Japan</div>
+        <div class="jp">機関遺産</div>
+        <div class="sub">トランスポート・トラスト・ジャパン</div>
+      </div>
+      <div class="mh-side right">
+        <b>創刊号（サンプル）</b>
+        技術者たちの叡智を、<br>
+        文化遺産として、<br>
+        次の世代へ。
+      </div>
+    </div>
+    <div class="mh-strap">
+      <span>NAGOYA / AICHI</span>
+      <em style="font-style:normal;font-weight:700;letter-spacing:.18em">走る文化遺産を、後世へ遺す。</em>
+      <span>EST. 2002</span>
+    </div>
+  </header>
+
+  <!-- ===== 紙面インデックス（ナビ） ===== -->
+  <nav class="paper-nav" aria-label="紙面のご案内">
+    <ul>
+      <li><a href="#lead">巻頭<span class="en">TOP</span></a></li>
+      <li><a href="#stance">保存の理念<span class="en">CREDO</span></a></li>
+      <li><a href="#works">事業のご案内<span class="en">WORKS</span></a></li>
+      <li><a href="#history">沿革<span class="en">HISTORY</span></a></li>
+      <li><a href="#gaiyo">法人概要<span class="en">PROFILE</span></a></li>
+      <li><a href="#join">ご参加<span class="en">JOIN</span></a></li>
+      <li><a href="#contact">お問い合わせ<span class="en">CONTACT</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== 巻頭記事（リード面） ===== -->
+  <section class="lead" id="lead">
+    <p class="dateline reveal on">第一面 ｜ 巻頭 ｜ Nagoya, Nakagawa-ku</p>
+    <h1 class="reveal on"><span class="kb">この<span class="em">一台</span>に宿る、</span><span class="kb">技術者たちの<span class="em">叡智</span>を遺す。</span></h1>
+    <p class="deck reveal on"><span class="kb">名古屋・中川区を拠点に、</span><span class="kb">歴史的車両を保存・修復・研究し、</span><span class="kb">走る文化遺産として未来へ手渡す。</span></p>
+    <div class="lead-grid">
+      <div class="lead-body reveal on">
+        <!-- ※サンプル: 巻頭本文はダミー（登記の事業目的「歴史的車両の保存や研究」に沿った想定文であり、個別の実績を断定するものではありません） -->
+        <p>わたしたちトランスポート・トラスト・ジャパンは、名古屋市中川区を拠点に活動する特定非営利活動法人です。かつて技術者たちの斬新な発想と叡智を結集して生み出された歴史的車両——クラシックカーやヴィンテージの鉄道車両などを、貴重な文化遺産として保存・修復・研究し、次の世代へ伝えていくことを目的として活動しています。<span class="note-sample">※本文はサンプルです</span></p>
+        <p>一台の車両には、その時代の設計思想、素材、手仕事、そして人々の暮らしの記憶が刻まれています。しかし部品や図面、修復できる技術者は、時とともに失われていきます。だからこそ「動く状態で遺す」ことに意味がある——それがわたしたちの信じるところです。</p>
+        <p>この紙面は、活動のご紹介として制作したサンプルです。実際の保存車両・修復実績・研究成果・数値は、ご担当者さまへの確認のうえ差し替えてまいります。まずは「こんな見せ方ができる」という一例として、ご覧いただけますと幸いです。</p>
+      </div>
+      <div class="lead-figure reveal on">
+        <figure>
+          <!-- 差し替えポイント: 保存車両や工房を象徴するお写真（顔が特定されにくい構図を選定） -->
+          <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1100&q=80&auto=format&fit=crop" alt="クラシックカーのイメージ">
+          <figcaption>時代を超えて残された、走る文化遺産。<span class="note-sample">※写真はイメージ（差し替え）</span></figcaption>
+        </figure>
+        <div class="chips">
+          <span class="chip v">歴史的車両の保存</span>
+          <span class="chip v">修復・研究</span>
+          <span class="chip">展示・アーカイブ</span>
+          <span class="chip">名古屋市中川区</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 保存の理念（三本社説） ===== -->
+  <section class="section" id="stance">
+    <div class="kicker reveal">
+      <span class="tag">論説</span>
+      <h2>保存の理念</h2>
+      <span class="rule"></span>
+      <span class="en">Our Credo</span>
+    </div>
+    <p class="note-sample" style="margin-bottom:18px">※以下は登記の事業目的（公開情報）をもとにした方針のサンプルです。実際の理念・言葉に差し替えます</p>
+    <div class="stance reveal">
+      <div class="col">
+        <h3><span class="no">01</span>動く状態で、遺す</h3>
+        <p>ただ静態展示するのではなく、可能なかぎり「動く」状態を保つ。エンジンの鼓動や走行の姿までを含めて、車両は文化遺産だと考えます。</p>
+      </div>
+      <div class="col">
+        <h3><span class="no">02</span>技術と叡智を、継ぐ</h3>
+        <p>修復に必要な手仕事や図面の読み解きは、それ自体が失われつつある技術です。作業を記録し、次代の担い手へと継承していきます。</p>
+      </div>
+      <div class="col">
+        <h3><span class="no">03</span>研究し、公開する</h3>
+        <p>調査・研究の成果は展示やアーカイブとして広く公開します。一台の車両を、みんなで学べる公共の財産へと開いていきます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 事業のご案内（記事カード） ===== -->
+  <section class="section" id="works">
+    <div class="kicker reveal">
+      <span class="tag v">特集</span>
+      <h2>事業のご案内</h2>
+      <span class="rule"></span>
+      <span class="en">Our Works</span>
+    </div>
+    <p class="note-sample" style="margin-bottom:22px">※事業内容は登記の事業目的からの想定・表示イメージのサンプルです。実際の事業に差し替えます</p>
+    <div class="articles reveal">
+      <article class="art">
+        <span class="badge">REPORT 01</span>
+        <h3>保存・修復</h3>
+        <div class="hl"></div>
+        <!-- 差し替えポイント: 工房・修復作業を象徴するお写真 -->
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1000&q=80&auto=format&fit=crop" alt="車両の修復・工房のイメージ">
+        <p>失われゆく歴史的車両を引き取り、部品の調達・製作から丁寧に修復。動く状態での保存をめざす取り組みを想定しています。<span class="note-sample">※サンプル</span></p>
+      </article>
+      <article class="art">
+        <span class="badge">REPORT 02</span>
+        <h3>調査・研究</h3>
+        <div class="hl"></div>
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&q=80&auto=format&fit=crop" alt="機械・エンジン部品のイメージ">
+        <p>設計思想や構造、当時の技術背景を調査・研究。図面や資料を読み解き、記録として体系的にまとめる活動を想定しています。<span class="note-sample">※サンプル</span></p>
+      </article>
+      <article class="art">
+        <span class="badge">REPORT 03</span>
+        <h3>展示・公開</h3>
+        <div class="hl"></div>
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1000&q=80&auto=format&fit=crop" alt="クラシックカーの展示のイメージ">
+        <p>保存した車両を展示会や公開イベントで広く紹介。実物にふれ、その価値を体感していただく機会づくりを想定しています。<span class="note-sample">※サンプル</span></p>
+      </article>
+      <article class="art">
+        <span class="badge">REPORT 04</span>
+        <h3>記録・アーカイブ</h3>
+        <div class="hl"></div>
+        <img src="https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?w=1000&q=80&auto=format&fit=crop" alt="ヴィンテージ鉄道車両のイメージ">
+        <p>車両・修復工程・技術者の証言などを写真や映像で記録。文化遺産として次世代へ引き継ぐアーカイブづくりを想定しています。<span class="note-sample">※サンプル</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 沿革（年表） ===== -->
+  <section class="section" id="history">
+    <div class="kicker reveal">
+      <span class="tag">年表</span>
+      <h2>沿革</h2>
+      <span class="rule"></span>
+      <span class="en">History</span>
+    </div>
+    <div class="chrono reveal">
+      <div class="chrono-row real">
+        <div class="yr">2002<small>平成14年</small></div>
+        <div class="ev"><h4>設立</h4><p>特定非営利活動法人として設立。（設立年は公開情報）</p></div>
+      </div>
+      <!-- ※サンプル: 以下の年・出来事はダミーです -->
+      <div class="chrono-row">
+        <div class="yr">20XX<small>※サンプル</small></div>
+        <div class="ev"><h4>保存車両の受け入れ開始</h4><p>歴史的車両の保存・修復に着手。<span class="note-sample">※内容はサンプル</span></p></div>
+      </div>
+      <div class="chrono-row">
+        <div class="yr">20XX<small>※サンプル</small></div>
+        <div class="ev"><h4>展示・公開の取り組み</h4><p>修復した車両の展示やアーカイブ公開を始める。<span class="note-sample">※内容はサンプル</span></p></div>
+      </div>
+      <div class="chrono-row">
+        <div class="yr">現在<small>Present</small></div>
+        <div class="ev"><h4>これからも</h4><p>名古屋・中川区を拠点に、歴史的車両の保存・修復・研究・展示を続けています。</p></div>
+      </div>
+    </div>
+    <p class="note-sample" style="margin-top:14px">※「20XX」の行は表示イメージのサンプルです。実際の沿革に差し替えます</p>
+  </section>
+
+  <!-- ===== 法人概要（データ表） ===== -->
+  <section class="section" id="gaiyo">
+    <div class="kicker reveal">
+      <span class="tag">要覧</span>
+      <h2>法人概要</h2>
+      <span class="rule"></span>
+      <span class="en">Profile</span>
+    </div>
+    <div class="tbl-wrap reveal">
+      <table class="gaiyo">
+        <tr><th>正式名称</th><td>特定非営利活動法人 トランスポート・トラスト・ジャパン</td></tr>
+        <tr><th>所在地</th><td>愛知県名古屋市中川区</td></tr>
+        <tr><th>活動分野</th><td>学術・文化・芸術・スポーツ（NPOポータルの公開分野）</td></tr>
+        <tr><th>設立</th><td>2002年（公開情報）</td></tr>
+        <tr><th>事業目的</th><td>歴史的車両の保存や研究に関する事業を行い、技術者たちの斬新な発想と叡智が蓄積された偉大な文化遺産を保護し、公益の増進に寄与する（登記の事業目的）</td></tr>
+        <tr><th>代表者</th><td>（公開時に記載します）</td></tr>
+        <tr><th>電話</th><td>（公開時に記載します）</td></tr>
+        <tr><th>法人番号</th><td>（公開時に記載します）</td></tr>
+      </table>
+    </div>
+    <p class="tbl-hint">→ 表は横にスクロールできます</p>
+    <p class="note-sample" style="margin-top:14px">※所在地・分野・設立年・事業目的は公開情報です。空欄は公開時に実データへ差し替えます</p>
+  </section>
+
+  <!-- ===== ご参加のご案内（囲み記事） ===== -->
+  <section class="section" id="join">
+    <div class="kicker reveal">
+      <span class="tag v">告知</span>
+      <h2>ご参加のご案内</h2>
+      <span class="rule"></span>
+      <span class="en">Join Us</span>
+    </div>
+    <div class="join reveal">
+      <div class="cell">
+        <div class="ico">SUPPORT</div>
+        <h3>会員・賛助会員</h3>
+        <p>活動の趣旨にご賛同いただける方を募集します。会員として、走る文化遺産を遺す活動を一緒に支えてください。<span class="note-sample">※サンプル</span></p>
+      </div>
+      <div class="cell">
+        <div class="ico">VOLUNTEER</div>
+        <h3>ボランティア</h3>
+        <p>修復作業のお手伝いや展示の運営、記録など、できることを、できる範囲で。はじめての方も歓迎します。<span class="note-sample">※サンプル</span></p>
+      </div>
+      <div class="cell">
+        <div class="ico">PARTNER</div>
+        <h3>連携・ご協力</h3>
+        <p>博物館・研究機関・地域・企業のみなさまとの連携を歓迎します。車両のご相談も、まずはお気軽に。<span class="note-sample">※サンプル</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== お問い合わせ（投書欄） ===== -->
+  <section class="section" id="contact" style="border-bottom:none">
+    <div class="kicker reveal">
+      <span class="tag">投書</span>
+      <h2>お問い合わせ</h2>
+      <span class="rule"></span>
+      <span class="en">Contact</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="lede"><span class="kb">見学・取材・ご協力のご相談、</span><span class="kb">車両保存に関するお問い合わせなど、</span><span class="kb">お気軽にどうぞ。</span></p>
+        <div class="tel-box">
+          <p class="cap">お電話でのお問い合わせ</p>
+          <p class="num"><a href="tel:0520000000">052-XXX-XXXX</a></p>
+          <p>※電話番号は表示イメージのサンプルです。実番号に差し替えます</p>
+        </div>
+        <div class="map">
+          <!-- 名古屋市中川区の広域地図（所在地の詳細は公開時に差し替え） -->
+          <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%B7%9D%E5%8C%BA&output=embed&z=13" loading="lazy" title="名古屋市中川区の地図"></iframe>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="demo" onsubmit="return false;" aria-label="お問い合わせフォーム（デモ）">
+          <div class="fld"><label for="f-name">お名前</label><input id="f-name" type="text" placeholder="山田 太郎" autocomplete="off"></div>
+          <div class="fld"><label for="f-mail">メールアドレス</label><input id="f-mail" type="text" placeholder="sample@example.com" autocomplete="off"></div>
+          <div class="fld"><label for="f-msg">ご用件</label><textarea id="f-msg" placeholder="ご相談内容をご記入ください"></textarea></div>
+          <button type="submit" id="demo-send">送信する（デモ）</button>
+          <p class="demo-flag" id="demo-flag">※これはサンプルです。実際には送信されません</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 奥付（フッター） ===== -->
+  <footer class="colophon">
+    <p class="f-name">特定非営利活動法人 トランスポート・トラスト・ジャパン</p>
+    <p class="f-meta">愛知県名古屋市中川区｜分野：学術・文化・芸術・スポーツ｜設立 2002年</p>
+    <p class="sample-note">
+      本ページはホームページ制作のご提案用サンプルです（写真はイメージ素材、※印の内容はダミー、記事本文・数値・年表はサンプルで活動を断定していません）。<br>
+      制作: <a href="https://smcn-jp.com/" target="_blank" rel="noopener">スマートコネクト（名古屋のHP制作・公式LINE構築）</a>
+    </p>
+    <p class="cc">&copy; 2026 Transport Trust Japan（sample）</p>
+  </footer>
+
+</div>
+
+<!-- 左下ピル -->
+<a class="pill" href="https://smcn-jp.com/" target="_blank" rel="noopener" aria-label="スマートコネクトによる提案用サンプル">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+  <span>ご提案用サンプル｜<b>スマートコネクト</b></span>
+</a>
+
+<script>
+// SPメニュー
+const menuBtn = document.querySelector(".menu-btn");
+if (menuBtn) {
+  menuBtn.addEventListener("click", () => {
+    const open = document.body.classList.toggle("menu-open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+}
+document.querySelectorAll(".sp-nav a, .paper-nav a").forEach(a =>
+  a.addEventListener("click", () => document.body.classList.remove("menu-open"))
+);
+
+// デモフォーム（送信されない）
+const demoBtn = document.getElementById("demo-send");
+if (demoBtn) {
+  demoBtn.addEventListener("click", () => {
+    const flag = document.getElementById("demo-flag");
+    flag.textContent = "※サンプルのため送信は行われません（ご契約後に実際のフォームへ差し替えます）";
+    flag.style.color = "var(--c-vermil-deep)";
+  });
+}
+
+// スクロール表示
+let io = null;
+if ("IntersectionObserver" in window) {
+  io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+}
+document.querySelectorAll(".reveal:not(.on)").forEach(el => io ? io.observe(el) : el.classList.add("on"));
+</script>
+</body>
+</html>
